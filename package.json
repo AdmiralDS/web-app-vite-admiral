@@ -1,5 +1,6 @@
 {
   "name": "web-app-vite-admiral",
+  "license": "See license in ./LICENSE",
   "private": true,
   "version": "0.0.0",
   "type": "module",
