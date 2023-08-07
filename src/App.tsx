@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
 import styled from 'styled-components';
-import { T, Link } from '@admiral-ds/react-ui';
+import './App.css';
+
+// Импорт иконки как URL ресурс
+import reactLogo from './assets/react.svg';
+// Импорт иконки через настроенный SVGR (https://react-svgr.com/docs/what-is-svgr/)
 import { ReactComponent as ArrowRightOutline } from '@admiral-ds/icons/build/system/ArrowRightOutline.svg';
+
+import { T, Link } from '@admiral-ds/react-ui';
 
 const Divider = styled.div`
   width: 10px;
@@ -17,6 +21,7 @@ function App() {
     <>
       <div>
         <a href="https://vitejs.dev" target="_blank">
+          {/* импорт иконки через директорию assets. Доступ к этой директории есть и у index.html */}
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
