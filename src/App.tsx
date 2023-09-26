@@ -5,7 +5,7 @@ import './App.css';
 // Импорт иконки как URL ресурс
 import reactLogo from './assets/react.svg';
 // Импорт иконки через настроенный SVGR (https://react-svgr.com/docs/what-is-svgr/)
-import { ReactComponent as ArrowRightOutline } from '@admiral-ds/icons/build/system/ArrowRightOutline.svg';
+import ArrowRightOutline from '@admiral-ds/icons/build/system/ArrowRightOutline.svg?react';
 
 import { T, Link } from '@admiral-ds/react-ui';
 
