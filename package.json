@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@admiral-ds/icons": "^3.0.1",
-    "@admiral-ds/react-ui": "^5.4.0 || ^6.0.0",
+    "@admiral-ds/react-ui": "^5.4.0 || ^6.0.0 || ^7.0.0",
     "jest-environment-jsdom": "^29.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
