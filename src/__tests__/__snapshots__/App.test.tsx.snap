@@ -142,7 +142,6 @@ exports[`Renders the App page 1`] = `
         </button>
         <p
           class="c0"
-          font="Subtitle/Subtitle 1"
         >
           Edit 
           <code>
@@ -157,9 +156,7 @@ exports[`Renders the App page 1`] = `
         Click on the Vite and React logos to learn more
       </p>
       <a
-        appearance="primary"
         class="c1"
-        dimension="m"
         href="https://admiralds.github.io/react-ui"
         rel="noopener noreferrer"
         target="_blank"
@@ -168,7 +165,7 @@ exports[`Renders the App page 1`] = `
         <div
           class="c2"
         />
-        <div
+        <svgrurl
           width="20"
         />
       </a>
@@ -312,7 +309,6 @@ exports[`Renders the App page 1`] = `
       </button>
       <p
         class="c0"
-        font="Subtitle/Subtitle 1"
       >
         Edit 
         <code>
@@ -327,9 +323,7 @@ exports[`Renders the App page 1`] = `
       Click on the Vite and React logos to learn more
     </p>
     <a
-      appearance="primary"
       class="c1"
-      dimension="m"
       href="https://admiralds.github.io/react-ui"
       rel="noopener noreferrer"
       target="_blank"
@@ -338,7 +332,7 @@ exports[`Renders the App page 1`] = `
       <div
         class="c2"
       />
-      <div
+      <svgrurl
         width="20"
       />
     </a>

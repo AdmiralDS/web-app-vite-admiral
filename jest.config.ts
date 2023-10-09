@@ -36,6 +36,7 @@ export default {
   transformIgnorePatterns: ['/node_modules/(?!(@admiral-ds/)/)'],
   moduleNameMapper: {
     '\\.svg$': '<rootDir>/.jest/svgrMock.js',
+    '\\.svg\\?react$': '<rootDir>/.jest/svgrMock.js',
     '\\.(css|less)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/.jest/fileMock.js',
   },
