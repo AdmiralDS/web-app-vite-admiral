@@ -165,7 +165,7 @@ exports[`Renders the App page 1`] = `
         <div
           class="c2"
         />
-        <svgrurl
+        <svg
           width="20"
         />
       </a>
@@ -332,7 +332,7 @@ exports[`Renders the App page 1`] = `
       <div
         class="c2"
       />
-      <svgrurl
+      <svg
         width="20"
       />
     </a>

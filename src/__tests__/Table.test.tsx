@@ -34,6 +34,18 @@ describe('Table', () => {
       <Table {...props} columnList={columnList} rowList={rowList} />
     </ThemeProvider>
   );
+
+  beforeEach(() => {
+    Object.defineProperty(global, 'ResizeObserver', {
+      writable: true,
+      value: jest.fn().mockImplementation(() => ({
+        observe: jest.fn(() => 'Mocking works'),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      })),
+    });
+  });
+
   it('should set header checkbox to checked', () => {
     const { container } = render(<Comp displayRowSelectionColumn headerCheckboxChecked />);
     const checkboxCell = container.getElementsByClassName('th_checkbox')[0];
