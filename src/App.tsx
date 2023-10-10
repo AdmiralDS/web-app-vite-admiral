@@ -1,21 +1,25 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+// import { useState } from 'react';
+// import styled from 'styled-components';
 import './App.css';
+
+import { TableLoadOnScroll } from './table/example1';
+import { TableLoadOnScrollSpinner } from './table/example2';
+import { TableLoadOnScrollSkeleton } from './table/example3';
 
 // Импорт иконки как URL ресурс
 import reactLogo from './assets/react.svg';
 // Импорт иконки через настроенный SVGR (https://react-svgr.com/docs/what-is-svgr/)
-import ArrowRightOutline from '@admiral-ds/icons/build/system/ArrowRightOutline.svg?react';
+// import ArrowRightOutline from '@admiral-ds/icons/build/system/ArrowRightOutline.svg?react';
 
-import { T, Link } from '@admiral-ds/react-ui';
+// import { T, Link } from '@admiral-ds/react-ui';
 
-const Divider = styled.div`
-  width: 10px;
-  height: 12px;
-`;
+// const Divider = styled.div`
+//   width: 10px;
+//   height: 12px;
+// `;
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <>
@@ -29,7 +33,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
+      {/* <div className="card">
         <button className="button" onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -42,7 +46,15 @@ function App() {
         Admiral Storybook
         <Divider />
         <ArrowRightOutline width={20} />
-      </Link>
+      </Link> */}
+      <div className="tables">
+        <h3>Taблица с подгрузкой данных при скролле</h3>
+        <TableLoadOnScroll />
+        <h3>Taблица со спиннером и подгрузкой данных при скролле</h3>
+        <TableLoadOnScrollSpinner />
+        <h3>Taблица со скелетонами и подгрузкой данных при скролле</h3>
+        <TableLoadOnScrollSkeleton />
+      </div>
     </>
   );
 }
