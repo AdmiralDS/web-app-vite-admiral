@@ -6,10 +6,17 @@ import { TableLoadOnScroll } from './table/example1';
 import { TableLoadOnScrollSpinner } from './table/example2';
 import { TableLoadOnScrollSkeleton } from './table/example3';
 
-// Импорт иконки как URL ресурс
+// Импорт иконки как URL ресурс. Это дефолтное поведене для vite (https://vitejs.dev/guide/assets.html#importing-asset-as-url)
 import reactLogo from './assets/react.svg';
-// Импорт иконки через настроенный SVGR (https://react-svgr.com/docs/what-is-svgr/)
-import ArrowRightOutline from '@admiral-ds/icons/build/system/ArrowRightOutline.svg?react';
+
+// Импорт оптимизированной иконки через настроенный SVGR лоадер (https://react-svgr.com/docs/what-is-svgr/)
+import ArrowRightOutline from '@admiral-ds/icons/build/category/CreatePullRequestSolid.svg?react';
+
+// Импорт оригинала иконки через настроенный SVGR лоадер (https://react-svgr.com/docs/what-is-svgr/)
+import BusSolid from '@admiral-ds/icons/public/icons/category/Bus Solid.svg?react';
+
+// Импорт иконки как готового реакт компонента (лоадер не требуется)
+import { CategoryBusOutline } from '@admiral-ds/icons';
 
 import { T, Link } from '@admiral-ds/react-ui';
 
@@ -46,6 +53,8 @@ function App() {
         Admiral Storybook
         <Divider />
         <ArrowRightOutline width={20} />
+        <CategoryBusOutline width={20} />
+        <BusSolid width={20} />
       </Link>
       <div className="tables">
         <h3>Taблица с подгрузкой данных при скролле</h3>
