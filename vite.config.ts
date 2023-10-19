@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 
-// import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react';
 
-import react from '@vitejs/plugin-react-swc';
+// error on use in stackblitz environment
+// import react from '@vitejs/plugin-react-swc';
 
 import svgr from 'vite-plugin-svgr';
 
