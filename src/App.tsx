@@ -19,6 +19,7 @@ import BusSolid from '@admiral-ds/icons/public/icons/category/Bus Solid.svg?reac
 import { CategoryBusOutline } from '@admiral-ds/icons';
 
 import { T, Link } from '@admiral-ds/react-ui';
+import { SomeComponent } from './SomeComponent';
 
 const Divider = styled.div`
   width: 10px;
@@ -31,6 +32,7 @@ function App() {
   return (
     <>
       <div>
+        <SomeComponent />
         <a href="https://vitejs.dev" target="_blank">
           {/* импорт иконки через директорию assets. Доступ к этой директории есть и у index.html */}
           <img src="/vite.svg" className="logo" alt="Vite logo" />
