@@ -20,7 +20,6 @@ import { CategoryBusOutline } from '@admiral-ds/icons';
 
 import { T, Link, Spinner } from '@admiral-ds/react-ui';
 import { SomeComponent } from './SomeComponent';
-
 const Divider = styled.div`
   width: 10px;
   height: 12px;
@@ -57,6 +56,15 @@ function App() {
         <ArrowRightOutline width={20} />
         <CategoryBusOutline width={20} />
         <BusSolid width={20} />
+        <Spinner />
+        <Spinner dimension="xl" />
+        <Spinner dimension="l" />
+        <Spinner dimension="s" />
+        <Spinner dimension="m" />
+        <Spinner dimension="ms" />
+        <span style={{ backgroundColor: 'darkgray' }}>
+          <Spinner inverse />
+        </span>
         <Spinner />
       </Link>
       <div className="tables">
