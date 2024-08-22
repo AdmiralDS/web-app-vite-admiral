@@ -18,7 +18,7 @@ import BusSolid from '@admiral-ds/icons/public/icons/category/Bus Solid.svg?reac
 // Импорт иконки как готового реакт компонента (лоадер не требуется)
 import { CategoryBusOutline } from '@admiral-ds/icons';
 
-import { T, Link } from '@admiral-ds/react-ui';
+import { T, Link, Spinner } from '@admiral-ds/react-ui';
 import { SomeComponent } from './SomeComponent';
 
 const Divider = styled.div`
@@ -57,6 +57,7 @@ function App() {
         <ArrowRightOutline width={20} />
         <CategoryBusOutline width={20} />
         <BusSolid width={20} />
+        <Spinner />
       </Link>
       <div className="tables">
         <h3>Taблица с подгрузкой данных при скролле</h3>
