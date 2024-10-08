@@ -17,6 +17,14 @@ import {
   AccordionModes,
 } from './components/Accordion';
 import { BadgeExamples, BadgeAccessability, BadgeBasic, BadgeVariants } from './components/Badge';
+import {
+  ButonExamples,
+  ButtonBasic,
+  ButtonLoader,
+  ButtonStyles,
+  ButtonWithBadge,
+  ButtonWithIcon,
+} from './components/Button';
 import { Icons } from './components/Icons/icons';
 import { MainPage, Layout } from './components/Main';
 
@@ -38,6 +46,13 @@ function App() {
               <Route index element={<BadgeBasic />} />
               <Route path="variants" element={<BadgeVariants />} />
               <Route path="accessability" element={<BadgeAccessability />} />
+            </Route>
+            <Route path="button" element={<ButonExamples />}>
+              <Route index element={<ButtonBasic />} />
+              <Route path="styles" element={<ButtonStyles />} />
+              <Route path="loader" element={<ButtonLoader />} />
+              <Route path="icon" element={<ButtonWithIcon />} />
+              <Route path="badge" element={<ButtonWithBadge />} />
             </Route>
             <Route path="table" element={<TableExamples />}>
               <Route index element={<TableBasic />} />
