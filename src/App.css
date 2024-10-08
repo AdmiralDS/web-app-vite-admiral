@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -33,24 +34,18 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.tables {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .table {
-    margin-bottom: 200px;
-
-    .td > div {
-      text-align: left;
-    }
+.table {
+  .td > div {
+    text-align: left;
   }
+}
+
+nav {
+  padding: 1rem;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+}
+nav.main {
+  border-bottom: 1px solid black;
 }

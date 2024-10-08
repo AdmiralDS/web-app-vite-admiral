@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
-import { LastRow } from './LastRow';
+import { LastRow } from './common/LastRow';
 
 const columnList: Column[] = [
   {
@@ -23,9 +23,10 @@ const columnList: Column[] = [
 
 const TOTAL_ROWS_AMOUNT = 100;
 
-export const TableLoadOnScroll = () => {
+export const TableLoadOnScrollSpinner = () => {
   const [cols, setCols] = React.useState(columnList);
   const [rowsAmount, setRowsAmount] = React.useState(10);
+  const [loading, setLoading] = React.useState(false);
   const tableRef = React.useRef<HTMLDivElement>(null);
 
   const rows = React.useMemo(() => {
@@ -46,24 +47,44 @@ export const TableLoadOnScroll = () => {
   };
 
   const uploadNewRows = () => {
-    if (rowsAmount < TOTAL_ROWS_AMOUNT) setRowsAmount((amount) => amount + 10);
+    if (rowsAmount < TOTAL_ROWS_AMOUNT) {
+      setLoading(true);
+
+      let promise = new Promise(function (resolve) {
+        setTimeout(() => resolve('done'), 1000);
+      });
+
+      promise.then(() => {
+        setRowsAmount((amount) => amount + 10);
+        setLoading(false);
+      });
+    }
   };
 
   const renderRowWrapper = (row: TableRow, index: number, rowNode: React.ReactNode) =>
     index === rowsAmount - 1 ? (
-      <LastRow key={`row_${row.id}`} containerRef={tableRef} onVisible={uploadNewRows} rowNode={rowNode} />
+      <LastRow
+        key={`row_${row.id}`}
+        containerRef={tableRef}
+        onVisible={uploadNewRows}
+        rowNode={rowNode}
+        loading={loading}
+      />
     ) : (
       rowNode
     );
 
   return (
-    <Table
-      ref={tableRef}
-      rowList={rows}
-      columnList={cols}
-      onColumnResize={handleResize}
-      renderRowWrapper={renderRowWrapper}
-      style={{ height: '300px', width: '450px' }}
-    />
+    <>
+      <h3>Taблица со спиннером и подгрузкой данных при скролле</h3>
+      <Table
+        ref={tableRef}
+        rowList={rows}
+        columnList={cols}
+        onColumnResize={handleResize}
+        renderRowWrapper={renderRowWrapper}
+        style={{ height: '300px' }}
+      />
+    </>
   );
 };

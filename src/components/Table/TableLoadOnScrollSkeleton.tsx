@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
-import { LastRow } from './LastRow';
+import { LastRow } from './common/LastRow';
+import { SkeletonComponent } from './common/SkeletonComponent';
 
 const columnList: Column[] = [
   {
@@ -23,7 +24,7 @@ const columnList: Column[] = [
 
 const TOTAL_ROWS_AMOUNT = 100;
 
-export const TableLoadOnScrollSpinner = () => {
+export const TableLoadOnScrollSkeleton = () => {
   const [cols, setCols] = React.useState(columnList);
   const [rowsAmount, setRowsAmount] = React.useState(10);
   const [loading, setLoading] = React.useState(false);
@@ -41,6 +42,21 @@ export const TableLoadOnScrollSpinner = () => {
     return array;
   }, [rowsAmount]);
 
+  const columns = React.useMemo(() => {
+    return cols.map((col) => {
+      return {
+        ...col,
+        renderCell: (data: any, _row: TableRow, rowIdx: number) => {
+          return rowIdx > rowsAmount - 10 && loading ? (
+            <SkeletonComponent dimension="m" appearance="secondary" />
+          ) : (
+            data
+          );
+        },
+      };
+    });
+  }, [cols, rowsAmount, loading]);
+
   const handleResize = ({ name, width }: { name: string; width: string }) => {
     const newCols = cols.map((col) => (col.name === name ? { ...col, width } : col));
     setCols(newCols);
@@ -49,13 +65,13 @@ export const TableLoadOnScrollSpinner = () => {
   const uploadNewRows = () => {
     if (rowsAmount < TOTAL_ROWS_AMOUNT) {
       setLoading(true);
+      setRowsAmount((amount) => amount + 10);
 
       let promise = new Promise(function (resolve) {
-        setTimeout(() => resolve('done'), 1000);
+        // load new data
+        setTimeout(() => resolve('done'), 2000);
       });
-
       promise.then(() => {
-        setRowsAmount((amount) => amount + 10);
         setLoading(false);
       });
     }
@@ -63,25 +79,22 @@ export const TableLoadOnScrollSpinner = () => {
 
   const renderRowWrapper = (row: TableRow, index: number, rowNode: React.ReactNode) =>
     index === rowsAmount - 1 ? (
-      <LastRow
-        key={`row_${row.id}`}
-        containerRef={tableRef}
-        onVisible={uploadNewRows}
-        rowNode={rowNode}
-        loading={loading}
-      />
+      <LastRow key={`row_${row.id}`} containerRef={tableRef} onVisible={uploadNewRows} rowNode={rowNode} />
     ) : (
       rowNode
     );
 
   return (
-    <Table
-      ref={tableRef}
-      rowList={rows}
-      columnList={cols}
-      onColumnResize={handleResize}
-      renderRowWrapper={renderRowWrapper}
-      style={{ height: '300px', width: '450px' }}
-    />
+    <>
+      <h3>Taблица со скелетонами и подгрузкой данных при скролле</h3>
+      <Table
+        ref={tableRef}
+        rowList={rows}
+        columnList={columns}
+        onColumnResize={handleResize}
+        renderRowWrapper={renderRowWrapper}
+        style={{ height: '300px' }}
+      />
+    </>
   );
 };

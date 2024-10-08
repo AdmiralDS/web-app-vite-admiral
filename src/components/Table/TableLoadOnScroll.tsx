@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
-import { LastRow } from './LastRow';
-import { SkeletonComponent } from './SkeletonComponent';
+import { LastRow } from './common/LastRow';
 
 const columnList: Column[] = [
   {
@@ -24,10 +23,9 @@ const columnList: Column[] = [
 
 const TOTAL_ROWS_AMOUNT = 100;
 
-export const TableLoadOnScrollSkeleton = () => {
+export const TableLoadOnScroll = () => {
   const [cols, setCols] = React.useState(columnList);
   const [rowsAmount, setRowsAmount] = React.useState(10);
-  const [loading, setLoading] = React.useState(false);
   const tableRef = React.useRef<HTMLDivElement>(null);
 
   const rows = React.useMemo(() => {
@@ -42,39 +40,13 @@ export const TableLoadOnScrollSkeleton = () => {
     return array;
   }, [rowsAmount]);
 
-  const columns = React.useMemo(() => {
-    return cols.map((col) => {
-      return {
-        ...col,
-        renderCell: (data: any, _row: TableRow, rowIdx: number) => {
-          return rowIdx > rowsAmount - 10 && loading ? (
-            <SkeletonComponent dimension="m" appearance="secondary" />
-          ) : (
-            data
-          );
-        },
-      };
-    });
-  }, [cols, rowsAmount, loading]);
-
   const handleResize = ({ name, width }: { name: string; width: string }) => {
     const newCols = cols.map((col) => (col.name === name ? { ...col, width } : col));
     setCols(newCols);
   };
 
   const uploadNewRows = () => {
-    if (rowsAmount < TOTAL_ROWS_AMOUNT) {
-      setLoading(true);
-      setRowsAmount((amount) => amount + 10);
-
-      let promise = new Promise(function (resolve) {
-        // load new data
-        setTimeout(() => resolve('done'), 2000);
-      });
-      promise.then(() => {
-        setLoading(false);
-      });
-    }
+    if (rowsAmount < TOTAL_ROWS_AMOUNT) setRowsAmount((amount) => amount + 10);
   };
 
   const renderRowWrapper = (row: TableRow, index: number, rowNode: React.ReactNode) =>
@@ -85,13 +57,16 @@ export const TableLoadOnScrollSkeleton = () => {
     );
 
   return (
-    <Table
-      ref={tableRef}
-      rowList={rows}
-      columnList={columns}
-      onColumnResize={handleResize}
-      renderRowWrapper={renderRowWrapper}
-      style={{ height: '300px', width: '450px' }}
-    />
+    <>
+      <h3>Taблица с подгрузкой данных при скролле</h3>
+      <Table
+        ref={tableRef}
+        rowList={rows}
+        columnList={cols}
+        onColumnResize={handleResize}
+        renderRowWrapper={renderRowWrapper}
+        style={{ height: '300px' }}
+      />
+    </>
   );
 };
