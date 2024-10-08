@@ -4,10 +4,10 @@ import { T } from '@admiral-ds/react-ui';
 import { NavLink } from '../Main/NavLink';
 
 const tableLinks = [
-  { text: 'Basic', path: '' },
-  { text: 'Load on scroll', path: '/load-on-scroll' },
-  { text: 'Load on scroll with spinner', path: '/load-on-scroll-with-spinner' },
-  { text: 'Load on scroll with skeleton', path: '/load-on-scroll-with-skeleton' },
+  { text: 'Базовый пример', path: '' },
+  { text: 'Подгрузка данных при скролле', path: '/load-on-scroll' },
+  { text: 'Подгрузка данных при скролле со спиннером', path: '/load-on-scroll-with-spinner' },
+  { text: 'Подгрузка данных при скролле со скелетоном', path: '/load-on-scroll-with-skeleton' },
 ];
 
 export const TableExamples = () => {

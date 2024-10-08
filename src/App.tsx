@@ -8,6 +8,15 @@ import {
   TableLoadOnScrollSpinner,
   TableLoadOnScrollSkeleton,
 } from './components/Table';
+import {
+  AccordionExamples,
+  AccordionBasic,
+  AccordionDimension,
+  AccordionDivider,
+  AccordionIcon,
+  AccordionModes,
+} from './components/Accordion';
+import { BadgeExamples, BadgeAccessability, BadgeBasic, BadgeVariants } from './components/Badge';
 import { Icons } from './components/Icons/icons';
 import { MainPage, Layout } from './components/Main';
 
@@ -18,6 +27,18 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<MainPage />} />
+            <Route path="accordion" element={<AccordionExamples />}>
+              <Route index element={<AccordionBasic />} />
+              <Route path="dimension" element={<AccordionDimension />} />
+              <Route path="icon" element={<AccordionIcon />} />
+              <Route path="divider" element={<AccordionDivider />} />
+              <Route path="modes" element={<AccordionModes />} />
+            </Route>
+            <Route path="badge" element={<BadgeExamples />}>
+              <Route index element={<BadgeBasic />} />
+              <Route path="variants" element={<BadgeVariants />} />
+              <Route path="accessability" element={<BadgeAccessability />} />
+            </Route>
             <Route path="table" element={<TableExamples />}>
               <Route index element={<TableBasic />} />
               <Route path="load-on-scroll" element={<TableLoadOnScroll />} />
