@@ -15,7 +15,7 @@ export const ThemeToggler = () => {
       dimension="m"
       onClick={() => toggleTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      {theme === 'light' ? <LightModeSolid /> : <DarkModeSolid />}
+      {theme === 'light' ? <DarkModeSolid /> : <LightModeSolid />}
     </ButtonWithTooltip>
   );
 };

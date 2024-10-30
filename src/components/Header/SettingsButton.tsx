@@ -9,11 +9,13 @@ import {
   FieldSet,
   RadioButton,
   TextButton,
+  ALL_BORDER_RADIUS_VALUES,
 } from '@admiral-ds/react-ui';
-import SettingsOutline from '@admiral-ds/icons/build/system/SettingsOutline.svg?react';
+import type { BorderRadiusType } from '@admiral-ds/react-ui';
+import SettingsSolid from '@admiral-ds/icons/build/system/SettingsSolid.svg?react';
 
 import { SettingsContext } from '../../SettingsContext';
-import type { CSSPropsIn } from '../../SettingsContext';
+import type { CSSPropsIn, Theme } from '../../SettingsContext';
 
 const ButtonWithTooltip = TooltipHoc(IconButton);
 
@@ -27,71 +29,97 @@ const StyledDrop = styled(DropdownContainer)`
 `;
 
 const SettingsMenu = styled.div`
-  width: 320px;
-  padding: 20px;
-  ${typography['Body/Body 2 Long']}
+  width: 280px;
+  padding: 8px 16px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
 
-export interface ColumnsButtonProps extends React.HTMLAttributes<HTMLButtonElement> {}
+const FieldSetStyled = styled(FieldSet)`
+  margin: 8px 0;
+  padding: 0;
+  legend {
+    padding: 0;
+    ${typography['Subtitle/Subtitle 2']}
+  }
+`;
 
-export const SettingsButton = ({ ...props }) => {
+const DefaultButton = styled(TextButton)`
+  margin: 12px 0;
+`;
+
+export const SettingsButton = () => {
   const [opened, setOpened] = useState<boolean>(false);
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
-  const { CSSProps, setCSSProps } = useContext(SettingsContext);
+  const [button, setButton] = useState<HTMLButtonElement | null>(null);
+  const { theme, toggleTheme, CSSProps, setCSSProps, borderRadius, setBorderRadius } = useContext(SettingsContext);
 
   const renderMenu = useCallback(
-    ({ closeMenu }: any) => (
+    () => (
       <SettingsMenu>
-        {/* <FieldSet
-        onChange={(e) => {
-          setBorderRadius((e.target as HTMLInputElement).value);
-        }}
-        legend="Border Radius"
-      >
-        {radiusValues.map((radius) => (
-          <RadioButton key={radius} name="radius" checked={radius === borderRadius} onChange={() => {}}>
-            {radius}
+        <FieldSetStyled
+          onChange={(e) => {
+            toggleTheme((e.target as HTMLInputElement).value as Theme);
+          }}
+          legend="Theme"
+        >
+          <RadioButton name="theme" value="light" checked={theme === 'light'}>
+            Light
           </RadioButton>
-        ))}
-      </FieldSet> */}
-        <FieldSet
+          <RadioButton name="theme" value="dark" checked={theme === 'dark'}>
+            Dark
+          </RadioButton>
+        </FieldSetStyled>
+        <FieldSetStyled
+          onChange={(e) => {
+            setBorderRadius((e.target as HTMLInputElement).value as BorderRadiusType);
+          }}
+          legend="Border Radius"
+        >
+          {ALL_BORDER_RADIUS_VALUES.map((radius) => (
+            <RadioButton
+              key={radius}
+              name="radius"
+              value={radius}
+              checked={radius === borderRadius}
+              onChange={() => {}}
+            >
+              {radius.replace(/^\D+/g, '') + ' px'}
+            </RadioButton>
+          ))}
+        </FieldSetStyled>
+        <FieldSetStyled
           onChange={(e) => {
             setCSSProps((e.target as HTMLInputElement).value as CSSPropsIn);
           }}
           legend="CSS Custom Props"
         >
-          <RadioButton name="CSSProps" value="enable" checked={CSSProps === 'enable'}>
+          <RadioButton name="CSSProps" value="enable" checked={CSSProps === 'enable'} onChange={() => {}}>
             Enable
           </RadioButton>
-          <RadioButton name="CSSProps" value="disable" checked={CSSProps === 'disable'}>
+          <RadioButton name="CSSProps" value="disable" checked={CSSProps === 'disable'} onChange={() => {}}>
             Disable
           </RadioButton>
-        </FieldSet>
-        <TextButton
+        </FieldSetStyled>
+        <DefaultButton
           text="Reset to default"
           onClick={() => {
             setCSSProps('enable');
+            setBorderRadius('Border radius 4');
           }}
         />
       </SettingsMenu>
     ),
-    [CSSProps, setCSSProps],
+    [theme, toggleTheme, CSSProps, setCSSProps, borderRadius, setBorderRadius],
   );
-
-  const closeMenu = () => {
-    setOpened(false);
-    buttonRef.current?.focus();
-  };
 
   const handleBtnClick = () => {
     setOpened((prevOpened) => !prevOpened);
   };
 
   const handleClickOutside = (e: Event) => {
-    if (e.target && buttonRef.current?.contains(e.target as Node)) {
+    if (e.target && button?.contains(e.target as Node)) {
       return;
     }
     setOpened(false);
@@ -101,16 +129,15 @@ export const SettingsButton = ({ ...props }) => {
     <>
       <ButtonWithTooltip
         renderContent={() => 'Settings'}
-        ref={buttonRef}
+        ref={(node) => setButton(node)}
         dimension="m"
         onClick={handleBtnClick}
-        {...props}
       >
-        <SettingsOutline />
+        <SettingsSolid />
       </ButtonWithTooltip>
       {opened && (
-        <StyledDrop targetElement={buttonRef.current} alignSelf={'flex-end'} onClickOutside={handleClickOutside}>
-          {renderMenu?.({ closeMenu })}
+        <StyledDrop targetElement={button} onClickOutside={handleClickOutside}>
+          {renderMenu()}
         </StyledDrop>
       )}
     </>
