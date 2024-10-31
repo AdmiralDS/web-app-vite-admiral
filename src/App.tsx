@@ -27,6 +27,7 @@ import {
 } from './components/Button';
 import { Icons } from './components/Icons/icons';
 import { MainPage, Layout } from './components/Main';
+import { CarouselSliderExamples, CarouselSliderBasic, CarouselSliderAutoChange } from './components/CarouselSlider';
 
 function App() {
   return (
@@ -61,6 +62,10 @@ function App() {
               <Route path="load-on-scroll-with-skeleton" element={<TableLoadOnScrollSkeleton />} />
             </Route>
             <Route path="icons" element={<Icons />} />
+            <Route path="carousel_slider" element={<CarouselSliderExamples />}>
+              <Route index element={<CarouselSliderBasic />} />
+              <Route path="auto_change" element={<CarouselSliderAutoChange />} />
+            </Route>
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>

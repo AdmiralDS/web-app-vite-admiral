@@ -5,4 +5,5 @@ export const links = [
   { text: 'Badge', path: 'badge' },
   { text: 'Button', path: 'button' },
   { text: 'Table', path: 'table' },
+  { text: 'CarouselSlider', path: 'carousel_slider' },
 ];
