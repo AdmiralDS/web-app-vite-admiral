@@ -28,6 +28,7 @@ import {
 import { Icons } from './components/Icons/icons';
 import { MainPage, Layout } from './components/Main';
 import { CarouselSliderExamples, CarouselSliderBasic, CarouselSliderAutoChange } from './components/CarouselSlider';
+import { CarouselExamples, CarouselBasic, CarouselAutoChange } from './components/Carousel';
 
 function App() {
   return (
@@ -65,6 +66,10 @@ function App() {
             <Route path="carousel_slider" element={<CarouselSliderExamples />}>
               <Route index element={<CarouselSliderBasic />} />
               <Route path="auto_change" element={<CarouselSliderAutoChange />} />
+            </Route>
+            <Route path="carousel" element={<CarouselExamples />}>
+              <Route index element={<CarouselBasic />} />
+              <Route path="auto_change" element={<CarouselAutoChange />} />
             </Route>
             <Route path="*" element={<NoMatch />} />
           </Route>

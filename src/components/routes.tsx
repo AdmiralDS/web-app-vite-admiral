@@ -6,4 +6,5 @@ export const links = [
   { text: 'Button', path: 'button' },
   { text: 'Table', path: 'table' },
   { text: 'CarouselSlider', path: 'carousel_slider' },
+  { text: 'Carousel', path: 'carousel' },
 ];
