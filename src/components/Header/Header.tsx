@@ -30,7 +30,8 @@ const ButtonsWrapper = styled.div`
 
 const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-end;
   padding: 16px 4px 7px 0;
   box-sizing: border-box;
   border-bottom: 1px solid var(--admiral-color-Neutral_neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
@@ -39,11 +40,11 @@ const HeaderWrapper = styled.div`
 export const Header = () => {
   return (
     <HeaderWrapper>
-      <ButtonWithTooltip renderContent={() => 'Menu'} dimension="m">
+      {/* <ButtonWithTooltip renderContent={() => 'Menu'} dimension="m">
         <MenuOutline />
-      </ButtonWithTooltip>
+      </ButtonWithTooltip> */}
       <ButtonsWrapper>
-        <RouterLink to="/resources" $appearance="secondary" $dimension="s">
+        <RouterLink to="/general/resources" $appearance="secondary" $dimension="s">
           Resources
         </RouterLink>
         <PaneSeparator />

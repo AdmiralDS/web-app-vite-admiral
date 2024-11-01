@@ -11,23 +11,20 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ResourcesImport } from './routes/resources'
-import { Route as AboutImport } from './routes/about'
+import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
-import { Route as TableIndexImport } from './routes/table/index'
-import { Route as TableExample2Import } from './routes/table/example2'
+import { Route as GeneralResourcesImport } from './routes/general/resources'
+import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
+import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
+import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
+import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsButtonExample2Import } from './routes/components/button/example2'
 
 // Create/Update Routes
 
-const ResourcesRoute = ResourcesImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const AboutRoute = AboutImport.update({
-  id: '/about',
-  path: '/about',
+const ComponentsRoute = ComponentsImport.update({
+  id: '/components',
+  path: '/components',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -37,16 +34,42 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const TableIndexRoute = TableIndexImport.update({
-  id: '/table/',
-  path: '/table/',
+const GeneralResourcesRoute = GeneralResourcesImport.update({
+  id: '/general/resources',
+  path: '/general/resources',
   getParentRoute: () => rootRoute,
 } as any)
 
-const TableExample2Route = TableExample2Import.update({
-  id: '/table/example2',
-  path: '/table/example2',
-  getParentRoute: () => rootRoute,
+const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
+  id: '/table/',
+  path: '/table/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
+  id: '/button/',
+  path: '/button/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTableLoadOnScrollSpinnerRoute =
+  ComponentsTableLoadOnScrollSpinnerImport.update({
+    id: '/table/loadOnScrollSpinner',
+    path: '/table/loadOnScrollSpinner',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTableLoadOnScrollRoute =
+  ComponentsTableLoadOnScrollImport.update({
+    id: '/table/loadOnScroll',
+    path: '/table/loadOnScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsButtonExample2Route = ComponentsButtonExample2Import.update({
+  id: '/button/example2',
+  path: '/button/example2',
+  getParentRoute: () => ComponentsRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -60,87 +83,159 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
+    '/components': {
+      id: '/components'
+      path: '/components'
+      fullPath: '/components'
+      preLoaderRoute: typeof ComponentsImport
       parentRoute: typeof rootRoute
     }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesImport
+    '/general/resources': {
+      id: '/general/resources'
+      path: '/general/resources'
+      fullPath: '/general/resources'
+      preLoaderRoute: typeof GeneralResourcesImport
       parentRoute: typeof rootRoute
     }
-    '/table/example2': {
-      id: '/table/example2'
-      path: '/table/example2'
-      fullPath: '/table/example2'
-      preLoaderRoute: typeof TableExample2Import
-      parentRoute: typeof rootRoute
+    '/components/button/example2': {
+      id: '/components/button/example2'
+      path: '/button/example2'
+      fullPath: '/components/button/example2'
+      preLoaderRoute: typeof ComponentsButtonExample2Import
+      parentRoute: typeof ComponentsImport
     }
-    '/table/': {
-      id: '/table/'
+    '/components/table/loadOnScroll': {
+      id: '/components/table/loadOnScroll'
+      path: '/table/loadOnScroll'
+      fullPath: '/components/table/loadOnScroll'
+      preLoaderRoute: typeof ComponentsTableLoadOnScrollImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/table/loadOnScrollSpinner': {
+      id: '/components/table/loadOnScrollSpinner'
+      path: '/table/loadOnScrollSpinner'
+      fullPath: '/components/table/loadOnScrollSpinner'
+      preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/button/': {
+      id: '/components/button/'
+      path: '/button'
+      fullPath: '/components/button'
+      preLoaderRoute: typeof ComponentsButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/table/': {
+      id: '/components/table/'
       path: '/table'
-      fullPath: '/table'
-      preLoaderRoute: typeof TableIndexImport
-      parentRoute: typeof rootRoute
+      fullPath: '/components/table'
+      preLoaderRoute: typeof ComponentsTableIndexImport
+      parentRoute: typeof ComponentsImport
     }
   }
 }
 
 // Create and export the route tree
 
+interface ComponentsRouteChildren {
+  ComponentsButtonExample2Route: typeof ComponentsButtonExample2Route
+  ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
+  ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
+  ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
+  ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
+}
+
+const ComponentsRouteChildren: ComponentsRouteChildren = {
+  ComponentsButtonExample2Route: ComponentsButtonExample2Route,
+  ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
+  ComponentsTableLoadOnScrollSpinnerRoute:
+    ComponentsTableLoadOnScrollSpinnerRoute,
+  ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
+  ComponentsTableIndexRoute: ComponentsTableIndexRoute,
+}
+
+const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
+  ComponentsRouteChildren,
+)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/resources': typeof ResourcesRoute
-  '/table/example2': typeof TableExample2Route
-  '/table': typeof TableIndexRoute
+  '/components': typeof ComponentsRouteWithChildren
+  '/general/resources': typeof GeneralResourcesRoute
+  '/components/button/example2': typeof ComponentsButtonExample2Route
+  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/button': typeof ComponentsButtonIndexRoute
+  '/components/table': typeof ComponentsTableIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/resources': typeof ResourcesRoute
-  '/table/example2': typeof TableExample2Route
-  '/table': typeof TableIndexRoute
+  '/components': typeof ComponentsRouteWithChildren
+  '/general/resources': typeof GeneralResourcesRoute
+  '/components/button/example2': typeof ComponentsButtonExample2Route
+  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/button': typeof ComponentsButtonIndexRoute
+  '/components/table': typeof ComponentsTableIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/resources': typeof ResourcesRoute
-  '/table/example2': typeof TableExample2Route
-  '/table/': typeof TableIndexRoute
+  '/components': typeof ComponentsRouteWithChildren
+  '/general/resources': typeof GeneralResourcesRoute
+  '/components/button/example2': typeof ComponentsButtonExample2Route
+  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/button/': typeof ComponentsButtonIndexRoute
+  '/components/table/': typeof ComponentsTableIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/resources' | '/table/example2' | '/table'
+  fullPaths:
+    | '/'
+    | '/components'
+    | '/general/resources'
+    | '/components/button/example2'
+    | '/components/table/loadOnScroll'
+    | '/components/table/loadOnScrollSpinner'
+    | '/components/button'
+    | '/components/table'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/resources' | '/table/example2' | '/table'
-  id: '__root__' | '/' | '/about' | '/resources' | '/table/example2' | '/table/'
+  to:
+    | '/'
+    | '/components'
+    | '/general/resources'
+    | '/components/button/example2'
+    | '/components/table/loadOnScroll'
+    | '/components/table/loadOnScrollSpinner'
+    | '/components/button'
+    | '/components/table'
+  id:
+    | '__root__'
+    | '/'
+    | '/components'
+    | '/general/resources'
+    | '/components/button/example2'
+    | '/components/table/loadOnScroll'
+    | '/components/table/loadOnScrollSpinner'
+    | '/components/button/'
+    | '/components/table/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  ResourcesRoute: typeof ResourcesRoute
-  TableExample2Route: typeof TableExample2Route
-  TableIndexRoute: typeof TableIndexRoute
+  ComponentsRoute: typeof ComponentsRouteWithChildren
+  GeneralResourcesRoute: typeof GeneralResourcesRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ResourcesRoute: ResourcesRoute,
-  TableExample2Route: TableExample2Route,
-  TableIndexRoute: TableIndexRoute,
+  ComponentsRoute: ComponentsRouteWithChildren,
+  GeneralResourcesRoute: GeneralResourcesRoute,
 }
 
 export const routeTree = rootRoute
@@ -156,26 +251,45 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about",
-        "/resources",
-        "/table/example2",
-        "/table/"
+        "/components",
+        "/general/resources"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/about": {
-      "filePath": "about.tsx"
+    "/components": {
+      "filePath": "components.tsx",
+      "children": [
+        "/components/button/example2",
+        "/components/table/loadOnScroll",
+        "/components/table/loadOnScrollSpinner",
+        "/components/button/",
+        "/components/table/"
+      ]
     },
-    "/resources": {
-      "filePath": "resources.tsx"
+    "/general/resources": {
+      "filePath": "general/resources.tsx"
     },
-    "/table/example2": {
-      "filePath": "table/example2.tsx"
+    "/components/button/example2": {
+      "filePath": "components/button/example2.tsx",
+      "parent": "/components"
     },
-    "/table/": {
-      "filePath": "table/index.tsx"
+    "/components/table/loadOnScroll": {
+      "filePath": "components/table/loadOnScroll.tsx",
+      "parent": "/components"
+    },
+    "/components/table/loadOnScrollSpinner": {
+      "filePath": "components/table/loadOnScrollSpinner.tsx",
+      "parent": "/components"
+    },
+    "/components/button/": {
+      "filePath": "components/button/index.tsx",
+      "parent": "/components"
+    },
+    "/components/table/": {
+      "filePath": "components/table/index.tsx",
+      "parent": "/components"
     }
   }
 }

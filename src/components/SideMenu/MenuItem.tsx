@@ -2,8 +2,9 @@ import styled, { css } from 'styled-components';
 import type { HTMLAttributes, ReactNode, MouseEvent, FC } from 'react';
 import React, { useState, useCallback } from 'react';
 import { typography, OpenStatusButton } from '@admiral-ds/react-ui';
+import { Link, useNavigate } from '@tanstack/react-router';
 
-const Item = styled.div`
+const Item = styled(Link)`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -11,11 +12,17 @@ const Item = styled.div`
   width: 100%;
   height: 40px;
   box-sizing: border-box;
-  padding: 10px 12px 10px 32px;
+  padding: 10px 12px 10px 8px;
+  margin-top: 8px;
+  &:is(.example) {
+    padding: 10px 12px 10px 28px;
+  }
   margin-top: 8px;
   border-left: 4px solid transparent;
   border-radius: 4px;
+  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
   ${typography['Body/Body 2 Long']}
+  text-decoration: none;
 
   &:hover {
     background: var(--admiral-color-Opacity_Hover, ${(p) => p.theme.color['Opacity/Hover']});
@@ -25,6 +32,7 @@ const Item = styled.div`
   }
   &[data-selected='true'] {
     border-left-color: var(--admiral-color-Primary_Primary60Main, ${(p) => p.theme.color['Primary/Primary 60 Main']});
+    background: var(--admiral-color-Opacity_Focus, ${(p) => p.theme.color['Opacity/Focus']});
   }
 `;
 
@@ -97,11 +105,15 @@ export const ItemTitle = styled.button`
   border: none;
   border-radius: 4px;
   background: none;
-  margin: 0;
+  margin: 8px 0 0 0;
   padding: 0;
   overflow: visible;
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-  ${typography['Subtitle/Subtitle 3']}
+  text-decoration: none;
+  ${typography['Body/Body 2 Long']}
+  &:is(.topLevel) {
+    ${typography['Subtitle/Subtitle 3']}
+  }
 
   &:not(:disabled) {
     ${eventsMixin}
@@ -115,14 +127,12 @@ export const ItemContent = styled.div`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
   overflow-y: auto;
   max-height: 100vh;
-  ${typography['Body/Body 2 Long']}
 `;
 
 export interface AccordionItemProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'onClick' | 'title'> {
-  id: string;
   /** Заголовок компонента */
   title: ReactNode;
-  /** дефолтное (изначальное) состояние компонента (раскрыт/свернут) при неконтролируемом режиме работы */
+  /** Дефолтное (изначальное) состояние компонента (раскрыт/свернут) при неконтролируемом режиме работы */
   defaultExpanded?: boolean;
   /** Колбек на клик по компоненту */
   onClick?: (title: ReactNode, expanded: boolean, event: MouseEvent<HTMLButtonElement>) => void;
@@ -133,15 +143,12 @@ export interface AccordionItemProps extends Omit<HTMLAttributes<HTMLButtonElemen
 export const AccordionItem: FC<AccordionItemProps> = ({
   children,
   title,
-  id,
   defaultExpanded,
   onClick,
   disabled,
   ...props
 }) => {
   const [expanded, setExpanded] = useState(defaultExpanded);
-  const ITEM_TITLE_ID = `accordion_title_${id}`;
-  const ITEM_CONTENT_ID = `accordion_content_${id}`;
 
   const handleClick = useCallback(
     (event: MouseEvent<HTMLButtonElement>) => {
@@ -157,8 +164,6 @@ export const AccordionItem: FC<AccordionItemProps> = ({
         role="button"
         type="button"
         aria-expanded={expanded}
-        aria-controls={ITEM_CONTENT_ID}
-        id={ITEM_TITLE_ID}
         disabled={disabled}
         {...props}
       >
@@ -168,26 +173,41 @@ export const AccordionItem: FC<AccordionItemProps> = ({
         </ItemTitleContent>
       </ItemTitle>
       <Collapse $opened={expanded}>
-        <ItemContent role="region" aria-labelledby={ITEM_TITLE_ID} id={ITEM_CONTENT_ID}>
-          {children}
-        </ItemContent>
+        <ItemContent role="region">{children}</ItemContent>
       </Collapse>
     </>
   );
 };
 
-interface MenuItemProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
-  expandable?: boolean;
-  title: ReactNode;
-  id: string;
-}
+export const MenuItem: React.FC<{ to: string; title: ReactNode; className?: string }> = ({ title, to, className }) => {
+  return (
+    <Item to={to} activeOptions={{ exact: true }} activeProps={{ 'data-selected': `true` }} className={className}>
+      {title}
+    </Item>
+  );
+};
 
-export const MenuItem: React.FC<MenuItemProps> = ({ expandable, title, id, children }) => {
-  return expandable ? (
-    <AccordionItem id={id} title={title}>
+export const ExpandedMenuItem: React.FC<{
+  title: ReactNode;
+  children: ReactNode;
+  to?: string;
+  className?: string;
+  defaultExpanded?: boolean;
+}> = ({ title, to, children, className, defaultExpanded = false }) => {
+  const navigate = useNavigate();
+  const handleClick = (_title: ReactNode, expanded: boolean) => {
+    if (expanded) {
+      navigate({ to });
+    }
+  };
+  return (
+    <AccordionItem
+      title={title}
+      className={className}
+      defaultExpanded={defaultExpanded}
+      onClick={to ? handleClick : undefined}
+    >
       {children}
     </AccordionItem>
-  ) : (
-    <Item>{title}</Item>
   );
 };
