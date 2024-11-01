@@ -3,8 +3,11 @@ export const components = [
     name: 'Button',
     path: '/components/button/',
     routes: [
-      { name: 'Example1', path: '/components/button/' },
-      { name: 'Example2', path: '/components/button/example2' },
+      { name: 'Базовый пример', path: '/components/button/' },
+      { name: 'Стили', path: '/components/button/buttonStyles' },
+      { name: 'С иконкой', path: '/components/button/buttonWithIcon' },
+      { name: 'С лоадером', path: '/components/button/buttonWithLoader' },
+      { name: 'С бейджем', path: '/components/button/buttonWithBadge' },
     ],
   },
   {
