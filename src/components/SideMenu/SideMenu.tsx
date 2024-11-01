@@ -3,6 +3,7 @@ import { MenuItem, ExpandedMenuItem } from './MenuItem';
 import { MenuTitle } from './MenuTitle';
 import { components } from './data';
 import styled from 'styled-components';
+import { version } from '@admiral-ds/react-ui/package.json';
 
 const MenuWrapper = styled.div`
   width: 288px;
@@ -28,7 +29,7 @@ const MenuContent = styled(ScrollContainer)`
 export const SideMenu = () => {
   return (
     <MenuWrapper>
-      <MenuTitle title="Admiral" version="V 8.4.0" />
+      <MenuTitle title="Admiral" version={version} />
 
       <MenuContent>
         <ExpandedMenuItem title="Get Started" className="topLevel" to="/general/resources" defaultExpanded>
