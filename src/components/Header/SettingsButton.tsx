@@ -1,4 +1,4 @@
-import { useRef, useState, useContext, useCallback } from 'react';
+import { useState, useContext, useCallback } from 'react';
 import styled from 'styled-components';
 import {
   IconButton,

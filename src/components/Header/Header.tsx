@@ -1,7 +1,6 @@
 import { IconButton, LinkComponentCssMixin, TooltipHoc } from '@admiral-ds/react-ui';
 import type { LinkComponentProps } from '@admiral-ds/react-ui';
 import BugSolid from '@admiral-ds/icons/build/category/BugSolid.svg?react';
-import MenuOutline from '@admiral-ds/icons/build/service/MenuOutline.svg?react';
 import { Link } from '@tanstack/react-router';
 
 import GithubSolid from './GithubIcon.svg?react';

@@ -2,8 +2,7 @@ import { BorderRadiusType, LIGHT_THEME, Theme } from '@admiral-ds/react-ui';
 import type { CSSPropsIn } from './SettingsContext';
 
 const getNumFromStr = (str: string) => {
-  let result = str;
-  return result.replace(/^\D+/g, '');
+  return str.replace(/^\D+/g, '');
 };
 
 export function createBorderRadiusSwapper(borderRadiusKind?: BorderRadiusType, CSSCustomProps?: CSSPropsIn) {

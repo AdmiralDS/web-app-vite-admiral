@@ -67,7 +67,7 @@ export const TableLoadOnScrollSkeleton = () => {
       setLoading(true);
       setRowsAmount((amount) => amount + 10);
 
-      let promise = new Promise(function (resolve) {
+      const promise = new Promise(function (resolve) {
         // load new data
         setTimeout(() => resolve('done'), 2000);
       });

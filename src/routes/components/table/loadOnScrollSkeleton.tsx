@@ -5,13 +5,6 @@ import styled from 'styled-components';
 import { PseudoText, skeletonAnimationMixin, Spinner, Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  margin: 15px;
-`
-
 const SkeletonComponent = styled(PseudoText)`
   width: 100%;
   ${skeletonAnimationMixin}
@@ -133,7 +126,7 @@ export const TableLoadOnScrollSkeleton = () => {
       setLoading(true);
       setRowsAmount((amount) => amount + 10);
 
-      let promise = new Promise(function (resolve) {
+      const promise = new Promise(function (resolve) {
         // load new data
         setTimeout(() => resolve('done'), 2000);
       });

@@ -51,7 +51,7 @@ const TableLoadOnScrollSpinner = () => {
     if (rowsAmount < TOTAL_ROWS_AMOUNT) {
       setLoading(true);
 
-      let promise = new Promise(function (resolve) {
+      const promise = new Promise(function (resolve) {
         setTimeout(() => resolve('done'), 1000);
       });
 
