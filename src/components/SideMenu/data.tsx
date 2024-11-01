@@ -11,9 +11,9 @@ export const components = [
     name: 'Table',
     path: '/components/table/',
     routes: [
-      { name: 'Basic', path: '/components/table/' },
-      { name: 'Load on scroll', path: '/components/table/loadOnScroll' },
-      { name: 'Load on scroll with Spinner', path: '/components/table/loadOnScrollSpinner' },
+      { name: 'Базовый пример', path: '/components/table/' },
+      { name: 'Загрузка данных при скролле', path: '/components/table/loadOnScroll' },
+      { name: 'Загрузка данных при скролле со спиннером', path: '/components/table/loadOnScrollSpinner' },
     ],
   },
 ];

@@ -10,7 +10,7 @@ const Item = styled(Link)`
   align-items: flex-start;
   flex-grow: 0;
   width: 100%;
-  height: 40px;
+  min-height: 40px;
   box-sizing: border-box;
   padding: 10px 12px 10px 8px;
   margin-top: 8px;
