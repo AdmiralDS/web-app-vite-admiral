@@ -17,6 +17,7 @@ import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
+import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
 import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/components/button/buttonWithLoader'
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
@@ -59,6 +60,13 @@ const ComponentsTableLoadOnScrollSpinnerRoute =
   ComponentsTableLoadOnScrollSpinnerImport.update({
     id: '/table/loadOnScrollSpinner',
     path: '/table/loadOnScrollSpinner',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTableLoadOnScrollSkeletonRoute =
+  ComponentsTableLoadOnScrollSkeletonImport.update({
+    id: '/table/loadOnScrollSkeleton',
+    path: '/table/loadOnScrollSkeleton',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -157,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableLoadOnScrollImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/table/loadOnScrollSkeleton': {
+      id: '/components/table/loadOnScrollSkeleton'
+      path: '/table/loadOnScrollSkeleton'
+      fullPath: '/components/table/loadOnScrollSkeleton'
+      preLoaderRoute: typeof ComponentsTableLoadOnScrollSkeletonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScrollSpinner': {
       id: '/components/table/loadOnScrollSpinner'
       path: '/table/loadOnScrollSpinner'
@@ -189,6 +204,7 @@ interface ComponentsRouteChildren {
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
   ComponentsButtonButtonWithLoaderRoute: typeof ComponentsButtonButtonWithLoaderRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
+  ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
@@ -200,6 +216,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
   ComponentsButtonButtonWithLoaderRoute: ComponentsButtonButtonWithLoaderRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
+  ComponentsTableLoadOnScrollSkeletonRoute:
+    ComponentsTableLoadOnScrollSkeletonRoute,
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
@@ -219,6 +237,7 @@ export interface FileRoutesByFullPath {
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -233,6 +252,7 @@ export interface FileRoutesByTo {
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -248,6 +268,7 @@ export interface FileRoutesById {
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
@@ -264,6 +285,7 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
     | '/components/table/loadOnScroll'
+    | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/button'
     | '/components/table'
@@ -277,6 +299,7 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
     | '/components/table/loadOnScroll'
+    | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/button'
     | '/components/table'
@@ -290,6 +313,7 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
     | '/components/table/loadOnScroll'
+    | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/button/'
     | '/components/table/'
@@ -334,6 +358,7 @@ export const routeTree = rootRoute
         "/components/button/buttonWithIcon",
         "/components/button/buttonWithLoader",
         "/components/table/loadOnScroll",
+        "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
         "/components/button/",
         "/components/table/"
@@ -360,6 +385,10 @@ export const routeTree = rootRoute
     },
     "/components/table/loadOnScroll": {
       "filePath": "components/table/loadOnScroll.tsx",
+      "parent": "/components"
+    },
+    "/components/table/loadOnScrollSkeleton": {
+      "filePath": "components/table/loadOnScrollSkeleton.tsx",
       "parent": "/components"
     },
     "/components/table/loadOnScrollSpinner": {

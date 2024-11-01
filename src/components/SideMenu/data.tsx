@@ -17,6 +17,7 @@ export const components = [
       { name: 'Базовый пример', path: '/components/table/' },
       { name: 'Загрузка данных при скролле', path: '/components/table/loadOnScroll' },
       { name: 'Загрузка данных при скролле со спиннером', path: '/components/table/loadOnScrollSpinner' },
+      { name: 'Загрузка данных при скролле со скелетоном', path: '/components/table/loadOnScrollSkeleton' },
     ],
   },
 ];
