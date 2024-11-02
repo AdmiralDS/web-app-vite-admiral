@@ -15,6 +15,7 @@ import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
+import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
 import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
@@ -22,6 +23,7 @@ import { Route as ComponentsAccordionIndexImport } from './routes/components/acc
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from './routes/components/carouselSlider/carouselSliderAutoChange'
 import { Route as ComponentsCarouselCarouselAutoChangeImport } from './routes/components/carousel/carouselAutoChange'
 import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/components/button/buttonWithLoader'
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
@@ -59,6 +61,13 @@ const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
   path: '/table/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsCarouselSliderIndexRoute =
+  ComponentsCarouselSliderIndexImport.update({
+    id: '/carouselSlider/',
+    path: '/carouselSlider/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsCarouselIndexRoute = ComponentsCarouselIndexImport.update({
   id: '/carousel/',
@@ -102,6 +111,13 @@ const ComponentsTableLoadOnScrollRoute =
   ComponentsTableLoadOnScrollImport.update({
     id: '/table/loadOnScroll',
     path: '/table/loadOnScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCarouselSliderCarouselSliderAutoChangeRoute =
+  ComponentsCarouselSliderCarouselSliderAutoChangeImport.update({
+    id: '/carouselSlider/carouselSliderAutoChange',
+    path: '/carouselSlider/carouselSliderAutoChange',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -284,6 +300,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsCarouselCarouselAutoChangeImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/carouselSlider/carouselSliderAutoChange': {
+      id: '/components/carouselSlider/carouselSliderAutoChange'
+      path: '/carouselSlider/carouselSliderAutoChange'
+      fullPath: '/components/carouselSlider/carouselSliderAutoChange'
+      preLoaderRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScroll': {
       id: '/components/table/loadOnScroll'
       path: '/table/loadOnScroll'
@@ -333,6 +356,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsCarouselIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/carouselSlider/': {
+      id: '/components/carouselSlider/'
+      path: '/carouselSlider'
+      fullPath: '/components/carouselSlider'
+      preLoaderRoute: typeof ComponentsCarouselSliderIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/': {
       id: '/components/table/'
       path: '/table'
@@ -357,6 +387,7 @@ interface ComponentsRouteChildren {
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
   ComponentsButtonButtonWithLoaderRoute: typeof ComponentsButtonButtonWithLoaderRoute
   ComponentsCarouselCarouselAutoChangeRoute: typeof ComponentsCarouselCarouselAutoChangeRoute
+  ComponentsCarouselSliderCarouselSliderAutoChangeRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -364,6 +395,7 @@ interface ComponentsRouteChildren {
   ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
+  ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
 
@@ -384,6 +416,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsButtonButtonWithLoaderRoute: ComponentsButtonButtonWithLoaderRoute,
   ComponentsCarouselCarouselAutoChangeRoute:
     ComponentsCarouselCarouselAutoChangeRoute,
+  ComponentsCarouselSliderCarouselSliderAutoChangeRoute:
+    ComponentsCarouselSliderCarouselSliderAutoChangeRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
   ComponentsTableLoadOnScrollSkeletonRoute:
     ComponentsTableLoadOnScrollSkeletonRoute,
@@ -393,6 +427,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsBadgeIndexRoute: ComponentsBadgeIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
+  ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
 
@@ -415,6 +450,7 @@ export interface FileRoutesByFullPath {
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
+  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -422,6 +458,7 @@ export interface FileRoutesByFullPath {
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
+  '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
 
@@ -440,6 +477,7 @@ export interface FileRoutesByTo {
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
+  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -447,6 +485,7 @@ export interface FileRoutesByTo {
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
+  '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
 
@@ -466,6 +505,7 @@ export interface FileRoutesById {
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
+  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -473,6 +513,7 @@ export interface FileRoutesById {
   '/components/badge/': typeof ComponentsBadgeIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
+  '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
 
@@ -493,6 +534,7 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
     | '/components/carousel/carouselAutoChange'
+    | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -500,6 +542,7 @@ export interface FileRouteTypes {
     | '/components/badge'
     | '/components/button'
     | '/components/carousel'
+    | '/components/carouselSlider'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -517,6 +560,7 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
     | '/components/carousel/carouselAutoChange'
+    | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -524,6 +568,7 @@ export interface FileRouteTypes {
     | '/components/badge'
     | '/components/button'
     | '/components/carousel'
+    | '/components/carouselSlider'
     | '/components/table'
   id:
     | '__root__'
@@ -541,6 +586,7 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
     | '/components/carousel/carouselAutoChange'
+    | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -548,6 +594,7 @@ export interface FileRouteTypes {
     | '/components/badge/'
     | '/components/button/'
     | '/components/carousel/'
+    | '/components/carouselSlider/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
 }
@@ -596,6 +643,7 @@ export const routeTree = rootRoute
         "/components/button/buttonWithIcon",
         "/components/button/buttonWithLoader",
         "/components/carousel/carouselAutoChange",
+        "/components/carouselSlider/carouselSliderAutoChange",
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
@@ -603,6 +651,7 @@ export const routeTree = rootRoute
         "/components/badge/",
         "/components/button/",
         "/components/carousel/",
+        "/components/carouselSlider/",
         "/components/table/"
       ]
     },
@@ -653,6 +702,10 @@ export const routeTree = rootRoute
       "filePath": "components/carousel/carouselAutoChange.tsx",
       "parent": "/components"
     },
+    "/components/carouselSlider/carouselSliderAutoChange": {
+      "filePath": "components/carouselSlider/carouselSliderAutoChange.tsx",
+      "parent": "/components"
+    },
     "/components/table/loadOnScroll": {
       "filePath": "components/table/loadOnScroll.tsx",
       "parent": "/components"
@@ -679,6 +732,10 @@ export const routeTree = rootRoute
     },
     "/components/carousel/": {
       "filePath": "components/carousel/index.tsx",
+      "parent": "/components"
+    },
+    "/components/carouselSlider/": {
+      "filePath": "components/carouselSlider/index.tsx",
       "parent": "/components"
     },
     "/components/table/": {

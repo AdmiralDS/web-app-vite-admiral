@@ -39,6 +39,14 @@ export const components = [
     ],
   },
   {
+    name: 'CarouselSlider',
+    path: '/components/carouselSlider/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/carouselSlider/' },
+      { name: 'Автоматическое переключение', path: '/components/carouselSlider/carouselSliderAutoChange' },
+    ],
+  },
+  {
     name: 'Table',
     path: '/components/table/',
     routes: [
