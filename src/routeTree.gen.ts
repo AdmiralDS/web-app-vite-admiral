@@ -16,6 +16,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
+import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
@@ -23,6 +24,10 @@ import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/compon
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
 import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
 import { Route as ComponentsButtonButtonStylesImport } from './routes/components/button/buttonStyles'
+import { Route as ComponentsAccordionAccordionModesImport } from './routes/components/accordion/accordionModes'
+import { Route as ComponentsAccordionAccordionIconImport } from './routes/components/accordion/accordionIcon'
+import { Route as ComponentsAccordionAccordionDividerImport } from './routes/components/accordion/accordionDivider'
+import { Route as ComponentsAccordionAccordionDimensionImport } from './routes/components/accordion/accordionDimension'
 
 // Create/Update Routes
 
@@ -53,6 +58,12 @@ const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
 const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
   id: '/button/',
   path: '/button/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsAccordionIndexRoute = ComponentsAccordionIndexImport.update({
+  id: '/accordion/',
+  path: '/accordion/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -105,6 +116,34 @@ const ComponentsButtonButtonStylesRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsAccordionAccordionModesRoute =
+  ComponentsAccordionAccordionModesImport.update({
+    id: '/accordion/accordionModes',
+    path: '/accordion/accordionModes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsAccordionAccordionIconRoute =
+  ComponentsAccordionAccordionIconImport.update({
+    id: '/accordion/accordionIcon',
+    path: '/accordion/accordionIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsAccordionAccordionDividerRoute =
+  ComponentsAccordionAccordionDividerImport.update({
+    id: '/accordion/accordionDivider',
+    path: '/accordion/accordionDivider',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsAccordionAccordionDimensionRoute =
+  ComponentsAccordionAccordionDimensionImport.update({
+    id: '/accordion/accordionDimension',
+    path: '/accordion/accordionDimension',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -129,6 +168,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/general/resources'
       preLoaderRoute: typeof GeneralResourcesImport
       parentRoute: typeof rootRoute
+    }
+    '/components/accordion/accordionDimension': {
+      id: '/components/accordion/accordionDimension'
+      path: '/accordion/accordionDimension'
+      fullPath: '/components/accordion/accordionDimension'
+      preLoaderRoute: typeof ComponentsAccordionAccordionDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/accordion/accordionDivider': {
+      id: '/components/accordion/accordionDivider'
+      path: '/accordion/accordionDivider'
+      fullPath: '/components/accordion/accordionDivider'
+      preLoaderRoute: typeof ComponentsAccordionAccordionDividerImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/accordion/accordionIcon': {
+      id: '/components/accordion/accordionIcon'
+      path: '/accordion/accordionIcon'
+      fullPath: '/components/accordion/accordionIcon'
+      preLoaderRoute: typeof ComponentsAccordionAccordionIconImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/accordion/accordionModes': {
+      id: '/components/accordion/accordionModes'
+      path: '/accordion/accordionModes'
+      fullPath: '/components/accordion/accordionModes'
+      preLoaderRoute: typeof ComponentsAccordionAccordionModesImport
+      parentRoute: typeof ComponentsImport
     }
     '/components/button/buttonStyles': {
       id: '/components/button/buttonStyles'
@@ -179,6 +246,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/accordion/': {
+      id: '/components/accordion/'
+      path: '/accordion'
+      fullPath: '/components/accordion'
+      preLoaderRoute: typeof ComponentsAccordionIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/': {
       id: '/components/button/'
       path: '/button'
@@ -199,6 +273,10 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 interface ComponentsRouteChildren {
+  ComponentsAccordionAccordionDimensionRoute: typeof ComponentsAccordionAccordionDimensionRoute
+  ComponentsAccordionAccordionDividerRoute: typeof ComponentsAccordionAccordionDividerRoute
+  ComponentsAccordionAccordionIconRoute: typeof ComponentsAccordionAccordionIconRoute
+  ComponentsAccordionAccordionModesRoute: typeof ComponentsAccordionAccordionModesRoute
   ComponentsButtonButtonStylesRoute: typeof ComponentsButtonButtonStylesRoute
   ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
@@ -206,11 +284,19 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
+  ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
 
 const ComponentsRouteChildren: ComponentsRouteChildren = {
+  ComponentsAccordionAccordionDimensionRoute:
+    ComponentsAccordionAccordionDimensionRoute,
+  ComponentsAccordionAccordionDividerRoute:
+    ComponentsAccordionAccordionDividerRoute,
+  ComponentsAccordionAccordionIconRoute: ComponentsAccordionAccordionIconRoute,
+  ComponentsAccordionAccordionModesRoute:
+    ComponentsAccordionAccordionModesRoute,
   ComponentsButtonButtonStylesRoute: ComponentsButtonButtonStylesRoute,
   ComponentsButtonButtonWithBadgeRoute: ComponentsButtonButtonWithBadgeRoute,
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
@@ -220,6 +306,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableLoadOnScrollSkeletonRoute,
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
+  ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
@@ -232,6 +319,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general/resources': typeof GeneralResourcesRoute
+  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
+  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
+  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
+  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -239,6 +330,7 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -247,6 +339,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general/resources': typeof GeneralResourcesRoute
+  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
+  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
+  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
+  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -254,6 +350,7 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -263,6 +360,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general/resources': typeof GeneralResourcesRoute
+  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
+  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
+  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
+  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -270,6 +371,7 @@ export interface FileRoutesById {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/accordion/': typeof ComponentsAccordionIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
@@ -280,6 +382,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general/resources'
+    | '/components/accordion/accordionDimension'
+    | '/components/accordion/accordionDivider'
+    | '/components/accordion/accordionIcon'
+    | '/components/accordion/accordionModes'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -287,6 +393,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/accordion'
     | '/components/button'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
@@ -294,6 +401,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general/resources'
+    | '/components/accordion/accordionDimension'
+    | '/components/accordion/accordionDivider'
+    | '/components/accordion/accordionIcon'
+    | '/components/accordion/accordionModes'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -301,6 +412,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/accordion'
     | '/components/button'
     | '/components/table'
   id:
@@ -308,6 +420,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general/resources'
+    | '/components/accordion/accordionDimension'
+    | '/components/accordion/accordionDivider'
+    | '/components/accordion/accordionIcon'
+    | '/components/accordion/accordionModes'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -315,6 +431,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/accordion/'
     | '/components/button/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
@@ -353,6 +470,10 @@ export const routeTree = rootRoute
     "/components": {
       "filePath": "components.tsx",
       "children": [
+        "/components/accordion/accordionDimension",
+        "/components/accordion/accordionDivider",
+        "/components/accordion/accordionIcon",
+        "/components/accordion/accordionModes",
         "/components/button/buttonStyles",
         "/components/button/buttonWithBadge",
         "/components/button/buttonWithIcon",
@@ -360,12 +481,29 @@ export const routeTree = rootRoute
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
+        "/components/accordion/",
         "/components/button/",
         "/components/table/"
       ]
     },
     "/general/resources": {
       "filePath": "general/resources.tsx"
+    },
+    "/components/accordion/accordionDimension": {
+      "filePath": "components/accordion/accordionDimension.tsx",
+      "parent": "/components"
+    },
+    "/components/accordion/accordionDivider": {
+      "filePath": "components/accordion/accordionDivider.tsx",
+      "parent": "/components"
+    },
+    "/components/accordion/accordionIcon": {
+      "filePath": "components/accordion/accordionIcon.tsx",
+      "parent": "/components"
+    },
+    "/components/accordion/accordionModes": {
+      "filePath": "components/accordion/accordionModes.tsx",
+      "parent": "/components"
     },
     "/components/button/buttonStyles": {
       "filePath": "components/button/buttonStyles.tsx",
@@ -393,6 +531,10 @@ export const routeTree = rootRoute
     },
     "/components/table/loadOnScrollSpinner": {
       "filePath": "components/table/loadOnScrollSpinner.tsx",
+      "parent": "/components"
+    },
+    "/components/accordion/": {
+      "filePath": "components/accordion/index.tsx",
       "parent": "/components"
     },
     "/components/button/": {

@@ -1,5 +1,16 @@
 export const components = [
   {
+    name: 'Accordion',
+    path: '/components/accordion/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/accordion/' },
+      { name: 'Размеры', path: '/components/accordion/accordionDimension' },
+      { name: 'Скрытие разделителей', path: '/components/accordion/accordionDivider' },
+      { name: 'Расположение шеврона слева', path: '/components/accordion/accordionIcon' },
+      { name: 'Режимы использования', path: '/components/accordion/accordionModes' },
+    ],
+  },
+  {
     name: 'Button',
     path: '/components/button/',
     routes: [
