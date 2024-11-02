@@ -16,6 +16,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
+import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
@@ -24,6 +25,8 @@ import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/compon
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
 import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
 import { Route as ComponentsButtonButtonStylesImport } from './routes/components/button/buttonStyles'
+import { Route as ComponentsBadgeBadgeVariantsImport } from './routes/components/badge/badgeVariants'
+import { Route as ComponentsBadgeBadgeAccessibilityImport } from './routes/components/badge/badgeAccessibility'
 import { Route as ComponentsAccordionAccordionModesImport } from './routes/components/accordion/accordionModes'
 import { Route as ComponentsAccordionAccordionIconImport } from './routes/components/accordion/accordionIcon'
 import { Route as ComponentsAccordionAccordionDividerImport } from './routes/components/accordion/accordionDivider'
@@ -58,6 +61,12 @@ const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
 const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
   id: '/button/',
   path: '/button/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsBadgeIndexRoute = ComponentsBadgeIndexImport.update({
+  id: '/badge/',
+  path: '/badge/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -113,6 +122,20 @@ const ComponentsButtonButtonStylesRoute =
   ComponentsButtonButtonStylesImport.update({
     id: '/button/buttonStyles',
     path: '/button/buttonStyles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsBadgeBadgeVariantsRoute =
+  ComponentsBadgeBadgeVariantsImport.update({
+    id: '/badge/badgeVariants',
+    path: '/badge/badgeVariants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsBadgeBadgeAccessibilityRoute =
+  ComponentsBadgeBadgeAccessibilityImport.update({
+    id: '/badge/badgeAccessibility',
+    path: '/badge/badgeAccessibility',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -197,6 +220,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsAccordionAccordionModesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/badge/badgeAccessibility': {
+      id: '/components/badge/badgeAccessibility'
+      path: '/badge/badgeAccessibility'
+      fullPath: '/components/badge/badgeAccessibility'
+      preLoaderRoute: typeof ComponentsBadgeBadgeAccessibilityImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/badge/badgeVariants': {
+      id: '/components/badge/badgeVariants'
+      path: '/badge/badgeVariants'
+      fullPath: '/components/badge/badgeVariants'
+      preLoaderRoute: typeof ComponentsBadgeBadgeVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/buttonStyles': {
       id: '/components/button/buttonStyles'
       path: '/button/buttonStyles'
@@ -253,6 +290,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsAccordionIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/badge/': {
+      id: '/components/badge/'
+      path: '/badge'
+      fullPath: '/components/badge'
+      preLoaderRoute: typeof ComponentsBadgeIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/': {
       id: '/components/button/'
       path: '/button'
@@ -277,6 +321,8 @@ interface ComponentsRouteChildren {
   ComponentsAccordionAccordionDividerRoute: typeof ComponentsAccordionAccordionDividerRoute
   ComponentsAccordionAccordionIconRoute: typeof ComponentsAccordionAccordionIconRoute
   ComponentsAccordionAccordionModesRoute: typeof ComponentsAccordionAccordionModesRoute
+  ComponentsBadgeBadgeAccessibilityRoute: typeof ComponentsBadgeBadgeAccessibilityRoute
+  ComponentsBadgeBadgeVariantsRoute: typeof ComponentsBadgeBadgeVariantsRoute
   ComponentsButtonButtonStylesRoute: typeof ComponentsButtonButtonStylesRoute
   ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
@@ -285,6 +331,7 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
+  ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
@@ -297,6 +344,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsAccordionAccordionIconRoute: ComponentsAccordionAccordionIconRoute,
   ComponentsAccordionAccordionModesRoute:
     ComponentsAccordionAccordionModesRoute,
+  ComponentsBadgeBadgeAccessibilityRoute:
+    ComponentsBadgeBadgeAccessibilityRoute,
+  ComponentsBadgeBadgeVariantsRoute: ComponentsBadgeBadgeVariantsRoute,
   ComponentsButtonButtonStylesRoute: ComponentsButtonButtonStylesRoute,
   ComponentsButtonButtonWithBadgeRoute: ComponentsButtonButtonWithBadgeRoute,
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
@@ -307,6 +357,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
+  ComponentsBadgeIndexRoute: ComponentsBadgeIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
@@ -323,6 +374,8 @@ export interface FileRoutesByFullPath {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
+  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -331,6 +384,7 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
+  '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -343,6 +397,8 @@ export interface FileRoutesByTo {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
+  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -351,6 +407,7 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
+  '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -364,6 +421,8 @@ export interface FileRoutesById {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
+  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -372,6 +431,7 @@ export interface FileRoutesById {
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
+  '/components/badge/': typeof ComponentsBadgeIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
@@ -386,6 +446,8 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/badge/badgeAccessibility'
+    | '/components/badge/badgeVariants'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -394,6 +456,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion'
+    | '/components/badge'
     | '/components/button'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
@@ -405,6 +468,8 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/badge/badgeAccessibility'
+    | '/components/badge/badgeVariants'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -413,6 +478,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion'
+    | '/components/badge'
     | '/components/button'
     | '/components/table'
   id:
@@ -424,6 +490,8 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/badge/badgeAccessibility'
+    | '/components/badge/badgeVariants'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -432,6 +500,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion/'
+    | '/components/badge/'
     | '/components/button/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
@@ -474,6 +543,8 @@ export const routeTree = rootRoute
         "/components/accordion/accordionDivider",
         "/components/accordion/accordionIcon",
         "/components/accordion/accordionModes",
+        "/components/badge/badgeAccessibility",
+        "/components/badge/badgeVariants",
         "/components/button/buttonStyles",
         "/components/button/buttonWithBadge",
         "/components/button/buttonWithIcon",
@@ -482,6 +553,7 @@ export const routeTree = rootRoute
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
         "/components/accordion/",
+        "/components/badge/",
         "/components/button/",
         "/components/table/"
       ]
@@ -503,6 +575,14 @@ export const routeTree = rootRoute
     },
     "/components/accordion/accordionModes": {
       "filePath": "components/accordion/accordionModes.tsx",
+      "parent": "/components"
+    },
+    "/components/badge/badgeAccessibility": {
+      "filePath": "components/badge/badgeAccessibility.tsx",
+      "parent": "/components"
+    },
+    "/components/badge/badgeVariants": {
+      "filePath": "components/badge/badgeVariants.tsx",
       "parent": "/components"
     },
     "/components/button/buttonStyles": {
@@ -535,6 +615,10 @@ export const routeTree = rootRoute
     },
     "/components/accordion/": {
       "filePath": "components/accordion/index.tsx",
+      "parent": "/components"
+    },
+    "/components/badge/": {
+      "filePath": "components/badge/index.tsx",
       "parent": "/components"
     },
     "/components/button/": {

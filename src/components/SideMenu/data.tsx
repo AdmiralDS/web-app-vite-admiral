@@ -11,6 +11,15 @@ export const components = [
     ],
   },
   {
+    name: 'Badge',
+    path: '/components/badge/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/badge/' },
+      { name: 'Варианты использования', path: '/components/badge/badgeVariants' },
+      { name: 'Accessibility', path: '/components/badge/badgeAccessibility' },
+    ],
+  },
+  {
     name: 'Button',
     path: '/components/button/',
     routes: [
