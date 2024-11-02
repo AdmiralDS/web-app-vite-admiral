@@ -105,6 +105,7 @@ export const SettingsButton = () => {
         <DefaultButton
           text="Reset to default"
           onClick={() => {
+            toggleTheme('light');
             setCSSProps('enable');
             setBorderRadius('Border radius 4');
           }}

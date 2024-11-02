@@ -1,11 +1,15 @@
-import { IconButton, LinkComponentCssMixin, TooltipHoc } from '@admiral-ds/react-ui';
+import { IconButton, LinkComponentCssMixin, TooltipHoc, Drawer } from '@admiral-ds/react-ui';
 import type { LinkComponentProps } from '@admiral-ds/react-ui';
-import BugSolid from '@admiral-ds/icons/build/category/BugSolid.svg?react';
-import { Link } from '@tanstack/react-router';
-
-import GithubSolid from './GithubIcon.svg?react';
 import styled from 'styled-components';
+import { Link } from '@tanstack/react-router';
+import { useState } from 'react';
 
+import BugSolid from '@admiral-ds/icons/build/category/BugSolid.svg?react';
+import MenuOutline from '@admiral-ds/icons/build/service/MenuOutline.svg?react';
+import GithubSolid from './GithubIcon.svg?react';
+
+import { SideMenu } from '../SideMenu/SideMenu';
+import useMediaQuery from '../useMediaQuery';
 import { SettingsButton } from './SettingsButton';
 import { ThemeToggler } from './ThemeToggler';
 
@@ -29,19 +33,48 @@ const ButtonsWrapper = styled.div`
 
 const HeaderWrapper = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   justify-content: flex-end;
   padding: 16px 4px 7px 0;
   box-sizing: border-box;
   border-bottom: 1px solid var(--admiral-color-Neutral_neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+
+  @media (max-width: 1024px) {
+    justify-content: space-between;
+  }
+  @media (min-width: 1025px) {
+    justify-content: flex-end;
+  }
 `;
 
 export const Header = () => {
+  const [opened, setOpened] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 1024px)');
   return (
     <HeaderWrapper>
-      {/* <ButtonWithTooltip renderContent={() => 'Menu'} dimension="m">
-        <MenuOutline />
-      </ButtonWithTooltip> */}
+      {isMobile && (
+        <>
+          <ButtonWithTooltip
+            renderContent={() => 'Menu'}
+            onClick={() => setOpened((opened) => !opened)}
+            dimension="m"
+            className="burger"
+          >
+            <MenuOutline />
+          </ButtonWithTooltip>
+          <Drawer
+            isOpen={opened}
+            position="left"
+            closeOnBackdropClick
+            closeOnEscapeKeyDown
+            displayCloseIcon={false}
+            onClose={() => setOpened(false)}
+            style={{ minWidth: '288px', maxWidth: '288px' }}
+            aria-labelledby="drawer-title"
+          >
+            <SideMenu />
+          </Drawer>
+        </>
+      )}
       <ButtonsWrapper>
         <RouterLink to="/general/resources" $appearance="secondary" $dimension="s">
           Resources

@@ -27,6 +27,7 @@ const Preview = styled.div`
   flex: 1 0 auto;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   margin-top: 24px;
   background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
 `;
