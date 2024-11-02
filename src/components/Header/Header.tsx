@@ -1,15 +1,13 @@
-import { IconButton, LinkComponentCssMixin, TooltipHoc, Drawer } from '@admiral-ds/react-ui';
+import { IconButton, LinkComponentCssMixin, TooltipHoc } from '@admiral-ds/react-ui';
 import type { LinkComponentProps } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { Link } from '@tanstack/react-router';
-import { useState } from 'react';
 
 import BugSolid from '@admiral-ds/icons/build/category/BugSolid.svg?react';
-import MenuOutline from '@admiral-ds/icons/build/service/MenuOutline.svg?react';
 import GithubSolid from './GithubIcon.svg?react';
 
-import { SideMenu } from '../SideMenu/SideMenu';
 import useMediaQuery from '../useMediaQuery';
+import { MenuButton } from './MenuButton';
 import { SettingsButton } from './SettingsButton';
 import { ThemeToggler } from './ThemeToggler';
 
@@ -44,37 +42,19 @@ const HeaderWrapper = styled.div`
   @media (min-width: 1025px) {
     justify-content: flex-end;
   }
+
+  @media (min-width: 1600px) {
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+  }
 `;
 
 export const Header = () => {
-  const [opened, setOpened] = useState(false);
   const isMobile = useMediaQuery('(max-width: 1024px)');
   return (
     <HeaderWrapper>
-      {isMobile && (
-        <>
-          <ButtonWithTooltip
-            renderContent={() => 'Menu'}
-            onClick={() => setOpened((opened) => !opened)}
-            dimension="m"
-            className="burger"
-          >
-            <MenuOutline />
-          </ButtonWithTooltip>
-          <Drawer
-            isOpen={opened}
-            position="left"
-            closeOnBackdropClick
-            closeOnEscapeKeyDown
-            displayCloseIcon={false}
-            onClose={() => setOpened(false)}
-            style={{ minWidth: '288px', maxWidth: '288px' }}
-            aria-labelledby="drawer-title"
-          >
-            <SideMenu />
-          </Drawer>
-        </>
-      )}
+      {isMobile && <MenuButton />}
       <ButtonsWrapper>
         <RouterLink to="/general/resources" $appearance="secondary" $dimension="s">
           Resources

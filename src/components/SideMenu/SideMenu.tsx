@@ -6,12 +6,11 @@ import styled from 'styled-components';
 import { version } from '@admiral-ds/react-ui/package.json';
 
 const MenuWrapper = styled.div`
-  width: 288px;
-  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
+  width: 288px;
   padding: 22px 12px;
   box-sizing: border-box;
   display: flex;
