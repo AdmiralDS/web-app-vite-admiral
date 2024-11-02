@@ -31,6 +31,14 @@ export const components = [
     ],
   },
   {
+    name: 'Carousel',
+    path: '/components/carousel/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/carousel/' },
+      { name: 'Автоматическое переключение', path: '/components/carousel/carouselAutoChange' },
+    ],
+  },
+  {
     name: 'Table',
     path: '/components/table/',
     routes: [
