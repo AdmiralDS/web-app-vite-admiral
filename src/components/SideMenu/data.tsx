@@ -11,6 +11,13 @@ export const components = [
     ],
   },
   {
+    name: 'ActionBar',
+    path: '/components/actionBar/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/actionBar/' },
+    ],
+  },
+  {
     name: 'Badge',
     path: '/components/badge/',
     routes: [

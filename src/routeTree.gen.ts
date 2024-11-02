@@ -19,6 +19,7 @@ import { Route as ComponentsCarouselSliderIndexImport } from './routes/component
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
 import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
+import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
@@ -84,6 +85,12 @@ const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
 const ComponentsBadgeIndexRoute = ComponentsBadgeIndexImport.update({
   id: '/badge/',
   path: '/badge/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsActionBarIndexRoute = ComponentsActionBarIndexImport.update({
+  id: '/actionBar/',
+  path: '/actionBar/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -335,6 +342,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsAccordionIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/actionBar/': {
+      id: '/components/actionBar/'
+      path: '/actionBar'
+      fullPath: '/components/actionBar'
+      preLoaderRoute: typeof ComponentsActionBarIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/badge/': {
       id: '/components/badge/'
       path: '/badge'
@@ -392,6 +406,7 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
+  ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
   ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
@@ -424,6 +439,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
+  ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
   ComponentsBadgeIndexRoute: ComponentsBadgeIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
@@ -455,6 +471,7 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
+  '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
@@ -482,6 +499,7 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
+  '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
@@ -510,6 +528,7 @@ export interface FileRoutesById {
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
+  '/components/actionBar/': typeof ComponentsActionBarIndexRoute
   '/components/badge/': typeof ComponentsBadgeIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
@@ -539,6 +558,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion'
+    | '/components/actionBar'
     | '/components/badge'
     | '/components/button'
     | '/components/carousel'
@@ -565,6 +585,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion'
+    | '/components/actionBar'
     | '/components/badge'
     | '/components/button'
     | '/components/carousel'
@@ -591,6 +612,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion/'
+    | '/components/actionBar/'
     | '/components/badge/'
     | '/components/button/'
     | '/components/carousel/'
@@ -648,6 +670,7 @@ export const routeTree = rootRoute
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
         "/components/accordion/",
+        "/components/actionBar/",
         "/components/badge/",
         "/components/button/",
         "/components/carousel/",
@@ -720,6 +743,10 @@ export const routeTree = rootRoute
     },
     "/components/accordion/": {
       "filePath": "components/accordion/index.tsx",
+      "parent": "/components"
+    },
+    "/components/actionBar/": {
+      "filePath": "components/actionBar/index.tsx",
       "parent": "/components"
     },
     "/components/badge/": {
