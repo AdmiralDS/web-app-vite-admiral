@@ -5,7 +5,7 @@ import { components } from './data';
 import styled from 'styled-components';
 import { version } from '@admiral-ds/react-ui/package.json';
 
-const MenuWrapper = styled.div`
+const MenuWrapper = styled.nav`
   position: fixed;
   top: 0;
   left: 0;

@@ -47,7 +47,7 @@ export const MenuButton = () => {
           closeOnEscapeKeyDown
           displayCloseIcon={false}
           onClose={() => setOpened(false)}
-          style={{ minWidth: '288px', maxWidth: '288px' }}
+          style={{ minWidth: '288px', maxWidth: '288px', transform: 'translate3d(0,0,0)' }}
           aria-labelledby="drawer-title"
         >
           <SideMenu />

@@ -30,10 +30,13 @@ const ButtonsWrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.div`
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: flex-end;
   padding: 16px 4px 7px 0;
   box-sizing: border-box;
+  background: var(--admiral-color-Neutral_Neutral05, ${(p) => p.theme.color['Neutral/Neutral 05']});
   border-bottom: 1px solid var(--admiral-color-Neutral_neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
 
   @media (max-width: 1024px) {
