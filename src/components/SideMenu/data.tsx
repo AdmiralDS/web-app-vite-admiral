@@ -1,5 +1,32 @@
 export const components = [
   {
+    name: 'Accordion',
+    path: '/components/accordion/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/accordion/' },
+      { name: 'Размеры', path: '/components/accordion/accordionDimension' },
+      { name: 'Скрытие разделителей', path: '/components/accordion/accordionDivider' },
+      { name: 'Расположение шеврона слева', path: '/components/accordion/accordionIcon' },
+      { name: 'Режимы использования', path: '/components/accordion/accordionModes' },
+    ],
+  },
+  {
+    name: 'ActionBar',
+    path: '/components/actionBar/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/actionBar/' },
+    ],
+  },
+  {
+    name: 'Badge',
+    path: '/components/badge/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/badge/' },
+      { name: 'Варианты использования', path: '/components/badge/badgeVariants' },
+      { name: 'Accessibility', path: '/components/badge/badgeAccessibility' },
+    ],
+  },
+  {
     name: 'Button',
     path: '/components/button/',
     routes: [
@@ -8,6 +35,22 @@ export const components = [
       { name: 'С иконкой', path: '/components/button/buttonWithIcon' },
       { name: 'С лоадером', path: '/components/button/buttonWithLoader' },
       { name: 'С бейджем', path: '/components/button/buttonWithBadge' },
+    ],
+  },
+  {
+    name: 'Carousel',
+    path: '/components/carousel/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/carousel/' },
+      { name: 'Автоматическое переключение', path: '/components/carousel/carouselAutoChange' },
+    ],
+  },
+  {
+    name: 'CarouselSlider',
+    path: '/components/carouselSlider/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/carouselSlider/' },
+      { name: 'Автоматическое переключение', path: '/components/carouselSlider/carouselSliderAutoChange' },
     ],
   },
   {
