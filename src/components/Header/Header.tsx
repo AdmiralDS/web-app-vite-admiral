@@ -32,6 +32,7 @@ const ButtonsWrapper = styled.div`
 const HeaderWrapper = styled.div`
   position: sticky;
   top: 0;
+  z-index: 10;
   display: flex;
   justify-content: flex-end;
   padding: 16px 4px 7px 0;

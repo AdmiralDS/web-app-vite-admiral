@@ -31,11 +31,11 @@ export const SideMenu = () => {
       <MenuTitle title="Admiral" version={version} />
 
       <MenuContent>
-        <ExpandedMenuItem title="Get Started" className="topLevel" to="/general/resources" defaultExpanded>
+        <ExpandedMenuItem title="Get Started" className="topLevel" to="/general/resources">
           <MenuItem title="Resources" to="/general/resources" />
         </ExpandedMenuItem>
 
-        <ExpandedMenuItem title="Components" className="topLevel">
+        <ExpandedMenuItem title="Components" className="topLevel" to="/components">
           {components.map(({ name, path, routes }) => (
             <ExpandedMenuItem key={'secondLevel' + name} title={name} to={path}>
               {routes.map(({ name, path }) => (

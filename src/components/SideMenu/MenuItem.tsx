@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components';
-import type { HTMLAttributes, ReactNode, MouseEvent, FC } from 'react';
-import React, { useState, useCallback } from 'react';
+import type { HTMLAttributes, ReactNode, FC } from 'react';
+import React, { useState, useCallback, useRef, useLayoutEffect } from 'react';
 import { typography, OpenStatusButton } from '@admiral-ds/react-ui';
-import { Link, useNavigate } from '@tanstack/react-router';
+import { Link, useNavigate, useLocation } from '@tanstack/react-router';
+import { Transition } from './Transition';
 
 const Item = styled(Link)`
   display: flex;
@@ -38,11 +39,7 @@ const Item = styled(Link)`
 
 export const Collapse = styled.div<{ $opened?: boolean }>`
   overflow: hidden;
-  transition:
-    max-height 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  max-height: ${(p) => (!p.$opened ? 0 : '100vh')};
-  visibility: ${(p) => (!p.$opened ? 'hidden' : 'visible')};
+  transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 export const Chevron = styled(OpenStatusButton)`
@@ -125,38 +122,66 @@ export const ItemTitle = styled.button`
 
 export const ItemContent = styled.div`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-  overflow-y: auto;
-  max-height: 100vh;
 `;
 
-export interface AccordionItemProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'onClick' | 'title'> {
+export interface AccordionItemProps extends Omit<HTMLAttributes<HTMLButtonElement>, 'title'> {
   /** Заголовок компонента */
   title: ReactNode;
-  /** Дефолтное (изначальное) состояние компонента (раскрыт/свернут) при неконтролируемом режиме работы */
-  defaultExpanded?: boolean;
-  /** Колбек на клик по компоненту */
-  onClick?: (title: ReactNode, expanded: boolean, event: MouseEvent<HTMLButtonElement>) => void;
   /** Отключение компонента */
   disabled?: boolean;
+  /** Pathname компонента */
+  to: string;
 }
 
-export const AccordionItem: FC<AccordionItemProps> = ({
-  children,
-  title,
-  defaultExpanded,
-  onClick,
-  disabled,
-  ...props
-}) => {
-  const [expanded, setExpanded] = useState(defaultExpanded);
+export const ExpandedMenuItem: FC<AccordionItemProps> = ({ children, title, to, disabled, ...props }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleClick = useCallback(
-    (event: MouseEvent<HTMLButtonElement>) => {
-      onClick?.(title, !expanded, event);
-      setExpanded(!expanded);
-    },
-    [expanded, onClick, title],
+  /** При mount меню должно быть открыто на активном пункте */
+  const [expanded, setExpanded] = useState<boolean>(
+    location.pathname.startsWith(to) || (location.pathname == '/' && to == '/general/resources'),
   );
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    setWrapperHeight(expanded ? 'auto' : '0px');
+  }, []);
+
+  const setWrapperHeight = (height?: string) => {
+    // reading clientHeight will cause the browser to recalculate (reflow),
+    // which will let animations work
+    const contentHeight = (contentRef.current?.clientHeight || 0) + 'px';
+    const wrapperHeight = height ?? contentHeight;
+
+    if (wrapperRef.current) {
+      wrapperRef.current.style.height = wrapperHeight;
+    }
+  };
+
+  const handleTransitionEnter = () => {
+    setWrapperHeight('0px');
+  };
+  const handleTransitionEntering = () => {
+    setWrapperHeight();
+  };
+  const handleTransitionEntered = () => {
+    setWrapperHeight('auto');
+  };
+  const handleTransitionExit = () => {
+    setWrapperHeight();
+  };
+  const handleTransitionExiting = () => {
+    setWrapperHeight('0px');
+  };
+
+  const handleClick = useCallback(() => {
+    if (!expanded && props.className != 'topLevel') {
+      navigate({ to });
+    }
+    setExpanded(!expanded);
+  }, [expanded, props.className, to]);
+
   return (
     <>
       <ItemTitle
@@ -172,9 +197,21 @@ export const AccordionItem: FC<AccordionItemProps> = ({
           <Chevron aria-hidden appearance="primary" $isOpen={expanded} />
         </ItemTitleContent>
       </ItemTitle>
-      <Collapse $opened={expanded}>
-        <ItemContent role="region">{children}</ItemContent>
-      </Collapse>
+      <Transition
+        in={expanded}
+        timeout={250}
+        onEnter={handleTransitionEnter}
+        onEntered={handleTransitionEntered}
+        onEntering={handleTransitionEntering}
+        onExit={handleTransitionExit}
+        onExiting={handleTransitionExiting}
+      >
+        <Collapse $opened={expanded} ref={wrapperRef}>
+          <ItemContent ref={contentRef} role="region">
+            {children}
+          </ItemContent>
+        </Collapse>
+      </Transition>
     </>
   );
 };
@@ -184,30 +221,5 @@ export const MenuItem: React.FC<{ to: string; title: ReactNode; className?: stri
     <Item to={to} activeOptions={{ exact: true }} activeProps={{ 'data-selected': `true` }} className={className}>
       {title}
     </Item>
-  );
-};
-
-export const ExpandedMenuItem: React.FC<{
-  title: ReactNode;
-  children: ReactNode;
-  to?: string;
-  className?: string;
-  defaultExpanded?: boolean;
-}> = ({ title, to, children, className, defaultExpanded = false }) => {
-  const navigate = useNavigate();
-  const handleClick = (_title: ReactNode, expanded: boolean) => {
-    if (expanded) {
-      navigate({ to });
-    }
-  };
-  return (
-    <AccordionItem
-      title={title}
-      className={className}
-      defaultExpanded={defaultExpanded}
-      onClick={to ? handleClick : undefined}
-    >
-      {children}
-    </AccordionItem>
   );
 };
