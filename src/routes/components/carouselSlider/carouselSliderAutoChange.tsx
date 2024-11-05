@@ -76,12 +76,10 @@ export const CarouselSliderAutoChange = (props: CarouselSliderProps) => {
   );
 };
 
-export const Route = createFileRoute(
-  '/components/carouselSlider/carouselSliderAutoChange',
-)({
+export const Route = createFileRoute('/components/carouselSlider/carouselSliderAutoChange')({
   component: () => <CarouselSliderAutoChange />,
   staticData: {
     title: 'CarouselSlider. Автоматическое переключение',
     description: 'Небольшое описание функционала',
   },
-})
+});

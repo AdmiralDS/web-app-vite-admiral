@@ -100,4 +100,4 @@ export const Route = createFileRoute('/components/carouselSlider/')({
     title: 'CarouselSlider. Базовый пример',
     description: 'Небольшое описание функционала',
   },
-})
+});

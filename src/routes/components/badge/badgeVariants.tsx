@@ -17,9 +17,9 @@ const String = styled.div<{ $appearance?: BadgeProps['appearance'] }>`
   display: flex;
   align-items: center;
   ${({ $appearance, theme }) =>
-  $appearance &&
-  $appearance.indexOf('white') > -1 &&
-  `background: var(--admiral-color-Neutral_Neutral05, ${theme.color['Neutral/Neutral 05']});`}
+    $appearance &&
+    $appearance.indexOf('white') > -1 &&
+    `background: var(--admiral-color-Neutral_Neutral05, ${theme.color['Neutral/Neutral 05']});`}
   & > * {
     margin-right: 16px;
   }

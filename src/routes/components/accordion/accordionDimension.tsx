@@ -1,12 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
-import {
-  Accordion,
-  AccordionItem,
-  NotificationItem,
-  NotificationItemContent,
-} from '@admiral-ds/react-ui';
+import { Accordion, AccordionItem, NotificationItem, NotificationItemContent } from '@admiral-ds/react-ui';
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,9 +19,7 @@ export const AccordionDimension = () => {
   return (
     <Wrapper>
       <NotificationItem displayStatusIcon>
-        <NotificationItemContent>
-          Размер L.
-        </NotificationItemContent>
+        <NotificationItemContent>Размер L.</NotificationItemContent>
       </NotificationItem>
       <Accordion>
         <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
@@ -42,10 +35,8 @@ export const AccordionDimension = () => {
         </AccordionItem>
       </Accordion>
       <NotificationItem displayStatusIcon>
-      <NotificationItemContent>
-        Размер M.
-      </NotificationItemContent>
-    </NotificationItem>
+        <NotificationItemContent>Размер M.</NotificationItemContent>
+      </NotificationItem>
       <Accordion dimension="m">
         <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
         <AccordionItem title="Второй пункт">
@@ -67,9 +58,7 @@ export const AccordionDimension = () => {
   );
 };
 
-export const Route = createFileRoute(
-  '/components/accordion/accordionDimension',
-)({
+export const Route = createFileRoute('/components/accordion/accordionDimension')({
   component: () => <AccordionDimension />,
   staticData: {
     title: 'Accordion. Размеры',

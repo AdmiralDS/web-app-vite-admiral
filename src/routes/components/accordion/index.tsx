@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { Accordion, AccordionItem, FieldSet, Option, RadioButton, SelectField as Select } from '@admiral-ds/react-ui';

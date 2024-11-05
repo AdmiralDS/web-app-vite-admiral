@@ -85,11 +85,11 @@ export const CarouselAutoChange = (props: CarouselProps) => {
   );
 };
 
-export const Route = createFileRoute('/components/carousel/carouselAutoChange')(
-  {
-    component: () => <CarouselAutoChange />,
-    staticData: {
-      title: 'Carousel. Автоматическое переключение',
-      description: 'Компонент для последовательного отображения связанных по смыслу элементов, как правило, это изображения или карточки с контентом.',
-    },
-  });
+export const Route = createFileRoute('/components/carousel/carouselAutoChange')({
+  component: () => <CarouselAutoChange />,
+  staticData: {
+    title: 'Carousel. Автоматическое переключение',
+    description:
+      'Компонент для последовательного отображения связанных по смыслу элементов, как правило, это изображения или карточки с контентом.',
+  },
+});

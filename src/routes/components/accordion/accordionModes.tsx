@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 

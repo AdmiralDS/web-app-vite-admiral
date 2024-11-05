@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { PseudoText, skeletonAnimationMixin, Spinner, Table } from '@admiral-ds/react-ui';
