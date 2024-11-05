@@ -31,7 +31,7 @@ export const AccordionModes = () => {
         <AccordionItem
           expanded={expanded}
           title="Контролируемый режим использования (controlled)"
-          onClick={(title, expanded) => setExpanded(expanded)}
+          onClick={(_title, expanded) => setExpanded(expanded)}
         >
           Будущее игр никогда не было таким вдохновляющим. Творчество в играх процветает. Новые сервисы позволяют
           находить больше игр, а также приближают игроков к любимым играм, стримерам и создателям. Облако создает
