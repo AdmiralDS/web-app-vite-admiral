@@ -23,6 +23,7 @@ export const AccordionModes = () => {
         <AccordionItem
           defaultExpanded
           title="Неконтролируемый режим использования (uncontrolled)"
+          // eslint-disable-next-line no-console
           onClick={(title, expanded, event) => console.log({ title, expanded, event })}
         >
           Контент первого пункта

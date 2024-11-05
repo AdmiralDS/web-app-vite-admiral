@@ -35,6 +35,7 @@ const Container = styled.div`
 `
 
 const handleClick = () => {
+  // eslint-disable-next-line no-console
   console.log('clicked')
 }
 
