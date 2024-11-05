@@ -19,6 +19,7 @@ import { Route as ComponentsCarouselSliderIndexImport } from './routes/component
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
 import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
+import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
 import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
@@ -32,6 +33,10 @@ import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/compone
 import { Route as ComponentsButtonButtonStylesImport } from './routes/components/button/buttonStyles'
 import { Route as ComponentsBadgeBadgeVariantsImport } from './routes/components/badge/badgeVariants'
 import { Route as ComponentsBadgeBadgeAccessibilityImport } from './routes/components/badge/badgeAccessibility'
+import { Route as ComponentsAvatarStylesImport } from './routes/components/avatar/styles'
+import { Route as ComponentsAvatarSizeXXSImport } from './routes/components/avatar/sizeXXS'
+import { Route as ComponentsAvatarAvatarGroupLimitedWidthImport } from './routes/components/avatar/avatarGroupLimitedWidth'
+import { Route as ComponentsAvatarAvatarGroupImport } from './routes/components/avatar/avatarGroup'
 import { Route as ComponentsAccordionAccordionModesImport } from './routes/components/accordion/accordionModes'
 import { Route as ComponentsAccordionAccordionIconImport } from './routes/components/accordion/accordionIcon'
 import { Route as ComponentsAccordionAccordionDividerImport } from './routes/components/accordion/accordionDivider'
@@ -85,6 +90,12 @@ const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
 const ComponentsBadgeIndexRoute = ComponentsBadgeIndexImport.update({
   id: '/badge/',
   path: '/badge/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsAvatarIndexRoute = ComponentsAvatarIndexImport.update({
+  id: '/avatar/',
+  path: '/avatar/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -177,6 +188,32 @@ const ComponentsBadgeBadgeAccessibilityRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsAvatarStylesRoute = ComponentsAvatarStylesImport.update({
+  id: '/avatar/styles',
+  path: '/avatar/styles',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsAvatarSizeXXSRoute = ComponentsAvatarSizeXXSImport.update({
+  id: '/avatar/sizeXXS',
+  path: '/avatar/sizeXXS',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsAvatarAvatarGroupLimitedWidthRoute =
+  ComponentsAvatarAvatarGroupLimitedWidthImport.update({
+    id: '/avatar/avatarGroupLimitedWidth',
+    path: '/avatar/avatarGroupLimitedWidth',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsAvatarAvatarGroupRoute =
+  ComponentsAvatarAvatarGroupImport.update({
+    id: '/avatar/avatarGroup',
+    path: '/avatar/avatarGroup',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsAccordionAccordionModesRoute =
   ComponentsAccordionAccordionModesImport.update({
     id: '/accordion/accordionModes',
@@ -256,6 +293,34 @@ declare module '@tanstack/react-router' {
       path: '/accordion/accordionModes'
       fullPath: '/components/accordion/accordionModes'
       preLoaderRoute: typeof ComponentsAccordionAccordionModesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/avatar/avatarGroup': {
+      id: '/components/avatar/avatarGroup'
+      path: '/avatar/avatarGroup'
+      fullPath: '/components/avatar/avatarGroup'
+      preLoaderRoute: typeof ComponentsAvatarAvatarGroupImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/avatar/avatarGroupLimitedWidth': {
+      id: '/components/avatar/avatarGroupLimitedWidth'
+      path: '/avatar/avatarGroupLimitedWidth'
+      fullPath: '/components/avatar/avatarGroupLimitedWidth'
+      preLoaderRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/avatar/sizeXXS': {
+      id: '/components/avatar/sizeXXS'
+      path: '/avatar/sizeXXS'
+      fullPath: '/components/avatar/sizeXXS'
+      preLoaderRoute: typeof ComponentsAvatarSizeXXSImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/avatar/styles': {
+      id: '/components/avatar/styles'
+      path: '/avatar/styles'
+      fullPath: '/components/avatar/styles'
+      preLoaderRoute: typeof ComponentsAvatarStylesImport
       parentRoute: typeof ComponentsImport
     }
     '/components/badge/badgeAccessibility': {
@@ -349,6 +414,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsActionBarIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/avatar/': {
+      id: '/components/avatar/'
+      path: '/avatar'
+      fullPath: '/components/avatar'
+      preLoaderRoute: typeof ComponentsAvatarIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/badge/': {
       id: '/components/badge/'
       path: '/badge'
@@ -394,6 +466,10 @@ interface ComponentsRouteChildren {
   ComponentsAccordionAccordionDividerRoute: typeof ComponentsAccordionAccordionDividerRoute
   ComponentsAccordionAccordionIconRoute: typeof ComponentsAccordionAccordionIconRoute
   ComponentsAccordionAccordionModesRoute: typeof ComponentsAccordionAccordionModesRoute
+  ComponentsAvatarAvatarGroupRoute: typeof ComponentsAvatarAvatarGroupRoute
+  ComponentsAvatarAvatarGroupLimitedWidthRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  ComponentsAvatarSizeXXSRoute: typeof ComponentsAvatarSizeXXSRoute
+  ComponentsAvatarStylesRoute: typeof ComponentsAvatarStylesRoute
   ComponentsBadgeBadgeAccessibilityRoute: typeof ComponentsBadgeBadgeAccessibilityRoute
   ComponentsBadgeBadgeVariantsRoute: typeof ComponentsBadgeBadgeVariantsRoute
   ComponentsButtonButtonStylesRoute: typeof ComponentsButtonButtonStylesRoute
@@ -407,6 +483,7 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
   ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
+  ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
   ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
@@ -422,6 +499,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsAccordionAccordionIconRoute: ComponentsAccordionAccordionIconRoute,
   ComponentsAccordionAccordionModesRoute:
     ComponentsAccordionAccordionModesRoute,
+  ComponentsAvatarAvatarGroupRoute: ComponentsAvatarAvatarGroupRoute,
+  ComponentsAvatarAvatarGroupLimitedWidthRoute:
+    ComponentsAvatarAvatarGroupLimitedWidthRoute,
+  ComponentsAvatarSizeXXSRoute: ComponentsAvatarSizeXXSRoute,
+  ComponentsAvatarStylesRoute: ComponentsAvatarStylesRoute,
   ComponentsBadgeBadgeAccessibilityRoute:
     ComponentsBadgeBadgeAccessibilityRoute,
   ComponentsBadgeBadgeVariantsRoute: ComponentsBadgeBadgeVariantsRoute,
@@ -440,6 +522,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
   ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
+  ComponentsAvatarIndexRoute: ComponentsAvatarIndexRoute,
   ComponentsBadgeIndexRoute: ComponentsBadgeIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
@@ -459,6 +542,10 @@ export interface FileRoutesByFullPath {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
+  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
+  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
@@ -472,6 +559,7 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
+  '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
@@ -487,6 +575,10 @@ export interface FileRoutesByTo {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
+  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
+  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
@@ -500,6 +592,7 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
+  '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
@@ -516,6 +609,10 @@ export interface FileRoutesById {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
+  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
+  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
@@ -529,6 +626,7 @@ export interface FileRoutesById {
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
   '/components/actionBar/': typeof ComponentsActionBarIndexRoute
+  '/components/avatar/': typeof ComponentsAvatarIndexRoute
   '/components/badge/': typeof ComponentsBadgeIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
@@ -546,6 +644,10 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/avatar/avatarGroup'
+    | '/components/avatar/avatarGroupLimitedWidth'
+    | '/components/avatar/sizeXXS'
+    | '/components/avatar/styles'
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
     | '/components/button/buttonStyles'
@@ -559,6 +661,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion'
     | '/components/actionBar'
+    | '/components/avatar'
     | '/components/badge'
     | '/components/button'
     | '/components/carousel'
@@ -573,6 +676,10 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/avatar/avatarGroup'
+    | '/components/avatar/avatarGroupLimitedWidth'
+    | '/components/avatar/sizeXXS'
+    | '/components/avatar/styles'
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
     | '/components/button/buttonStyles'
@@ -586,6 +693,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion'
     | '/components/actionBar'
+    | '/components/avatar'
     | '/components/badge'
     | '/components/button'
     | '/components/carousel'
@@ -600,6 +708,10 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/avatar/avatarGroup'
+    | '/components/avatar/avatarGroupLimitedWidth'
+    | '/components/avatar/sizeXXS'
+    | '/components/avatar/styles'
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
     | '/components/button/buttonStyles'
@@ -613,6 +725,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSpinner'
     | '/components/accordion/'
     | '/components/actionBar/'
+    | '/components/avatar/'
     | '/components/badge/'
     | '/components/button/'
     | '/components/carousel/'
@@ -658,6 +771,10 @@ export const routeTree = rootRoute
         "/components/accordion/accordionDivider",
         "/components/accordion/accordionIcon",
         "/components/accordion/accordionModes",
+        "/components/avatar/avatarGroup",
+        "/components/avatar/avatarGroupLimitedWidth",
+        "/components/avatar/sizeXXS",
+        "/components/avatar/styles",
         "/components/badge/badgeAccessibility",
         "/components/badge/badgeVariants",
         "/components/button/buttonStyles",
@@ -671,6 +788,7 @@ export const routeTree = rootRoute
         "/components/table/loadOnScrollSpinner",
         "/components/accordion/",
         "/components/actionBar/",
+        "/components/avatar/",
         "/components/badge/",
         "/components/button/",
         "/components/carousel/",
@@ -695,6 +813,22 @@ export const routeTree = rootRoute
     },
     "/components/accordion/accordionModes": {
       "filePath": "components/accordion/accordionModes.tsx",
+      "parent": "/components"
+    },
+    "/components/avatar/avatarGroup": {
+      "filePath": "components/avatar/avatarGroup.tsx",
+      "parent": "/components"
+    },
+    "/components/avatar/avatarGroupLimitedWidth": {
+      "filePath": "components/avatar/avatarGroupLimitedWidth.tsx",
+      "parent": "/components"
+    },
+    "/components/avatar/sizeXXS": {
+      "filePath": "components/avatar/sizeXXS.tsx",
+      "parent": "/components"
+    },
+    "/components/avatar/styles": {
+      "filePath": "components/avatar/styles.tsx",
       "parent": "/components"
     },
     "/components/badge/badgeAccessibility": {
@@ -747,6 +881,10 @@ export const routeTree = rootRoute
     },
     "/components/actionBar/": {
       "filePath": "components/actionBar/index.tsx",
+      "parent": "/components"
+    },
+    "/components/avatar/": {
+      "filePath": "components/avatar/index.tsx",
       "parent": "/components"
     },
     "/components/badge/": {

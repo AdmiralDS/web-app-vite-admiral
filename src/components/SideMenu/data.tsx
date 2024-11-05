@@ -13,8 +13,17 @@ export const components = [
   {
     name: 'ActionBar',
     path: '/components/actionBar/',
+    routes: [{ name: 'Базовый пример', path: '/components/actionBar/' }],
+  },
+  {
+    name: 'Avatar',
+    path: '/components/avatar/',
     routes: [
-      { name: 'Базовый пример', path: '/components/actionBar/' },
+      { name: 'Базовый пример', path: '/components/avatar/' },
+      { name: 'Стили', path: '/components/avatar/styles' },
+      { name: 'Размер XXS', path: '/components/avatar/sizeXXS' },
+      { name: 'Группировка', path: '/components/avatar/avatarGroup' },
+      { name: 'Группировка при ограниченной ширине', path: '/components/avatar/avatarGroupLimitedWidth' },
     ],
   },
   {
