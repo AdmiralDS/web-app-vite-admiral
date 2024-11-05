@@ -19,5 +19,7 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-non-null-assertion': 'off',
+    'no-console': 1, // Means warning
+    '@typescript-eslint/no-explicit-any': 1,
   },
 };
