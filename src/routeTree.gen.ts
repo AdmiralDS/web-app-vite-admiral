@@ -19,6 +19,7 @@ import { Route as ComponentsImageViewerIndexImport } from './routes/components/i
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
+import { Route as ComponentsBadgeDotIndexImport } from './routes/components/badgeDot/index'
 import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
 import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
 import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
@@ -32,6 +33,7 @@ import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/compon
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
 import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
 import { Route as ComponentsButtonButtonStylesImport } from './routes/components/button/buttonStyles'
+import { Route as ComponentsBadgeDotVariantsImport } from './routes/components/badgeDot/variants'
 import { Route as ComponentsBadgeBadgeVariantsImport } from './routes/components/badge/badgeVariants'
 import { Route as ComponentsBadgeBadgeAccessibilityImport } from './routes/components/badge/badgeAccessibility'
 import { Route as ComponentsAvatarStylesImport } from './routes/components/avatar/styles'
@@ -93,6 +95,12 @@ const ComponentsCarouselIndexRoute = ComponentsCarouselIndexImport.update({
 const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
   id: '/button/',
   path: '/button/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsBadgeDotIndexRoute = ComponentsBadgeDotIndexImport.update({
+  id: '/badgeDot/',
+  path: '/badgeDot/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -182,6 +190,14 @@ const ComponentsButtonButtonStylesRoute =
     path: '/button/buttonStyles',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsBadgeDotVariantsRoute = ComponentsBadgeDotVariantsImport.update(
+  {
+    id: '/badgeDot/variants',
+    path: '/badgeDot/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsBadgeBadgeVariantsRoute =
   ComponentsBadgeBadgeVariantsImport.update({
@@ -346,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsBadgeBadgeVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/badgeDot/variants': {
+      id: '/components/badgeDot/variants'
+      path: '/badgeDot/variants'
+      fullPath: '/components/badgeDot/variants'
+      preLoaderRoute: typeof ComponentsBadgeDotVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/buttonStyles': {
       id: '/components/button/buttonStyles'
       path: '/button/buttonStyles'
@@ -437,6 +460,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsBadgeIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/badgeDot/': {
+      id: '/components/badgeDot/'
+      path: '/badgeDot'
+      fullPath: '/components/badgeDot'
+      preLoaderRoute: typeof ComponentsBadgeDotIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/': {
       id: '/components/button/'
       path: '/button'
@@ -488,6 +518,7 @@ interface ComponentsRouteChildren {
   ComponentsAvatarStylesRoute: typeof ComponentsAvatarStylesRoute
   ComponentsBadgeBadgeAccessibilityRoute: typeof ComponentsBadgeBadgeAccessibilityRoute
   ComponentsBadgeBadgeVariantsRoute: typeof ComponentsBadgeBadgeVariantsRoute
+  ComponentsBadgeDotVariantsRoute: typeof ComponentsBadgeDotVariantsRoute
   ComponentsButtonButtonStylesRoute: typeof ComponentsButtonButtonStylesRoute
   ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
@@ -501,6 +532,7 @@ interface ComponentsRouteChildren {
   ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
   ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
   ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
+  ComponentsBadgeDotIndexRoute: typeof ComponentsBadgeDotIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
@@ -524,6 +556,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsBadgeBadgeAccessibilityRoute:
     ComponentsBadgeBadgeAccessibilityRoute,
   ComponentsBadgeBadgeVariantsRoute: ComponentsBadgeBadgeVariantsRoute,
+  ComponentsBadgeDotVariantsRoute: ComponentsBadgeDotVariantsRoute,
   ComponentsButtonButtonStylesRoute: ComponentsButtonButtonStylesRoute,
   ComponentsButtonButtonWithBadgeRoute: ComponentsButtonButtonWithBadgeRoute,
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
@@ -541,6 +574,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
   ComponentsAvatarIndexRoute: ComponentsAvatarIndexRoute,
   ComponentsBadgeIndexRoute: ComponentsBadgeIndexRoute,
+  ComponentsBadgeDotIndexRoute: ComponentsBadgeDotIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
@@ -566,6 +600,7 @@ export interface FileRoutesByFullPath {
   '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
+  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -579,6 +614,7 @@ export interface FileRoutesByFullPath {
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
+  '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
@@ -600,6 +636,7 @@ export interface FileRoutesByTo {
   '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
+  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -613,6 +650,7 @@ export interface FileRoutesByTo {
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
+  '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
@@ -635,6 +673,7 @@ export interface FileRoutesById {
   '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
+  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -648,6 +687,7 @@ export interface FileRoutesById {
   '/components/actionBar/': typeof ComponentsActionBarIndexRoute
   '/components/avatar/': typeof ComponentsAvatarIndexRoute
   '/components/badge/': typeof ComponentsBadgeIndexRoute
+  '/components/badgeDot/': typeof ComponentsBadgeDotIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
@@ -671,6 +711,7 @@ export interface FileRouteTypes {
     | '/components/avatar/styles'
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
+    | '/components/badgeDot/variants'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -684,6 +725,7 @@ export interface FileRouteTypes {
     | '/components/actionBar'
     | '/components/avatar'
     | '/components/badge'
+    | '/components/badgeDot'
     | '/components/button'
     | '/components/carousel'
     | '/components/carouselSlider'
@@ -704,6 +746,7 @@ export interface FileRouteTypes {
     | '/components/avatar/styles'
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
+    | '/components/badgeDot/variants'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -717,6 +760,7 @@ export interface FileRouteTypes {
     | '/components/actionBar'
     | '/components/avatar'
     | '/components/badge'
+    | '/components/badgeDot'
     | '/components/button'
     | '/components/carousel'
     | '/components/carouselSlider'
@@ -737,6 +781,7 @@ export interface FileRouteTypes {
     | '/components/avatar/styles'
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
+    | '/components/badgeDot/variants'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -750,6 +795,7 @@ export interface FileRouteTypes {
     | '/components/actionBar/'
     | '/components/avatar/'
     | '/components/badge/'
+    | '/components/badgeDot/'
     | '/components/button/'
     | '/components/carousel/'
     | '/components/carouselSlider/'
@@ -801,6 +847,7 @@ export const routeTree = rootRoute
         "/components/avatar/styles",
         "/components/badge/badgeAccessibility",
         "/components/badge/badgeVariants",
+        "/components/badgeDot/variants",
         "/components/button/buttonStyles",
         "/components/button/buttonWithBadge",
         "/components/button/buttonWithIcon",
@@ -814,6 +861,7 @@ export const routeTree = rootRoute
         "/components/actionBar/",
         "/components/avatar/",
         "/components/badge/",
+        "/components/badgeDot/",
         "/components/button/",
         "/components/carousel/",
         "/components/carouselSlider/",
@@ -862,6 +910,10 @@ export const routeTree = rootRoute
     },
     "/components/badge/badgeVariants": {
       "filePath": "components/badge/badgeVariants.tsx",
+      "parent": "/components"
+    },
+    "/components/badgeDot/variants": {
+      "filePath": "components/badgeDot/variants.tsx",
       "parent": "/components"
     },
     "/components/button/buttonStyles": {
@@ -914,6 +966,10 @@ export const routeTree = rootRoute
     },
     "/components/badge/": {
       "filePath": "components/badge/index.tsx",
+      "parent": "/components"
+    },
+    "/components/badgeDot/": {
+      "filePath": "components/badgeDot/index.tsx",
       "parent": "/components"
     },
     "/components/button/": {

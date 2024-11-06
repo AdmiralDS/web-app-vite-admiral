@@ -36,6 +36,14 @@ export const components = [
     ],
   },
   {
+    name: 'BadgeDot',
+    path: '/components/badgeDot/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/badgeDot/' },
+      { name: 'Варианты использования', path: '/components/badgeDot/variants' },
+    ],
+  },
+  {
     name: 'Button',
     path: '/components/button/',
     routes: [
@@ -65,9 +73,7 @@ export const components = [
   {
     name: 'ImageViewer',
     path: '/components/imageViewer/',
-    routes: [
-      { name: 'Базовый пример', path: '/components/imageViewer/' },
-    ],
+    routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],
   },
   {
     name: 'Table',
