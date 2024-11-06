@@ -15,6 +15,7 @@ import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
+import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
@@ -67,6 +68,14 @@ const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
   path: '/table/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
+  {
+    id: '/imageViewer/',
+    path: '/imageViewer/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsCarouselSliderIndexRoute =
   ComponentsCarouselSliderIndexImport.update({
@@ -449,6 +458,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsCarouselSliderIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/imageViewer/': {
+      id: '/components/imageViewer/'
+      path: '/imageViewer'
+      fullPath: '/components/imageViewer'
+      preLoaderRoute: typeof ComponentsImageViewerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/': {
       id: '/components/table/'
       path: '/table'
@@ -488,6 +504,7 @@ interface ComponentsRouteChildren {
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
+  ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
 
@@ -527,6 +544,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
+  ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
 
@@ -564,6 +582,7 @@ export interface FileRoutesByFullPath {
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
+  '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
 
@@ -597,6 +616,7 @@ export interface FileRoutesByTo {
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
+  '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
 
@@ -631,6 +651,7 @@ export interface FileRoutesById {
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
+  '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
 
@@ -666,6 +687,7 @@ export interface FileRouteTypes {
     | '/components/button'
     | '/components/carousel'
     | '/components/carouselSlider'
+    | '/components/imageViewer'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -698,6 +720,7 @@ export interface FileRouteTypes {
     | '/components/button'
     | '/components/carousel'
     | '/components/carouselSlider'
+    | '/components/imageViewer'
     | '/components/table'
   id:
     | '__root__'
@@ -730,6 +753,7 @@ export interface FileRouteTypes {
     | '/components/button/'
     | '/components/carousel/'
     | '/components/carouselSlider/'
+    | '/components/imageViewer/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
 }
@@ -793,6 +817,7 @@ export const routeTree = rootRoute
         "/components/button/",
         "/components/carousel/",
         "/components/carouselSlider/",
+        "/components/imageViewer/",
         "/components/table/"
       ]
     },
@@ -901,6 +926,10 @@ export const routeTree = rootRoute
     },
     "/components/carouselSlider/": {
       "filePath": "components/carouselSlider/index.tsx",
+      "parent": "/components"
+    },
+    "/components/imageViewer/": {
+      "filePath": "components/imageViewer/index.tsx",
       "parent": "/components"
     },
     "/components/table/": {

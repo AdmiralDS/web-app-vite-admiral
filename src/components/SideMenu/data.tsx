@@ -63,6 +63,13 @@ export const components = [
     ],
   },
   {
+    name: 'ImageViewer',
+    path: '/components/imageViewer/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/imageViewer/' },
+    ],
+  },
+  {
     name: 'Table',
     path: '/components/table/',
     routes: [
