@@ -19,6 +19,7 @@ import { Route as ComponentsImageViewerIndexImport } from './routes/components/i
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
+import { Route as ComponentsBreadcrumbsIndexImport } from './routes/components/breadcrumbs/index'
 import { Route as ComponentsBadgeDotIndexImport } from './routes/components/badgeDot/index'
 import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
 import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
@@ -33,6 +34,11 @@ import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/compon
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
 import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
 import { Route as ComponentsButtonButtonStylesImport } from './routes/components/button/buttonStyles'
+import { Route as ComponentsBreadcrumbsSizesImport } from './routes/components/breadcrumbs/sizes'
+import { Route as ComponentsBreadcrumbsMobileImport } from './routes/components/breadcrumbs/mobile'
+import { Route as ComponentsBreadcrumbsLinkImport } from './routes/components/breadcrumbs/link'
+import { Route as ComponentsBreadcrumbsIconsImport } from './routes/components/breadcrumbs/icons'
+import { Route as ComponentsBreadcrumbsActiveCrumbImport } from './routes/components/breadcrumbs/activeCrumb'
 import { Route as ComponentsBadgeDotVariantsImport } from './routes/components/badgeDot/variants'
 import { Route as ComponentsBadgeBadgeVariantsImport } from './routes/components/badge/badgeVariants'
 import { Route as ComponentsBadgeBadgeAccessibilityImport } from './routes/components/badge/badgeAccessibility'
@@ -97,6 +103,14 @@ const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
   path: '/button/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsBreadcrumbsIndexRoute = ComponentsBreadcrumbsIndexImport.update(
+  {
+    id: '/breadcrumbs/',
+    path: '/breadcrumbs/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsBadgeDotIndexRoute = ComponentsBadgeDotIndexImport.update({
   id: '/badgeDot/',
@@ -188,6 +202,42 @@ const ComponentsButtonButtonStylesRoute =
   ComponentsButtonButtonStylesImport.update({
     id: '/button/buttonStyles',
     path: '/button/buttonStyles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsBreadcrumbsSizesRoute = ComponentsBreadcrumbsSizesImport.update(
+  {
+    id: '/breadcrumbs/sizes',
+    path: '/breadcrumbs/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsBreadcrumbsMobileRoute =
+  ComponentsBreadcrumbsMobileImport.update({
+    id: '/breadcrumbs/mobile',
+    path: '/breadcrumbs/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsBreadcrumbsLinkRoute = ComponentsBreadcrumbsLinkImport.update({
+  id: '/breadcrumbs/link',
+  path: '/breadcrumbs/link',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsBreadcrumbsIconsRoute = ComponentsBreadcrumbsIconsImport.update(
+  {
+    id: '/breadcrumbs/icons',
+    path: '/breadcrumbs/icons',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsBreadcrumbsActiveCrumbRoute =
+  ComponentsBreadcrumbsActiveCrumbImport.update({
+    id: '/breadcrumbs/activeCrumb',
+    path: '/breadcrumbs/activeCrumb',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -369,6 +419,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsBadgeDotVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/breadcrumbs/activeCrumb': {
+      id: '/components/breadcrumbs/activeCrumb'
+      path: '/breadcrumbs/activeCrumb'
+      fullPath: '/components/breadcrumbs/activeCrumb'
+      preLoaderRoute: typeof ComponentsBreadcrumbsActiveCrumbImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/breadcrumbs/icons': {
+      id: '/components/breadcrumbs/icons'
+      path: '/breadcrumbs/icons'
+      fullPath: '/components/breadcrumbs/icons'
+      preLoaderRoute: typeof ComponentsBreadcrumbsIconsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/breadcrumbs/link': {
+      id: '/components/breadcrumbs/link'
+      path: '/breadcrumbs/link'
+      fullPath: '/components/breadcrumbs/link'
+      preLoaderRoute: typeof ComponentsBreadcrumbsLinkImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/breadcrumbs/mobile': {
+      id: '/components/breadcrumbs/mobile'
+      path: '/breadcrumbs/mobile'
+      fullPath: '/components/breadcrumbs/mobile'
+      preLoaderRoute: typeof ComponentsBreadcrumbsMobileImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/breadcrumbs/sizes': {
+      id: '/components/breadcrumbs/sizes'
+      path: '/breadcrumbs/sizes'
+      fullPath: '/components/breadcrumbs/sizes'
+      preLoaderRoute: typeof ComponentsBreadcrumbsSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/buttonStyles': {
       id: '/components/button/buttonStyles'
       path: '/button/buttonStyles'
@@ -467,6 +552,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsBadgeDotIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/breadcrumbs/': {
+      id: '/components/breadcrumbs/'
+      path: '/breadcrumbs'
+      fullPath: '/components/breadcrumbs'
+      preLoaderRoute: typeof ComponentsBreadcrumbsIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/': {
       id: '/components/button/'
       path: '/button'
@@ -519,6 +611,11 @@ interface ComponentsRouteChildren {
   ComponentsBadgeBadgeAccessibilityRoute: typeof ComponentsBadgeBadgeAccessibilityRoute
   ComponentsBadgeBadgeVariantsRoute: typeof ComponentsBadgeBadgeVariantsRoute
   ComponentsBadgeDotVariantsRoute: typeof ComponentsBadgeDotVariantsRoute
+  ComponentsBreadcrumbsActiveCrumbRoute: typeof ComponentsBreadcrumbsActiveCrumbRoute
+  ComponentsBreadcrumbsIconsRoute: typeof ComponentsBreadcrumbsIconsRoute
+  ComponentsBreadcrumbsLinkRoute: typeof ComponentsBreadcrumbsLinkRoute
+  ComponentsBreadcrumbsMobileRoute: typeof ComponentsBreadcrumbsMobileRoute
+  ComponentsBreadcrumbsSizesRoute: typeof ComponentsBreadcrumbsSizesRoute
   ComponentsButtonButtonStylesRoute: typeof ComponentsButtonButtonStylesRoute
   ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
@@ -533,6 +630,7 @@ interface ComponentsRouteChildren {
   ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
   ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
   ComponentsBadgeDotIndexRoute: typeof ComponentsBadgeDotIndexRoute
+  ComponentsBreadcrumbsIndexRoute: typeof ComponentsBreadcrumbsIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
@@ -557,6 +655,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsBadgeBadgeAccessibilityRoute,
   ComponentsBadgeBadgeVariantsRoute: ComponentsBadgeBadgeVariantsRoute,
   ComponentsBadgeDotVariantsRoute: ComponentsBadgeDotVariantsRoute,
+  ComponentsBreadcrumbsActiveCrumbRoute: ComponentsBreadcrumbsActiveCrumbRoute,
+  ComponentsBreadcrumbsIconsRoute: ComponentsBreadcrumbsIconsRoute,
+  ComponentsBreadcrumbsLinkRoute: ComponentsBreadcrumbsLinkRoute,
+  ComponentsBreadcrumbsMobileRoute: ComponentsBreadcrumbsMobileRoute,
+  ComponentsBreadcrumbsSizesRoute: ComponentsBreadcrumbsSizesRoute,
   ComponentsButtonButtonStylesRoute: ComponentsButtonButtonStylesRoute,
   ComponentsButtonButtonWithBadgeRoute: ComponentsButtonButtonWithBadgeRoute,
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
@@ -575,6 +678,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsAvatarIndexRoute: ComponentsAvatarIndexRoute,
   ComponentsBadgeIndexRoute: ComponentsBadgeIndexRoute,
   ComponentsBadgeDotIndexRoute: ComponentsBadgeDotIndexRoute,
+  ComponentsBreadcrumbsIndexRoute: ComponentsBreadcrumbsIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
@@ -601,6 +705,11 @@ export interface FileRoutesByFullPath {
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
+  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute
+  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute
+  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
+  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
+  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -615,6 +724,7 @@ export interface FileRoutesByFullPath {
   '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
+  '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
@@ -637,6 +747,11 @@ export interface FileRoutesByTo {
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
+  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute
+  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute
+  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
+  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
+  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -651,6 +766,7 @@ export interface FileRoutesByTo {
   '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
+  '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
@@ -674,6 +790,11 @@ export interface FileRoutesById {
   '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
   '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
   '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
+  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute
+  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute
+  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
+  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
+  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
   '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
@@ -688,6 +809,7 @@ export interface FileRoutesById {
   '/components/avatar/': typeof ComponentsAvatarIndexRoute
   '/components/badge/': typeof ComponentsBadgeIndexRoute
   '/components/badgeDot/': typeof ComponentsBadgeDotIndexRoute
+  '/components/breadcrumbs/': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
@@ -712,6 +834,11 @@ export interface FileRouteTypes {
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
     | '/components/badgeDot/variants'
+    | '/components/breadcrumbs/activeCrumb'
+    | '/components/breadcrumbs/icons'
+    | '/components/breadcrumbs/link'
+    | '/components/breadcrumbs/mobile'
+    | '/components/breadcrumbs/sizes'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -726,6 +853,7 @@ export interface FileRouteTypes {
     | '/components/avatar'
     | '/components/badge'
     | '/components/badgeDot'
+    | '/components/breadcrumbs'
     | '/components/button'
     | '/components/carousel'
     | '/components/carouselSlider'
@@ -747,6 +875,11 @@ export interface FileRouteTypes {
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
     | '/components/badgeDot/variants'
+    | '/components/breadcrumbs/activeCrumb'
+    | '/components/breadcrumbs/icons'
+    | '/components/breadcrumbs/link'
+    | '/components/breadcrumbs/mobile'
+    | '/components/breadcrumbs/sizes'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -761,6 +894,7 @@ export interface FileRouteTypes {
     | '/components/avatar'
     | '/components/badge'
     | '/components/badgeDot'
+    | '/components/breadcrumbs'
     | '/components/button'
     | '/components/carousel'
     | '/components/carouselSlider'
@@ -782,6 +916,11 @@ export interface FileRouteTypes {
     | '/components/badge/badgeAccessibility'
     | '/components/badge/badgeVariants'
     | '/components/badgeDot/variants'
+    | '/components/breadcrumbs/activeCrumb'
+    | '/components/breadcrumbs/icons'
+    | '/components/breadcrumbs/link'
+    | '/components/breadcrumbs/mobile'
+    | '/components/breadcrumbs/sizes'
     | '/components/button/buttonStyles'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
@@ -796,6 +935,7 @@ export interface FileRouteTypes {
     | '/components/avatar/'
     | '/components/badge/'
     | '/components/badgeDot/'
+    | '/components/breadcrumbs/'
     | '/components/button/'
     | '/components/carousel/'
     | '/components/carouselSlider/'
@@ -848,6 +988,11 @@ export const routeTree = rootRoute
         "/components/badge/badgeAccessibility",
         "/components/badge/badgeVariants",
         "/components/badgeDot/variants",
+        "/components/breadcrumbs/activeCrumb",
+        "/components/breadcrumbs/icons",
+        "/components/breadcrumbs/link",
+        "/components/breadcrumbs/mobile",
+        "/components/breadcrumbs/sizes",
         "/components/button/buttonStyles",
         "/components/button/buttonWithBadge",
         "/components/button/buttonWithIcon",
@@ -862,6 +1007,7 @@ export const routeTree = rootRoute
         "/components/avatar/",
         "/components/badge/",
         "/components/badgeDot/",
+        "/components/breadcrumbs/",
         "/components/button/",
         "/components/carousel/",
         "/components/carouselSlider/",
@@ -914,6 +1060,26 @@ export const routeTree = rootRoute
     },
     "/components/badgeDot/variants": {
       "filePath": "components/badgeDot/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/breadcrumbs/activeCrumb": {
+      "filePath": "components/breadcrumbs/activeCrumb.tsx",
+      "parent": "/components"
+    },
+    "/components/breadcrumbs/icons": {
+      "filePath": "components/breadcrumbs/icons.tsx",
+      "parent": "/components"
+    },
+    "/components/breadcrumbs/link": {
+      "filePath": "components/breadcrumbs/link.tsx",
+      "parent": "/components"
+    },
+    "/components/breadcrumbs/mobile": {
+      "filePath": "components/breadcrumbs/mobile.tsx",
+      "parent": "/components"
+    },
+    "/components/breadcrumbs/sizes": {
+      "filePath": "components/breadcrumbs/sizes.tsx",
       "parent": "/components"
     },
     "/components/button/buttonStyles": {
@@ -970,6 +1136,10 @@ export const routeTree = rootRoute
     },
     "/components/badgeDot/": {
       "filePath": "components/badgeDot/index.tsx",
+      "parent": "/components"
+    },
+    "/components/breadcrumbs/": {
+      "filePath": "components/breadcrumbs/index.tsx",
       "parent": "/components"
     },
     "/components/button/": {

@@ -44,6 +44,18 @@ export const components = [
     ],
   },
   {
+    name: 'Breadcrumbs',
+    path: '/components/breadcrumbs/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/breadcrumbs/' },
+      { name: 'Размеры', path: '/components/breadcrumbs/sizes' },
+      { name: 'Пример вкладок с иконками', path: '/components/breadcrumbs/icons' },
+      { name: 'Mobile', path: '/components/breadcrumbs/mobile' },
+      { name: 'Пример с активной/неактивной последней вкладкой', path: '/components/breadcrumbs/activeCrumb' },
+      { name: 'Пример с react-router', path: '/components/breadcrumbs/link' },
+    ],
+  },
+  {
     name: 'Button',
     path: '/components/button/',
     routes: [
