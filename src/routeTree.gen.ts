@@ -18,6 +18,7 @@ import { Route as ComponentsTableIndexImport } from './routes/components/table/i
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
+import { Route as ComponentsButtonGroupIndexImport } from './routes/components/buttonGroup/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
 import { Route as ComponentsBreadcrumbsIndexImport } from './routes/components/breadcrumbs/index'
 import { Route as ComponentsBadgeDotIndexImport } from './routes/components/badgeDot/index'
@@ -30,6 +31,10 @@ import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/com
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
 import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from './routes/components/carouselSlider/carouselSliderAutoChange'
 import { Route as ComponentsCarouselCarouselAutoChangeImport } from './routes/components/carousel/carouselAutoChange'
+import { Route as ComponentsButtonGroupVariantsImport } from './routes/components/buttonGroup/variants'
+import { Route as ComponentsButtonGroupStylesImport } from './routes/components/buttonGroup/styles'
+import { Route as ComponentsButtonGroupStatesImport } from './routes/components/buttonGroup/states'
+import { Route as ComponentsButtonGroupSizesImport } from './routes/components/buttonGroup/sizes'
 import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/components/button/buttonWithLoader'
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
 import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
@@ -97,6 +102,14 @@ const ComponentsCarouselIndexRoute = ComponentsCarouselIndexImport.update({
   path: '/carousel/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsButtonGroupIndexRoute = ComponentsButtonGroupIndexImport.update(
+  {
+    id: '/buttonGroup/',
+    path: '/buttonGroup/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
   id: '/button/',
@@ -176,6 +189,35 @@ const ComponentsCarouselCarouselAutoChangeRoute =
     path: '/carousel/carouselAutoChange',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsButtonGroupVariantsRoute =
+  ComponentsButtonGroupVariantsImport.update({
+    id: '/buttonGroup/variants',
+    path: '/buttonGroup/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsButtonGroupStylesRoute =
+  ComponentsButtonGroupStylesImport.update({
+    id: '/buttonGroup/styles',
+    path: '/buttonGroup/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsButtonGroupStatesRoute =
+  ComponentsButtonGroupStatesImport.update({
+    id: '/buttonGroup/states',
+    path: '/buttonGroup/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsButtonGroupSizesRoute = ComponentsButtonGroupSizesImport.update(
+  {
+    id: '/buttonGroup/sizes',
+    path: '/buttonGroup/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsButtonButtonWithLoaderRoute =
   ComponentsButtonButtonWithLoaderImport.update({
@@ -482,6 +524,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsButtonButtonWithLoaderImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/buttonGroup/sizes': {
+      id: '/components/buttonGroup/sizes'
+      path: '/buttonGroup/sizes'
+      fullPath: '/components/buttonGroup/sizes'
+      preLoaderRoute: typeof ComponentsButtonGroupSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/buttonGroup/states': {
+      id: '/components/buttonGroup/states'
+      path: '/buttonGroup/states'
+      fullPath: '/components/buttonGroup/states'
+      preLoaderRoute: typeof ComponentsButtonGroupStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/buttonGroup/styles': {
+      id: '/components/buttonGroup/styles'
+      path: '/buttonGroup/styles'
+      fullPath: '/components/buttonGroup/styles'
+      preLoaderRoute: typeof ComponentsButtonGroupStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/buttonGroup/variants': {
+      id: '/components/buttonGroup/variants'
+      path: '/buttonGroup/variants'
+      fullPath: '/components/buttonGroup/variants'
+      preLoaderRoute: typeof ComponentsButtonGroupVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/carouselAutoChange': {
       id: '/components/carousel/carouselAutoChange'
       path: '/carousel/carouselAutoChange'
@@ -566,6 +636,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/buttonGroup/': {
+      id: '/components/buttonGroup/'
+      path: '/buttonGroup'
+      fullPath: '/components/buttonGroup'
+      preLoaderRoute: typeof ComponentsButtonGroupIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/': {
       id: '/components/carousel/'
       path: '/carousel'
@@ -620,6 +697,10 @@ interface ComponentsRouteChildren {
   ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
   ComponentsButtonButtonWithLoaderRoute: typeof ComponentsButtonButtonWithLoaderRoute
+  ComponentsButtonGroupSizesRoute: typeof ComponentsButtonGroupSizesRoute
+  ComponentsButtonGroupStatesRoute: typeof ComponentsButtonGroupStatesRoute
+  ComponentsButtonGroupStylesRoute: typeof ComponentsButtonGroupStylesRoute
+  ComponentsButtonGroupVariantsRoute: typeof ComponentsButtonGroupVariantsRoute
   ComponentsCarouselCarouselAutoChangeRoute: typeof ComponentsCarouselCarouselAutoChangeRoute
   ComponentsCarouselSliderCarouselSliderAutoChangeRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
@@ -632,6 +713,7 @@ interface ComponentsRouteChildren {
   ComponentsBadgeDotIndexRoute: typeof ComponentsBadgeDotIndexRoute
   ComponentsBreadcrumbsIndexRoute: typeof ComponentsBreadcrumbsIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
+  ComponentsButtonGroupIndexRoute: typeof ComponentsButtonGroupIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
@@ -664,6 +746,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsButtonButtonWithBadgeRoute: ComponentsButtonButtonWithBadgeRoute,
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
   ComponentsButtonButtonWithLoaderRoute: ComponentsButtonButtonWithLoaderRoute,
+  ComponentsButtonGroupSizesRoute: ComponentsButtonGroupSizesRoute,
+  ComponentsButtonGroupStatesRoute: ComponentsButtonGroupStatesRoute,
+  ComponentsButtonGroupStylesRoute: ComponentsButtonGroupStylesRoute,
+  ComponentsButtonGroupVariantsRoute: ComponentsButtonGroupVariantsRoute,
   ComponentsCarouselCarouselAutoChangeRoute:
     ComponentsCarouselCarouselAutoChangeRoute,
   ComponentsCarouselSliderCarouselSliderAutoChangeRoute:
@@ -680,6 +766,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsBadgeDotIndexRoute: ComponentsBadgeDotIndexRoute,
   ComponentsBreadcrumbsIndexRoute: ComponentsBreadcrumbsIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
+  ComponentsButtonGroupIndexRoute: ComponentsButtonGroupIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
@@ -714,6 +801,10 @@ export interface FileRoutesByFullPath {
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
+  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
+  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
+  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
+  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
@@ -726,6 +817,7 @@ export interface FileRoutesByFullPath {
   '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
   '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
+  '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
@@ -756,6 +848,10 @@ export interface FileRoutesByTo {
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
+  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
+  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
+  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
+  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
@@ -768,6 +864,7 @@ export interface FileRoutesByTo {
   '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
   '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
+  '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
@@ -799,6 +896,10 @@ export interface FileRoutesById {
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
+  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
+  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
+  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
+  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
@@ -811,6 +912,7 @@ export interface FileRoutesById {
   '/components/badgeDot/': typeof ComponentsBadgeDotIndexRoute
   '/components/breadcrumbs/': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
+  '/components/buttonGroup/': typeof ComponentsButtonGroupIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
@@ -843,6 +945,10 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
+    | '/components/buttonGroup/sizes'
+    | '/components/buttonGroup/states'
+    | '/components/buttonGroup/styles'
+    | '/components/buttonGroup/variants'
     | '/components/carousel/carouselAutoChange'
     | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/table/loadOnScroll'
@@ -855,6 +961,7 @@ export interface FileRouteTypes {
     | '/components/badgeDot'
     | '/components/breadcrumbs'
     | '/components/button'
+    | '/components/buttonGroup'
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/imageViewer'
@@ -884,6 +991,10 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
+    | '/components/buttonGroup/sizes'
+    | '/components/buttonGroup/states'
+    | '/components/buttonGroup/styles'
+    | '/components/buttonGroup/variants'
     | '/components/carousel/carouselAutoChange'
     | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/table/loadOnScroll'
@@ -896,6 +1007,7 @@ export interface FileRouteTypes {
     | '/components/badgeDot'
     | '/components/breadcrumbs'
     | '/components/button'
+    | '/components/buttonGroup'
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/imageViewer'
@@ -925,6 +1037,10 @@ export interface FileRouteTypes {
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
+    | '/components/buttonGroup/sizes'
+    | '/components/buttonGroup/states'
+    | '/components/buttonGroup/styles'
+    | '/components/buttonGroup/variants'
     | '/components/carousel/carouselAutoChange'
     | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/table/loadOnScroll'
@@ -937,6 +1053,7 @@ export interface FileRouteTypes {
     | '/components/badgeDot/'
     | '/components/breadcrumbs/'
     | '/components/button/'
+    | '/components/buttonGroup/'
     | '/components/carousel/'
     | '/components/carouselSlider/'
     | '/components/imageViewer/'
@@ -997,6 +1114,10 @@ export const routeTree = rootRoute
         "/components/button/buttonWithBadge",
         "/components/button/buttonWithIcon",
         "/components/button/buttonWithLoader",
+        "/components/buttonGroup/sizes",
+        "/components/buttonGroup/states",
+        "/components/buttonGroup/styles",
+        "/components/buttonGroup/variants",
         "/components/carousel/carouselAutoChange",
         "/components/carouselSlider/carouselSliderAutoChange",
         "/components/table/loadOnScroll",
@@ -1009,6 +1130,7 @@ export const routeTree = rootRoute
         "/components/badgeDot/",
         "/components/breadcrumbs/",
         "/components/button/",
+        "/components/buttonGroup/",
         "/components/carousel/",
         "/components/carouselSlider/",
         "/components/imageViewer/",
@@ -1098,6 +1220,22 @@ export const routeTree = rootRoute
       "filePath": "components/button/buttonWithLoader.tsx",
       "parent": "/components"
     },
+    "/components/buttonGroup/sizes": {
+      "filePath": "components/buttonGroup/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/buttonGroup/states": {
+      "filePath": "components/buttonGroup/states.tsx",
+      "parent": "/components"
+    },
+    "/components/buttonGroup/styles": {
+      "filePath": "components/buttonGroup/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/buttonGroup/variants": {
+      "filePath": "components/buttonGroup/variants.tsx",
+      "parent": "/components"
+    },
     "/components/carousel/carouselAutoChange": {
       "filePath": "components/carousel/carouselAutoChange.tsx",
       "parent": "/components"
@@ -1144,6 +1282,10 @@ export const routeTree = rootRoute
     },
     "/components/button/": {
       "filePath": "components/button/index.tsx",
+      "parent": "/components"
+    },
+    "/components/buttonGroup/": {
+      "filePath": "components/buttonGroup/index.tsx",
       "parent": "/components"
     },
     "/components/carousel/": {

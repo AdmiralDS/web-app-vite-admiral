@@ -67,6 +67,17 @@ export const components = [
     ],
   },
   {
+    name: 'ButtonGroup',
+    path: '/components/buttonGroup/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/buttonGroup/' },
+      { name: 'Стили', path: '/components/buttonGroup/styles' },
+      { name: 'Размеры', path: '/components/buttonGroup/sizes' },
+      { name: 'Состояния', path: '/components/buttonGroup/states' },
+      { name: 'Варианты', path: '/components/buttonGroup/variants' },
+    ],
+  },
+  {
     name: 'Carousel',
     path: '/components/carousel/',
     routes: [
