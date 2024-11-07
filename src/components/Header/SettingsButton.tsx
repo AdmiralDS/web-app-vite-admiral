@@ -64,10 +64,10 @@ export const SettingsButton = () => {
           }}
           legend="Theme"
         >
-          <RadioButton name="theme" value="light" checked={theme === 'light'}>
+          <RadioButton name="theme" value="light" checked={theme === 'light'} onChange={() => {}}>
             Light
           </RadioButton>
-          <RadioButton name="theme" value="dark" checked={theme === 'dark'}>
+          <RadioButton name="theme" value="dark" checked={theme === 'dark'} onChange={() => {}}>
             Dark
           </RadioButton>
         </FieldSetStyled>
@@ -105,6 +105,7 @@ export const SettingsButton = () => {
         <DefaultButton
           text="Reset to default"
           onClick={() => {
+            toggleTheme('light');
             setCSSProps('enable');
             setBorderRadius('Border radius 4');
           }}

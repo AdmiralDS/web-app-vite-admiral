@@ -212,6 +212,6 @@ export const Route = createFileRoute('/components/table/')({
   component: () => <TableBasic />,
   staticData: {
     title: 'Table. Базовый пример',
-    description: 'Небольшое описание функционала',
+    description: `Небольшое описание функционала`,
   },
 });

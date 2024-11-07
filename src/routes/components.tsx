@@ -7,6 +7,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   flex: 1 0 auto;
   padding: 40px 0 28px;
+
+  @media (min-width: 1600px) {
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+  }
 `;
 
 const Title = styled.h5`
@@ -27,6 +33,9 @@ const Preview = styled.div`
   flex: 1 0 auto;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 28px;
   margin-top: 24px;
   background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
 `;
