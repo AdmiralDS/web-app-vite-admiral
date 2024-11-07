@@ -16,6 +16,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
+import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index'
 import { Route as ComponentsCheckboxIndexImport } from './routes/components/checkbox/index'
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
@@ -30,6 +31,13 @@ import { Route as ComponentsAccordionIndexImport } from './routes/components/acc
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsChipsWithTooltipImport } from './routes/components/chips/withTooltip'
+import { Route as ComponentsChipsWithIconImport } from './routes/components/chips/withIcon'
+import { Route as ComponentsChipsWithBadgeImport } from './routes/components/chips/withBadge'
+import { Route as ComponentsChipsStylesImport } from './routes/components/chips/styles'
+import { Route as ComponentsChipsSelectImport } from './routes/components/chips/select'
+import { Route as ComponentsChipsMultiSelectImport } from './routes/components/chips/multiSelect'
+import { Route as ComponentsChipsChipsCloseImport } from './routes/components/chips/chipsClose'
 import { Route as ComponentsCheckboxStatesImport } from './routes/components/checkbox/states'
 import { Route as ComponentsCheckboxFieldSetImport } from './routes/components/checkbox/fieldSet'
 import { Route as ComponentsCheckboxCompositeGroupImport } from './routes/components/checkbox/compositeGroup'
@@ -93,6 +101,12 @@ const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsChipsIndexRoute = ComponentsChipsIndexImport.update({
+  id: '/chips/',
+  path: '/chips/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsCheckboxIndexRoute = ComponentsCheckboxIndexImport.update({
   id: '/checkbox/',
@@ -185,6 +199,52 @@ const ComponentsTableLoadOnScrollRoute =
     path: '/table/loadOnScroll',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsChipsWithTooltipRoute = ComponentsChipsWithTooltipImport.update(
+  {
+    id: '/chips/withTooltip',
+    path: '/chips/withTooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsChipsWithIconRoute = ComponentsChipsWithIconImport.update({
+  id: '/chips/withIcon',
+  path: '/chips/withIcon',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsChipsWithBadgeRoute = ComponentsChipsWithBadgeImport.update({
+  id: '/chips/withBadge',
+  path: '/chips/withBadge',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsChipsStylesRoute = ComponentsChipsStylesImport.update({
+  id: '/chips/styles',
+  path: '/chips/styles',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsChipsSelectRoute = ComponentsChipsSelectImport.update({
+  id: '/chips/select',
+  path: '/chips/select',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsChipsMultiSelectRoute = ComponentsChipsMultiSelectImport.update(
+  {
+    id: '/chips/multiSelect',
+    path: '/chips/multiSelect',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsChipsChipsCloseRoute = ComponentsChipsChipsCloseImport.update({
+  id: '/chips/chipsClose',
+  path: '/chips/chipsClose',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsCheckboxStatesRoute = ComponentsCheckboxStatesImport.update({
   id: '/checkbox/states',
@@ -618,6 +678,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsCheckboxStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/chips/chipsClose': {
+      id: '/components/chips/chipsClose'
+      path: '/chips/chipsClose'
+      fullPath: '/components/chips/chipsClose'
+      preLoaderRoute: typeof ComponentsChipsChipsCloseImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/chips/multiSelect': {
+      id: '/components/chips/multiSelect'
+      path: '/chips/multiSelect'
+      fullPath: '/components/chips/multiSelect'
+      preLoaderRoute: typeof ComponentsChipsMultiSelectImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/chips/select': {
+      id: '/components/chips/select'
+      path: '/chips/select'
+      fullPath: '/components/chips/select'
+      preLoaderRoute: typeof ComponentsChipsSelectImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/chips/styles': {
+      id: '/components/chips/styles'
+      path: '/chips/styles'
+      fullPath: '/components/chips/styles'
+      preLoaderRoute: typeof ComponentsChipsStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/chips/withBadge': {
+      id: '/components/chips/withBadge'
+      path: '/chips/withBadge'
+      fullPath: '/components/chips/withBadge'
+      preLoaderRoute: typeof ComponentsChipsWithBadgeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/chips/withIcon': {
+      id: '/components/chips/withIcon'
+      path: '/chips/withIcon'
+      fullPath: '/components/chips/withIcon'
+      preLoaderRoute: typeof ComponentsChipsWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/chips/withTooltip': {
+      id: '/components/chips/withTooltip'
+      path: '/chips/withTooltip'
+      fullPath: '/components/chips/withTooltip'
+      preLoaderRoute: typeof ComponentsChipsWithTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScroll': {
       id: '/components/table/loadOnScroll'
       path: '/table/loadOnScroll'
@@ -716,6 +825,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsCheckboxIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/chips/': {
+      id: '/components/chips/'
+      path: '/chips'
+      fullPath: '/components/chips'
+      preLoaderRoute: typeof ComponentsChipsIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/': {
       id: '/components/imageViewer/'
       path: '/imageViewer'
@@ -765,6 +881,13 @@ interface ComponentsRouteChildren {
   ComponentsCheckboxCompositeGroupRoute: typeof ComponentsCheckboxCompositeGroupRoute
   ComponentsCheckboxFieldSetRoute: typeof ComponentsCheckboxFieldSetRoute
   ComponentsCheckboxStatesRoute: typeof ComponentsCheckboxStatesRoute
+  ComponentsChipsChipsCloseRoute: typeof ComponentsChipsChipsCloseRoute
+  ComponentsChipsMultiSelectRoute: typeof ComponentsChipsMultiSelectRoute
+  ComponentsChipsSelectRoute: typeof ComponentsChipsSelectRoute
+  ComponentsChipsStylesRoute: typeof ComponentsChipsStylesRoute
+  ComponentsChipsWithBadgeRoute: typeof ComponentsChipsWithBadgeRoute
+  ComponentsChipsWithIconRoute: typeof ComponentsChipsWithIconRoute
+  ComponentsChipsWithTooltipRoute: typeof ComponentsChipsWithTooltipRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -779,6 +902,7 @@ interface ComponentsRouteChildren {
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
   ComponentsCheckboxIndexRoute: typeof ComponentsCheckboxIndexRoute
+  ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
@@ -820,6 +944,13 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsCheckboxCompositeGroupRoute: ComponentsCheckboxCompositeGroupRoute,
   ComponentsCheckboxFieldSetRoute: ComponentsCheckboxFieldSetRoute,
   ComponentsCheckboxStatesRoute: ComponentsCheckboxStatesRoute,
+  ComponentsChipsChipsCloseRoute: ComponentsChipsChipsCloseRoute,
+  ComponentsChipsMultiSelectRoute: ComponentsChipsMultiSelectRoute,
+  ComponentsChipsSelectRoute: ComponentsChipsSelectRoute,
+  ComponentsChipsStylesRoute: ComponentsChipsStylesRoute,
+  ComponentsChipsWithBadgeRoute: ComponentsChipsWithBadgeRoute,
+  ComponentsChipsWithIconRoute: ComponentsChipsWithIconRoute,
+  ComponentsChipsWithTooltipRoute: ComponentsChipsWithTooltipRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
   ComponentsTableLoadOnScrollSkeletonRoute:
     ComponentsTableLoadOnScrollSkeletonRoute,
@@ -836,6 +967,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
   ComponentsCheckboxIndexRoute: ComponentsCheckboxIndexRoute,
+  ComponentsChipsIndexRoute: ComponentsChipsIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
@@ -877,6 +1009,13 @@ export interface FileRoutesByFullPath {
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
+  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
+  '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/styles': typeof ComponentsChipsStylesRoute
+  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
+  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
+  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -891,6 +1030,7 @@ export interface FileRoutesByFullPath {
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
+  '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -928,6 +1068,13 @@ export interface FileRoutesByTo {
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
+  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
+  '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/styles': typeof ComponentsChipsStylesRoute
+  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
+  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
+  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -942,6 +1089,7 @@ export interface FileRoutesByTo {
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
+  '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -980,6 +1128,13 @@ export interface FileRoutesById {
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
+  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
+  '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/styles': typeof ComponentsChipsStylesRoute
+  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
+  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
+  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -994,6 +1149,7 @@ export interface FileRoutesById {
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox/': typeof ComponentsCheckboxIndexRoute
+  '/components/chips/': typeof ComponentsChipsIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
@@ -1033,6 +1189,13 @@ export interface FileRouteTypes {
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
+    | '/components/chips/chipsClose'
+    | '/components/chips/multiSelect'
+    | '/components/chips/select'
+    | '/components/chips/styles'
+    | '/components/chips/withBadge'
+    | '/components/chips/withIcon'
+    | '/components/chips/withTooltip'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1047,6 +1210,7 @@ export interface FileRouteTypes {
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/checkbox'
+    | '/components/chips'
     | '/components/imageViewer'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
@@ -1083,6 +1247,13 @@ export interface FileRouteTypes {
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
+    | '/components/chips/chipsClose'
+    | '/components/chips/multiSelect'
+    | '/components/chips/select'
+    | '/components/chips/styles'
+    | '/components/chips/withBadge'
+    | '/components/chips/withIcon'
+    | '/components/chips/withTooltip'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1097,6 +1268,7 @@ export interface FileRouteTypes {
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/checkbox'
+    | '/components/chips'
     | '/components/imageViewer'
     | '/components/table'
   id:
@@ -1133,6 +1305,13 @@ export interface FileRouteTypes {
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
+    | '/components/chips/chipsClose'
+    | '/components/chips/multiSelect'
+    | '/components/chips/select'
+    | '/components/chips/styles'
+    | '/components/chips/withBadge'
+    | '/components/chips/withIcon'
+    | '/components/chips/withTooltip'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1147,6 +1326,7 @@ export interface FileRouteTypes {
     | '/components/carousel/'
     | '/components/carouselSlider/'
     | '/components/checkbox/'
+    | '/components/chips/'
     | '/components/imageViewer/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
@@ -1214,6 +1394,13 @@ export const routeTree = rootRoute
         "/components/checkbox/compositeGroup",
         "/components/checkbox/fieldSet",
         "/components/checkbox/states",
+        "/components/chips/chipsClose",
+        "/components/chips/multiSelect",
+        "/components/chips/select",
+        "/components/chips/styles",
+        "/components/chips/withBadge",
+        "/components/chips/withIcon",
+        "/components/chips/withTooltip",
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
@@ -1228,6 +1415,7 @@ export const routeTree = rootRoute
         "/components/carousel/",
         "/components/carouselSlider/",
         "/components/checkbox/",
+        "/components/chips/",
         "/components/imageViewer/",
         "/components/table/"
       ]
@@ -1351,6 +1539,34 @@ export const routeTree = rootRoute
       "filePath": "components/checkbox/states.tsx",
       "parent": "/components"
     },
+    "/components/chips/chipsClose": {
+      "filePath": "components/chips/chipsClose.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/multiSelect": {
+      "filePath": "components/chips/multiSelect.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/select": {
+      "filePath": "components/chips/select.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/styles": {
+      "filePath": "components/chips/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/withBadge": {
+      "filePath": "components/chips/withBadge.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/withIcon": {
+      "filePath": "components/chips/withIcon.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/withTooltip": {
+      "filePath": "components/chips/withTooltip.tsx",
+      "parent": "/components"
+    },
     "/components/table/loadOnScroll": {
       "filePath": "components/table/loadOnScroll.tsx",
       "parent": "/components"
@@ -1405,6 +1621,10 @@ export const routeTree = rootRoute
     },
     "/components/checkbox/": {
       "filePath": "components/checkbox/index.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/": {
+      "filePath": "components/chips/index.tsx",
       "parent": "/components"
     },
     "/components/imageViewer/": {

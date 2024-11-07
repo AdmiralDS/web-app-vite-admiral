@@ -104,6 +104,20 @@ export const components = [
     ],
   },
   {
+    name: 'Chips',
+    path: '/components/chips/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/chips/' },
+      { name: 'Стили и размеры', path: '/components/chips/styles' },
+      { name: 'Chips с текстом и иконкой закрыть', path: '/components/chips/chipsClose' },
+      { name: 'Chips с иконкой', path: '/components/chips/withIcon' },
+      { name: 'Chips с Badge', path: '/components/chips/withBadge' },
+      { name: 'Chips с текстом и выбором', path: '/components/chips/select' },
+      { name: 'Chips для множественного выбора', path: '/components/chips/multiSelect' },
+      { name: 'Chips с Tooltip', path: '/components/chips/withTooltip' },
+    ],
+  },
+  {
     name: 'ImageViewer',
     path: '/components/imageViewer/',
     routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],
