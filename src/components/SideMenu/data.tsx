@@ -94,6 +94,16 @@ export const components = [
     ],
   },
   {
+    name: 'CheckboxField',
+    path: '/components/checkbox/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/checkbox/' },
+      { name: 'Состояния', path: '/components/checkbox/states' },
+      { name: 'Группа чекбоксов', path: '/components/checkbox/fieldSet' },
+      { name: 'Составная группа чекбоксов', path: '/components/checkbox/compositeGroup' },
+    ],
+  },
+  {
     name: 'ImageViewer',
     path: '/components/imageViewer/',
     routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],
