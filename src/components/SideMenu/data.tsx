@@ -118,6 +118,17 @@ export const components = [
     ],
   },
   {
+    name: 'ContentSwitcher',
+    path: '/components/contentSwitcher/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/contentSwitcher/' },
+      { name: 'Стили и размеры', path: '/components/contentSwitcher/styles' },
+      { name: 'С иконками', path: '/components/contentSwitcher/withIcons' },
+      { name: 'С Badge', path: '/components/contentSwitcher/withBadge' },
+      { name: 'Иконки без текста', path: '/components/contentSwitcher/iconsOnly' },
+    ],
+  },
+  {
     name: 'ImageViewer',
     path: '/components/imageViewer/',
     routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],

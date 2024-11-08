@@ -16,6 +16,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
+import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
 import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index'
 import { Route as ComponentsCheckboxIndexImport } from './routes/components/checkbox/index'
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
@@ -31,6 +32,10 @@ import { Route as ComponentsAccordionIndexImport } from './routes/components/acc
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsContentSwitcherWithIconsImport } from './routes/components/contentSwitcher/withIcons'
+import { Route as ComponentsContentSwitcherWithBadgeImport } from './routes/components/contentSwitcher/withBadge'
+import { Route as ComponentsContentSwitcherStylesImport } from './routes/components/contentSwitcher/styles'
+import { Route as ComponentsContentSwitcherIconsOnlyImport } from './routes/components/contentSwitcher/iconsOnly'
 import { Route as ComponentsChipsWithTooltipImport } from './routes/components/chips/withTooltip'
 import { Route as ComponentsChipsWithIconImport } from './routes/components/chips/withIcon'
 import { Route as ComponentsChipsWithBadgeImport } from './routes/components/chips/withBadge'
@@ -101,6 +106,13 @@ const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsContentSwitcherIndexRoute =
+  ComponentsContentSwitcherIndexImport.update({
+    id: '/contentSwitcher/',
+    path: '/contentSwitcher/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsChipsIndexRoute = ComponentsChipsIndexImport.update({
   id: '/chips/',
@@ -197,6 +209,34 @@ const ComponentsTableLoadOnScrollRoute =
   ComponentsTableLoadOnScrollImport.update({
     id: '/table/loadOnScroll',
     path: '/table/loadOnScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsContentSwitcherWithIconsRoute =
+  ComponentsContentSwitcherWithIconsImport.update({
+    id: '/contentSwitcher/withIcons',
+    path: '/contentSwitcher/withIcons',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsContentSwitcherWithBadgeRoute =
+  ComponentsContentSwitcherWithBadgeImport.update({
+    id: '/contentSwitcher/withBadge',
+    path: '/contentSwitcher/withBadge',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsContentSwitcherStylesRoute =
+  ComponentsContentSwitcherStylesImport.update({
+    id: '/contentSwitcher/styles',
+    path: '/contentSwitcher/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsContentSwitcherIconsOnlyRoute =
+  ComponentsContentSwitcherIconsOnlyImport.update({
+    id: '/contentSwitcher/iconsOnly',
+    path: '/contentSwitcher/iconsOnly',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -727,6 +767,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsChipsWithTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/contentSwitcher/iconsOnly': {
+      id: '/components/contentSwitcher/iconsOnly'
+      path: '/contentSwitcher/iconsOnly'
+      fullPath: '/components/contentSwitcher/iconsOnly'
+      preLoaderRoute: typeof ComponentsContentSwitcherIconsOnlyImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/contentSwitcher/styles': {
+      id: '/components/contentSwitcher/styles'
+      path: '/contentSwitcher/styles'
+      fullPath: '/components/contentSwitcher/styles'
+      preLoaderRoute: typeof ComponentsContentSwitcherStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/contentSwitcher/withBadge': {
+      id: '/components/contentSwitcher/withBadge'
+      path: '/contentSwitcher/withBadge'
+      fullPath: '/components/contentSwitcher/withBadge'
+      preLoaderRoute: typeof ComponentsContentSwitcherWithBadgeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/contentSwitcher/withIcons': {
+      id: '/components/contentSwitcher/withIcons'
+      path: '/contentSwitcher/withIcons'
+      fullPath: '/components/contentSwitcher/withIcons'
+      preLoaderRoute: typeof ComponentsContentSwitcherWithIconsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScroll': {
       id: '/components/table/loadOnScroll'
       path: '/table/loadOnScroll'
@@ -832,6 +900,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsChipsIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/contentSwitcher/': {
+      id: '/components/contentSwitcher/'
+      path: '/contentSwitcher'
+      fullPath: '/components/contentSwitcher'
+      preLoaderRoute: typeof ComponentsContentSwitcherIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/': {
       id: '/components/imageViewer/'
       path: '/imageViewer'
@@ -888,6 +963,10 @@ interface ComponentsRouteChildren {
   ComponentsChipsWithBadgeRoute: typeof ComponentsChipsWithBadgeRoute
   ComponentsChipsWithIconRoute: typeof ComponentsChipsWithIconRoute
   ComponentsChipsWithTooltipRoute: typeof ComponentsChipsWithTooltipRoute
+  ComponentsContentSwitcherIconsOnlyRoute: typeof ComponentsContentSwitcherIconsOnlyRoute
+  ComponentsContentSwitcherStylesRoute: typeof ComponentsContentSwitcherStylesRoute
+  ComponentsContentSwitcherWithBadgeRoute: typeof ComponentsContentSwitcherWithBadgeRoute
+  ComponentsContentSwitcherWithIconsRoute: typeof ComponentsContentSwitcherWithIconsRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -903,6 +982,7 @@ interface ComponentsRouteChildren {
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
   ComponentsCheckboxIndexRoute: typeof ComponentsCheckboxIndexRoute
   ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute
+  ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
@@ -951,6 +1031,13 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsChipsWithBadgeRoute: ComponentsChipsWithBadgeRoute,
   ComponentsChipsWithIconRoute: ComponentsChipsWithIconRoute,
   ComponentsChipsWithTooltipRoute: ComponentsChipsWithTooltipRoute,
+  ComponentsContentSwitcherIconsOnlyRoute:
+    ComponentsContentSwitcherIconsOnlyRoute,
+  ComponentsContentSwitcherStylesRoute: ComponentsContentSwitcherStylesRoute,
+  ComponentsContentSwitcherWithBadgeRoute:
+    ComponentsContentSwitcherWithBadgeRoute,
+  ComponentsContentSwitcherWithIconsRoute:
+    ComponentsContentSwitcherWithIconsRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
   ComponentsTableLoadOnScrollSkeletonRoute:
     ComponentsTableLoadOnScrollSkeletonRoute,
@@ -968,6 +1055,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
   ComponentsCheckboxIndexRoute: ComponentsCheckboxIndexRoute,
   ComponentsChipsIndexRoute: ComponentsChipsIndexRoute,
+  ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
@@ -1016,6 +1104,10 @@ export interface FileRoutesByFullPath {
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
   '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
+  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
+  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1031,6 +1123,7 @@ export interface FileRoutesByFullPath {
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
   '/components/chips': typeof ComponentsChipsIndexRoute
+  '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -1075,6 +1168,10 @@ export interface FileRoutesByTo {
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
   '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
+  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
+  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1090,6 +1187,7 @@ export interface FileRoutesByTo {
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
   '/components/chips': typeof ComponentsChipsIndexRoute
+  '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -1135,6 +1233,10 @@ export interface FileRoutesById {
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
   '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
+  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
+  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1150,6 +1252,7 @@ export interface FileRoutesById {
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox/': typeof ComponentsCheckboxIndexRoute
   '/components/chips/': typeof ComponentsChipsIndexRoute
+  '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
@@ -1196,6 +1299,10 @@ export interface FileRouteTypes {
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
     | '/components/chips/withTooltip'
+    | '/components/contentSwitcher/iconsOnly'
+    | '/components/contentSwitcher/styles'
+    | '/components/contentSwitcher/withBadge'
+    | '/components/contentSwitcher/withIcons'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1211,6 +1318,7 @@ export interface FileRouteTypes {
     | '/components/carouselSlider'
     | '/components/checkbox'
     | '/components/chips'
+    | '/components/contentSwitcher'
     | '/components/imageViewer'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
@@ -1254,6 +1362,10 @@ export interface FileRouteTypes {
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
     | '/components/chips/withTooltip'
+    | '/components/contentSwitcher/iconsOnly'
+    | '/components/contentSwitcher/styles'
+    | '/components/contentSwitcher/withBadge'
+    | '/components/contentSwitcher/withIcons'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1269,6 +1381,7 @@ export interface FileRouteTypes {
     | '/components/carouselSlider'
     | '/components/checkbox'
     | '/components/chips'
+    | '/components/contentSwitcher'
     | '/components/imageViewer'
     | '/components/table'
   id:
@@ -1312,6 +1425,10 @@ export interface FileRouteTypes {
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
     | '/components/chips/withTooltip'
+    | '/components/contentSwitcher/iconsOnly'
+    | '/components/contentSwitcher/styles'
+    | '/components/contentSwitcher/withBadge'
+    | '/components/contentSwitcher/withIcons'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1327,6 +1444,7 @@ export interface FileRouteTypes {
     | '/components/carouselSlider/'
     | '/components/checkbox/'
     | '/components/chips/'
+    | '/components/contentSwitcher/'
     | '/components/imageViewer/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
@@ -1401,6 +1519,10 @@ export const routeTree = rootRoute
         "/components/chips/withBadge",
         "/components/chips/withIcon",
         "/components/chips/withTooltip",
+        "/components/contentSwitcher/iconsOnly",
+        "/components/contentSwitcher/styles",
+        "/components/contentSwitcher/withBadge",
+        "/components/contentSwitcher/withIcons",
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
@@ -1416,6 +1538,7 @@ export const routeTree = rootRoute
         "/components/carouselSlider/",
         "/components/checkbox/",
         "/components/chips/",
+        "/components/contentSwitcher/",
         "/components/imageViewer/",
         "/components/table/"
       ]
@@ -1567,6 +1690,22 @@ export const routeTree = rootRoute
       "filePath": "components/chips/withTooltip.tsx",
       "parent": "/components"
     },
+    "/components/contentSwitcher/iconsOnly": {
+      "filePath": "components/contentSwitcher/iconsOnly.tsx",
+      "parent": "/components"
+    },
+    "/components/contentSwitcher/styles": {
+      "filePath": "components/contentSwitcher/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/contentSwitcher/withBadge": {
+      "filePath": "components/contentSwitcher/withBadge.tsx",
+      "parent": "/components"
+    },
+    "/components/contentSwitcher/withIcons": {
+      "filePath": "components/contentSwitcher/withIcons.tsx",
+      "parent": "/components"
+    },
     "/components/table/loadOnScroll": {
       "filePath": "components/table/loadOnScroll.tsx",
       "parent": "/components"
@@ -1625,6 +1764,10 @@ export const routeTree = rootRoute
     },
     "/components/chips/": {
       "filePath": "components/chips/index.tsx",
+      "parent": "/components"
+    },
+    "/components/contentSwitcher/": {
+      "filePath": "components/contentSwitcher/index.tsx",
       "parent": "/components"
     },
     "/components/imageViewer/": {
