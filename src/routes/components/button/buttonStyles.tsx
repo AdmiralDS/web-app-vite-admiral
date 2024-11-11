@@ -1,14 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { Button } from '@admiral-ds/react-ui'
-import type { ButtonAppearance } from '@admiral-ds/react-ui'
-import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react'
+import { Button } from '@admiral-ds/react-ui';
+import type { ButtonAppearance } from '@admiral-ds/react-ui';
+import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const ButtonContainer = styled.div<{ $appearance?: ButtonAppearance }>`
   padding: 24px;
@@ -20,7 +20,7 @@ const ButtonContainer = styled.div<{ $appearance?: ButtonAppearance }>`
   }
 
   ${(p) => p.$appearance === 'white' && 'background-color: #2B313B;'};
-`
+`;
 
 export const ButtonStyles = () => {
   return (
@@ -45,11 +45,7 @@ export const ButtonStyles = () => {
           Button 56
         </Button>
 
-        <Button
-          appearance="secondary"
-          displayAsSquare
-          iconStart={<StarSolid />}
-        />
+        <Button appearance="secondary" displayAsSquare iconStart={<StarSolid />} />
       </ButtonContainer>
       <ButtonContainer>
         <Button appearance="tertiary">Button 56</Button>
@@ -62,11 +58,7 @@ export const ButtonStyles = () => {
           Button 56
         </Button>
 
-        <Button
-          appearance="tertiary"
-          displayAsSquare
-          iconStart={<StarSolid />}
-        />
+        <Button appearance="tertiary" displayAsSquare iconStart={<StarSolid />} />
       </ButtonContainer>
       <ButtonContainer>
         <Button appearance="ghost">Button 56</Button>
@@ -105,11 +97,7 @@ export const ButtonStyles = () => {
           Button 56
         </Button>
 
-        <Button
-          appearance="success"
-          displayAsSquare
-          iconStart={<StarSolid />}
-        />
+        <Button appearance="success" displayAsSquare iconStart={<StarSolid />} />
       </ButtonContainer>
       <ButtonContainer $appearance="white">
         <Button appearance="white">Button 56</Button>
@@ -125,8 +113,8 @@ export const ButtonStyles = () => {
         <Button appearance="white" displayAsSquare iconStart={<StarSolid />} />
       </ButtonContainer>
     </Wrapper>
-  )
-}
+  );
+};
 
 export const Route = createFileRoute('/components/button/buttonStyles')({
   component: () => <ButtonStyles />,

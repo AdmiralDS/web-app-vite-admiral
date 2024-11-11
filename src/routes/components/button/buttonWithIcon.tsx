@@ -1,15 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router'
-import styled from 'styled-components'
+import { createFileRoute } from '@tanstack/react-router';
+import styled from 'styled-components';
 
-import { Button, T } from '@admiral-ds/react-ui'
-import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react'
+import { Button, T } from '@admiral-ds/react-ui';
+import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-self: flex-start;
   margin: 15px;
-`
+`;
 
 const WrapperButton = styled.div`
   display: flex;
@@ -22,12 +22,12 @@ const WrapperButton = styled.div`
 
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 const Separator = styled.div`
   height: 20px;
   width: 20px;
-`
+`;
 
 const DarkDiv = styled.div`
   background-color: var(
@@ -35,7 +35,7 @@ const DarkDiv = styled.div`
     ${(p) => p.theme.color['Special/Dark Static Neutral 00']}
   );
   padding: 2px;
-`
+`;
 
 export const ButtonWithIcon = () => {
   return (
@@ -53,11 +53,7 @@ export const ButtonWithIcon = () => {
           <T font="Body/Body 1 Long" as="div">
             Dimension - l
           </T>
-          <Button
-            dimension="l"
-            appearance="secondary"
-            iconStart={<StarSolid />}
-          >
+          <Button dimension="l" appearance="secondary" iconStart={<StarSolid />}>
             Button 48
           </Button>
         </div>
@@ -101,18 +97,13 @@ export const ButtonWithIcon = () => {
         <T font="Body/Body 1 Long" as="div">
           Button with icon stretch
         </T>
-        <Button
-          dimension="l"
-          appearance="tertiary"
-          style={{ width: '100%' }}
-          iconStart={<StarSolid />}
-        >
+        <Button dimension="l" appearance="tertiary" style={{ width: '100%' }} iconStart={<StarSolid />}>
           Button
         </Button>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
 
 export const Route = createFileRoute('/components/button/buttonWithIcon')({
   component: () => <ButtonWithIcon />,
@@ -120,4 +111,4 @@ export const Route = createFileRoute('/components/button/buttonWithIcon')({
     title: 'Button. С иконкой',
     description: 'Небольшое описание функционала',
   },
-})
+});

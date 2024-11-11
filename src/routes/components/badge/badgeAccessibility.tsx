@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import { Badge, Button } from '@admiral-ds/react-ui';
 
 const String = styled.div`

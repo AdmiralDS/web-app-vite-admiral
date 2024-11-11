@@ -1,12 +1,12 @@
-import { createFileRoute } from '@tanstack/react-router'
-import styled from 'styled-components'
+import { createFileRoute } from '@tanstack/react-router';
+import styled from 'styled-components';
 
-import { Button, T } from '@admiral-ds/react-ui'
+import { Button, T } from '@admiral-ds/react-ui';
 
 const Separator = styled.div`
   height: 20px;
   width: 20px;
-`
+`;
 
 const DarkDiv = styled.div`
   background-color: var(
@@ -14,7 +14,7 @@ const DarkDiv = styled.div`
     ${(p) => p.theme.color['Special/Dark Static Neutral 00']}
   );
   padding: 2px;
-`
+`;
 
 const WrapperVertical = styled.div`
   display: flex;
@@ -22,21 +22,22 @@ const WrapperVertical = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
-`
+`;
 
 const Wrapper = styled.div`
   display: flex;
-`
+`;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 15px;
-`
+`;
 
 const handleClick = () => {
-  console.log('clicked')
-}
+  // eslint-disable-next-line no-console
+  console.log('clicked');
+};
 
 export const ButtonLoader = () => {
   return (
@@ -49,28 +50,13 @@ export const ButtonLoader = () => {
           <Button dimension="xl" onClick={handleClick}>
             Button 56
           </Button>
-          <Button
-            dimension="xl"
-            appearance="primary"
-            loading
-            onClick={handleClick}
-          >
+          <Button dimension="xl" appearance="primary" loading onClick={handleClick}>
             Button 56
           </Button>
-          <Button
-            dimension="xl"
-            appearance="secondary"
-            loading
-            onClick={handleClick}
-          >
+          <Button dimension="xl" appearance="secondary" loading onClick={handleClick}>
             Button 56
           </Button>
-          <Button
-            dimension="xl"
-            appearance="tertiary"
-            loading
-            onClick={handleClick}
-          >
+          <Button dimension="xl" appearance="tertiary" loading onClick={handleClick}>
             Button 56
           </Button>
           <Button dimension="xl" appearance="ghost" loading>
@@ -188,8 +174,8 @@ export const ButtonLoader = () => {
         <Button disabled loading style={{ width: '100%' }}></Button>
       </div>
     </Container>
-  )
-}
+  );
+};
 
 export const Route = createFileRoute('/components/button/buttonWithLoader')({
   component: () => <ButtonLoader />,
@@ -197,4 +183,4 @@ export const Route = createFileRoute('/components/button/buttonWithLoader')({
     title: 'Button. С лоадером',
     description: 'Небольшое описание функционала',
   },
-})
+});

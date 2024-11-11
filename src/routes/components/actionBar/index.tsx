@@ -1,8 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { useMemo } from 'react'
-import styled from 'styled-components'
+import { createFileRoute } from '@tanstack/react-router';
+import { useMemo } from 'react';
+import styled from 'styled-components';
 
-import type { RenderOptionProps } from '@admiral-ds/react-ui'
+import type { RenderOptionProps } from '@admiral-ds/react-ui';
 import {
   ActionBar,
   ActionBarItemWithTooltip,
@@ -12,16 +12,16 @@ import {
 } from '@admiral-ds/react-ui';
 
 // Импорт оптимизированной иконки через настроенный SVGR лоадер (https://react-svgr.com/docs/what-is-svgr/)
-import SearchOutline from '@admiral-ds/icons/build/system/SearchOutline.svg?react'
-import EditOutline from '@admiral-ds/icons/build/system/EditOutline.svg?react'
-import ArchiveOutline from '@admiral-ds/icons/build/service/ArchiveOutline.svg?react'
-import HeartOutline from '@admiral-ds/icons/build/category/HeartOutline.svg?react'
-import PinOutline from '@admiral-ds/icons/build/category/PinOutline.svg?react'
-import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react'
-import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react'
-import LinkOutline from '@admiral-ds/icons/build/system/LinkOutline.svg?react'
-import ExportOutline from '@admiral-ds/icons/build/system/ExportOutline.svg?react'
-import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react'
+import SearchOutline from '@admiral-ds/icons/build/system/SearchOutline.svg?react';
+import EditOutline from '@admiral-ds/icons/build/system/EditOutline.svg?react';
+import ArchiveOutline from '@admiral-ds/icons/build/service/ArchiveOutline.svg?react';
+import HeartOutline from '@admiral-ds/icons/build/category/HeartOutline.svg?react';
+import PinOutline from '@admiral-ds/icons/build/category/PinOutline.svg?react';
+import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';
+import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
+import LinkOutline from '@admiral-ds/icons/build/system/LinkOutline.svg?react';
+import ExportOutline from '@admiral-ds/icons/build/system/ExportOutline.svg?react';
+import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
 const items = [
   {
@@ -94,11 +94,11 @@ const items = [
     icon: <DeleteOutline />,
     disabled: false,
   },
-]
+];
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
-`
+`;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -109,21 +109,21 @@ const Wrapper = styled.div`
   > * {
     margin: 20px 20px;
   }
-`
+`;
 
 export const ActionBarTemplate = () => {
   const itemsMap = useMemo(() => {
     return items.map((item) => ({
       itemId: item.itemId,
       withDivider: item.withDivider,
-    }))
-  }, [items])
-  const dimension = 'l'
+    }));
+  }, [items]);
+  const dimension = 'l';
 
   const renderActionBarItem = (itemId: string) => {
-    const item = items.find((item) => item.itemId === itemId) || items[0]
+    const item = items.find((item) => item.itemId === itemId) || items[0];
     // eslint-disable-next-line no-console
-    const handleClick = () => console.log(`${item.name} clicked`)
+    const handleClick = () => console.log(`${item.name} clicked`);
     return (
       <ActionBarItemWithTooltip
         dimension={dimension}
@@ -135,30 +135,25 @@ export const ActionBarTemplate = () => {
       >
         {item.icon}
       </ActionBarItemWithTooltip>
-    )
-  }
+    );
+  };
   const renderDropMenuItem = (itemId: string) => {
-    const item = items.find((item) => item.itemId === itemId) || items[0]
+    const item = items.find((item) => item.itemId === itemId) || items[0];
     // eslint-disable-next-line no-console
-    const handleClick = () => console.log(`${item.name} clicked`)
+    const handleClick = () => console.log(`${item.name} clicked`);
     return (options: RenderOptionProps) => {
       return (
-        <ActionBarDropMenuItem
-          dimension={dimension}
-          {...options}
-          key={itemId}
-          onClick={handleClick}
-        >
+        <ActionBarDropMenuItem dimension={dimension} {...options} key={itemId} onClick={handleClick}>
           {item.icon}
           {item.name}
         </ActionBarDropMenuItem>
-      )
-    }
-  }
+      );
+    };
+  };
   const itemIsDisabled = (itemId: string) => {
-    const currentTab = items.find((item) => item.itemId === itemId)
-    return !!currentTab?.disabled
-  }
+    const currentTab = items.find((item) => item.itemId === itemId);
+    return !!currentTab?.disabled;
+  };
 
   return (
     <Wrapper>
@@ -171,38 +166,32 @@ export const ActionBarTemplate = () => {
         style={{ width: '80%' }}
       />
       <NotificationItem displayStatusIcon>
-          <NotificationItemContent>
-            Опционально или при нехватке места добавляется Overflow Menu. Над
-            каждой кнопкой, входящей в состав компонента, при ховере, появляется
-            Tooltip с подсказкой функции кнопки.
-            <Separator height={8} />
-            Компонент Action Bar представлен в 4х размерах по аналогии с
-            обычными кнопками: XL (56), L (48), M (40), S (32).
-            <Separator height={8} />
-            По дефолту тултип появляется снизу от кнопки при ховере. Можно
-            настроить появление тултипа справа, слева, сверху, в зависимости от
-            расположения Action Bar. В случае, когда это действительно
-            необходимо и смысл кнопки очевиден, опционально можно отключать
-            тултип.
-            <Separator height={8} />
-            Если кнопки не помещаются в доступное горизонтальное пространство,
-            они перемещаются в Dropdown Menu. Размеры выпадающего меню для
-            Action Bar — L для XL и L размера Action Bar, M для M размера и S
-            для размера S. При изменении ширины компонента, кнопки не
-            помещающиеся в ширину Action Bar, перемещаются в Overflow Menu,
-            добавляясь по порядку. Это означает, что последняя кнопка на панели
-            действий также будет последней кнопкой внутри меню.
-          </NotificationItemContent>
-        </NotificationItem>
+        <NotificationItemContent>
+          Опционально или при нехватке места добавляется Overflow Menu. Над каждой кнопкой, входящей в состав
+          компонента, при ховере, появляется Tooltip с подсказкой функции кнопки.
+          <Separator height={8} />
+          Компонент Action Bar представлен в 4х размерах по аналогии с обычными кнопками: XL (56), L (48), M (40), S
+          (32).
+          <Separator height={8} />
+          По дефолту тултип появляется снизу от кнопки при ховере. Можно настроить появление тултипа справа, слева,
+          сверху, в зависимости от расположения Action Bar. В случае, когда это действительно необходимо и смысл кнопки
+          очевиден, опционально можно отключать тултип.
+          <Separator height={8} />
+          Если кнопки не помещаются в доступное горизонтальное пространство, они перемещаются в Dropdown Menu. Размеры
+          выпадающего меню для Action Bar — L для XL и L размера Action Bar, M для M размера и S для размера S. При
+          изменении ширины компонента, кнопки не помещающиеся в ширину Action Bar, перемещаются в Overflow Menu,
+          добавляясь по порядку. Это означает, что последняя кнопка на панели действий также будет последней кнопкой
+          внутри меню.
+        </NotificationItemContent>
+      </NotificationItem>
     </Wrapper>
-  )
-}
+  );
+};
 
 export const Route = createFileRoute('/components/actionBar/')({
   component: () => <ActionBarTemplate />,
   staticData: {
     title: 'ActionBar. Базовый пример',
-    description:
-      'Панель действий с возможностью деления на логические группы с помощью разделителя.',
+    description: 'Панель действий с возможностью деления на логические группы с помощью разделителя.',
   },
-})
+});

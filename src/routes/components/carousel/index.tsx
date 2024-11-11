@@ -45,8 +45,7 @@ export const CarouselBasic = (props: CarouselProps) => {
       </CarouselContainer>
       <NotificationItem displayStatusIcon>
         <NotificationItemContent>
-          Может использоваться как «листалка» изображений или для просмотра условных карточек с
-          контентом.
+          Может использоваться как «листалка» изображений или для просмотра условных карточек с контентом.
           <Separator height={8} />
           Имеет два вида — со слайдером внутри изображения или снаружи.
           <Separator height={8} />
@@ -75,6 +74,7 @@ export const Route = createFileRoute('/components/carousel/')({
   component: () => <CarouselBasic />,
   staticData: {
     title: 'Carousel. Базовый пример',
-    description: 'Компонент для последовательного отображения связанных по смыслу элементов, как правило, это изображения или карточки с контентом.',
+    description:
+      'Компонент для последовательного отображения связанных по смыслу элементов, как правило, это изображения или карточки с контентом.',
   },
 });

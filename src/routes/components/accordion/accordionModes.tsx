@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 
@@ -23,6 +23,7 @@ export const AccordionModes = () => {
         <AccordionItem
           defaultExpanded
           title="Неконтролируемый режим использования (uncontrolled)"
+          // eslint-disable-next-line no-console
           onClick={(title, expanded, event) => console.log({ title, expanded, event })}
         >
           Контент первого пункта
@@ -30,7 +31,7 @@ export const AccordionModes = () => {
         <AccordionItem
           expanded={expanded}
           title="Контролируемый режим использования (controlled)"
-          onClick={(title, expanded) => setExpanded(expanded)}
+          onClick={(_title, expanded) => setExpanded(expanded)}
         >
           Будущее игр никогда не было таким вдохновляющим. Творчество в играх процветает. Новые сервисы позволяют
           находить больше игр, а также приближают игроков к любимым играм, стримерам и создателям. Облако создает

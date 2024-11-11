@@ -1,12 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
-import {
-  Button,
-  ButtonBadge,
-  NotificationItem,
-  NotificationItemContent,
-} from '@admiral-ds/react-ui';
+import { Button, ButtonBadge, NotificationItem, NotificationItemContent } from '@admiral-ds/react-ui';
 import type { ButtonAppearance } from '@admiral-ds/react-ui';
 
 const Wrapper = styled.div`
@@ -16,7 +11,7 @@ const Wrapper = styled.div`
   align-items: center;
   align-self: flex-start;
   margin: 15px 5px;
-`
+`;
 
 const ButtonContainer = styled.div<{ $appearance?: ButtonAppearance }>`
   padding: 24px;
@@ -69,4 +64,4 @@ export const Route = createFileRoute('/components/button/buttonWithBadge')({
     title: 'Button. С бейджем',
     description: 'Небольшое описание функционала',
   },
-})
+});
