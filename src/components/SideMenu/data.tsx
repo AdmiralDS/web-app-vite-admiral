@@ -129,6 +129,20 @@ export const components = [
     ],
   },
   {
+    name: 'Drawer',
+    path: '/components/drawer/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/drawer/' },
+      { name: 'Блокировка контента страницы (Backdrop = True)', path: '/components/drawer/withBackdrop' },
+      { name: 'Без блокировки контента страницы (Backdrop = False)', path: '/components/drawer/withoutBackdrop' },
+      { name: 'С обязательным условием (non-closable Drawer)', path: '/components/drawer/nonClosable' },
+      { name: 'Расположение компонента', path: '/components/drawer/position' },
+      { name: 'Адаптив (mobile)', path: '/components/drawer/mobile' },
+      { name: 'Ширина компонента', path: '/components/drawer/width' },
+      { name: 'Свободное (кастомизированное) наполнение', path: '/components/drawer/customContent' },
+    ],
+  },
+  {
     name: 'ImageViewer',
     path: '/components/imageViewer/',
     routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],
