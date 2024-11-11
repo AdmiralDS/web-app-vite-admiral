@@ -143,6 +143,14 @@ export const components = [
     ],
   },
   {
+    name: 'DropdownContainer',
+    path: '/components/dropdownContainer/',
+    routes: [
+      { name: 'Простой контейнер', path: '/components/dropdownContainer/' },
+      { name: 'Контейнер с меню', path: '/components/dropdownContainer/menuContainer' },
+    ],
+  },
+  {
     name: 'ImageViewer',
     path: '/components/imageViewer/',
     routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],

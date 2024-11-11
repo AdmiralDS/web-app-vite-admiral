@@ -16,6 +16,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
+import { Route as ComponentsDropdownContainerIndexImport } from './routes/components/dropdownContainer/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
 import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
 import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index'
@@ -33,6 +34,7 @@ import { Route as ComponentsAccordionIndexImport } from './routes/components/acc
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsDropdownContainerMenuContainerImport } from './routes/components/dropdownContainer/menuContainer'
 import { Route as ComponentsDrawerWithoutBackdropImport } from './routes/components/drawer/withoutBackdrop'
 import { Route as ComponentsDrawerWithBackdropImport } from './routes/components/drawer/withBackdrop'
 import { Route as ComponentsDrawerWidthImport } from './routes/components/drawer/width'
@@ -114,6 +116,13 @@ const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsDropdownContainerIndexRoute =
+  ComponentsDropdownContainerIndexImport.update({
+    id: '/dropdownContainer/',
+    path: '/dropdownContainer/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDrawerIndexRoute = ComponentsDrawerIndexImport.update({
   id: '/drawer/',
@@ -223,6 +232,13 @@ const ComponentsTableLoadOnScrollRoute =
   ComponentsTableLoadOnScrollImport.update({
     id: '/table/loadOnScroll',
     path: '/table/loadOnScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDropdownContainerMenuContainerRoute =
+  ComponentsDropdownContainerMenuContainerImport.update({
+    id: '/dropdownContainer/menuContainer',
+    path: '/dropdownContainer/menuContainer',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -904,6 +920,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDrawerWithoutBackdropImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/dropdownContainer/menuContainer': {
+      id: '/components/dropdownContainer/menuContainer'
+      path: '/dropdownContainer/menuContainer'
+      fullPath: '/components/dropdownContainer/menuContainer'
+      preLoaderRoute: typeof ComponentsDropdownContainerMenuContainerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScroll': {
       id: '/components/table/loadOnScroll'
       path: '/table/loadOnScroll'
@@ -1023,6 +1046,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDrawerIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/dropdownContainer/': {
+      id: '/components/dropdownContainer/'
+      path: '/dropdownContainer'
+      fullPath: '/components/dropdownContainer'
+      preLoaderRoute: typeof ComponentsDropdownContainerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/': {
       id: '/components/imageViewer/'
       path: '/imageViewer'
@@ -1090,6 +1120,7 @@ interface ComponentsRouteChildren {
   ComponentsDrawerWidthRoute: typeof ComponentsDrawerWidthRoute
   ComponentsDrawerWithBackdropRoute: typeof ComponentsDrawerWithBackdropRoute
   ComponentsDrawerWithoutBackdropRoute: typeof ComponentsDrawerWithoutBackdropRoute
+  ComponentsDropdownContainerMenuContainerRoute: typeof ComponentsDropdownContainerMenuContainerRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1107,6 +1138,7 @@ interface ComponentsRouteChildren {
   ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute
   ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
+  ComponentsDropdownContainerIndexRoute: typeof ComponentsDropdownContainerIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
@@ -1169,6 +1201,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDrawerWidthRoute: ComponentsDrawerWidthRoute,
   ComponentsDrawerWithBackdropRoute: ComponentsDrawerWithBackdropRoute,
   ComponentsDrawerWithoutBackdropRoute: ComponentsDrawerWithoutBackdropRoute,
+  ComponentsDropdownContainerMenuContainerRoute:
+    ComponentsDropdownContainerMenuContainerRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
   ComponentsTableLoadOnScrollSkeletonRoute:
     ComponentsTableLoadOnScrollSkeletonRoute,
@@ -1188,6 +1222,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsChipsIndexRoute: ComponentsChipsIndexRoute,
   ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
+  ComponentsDropdownContainerIndexRoute: ComponentsDropdownContainerIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
@@ -1247,6 +1282,7 @@ export interface FileRoutesByFullPath {
   '/components/drawer/width': typeof ComponentsDrawerWidthRoute
   '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute
   '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute
+  '/components/dropdownContainer/menuContainer': typeof ComponentsDropdownContainerMenuContainerRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1264,6 +1300,7 @@ export interface FileRoutesByFullPath {
   '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
+  '/components/dropdownContainer': typeof ComponentsDropdownContainerIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -1319,6 +1356,7 @@ export interface FileRoutesByTo {
   '/components/drawer/width': typeof ComponentsDrawerWidthRoute
   '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute
   '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute
+  '/components/dropdownContainer/menuContainer': typeof ComponentsDropdownContainerMenuContainerRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1336,6 +1374,7 @@ export interface FileRoutesByTo {
   '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
+  '/components/dropdownContainer': typeof ComponentsDropdownContainerIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
@@ -1392,6 +1431,7 @@ export interface FileRoutesById {
   '/components/drawer/width': typeof ComponentsDrawerWidthRoute
   '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute
   '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute
+  '/components/dropdownContainer/menuContainer': typeof ComponentsDropdownContainerMenuContainerRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1409,6 +1449,7 @@ export interface FileRoutesById {
   '/components/chips/': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
+  '/components/dropdownContainer/': typeof ComponentsDropdownContainerIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
@@ -1466,6 +1507,7 @@ export interface FileRouteTypes {
     | '/components/drawer/width'
     | '/components/drawer/withBackdrop'
     | '/components/drawer/withoutBackdrop'
+    | '/components/dropdownContainer/menuContainer'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1483,6 +1525,7 @@ export interface FileRouteTypes {
     | '/components/chips'
     | '/components/contentSwitcher'
     | '/components/drawer'
+    | '/components/dropdownContainer'
     | '/components/imageViewer'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
@@ -1537,6 +1580,7 @@ export interface FileRouteTypes {
     | '/components/drawer/width'
     | '/components/drawer/withBackdrop'
     | '/components/drawer/withoutBackdrop'
+    | '/components/dropdownContainer/menuContainer'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1554,6 +1598,7 @@ export interface FileRouteTypes {
     | '/components/chips'
     | '/components/contentSwitcher'
     | '/components/drawer'
+    | '/components/dropdownContainer'
     | '/components/imageViewer'
     | '/components/table'
   id:
@@ -1608,6 +1653,7 @@ export interface FileRouteTypes {
     | '/components/drawer/width'
     | '/components/drawer/withBackdrop'
     | '/components/drawer/withoutBackdrop'
+    | '/components/dropdownContainer/menuContainer'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1625,6 +1671,7 @@ export interface FileRouteTypes {
     | '/components/chips/'
     | '/components/contentSwitcher/'
     | '/components/drawer/'
+    | '/components/dropdownContainer/'
     | '/components/imageViewer/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
@@ -1710,6 +1757,7 @@ export const routeTree = rootRoute
         "/components/drawer/width",
         "/components/drawer/withBackdrop",
         "/components/drawer/withoutBackdrop",
+        "/components/dropdownContainer/menuContainer",
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
@@ -1727,6 +1775,7 @@ export const routeTree = rootRoute
         "/components/chips/",
         "/components/contentSwitcher/",
         "/components/drawer/",
+        "/components/dropdownContainer/",
         "/components/imageViewer/",
         "/components/table/"
       ]
@@ -1922,6 +1971,10 @@ export const routeTree = rootRoute
       "filePath": "components/drawer/withoutBackdrop.tsx",
       "parent": "/components"
     },
+    "/components/dropdownContainer/menuContainer": {
+      "filePath": "components/dropdownContainer/menuContainer.tsx",
+      "parent": "/components"
+    },
     "/components/table/loadOnScroll": {
       "filePath": "components/table/loadOnScroll.tsx",
       "parent": "/components"
@@ -1988,6 +2041,10 @@ export const routeTree = rootRoute
     },
     "/components/drawer/": {
       "filePath": "components/drawer/index.tsx",
+      "parent": "/components"
+    },
+    "/components/dropdownContainer/": {
+      "filePath": "components/dropdownContainer/index.tsx",
       "parent": "/components"
     },
     "/components/imageViewer/": {
