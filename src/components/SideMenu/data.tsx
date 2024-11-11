@@ -151,6 +151,17 @@ export const components = [
     ],
   },
   {
+    name: 'DropMenu',
+    path: '/components/dropMenu/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/dropMenu/' },
+      { name: 'Пример с группами', path: '/components/dropMenu/category' },
+      { name: 'Пример с Tooltip', path: '/components/dropMenu/tooltip' },
+      { name: 'Пример с Checkbox', path: '/components/dropMenu/withCheckbox' },
+      { name: 'Пример с Radiobutton', path: '/components/dropMenu/withRadiobutton' },
+    ],
+  },
+  {
     name: 'ImageViewer',
     path: '/components/imageViewer/',
     routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],
