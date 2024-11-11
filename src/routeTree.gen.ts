@@ -15,6 +15,7 @@ import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
+import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
 import { Route as ComponentsDropdownContainerIndexImport } from './routes/components/dropdownContainer/index'
 import { Route as ComponentsDropMenuIndexImport } from './routes/components/dropMenu/index'
@@ -35,6 +36,11 @@ import { Route as ComponentsAccordionIndexImport } from './routes/components/acc
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states'
+import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes'
+import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
+import { Route as ComponentsRadiobuttonFieldSetImport } from './routes/components/radiobutton/fieldSet'
+import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/components/radiobutton/extraText'
 import { Route as ComponentsDropdownContainerMenuContainerImport } from './routes/components/dropdownContainer/menuContainer'
 import { Route as ComponentsDropMenuWithRadiobuttonImport } from './routes/components/dropMenu/withRadiobutton'
 import { Route as ComponentsDropMenuWithCheckboxImport } from './routes/components/dropMenu/withCheckbox'
@@ -113,6 +119,14 @@ const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
   path: '/table/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
+  {
+    id: '/radiobutton/',
+    path: '/radiobutton/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
   {
@@ -243,6 +257,42 @@ const ComponentsTableLoadOnScrollRoute =
   ComponentsTableLoadOnScrollImport.update({
     id: '/table/loadOnScroll',
     path: '/table/loadOnScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsRadiobuttonStatesRoute =
+  ComponentsRadiobuttonStatesImport.update({
+    id: '/radiobutton/states',
+    path: '/radiobutton/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsRadiobuttonSizesRoute = ComponentsRadiobuttonSizesImport.update(
+  {
+    id: '/radiobutton/sizes',
+    path: '/radiobutton/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsRadiobuttonInformerRoute =
+  ComponentsRadiobuttonInformerImport.update({
+    id: '/radiobutton/informer',
+    path: '/radiobutton/informer',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsRadiobuttonFieldSetRoute =
+  ComponentsRadiobuttonFieldSetImport.update({
+    id: '/radiobutton/fieldSet',
+    path: '/radiobutton/fieldSet',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsRadiobuttonExtraTextRoute =
+  ComponentsRadiobuttonExtraTextImport.update({
+    id: '/radiobutton/extraText',
+    path: '/radiobutton/extraText',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -994,6 +1044,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDropdownContainerMenuContainerImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/radiobutton/extraText': {
+      id: '/components/radiobutton/extraText'
+      path: '/radiobutton/extraText'
+      fullPath: '/components/radiobutton/extraText'
+      preLoaderRoute: typeof ComponentsRadiobuttonExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/radiobutton/fieldSet': {
+      id: '/components/radiobutton/fieldSet'
+      path: '/radiobutton/fieldSet'
+      fullPath: '/components/radiobutton/fieldSet'
+      preLoaderRoute: typeof ComponentsRadiobuttonFieldSetImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/radiobutton/informer': {
+      id: '/components/radiobutton/informer'
+      path: '/radiobutton/informer'
+      fullPath: '/components/radiobutton/informer'
+      preLoaderRoute: typeof ComponentsRadiobuttonInformerImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/radiobutton/sizes': {
+      id: '/components/radiobutton/sizes'
+      path: '/radiobutton/sizes'
+      fullPath: '/components/radiobutton/sizes'
+      preLoaderRoute: typeof ComponentsRadiobuttonSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/radiobutton/states': {
+      id: '/components/radiobutton/states'
+      path: '/radiobutton/states'
+      fullPath: '/components/radiobutton/states'
+      preLoaderRoute: typeof ComponentsRadiobuttonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScroll': {
       id: '/components/table/loadOnScroll'
       path: '/table/loadOnScroll'
@@ -1134,6 +1219,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsImageViewerIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/radiobutton/': {
+      id: '/components/radiobutton/'
+      path: '/radiobutton'
+      fullPath: '/components/radiobutton'
+      preLoaderRoute: typeof ComponentsRadiobuttonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/': {
       id: '/components/table/'
       path: '/table'
@@ -1199,6 +1291,11 @@ interface ComponentsRouteChildren {
   ComponentsDropMenuWithCheckboxRoute: typeof ComponentsDropMenuWithCheckboxRoute
   ComponentsDropMenuWithRadiobuttonRoute: typeof ComponentsDropMenuWithRadiobuttonRoute
   ComponentsDropdownContainerMenuContainerRoute: typeof ComponentsDropdownContainerMenuContainerRoute
+  ComponentsRadiobuttonExtraTextRoute: typeof ComponentsRadiobuttonExtraTextRoute
+  ComponentsRadiobuttonFieldSetRoute: typeof ComponentsRadiobuttonFieldSetRoute
+  ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
+  ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute
+  ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1219,6 +1316,7 @@ interface ComponentsRouteChildren {
   ComponentsDropMenuIndexRoute: typeof ComponentsDropMenuIndexRoute
   ComponentsDropdownContainerIndexRoute: typeof ComponentsDropdownContainerIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
+  ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
 
@@ -1287,6 +1385,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsDropMenuWithRadiobuttonRoute,
   ComponentsDropdownContainerMenuContainerRoute:
     ComponentsDropdownContainerMenuContainerRoute,
+  ComponentsRadiobuttonExtraTextRoute: ComponentsRadiobuttonExtraTextRoute,
+  ComponentsRadiobuttonFieldSetRoute: ComponentsRadiobuttonFieldSetRoute,
+  ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
+  ComponentsRadiobuttonSizesRoute: ComponentsRadiobuttonSizesRoute,
+  ComponentsRadiobuttonStatesRoute: ComponentsRadiobuttonStatesRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
   ComponentsTableLoadOnScrollSkeletonRoute:
     ComponentsTableLoadOnScrollSkeletonRoute,
@@ -1309,6 +1412,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDropMenuIndexRoute: ComponentsDropMenuIndexRoute,
   ComponentsDropdownContainerIndexRoute: ComponentsDropdownContainerIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
+  ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
 
@@ -1372,6 +1476,11 @@ export interface FileRoutesByFullPath {
   '/components/dropMenu/withCheckbox': typeof ComponentsDropMenuWithCheckboxRoute
   '/components/dropMenu/withRadiobutton': typeof ComponentsDropMenuWithRadiobuttonRoute
   '/components/dropdownContainer/menuContainer': typeof ComponentsDropdownContainerMenuContainerRoute
+  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
+  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
+  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
+  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
+  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1392,6 +1501,7 @@ export interface FileRoutesByFullPath {
   '/components/dropMenu': typeof ComponentsDropMenuIndexRoute
   '/components/dropdownContainer': typeof ComponentsDropdownContainerIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
+  '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
 
@@ -1451,6 +1561,11 @@ export interface FileRoutesByTo {
   '/components/dropMenu/withCheckbox': typeof ComponentsDropMenuWithCheckboxRoute
   '/components/dropMenu/withRadiobutton': typeof ComponentsDropMenuWithRadiobuttonRoute
   '/components/dropdownContainer/menuContainer': typeof ComponentsDropdownContainerMenuContainerRoute
+  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
+  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
+  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
+  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
+  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1471,6 +1586,7 @@ export interface FileRoutesByTo {
   '/components/dropMenu': typeof ComponentsDropMenuIndexRoute
   '/components/dropdownContainer': typeof ComponentsDropdownContainerIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
+  '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
 }
 
@@ -1531,6 +1647,11 @@ export interface FileRoutesById {
   '/components/dropMenu/withCheckbox': typeof ComponentsDropMenuWithCheckboxRoute
   '/components/dropMenu/withRadiobutton': typeof ComponentsDropMenuWithRadiobuttonRoute
   '/components/dropdownContainer/menuContainer': typeof ComponentsDropdownContainerMenuContainerRoute
+  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
+  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
+  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
+  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
+  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
@@ -1551,6 +1672,7 @@ export interface FileRoutesById {
   '/components/dropMenu/': typeof ComponentsDropMenuIndexRoute
   '/components/dropdownContainer/': typeof ComponentsDropdownContainerIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
+  '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
 }
 
@@ -1612,6 +1734,11 @@ export interface FileRouteTypes {
     | '/components/dropMenu/withCheckbox'
     | '/components/dropMenu/withRadiobutton'
     | '/components/dropdownContainer/menuContainer'
+    | '/components/radiobutton/extraText'
+    | '/components/radiobutton/fieldSet'
+    | '/components/radiobutton/informer'
+    | '/components/radiobutton/sizes'
+    | '/components/radiobutton/states'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1632,6 +1759,7 @@ export interface FileRouteTypes {
     | '/components/dropMenu'
     | '/components/dropdownContainer'
     | '/components/imageViewer'
+    | '/components/radiobutton'
     | '/components/table'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -1690,6 +1818,11 @@ export interface FileRouteTypes {
     | '/components/dropMenu/withCheckbox'
     | '/components/dropMenu/withRadiobutton'
     | '/components/dropdownContainer/menuContainer'
+    | '/components/radiobutton/extraText'
+    | '/components/radiobutton/fieldSet'
+    | '/components/radiobutton/informer'
+    | '/components/radiobutton/sizes'
+    | '/components/radiobutton/states'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1710,6 +1843,7 @@ export interface FileRouteTypes {
     | '/components/dropMenu'
     | '/components/dropdownContainer'
     | '/components/imageViewer'
+    | '/components/radiobutton'
     | '/components/table'
   id:
     | '__root__'
@@ -1768,6 +1902,11 @@ export interface FileRouteTypes {
     | '/components/dropMenu/withCheckbox'
     | '/components/dropMenu/withRadiobutton'
     | '/components/dropdownContainer/menuContainer'
+    | '/components/radiobutton/extraText'
+    | '/components/radiobutton/fieldSet'
+    | '/components/radiobutton/informer'
+    | '/components/radiobutton/sizes'
+    | '/components/radiobutton/states'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
@@ -1788,6 +1927,7 @@ export interface FileRouteTypes {
     | '/components/dropMenu/'
     | '/components/dropdownContainer/'
     | '/components/imageViewer/'
+    | '/components/radiobutton/'
     | '/components/table/'
   fileRoutesById: FileRoutesById
 }
@@ -1877,6 +2017,11 @@ export const routeTree = rootRoute
         "/components/dropMenu/withCheckbox",
         "/components/dropMenu/withRadiobutton",
         "/components/dropdownContainer/menuContainer",
+        "/components/radiobutton/extraText",
+        "/components/radiobutton/fieldSet",
+        "/components/radiobutton/informer",
+        "/components/radiobutton/sizes",
+        "/components/radiobutton/states",
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
@@ -1897,6 +2042,7 @@ export const routeTree = rootRoute
         "/components/dropMenu/",
         "/components/dropdownContainer/",
         "/components/imageViewer/",
+        "/components/radiobutton/",
         "/components/table/"
       ]
     },
@@ -2111,6 +2257,26 @@ export const routeTree = rootRoute
       "filePath": "components/dropdownContainer/menuContainer.tsx",
       "parent": "/components"
     },
+    "/components/radiobutton/extraText": {
+      "filePath": "components/radiobutton/extraText.tsx",
+      "parent": "/components"
+    },
+    "/components/radiobutton/fieldSet": {
+      "filePath": "components/radiobutton/fieldSet.tsx",
+      "parent": "/components"
+    },
+    "/components/radiobutton/informer": {
+      "filePath": "components/radiobutton/informer.tsx",
+      "parent": "/components"
+    },
+    "/components/radiobutton/sizes": {
+      "filePath": "components/radiobutton/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/radiobutton/states": {
+      "filePath": "components/radiobutton/states.tsx",
+      "parent": "/components"
+    },
     "/components/table/loadOnScroll": {
       "filePath": "components/table/loadOnScroll.tsx",
       "parent": "/components"
@@ -2189,6 +2355,10 @@ export const routeTree = rootRoute
     },
     "/components/imageViewer/": {
       "filePath": "components/imageViewer/index.tsx",
+      "parent": "/components"
+    },
+    "/components/radiobutton/": {
+      "filePath": "components/radiobutton/index.tsx",
       "parent": "/components"
     },
     "/components/table/": {

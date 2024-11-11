@@ -104,6 +104,18 @@ export const components = [
     ],
   },
   {
+    name: 'RadioButton',
+    path: '/components/radiobutton/',
+    routes: [
+      { name: 'Базовый пример', path: '/components/radiobutton/' },
+      { name: 'Размеры', path: '/components/radiobutton/sizes' },
+      { name: 'Состояния', path: '/components/radiobutton/states' },
+      { name: 'Дополнительный текст', path: '/components/radiobutton/extraText' },
+      { name: 'Информер', path: '/components/radiobutton/informer' },
+      { name: 'Группа', path: '/components/radiobutton/fieldSet' },
+    ],
+  },
+  {
     name: 'Chips',
     path: '/components/chips/',
     routes: [
