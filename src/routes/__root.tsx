@@ -1,9 +1,7 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router';
 import styled from 'styled-components';
 
-import { Header } from '../components/Header/Header';
-import { SideMenu } from '../components/SideMenu/SideMenu';
-import useMediaQuery from '../components/useMediaQuery';
+import { Header, SideMenu, useMediaQuery } from '../layoutComponents';
 
 const Main = styled.div`
   display: flex;

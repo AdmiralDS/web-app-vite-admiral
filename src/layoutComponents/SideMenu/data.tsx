@@ -12,14 +12,14 @@ export const components = [
   },
   {
     name: 'ActionBar',
-    path: '/components/actionBar/',
-    routes: [{ name: 'Базовый пример', path: '/components/actionBar/' }],
+    path: '/components/actionBar',
+    routes: [{ name: 'Базовый пример', path: '/components/actionBar' }],
   },
   {
     name: 'Avatar',
-    path: '/components/avatar/',
+    path: '/components/avatar',
     routes: [
-      { name: 'Базовый пример', path: '/components/avatar/' },
+      { name: 'Базовый пример', path: '/components/avatar' },
       { name: 'Стили', path: '/components/avatar/styles' },
       { name: 'Размер XXS', path: '/components/avatar/sizeXXS' },
       { name: 'Группировка', path: '/components/avatar/avatarGroup' },
@@ -37,17 +37,17 @@ export const components = [
   },
   {
     name: 'BadgeDot',
-    path: '/components/badgeDot/',
+    path: '/components/badgeDot',
     routes: [
-      { name: 'Базовый пример', path: '/components/badgeDot/' },
+      { name: 'Базовый пример', path: '/components/badgeDot' },
       { name: 'Варианты использования', path: '/components/badgeDot/variants' },
     ],
   },
   {
     name: 'Breadcrumbs',
-    path: '/components/breadcrumbs/',
+    path: '/components/breadcrumbs',
     routes: [
-      { name: 'Базовый пример', path: '/components/breadcrumbs/' },
+      { name: 'Базовый пример', path: '/components/breadcrumbs' },
       { name: 'Размеры', path: '/components/breadcrumbs/sizes' },
       { name: 'Пример вкладок с иконками', path: '/components/breadcrumbs/icons' },
       { name: 'Mobile', path: '/components/breadcrumbs/mobile' },
@@ -68,9 +68,9 @@ export const components = [
   },
   {
     name: 'ButtonGroup',
-    path: '/components/buttonGroup/',
+    path: '/components/buttonGroup',
     routes: [
-      { name: 'Базовый пример', path: '/components/buttonGroup/' },
+      { name: 'Базовый пример', path: '/components/buttonGroup' },
       { name: 'Стили', path: '/components/buttonGroup/styles' },
       { name: 'Размеры', path: '/components/buttonGroup/sizes' },
       { name: 'Состояния', path: '/components/buttonGroup/states' },
@@ -95,9 +95,9 @@ export const components = [
   },
   {
     name: 'CheckboxField',
-    path: '/components/checkbox/',
+    path: '/components/checkbox',
     routes: [
-      { name: 'Базовый пример', path: '/components/checkbox/' },
+      { name: 'Базовый пример', path: '/components/checkbox' },
       { name: 'Состояния', path: '/components/checkbox/states' },
       { name: 'Группа чекбоксов', path: '/components/checkbox/fieldSet' },
       { name: 'Составная группа чекбоксов', path: '/components/checkbox/compositeGroup' },
@@ -105,9 +105,9 @@ export const components = [
   },
   {
     name: 'RadioButton',
-    path: '/components/radiobutton/',
+    path: '/components/radiobutton',
     routes: [
-      { name: 'Базовый пример', path: '/components/radiobutton/' },
+      { name: 'Базовый пример', path: '/components/radiobutton' },
       { name: 'Размеры', path: '/components/radiobutton/sizes' },
       { name: 'Состояния', path: '/components/radiobutton/states' },
       { name: 'Дополнительный текст', path: '/components/radiobutton/extraText' },
@@ -117,9 +117,9 @@ export const components = [
   },
   {
     name: 'Chips',
-    path: '/components/chips/',
+    path: '/components/chips',
     routes: [
-      { name: 'Базовый пример', path: '/components/chips/' },
+      { name: 'Базовый пример', path: '/components/chips' },
       { name: 'Стили и размеры', path: '/components/chips/styles' },
       { name: 'Chips с текстом и иконкой закрыть', path: '/components/chips/chipsClose' },
       { name: 'Chips с иконкой', path: '/components/chips/withIcon' },
@@ -131,9 +131,9 @@ export const components = [
   },
   {
     name: 'ContentSwitcher',
-    path: '/components/contentSwitcher/',
+    path: '/components/contentSwitcher',
     routes: [
-      { name: 'Базовый пример', path: '/components/contentSwitcher/' },
+      { name: 'Базовый пример', path: '/components/contentSwitcher' },
       { name: 'Стили и размеры', path: '/components/contentSwitcher/styles' },
       { name: 'С иконками', path: '/components/contentSwitcher/withIcons' },
       { name: 'С Badge', path: '/components/contentSwitcher/withBadge' },
@@ -142,9 +142,9 @@ export const components = [
   },
   {
     name: 'Drawer',
-    path: '/components/drawer/',
+    path: '/components/drawer',
     routes: [
-      { name: 'Базовый пример', path: '/components/drawer/' },
+      { name: 'Базовый пример', path: '/components/drawer' },
       { name: 'Блокировка контента страницы (Backdrop = True)', path: '/components/drawer/withBackdrop' },
       { name: 'Без блокировки контента страницы (Backdrop = False)', path: '/components/drawer/withoutBackdrop' },
       { name: 'С обязательным условием (non-closable Drawer)', path: '/components/drawer/nonClosable' },
@@ -156,17 +156,17 @@ export const components = [
   },
   {
     name: 'DropdownContainer',
-    path: '/components/dropdownContainer/',
+    path: '/components/dropdownContainer',
     routes: [
-      { name: 'Простой контейнер', path: '/components/dropdownContainer/' },
+      { name: 'Простой контейнер', path: '/components/dropdownContainer' },
       { name: 'Контейнер с меню', path: '/components/dropdownContainer/menuContainer' },
     ],
   },
   {
     name: 'DropMenu',
-    path: '/components/dropMenu/',
+    path: '/components/dropMenu',
     routes: [
-      { name: 'Базовый пример', path: '/components/dropMenu/' },
+      { name: 'Базовый пример', path: '/components/dropMenu' },
       { name: 'Пример с группами', path: '/components/dropMenu/category' },
       { name: 'Пример с Tooltip', path: '/components/dropMenu/tooltip' },
       { name: 'Пример с Checkbox', path: '/components/dropMenu/withCheckbox' },
@@ -175,8 +175,8 @@ export const components = [
   },
   {
     name: 'ImageViewer',
-    path: '/components/imageViewer/',
-    routes: [{ name: 'Базовый пример', path: '/components/imageViewer/' }],
+    path: '/components/imageViewer',
+    routes: [{ name: 'Базовый пример', path: '/components/imageViewer' }],
   },
   {
     name: 'Table',

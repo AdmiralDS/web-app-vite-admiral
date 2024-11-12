@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Drawer, Tooltip, IconButton } from '@admiral-ds/react-ui';
 import MenuOutline from '@admiral-ds/icons/build/service/MenuOutline.svg?react';
-import { SideMenu } from '../SideMenu/SideMenu';
+import { SideMenu } from '../SideMenu';
 
 /**
  * Реализовано через IconButton + Tooltip

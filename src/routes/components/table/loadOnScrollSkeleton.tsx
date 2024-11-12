@@ -1,67 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
-
-import { PseudoText, skeletonAnimationMixin, Spinner, Table } from '@admiral-ds/react-ui';
+import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 
-const SkeletonComponent = styled(PseudoText)`
-  width: 100%;
-  ${skeletonAnimationMixin}
-`;
-
-const SpinnerWrapper = styled.div`
-  display: flex;
-  height: 60px;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const SpinnerComponent = () => {
-  return (
-    <SpinnerWrapper>
-      <Spinner />
-    </SpinnerWrapper>
-  );
-};
-
-type LastRowProps = {
-  containerRef: React.RefObject<HTMLElement>;
-  onVisible: () => void;
-  rowNode: React.ReactNode;
-  loading?: boolean;
-};
-
-const LastRow = ({ containerRef, onVisible, rowNode, loading }: LastRowProps) => {
-  const [visible, setVisible] = useState<boolean>(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-    if (entries[0].isIntersecting && !visible) {
-      setVisible(true);
-      onVisible?.();
-    }
-
-    if (!entries[0].isIntersecting && visible) {
-      setVisible(false);
-    }
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: containerRef?.current,
-      threshold: [0, 1.0],
-    });
-
-    if (containerRef.current && ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [containerRef, visible]);
-
-  return <div ref={ref}>{loading ? <SpinnerComponent /> : rowNode}</div>;
-};
+import { LastRow, SkeletonComponent } from '../../-helpers/table';
 
 const columnList: Column[] = [
   {

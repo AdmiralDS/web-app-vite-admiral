@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { Link } from '@tanstack/react-router';
 
 import BugSolid from '@admiral-ds/icons/build/category/BugSolid.svg?react';
-import GithubSolid from './GithubIcon.svg?react';
+import GithubSolid from '../../assets/GithubIcon.svg?react';
 
-import useMediaQuery from '../useMediaQuery';
+import { useMediaQuery } from '../useMediaQuery';
 import { MenuButton } from './MenuButton';
 import { SettingsButton } from './SettingsButton';
 import { ThemeToggler } from './ThemeToggler';

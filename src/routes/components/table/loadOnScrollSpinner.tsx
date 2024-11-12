@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import * as React from 'react';
+import { useState, useRef, useMemo } from 'react';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
-import { LastRow } from '../../../table/LastRow';
+
+import { LastRow } from '../../-helpers/table';
 
 const columnList: Column[] = [
   {
@@ -25,12 +26,12 @@ const columnList: Column[] = [
 const TOTAL_ROWS_AMOUNT = 100;
 
 const TableLoadOnScrollSpinner = () => {
-  const [cols, setCols] = React.useState(columnList);
-  const [rowsAmount, setRowsAmount] = React.useState(10);
-  const [loading, setLoading] = React.useState(false);
-  const tableRef = React.useRef<HTMLDivElement>(null);
+  const [cols, setCols] = useState(columnList);
+  const [rowsAmount, setRowsAmount] = useState(10);
+  const [loading, setLoading] = useState(false);
+  const tableRef = useRef<HTMLDivElement>(null);
 
-  const rows = React.useMemo(() => {
+  const rows = useMemo(() => {
     const array = Array.from({ length: rowsAmount }, (_v, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({

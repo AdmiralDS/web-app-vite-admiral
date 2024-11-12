@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import * as React from 'react';
+import { useState } from 'react';
 import { Table, T } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
@@ -198,7 +198,7 @@ const columnList: Column[] = [
 ];
 
 const TableBasic = () => {
-  const [cols, setCols] = React.useState(columnList);
+  const [cols, setCols] = useState(columnList);
 
   const handleResize = ({ name, width }: { name: string; width: string }) => {
     const newCols = cols.map((col) => (col.name === name ? { ...col, width } : col));
