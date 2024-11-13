@@ -1,22 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 export const AccordionDivider = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Accordion hideTopDivider hideBottomDivider>
         <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
         <AccordionItem title="Второй пункт">
@@ -30,7 +18,7 @@ export const AccordionDivider = () => {
           поколения консолей.
         </AccordionItem>
       </Accordion>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

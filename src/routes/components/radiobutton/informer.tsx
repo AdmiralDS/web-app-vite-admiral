@@ -4,18 +4,7 @@ import styled from 'styled-components';
 
 import { Hint, RadioButton } from '@admiral-ds/react-ui';
 import InfoSolidSVG from '@admiral-ds/icons/build/service/InfoSolid.svg?react';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 type Dimension = 'm' | 's';
 
@@ -45,7 +34,7 @@ export const RadioButtonInformer = () => {
   const handleHintChange1 = (visible: boolean) => setVisible1(visible);
   const handleHintChange2 = (visible: boolean) => setVisible2(visible);
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <RadioWithInformer>
         <RadioButton value={1} extraText="Add text">
           Dimension - m
@@ -74,7 +63,7 @@ export const RadioButtonInformer = () => {
           <InfoSolid dimension="s" aria-hidden />
         </Hint>
       </RadioWithInformer>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { CheckboxField } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const Container = styled.div`
   display: flex;
@@ -12,27 +13,15 @@ const Container = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
-
 export const CheckboxBasic = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Container>
         <CheckboxField dimension="m" data-container-id="checkboxFieldIdOne">
           Неуправляемый чекбокс
         </CheckboxField>
       </Container>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

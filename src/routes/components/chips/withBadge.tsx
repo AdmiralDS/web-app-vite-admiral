@@ -10,6 +10,7 @@ import AlertSolid from '@admiral-ds/icons/build/category/AlertSolid.svg?react';
 import DiamondSolid from '@admiral-ds/icons/build/category/DiamondSolid.svg?react';
 import TrophyIcon from '@admiral-ds/icons/build/category/TrophySolid.svg?react';
 import BurnIcon from '@admiral-ds/icons/build/category/BurnSolid.svg?react';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const listDataIcon = [
   {
@@ -26,18 +27,6 @@ const listDataIcon = [
   { id: '5', label: 'Вильнус', disabled: false, iconStart: <BurnIcon />, selected: false, badge: 3 },
 ];
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
-
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
   & > div {
@@ -50,7 +39,7 @@ export const ChipsBadges = (props: ChipsProps) => {
   const [selectedS, setSelectedS] = useState('');
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <WrapperChip $dimension="m">
         {listDataIcon.map((item) => (
           <Chips
@@ -84,7 +73,7 @@ export const ChipsBadges = (props: ChipsProps) => {
           </Chips>
         ))}
       </WrapperChip>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

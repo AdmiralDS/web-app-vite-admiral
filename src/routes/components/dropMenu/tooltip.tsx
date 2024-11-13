@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 import { Button, DropMenu, MenuItem, TooltipHoc } from '@admiral-ds/react-ui';
 import { useMemo, useState } from 'react';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const STORY_ITEMS = [
   {
@@ -41,18 +42,6 @@ const STORY_ITEMS = [
     value: 6,
   },
 ];
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 
 const WrapperVertical = styled.div`
   display: flex;
@@ -130,7 +119,7 @@ export const DropMenuTooltip = () => {
   };
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <WrapperVertical>
         <Desc>
           Состояние видимости меню полностью контроллируется вне DropMenu:
@@ -162,7 +151,7 @@ export const DropMenuTooltip = () => {
           }}
         />
       </WrapperVertical>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

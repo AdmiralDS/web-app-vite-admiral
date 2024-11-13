@@ -86,16 +86,14 @@ export const TableLoadOnScrollSkeleton = () => {
     );
 
   return (
-    <>
-      <Table
-        ref={tableRef}
-        rowList={rows}
-        columnList={columns}
-        onColumnResize={handleResize}
-        renderRowWrapper={renderRowWrapper}
-        style={{ height: '300px', width: '450px' }}
-      />
-    </>
+    <Table
+      ref={tableRef}
+      rowList={rows}
+      columnList={columns}
+      onColumnResize={handleResize}
+      renderRowWrapper={renderRowWrapper}
+      style={{ height: '300px', width: '450px' }}
+    />
   );
 };
 

@@ -1,20 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import styled from 'styled-components';
 
 import { Badge, ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-ui';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const list = [
   {
@@ -45,7 +33,7 @@ export const ContentSwitcherWithBadge = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <ContentSwitcher dimension={'l'} appearance="primary">
         {list.map((item, index) => (
           <ContentSwitcherItem
@@ -58,7 +46,7 @@ export const ContentSwitcherWithBadge = () => {
           </ContentSwitcherItem>
         ))}
       </ContentSwitcher>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 
@@ -66,7 +54,6 @@ export const Route = createFileRoute('/components/contentSwitcher/withBadge')({
   component: () => <ContentSwitcherWithBadge />,
   staticData: {
     title: 'ContentSwitcher. С Badge',
-    description:
-      'В компоненте можно включать бэйджи.',
+    description: 'В компоненте можно включать бэйджи.',
   },
 });

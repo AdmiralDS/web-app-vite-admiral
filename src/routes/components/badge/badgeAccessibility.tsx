@@ -18,22 +18,20 @@ const Separator = styled.div`
 
 export const BadgeAccessibility = () => {
   return (
-    <>
-      <String>
-        <Button>
-          Пример
-          <Separator />
-          <Badge appearance="whiteInactive">4</Badge>
-        </Button>
-        <Button>
-          Example
-          <Separator />
-          <Badge appearance="whiteInactive" aria-label="Amount 4">
-            4
-          </Badge>
-        </Button>
-      </String>
-    </>
+    <String>
+      <Button>
+        Пример
+        <Separator />
+        <Badge appearance="whiteInactive">4</Badge>
+      </Button>
+      <Button>
+        Example
+        <Separator />
+        <Badge appearance="whiteInactive" aria-label="Amount 4">
+          4
+        </Badge>
+      </Button>
+    </String>
   );
 };
 

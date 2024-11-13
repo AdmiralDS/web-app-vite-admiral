@@ -1,22 +1,9 @@
-import styled from 'styled-components';
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
 
 import HomeOutline from '@admiral-ds/icons/build/system/HomeOutline.svg?react';
 import JpgOutline from '@admiral-ds/icons/build/documents/JpgOutline.svg?react';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    width: 90%;
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapperWithWidth } from '../../-helpers/examples';
 
 const items = [
   { url: '#', text: 'page 1', iconStart: <HomeOutline /> },
@@ -35,9 +22,9 @@ const items = [
 
 export const BreadcrumbsIcons = () => {
   return (
-    <Wrapper>
+    <ExampleWrapperWithWidth>
       <Breadcrumbs items={items} dropContainerClassName="dropContainerClass" />
-    </Wrapper>
+    </ExampleWrapperWithWidth>
   );
 };
 

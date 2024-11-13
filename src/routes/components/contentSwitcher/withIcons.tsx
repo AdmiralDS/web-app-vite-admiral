@@ -4,18 +4,7 @@ import styled from 'styled-components';
 import { ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-ui';
 
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const Divider = styled.div`
   width: 10px;
@@ -23,7 +12,7 @@ const Divider = styled.div`
 
 export const ContentSwitcherWithIcon = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <ContentSwitcher dimension={'l'}>
         <ContentSwitcherItem active>
           <StarSolid width={20} />
@@ -41,7 +30,7 @@ export const ContentSwitcherWithIcon = () => {
           <StarSolid width={17} />
         </ContentSwitcherItem>
       </ContentSwitcher>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

@@ -6,6 +6,7 @@ import { Button, DropdownContainer, Menu, MenuItem, typography } from '@admiral-
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const StyledAdditionalText = styled.div`
   ${typography['Body/Body 2 Long']}
@@ -15,18 +16,6 @@ const StyledAdditionalText = styled.div`
 
 const containerContrastBorder = css`
   border: dashed 2px var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
 `;
 
 const cards = [
@@ -99,7 +88,7 @@ export const MenuContainer = () => {
   };
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Button ref={buttonRef} onClick={() => setOpen(!open)}>
         Карты
       </Button>
@@ -120,7 +109,7 @@ export const MenuContainer = () => {
           />
         </DropdownContainer>
       )}
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

@@ -77,16 +77,14 @@ const TableLoadOnScrollSpinner = () => {
     );
 
   return (
-    <>
-      <Table
-        ref={tableRef}
-        rowList={rows}
-        columnList={cols}
-        onColumnResize={handleResize}
-        renderRowWrapper={renderRowWrapper}
-        style={{ height: '300px', width: '450px' }}
-      />
-    </>
+    <Table
+      ref={tableRef}
+      rowList={rows}
+      columnList={cols}
+      onColumnResize={handleResize}
+      renderRowWrapper={renderRowWrapper}
+      style={{ height: '300px', width: '450px' }}
+    />
   );
 };
 

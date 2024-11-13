@@ -1,18 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
 
 import { RadioButton } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
+import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const Wrapper = styled(ExampleWrapper)`
   align-items: flex-start;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
 `;
 
 export const RadioButtonState = () => {

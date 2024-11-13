@@ -1,24 +1,12 @@
 import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 export const AccordionModes = () => {
   const [expanded, setExpanded] = useState(false);
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Accordion>
         <AccordionItem
           defaultExpanded
@@ -40,7 +28,7 @@ export const AccordionModes = () => {
           поколения консолей.
         </AccordionItem>
       </Accordion>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

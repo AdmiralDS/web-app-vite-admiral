@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
 import { Button, ButtonGroup, T } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 export const ButtonGroupStyles = () => (
-  <Wrapper>
+  <ExampleWrapper>
     <T font="Body/Body 1 Long">Primary</T>
     <ButtonGroup>
       <Button>Button 56</Button>
@@ -22,20 +22,8 @@ export const ButtonGroupStyles = () => (
       <Button>Button 56</Button>
       <Button>Button 56</Button>
     </ButtonGroup>
-  </Wrapper>
+  </ExampleWrapper>
 );
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 
 export const Route = createFileRoute('/components/buttonGroup/styles')({
   component: () => <ButtonGroupStyles />,

@@ -2,19 +2,8 @@ import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
-import { Accordion, AccordionItem, FieldSet, Option, RadioButton, SelectField as Select } from '@admiral-ds/react-ui';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { Accordion, AccordionItem, FieldSet, Option, RadioButton, SelectField as Select } from '@admiral-ds/react-ui'
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const SelectField = styled(Select)`
   margin-top: 24px;
@@ -38,7 +27,7 @@ export const AccordionBasic = () => {
     setSelectValue(e.target.value);
   };
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Accordion>
         <AccordionItem
           id="accordion1-item1"
@@ -102,7 +91,7 @@ export const AccordionBasic = () => {
           поколения консолей.
         </AccordionItem>
       </Accordion>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

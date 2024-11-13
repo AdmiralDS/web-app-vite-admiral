@@ -11,18 +11,8 @@ import {
   Toggle,
   typography,
 } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 const AppearanceBlock = styled.div`
   display: flex;
   gap: 10px;
@@ -48,7 +38,7 @@ export const CarouselSliderAutoChange = (props: CarouselSliderProps) => {
   }, [checked]);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <AppearanceBlock>
         Default
         <Toggle dimension="s" checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
@@ -72,7 +62,7 @@ export const CarouselSliderAutoChange = (props: CarouselSliderProps) => {
           интервала равно 3 секундам.
         </NotificationItemContent>
       </NotificationItem>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

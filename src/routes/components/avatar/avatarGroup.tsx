@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
 import {
   AvatarActivityGroup,
   AvatarGroup,
@@ -9,21 +8,9 @@ import {
 } from '@admiral-ds/react-ui';
 import type { AvatarGroupProps, AvatarActivityGroupProps } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 
 const onSelectAvatar = (id: string) => {
   // eslint-disable-next-line no-console
@@ -58,7 +45,7 @@ const avatarActivityGroupItems: AvatarActivityGroupProps['items'] = [
 
 export const AvatarGroupExample = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemTitle>Группировка. Компонент AvatarGroup.</NotificationItemTitle>
         <NotificationItemContent>
@@ -87,7 +74,7 @@ export const AvatarGroupExample = () => {
         className="avatar-group-class"
         style={{ width: '80%' }}
       />
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

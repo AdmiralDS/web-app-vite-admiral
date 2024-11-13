@@ -3,18 +3,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 import { Drawer, DrawerTitle, DrawerContent, DrawerButtonPanel, Button, InputField } from '@admiral-ds/react-ui';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const Separator = styled.div`
   height: 20px;
@@ -58,7 +47,7 @@ export const DrawerBasic = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Button onClick={() => setOpened(true)}>Open drawer with 2 buttons</Button>
       <Drawer
         isOpen={opened}
@@ -76,7 +65,7 @@ export const DrawerBasic = () => {
           onNoClick={() => setOpened(false)}
         />
       </Drawer>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

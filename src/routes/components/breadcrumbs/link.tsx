@@ -1,20 +1,7 @@
-import styled from 'styled-components';
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
 import { Link as RouterLink, MemoryRouter as Router } from 'react-router-dom';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    width: 90%;
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapperWithWidth } from '../../-helpers/examples';
 
 const items = [
   { linkAs: RouterLink, text: 'page 1', linkProps: { to: '/page1' } },
@@ -26,9 +13,9 @@ const items = [
 export const BreadcrumbsLink = () => {
   return (
     <Router>
-      <Wrapper>
+      <ExampleWrapperWithWidth>
         <Breadcrumbs items={items} />
-      </Wrapper>
+      </ExampleWrapperWithWidth>
     </Router>
   );
 };

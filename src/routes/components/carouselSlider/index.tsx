@@ -11,21 +11,12 @@ import {
   Toggle,
   typography,
 } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
 `;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
 
-  > * {
-    margin: 20px 20px;
-  }
-`;
 const AppearanceBlock = styled.div`
   display: flex;
   align-items: center;
@@ -48,7 +39,7 @@ export const CarouselSliderBasic = (props: CarouselSliderProps) => {
   }, [checked]);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <AppearanceBlock>
         Default
         <Toggle dimension="s" checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
@@ -90,7 +81,7 @@ export const CarouselSliderBasic = (props: CarouselSliderProps) => {
           Количество сегментов в слайдере регулируется пользователем. Минимальное количество — два сегмента.
         </NotificationItemContent>
       </NotificationItem>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

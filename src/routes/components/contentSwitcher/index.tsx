@@ -1,23 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import styled from 'styled-components';
 
 import { Badge, ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-ui';
 import type { ContentSwitcherProps } from '@admiral-ds/react-ui';
 
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const list = [
   {
@@ -43,7 +31,7 @@ export const ContentSwitcherBasic = ({ dimension, className, ...props }: Content
   const [active, setActive] = useState(0);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <ContentSwitcher dimension={dimension} className={className} {...props}>
         {list.map((item, index) => (
           <ContentSwitcherItem
@@ -56,7 +44,7 @@ export const ContentSwitcherBasic = ({ dimension, className, ...props }: Content
           </ContentSwitcherItem>
         ))}
       </ContentSwitcher>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

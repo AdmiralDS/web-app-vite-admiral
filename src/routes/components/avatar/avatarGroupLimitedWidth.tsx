@@ -8,21 +8,9 @@ import {
 } from '@admiral-ds/react-ui';
 import type { AvatarGroupProps, AvatarActivityGroupProps } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 
 const onSelectAvatar = (id: string) => {
   // eslint-disable-next-line no-console
@@ -99,7 +87,7 @@ const avatarActivityGroupItems2: AvatarActivityGroupProps['items'] = [
 
 export const AvatarGroupExample = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemContent>
           При достижении условного максимума отображаемых аватаров, последним ставится аватар с отображением количества
@@ -146,7 +134,7 @@ export const AvatarGroupExample = () => {
         dropContainerClassName="dropContainerClass"
         dropContainerStyle={{ width: '250px' }}
       />
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

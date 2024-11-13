@@ -1,23 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
 
 import { Accordion, AccordionItem, NotificationItem, NotificationItemContent } from '@admiral-ds/react-ui';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 export const AccordionDimension = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <NotificationItem displayStatusIcon>
         <NotificationItemContent>Размер L.</NotificationItemContent>
       </NotificationItem>
@@ -54,7 +42,7 @@ export const AccordionDimension = () => {
           нового поколения консолей.
         </AccordionItem>
       </Accordion>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

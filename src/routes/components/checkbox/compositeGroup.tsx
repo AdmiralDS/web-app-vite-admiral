@@ -1,25 +1,13 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { createFileRoute } from '@tanstack/react-router';
 import { CheckboxCompositeGroup, CheckboxField, CheckboxGroup } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 interface ItemValue {
   label: string;
   id: string;
   checked: boolean;
 }
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 
 const initialValue: Array<ItemValue> = [
   { label: 'Москва', id: '1', checked: false },
@@ -43,7 +31,7 @@ export const CheckboxCompositeGroupExample = () => {
   const getIndeterminateStatus = () => !list.every((item) => item.checked) && someItemChecked();
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <CheckboxCompositeGroup>
         <CheckboxField
           indeterminate={getIndeterminateStatus()}
@@ -60,7 +48,7 @@ export const CheckboxCompositeGroupExample = () => {
           ))}
         </CheckboxGroup>
       </CheckboxCompositeGroup>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

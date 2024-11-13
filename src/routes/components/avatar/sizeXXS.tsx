@@ -1,23 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { Avatar, NotificationItemContent, StyledNotificationItem } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
 `;
 
 const Container = styled.div`
@@ -28,7 +17,7 @@ const Container = styled.div`
 
 export const AvatarXXS = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemContent>
           Не используется самостоятельно, как отдельно стоящий и в группах. Применяется в составе других компонентов с
@@ -37,12 +26,11 @@ export const AvatarXXS = () => {
           Имеет только два типа: с инициалами или с фото.
         </NotificationItemContent>
       </StyledNotificationItem>
-      <Separator height={40} />
       <Container>
         <Avatar userName={'Just Example'} dimension="xxs" />
         <Avatar userName={'Just Example'} href={imageURL} dimension="xxs" />
       </Container>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

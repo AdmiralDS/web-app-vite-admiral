@@ -27,52 +27,50 @@ const String = styled.div`
 
 export const BadgeDotVariants = () => {
   return (
-    <>
-      <Layout>
-        <String>
-          <BadgeDot dimension="xs" />
-          <BadgeDot dimension="s" />
-          <BadgeDot />
-          <BadgeDot dimension="l" />
-          Neutral
-        </String>
-        <String>
-          <BadgeDot appearance="info" dimension="xs" />
-          <BadgeDot appearance="info" dimension="s" />
-          <BadgeDot appearance="info" />
-          <BadgeDot appearance="info" dimension="l" />
-          Info
-        </String>
-        <String>
-          <BadgeDot appearance="error" dimension="xs" />
-          <BadgeDot appearance="error" dimension="s" />
-          <BadgeDot appearance="error" />
-          <BadgeDot appearance="error" dimension="l" />
-          Error
-        </String>
-        <String>
-          <BadgeDot appearance="success" dimension="xs" />
-          <BadgeDot appearance="success" dimension="s" />
-          <BadgeDot appearance="success" />
-          <BadgeDot appearance="success" dimension="l" />
-          Success
-        </String>
-        <String>
-          <BadgeDot appearance="warning" dimension="xs" />
-          <BadgeDot appearance="warning" dimension="s" />
-          <BadgeDot appearance="warning" />
-          <BadgeDot appearance="warning" dimension="l" />
-          Warning
-        </String>
-        <String>
-          <BadgeDot appearance="attention" dimension="xs" />
-          <BadgeDot appearance="attention" dimension="s" />
-          <BadgeDot appearance="attention" />
-          <BadgeDot appearance="attention" dimension="l" />
-          Attention
-        </String>
-      </Layout>
-    </>
+    <Layout>
+      <String>
+        <BadgeDot dimension="xs" />
+        <BadgeDot dimension="s" />
+        <BadgeDot />
+        <BadgeDot dimension="l" />
+        Neutral
+      </String>
+      <String>
+        <BadgeDot appearance="info" dimension="xs" />
+        <BadgeDot appearance="info" dimension="s" />
+        <BadgeDot appearance="info" />
+        <BadgeDot appearance="info" dimension="l" />
+        Info
+      </String>
+      <String>
+        <BadgeDot appearance="error" dimension="xs" />
+        <BadgeDot appearance="error" dimension="s" />
+        <BadgeDot appearance="error" />
+        <BadgeDot appearance="error" dimension="l" />
+        Error
+      </String>
+      <String>
+        <BadgeDot appearance="success" dimension="xs" />
+        <BadgeDot appearance="success" dimension="s" />
+        <BadgeDot appearance="success" />
+        <BadgeDot appearance="success" dimension="l" />
+        Success
+      </String>
+      <String>
+        <BadgeDot appearance="warning" dimension="xs" />
+        <BadgeDot appearance="warning" dimension="s" />
+        <BadgeDot appearance="warning" />
+        <BadgeDot appearance="warning" dimension="l" />
+        Warning
+      </String>
+      <String>
+        <BadgeDot appearance="attention" dimension="xs" />
+        <BadgeDot appearance="attention" dimension="s" />
+        <BadgeDot appearance="attention" />
+        <BadgeDot appearance="attention" dimension="l" />
+        Attention
+      </String>
+    </Layout>
   );
 };
 

@@ -4,26 +4,16 @@ import styled from 'styled-components';
 import { Button, ButtonBadge, ButtonGroup, T } from '@admiral-ds/react-ui';
 import type { ButtonGroupProps } from '@admiral-ds/react-ui';
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const GroupWrapper = styled.div`
   margin-top: 20px;
-`;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
 `;
 
 const appearanceMap: Array<ButtonGroupProps['appearance']> = ['primary', 'secondary', 'tertiary'];
 
 export const ButtonGroupVariants = () => (
-  <Wrapper>
+  <ExampleWrapper>
     <T font="Body/Body 1 Long">С включенной иконкой слева</T>
     {appearanceMap.map((appearance, index) => (
       <GroupWrapper key={'iconStart_' + index}>
@@ -73,7 +63,7 @@ export const ButtonGroupVariants = () => (
         </ButtonGroup>
       </GroupWrapper>
     ))}
-  </Wrapper>
+  </ExampleWrapper>
 );
 
 export const Route = createFileRoute('/components/buttonGroup/variants')({

@@ -3,18 +3,8 @@ import styled from 'styled-components';
 
 import { Button, ButtonGroup, T } from '@admiral-ds/react-ui';
 import type { ButtonGroupProps } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 const GroupWrapper = styled.div`
   margin-top: 20px;
 `;
@@ -22,7 +12,7 @@ const GroupWrapper = styled.div`
 const appearanceMap: Array<ButtonGroupProps['appearance']> = ['primary', 'secondary', 'tertiary'];
 
 export const ButtonGroupStates = () => (
-  <Wrapper>
+  <ExampleWrapper>
     <T font="Body/Body 1 Long">Disable (вторая внопка)</T>
     {appearanceMap.map((appearance, index) => (
       <GroupWrapper key={'disable_' + index}>
@@ -43,7 +33,7 @@ export const ButtonGroupStates = () => (
         </ButtonGroup>
       </GroupWrapper>
     ))}
-  </Wrapper>
+  </ExampleWrapper>
 );
 
 export const Route = createFileRoute('/components/buttonGroup/states')({

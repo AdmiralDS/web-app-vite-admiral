@@ -3,18 +3,7 @@ import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { Button, DropMenu, MenuItem } from '@admiral-ds/react-ui';
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const STORY_ITEMS = [
   {
@@ -97,7 +86,7 @@ export const DropMenuSimple = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <WrapperVertical>
         <Desc>
           Неконтроллируемое состояние видимости меню:
@@ -133,7 +122,7 @@ export const DropMenuSimple = () => {
           }}
         />
       </WrapperVertical>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

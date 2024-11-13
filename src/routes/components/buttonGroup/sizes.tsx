@@ -1,21 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
 import { Button, ButtonGroup, T } from '@admiral-ds/react-ui';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 export const ButtonGroupSizes = () => (
-  <Wrapper>
+  <ExampleWrapper>
     <T font="Body/Body 1 Long">Dimension XL</T>
     <ButtonGroup>
       <Button>Button 56</Button>
@@ -40,7 +28,7 @@ export const ButtonGroupSizes = () => (
       <Button>Button 32</Button>
       <Button>Button 32</Button>
     </ButtonGroup>
-  </Wrapper>
+  </ExampleWrapper>
 );
 
 export const Route = createFileRoute('/components/buttonGroup/sizes')({

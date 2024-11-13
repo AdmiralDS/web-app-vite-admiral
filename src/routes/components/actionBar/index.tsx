@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useMemo } from 'react';
 import styled from 'styled-components';
 
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
@@ -22,6 +21,8 @@ import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.
 import LinkOutline from '@admiral-ds/icons/build/system/LinkOutline.svg?react';
 import ExportOutline from '@admiral-ds/icons/build/system/ExportOutline.svg?react';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
+
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const items = [
   {
@@ -99,25 +100,12 @@ const items = [
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
 `;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 
 export const ActionBarTemplate = () => {
-  const itemsMap = useMemo(() => {
-    return items.map((item) => ({
-      itemId: item.itemId,
-      withDivider: item.withDivider,
-    }));
-  }, [items]);
+  const itemsMap = items.map((item) => ({
+    itemId: item.itemId,
+    withDivider: item.withDivider,
+  }));
   const dimension = 'l';
 
   const renderActionBarItem = (itemId: string) => {
@@ -156,7 +144,7 @@ export const ActionBarTemplate = () => {
   };
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <ActionBar
         items={itemsMap}
         renderActionBarItem={renderActionBarItem}
@@ -184,7 +172,7 @@ export const ActionBarTemplate = () => {
           внутри меню.
         </NotificationItemContent>
       </NotificationItem>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

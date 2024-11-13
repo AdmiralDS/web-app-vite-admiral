@@ -3,28 +3,19 @@ import styled from 'styled-components';
 
 import type { CarouselProps } from '@admiral-ds/react-ui';
 import { Carousel, NotificationItem, NotificationItemContent } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
 `;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
 
-  > * {
-    margin: 20px 20px;
-  }
-`;
 const CarouselContainer = styled.div`
   width: 70%;
 `;
 
 export const CarouselBasic = (props: CarouselProps) => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <CarouselContainer>
         <Carousel {...props}>
           <img key="1" src="https://www.fonstola.ru/images/201304/fonstola.ru_92517.jpg" alt="placeholder" />
@@ -66,7 +57,7 @@ export const CarouselBasic = (props: CarouselProps) => {
           Возможно «листание» свайпами по области изображения.
         </NotificationItemContent>
       </NotificationItem>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

@@ -12,11 +12,9 @@ const Layout = styled.div`
 
 export const BadgeBasic = () => {
   return (
-    <>
-      <Layout>
-        <Badge>4</Badge>
-      </Layout>
-    </>
+    <Layout>
+      <Badge>4</Badge>
+    </Layout>
   );
 };
 

@@ -3,21 +3,10 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { Drawer, DrawerTitle, DrawerContent, DrawerButtonPanel, Button, InputField } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const Separator = styled.div`
   height: 20px;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
 `;
 
 type Props = {
@@ -58,7 +47,7 @@ export const DrawerWithBackdrop = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Button onClick={() => setOpened(true)}>Open drawer with backdrop</Button>
       <Drawer
         isOpen={opened}
@@ -80,7 +69,7 @@ export const DrawerWithBackdrop = () => {
           onNoClick={() => setOpened(false)}
         />
       </Drawer>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

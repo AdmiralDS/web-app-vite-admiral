@@ -1,19 +1,6 @@
-import styled from 'styled-components';
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    width: 90%;
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapperWithWidth } from '../../-helpers/examples';
 
 const items = [
   { url: '#', text: 'page 1' },
@@ -25,11 +12,11 @@ const items = [
 
 export const BreadcrumbsSizes = () => {
   return (
-    <Wrapper>
+    <ExampleWrapperWithWidth>
       <Breadcrumbs items={items} />
       <Breadcrumbs items={items} dimension="m" />
       <Breadcrumbs items={items} dimension="s" />
-    </Wrapper>
+    </ExampleWrapperWithWidth>
   );
 };
 

@@ -2,27 +2,17 @@ import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { CheckboxField, FieldSet } from '@admiral-ds/react-ui';
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const Container = styled.div`
   > * {
     margin-top: 24px;
   }
 `;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
 
 export const FieldSetCheckbox = () => {
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <Container>
         <FieldSet data-container-id="fieldSetIdOne" legend={'Группа чекбоксов:'}>
           <CheckboxField name="check1">Text 1</CheckboxField>
@@ -47,7 +37,7 @@ export const FieldSetCheckbox = () => {
           <CheckboxField name="check3">Text 3</CheckboxField>
         </FieldSet>
       </Container>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

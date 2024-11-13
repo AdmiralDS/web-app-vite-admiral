@@ -8,18 +8,7 @@ import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?reac
 import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';
 import HomeOutline from '@admiral-ds/icons/build/system/HomeOutline.svg?react';
 import PrintOutline from '@admiral-ds/icons/build/system/PrintOutline.svg?react';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const list = [
   {
@@ -59,7 +48,7 @@ export const ContentSwitcherIconOnly = () => {
   const [activeSSecondary, setActiveSSecondary] = useState(0);
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <WrapperVertical>
         <T font="Body/Body 1 Long" as="div">
           Dimension - L
@@ -143,7 +132,7 @@ export const ContentSwitcherIconOnly = () => {
           ))}
         </ContentSwitcher>
       </WrapperVertical>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 

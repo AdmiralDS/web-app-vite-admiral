@@ -5,18 +5,7 @@ import styled from 'styled-components';
 import { Button, CategoryMenuItem, DropMenu, MenuItem, typography } from '@admiral-ds/react-ui';
 import type { RenderOptionProps, MenuModelItemProps } from '@admiral-ds/react-ui';
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-
-  > * {
-    margin: 20px 20px;
-  }
-`;
+import { ExampleWrapper } from '../../-helpers/examples';
 
 const WrapperVertical = styled.div`
   display: flex;
@@ -151,7 +140,7 @@ export const DropMenuCategory = () => {
   const [active, setActive] = useState<string | undefined>('');
 
   return (
-    <Wrapper>
+    <ExampleWrapper>
       <WrapperVertical>
         <Desc>
           Неконтроллируемое состояние видимости меню:
@@ -188,7 +177,7 @@ export const DropMenuCategory = () => {
           }}
         />
       </WrapperVertical>
-    </Wrapper>
+    </ExampleWrapper>
   );
 };
 
