@@ -3,9 +3,9 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { FieldSet, RadioButton } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
-const Wrapper = styled(ExampleWrapper)`
+const Wrapper = styled(ContentArea)`
   align-items: flex-start;
 `;
 

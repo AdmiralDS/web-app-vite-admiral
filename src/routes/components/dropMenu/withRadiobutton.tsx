@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { Button, DropMenu, MenuItem, RadioButton } from '@admiral-ds/react-ui';
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const STORY_ITEMS = [
   {
@@ -95,7 +95,7 @@ export const DropMenuRadiobutton = () => {
   }, [checkedState]);
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <WrapperVertical>
         <Desc>
           Неконтроллируемое состояние видимости меню:
@@ -135,7 +135,7 @@ export const DropMenuRadiobutton = () => {
           }}
         />
       </WrapperVertical>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

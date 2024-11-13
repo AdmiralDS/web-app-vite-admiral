@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import type { CarouselProps } from '@admiral-ds/react-ui';
 import { Carousel, NotificationItem, NotificationItemContent } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
@@ -50,7 +50,7 @@ export const CarouselAutoChange = (props: CarouselProps) => {
   }, [setCurrent, mouseInCarousel]);
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <CarouselContainer>
         <Carousel
           {...props}
@@ -72,7 +72,7 @@ export const CarouselAutoChange = (props: CarouselProps) => {
           приостанавливать автоматическую смену до того момента, пока курсор не покинет область компонента.
         </NotificationItemContent>
       </NotificationItem>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Button, ButtonGroup, T } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 export const ButtonGroupStyles = () => (
-  <ExampleWrapper>
+  <ContentArea>
     <T font="Body/Body 1 Long">Primary</T>
     <ButtonGroup>
       <Button>Button 56</Button>
@@ -22,7 +22,7 @@ export const ButtonGroupStyles = () => (
       <Button>Button 56</Button>
       <Button>Button 56</Button>
     </ButtonGroup>
-  </ExampleWrapper>
+  </ContentArea>
 );
 
 export const Route = createFileRoute('/components/buttonGroup/styles')({

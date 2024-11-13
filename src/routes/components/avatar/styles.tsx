@@ -8,7 +8,7 @@ import {
   typography,
 } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 
@@ -57,7 +57,7 @@ export const AvatarStyles = () => {
   const appearance = 'neutral2';
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemContent>
           Присутствует пять размеров компонента. Допускается использование одной или двух букв для обозначения
@@ -522,7 +522,7 @@ export const AvatarStyles = () => {
           />
         </AvatarContainer>
       </GridContainer>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

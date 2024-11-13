@@ -6,13 +6,11 @@ import { Title, Description, Wrapper } from './-helpers/main';
 const Preview = styled.div`
   display: flex;
   flex: 1 0 auto;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 28px;
-  margin-top: 24px;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
 `;
 
 export const Route = createFileRoute('/components')({

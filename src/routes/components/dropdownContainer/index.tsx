@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import { Button, DropdownContainer, mediumGroupBorderRadius, typography } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const parseShadow = (token: string) => token.replace('box-shadow: ', '').replace(';', '');
 
@@ -29,7 +29,7 @@ export const SimpleContainer = () => {
   };
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <Button ref={buttonRef} onClick={() => setOpen(!open)}>
         Текст
       </Button>
@@ -45,7 +45,7 @@ export const SimpleContainer = () => {
           </StyledText>
         </DropdownContainer>
       )}
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

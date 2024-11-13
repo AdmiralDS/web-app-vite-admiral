@@ -2,9 +2,9 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Drawer, DrawerTitle, DrawerContent, DrawerButtonPanel, Button } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
-const ContentArea = styled.div`
+const DrawerContentArea = styled.div`
   display: flex;
   height: 100%;
   background: var(--admiral-color-Success_Success20, ${(p) => p.theme.color['Success/Success 20']});
@@ -14,7 +14,7 @@ export const DrawerMobile = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <Button onClick={() => setOpened(true)}>Open mobile drawer</Button>
       <Drawer
         isOpen={opened}
@@ -25,7 +25,7 @@ export const DrawerMobile = () => {
       >
         <DrawerTitle id="drawer-title">Drawer title</DrawerTitle>
         <DrawerContent>
-          <ContentArea />
+          <DrawerContentArea />
         </DrawerContent>
         <DrawerButtonPanel>
           <Button appearance="primary" dimension="m" onClick={() => setOpened(false)}>
@@ -36,7 +36,7 @@ export const DrawerMobile = () => {
           </Button>
         </DrawerButtonPanel>
       </Drawer>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

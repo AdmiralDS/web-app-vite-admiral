@@ -12,6 +12,7 @@ export const Description = styled.div`
   ${typography['Body/Body 2 Long']}
   color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
   margin-top: 8px;
+  margin-bottom: 40px;
 `;
 
 export const Wrapper = styled.div`

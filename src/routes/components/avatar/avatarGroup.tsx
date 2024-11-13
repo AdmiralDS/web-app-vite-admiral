@@ -8,7 +8,7 @@ import {
 } from '@admiral-ds/react-ui';
 import type { AvatarGroupProps, AvatarActivityGroupProps } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 
@@ -45,7 +45,7 @@ const avatarActivityGroupItems: AvatarActivityGroupProps['items'] = [
 
 export const AvatarGroupExample = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemTitle>Группировка. Компонент AvatarGroup.</NotificationItemTitle>
         <NotificationItemContent>
@@ -74,7 +74,7 @@ export const AvatarGroupExample = () => {
         className="avatar-group-class"
         style={{ width: '80%' }}
       />
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

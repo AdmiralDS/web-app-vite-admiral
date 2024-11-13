@@ -22,7 +22,7 @@ import LinkOutline from '@admiral-ds/icons/build/system/LinkOutline.svg?react';
 import ExportOutline from '@admiral-ds/icons/build/system/ExportOutline.svg?react';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const items = [
   {
@@ -144,7 +144,7 @@ export const ActionBarTemplate = () => {
   };
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <ActionBar
         items={itemsMap}
         renderActionBarItem={renderActionBarItem}
@@ -172,7 +172,7 @@ export const ActionBarTemplate = () => {
           внутри меню.
         </NotificationItemContent>
       </NotificationItem>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

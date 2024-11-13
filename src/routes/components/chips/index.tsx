@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Chips } from '@admiral-ds/react-ui';
 import type { ChipsProps } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
@@ -20,7 +20,7 @@ const listData = [
 
 export const ChipsBasic = (props: ChipsProps) => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <WrapperChip $dimension={props.dimension}>
         {listData.map((item) => (
           <Chips {...props} key={item.id}>
@@ -28,7 +28,7 @@ export const ChipsBasic = (props: ChipsProps) => {
           </Chips>
         ))}
       </WrapperChip>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

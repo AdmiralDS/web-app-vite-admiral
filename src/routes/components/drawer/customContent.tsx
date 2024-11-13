@@ -1,13 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { Drawer, Button, CheckboxField, DrawerContent } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 export const DrawerCustomContent = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <Button onClick={() => setOpened(true)}>Open drawer with custom content</Button>
       <Drawer isOpen={opened} onClose={() => setOpened(false)} aria-labelledby="drawer-title">
         <h1 id="drawer-title" style={{ paddingLeft: '24px' }}>
@@ -105,7 +105,7 @@ export const DrawerCustomContent = () => {
           </Button>
         </div>
       </Drawer>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

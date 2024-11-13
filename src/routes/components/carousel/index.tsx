@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import type { CarouselProps } from '@admiral-ds/react-ui';
 import { Carousel, NotificationItem, NotificationItemContent } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
@@ -15,7 +15,7 @@ const CarouselContainer = styled.div`
 
 export const CarouselBasic = (props: CarouselProps) => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <CarouselContainer>
         <Carousel {...props}>
           <img key="1" src="https://www.fonstola.ru/images/201304/fonstola.ru_92517.jpg" alt="placeholder" />
@@ -57,7 +57,7 @@ export const CarouselBasic = (props: CarouselProps) => {
           Возможно «листание» свайпами по области изображения.
         </NotificationItemContent>
       </NotificationItem>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

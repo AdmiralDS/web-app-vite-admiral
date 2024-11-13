@@ -5,13 +5,13 @@ import { Drawer, DrawerTitle, DrawerContent, Button } from '@admiral-ds/react-ui
 import type { DrawerProps } from '@admiral-ds/react-ui';
 import ArrowLeftOutline from '@admiral-ds/icons/build/system/ArrowLeftOutline.svg?react';
 import ArrowRightOutline from '@admiral-ds/icons/build/system/ArrowRightOutline.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const ButtonWrapper = styled.div`
   display: flex;
   gap: 10px;
 `;
-const ContentArea = styled.div`
+const DrawerContentArea = styled.div`
   display: flex;
   height: 100%;
   background: var(--admiral-color-Success_Success20, ${(p) => p.theme.color['Success/Success 20']});
@@ -22,7 +22,7 @@ export const DrawerPosition = () => {
   const [position, setPosition] = useState<DrawerProps['position']>('right');
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <ButtonWrapper>
         <Button
           onClick={() => {
@@ -56,10 +56,10 @@ export const DrawerPosition = () => {
       >
         <DrawerTitle id="drawer-title">Drawer title</DrawerTitle>
         <DrawerContent>
-          <ContentArea />
+          <DrawerContentArea />
         </DrawerContent>
       </Drawer>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

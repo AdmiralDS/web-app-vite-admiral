@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { ImageViewer, NotificationItem, NotificationItemContent, NotificationItemTitle } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
@@ -52,7 +52,7 @@ export const ImageViewerBasic = () => {
   };
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <ImageViewer
         activeImg={activeImg}
         items={items}
@@ -123,7 +123,7 @@ export const ImageViewerBasic = () => {
           <li>Space — листает изображения вправо</li>
         </NotificationItemContent>
       </NotificationItem>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

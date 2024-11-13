@@ -10,7 +10,7 @@ import AlertSolid from '@admiral-ds/icons/build/category/AlertSolid.svg?react';
 import DiamondSolid from '@admiral-ds/icons/build/category/DiamondSolid.svg?react';
 import TrophyIcon from '@admiral-ds/icons/build/category/TrophySolid.svg?react';
 import BurnIcon from '@admiral-ds/icons/build/category/BurnSolid.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
@@ -50,7 +50,7 @@ export const ChipsMultiSelect = (props: ChipsProps) => {
   };
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <WrapperChip $dimension={props.dimension}>
         {listM.map((item) => (
           <Chips
@@ -76,7 +76,7 @@ export const ChipsMultiSelect = (props: ChipsProps) => {
           </Chips>
         ))}
       </WrapperChip>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

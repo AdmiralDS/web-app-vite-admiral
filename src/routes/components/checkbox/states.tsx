@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { CheckboxField, Hint } from '@admiral-ds/react-ui';
 import type { CheckboxDimension } from '@admiral-ds/react-ui';
 import InfoSolidSVG from '@admiral-ds/icons/build/service/InfoSolid.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const InfoSolid = styled(InfoSolidSVG)<{ $dimension: CheckboxDimension }>`
   margin-left: 5px;
@@ -45,7 +45,7 @@ export const CheckboxStates = () => {
   const handleHintChange2 = (visible: boolean) => setVisible2(visible);
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <Container>
         <CheckboxField
           checked={checked}
@@ -135,7 +135,7 @@ export const CheckboxStates = () => {
           </Hint>
         </CheckboxWithInformer>
       </Container>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

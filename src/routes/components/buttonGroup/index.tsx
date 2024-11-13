@@ -8,14 +8,14 @@ import {
   NotificationItemContent,
   NotificationItemTitle,
 } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
 `;
 
 export const ButtonGroupBasic = () => (
-  <ExampleWrapper>
+  <ContentArea>
     <ButtonGroup>
       <Button dimension="l">Button 56</Button>
       <Button dimension="m">Button 56</Button>
@@ -38,7 +38,7 @@ export const ButtonGroupBasic = () => (
         </li>
       </NotificationItemContent>
     </NotificationItem>
-  </ExampleWrapper>
+  </ContentArea>
 );
 
 export const Route = createFileRoute('/components/buttonGroup/')({

@@ -8,7 +8,7 @@ import {
 } from '@admiral-ds/react-ui';
 import type { AvatarGroupProps, AvatarActivityGroupProps } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 
@@ -87,7 +87,7 @@ const avatarActivityGroupItems2: AvatarActivityGroupProps['items'] = [
 
 export const AvatarGroupExample = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemContent>
           При достижении условного максимума отображаемых аватаров, последним ставится аватар с отображением количества
@@ -134,7 +134,7 @@ export const AvatarGroupExample = () => {
         dropContainerClassName="dropContainerClass"
         dropContainerStyle={{ width: '250px' }}
       />
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

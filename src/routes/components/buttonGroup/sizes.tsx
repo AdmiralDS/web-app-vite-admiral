@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Button, ButtonGroup, T } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 export const ButtonGroupSizes = () => (
-  <ExampleWrapper>
+  <ContentArea>
     <T font="Body/Body 1 Long">Dimension XL</T>
     <ButtonGroup>
       <Button>Button 56</Button>
@@ -28,7 +28,7 @@ export const ButtonGroupSizes = () => (
       <Button>Button 32</Button>
       <Button>Button 32</Button>
     </ButtonGroup>
-  </ExampleWrapper>
+  </ContentArea>
 );
 
 export const Route = createFileRoute('/components/buttonGroup/sizes')({

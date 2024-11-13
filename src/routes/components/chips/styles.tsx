@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { Chips } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
@@ -19,7 +19,7 @@ const listData = [
 
 export const ChipsStyles = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <WrapperChip $dimension="m">
         {listData.map((item) => (
           <Chips dimension="m" appearance="outlined" key={item.id}>
@@ -48,7 +48,7 @@ export const ChipsStyles = () => {
           </Chips>
         ))}
       </WrapperChip>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

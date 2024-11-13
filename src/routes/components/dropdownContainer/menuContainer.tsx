@@ -6,7 +6,7 @@ import { Button, DropdownContainer, Menu, MenuItem, typography } from '@admiral-
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const StyledAdditionalText = styled.div`
   ${typography['Body/Body 2 Long']}
@@ -88,7 +88,7 @@ export const MenuContainer = () => {
   };
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <Button ref={buttonRef} onClick={() => setOpen(!open)}>
         Карты
       </Button>
@@ -109,7 +109,7 @@ export const MenuContainer = () => {
           />
         </DropdownContainer>
       )}
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

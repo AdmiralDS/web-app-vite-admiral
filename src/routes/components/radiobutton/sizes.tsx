@@ -1,16 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { RadioButton } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 export const RadioButtonSize = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <RadioButton value={1}>Dimension - m</RadioButton>
       <RadioButton value={1} dimension="s">
         Dimension - s
       </RadioButton>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

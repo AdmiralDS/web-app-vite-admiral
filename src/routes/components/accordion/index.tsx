@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
-import { Accordion, AccordionItem, FieldSet, Option, RadioButton, SelectField as Select } from '@admiral-ds/react-ui'
-import { ExampleWrapper } from '../../-helpers/examples';
+import { Accordion, AccordionItem, FieldSet, Option, RadioButton, SelectField as Select } from '@admiral-ds/react-ui';
+import { ContentArea, SectionDescription } from '../../-helpers/examples';
 
 const SelectField = styled(Select)`
   margin-top: 24px;
@@ -27,71 +27,79 @@ export const AccordionBasic = () => {
     setSelectValue(e.target.value);
   };
   return (
-    <ExampleWrapper>
-      <Accordion>
-        <AccordionItem
-          id="accordion1-item1"
-          title="Первый пункт"
-          // eslint-disable-next-line no-console
-          onClick={(title, expanded, event) => console.log({ title, expanded, event })}
-        >
-          Контент первого пункта
-        </AccordionItem>
-        <AccordionItem
-          id="accordion1-item2"
-          title="Второй пункт"
-          // eslint-disable-next-line no-console
-          onClick={(title, expanded, event) => console.log({ title, expanded, event })}
-        >
-          Аккордеон — это вертикальный список заголовков, которые, при нажатии, показывают контент находящийся под ними.
-          <FieldSet
-            style={{ marginTop: 8 }}
-            onChange={(e) => {
-              setSelected((e.target as HTMLInputElement).value);
-            }}
-            legend="Управляемая группа радиокнопок:"
-            dimension="m"
+    <>
+      <SectionDescription
+        text="Компонент настроен на автоподстройку высоты, при вводе текста под заголовком. Ширину можно менять вручную, так
+        же происходит автоподстройка контента. Если открыта одна закладка, то открытие другой не приводит к ее закрытию.
+        При открытии вкладки весь контент страницы под аккордионом сдвигается вниз на высоту текста открытой вкладки."
+      />
+      <ContentArea>
+        <Accordion>
+          <AccordionItem
+            id="accordion1-item1"
+            title="Первый пункт"
+            // eslint-disable-next-line no-console
+            onClick={(title, expanded, event) => console.log({ title, expanded, event })}
           >
-            <RadioButton value={values[0]} name="test1" defaultChecked={values[0] === selected}>
-              First option
-            </RadioButton>
-            <RadioButton value={values[1]} name="test1" defaultChecked={values[1] === selected}>
-              Second option
-            </RadioButton>
-            <RadioButton value={values[2]} name="test1" defaultChecked={values[2] === selected}>
-              Third option
-            </RadioButton>
-          </FieldSet>
-          <SelectField
-            mode="searchSelect"
-            label="label"
-            className="Search"
-            value={selectValue}
-            onChange={onChange}
-            placeholder="Placeholder"
+            Контент первого пункта
+          </AccordionItem>
+          <AccordionItem
+            id="accordion1-item2"
+            title="Второй пункт"
+            // eslint-disable-next-line no-console
+            onClick={(title, expanded, event) => console.log({ title, expanded, event })}
           >
-            {OPTIONS_SIMPLE.map((option, ind) => (
-              <Option key={option} value={option} disabled={ind === 4}>
-                {option}
-              </Option>
-            ))}
-          </SelectField>
-        </AccordionItem>
-        <AccordionItem
-          id="accordion1-item3"
-          defaultExpanded
-          title="Третий пункт"
-          // eslint-disable-next-line no-console
-          onClick={(title, expanded, event) => console.log({ title, expanded, event })}
-        >
-          Будущее игр никогда не было таким вдохновляющим. Творчество в играх процветает. Новые сервисы позволяют
-          находить больше игр, а также приближают игроков к любимым играм, стримерам и создателям. Облако создает
-          огромную возможность для потоковой передачи игр консольного уровня, что позволит людям играть с теми игроками,
-          с кем хочется и где захочется. И для многих из нас нет ничего более вдохновляющего, чем рассвет нового
-          поколения консолей.
-        </AccordionItem>
-      </Accordion>
-    </ExampleWrapper>
+            Аккордеон — это вертикальный список заголовков, которые, при нажатии, показывают контент находящийся под
+            ними.
+            <FieldSet
+              style={{ marginTop: 8 }}
+              onChange={(e) => {
+                setSelected((e.target as HTMLInputElement).value);
+              }}
+              legend="Управляемая группа радиокнопок:"
+              dimension="m"
+            >
+              <RadioButton value={values[0]} name="test1" defaultChecked={values[0] === selected}>
+                First option
+              </RadioButton>
+              <RadioButton value={values[1]} name="test1" defaultChecked={values[1] === selected}>
+                Second option
+              </RadioButton>
+              <RadioButton value={values[2]} name="test1" defaultChecked={values[2] === selected}>
+                Third option
+              </RadioButton>
+            </FieldSet>
+            <SelectField
+              mode="searchSelect"
+              label="label"
+              className="Search"
+              value={selectValue}
+              onChange={onChange}
+              placeholder="Placeholder"
+            >
+              {OPTIONS_SIMPLE.map((option, ind) => (
+                <Option key={option} value={option} disabled={ind === 4}>
+                  {option}
+                </Option>
+              ))}
+            </SelectField>
+          </AccordionItem>
+          <AccordionItem
+            id="accordion1-item3"
+            defaultExpanded
+            title="Третий пункт"
+            // eslint-disable-next-line no-console
+            onClick={(title, expanded, event) => console.log({ title, expanded, event })}
+          >
+            Будущее игр никогда не было таким вдохновляющим. Творчество в играх процветает. Новые сервисы позволяют
+            находить больше игр, а также приближают игроков к любимым играм, стримерам и создателям. Облако создает
+            огромную возможность для потоковой передачи игр консольного уровня, что позволит людям играть с теми
+            игроками, с кем хочется и где захочется. И для многих из нас нет ничего более вдохновляющего, чем рассвет
+            нового поколения консолей.
+          </AccordionItem>
+        </Accordion>
+      </ContentArea>
+    </>
   );
 };
 
@@ -99,6 +107,12 @@ export const Route = createFileRoute('/components/accordion/')({
   component: () => <AccordionBasic />,
   staticData: {
     title: 'Accordion. Базовый пример',
-    description: 'Небольшое описание функционала',
+    description: 'Вертикальный список заголовков, которые при нажатии показывают контент, находящийся под ними.',
   },
 });
+/*
+  Два размера: 56 и 40 px.
+  Компонент настроен на автоподстройку высоты, при вводе текста под заголовком. Ширину можно менять вручную, так же происходит автоподстройка контента.
+  Если открыта одна закладка, то открытие другой не приводит к ее закрытию. При открытии вкладки весь контент страницы под аккордионом сдвигается вниз на высоту текста открытой вкладки.
+  В компоненте есть функция выключения верхней полоски для встраивания блока в массив.
+*/

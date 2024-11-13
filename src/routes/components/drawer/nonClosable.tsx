@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Drawer, DrawerTitle, DrawerContent, DrawerButtonPanel, Button, InputField } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const Separator = styled.div`
   height: 20px;
@@ -46,7 +46,7 @@ export const DrawerNonClosable = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <Button onClick={() => setOpened(true)}>Open non-closable drawer</Button>
       <Drawer isOpen={opened} displayCloseIcon={false} style={{ width: '480px' }} aria-labelledby="drawer-title">
         <DrawerTitle id="drawer-title">Drawer title</DrawerTitle>
@@ -59,7 +59,7 @@ export const DrawerNonClosable = () => {
           onNoClick={() => setOpened(false)}
         />
       </Drawer>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

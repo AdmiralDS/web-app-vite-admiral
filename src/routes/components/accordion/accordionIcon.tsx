@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 export const AccordionIcon = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <Accordion iconPosition="left">
         <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
         <AccordionItem title="Второй пункт">
@@ -18,7 +18,7 @@ export const AccordionIcon = () => {
           поколения консолей.
         </AccordionItem>
       </Accordion>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 
@@ -26,6 +26,7 @@ export const Route = createFileRoute('/components/accordion/accordionIcon')({
   component: () => <AccordionIcon />,
   staticData: {
     title: 'Accordion. Расположение шеврона слева',
-    description: 'Небольшое описание функционала',
+    description:
+      'Альтернативным вариантом является расположение шеврона слева от заголовка. Текст заголовка и иконка шеврона просто меняются местами с сохранением всех расстояний и размеров. При этом компоновка остальных элементов компонента никак не меняются.',
   },
 });

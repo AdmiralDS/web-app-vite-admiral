@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { Avatar, NotificationItemContent, StyledNotificationItem } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 
@@ -17,7 +17,7 @@ const Container = styled.div`
 
 export const AvatarXXS = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemContent>
           Не используется самостоятельно, как отдельно стоящий и в группах. Применяется в составе других компонентов с
@@ -30,7 +30,7 @@ export const AvatarXXS = () => {
         <Avatar userName={'Just Example'} dimension="xxs" />
         <Avatar userName={'Just Example'} href={imageURL} dimension="xxs" />
       </Container>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

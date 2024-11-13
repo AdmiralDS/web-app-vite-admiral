@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { ContentSwitcher, ContentSwitcherItem, T } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const MobileWrapper = styled.div`
   width: 320px;
@@ -36,7 +36,7 @@ const list = [
 
 export const ContentSwitcherStyles = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <T font="Body/Body 1 Long" as="div">
         Dimension - l
       </T>
@@ -98,7 +98,7 @@ export const ContentSwitcherStyles = () => {
           </ContentSwitcher>
         </SwitcherWrapper>
       </MobileWrapper>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

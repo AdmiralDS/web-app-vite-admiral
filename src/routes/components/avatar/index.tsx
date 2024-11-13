@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { Avatar, AvatarActivity, NotificationItemContent, StyledNotificationItem } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const HorizontalContainer = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const HorizontalContainer = styled.div`
 
 export const AvatarBasic = () => {
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <StyledNotificationItem displayStatusIcon>
         <NotificationItemContent>
           Условно компонент можно разделить на два вида – обычный Avatar и тот, который используется с Activity Ring. Во
@@ -24,7 +24,7 @@ export const AvatarBasic = () => {
         <Avatar showTooltip userName="Avatar" />
         <AvatarActivity showTooltip showActivityRing userName="AvatarActivity" />
       </HorizontalContainer>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

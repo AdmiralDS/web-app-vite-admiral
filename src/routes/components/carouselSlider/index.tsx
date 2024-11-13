@@ -11,7 +11,7 @@ import {
   Toggle,
   typography,
 } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
@@ -39,7 +39,7 @@ export const CarouselSliderBasic = (props: CarouselSliderProps) => {
   }, [checked]);
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <AppearanceBlock>
         Default
         <Toggle dimension="s" checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
@@ -81,7 +81,7 @@ export const CarouselSliderBasic = (props: CarouselSliderProps) => {
           Количество сегментов в слайдере регулируется пользователем. Минимальное количество — два сегмента.
         </NotificationItemContent>
       </NotificationItem>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 

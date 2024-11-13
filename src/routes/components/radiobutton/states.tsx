@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { RadioButton } from '@admiral-ds/react-ui';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 import styled from 'styled-components';
 
-const Wrapper = styled(ExampleWrapper)`
+const Wrapper = styled(ContentArea)`
   align-items: flex-start;
 `;
 

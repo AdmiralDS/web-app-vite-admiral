@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Button, CategoryMenuItem, DropMenu, MenuItem, typography } from '@admiral-ds/react-ui';
 import type { RenderOptionProps, MenuModelItemProps } from '@admiral-ds/react-ui';
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
-import { ExampleWrapper } from '../../-helpers/examples';
+import { ContentArea } from '../../-helpers/examples';
 
 const WrapperVertical = styled.div`
   display: flex;
@@ -140,7 +140,7 @@ export const DropMenuCategory = () => {
   const [active, setActive] = useState<string | undefined>('');
 
   return (
-    <ExampleWrapper>
+    <ContentArea>
       <WrapperVertical>
         <Desc>
           Неконтроллируемое состояние видимости меню:
@@ -177,7 +177,7 @@ export const DropMenuCategory = () => {
           }}
         />
       </WrapperVertical>
-    </ExampleWrapper>
+    </ContentArea>
   );
 };
 
