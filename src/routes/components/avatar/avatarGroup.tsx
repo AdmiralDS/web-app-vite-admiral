@@ -1,14 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import {
-  AvatarActivityGroup,
-  AvatarGroup,
-  NotificationItemContent,
-  NotificationItemTitle,
-  StyledNotificationItem,
-} from '@admiral-ds/react-ui';
+import { AvatarActivityGroup, AvatarGroup } from '@admiral-ds/react-ui';
 import type { AvatarGroupProps, AvatarActivityGroupProps } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 
@@ -45,36 +39,34 @@ const avatarActivityGroupItems: AvatarActivityGroupProps['items'] = [
 
 export const AvatarGroupExample = () => {
   return (
-    <ContentArea>
-      <StyledNotificationItem displayStatusIcon>
-        <NotificationItemTitle>Группировка. Компонент AvatarGroup.</NotificationItemTitle>
-        <NotificationItemContent>
-          Компоненты выстраиваются по горизонтали с отрицательным отступом -2px и внешней обводкой 2px в цвет фона
-          страницы. При группировке статусы не отображаются.
-        </NotificationItemContent>
-      </StyledNotificationItem>
-      <AvatarGroup
-        items={avatarGroupItems}
-        onAvatarSelect={onSelectAvatar}
-        data-dropdown-container-id="avatar-group-with-dropdown"
-        className="avatar-group-class"
-        style={{ width: '80%' }}
-      />
-      <StyledNotificationItem displayStatusIcon>
-        <NotificationItemTitle>Группировка. Компонент AvatarActivityGroup.</NotificationItemTitle>
-        <NotificationItemContent>
-          Компоненты выстраиваются по горизонтали с отрицательным отступом -10 px и внешней обводкой 2px в цвет фона
-          страницы. При группировке статусы не отображаются.
-        </NotificationItemContent>
-      </StyledNotificationItem>
-      <AvatarActivityGroup
-        items={avatarActivityGroupItems}
-        onAvatarSelect={onSelectAvatar}
-        data-dropdown-container-id="avatar-group-with-dropdown"
-        className="avatar-group-class"
-        style={{ width: '80%' }}
-      />
-    </ContentArea>
+    <>
+      <ExampleSection
+        header="AvatarGroup"
+        text="Компоненты выстраиваются по горизонтали с отрицательным отступом -2px и внешней обводкой 2px в цвет фона
+          страницы. При группировке статусы не отображаются."
+      >
+        <AvatarGroup
+          items={avatarGroupItems}
+          onAvatarSelect={onSelectAvatar}
+          data-dropdown-container-id="avatar-group-with-dropdown"
+          className="avatar-group-class"
+          style={{ width: '80%' }}
+        />
+      </ExampleSection>
+      <ExampleSection
+        header="AvatarActivityGroup"
+        text="Компоненты выстраиваются по горизонтали с отрицательным отступом -10 px и внешней обводкой 2px в цвет фона
+            страницы. При группировке статусы не отображаются."
+      >
+        <AvatarActivityGroup
+          items={avatarActivityGroupItems}
+          onAvatarSelect={onSelectAvatar}
+          data-dropdown-container-id="avatar-group-with-dropdown"
+          className="avatar-group-class"
+          style={{ width: '80%' }}
+        />
+      </ExampleSection>
+    </>
   );
 };
 

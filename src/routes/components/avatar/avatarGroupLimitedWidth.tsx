@@ -1,14 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
-import {
-  AvatarActivityGroup,
-  AvatarGroup,
-  NotificationItemContent,
-  StyledNotificationItem,
-} from '@admiral-ds/react-ui';
+import { AvatarActivityGroup, AvatarGroup } from '@admiral-ds/react-ui';
 import type { AvatarGroupProps, AvatarActivityGroupProps } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 
@@ -16,10 +10,6 @@ const onSelectAvatar = (id: string) => {
   // eslint-disable-next-line no-console
   console.log('Select item with id: ', id);
 };
-
-const Separator = styled.div<{ height: number }>`
-  height: ${(p) => p.height}px;
-`;
 
 const avatarGroupItems1: AvatarGroupProps['items'] = [
   { userName: 'Lena Ivanova', icon: <PersonSolid />, id: '1' },
@@ -87,54 +77,50 @@ const avatarActivityGroupItems2: AvatarActivityGroupProps['items'] = [
 
 export const AvatarGroupExample = () => {
   return (
-    <ContentArea>
-      <StyledNotificationItem displayStatusIcon>
-        <NotificationItemContent>
-          При достижении условного максимума отображаемых аватаров, последним ставится аватар с отображением количества
-          скрытых элементов.
-          <Separator height={8} />
-          Чтобы задать для всех аватаров, входящих в группу, единый внешний вид, достаточно задать для компонента
+    <>
+      <ExampleSection
+        style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
+        header="Пример AvatarGroup с единым для всех аватаров внешним видом (appearance)."
+        text="Чтобы задать для всех аватаров, входящих в группу, единый внешний вид, достаточно задать для компонента
           AvatarGroup соответствующее значение параметра appearance. Если для каких-то аватаров нужно задать отличный от
           остальных внешний вид, необходимо задать параметр appearance непосредственно для компонента Avatar. Параметр
-          appearance, заданный для Avatar, имеет больший приоритет, чем параметр appearance, заданный для AvatarGroup.
-          <Separator height={8} />
-          Пример AvatarGroup с единым для всех аватаров внешним видом (appearance).
-        </NotificationItemContent>
-      </StyledNotificationItem>
-      <AvatarGroup
-        style={{ width: '300px' }}
-        items={avatarGroupItems1}
-        onAvatarSelect={onSelectAvatar}
-        dropContainerClassName="dropContainerClass"
-      />
-      <AvatarActivityGroup
-        style={{ width: '300px' }}
-        items={avatarActivityGroupItems1}
-        onAvatarSelect={onSelectAvatar}
-        dropContainerClassName="dropContainerClass"
-      />
-      <StyledNotificationItem displayStatusIcon>
-        <NotificationItemContent>
-          Пример AvatarGroup и AvatarActivityGroup с различными по внешнему виду (appearance) аватарами.
-        </NotificationItemContent>
-      </StyledNotificationItem>
-      <AvatarGroup
-        style={{ width: '300px' }}
-        items={avatarGroupItems2}
-        onAvatarSelect={onSelectAvatar}
-        appearance="neutral4"
-        dropContainerClassName="dropContainerClass"
-        dropContainerStyle={{ width: '250px' }}
-      />
-      <AvatarActivityGroup
-        style={{ width: '300px' }}
-        items={avatarActivityGroupItems2}
-        onAvatarSelect={onSelectAvatar}
-        appearance="neutral4"
-        dropContainerClassName="dropContainerClass"
-        dropContainerStyle={{ width: '250px' }}
-      />
-    </ContentArea>
+          appearance, заданный для Avatar, имеет больший приоритет, чем параметр appearance, заданный для AvatarGroup."
+      >
+        <AvatarGroup
+          style={{ width: '300px' }}
+          items={avatarGroupItems1}
+          onAvatarSelect={onSelectAvatar}
+          dropContainerClassName="dropContainerClass"
+        />
+        <AvatarActivityGroup
+          style={{ width: '300px' }}
+          items={avatarActivityGroupItems1}
+          onAvatarSelect={onSelectAvatar}
+          dropContainerClassName="dropContainerClass"
+        />
+      </ExampleSection>
+      <ExampleSection
+        style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
+        header="Пример AvatarGroup и AvatarActivityGroup с различными по внешнему виду (appearance) аватарами."
+      >
+        <AvatarGroup
+          style={{ width: '300px' }}
+          items={avatarGroupItems2}
+          onAvatarSelect={onSelectAvatar}
+          appearance="neutral4"
+          dropContainerClassName="dropContainerClass"
+          dropContainerStyle={{ width: '250px' }}
+        />
+        <AvatarActivityGroup
+          style={{ width: '300px' }}
+          items={avatarActivityGroupItems2}
+          onAvatarSelect={onSelectAvatar}
+          appearance="neutral4"
+          dropContainerClassName="dropContainerClass"
+          dropContainerStyle={{ width: '250px' }}
+        />
+      </ExampleSection>
+    </>
   );
 };
 
@@ -142,6 +128,7 @@ export const Route = createFileRoute('/components/avatar/avatarGroupLimitedWidth
   component: () => <AvatarGroupExample />,
   staticData: {
     title: 'Группировка при ограниченной ширине',
-    description: 'Компоненты AvatarGroup и AvatarActivityGroup.',
+    description:
+      'При достижении условного максимума отображаемых аватаров, последним ставится аватар с отображением количества скрытых элементов.',
   },
 });
