@@ -1,18 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { BadgeDot, typography } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-
-const Layout = styled.div`
-  display: flex;
-  align-self: flex-start;
-  flex-direction: column;
-  padding: 50px;
-  & > * {
-    padding: 8px 0 8px 16px;
-  }
-`;
+import { ExampleSection } from '../../-helpers/examples';
 
 const String = styled.div`
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   & > * {
@@ -27,7 +19,7 @@ const String = styled.div`
 
 export const BadgeDotVariants = () => {
   return (
-    <Layout>
+    <ExampleSection>
       <String>
         <BadgeDot dimension="xs" />
         <BadgeDot dimension="s" />
@@ -70,7 +62,7 @@ export const BadgeDotVariants = () => {
         <BadgeDot appearance="attention" dimension="l" />
         Attention
       </String>
-    </Layout>
+    </ExampleSection>
   );
 };
 

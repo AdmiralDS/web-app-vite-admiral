@@ -1,12 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { BadgeDot, typography } from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
 const String = styled.div`
   display: flex;
   align-self: flex-start;
   align-items: center;
-  padding: 50px;
   & > * {
     margin-right: 16px;
   }
@@ -16,12 +16,14 @@ const String = styled.div`
 
 export const BadgeDotBasic = () => {
   return (
-    <String>
-      <BadgeDot />
-      Appearance: neutral
-      <br />
-      Dimension: m
-    </String>
+    <ExampleSection>
+      <String>
+        <BadgeDot />
+        Appearance: neutral
+        <br />
+        Dimension: m
+      </String>
+    </ExampleSection>
   );
 };
 
