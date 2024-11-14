@@ -1,13 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
-import { ContentArea, SectionDescription } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 export const AccordionDimension = () => {
   return (
     <>
-      <SectionDescription header="Размер L" />
-      <ContentArea>
+      <ExampleSection header="Размер L">
         <Accordion>
           <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
           <AccordionItem title="Второй пункт">
@@ -22,9 +21,8 @@ export const AccordionDimension = () => {
             нового поколения консолей.
           </AccordionItem>
         </Accordion>
-      </ContentArea>
-      <SectionDescription header="Размер M" />
-      <ContentArea>
+      </ExampleSection>
+      <ExampleSection header="Размер M">
         <Accordion dimension="m">
           <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
           <AccordionItem title="Второй пункт">
@@ -43,7 +41,7 @@ export const AccordionDimension = () => {
             вдохновляющего, чем рассвет нового поколения консолей.
           </AccordionItem>
         </Accordion>
-      </ContentArea>
+      </ExampleSection>
     </>
   );
 };

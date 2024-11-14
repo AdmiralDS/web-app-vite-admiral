@@ -1,3 +1,4 @@
+import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { typography } from '@admiral-ds/react-ui';
 
@@ -47,5 +48,23 @@ export const SectionDescription = ({ header, text }: SectionDescriptionProps) =>
       {header && <SubHeader>{header}</SubHeader>}
       {text && <Text>{text}</Text>}
     </Section>
+  );
+};
+
+const SectionWrapper = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding: 0;
+`;
+export interface ExampleSectionProps extends SectionDescriptionProps, HTMLAttributes<HTMLDivElement> {}
+
+export const ExampleSection = ({ header, text, children, ...props }: ExampleSectionProps) => {
+  return (
+    <SectionWrapper>
+      {(header || text) && <SectionDescription header={header} text={text} />}
+      <ContentArea {...props}>{children}</ContentArea>
+    </SectionWrapper>
   );
 };

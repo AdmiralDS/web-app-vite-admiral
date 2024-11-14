@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 export const AccordionDivider = () => {
   return (
     <>
-      <ContentArea>
+      <ExampleSection>
         <Accordion hideTopDivider hideBottomDivider>
           <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
           <AccordionItem title="Второй пункт">
@@ -20,7 +20,7 @@ export const AccordionDivider = () => {
             нового поколения консолей.
           </AccordionItem>
         </Accordion>
-      </ContentArea>
+      </ExampleSection>
     </>
   );
 };

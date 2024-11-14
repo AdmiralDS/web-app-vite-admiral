@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 export const AccordionModes = () => {
   const [expanded, setExpanded] = useState(false);
   return (
-    <ContentArea>
+    <ExampleSection>
       <Accordion>
         <AccordionItem
           defaultExpanded
@@ -28,7 +28,7 @@ export const AccordionModes = () => {
           поколения консолей.
         </AccordionItem>
       </Accordion>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
