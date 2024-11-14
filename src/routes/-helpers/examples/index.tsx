@@ -39,8 +39,8 @@ export const Section = styled.div`
 `;
 
 export interface SectionDescriptionProps {
-  header?: string;
-  text?: string;
+  header?: React.ReactNode;
+  text?: React.ReactNode;
 }
 export const SectionDescription = ({ header, text }: SectionDescriptionProps) => {
   return (
@@ -57,6 +57,7 @@ const SectionWrapper = styled.div`
   flex-direction: column;
   margin-bottom: 16px;
   padding: 0;
+  width: 100%;
 `;
 export interface ExampleSectionProps extends SectionDescriptionProps, HTMLAttributes<HTMLDivElement> {}
 

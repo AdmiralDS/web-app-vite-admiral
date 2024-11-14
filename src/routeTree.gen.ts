@@ -89,6 +89,8 @@ import { Route as ComponentsAvatarStylesImport } from './routes/components/avata
 import { Route as ComponentsAvatarSizeXXSImport } from './routes/components/avatar/sizeXXS'
 import { Route as ComponentsAvatarAvatarGroupLimitedWidthImport } from './routes/components/avatar/avatarGroupLimitedWidth'
 import { Route as ComponentsAvatarAvatarGroupImport } from './routes/components/avatar/avatarGroup'
+import { Route as ComponentsActionBarDimensionsImport } from './routes/components/actionBar/dimensions'
+import { Route as ComponentsActionBarAdaptiveImport } from './routes/components/actionBar/adaptive'
 import { Route as ComponentsAccordionAccordionModesImport } from './routes/components/accordion/accordionModes'
 import { Route as ComponentsAccordionAccordionIconImport } from './routes/components/accordion/accordionIcon'
 import { Route as ComponentsAccordionAccordionDividerImport } from './routes/components/accordion/accordionDivider'
@@ -627,6 +629,20 @@ const ComponentsAvatarAvatarGroupRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsActionBarDimensionsRoute =
+  ComponentsActionBarDimensionsImport.update({
+    id: '/actionBar/dimensions',
+    path: '/actionBar/dimensions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsActionBarAdaptiveRoute =
+  ComponentsActionBarAdaptiveImport.update({
+    id: '/actionBar/adaptive',
+    path: '/actionBar/adaptive',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsAccordionAccordionModesRoute =
   ComponentsAccordionAccordionModesImport.update({
     id: '/accordion/accordionModes',
@@ -706,6 +722,20 @@ declare module '@tanstack/react-router' {
       path: '/accordion/accordionModes'
       fullPath: '/components/accordion/accordionModes'
       preLoaderRoute: typeof ComponentsAccordionAccordionModesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/actionBar/adaptive': {
+      id: '/components/actionBar/adaptive'
+      path: '/actionBar/adaptive'
+      fullPath: '/components/actionBar/adaptive'
+      preLoaderRoute: typeof ComponentsActionBarAdaptiveImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/actionBar/dimensions': {
+      id: '/components/actionBar/dimensions'
+      path: '/actionBar/dimensions'
+      fullPath: '/components/actionBar/dimensions'
+      preLoaderRoute: typeof ComponentsActionBarDimensionsImport
       parentRoute: typeof ComponentsImport
     }
     '/components/avatar/avatarGroup': {
@@ -1243,6 +1273,8 @@ interface ComponentsRouteChildren {
   ComponentsAccordionAccordionDividerRoute: typeof ComponentsAccordionAccordionDividerRoute
   ComponentsAccordionAccordionIconRoute: typeof ComponentsAccordionAccordionIconRoute
   ComponentsAccordionAccordionModesRoute: typeof ComponentsAccordionAccordionModesRoute
+  ComponentsActionBarAdaptiveRoute: typeof ComponentsActionBarAdaptiveRoute
+  ComponentsActionBarDimensionsRoute: typeof ComponentsActionBarDimensionsRoute
   ComponentsAvatarAvatarGroupRoute: typeof ComponentsAvatarAvatarGroupRoute
   ComponentsAvatarAvatarGroupLimitedWidthRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   ComponentsAvatarSizeXXSRoute: typeof ComponentsAvatarSizeXXSRoute
@@ -1328,6 +1360,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsAccordionAccordionIconRoute: ComponentsAccordionAccordionIconRoute,
   ComponentsAccordionAccordionModesRoute:
     ComponentsAccordionAccordionModesRoute,
+  ComponentsActionBarAdaptiveRoute: ComponentsActionBarAdaptiveRoute,
+  ComponentsActionBarDimensionsRoute: ComponentsActionBarDimensionsRoute,
   ComponentsAvatarAvatarGroupRoute: ComponentsAvatarAvatarGroupRoute,
   ComponentsAvatarAvatarGroupLimitedWidthRoute:
     ComponentsAvatarAvatarGroupLimitedWidthRoute,
@@ -1428,6 +1462,8 @@ export interface FileRoutesByFullPath {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
+  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
   '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
   '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
@@ -1513,6 +1549,8 @@ export interface FileRoutesByTo {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
+  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
   '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
   '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
@@ -1599,6 +1637,8 @@ export interface FileRoutesById {
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
+  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
   '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
   '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
@@ -1686,6 +1726,8 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/actionBar/adaptive'
+    | '/components/actionBar/dimensions'
     | '/components/avatar/avatarGroup'
     | '/components/avatar/avatarGroupLimitedWidth'
     | '/components/avatar/sizeXXS'
@@ -1770,6 +1812,8 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/actionBar/adaptive'
+    | '/components/actionBar/dimensions'
     | '/components/avatar/avatarGroup'
     | '/components/avatar/avatarGroupLimitedWidth'
     | '/components/avatar/sizeXXS'
@@ -1854,6 +1898,8 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
     | '/components/accordion/accordionModes'
+    | '/components/actionBar/adaptive'
+    | '/components/actionBar/dimensions'
     | '/components/avatar/avatarGroup'
     | '/components/avatar/avatarGroupLimitedWidth'
     | '/components/avatar/sizeXXS'
@@ -1969,6 +2015,8 @@ export const routeTree = rootRoute
         "/components/accordion/accordionDivider",
         "/components/accordion/accordionIcon",
         "/components/accordion/accordionModes",
+        "/components/actionBar/adaptive",
+        "/components/actionBar/dimensions",
         "/components/avatar/avatarGroup",
         "/components/avatar/avatarGroupLimitedWidth",
         "/components/avatar/sizeXXS",
@@ -2063,6 +2111,14 @@ export const routeTree = rootRoute
     },
     "/components/accordion/accordionModes": {
       "filePath": "components/accordion/accordionModes.tsx",
+      "parent": "/components"
+    },
+    "/components/actionBar/adaptive": {
+      "filePath": "components/actionBar/adaptive.tsx",
+      "parent": "/components"
+    },
+    "/components/actionBar/dimensions": {
+      "filePath": "components/actionBar/dimensions.tsx",
       "parent": "/components"
     },
     "/components/avatar/avatarGroup": {

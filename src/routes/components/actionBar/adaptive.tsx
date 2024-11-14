@@ -90,7 +90,7 @@ const items = [
   },
 ];
 
-export const ActionBarBasic = () => {
+export const ActionBarAdaptive = () => {
   const itemsMap = items.map((item) => ({
     itemId: item.itemId,
     withDivider: item.withDivider,
@@ -133,28 +133,23 @@ export const ActionBarBasic = () => {
   };
 
   return (
-    <ExampleSection
-      text="Над каждой кнопкой, входящей в состав
-          компонента, при ховере, появляется Tooltip с подсказкой функции кнопки. По дефолту тултип появляется снизу от кнопки при ховере. Можно настроить появление тултипа справа, слева,
-          сверху, в зависимости от расположения Action Bar. В случае, когда это действительно необходимо и смысл кнопки
-          очевиден, опционально можно отключать тултип."
-    >
+    <ExampleSection text="Размеры выпадающего меню для Action Bar — L для XL и L размера Action Bar, M для M размера и S для размера S.">
       <ActionBar
         items={itemsMap}
         renderActionBarItem={renderActionBarItem}
         renderDropMenuItem={renderDropMenuItem}
         itemIsDisabled={itemIsDisabled}
         dimension={dimension}
-        style={{ width: '80%' }}
+        style={{ width: '50%' }}
       />
     </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/actionBar/')({
-  component: () => <ActionBarBasic />,
+export const Route = createFileRoute('/components/actionBar/adaptive')({
+  component: () => <ActionBarAdaptive />,
   staticData: {
-    title: 'ActionBar. Базовый пример',
-    description: 'Панель действий с возможностью деления на логические группы с помощью разделителя.',
+    title: 'Адаптив. Overflow Menu',
+    description: 'Если кнопки не помещаются в доступное горизонтальное пространство, они перемещаются в Dropdown Menu.',
   },
 });

@@ -13,7 +13,11 @@ export const components = [
   {
     name: 'ActionBar',
     path: '/components/actionBar',
-    routes: [{ name: 'Базовый пример', path: '/components/actionBar' }],
+    routes: [
+      { name: 'Базовый пример', path: '/components/actionBar' },
+      { name: 'Размеры', path: '/components/actionBar/dimensions' },
+      { name: 'Адаптив. Overflow Menu', path: '/components/actionBar/adaptive' },
+    ],
   },
   {
     name: 'Avatar',

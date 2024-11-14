@@ -11,9 +11,6 @@ import HeartOutline from '@admiral-ds/icons/build/category/HeartOutline.svg?reac
 import PinOutline from '@admiral-ds/icons/build/category/PinOutline.svg?react';
 import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
-import LinkOutline from '@admiral-ds/icons/build/system/LinkOutline.svg?react';
-import ExportOutline from '@admiral-ds/icons/build/system/ExportOutline.svg?react';
-import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
 import { ExampleSection } from '../../-helpers/examples';
 
@@ -58,7 +55,7 @@ const items = [
     withDivider: true,
     name: 'Email',
     icon: <EmailOutline />,
-    disabled: true,
+    disabled: false,
   },
   {
     itemId: '7',
@@ -67,37 +64,10 @@ const items = [
     icon: <AttachFileOutline />,
     disabled: false,
   },
-  {
-    itemId: '8',
-    withDivider: false,
-    name: 'Attach link',
-    icon: <LinkOutline />,
-    disabled: false,
-  },
-  {
-    itemId: '9',
-    withDivider: false,
-    name: 'Export',
-    icon: <ExportOutline />,
-    disabled: false,
-  },
-  {
-    itemId: '10',
-    withDivider: false,
-    name: 'Delete',
-    icon: <DeleteOutline />,
-    disabled: false,
-  },
 ];
-
-export const ActionBarBasic = () => {
-  const itemsMap = items.map((item) => ({
-    itemId: item.itemId,
-    withDivider: item.withDivider,
-  }));
-  const dimension = 'l';
-
-  const renderActionBarItem = (itemId: string) => {
+type Dimension = 'xl' | 'l' | 'm' | 's';
+const renderActionBarItemHOC = (dimension: Dimension) => {
+  return (itemId: string) => {
     const item = items.find((item) => item.itemId === itemId) || items[0];
     // eslint-disable-next-line no-console
     const handleClick = () => console.log(`${item.name} clicked`);
@@ -114,7 +84,9 @@ export const ActionBarBasic = () => {
       </ActionBarItemWithTooltip>
     );
   };
-  const renderDropMenuItem = (itemId: string) => {
+};
+const renderDropMenuItemHOC = (dimension: Dimension) => {
+  return (itemId: string) => {
     const item = items.find((item) => item.itemId === itemId) || items[0];
     // eslint-disable-next-line no-console
     const handleClick = () => console.log(`${item.name} clicked`);
@@ -127,34 +99,69 @@ export const ActionBarBasic = () => {
       );
     };
   };
+};
+
+export const ActionBarDimension = () => {
+  const itemsMap = items.map((item) => ({
+    itemId: item.itemId,
+    withDivider: item.withDivider,
+  }));
+
   const itemIsDisabled = (itemId: string) => {
     const currentTab = items.find((item) => item.itemId === itemId);
     return !!currentTab?.disabled;
   };
 
   return (
-    <ExampleSection
-      text="Над каждой кнопкой, входящей в состав
-          компонента, при ховере, появляется Tooltip с подсказкой функции кнопки. По дефолту тултип появляется снизу от кнопки при ховере. Можно настроить появление тултипа справа, слева,
-          сверху, в зависимости от расположения Action Bar. В случае, когда это действительно необходимо и смысл кнопки
-          очевиден, опционально можно отключать тултип."
-    >
-      <ActionBar
-        items={itemsMap}
-        renderActionBarItem={renderActionBarItem}
-        renderDropMenuItem={renderDropMenuItem}
-        itemIsDisabled={itemIsDisabled}
-        dimension={dimension}
-        style={{ width: '80%' }}
-      />
-    </ExampleSection>
+    <>
+      <ExampleSection header="XL Size" text="Высота 56 px">
+        <ActionBar
+          items={itemsMap}
+          renderActionBarItem={renderActionBarItemHOC('xl')}
+          renderDropMenuItem={renderDropMenuItemHOC('xl')}
+          itemIsDisabled={itemIsDisabled}
+          dimension="xl"
+          style={{ width: '80%' }}
+        />
+      </ExampleSection>
+      <ExampleSection header="L Size" text="Высота 48 px">
+        <ActionBar
+          items={itemsMap}
+          renderActionBarItem={renderActionBarItemHOC('l')}
+          renderDropMenuItem={renderDropMenuItemHOC('l')}
+          itemIsDisabled={itemIsDisabled}
+          dimension="xl"
+          style={{ width: '80%' }}
+        />
+      </ExampleSection>
+      <ExampleSection header="M Size" text="Высота 40 px">
+        <ActionBar
+          items={itemsMap}
+          renderActionBarItem={renderActionBarItemHOC('m')}
+          renderDropMenuItem={renderDropMenuItemHOC('m')}
+          itemIsDisabled={itemIsDisabled}
+          dimension="xl"
+          style={{ width: '80%' }}
+        />
+      </ExampleSection>
+      <ExampleSection header="S Size" text="Высота 32 px">
+        <ActionBar
+          items={itemsMap}
+          renderActionBarItem={renderActionBarItemHOC('s')}
+          renderDropMenuItem={renderDropMenuItemHOC('s')}
+          itemIsDisabled={itemIsDisabled}
+          dimension="xl"
+          style={{ width: '80%' }}
+        />
+      </ExampleSection>
+    </>
   );
 };
 
-export const Route = createFileRoute('/components/actionBar/')({
-  component: () => <ActionBarBasic />,
+export const Route = createFileRoute('/components/actionBar/dimensions')({
+  component: () => <ActionBarDimension />,
   staticData: {
-    title: 'ActionBar. Базовый пример',
-    description: 'Панель действий с возможностью деления на логические группы с помощью разделителя.',
+    title: 'ActionBar. Размеры',
+    description: 'Представлен в 4х размерах по аналогии с обычными кнопками: XL (56), L (48), M (40), S (32)',
   },
 });
