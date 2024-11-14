@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
+import { ExampleSection } from '../../-helpers/examples';
 
 const MobileWrapper = styled.div`
   width: 320px;
@@ -47,11 +48,13 @@ const items = [
 
 export const BreadcrumbsMobile = () => {
   return (
-    <Wrapper>
-      <MobileWrapper>
-        <Breadcrumbs items={items} mobile />
-      </MobileWrapper>
-    </Wrapper>
+    <ExampleSection>
+      <Wrapper>
+        <MobileWrapper>
+          <Breadcrumbs items={items} mobile />
+        </MobileWrapper>
+      </Wrapper>
+    </ExampleSection>
   );
 };
 

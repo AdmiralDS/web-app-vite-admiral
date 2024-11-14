@@ -3,7 +3,7 @@ import { Breadcrumbs } from '@admiral-ds/react-ui';
 
 import HomeOutline from '@admiral-ds/icons/build/system/HomeOutline.svg?react';
 import JpgOutline from '@admiral-ds/icons/build/documents/JpgOutline.svg?react';
-import { ExampleWrapperWithWidth } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const items = [
   { url: '#', text: 'page 1', iconStart: <HomeOutline /> },
@@ -22,9 +22,9 @@ const items = [
 
 export const BreadcrumbsIcons = () => {
   return (
-    <ExampleWrapperWithWidth>
+    <ExampleSection>
       <Breadcrumbs items={items} dropContainerClassName="dropContainerClass" />
-    </ExampleWrapperWithWidth>
+    </ExampleSection>
   );
 };
 

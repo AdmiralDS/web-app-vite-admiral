@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
-import { ExampleWrapperWithWidth } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const items = [
   { url: '#', text: 'page 1' },
@@ -19,9 +19,9 @@ const items = [
 
 export const BreadcrumbsBasic = () => {
   return (
-    <ExampleWrapperWithWidth>
+    <ExampleSection>
       <Breadcrumbs items={items} dropContainerClassName="dropContainerClass" />
-    </ExampleWrapperWithWidth>
+    </ExampleSection>
   );
 };
 

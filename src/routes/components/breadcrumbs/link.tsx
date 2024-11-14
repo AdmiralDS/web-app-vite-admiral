@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
 import { Link as RouterLink, MemoryRouter as Router } from 'react-router-dom';
-import { ExampleWrapperWithWidth } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const items = [
   { linkAs: RouterLink, text: 'page 1', linkProps: { to: '/page1' } },
@@ -13,9 +13,9 @@ const items = [
 export const BreadcrumbsLink = () => {
   return (
     <Router>
-      <ExampleWrapperWithWidth>
+      <ExampleSection>
         <Breadcrumbs items={items} />
-      </ExampleWrapperWithWidth>
+      </ExampleSection>
     </Router>
   );
 };

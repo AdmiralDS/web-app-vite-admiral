@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
-import { ExampleWrapperWithWidth } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const items = [
   { url: '#', text: 'page 1' },
@@ -12,11 +12,11 @@ const items = [
 
 export const BreadcrumbsSizes = () => {
   return (
-    <ExampleWrapperWithWidth>
+    <ExampleSection>
       <Breadcrumbs items={items} />
       <Breadcrumbs items={items} dimension="m" />
       <Breadcrumbs items={items} dimension="s" />
-    </ExampleWrapperWithWidth>
+    </ExampleSection>
   );
 };
 
