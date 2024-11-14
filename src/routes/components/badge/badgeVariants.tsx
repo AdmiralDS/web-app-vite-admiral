@@ -2,18 +2,11 @@ import styled from 'styled-components';
 import { createFileRoute } from '@tanstack/react-router';
 import { Badge, typography } from '@admiral-ds/react-ui';
 import type { BadgeProps } from '@admiral-ds/react-ui';
-
-const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  align-self: flex-start;
-  & > * {
-    padding: 8px 0 8px 16px;
-  }
-`;
+import { ExampleSection } from '../../-helpers/examples';
 
 const String = styled.div<{ $appearance?: BadgeProps['appearance'] }>`
+  box-sizing: border-box;
+  padding: 10px;
   display: flex;
   align-items: center;
   ${({ $appearance, theme }) =>
@@ -33,7 +26,7 @@ const String = styled.div<{ $appearance?: BadgeProps['appearance'] }>`
 
 export const BadgeVariants = () => {
   return (
-    <Layout>
+    <ExampleSection style={{ display: 'flex', flexDirection: 'column' }}>
       <String>
         <Badge>5</Badge>
         <Badge dimension="s">5</Badge>
@@ -123,14 +116,14 @@ export const BadgeVariants = () => {
         </Badge>
         White Blue
       </String>
-    </Layout>
+    </ExampleSection>
   );
 };
 
 export const Route = createFileRoute('/components/badge/badgeVariants')({
   component: () => <BadgeVariants />,
   staticData: {
-    title: 'Badge. Базовый пример',
-    description: 'Небольшое описание функционала',
+    title: 'Badge. Варианты использования',
+    description: '',
   },
 });

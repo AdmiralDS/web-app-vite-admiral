@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { createFileRoute } from '@tanstack/react-router';
 import { Badge, Button } from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
 const String = styled.div`
   display: flex;
@@ -18,27 +19,29 @@ const Separator = styled.div`
 
 export const BadgeAccessibility = () => {
   return (
-    <String>
-      <Button>
-        Пример
-        <Separator />
-        <Badge appearance="whiteInactive">4</Badge>
-      </Button>
-      <Button>
-        Example
-        <Separator />
-        <Badge appearance="whiteInactive" aria-label="Amount 4">
-          4
-        </Badge>
-      </Button>
-    </String>
+    <ExampleSection>
+      <String>
+        <Button>
+          Пример
+          <Separator />
+          <Badge appearance="whiteInactive">4</Badge>
+        </Button>
+        <Button>
+          Example
+          <Separator />
+          <Badge appearance="whiteInactive" aria-label="Amount 4">
+            4
+          </Badge>
+        </Button>
+      </String>
+    </ExampleSection>
   );
 };
 
 export const Route = createFileRoute('/components/badge/badgeAccessibility')({
   component: () => <BadgeAccessibility />,
   staticData: {
-    title: 'Badge. Базовый пример',
-    description: 'Небольшое описание функционала',
+    title: 'Badge. Accessibility',
+    description: '',
   },
 });
