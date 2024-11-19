@@ -2,140 +2,131 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import { CheckboxField, Hint } from '@admiral-ds/react-ui';
-import type { CheckboxDimension } from '@admiral-ds/react-ui';
-import InfoSolidSVG from '@admiral-ds/icons/build/service/InfoSolid.svg?react';
-import { ContentArea } from '../../-helpers/examples';
-
-const InfoSolid = styled(InfoSolidSVG)<{ $dimension: CheckboxDimension }>`
-  margin-left: 5px;
-  width: ${(props) => (props.$dimension === 'm' ? '24px' : '20px')};
-
-  & *[fill^='#'] {
-    fill: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
-  }
-  [data-focus-within] & *[fill^='#'] {
-    fill: var(--admiral-color-Primary_Primary70, ${(p) => p.theme.color['Primary/Primary 70']});
-  }
-  &:hover *[fill^='#'] {
-    fill: var(--admiral-color-Primary_Primary70, ${(p) => p.theme.color['Primary/Primary 70']});
-  }
-`;
-
-const CheckboxWithInformer = styled.div`
-  display: flex;
-  align-items: flex-start;
-`;
+import { CheckboxField } from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-
-  > *:not(:first-child) {
-    margin-top: 16px;
-  }
+  gap: 20px;
+  align-items: center;
 `;
 
 export const CheckboxStates = () => {
-  const [checked, setChecked] = useState<boolean>(false);
-
-  const [visible1, setVisible1] = useState(false);
-  const [visible2, setVisible2] = useState(false);
-  const handleHintChange1 = (visible: boolean) => setVisible1(visible);
-  const handleHintChange2 = (visible: boolean) => setVisible2(visible);
+  const [checkedM, setCheckedM] = useState<boolean>(false);
+  const [checkedS, setCheckedS] = useState<boolean>(false);
 
   return (
-    <ContentArea>
-      <Container>
-        <CheckboxField
-          checked={checked}
-          onChange={(e) => {
-            setChecked(e.target.checked);
-          }}
-          data-container-id="checkboxFieldIdOne"
-          id="checkboxFieldId"
-          name="checkboxFieldName"
-        >
-          Управляемый чекбокс
-        </CheckboxField>
-        <CheckboxField dimension="s" data-container-id="checkboxFieldIdTwo">
-          Неуправляемый маленький чекбокс
-        </CheckboxField>
-        <CheckboxField dimension="m" data-container-id="checkboxFieldIdThree">
-          Двойная
-          <br />
-          строка
-        </CheckboxField>
-        <CheckboxField
-          disabled
-          defaultChecked
-          extraText="Дополнительный текст. Additional text"
-          data-container-id="checkboxFieldIdFour"
-        >
-          Disabled не управляемый чекбокс
-        </CheckboxField>
-        <CheckboxField disabled data-container-id="checkboxFieldIdFive">
-          Disabled не управляемый чекбокс
-        </CheckboxField>
-        <CheckboxField readOnly defaultChecked data-container-id="checkboxFieldIdSix">
-          Readonly не управляемый чекбокс
-        </CheckboxField>
-        <CheckboxField
-          readOnly
-          extraText="Дополнительный текст. Additional text"
-          data-container-id="checkboxFieldIdSeven"
-        >
-          Readonly не управляемый чекбокс
-        </CheckboxField>
-        <CheckboxField
-          error
-          extraText={
-            <span>
-              Вариация с <i>дополнительно</i> декорированным <b>текстом</b>
-            </span>
-          }
-          data-container-id="checkboxFieldIdEight"
-        >
-          Error не управляемый чекбокс
-        </CheckboxField>
-        <CheckboxField
-          dimension="s"
-          indeterminate
-          extraText="Вариация с дополнительным текстом"
-          data-container-id="checkboxFieldIdNine"
-        >
-          Не управляемый маленький чекбокс indeterminate
-        </CheckboxField>
-        <CheckboxWithInformer>
-          <CheckboxField dimension="m" extraText="Вариация с информером" data-container-id="checkboxFieldIdTen">
-            Чекбокс с информером
-          </CheckboxField>
-          <Hint
-            visible={visible1}
-            onVisibilityChange={handleHintChange1}
-            renderContent={() =>
-              'At breakpoint boundaries, mini units divide the screen into a fixed master grid, and multiples of mini units map to fluid grid column widths and row heights.'
-            }
+    <>
+      <ExampleSection text="Управляемый чекбокс">
+        <Container>
+          <CheckboxField
+            checked={checkedM}
+            onChange={(e) => {
+              setCheckedM(e.target.checked);
+            }}
+            data-container-id="checkboxFieldIdOneM"
+            id="checkboxFieldId"
+            name="checkboxFieldName"
           >
-            <InfoSolid $dimension="m" aria-hidden />
-          </Hint>
-        </CheckboxWithInformer>
-        <CheckboxWithInformer>
-          <CheckboxField dimension="s" extraText="Вариация с информером" data-container-id="checkboxFieldIdEleven">
-            Маленький чекбокс с информером
+            Text
           </CheckboxField>
-          <Hint
-            visible={visible2}
-            onVisibilityChange={handleHintChange2}
-            renderContent={() =>
-              'At breakpoint boundaries, mini units divide the screen into a fixed master grid, and multiples of mini units map to fluid grid column widths and row heights.'
-            }
+          <CheckboxField
+            dimension="s"
+            checked={checkedS}
+            onChange={(e) => {
+              setCheckedS(e.target.checked);
+            }}
+            data-container-id="checkboxFieldIdOneS"
+            id="checkboxFieldId"
+            name="checkboxFieldName"
           >
-            <InfoSolid $dimension="s" aria-hidden />
-          </Hint>
-        </CheckboxWithInformer>
-      </Container>
-    </ContentArea>
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="Неуправляемый чекбокс">
+        <Container>
+          <CheckboxField data-container-id="checkboxFieldIdTwoM">Text</CheckboxField>
+          <CheckboxField dimension="s" data-container-id="checkboxFieldIdTwoS">
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="В две строки">
+        <Container>
+          <CheckboxField data-container-id="checkboxFieldIdThreeM">
+            Двойная
+            <br />
+            строка
+          </CheckboxField>
+          <CheckboxField dimension="s" data-container-id="checkboxFieldIdThreeS">
+            Двойная
+            <br />
+            строка
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="Disabled">
+        <Container>
+          <CheckboxField disabled data-container-id="checkboxFieldIdFourM">
+            Text
+          </CheckboxField>
+          <CheckboxField dimension="s" disabled data-container-id="checkboxFieldIdFourS">
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="Disabled active">
+        <Container>
+          <CheckboxField disabled defaultChecked data-container-id="checkboxFieldIdFiveM">
+            Text
+          </CheckboxField>
+          <CheckboxField dimension="s" disabled defaultChecked data-container-id="checkboxFieldIdFiveS">
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="Readonly">
+        <Container>
+          <CheckboxField readOnly data-container-id="checkboxFieldIdSixM">
+            Text
+          </CheckboxField>
+          <CheckboxField dimension="s" readOnly data-container-id="checkboxFieldIdSixS">
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="Readonly active">
+        <Container>
+          <CheckboxField defaultChecked readOnly data-container-id="checkboxFieldIdSevenM">
+            Text
+          </CheckboxField>
+          <CheckboxField defaultChecked dimension="s" readOnly data-container-id="checkboxFieldIdSevenS">
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="Error">
+        <Container>
+          <CheckboxField error data-container-id="checkboxFieldIdEightM">
+            Text
+          </CheckboxField>
+          <CheckboxField dimension="s" error data-container-id="checkboxFieldIdEightS">
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+      <ExampleSection text="Indeterminate">
+        <Container>
+          <CheckboxField indeterminate data-container-id="checkboxFieldIdNineM">
+            Text
+          </CheckboxField>
+          <CheckboxField dimension="s" indeterminate data-container-id="checkboxFieldIdNineS">
+            Text
+          </CheckboxField>
+        </Container>
+      </ExampleSection>
+    </>
   );
 };
 

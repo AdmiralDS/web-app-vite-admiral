@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { CheckboxCompositeGroup, CheckboxField, CheckboxGroup } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 interface ItemValue {
   label: string;
@@ -31,7 +31,7 @@ export const CheckboxCompositeGroupExample = () => {
   const getIndeterminateStatus = () => !list.every((item) => item.checked) && someItemChecked();
 
   return (
-    <ContentArea>
+    <ExampleSection>
       <CheckboxCompositeGroup>
         <CheckboxField
           indeterminate={getIndeterminateStatus()}
@@ -48,7 +48,7 @@ export const CheckboxCompositeGroupExample = () => {
           ))}
         </CheckboxGroup>
       </CheckboxCompositeGroup>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 

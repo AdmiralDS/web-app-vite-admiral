@@ -108,6 +108,8 @@ export const components = [
     routes: [
       { name: 'Базовый пример', path: '/components/checkbox' },
       { name: 'Состояния', path: '/components/checkbox/states' },
+      { name: 'Вариация с дополнительным текстом', path: '/components/checkbox/additionalText' },
+      { name: 'Вариация с информером', path: '/components/checkbox/withInformer' },
       { name: 'Группа чекбоксов', path: '/components/checkbox/fieldSet' },
       { name: 'Составная группа чекбоксов', path: '/components/checkbox/compositeGroup' },
     ],

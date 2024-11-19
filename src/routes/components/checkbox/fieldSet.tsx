@@ -1,43 +1,42 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
 
 import { CheckboxField, FieldSet } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
-
-const Container = styled.div`
-  > * {
-    margin-top: 24px;
-  }
-`;
+import { ExampleSection } from '../../-helpers/examples';
 
 export const FieldSetCheckbox = () => {
   return (
-    <ContentArea>
-      <Container>
-        <FieldSet data-container-id="fieldSetIdOne" legend={'Группа чекбоксов:'}>
-          <CheckboxField name="check1">Text 1</CheckboxField>
-          <CheckboxField name="check2">Text 2</CheckboxField>
-          <CheckboxField name="check3">Text 3</CheckboxField>
+    <>
+      <ExampleSection text="Группа чекбоксов">
+        <FieldSet data-container-id="fieldSetIdOne" legend={'Выберите города:'}>
+          <CheckboxField name="check1">Москва</CheckboxField>
+          <CheckboxField name="check2">Воронеж</CheckboxField>
+          <CheckboxField name="check3">Самара</CheckboxField>
         </FieldSet>
-        <FieldSet data-container-id="fieldSetIdTwo" disabled legend={'Disabled группа чекбоксов:'}>
-          <CheckboxField name="check1">Text 1</CheckboxField>
+      </ExampleSection>
+      <ExampleSection text="Disabled группа чекбоксов">
+        <FieldSet data-container-id="fieldSetIdTwo" disabled legend={'Выберите города:'}>
+          <CheckboxField name="check1">Москва</CheckboxField>
           <CheckboxField name="check2" defaultChecked>
-            Text 2
+            Воронеж
           </CheckboxField>
-          <CheckboxField name="check3">Text 3</CheckboxField>
+          <CheckboxField name="check3">Самара</CheckboxField>
         </FieldSet>
-        <FieldSet data-container-id="fieldSetIdThree" dimension="s" legend={'Группа маленьких чекбоксов:'} required>
-          <CheckboxField name="check1">Text 1</CheckboxField>
-          <CheckboxField name="check2">Text 2</CheckboxField>
-          <CheckboxField name="check3">Text 3</CheckboxField>
+      </ExampleSection>
+      <ExampleSection text="Группа маленьких чекбоксов">
+        <FieldSet data-container-id="fieldSetIdThree" dimension="s" legend={'Выберите города:'} required>
+          <CheckboxField name="check1">Москва</CheckboxField>
+          <CheckboxField name="check2">Воронеж</CheckboxField>
+          <CheckboxField name="check3">Самара</CheckboxField>
         </FieldSet>
-        <FieldSet data-container-id="fieldSetIdFour" legend={'Горизонтальная группа чекбоксов:'} flexDirection="row">
-          <CheckboxField name="check1">Text 1</CheckboxField>
-          <CheckboxField name="check2">Text 2</CheckboxField>
-          <CheckboxField name="check3">Text 3</CheckboxField>
+      </ExampleSection>
+      <ExampleSection text="Горизонтальная группа чекбоксов">
+        <FieldSet data-container-id="fieldSetIdFour" legend={'Выберите города:'} flexDirection="row">
+          <CheckboxField name="check1">Москва</CheckboxField>
+          <CheckboxField name="check2">Воронеж</CheckboxField>
+          <CheckboxField name="check3">Самара</CheckboxField>
         </FieldSet>
-      </Container>
-    </ContentArea>
+      </ExampleSection>
+    </>
   );
 };
 

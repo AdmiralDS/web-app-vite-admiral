@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { CheckboxField } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const Container = styled.div`
   display: flex;
@@ -15,13 +15,19 @@ const Container = styled.div`
 
 export const CheckboxBasic = () => {
   return (
-    <ContentArea>
+    <ExampleSection>
       <Container>
         <CheckboxField dimension="m" data-container-id="checkboxFieldIdOne">
-          Неуправляемый чекбокс
+          Text 1
+        </CheckboxField>
+        <CheckboxField dimension="m" data-container-id="checkboxFieldIdTwo">
+          Text 2
+        </CheckboxField>
+        <CheckboxField dimension="m" data-container-id="checkboxFieldIdThree">
+          Text 3
         </CheckboxField>
       </Container>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
@@ -30,6 +36,6 @@ export const Route = createFileRoute('/components/checkbox/')({
   staticData: {
     title: 'CheckboxField. Базовый пример.',
     description:
-      'Чекбоксы применяются, когда есть список опций для выбора.  Можно выбрать любое количество опций из списка. Выбор одних пунктов никак не влияет на другие.',
+      'Чекбоксы применяются, когда есть список опций для выбора. Можно выбрать любое количество опций из списка. Выбор одних пунктов никак не влияет на другие.',
   },
 });

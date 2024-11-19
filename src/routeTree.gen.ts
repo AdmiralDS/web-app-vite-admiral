@@ -64,9 +64,11 @@ import { Route as ComponentsChipsStylesImport } from './routes/components/chips/
 import { Route as ComponentsChipsSelectImport } from './routes/components/chips/select'
 import { Route as ComponentsChipsMultiSelectImport } from './routes/components/chips/multiSelect'
 import { Route as ComponentsChipsChipsCloseImport } from './routes/components/chips/chipsClose'
+import { Route as ComponentsCheckboxWithInformerImport } from './routes/components/checkbox/withInformer'
 import { Route as ComponentsCheckboxStatesImport } from './routes/components/checkbox/states'
 import { Route as ComponentsCheckboxFieldSetImport } from './routes/components/checkbox/fieldSet'
 import { Route as ComponentsCheckboxCompositeGroupImport } from './routes/components/checkbox/compositeGroup'
+import { Route as ComponentsCheckboxAdditionalTextImport } from './routes/components/checkbox/additionalText'
 import { Route as ComponentsCarouselSliderStylesImport } from './routes/components/carouselSlider/styles'
 import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from './routes/components/carouselSlider/carouselSliderAutoChange'
 import { Route as ComponentsCarouselSliderPositionImport } from './routes/components/carousel/sliderPosition'
@@ -458,6 +460,13 @@ const ComponentsChipsChipsCloseRoute = ComponentsChipsChipsCloseImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsCheckboxWithInformerRoute =
+  ComponentsCheckboxWithInformerImport.update({
+    id: '/checkbox/withInformer',
+    path: '/checkbox/withInformer',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsCheckboxStatesRoute = ComponentsCheckboxStatesImport.update({
   id: '/checkbox/states',
   path: '/checkbox/states',
@@ -476,6 +485,13 @@ const ComponentsCheckboxCompositeGroupRoute =
   ComponentsCheckboxCompositeGroupImport.update({
     id: '/checkbox/compositeGroup',
     path: '/checkbox/compositeGroup',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCheckboxAdditionalTextRoute =
+  ComponentsCheckboxAdditionalTextImport.update({
+    id: '/checkbox/additionalText',
+    path: '/checkbox/additionalText',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -963,6 +979,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsCarouselSliderStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/checkbox/additionalText': {
+      id: '/components/checkbox/additionalText'
+      path: '/checkbox/additionalText'
+      fullPath: '/components/checkbox/additionalText'
+      preLoaderRoute: typeof ComponentsCheckboxAdditionalTextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/compositeGroup': {
       id: '/components/checkbox/compositeGroup'
       path: '/checkbox/compositeGroup'
@@ -982,6 +1005,13 @@ declare module '@tanstack/react-router' {
       path: '/checkbox/states'
       fullPath: '/components/checkbox/states'
       preLoaderRoute: typeof ComponentsCheckboxStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/checkbox/withInformer': {
+      id: '/components/checkbox/withInformer'
+      path: '/checkbox/withInformer'
+      fullPath: '/components/checkbox/withInformer'
+      preLoaderRoute: typeof ComponentsCheckboxWithInformerImport
       parentRoute: typeof ComponentsImport
     }
     '/components/chips/chipsClose': {
@@ -1373,9 +1403,11 @@ interface ComponentsRouteChildren {
   ComponentsCarouselSliderPositionRoute: typeof ComponentsCarouselSliderPositionRoute
   ComponentsCarouselSliderCarouselSliderAutoChangeRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   ComponentsCarouselSliderStylesRoute: typeof ComponentsCarouselSliderStylesRoute
+  ComponentsCheckboxAdditionalTextRoute: typeof ComponentsCheckboxAdditionalTextRoute
   ComponentsCheckboxCompositeGroupRoute: typeof ComponentsCheckboxCompositeGroupRoute
   ComponentsCheckboxFieldSetRoute: typeof ComponentsCheckboxFieldSetRoute
   ComponentsCheckboxStatesRoute: typeof ComponentsCheckboxStatesRoute
+  ComponentsCheckboxWithInformerRoute: typeof ComponentsCheckboxWithInformerRoute
   ComponentsChipsChipsCloseRoute: typeof ComponentsChipsChipsCloseRoute
   ComponentsChipsMultiSelectRoute: typeof ComponentsChipsMultiSelectRoute
   ComponentsChipsSelectRoute: typeof ComponentsChipsSelectRoute
@@ -1469,9 +1501,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsCarouselSliderCarouselSliderAutoChangeRoute:
     ComponentsCarouselSliderCarouselSliderAutoChangeRoute,
   ComponentsCarouselSliderStylesRoute: ComponentsCarouselSliderStylesRoute,
+  ComponentsCheckboxAdditionalTextRoute: ComponentsCheckboxAdditionalTextRoute,
   ComponentsCheckboxCompositeGroupRoute: ComponentsCheckboxCompositeGroupRoute,
   ComponentsCheckboxFieldSetRoute: ComponentsCheckboxFieldSetRoute,
   ComponentsCheckboxStatesRoute: ComponentsCheckboxStatesRoute,
+  ComponentsCheckboxWithInformerRoute: ComponentsCheckboxWithInformerRoute,
   ComponentsChipsChipsCloseRoute: ComponentsChipsChipsCloseRoute,
   ComponentsChipsMultiSelectRoute: ComponentsChipsMultiSelectRoute,
   ComponentsChipsSelectRoute: ComponentsChipsSelectRoute,
@@ -1572,9 +1606,11 @@ export interface FileRoutesByFullPath {
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
+  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute
   '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
   '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
   '/components/chips/select': typeof ComponentsChipsSelectRoute
@@ -1664,9 +1700,11 @@ export interface FileRoutesByTo {
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
+  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute
   '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
   '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
   '/components/chips/select': typeof ComponentsChipsSelectRoute
@@ -1757,9 +1795,11 @@ export interface FileRoutesById {
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
   '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
+  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute
   '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
   '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
   '/components/chips/select': typeof ComponentsChipsSelectRoute
@@ -1851,9 +1891,11 @@ export interface FileRouteTypes {
     | '/components/carousel/sliderPosition'
     | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/carouselSlider/styles'
+    | '/components/checkbox/additionalText'
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
+    | '/components/checkbox/withInformer'
     | '/components/chips/chipsClose'
     | '/components/chips/multiSelect'
     | '/components/chips/select'
@@ -1942,9 +1984,11 @@ export interface FileRouteTypes {
     | '/components/carousel/sliderPosition'
     | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/carouselSlider/styles'
+    | '/components/checkbox/additionalText'
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
+    | '/components/checkbox/withInformer'
     | '/components/chips/chipsClose'
     | '/components/chips/multiSelect'
     | '/components/chips/select'
@@ -2033,9 +2077,11 @@ export interface FileRouteTypes {
     | '/components/carousel/sliderPosition'
     | '/components/carouselSlider/carouselSliderAutoChange'
     | '/components/carouselSlider/styles'
+    | '/components/checkbox/additionalText'
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
+    | '/components/checkbox/withInformer'
     | '/components/chips/chipsClose'
     | '/components/chips/multiSelect'
     | '/components/chips/select'
@@ -2155,9 +2201,11 @@ export const routeTree = rootRoute
         "/components/carousel/sliderPosition",
         "/components/carouselSlider/carouselSliderAutoChange",
         "/components/carouselSlider/styles",
+        "/components/checkbox/additionalText",
         "/components/checkbox/compositeGroup",
         "/components/checkbox/fieldSet",
         "/components/checkbox/states",
+        "/components/checkbox/withInformer",
         "/components/chips/chipsClose",
         "/components/chips/multiSelect",
         "/components/chips/select",
@@ -2345,6 +2393,10 @@ export const routeTree = rootRoute
       "filePath": "components/carouselSlider/styles.tsx",
       "parent": "/components"
     },
+    "/components/checkbox/additionalText": {
+      "filePath": "components/checkbox/additionalText.tsx",
+      "parent": "/components"
+    },
     "/components/checkbox/compositeGroup": {
       "filePath": "components/checkbox/compositeGroup.tsx",
       "parent": "/components"
@@ -2355,6 +2407,10 @@ export const routeTree = rootRoute
     },
     "/components/checkbox/states": {
       "filePath": "components/checkbox/states.tsx",
+      "parent": "/components"
+    },
+    "/components/checkbox/withInformer": {
+      "filePath": "components/checkbox/withInformer.tsx",
       "parent": "/components"
     },
     "/components/chips/chipsClose": {
