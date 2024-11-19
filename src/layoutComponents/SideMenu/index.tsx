@@ -37,9 +37,9 @@ export const SideMenu = () => {
 
         <ExpandedMenuItem title="Components" className="topLevel" to="/components">
           {components.map(({ name, path, routes }) => (
-            <ExpandedMenuItem key={'secondLevel' + name} title={name} to={path}>
+            <ExpandedMenuItem key={'secondLevel' + name} className="secondLevel" title={name} to={path}>
               {routes.map(({ name, path }) => (
-                <MenuItem key={'thirdLevel' + name} title={name} to={path} className="example" />
+                <MenuItem key={'thirdLevel' + name} className="example thirdLevel" title={name} to={path} />
               ))}
             </ExpandedMenuItem>
           ))}
