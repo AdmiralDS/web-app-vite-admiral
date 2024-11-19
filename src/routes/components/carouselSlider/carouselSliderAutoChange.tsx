@@ -1,24 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
-import type { CarouselSliderAppearance, CarouselSliderProps } from '@admiral-ds/react-ui';
-import {
-  CarouselSlider,
-  CarouselSliderItem,
-  NotificationItem,
-  NotificationItemContent,
-  Toggle,
-  typography,
-} from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
-
-const AppearanceBlock = styled.div`
-  display: flex;
-  gap: 10px;
-  ${typography['Body/Body 2 Short']};
-  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-`;
+import type { CarouselSliderProps } from '@admiral-ds/react-ui';
+import { CarouselSlider, CarouselSliderItem } from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
 export const CarouselSliderAutoChange = (props: CarouselSliderProps) => {
   const [current, setCurrent] = useState(0);
@@ -30,39 +15,21 @@ export const CarouselSliderAutoChange = (props: CarouselSliderProps) => {
     return () => clearInterval(timer);
   }, [setCurrent]);
 
-  const [appearance, setAppearance] = useState<CarouselSliderAppearance>('default');
-  const [checked, setChecked] = useState(false);
-  useEffect(() => {
-    if (checked) setAppearance('primary');
-    else setAppearance('default');
-  }, [checked]);
-
   return (
-    <ContentArea>
-      <AppearanceBlock>
-        Default
-        <Toggle dimension="s" checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
-        Primary
-      </AppearanceBlock>
+    <ExampleSection text="Переключение сегментов может быть автоматическим через заданный пользователем интервал. Рекомендуемое значение интервала равно 3 секундам.">
       <CarouselSlider {...props}>
         {[...Array(5).keys()].map((item) => {
           return (
             <CarouselSliderItem
               aria-label={`Item ${item}`}
               key={item}
-              appearance={appearance}
+              appearance="primary"
               isCurrent={item === current}
             />
           );
         })}
       </CarouselSlider>
-      <NotificationItem displayStatusIcon>
-        <NotificationItemContent>
-          Переключение сегментов может быть автоматическим через заданный пользователем интервал. Рекомендуемое значение
-          интервала равно 3 секундам.
-        </NotificationItemContent>
-      </NotificationItem>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
@@ -70,6 +37,6 @@ export const Route = createFileRoute('/components/carouselSlider/carouselSliderA
   component: () => <CarouselSliderAutoChange />,
   staticData: {
     title: 'CarouselSlider. Автоматическое переключение',
-    description: 'Небольшое описание функционала',
+    description: '',
   },
 });

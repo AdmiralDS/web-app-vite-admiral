@@ -67,6 +67,7 @@ import { Route as ComponentsChipsChipsCloseImport } from './routes/components/ch
 import { Route as ComponentsCheckboxStatesImport } from './routes/components/checkbox/states'
 import { Route as ComponentsCheckboxFieldSetImport } from './routes/components/checkbox/fieldSet'
 import { Route as ComponentsCheckboxCompositeGroupImport } from './routes/components/checkbox/compositeGroup'
+import { Route as ComponentsCarouselSliderStylesImport } from './routes/components/carouselSlider/styles'
 import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from './routes/components/carouselSlider/carouselSliderAutoChange'
 import { Route as ComponentsCarouselSliderPositionImport } from './routes/components/carousel/sliderPosition'
 import { Route as ComponentsCarouselCarouselAutoChangeImport } from './routes/components/carousel/carouselAutoChange'
@@ -475,6 +476,13 @@ const ComponentsCheckboxCompositeGroupRoute =
   ComponentsCheckboxCompositeGroupImport.update({
     id: '/checkbox/compositeGroup',
     path: '/checkbox/compositeGroup',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCarouselSliderStylesRoute =
+  ComponentsCarouselSliderStylesImport.update({
+    id: '/carouselSlider/styles',
+    path: '/carouselSlider/styles',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -948,6 +956,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/carouselSlider/styles': {
+      id: '/components/carouselSlider/styles'
+      path: '/carouselSlider/styles'
+      fullPath: '/components/carouselSlider/styles'
+      preLoaderRoute: typeof ComponentsCarouselSliderStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/compositeGroup': {
       id: '/components/checkbox/compositeGroup'
       path: '/checkbox/compositeGroup'
@@ -1357,6 +1372,7 @@ interface ComponentsRouteChildren {
   ComponentsCarouselCarouselAutoChangeRoute: typeof ComponentsCarouselCarouselAutoChangeRoute
   ComponentsCarouselSliderPositionRoute: typeof ComponentsCarouselSliderPositionRoute
   ComponentsCarouselSliderCarouselSliderAutoChangeRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  ComponentsCarouselSliderStylesRoute: typeof ComponentsCarouselSliderStylesRoute
   ComponentsCheckboxCompositeGroupRoute: typeof ComponentsCheckboxCompositeGroupRoute
   ComponentsCheckboxFieldSetRoute: typeof ComponentsCheckboxFieldSetRoute
   ComponentsCheckboxStatesRoute: typeof ComponentsCheckboxStatesRoute
@@ -1452,6 +1468,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsCarouselSliderPositionRoute: ComponentsCarouselSliderPositionRoute,
   ComponentsCarouselSliderCarouselSliderAutoChangeRoute:
     ComponentsCarouselSliderCarouselSliderAutoChangeRoute,
+  ComponentsCarouselSliderStylesRoute: ComponentsCarouselSliderStylesRoute,
   ComponentsCheckboxCompositeGroupRoute: ComponentsCheckboxCompositeGroupRoute,
   ComponentsCheckboxFieldSetRoute: ComponentsCheckboxFieldSetRoute,
   ComponentsCheckboxStatesRoute: ComponentsCheckboxStatesRoute,
@@ -1554,6 +1571,7 @@ export interface FileRoutesByFullPath {
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
@@ -1645,6 +1663,7 @@ export interface FileRoutesByTo {
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
@@ -1737,6 +1756,7 @@ export interface FileRoutesById {
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
   '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
   '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
   '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
   '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
@@ -1830,6 +1850,7 @@ export interface FileRouteTypes {
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
     | '/components/carouselSlider/carouselSliderAutoChange'
+    | '/components/carouselSlider/styles'
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
@@ -1920,6 +1941,7 @@ export interface FileRouteTypes {
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
     | '/components/carouselSlider/carouselSliderAutoChange'
+    | '/components/carouselSlider/styles'
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
@@ -2010,6 +2032,7 @@ export interface FileRouteTypes {
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
     | '/components/carouselSlider/carouselSliderAutoChange'
+    | '/components/carouselSlider/styles'
     | '/components/checkbox/compositeGroup'
     | '/components/checkbox/fieldSet'
     | '/components/checkbox/states'
@@ -2131,6 +2154,7 @@ export const routeTree = rootRoute
         "/components/carousel/carouselAutoChange",
         "/components/carousel/sliderPosition",
         "/components/carouselSlider/carouselSliderAutoChange",
+        "/components/carouselSlider/styles",
         "/components/checkbox/compositeGroup",
         "/components/checkbox/fieldSet",
         "/components/checkbox/states",
@@ -2315,6 +2339,10 @@ export const routeTree = rootRoute
     },
     "/components/carouselSlider/carouselSliderAutoChange": {
       "filePath": "components/carouselSlider/carouselSliderAutoChange.tsx",
+      "parent": "/components"
+    },
+    "/components/carouselSlider/styles": {
+      "filePath": "components/carouselSlider/styles.tsx",
       "parent": "/components"
     },
     "/components/checkbox/compositeGroup": {

@@ -98,6 +98,7 @@ export const components = [
     path: '/components/carouselSlider',
     routes: [
       { name: 'Базовый пример', path: '/components/carouselSlider' },
+      { name: 'Стили', path: '/components/carouselSlider/styles' },
       { name: 'Автоматическое переключение', path: '/components/carouselSlider/carouselSliderAutoChange' },
     ],
   },
