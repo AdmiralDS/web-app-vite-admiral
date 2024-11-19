@@ -1,28 +1,31 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Button, ButtonGroup, T } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { Button, ButtonGroup } from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
 export const ButtonGroupStyles = () => (
-  <ContentArea>
-    <T font="Body/Body 1 Long">Primary</T>
-    <ButtonGroup>
-      <Button>Button 56</Button>
-      <Button>Button 56</Button>
-      <Button>Button 56</Button>
-    </ButtonGroup>
-    <T font="Body/Body 1 Long">Secondary</T>
-    <ButtonGroup appearance="secondary">
-      <Button>Button 56</Button>
-      <Button>Button 56</Button>
-      <Button>Button 56</Button>
-    </ButtonGroup>
-    <T font="Body/Body 1 Long">Tertiary</T>
-    <ButtonGroup appearance="tertiary">
-      <Button>Button 56</Button>
-      <Button>Button 56</Button>
-      <Button>Button 56</Button>
-    </ButtonGroup>
-  </ContentArea>
+  <>
+    <ExampleSection text="Primary">
+      <ButtonGroup>
+        <Button>Button 56</Button>
+        <Button>Button 56</Button>
+        <Button>Button 56</Button>
+      </ButtonGroup>
+    </ExampleSection>
+    <ExampleSection text="Secondary">
+      <ButtonGroup appearance="secondary">
+        <Button>Button 56</Button>
+        <Button>Button 56</Button>
+        <Button>Button 56</Button>
+      </ButtonGroup>
+    </ExampleSection>
+    <ExampleSection text="Tertiary">
+      <ButtonGroup appearance="tertiary">
+        <Button>Button 56</Button>
+        <Button>Button 56</Button>
+        <Button>Button 56</Button>
+      </ButtonGroup>
+    </ExampleSection>
+  </>
 );
 
 export const Route = createFileRoute('/components/buttonGroup/styles')({
