@@ -73,10 +73,12 @@ import { Route as ComponentsButtonGroupVariantsImport } from './routes/component
 import { Route as ComponentsButtonGroupStylesImport } from './routes/components/buttonGroup/styles'
 import { Route as ComponentsButtonGroupStatesImport } from './routes/components/buttonGroup/states'
 import { Route as ComponentsButtonGroupSizesImport } from './routes/components/buttonGroup/sizes'
+import { Route as ComponentsButtonTypesImport } from './routes/components/button/types'
+import { Route as ComponentsButtonDimensionImport } from './routes/components/button/dimension'
 import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/components/button/buttonWithLoader'
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
 import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
-import { Route as ComponentsButtonButtonStylesImport } from './routes/components/button/buttonStyles'
+import { Route as ComponentsButtonAdaptiveImport } from './routes/components/button/adaptive'
 import { Route as ComponentsBreadcrumbsSizesImport } from './routes/components/breadcrumbs/sizes'
 import { Route as ComponentsBreadcrumbsMobileImport } from './routes/components/breadcrumbs/mobile'
 import { Route as ComponentsBreadcrumbsLinkImport } from './routes/components/breadcrumbs/link'
@@ -517,6 +519,18 @@ const ComponentsButtonGroupSizesRoute = ComponentsButtonGroupSizesImport.update(
   } as any,
 )
 
+const ComponentsButtonTypesRoute = ComponentsButtonTypesImport.update({
+  id: '/button/types',
+  path: '/button/types',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsButtonDimensionRoute = ComponentsButtonDimensionImport.update({
+  id: '/button/dimension',
+  path: '/button/dimension',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
 const ComponentsButtonButtonWithLoaderRoute =
   ComponentsButtonButtonWithLoaderImport.update({
     id: '/button/buttonWithLoader',
@@ -538,12 +552,11 @@ const ComponentsButtonButtonWithBadgeRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
-const ComponentsButtonButtonStylesRoute =
-  ComponentsButtonButtonStylesImport.update({
-    id: '/button/buttonStyles',
-    path: '/button/buttonStyles',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
+const ComponentsButtonAdaptiveRoute = ComponentsButtonAdaptiveImport.update({
+  id: '/button/adaptive',
+  path: '/button/adaptive',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsBreadcrumbsSizesRoute = ComponentsBreadcrumbsSizesImport.update(
   {
@@ -822,11 +835,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsBreadcrumbsSizesImport
       parentRoute: typeof ComponentsImport
     }
-    '/components/button/buttonStyles': {
-      id: '/components/button/buttonStyles'
-      path: '/button/buttonStyles'
-      fullPath: '/components/button/buttonStyles'
-      preLoaderRoute: typeof ComponentsButtonButtonStylesImport
+    '/components/button/adaptive': {
+      id: '/components/button/adaptive'
+      path: '/button/adaptive'
+      fullPath: '/components/button/adaptive'
+      preLoaderRoute: typeof ComponentsButtonAdaptiveImport
       parentRoute: typeof ComponentsImport
     }
     '/components/button/buttonWithBadge': {
@@ -848,6 +861,20 @@ declare module '@tanstack/react-router' {
       path: '/button/buttonWithLoader'
       fullPath: '/components/button/buttonWithLoader'
       preLoaderRoute: typeof ComponentsButtonButtonWithLoaderImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/button/dimension': {
+      id: '/components/button/dimension'
+      path: '/button/dimension'
+      fullPath: '/components/button/dimension'
+      preLoaderRoute: typeof ComponentsButtonDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/button/types': {
+      id: '/components/button/types'
+      path: '/button/types'
+      fullPath: '/components/button/types'
+      preLoaderRoute: typeof ComponentsButtonTypesImport
       parentRoute: typeof ComponentsImport
     }
     '/components/buttonGroup/sizes': {
@@ -1287,10 +1314,12 @@ interface ComponentsRouteChildren {
   ComponentsBreadcrumbsLinkRoute: typeof ComponentsBreadcrumbsLinkRoute
   ComponentsBreadcrumbsMobileRoute: typeof ComponentsBreadcrumbsMobileRoute
   ComponentsBreadcrumbsSizesRoute: typeof ComponentsBreadcrumbsSizesRoute
-  ComponentsButtonButtonStylesRoute: typeof ComponentsButtonButtonStylesRoute
+  ComponentsButtonAdaptiveRoute: typeof ComponentsButtonAdaptiveRoute
   ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
   ComponentsButtonButtonWithLoaderRoute: typeof ComponentsButtonButtonWithLoaderRoute
+  ComponentsButtonDimensionRoute: typeof ComponentsButtonDimensionRoute
+  ComponentsButtonTypesRoute: typeof ComponentsButtonTypesRoute
   ComponentsButtonGroupSizesRoute: typeof ComponentsButtonGroupSizesRoute
   ComponentsButtonGroupStatesRoute: typeof ComponentsButtonGroupStatesRoute
   ComponentsButtonGroupStylesRoute: typeof ComponentsButtonGroupStylesRoute
@@ -1376,10 +1405,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsBreadcrumbsLinkRoute: ComponentsBreadcrumbsLinkRoute,
   ComponentsBreadcrumbsMobileRoute: ComponentsBreadcrumbsMobileRoute,
   ComponentsBreadcrumbsSizesRoute: ComponentsBreadcrumbsSizesRoute,
-  ComponentsButtonButtonStylesRoute: ComponentsButtonButtonStylesRoute,
+  ComponentsButtonAdaptiveRoute: ComponentsButtonAdaptiveRoute,
   ComponentsButtonButtonWithBadgeRoute: ComponentsButtonButtonWithBadgeRoute,
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
   ComponentsButtonButtonWithLoaderRoute: ComponentsButtonButtonWithLoaderRoute,
+  ComponentsButtonDimensionRoute: ComponentsButtonDimensionRoute,
+  ComponentsButtonTypesRoute: ComponentsButtonTypesRoute,
   ComponentsButtonGroupSizesRoute: ComponentsButtonGroupSizesRoute,
   ComponentsButtonGroupStatesRoute: ComponentsButtonGroupStatesRoute,
   ComponentsButtonGroupStylesRoute: ComponentsButtonGroupStylesRoute,
@@ -1476,10 +1507,12 @@ export interface FileRoutesByFullPath {
   '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
   '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
   '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
-  '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
+  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
+  '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/types': typeof ComponentsButtonTypesRoute
   '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
@@ -1563,10 +1596,12 @@ export interface FileRoutesByTo {
   '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
   '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
   '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
-  '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
+  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
+  '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/types': typeof ComponentsButtonTypesRoute
   '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
@@ -1651,10 +1686,12 @@ export interface FileRoutesById {
   '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
   '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
   '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
-  '/components/button/buttonStyles': typeof ComponentsButtonButtonStylesRoute
+  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
   '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
+  '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/types': typeof ComponentsButtonTypesRoute
   '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
@@ -1740,10 +1777,12 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs/link'
     | '/components/breadcrumbs/mobile'
     | '/components/breadcrumbs/sizes'
-    | '/components/button/buttonStyles'
+    | '/components/button/adaptive'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
+    | '/components/button/dimension'
+    | '/components/button/types'
     | '/components/buttonGroup/sizes'
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
@@ -1826,10 +1865,12 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs/link'
     | '/components/breadcrumbs/mobile'
     | '/components/breadcrumbs/sizes'
-    | '/components/button/buttonStyles'
+    | '/components/button/adaptive'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
+    | '/components/button/dimension'
+    | '/components/button/types'
     | '/components/buttonGroup/sizes'
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
@@ -1912,10 +1953,12 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs/link'
     | '/components/breadcrumbs/mobile'
     | '/components/breadcrumbs/sizes'
-    | '/components/button/buttonStyles'
+    | '/components/button/adaptive'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
     | '/components/button/buttonWithLoader'
+    | '/components/button/dimension'
+    | '/components/button/types'
     | '/components/buttonGroup/sizes'
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
@@ -2029,10 +2072,12 @@ export const routeTree = rootRoute
         "/components/breadcrumbs/link",
         "/components/breadcrumbs/mobile",
         "/components/breadcrumbs/sizes",
-        "/components/button/buttonStyles",
+        "/components/button/adaptive",
         "/components/button/buttonWithBadge",
         "/components/button/buttonWithIcon",
         "/components/button/buttonWithLoader",
+        "/components/button/dimension",
+        "/components/button/types",
         "/components/buttonGroup/sizes",
         "/components/buttonGroup/states",
         "/components/buttonGroup/styles",
@@ -2169,8 +2214,8 @@ export const routeTree = rootRoute
       "filePath": "components/breadcrumbs/sizes.tsx",
       "parent": "/components"
     },
-    "/components/button/buttonStyles": {
-      "filePath": "components/button/buttonStyles.tsx",
+    "/components/button/adaptive": {
+      "filePath": "components/button/adaptive.tsx",
       "parent": "/components"
     },
     "/components/button/buttonWithBadge": {
@@ -2183,6 +2228,14 @@ export const routeTree = rootRoute
     },
     "/components/button/buttonWithLoader": {
       "filePath": "components/button/buttonWithLoader.tsx",
+      "parent": "/components"
+    },
+    "/components/button/dimension": {
+      "filePath": "components/button/dimension.tsx",
+      "parent": "/components"
+    },
+    "/components/button/types": {
+      "filePath": "components/button/types.tsx",
       "parent": "/components"
     },
     "/components/buttonGroup/sizes": {

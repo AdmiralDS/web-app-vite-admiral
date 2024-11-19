@@ -1,114 +1,47 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
-import { Button, T } from '@admiral-ds/react-ui';
+import { Button, TooltipHoc } from '@admiral-ds/react-ui';
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  margin: 15px;
-`;
+import { ExampleSection } from '../../-helpers/examples';
 
 const WrapperButton = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  > * {
-    margin: 8px;
-    flex-basis: 170px;
-  }
-
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px;
   align-items: center;
 `;
 
-const Separator = styled.div`
-  height: 20px;
-  width: 20px;
-`;
-
-const DarkDiv = styled.div`
-  background-color: var(
-    --admiral-color-Special_DarkStaticNeutral00,
-    ${(p) => p.theme.color['Special/Dark Static Neutral 00']}
-  );
-  padding: 2px;
-`;
+const ButtonWithTooltip = TooltipHoc(Button);
 
 export const ButtonWithIcon = () => {
   return (
-    <Wrapper>
-      <WrapperButton>
-        <div>
-          <T font="Body/Body 1 Long" as="div">
-            Dimension - xl
-          </T>
+    <>
+      <ExampleSection text="Для дополнительных акцентов и более прозрачных действий могут применяться кнопки с иконками и текстом. Нельзя использовать рядом кнопку с текстом и кнопку с текстом и иконкой. Но можно использовать кнопку с текстом рядом с кнопкой-иконкой. Иконка может быть как слева от надписи, так и справа.">
+        <WrapperButton>
+          <Button dimension="xl" appearance="primary" iconStart={<StarSolid />}>
+            Icon start
+          </Button>
           <Button dimension="xl" appearance="primary" iconEnd={<StarSolid />}>
-            Button 56
+            Icon end
           </Button>
-        </div>
-        <div>
-          <T font="Body/Body 1 Long" as="div">
-            Dimension - l
-          </T>
-          <Button dimension="l" appearance="secondary" iconStart={<StarSolid />}>
-            Button 48
-          </Button>
-        </div>
-        <div>
-          <T font="Body/Body 1 Long" as="div">
-            Dimension - m
-          </T>
-          <Button dimension="m" appearance="danger" iconEnd={<StarSolid />}>
-            Button 40
-          </Button>
-        </div>
-        <div>
-          <T font="Body/Body 1 Long" as="div">
-            Ghost - xl
-          </T>
-          <Button dimension="xl" appearance="ghost" iconEnd={<StarSolid />}>
-            Button 56
-          </Button>
-        </div>
-        <>
-          <DarkDiv>
-            <T font="Body/Body 1 Long" as="div" style={{ color: 'white' }}>
-              White - l
-            </T>
-            <Button dimension="l" appearance="white" iconEnd={<StarSolid />}>
-              Button 48
-            </Button>
-          </DarkDiv>
-        </>
-        <div>
-          <T font="Body/Body 1 Long" as="div">
-            Dimension - s
-          </T>
-          <Button dimension="s" appearance="success" iconStart={<StarSolid />}>
-            Button 32
-          </Button>
-        </div>
-      </WrapperButton>
-      <Separator />
-      <div>
-        <T font="Body/Body 1 Long" as="div">
-          Button with icon stretch
-        </T>
-        <Button dimension="l" appearance="tertiary" style={{ width: '100%' }} iconStart={<StarSolid />}>
-          Button
-        </Button>
-      </div>
-    </Wrapper>
+        </WrapperButton>
+      </ExampleSection>
+      <ExampleSection text="В некоторых случаях могут использоваться кнопки только с иконками. Как правило, это иконки значениях которых общепонятны и не вызывают сомнений. Однако, при ховере под такой кнопкой появляется подсказка со значением кнопки.">
+        <WrapperButton>
+          <ButtonWithTooltip displayAsSquare iconStart={<StarSolid />} renderContent={() => 'Tooltip'} />
+        </WrapperButton>
+      </ExampleSection>
+    </>
   );
 };
 
 export const Route = createFileRoute('/components/button/buttonWithIcon')({
   component: () => <ButtonWithIcon />,
   staticData: {
-    title: 'Button. С иконкой',
-    description: 'Небольшое описание функционала',
+    title: 'Button с иконкой',
+    description: '',
   },
 });

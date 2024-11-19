@@ -64,10 +64,12 @@ export const components = [
     path: '/components/button',
     routes: [
       { name: 'Базовый пример', path: '/components/button' },
-      { name: 'Стили', path: '/components/button/buttonStyles' },
+      { name: 'Размеры', path: '/components/button/dimension' },
+      { name: 'Типы', path: '/components/button/types' },
       { name: 'С иконкой', path: '/components/button/buttonWithIcon' },
       { name: 'С лоадером', path: '/components/button/buttonWithLoader' },
       { name: 'С бейджем', path: '/components/button/buttonWithBadge' },
+      { name: 'Адаптив', path: '/components/button/adaptive' },
     ],
   },
   {
