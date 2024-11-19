@@ -6,7 +6,7 @@ import { ExampleSection } from '../../-helpers/examples';
 export const AccordionDimension = () => {
   return (
     <>
-      <ExampleSection header="Размер L">
+      <ExampleSection text="Размер L">
         <Accordion>
           <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
           <AccordionItem title="Второй пункт">
@@ -22,7 +22,7 @@ export const AccordionDimension = () => {
           </AccordionItem>
         </Accordion>
       </ExampleSection>
-      <ExampleSection header="Размер M">
+      <ExampleSection text="Размер M">
         <Accordion dimension="m">
           <AccordionItem title="Первый пункт">Контент первого пункта</AccordionItem>
           <AccordionItem title="Второй пункт">
