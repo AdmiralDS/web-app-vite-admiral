@@ -10,12 +10,6 @@ export const ContentArea = styled.div`
   margin-bottom: 40px;
 `;
 
-export const ExampleWrapperWithWidth = styled(ContentArea)`
-  > * {
-    width: 90%;
-  }
-`;
-
 export const SubHeader = styled.div`
   ${typography['Subtitle/Subtitle 3']}
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
