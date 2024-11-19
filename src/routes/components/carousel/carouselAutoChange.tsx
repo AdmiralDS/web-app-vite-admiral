@@ -3,12 +3,8 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import type { CarouselProps } from '@admiral-ds/react-ui';
-import { Carousel, NotificationItem, NotificationItemContent } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
-
-const Separator = styled.div<{ height: number }>`
-  height: ${(p) => p.height}px;
-`;
+import { Carousel } from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
 const CarouselContainer = styled.div`
   width: 70%;
@@ -50,7 +46,12 @@ export const CarouselAutoChange = (props: CarouselProps) => {
   }, [setCurrent, mouseInCarousel]);
 
   return (
-    <ContentArea>
+    <ExampleSection
+      text="Переключение сегментов может быть автоматическим через заданный пользователем интервал. Дефолтное значение
+            интервала равно 3 секундам. Так же можно переключать контент кликами по не активным сегментам. В этом случае
+            при наведении курсора на область компонента рекомендуется приостанавливать автоматическую смену до того
+            момента, пока курсор не покинет область компонента."
+    >
       <CarouselContainer>
         <Carousel
           {...props}
@@ -64,15 +65,7 @@ export const CarouselAutoChange = (props: CarouselProps) => {
           {items}
         </Carousel>
       </CarouselContainer>
-      <NotificationItem displayStatusIcon>
-        <NotificationItemContent>
-          Переключение секций может быть автоматическим через заданный пользователем интервал. Рекомендуемое значение
-          интервала равно 3 секундам.
-          <Separator height={8} />В этом случае при наведении курсора на область компонента рекомендуется
-          приостанавливать автоматическую смену до того момента, пока курсор не покинет область компонента.
-        </NotificationItemContent>
-      </NotificationItem>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
@@ -80,7 +73,6 @@ export const Route = createFileRoute('/components/carousel/carouselAutoChange')(
   component: () => <CarouselAutoChange />,
   staticData: {
     title: 'Carousel. Автоматическое переключение',
-    description:
-      'Компонент для последовательного отображения связанных по смыслу элементов, как правило, это изображения или карточки с контентом.',
+    description: '',
   },
 });
