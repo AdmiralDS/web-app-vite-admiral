@@ -12,7 +12,7 @@ export const Description = styled.div`
   ${typography['Body/Body 2 Long']}
   color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
   margin-top: 8px;
-  margin-bottom: 40px;
+  max-width: 720px;
 `;
 
 export const Wrapper = styled.div`
@@ -26,4 +26,14 @@ export const Wrapper = styled.div`
     min-width: 1200px;
     margin: 0 auto;
   }
+`;
+
+export const Preview = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 40px;
+  gap: 40px;
 `;

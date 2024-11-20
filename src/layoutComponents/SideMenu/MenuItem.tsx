@@ -71,18 +71,6 @@ const eventsMixin = css`
   &:active {
     background: var(--admiral-color-Opacity_Press, ${(p) => p.theme.color['Opacity/Press']});
   }
-  // нужен ли?
-  &:focus {
-    &:before {
-      position: absolute;
-      content: '';
-      border: 2px solid var(--admiral-color-Primary_Primary60Main, ${(p) => p.theme.color['Primary/Primary 60 Main']});
-      top: -1px;
-      left: 0;
-      bottom: -1px;
-      right: 0;
-    }
-  }
   &:focus,
   & > ${ItemTitleContent} {
     outline: none;
@@ -108,8 +96,11 @@ export const ItemTitle = styled.button`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
   text-decoration: none;
   ${typography['Body/Body 2 Long']}
-  &:is(.topLevel) {
+  &.topLevel {
     ${typography['Subtitle/Subtitle 3']}
+  }
+  &.secondLevel:has(+ ${Collapse} [data-selected='true']) {
+    background: var(--admiral-color-Opacity_Hover, ${(p) => p.theme.color['Opacity/Hover']});
   }
 
   &:not(:disabled) {

@@ -9,14 +9,11 @@ import GithubIcon from '../../assets/GithubIcon.svg?react';
 import ReactIcon from '../../assets/ReactIcon.svg?react';
 import PixsoIcon from '../../assets/PixsoIcon.svg?react';
 
-import { Title, Description, Wrapper } from '../-helpers/main';
-
 const parseShadow = (token: string) => token.replace('box-shadow: ', '').replace(';', '');
 
 const Sources = styled.div`
   display: grid;
   gap: 24px;
-  margin-top: 40px;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr 1fr;
@@ -107,20 +104,18 @@ const sources = [
 
 export const Route = createFileRoute('/general/resources')({
   component: () => (
-    <Wrapper>
-      <Title>Resources</Title>
-      <Description>
-        Полезные материалы и ссылки, которые могут пригодиться при использовании библиотеки Адмирал
-      </Description>
-      <Sources>
-        {sources.map(({ id, icon, iconColor, href, name, description }) => (
-          <Source href={href} target="_blank" key={id}>
-            <SourceIcon $background={iconColor as keyof Color}>{icon}</SourceIcon>
-            <SourceName font="Subtitle/Subtitle 1">{name}</SourceName>
-            <SourceDesc font="Caption/Caption 1">{description}</SourceDesc>
-          </Source>
-        ))}
-      </Sources>
-    </Wrapper>
+    <Sources>
+      {sources.map(({ id, icon, iconColor, href, name, description }) => (
+        <Source href={href} target="_blank" key={id}>
+          <SourceIcon $background={iconColor as keyof Color}>{icon}</SourceIcon>
+          <SourceName font="Subtitle/Subtitle 1">{name}</SourceName>
+          <SourceDesc font="Caption/Caption 1">{description}</SourceDesc>
+        </Source>
+      ))}
+    </Sources>
   ),
+  staticData: {
+    title: 'Resources',
+    description: 'Полезные материалы и ссылки, которые могут пригодиться при использовании библиотеки Адмирал',
+  },
 });

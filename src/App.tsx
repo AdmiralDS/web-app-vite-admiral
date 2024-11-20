@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { LIGHT_THEME, DARK_THEME, LightThemeCssVars, DarkThemeCssVars } from '@admiral-ds/react-ui';
 import type { BorderRadiusType } from '@admiral-ds/react-ui';
@@ -18,6 +19,10 @@ const router = createRouter({ routeTree });
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router;
+  }
+  interface StaticDataRouteOption {
+    title?: ReactNode;
+    description?: ReactNode;
   }
 }
 
