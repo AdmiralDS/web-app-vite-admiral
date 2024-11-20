@@ -57,7 +57,9 @@ import { Route as ComponentsDrawerCustomContentImport } from './routes/component
 import { Route as ComponentsContentSwitcherWithIconsImport } from './routes/components/contentSwitcher/withIcons'
 import { Route as ComponentsContentSwitcherWithBadgeImport } from './routes/components/contentSwitcher/withBadge'
 import { Route as ComponentsContentSwitcherStylesImport } from './routes/components/contentSwitcher/styles'
+import { Route as ComponentsContentSwitcherSizesImport } from './routes/components/contentSwitcher/sizes'
 import { Route as ComponentsContentSwitcherIconsOnlyImport } from './routes/components/contentSwitcher/iconsOnly'
+import { Route as ComponentsContentSwitcherAdaptiveImport } from './routes/components/contentSwitcher/adaptive'
 import { Route as ComponentsChipsWithTooltipImport } from './routes/components/chips/withTooltip'
 import { Route as ComponentsChipsWithIconImport } from './routes/components/chips/withIcon'
 import { Route as ComponentsChipsWithBadgeImport } from './routes/components/chips/withBadge'
@@ -415,10 +417,24 @@ const ComponentsContentSwitcherStylesRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsContentSwitcherSizesRoute =
+  ComponentsContentSwitcherSizesImport.update({
+    id: '/contentSwitcher/sizes',
+    path: '/contentSwitcher/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsContentSwitcherIconsOnlyRoute =
   ComponentsContentSwitcherIconsOnlyImport.update({
     id: '/contentSwitcher/iconsOnly',
     path: '/contentSwitcher/iconsOnly',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsContentSwitcherAdaptiveRoute =
+  ComponentsContentSwitcherAdaptiveImport.update({
+    id: '/contentSwitcher/adaptive',
+    path: '/contentSwitcher/adaptive',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1091,11 +1107,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsChipsWithTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/contentSwitcher/adaptive': {
+      id: '/components/contentSwitcher/adaptive'
+      path: '/contentSwitcher/adaptive'
+      fullPath: '/components/contentSwitcher/adaptive'
+      preLoaderRoute: typeof ComponentsContentSwitcherAdaptiveImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/iconsOnly': {
       id: '/components/contentSwitcher/iconsOnly'
       path: '/contentSwitcher/iconsOnly'
       fullPath: '/components/contentSwitcher/iconsOnly'
       preLoaderRoute: typeof ComponentsContentSwitcherIconsOnlyImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/contentSwitcher/sizes': {
+      id: '/components/contentSwitcher/sizes'
+      path: '/contentSwitcher/sizes'
+      fullPath: '/components/contentSwitcher/sizes'
+      preLoaderRoute: typeof ComponentsContentSwitcherSizesImport
       parentRoute: typeof ComponentsImport
     }
     '/components/contentSwitcher/styles': {
@@ -1444,7 +1474,9 @@ interface ComponentsRouteChildren {
   ComponentsChipsWithBadgeRoute: typeof ComponentsChipsWithBadgeRoute
   ComponentsChipsWithIconRoute: typeof ComponentsChipsWithIconRoute
   ComponentsChipsWithTooltipRoute: typeof ComponentsChipsWithTooltipRoute
+  ComponentsContentSwitcherAdaptiveRoute: typeof ComponentsContentSwitcherAdaptiveRoute
   ComponentsContentSwitcherIconsOnlyRoute: typeof ComponentsContentSwitcherIconsOnlyRoute
+  ComponentsContentSwitcherSizesRoute: typeof ComponentsContentSwitcherSizesRoute
   ComponentsContentSwitcherStylesRoute: typeof ComponentsContentSwitcherStylesRoute
   ComponentsContentSwitcherWithBadgeRoute: typeof ComponentsContentSwitcherWithBadgeRoute
   ComponentsContentSwitcherWithIconsRoute: typeof ComponentsContentSwitcherWithIconsRoute
@@ -1543,8 +1575,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsChipsWithBadgeRoute: ComponentsChipsWithBadgeRoute,
   ComponentsChipsWithIconRoute: ComponentsChipsWithIconRoute,
   ComponentsChipsWithTooltipRoute: ComponentsChipsWithTooltipRoute,
+  ComponentsContentSwitcherAdaptiveRoute:
+    ComponentsContentSwitcherAdaptiveRoute,
   ComponentsContentSwitcherIconsOnlyRoute:
     ComponentsContentSwitcherIconsOnlyRoute,
+  ComponentsContentSwitcherSizesRoute: ComponentsContentSwitcherSizesRoute,
   ComponentsContentSwitcherStylesRoute: ComponentsContentSwitcherStylesRoute,
   ComponentsContentSwitcherWithBadgeRoute:
     ComponentsContentSwitcherWithBadgeRoute,
@@ -1661,7 +1696,9 @@ export interface FileRoutesByFullPath {
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
   '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute
   '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute
   '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
   '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
   '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
@@ -1757,7 +1794,9 @@ export interface FileRoutesByTo {
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
   '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute
   '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute
   '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
   '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
   '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
@@ -1854,7 +1893,9 @@ export interface FileRoutesById {
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
   '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute
   '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute
   '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
   '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
   '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
@@ -1952,7 +1993,9 @@ export interface FileRouteTypes {
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
     | '/components/chips/withTooltip'
+    | '/components/contentSwitcher/adaptive'
     | '/components/contentSwitcher/iconsOnly'
+    | '/components/contentSwitcher/sizes'
     | '/components/contentSwitcher/styles'
     | '/components/contentSwitcher/withBadge'
     | '/components/contentSwitcher/withIcons'
@@ -2047,7 +2090,9 @@ export interface FileRouteTypes {
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
     | '/components/chips/withTooltip'
+    | '/components/contentSwitcher/adaptive'
     | '/components/contentSwitcher/iconsOnly'
+    | '/components/contentSwitcher/sizes'
     | '/components/contentSwitcher/styles'
     | '/components/contentSwitcher/withBadge'
     | '/components/contentSwitcher/withIcons'
@@ -2142,7 +2187,9 @@ export interface FileRouteTypes {
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
     | '/components/chips/withTooltip'
+    | '/components/contentSwitcher/adaptive'
     | '/components/contentSwitcher/iconsOnly'
+    | '/components/contentSwitcher/sizes'
     | '/components/contentSwitcher/styles'
     | '/components/contentSwitcher/withBadge'
     | '/components/contentSwitcher/withIcons'
@@ -2267,7 +2314,9 @@ export const routeTree = rootRoute
         "/components/chips/withBadge",
         "/components/chips/withIcon",
         "/components/chips/withTooltip",
+        "/components/contentSwitcher/adaptive",
         "/components/contentSwitcher/iconsOnly",
+        "/components/contentSwitcher/sizes",
         "/components/contentSwitcher/styles",
         "/components/contentSwitcher/withBadge",
         "/components/contentSwitcher/withIcons",
@@ -2506,8 +2555,16 @@ export const routeTree = rootRoute
       "filePath": "components/chips/withTooltip.tsx",
       "parent": "/components"
     },
+    "/components/contentSwitcher/adaptive": {
+      "filePath": "components/contentSwitcher/adaptive.tsx",
+      "parent": "/components"
+    },
     "/components/contentSwitcher/iconsOnly": {
       "filePath": "components/contentSwitcher/iconsOnly.tsx",
+      "parent": "/components"
+    },
+    "/components/contentSwitcher/sizes": {
+      "filePath": "components/contentSwitcher/sizes.tsx",
       "parent": "/components"
     },
     "/components/contentSwitcher/styles": {

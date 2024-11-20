@@ -12,8 +12,8 @@ const list = [
 export const ContentSwitcherStyles = () => {
   return (
     <>
-      <ExampleSection text="Primary">
-        <ContentSwitcher dimension={'l'} appearance="primary">
+      <ExampleSection text="Размер L">
+        <ContentSwitcher dimension={'l'}>
           {list.map((item, index) => {
             return (
               <ContentSwitcherItem key={index} active={index === 0} disabled={item.disabled}>
@@ -23,8 +23,19 @@ export const ContentSwitcherStyles = () => {
           })}
         </ContentSwitcher>
       </ExampleSection>
-      <ExampleSection text="Secondary">
-        <ContentSwitcher dimension={'l'}>
+      <ExampleSection text="Размер M">
+        <ContentSwitcher dimension={'m'}>
+          {list.map((item, index) => {
+            return (
+              <ContentSwitcherItem key={index} active={index === 0} disabled={item.disabled}>
+                {item.title}
+              </ContentSwitcherItem>
+            );
+          })}
+        </ContentSwitcher>
+      </ExampleSection>
+      <ExampleSection text="Размер S">
+        <ContentSwitcher dimension={'s'}>
           {list.map((item, index) => {
             return (
               <ContentSwitcherItem key={index} active={index === 0} disabled={item.disabled}>
@@ -38,10 +49,10 @@ export const ContentSwitcherStyles = () => {
   );
 };
 
-export const Route = createFileRoute('/components/contentSwitcher/styles')({
+export const Route = createFileRoute('/components/contentSwitcher/sizes')({
   component: () => <ContentSwitcherStyles />,
   staticData: {
-    title: 'ContentSwitcher. Стили',
-    description: 'Существует в двух цветовых схемах (primary и secondary).',
+    title: 'ContentSwitcher. Размеры',
+    description: 'Существует в трех размерах — 48, 40, 32 px по высоте.',
   },
 });

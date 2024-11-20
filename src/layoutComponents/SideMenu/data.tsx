@@ -146,10 +146,12 @@ export const components = [
     path: '/components/contentSwitcher',
     routes: [
       { name: 'Базовый пример', path: '/components/contentSwitcher' },
-      { name: 'Стили и размеры', path: '/components/contentSwitcher/styles' },
+      { name: 'Размеры', path: '/components/contentSwitcher/sizes' },
+      { name: 'Стили', path: '/components/contentSwitcher/styles' },
       { name: 'С иконками', path: '/components/contentSwitcher/withIcons' },
       { name: 'С Badge', path: '/components/contentSwitcher/withBadge' },
       { name: 'Иконки без текста', path: '/components/contentSwitcher/iconsOnly' },
+      { name: 'Адаптив', path: '/components/contentSwitcher/adaptive' },
     ],
   },
   {

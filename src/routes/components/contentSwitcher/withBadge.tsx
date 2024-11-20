@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 
 import { Badge, ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const list = [
   {
@@ -33,7 +33,7 @@ export const ContentSwitcherWithBadge = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <ContentArea>
+    <ExampleSection>
       <ContentSwitcher dimension={'l'} appearance="primary">
         {list.map((item, index) => (
           <ContentSwitcherItem
@@ -46,7 +46,7 @@ export const ContentSwitcherWithBadge = () => {
           </ContentSwitcherItem>
         ))}
       </ContentSwitcher>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 

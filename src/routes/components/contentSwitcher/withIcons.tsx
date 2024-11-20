@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-ui';
 
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const Divider = styled.div`
   width: 10px;
@@ -12,7 +12,7 @@ const Divider = styled.div`
 
 export const ContentSwitcherWithIcon = () => {
   return (
-    <ContentArea>
+    <ExampleSection>
       <ContentSwitcher dimension={'l'}>
         <ContentSwitcherItem active>
           <StarSolid width={20} />
@@ -30,7 +30,7 @@ export const ContentSwitcherWithIcon = () => {
           <StarSolid width={17} />
         </ContentSwitcherItem>
       </ContentSwitcher>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
@@ -38,7 +38,6 @@ export const Route = createFileRoute('/components/contentSwitcher/withIcons')({
   component: () => <ContentSwitcherWithIcon />,
   staticData: {
     title: 'ContentSwitcher. С иконками',
-    description:
-      'В компоненте можно включать иконки, бэйджи или только иконки, а также дополнительные секции через панель Variants.',
+    description: 'В компоненте можно включать иконки.',
   },
 });

@@ -5,7 +5,7 @@ import { Badge, ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-u
 import type { ContentSwitcherProps } from '@admiral-ds/react-ui';
 
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const list = [
   {
@@ -31,7 +31,7 @@ export const ContentSwitcherBasic = ({ dimension, className, ...props }: Content
   const [active, setActive] = useState(0);
 
   return (
-    <ContentArea>
+    <ExampleSection>
       <ContentSwitcher dimension={dimension} className={className} {...props}>
         {list.map((item, index) => (
           <ContentSwitcherItem
@@ -44,7 +44,7 @@ export const ContentSwitcherBasic = ({ dimension, className, ...props }: Content
           </ContentSwitcherItem>
         ))}
       </ContentSwitcher>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
