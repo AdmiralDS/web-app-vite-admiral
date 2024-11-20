@@ -1,12 +1,19 @@
 import { HTMLAttributes } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { typography } from '@admiral-ds/react-ui';
 
-export const ContentArea = styled.div`
+export const ContentArea = styled.div<{ $cssMixin?: ReturnType<typeof css> }>`
   box-sizing: border-box;
   border-radius: 8px;
   background-color: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
   padding: 36px 40px;
+  ${(p) => p.$cssMixin && p.$cssMixin};
+`;
+
+export const columnFlexMixin = css`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 export const SubHeader = styled.div`
@@ -45,13 +52,15 @@ const SectionWrapper = styled.div`
   padding: 0;
   width: 100%;
 `;
-export interface ExampleSectionProps extends SectionDescriptionProps, HTMLAttributes<HTMLDivElement> {}
+export interface ExampleSectionProps extends SectionDescriptionProps, HTMLAttributes<HTMLDivElement> {
+  cssMixin?: ReturnType<typeof css>;
+}
 
-export const ExampleSection = ({ header, text, children, ...props }: ExampleSectionProps) => {
+export const ExampleSection = ({ header, text, children, cssMixin, ...props }: ExampleSectionProps) => {
   return (
     <SectionWrapper>
       {(header || text) && <SectionDescription header={header} text={text} />}
-      <ContentArea {...props}>{children}</ContentArea>
+      <ContentArea {...props} $cssMixin={cssMixin}>{children}</ContentArea>
     </SectionWrapper>
   );
 };
