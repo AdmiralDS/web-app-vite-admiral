@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Chips } from '@admiral-ds/react-ui';
 import type { ChipsProps } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const listDataIconTooltip = [
   { id: '1', label: 'Ограниченное пространство', disabled: false },
@@ -24,7 +24,7 @@ const StyledChipsTooltip = styled(Chips)`
 
 export const ChipsTooltip = (props: ChipsProps) => {
   return (
-    <ContentArea>
+    <ExampleSection>
       <WrapperChip>
         {listDataIconTooltip.map((item) => (
           <StyledChipsTooltip {...props} renderContentTooltip={() => item.label} key={item.id}>
@@ -32,7 +32,7 @@ export const ChipsTooltip = (props: ChipsProps) => {
           </StyledChipsTooltip>
         ))}
       </WrapperChip>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 

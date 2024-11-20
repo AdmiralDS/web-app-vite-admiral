@@ -10,7 +10,7 @@ import AlertSolid from '@admiral-ds/icons/build/category/AlertSolid.svg?react';
 import DiamondSolid from '@admiral-ds/icons/build/category/DiamondSolid.svg?react';
 import TrophyIcon from '@admiral-ds/icons/build/category/TrophySolid.svg?react';
 import BurnIcon from '@admiral-ds/icons/build/category/BurnSolid.svg?react';
-import { ContentArea } from '../../-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '../../-helpers/examples';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
@@ -38,7 +38,7 @@ export const ChipsIcon = (props: ChipsProps) => {
   const [selectedM, setSelectedM] = useState('');
   const [selectedS, setSelectedS] = useState('');
   return (
-    <ContentArea>
+    <ExampleSection cssMixin={columnFlexMixin}>
       <WrapperChip $dimension={props.dimension}>
         {listDataIcon.map((d) => (
           <Chips
@@ -68,7 +68,7 @@ export const ChipsIcon = (props: ChipsProps) => {
           </Chips>
         ))}
       </WrapperChip>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 

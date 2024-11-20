@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Chips } from '@admiral-ds/react-ui';
 import type { ChipsProps } from '@admiral-ds/react-ui';
 import { useState } from 'react';
-import { ContentArea } from '../../-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '../../-helpers/examples';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
@@ -22,7 +22,7 @@ export const ChipsClose = (props: ChipsProps) => {
   const [dataListM, setDataM] = useState(listData);
   const [dataListS, setDataS] = useState(listData);
   return (
-    <ContentArea>
+    <ExampleSection cssMixin={columnFlexMixin}>
       <WrapperChip $dimension={props.dimension}>
         {dataListM.map((item) => (
           <Chips
@@ -48,7 +48,7 @@ export const ChipsClose = (props: ChipsProps) => {
           </Chips>
         ))}
       </WrapperChip>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 

@@ -131,7 +131,8 @@ export const components = [
     path: '/components/chips',
     routes: [
       { name: 'Базовый пример', path: '/components/chips' },
-      { name: 'Стили и размеры', path: '/components/chips/styles' },
+      { name: 'Размеры', path: '/components/chips/sizes' },
+      { name: 'Стили', path: '/components/chips/styles' },
       { name: 'Chips с текстом и иконкой закрыть', path: '/components/chips/chipsClose' },
       { name: 'Chips с иконкой', path: '/components/chips/withIcon' },
       { name: 'Chips с Badge', path: '/components/chips/withBadge' },

@@ -62,6 +62,7 @@ import { Route as ComponentsChipsWithTooltipImport } from './routes/components/c
 import { Route as ComponentsChipsWithIconImport } from './routes/components/chips/withIcon'
 import { Route as ComponentsChipsWithBadgeImport } from './routes/components/chips/withBadge'
 import { Route as ComponentsChipsStylesImport } from './routes/components/chips/styles'
+import { Route as ComponentsChipsSizesImport } from './routes/components/chips/sizes'
 import { Route as ComponentsChipsSelectImport } from './routes/components/chips/select'
 import { Route as ComponentsChipsMultiSelectImport } from './routes/components/chips/multiSelect'
 import { Route as ComponentsChipsChipsCloseImport } from './routes/components/chips/chipsClose'
@@ -444,6 +445,12 @@ const ComponentsChipsWithBadgeRoute = ComponentsChipsWithBadgeImport.update({
 const ComponentsChipsStylesRoute = ComponentsChipsStylesImport.update({
   id: '/chips/styles',
   path: '/chips/styles',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsChipsSizesRoute = ComponentsChipsSizesImport.update({
+  id: '/chips/sizes',
+  path: '/chips/sizes',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1049,6 +1056,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsChipsSelectImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/chips/sizes': {
+      id: '/components/chips/sizes'
+      path: '/chips/sizes'
+      fullPath: '/components/chips/sizes'
+      preLoaderRoute: typeof ComponentsChipsSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/styles': {
       id: '/components/chips/styles'
       path: '/chips/styles'
@@ -1425,6 +1439,7 @@ interface ComponentsRouteChildren {
   ComponentsChipsChipsCloseRoute: typeof ComponentsChipsChipsCloseRoute
   ComponentsChipsMultiSelectRoute: typeof ComponentsChipsMultiSelectRoute
   ComponentsChipsSelectRoute: typeof ComponentsChipsSelectRoute
+  ComponentsChipsSizesRoute: typeof ComponentsChipsSizesRoute
   ComponentsChipsStylesRoute: typeof ComponentsChipsStylesRoute
   ComponentsChipsWithBadgeRoute: typeof ComponentsChipsWithBadgeRoute
   ComponentsChipsWithIconRoute: typeof ComponentsChipsWithIconRoute
@@ -1523,6 +1538,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsChipsChipsCloseRoute: ComponentsChipsChipsCloseRoute,
   ComponentsChipsMultiSelectRoute: ComponentsChipsMultiSelectRoute,
   ComponentsChipsSelectRoute: ComponentsChipsSelectRoute,
+  ComponentsChipsSizesRoute: ComponentsChipsSizesRoute,
   ComponentsChipsStylesRoute: ComponentsChipsStylesRoute,
   ComponentsChipsWithBadgeRoute: ComponentsChipsWithBadgeRoute,
   ComponentsChipsWithIconRoute: ComponentsChipsWithIconRoute,
@@ -1640,6 +1656,7 @@ export interface FileRoutesByFullPath {
   '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
   '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
   '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/sizes': typeof ComponentsChipsSizesRoute
   '/components/chips/styles': typeof ComponentsChipsStylesRoute
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
@@ -1735,6 +1752,7 @@ export interface FileRoutesByTo {
   '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
   '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
   '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/sizes': typeof ComponentsChipsSizesRoute
   '/components/chips/styles': typeof ComponentsChipsStylesRoute
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
@@ -1831,6 +1849,7 @@ export interface FileRoutesById {
   '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
   '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
   '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/sizes': typeof ComponentsChipsSizesRoute
   '/components/chips/styles': typeof ComponentsChipsStylesRoute
   '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
   '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
@@ -1928,6 +1947,7 @@ export interface FileRouteTypes {
     | '/components/chips/chipsClose'
     | '/components/chips/multiSelect'
     | '/components/chips/select'
+    | '/components/chips/sizes'
     | '/components/chips/styles'
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
@@ -2022,6 +2042,7 @@ export interface FileRouteTypes {
     | '/components/chips/chipsClose'
     | '/components/chips/multiSelect'
     | '/components/chips/select'
+    | '/components/chips/sizes'
     | '/components/chips/styles'
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
@@ -2116,6 +2137,7 @@ export interface FileRouteTypes {
     | '/components/chips/chipsClose'
     | '/components/chips/multiSelect'
     | '/components/chips/select'
+    | '/components/chips/sizes'
     | '/components/chips/styles'
     | '/components/chips/withBadge'
     | '/components/chips/withIcon'
@@ -2240,6 +2262,7 @@ export const routeTree = rootRoute
         "/components/chips/chipsClose",
         "/components/chips/multiSelect",
         "/components/chips/select",
+        "/components/chips/sizes",
         "/components/chips/styles",
         "/components/chips/withBadge",
         "/components/chips/withIcon",
@@ -2461,6 +2484,10 @@ export const routeTree = rootRoute
     },
     "/components/chips/select": {
       "filePath": "components/chips/select.tsx",
+      "parent": "/components"
+    },
+    "/components/chips/sizes": {
+      "filePath": "components/chips/sizes.tsx",
       "parent": "/components"
     },
     "/components/chips/styles": {

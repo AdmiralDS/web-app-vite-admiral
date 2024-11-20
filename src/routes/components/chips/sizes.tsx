@@ -20,7 +20,7 @@ const listData = [
 export const ChipsStyles = () => {
   return (
     <>
-      <ExampleSection text="Outlined">
+      <ExampleSection text="Размер M">
         <WrapperChip $dimension="m">
           {listData.map((item) => (
             <Chips dimension="m" appearance="outlined" key={item.id}>
@@ -29,10 +29,10 @@ export const ChipsStyles = () => {
           ))}
         </WrapperChip>
       </ExampleSection>
-      <ExampleSection text="Filled">
-        <WrapperChip $dimension="m">
+      <ExampleSection text="Размер S">
+        <WrapperChip $dimension="s">
           {listData.map((item) => (
-            <Chips dimension="m" appearance="filled" key={item.id}>
+            <Chips dimension="s" appearance="outlined" key={item.id}>
               {item.label}
             </Chips>
           ))}
@@ -42,10 +42,10 @@ export const ChipsStyles = () => {
   );
 };
 
-export const Route = createFileRoute('/components/chips/styles')({
+export const Route = createFileRoute('/components/chips/sizes')({
   component: () => <ChipsStyles />,
   staticData: {
-    title: 'Chips. Стили',
-    description: 'В библиотеке есть два типа чипсов — Filled и Outlined.',
+    title: 'Chips. Размеры',
+    description: 'В зависимости от ситуации используются большие — 32 px, либо маленькие — 24 px чипсы.',
   },
 });

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Chips } from '@admiral-ds/react-ui';
 import type { ChipsProps } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '../../-helpers/examples';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
@@ -25,7 +25,7 @@ export const ChipsSelect = (props: ChipsProps) => {
   const [selectedFilledM, setSelectedFilledM] = useState('');
   const [selectedFilledS, setSelectedFilledS] = useState('');
   return (
-    <ContentArea>
+    <ExampleSection cssMixin={columnFlexMixin}>
       <WrapperChip $dimension={props.dimension}>
         {listData.map((item) => (
           <Chips
@@ -78,7 +78,7 @@ export const ChipsSelect = (props: ChipsProps) => {
           </Chips>
         ))}
       </WrapperChip>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
