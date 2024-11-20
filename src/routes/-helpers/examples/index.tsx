@@ -7,29 +7,23 @@ export const ContentArea = styled.div`
   border-radius: 8px;
   background-color: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
   padding: 36px 40px;
-  margin-bottom: 40px;
 `;
 
 export const SubHeader = styled.div`
   ${typography['Subtitle/Subtitle 3']}
-  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-  margin-bottom: 4px;
-  padding: 0;
+  margin-bottom: 8px;
 `;
 
 export const Text = styled.div`
   ${typography['Body/Body 2 Long']}
-  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-  margin-bottom: 16px;
-  padding: 0;
+  max-width: 720px;
 `;
 
 export const Section = styled.div`
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
-  padding: 0;
+  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
 `;
 
 export interface SectionDescriptionProps {
@@ -46,10 +40,8 @@ export const SectionDescription = ({ header, text }: SectionDescriptionProps) =>
 };
 
 const SectionWrapper = styled.div`
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
   padding: 0;
   width: 100%;
 `;
