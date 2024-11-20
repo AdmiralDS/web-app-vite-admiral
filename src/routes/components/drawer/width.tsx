@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Drawer, DrawerTitle, DrawerContent, Button } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const DrawerContentArea = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const DrawerWidth = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <ContentArea>
+    <ExampleSection>
       <Button onClick={() => setOpened(true)}>Open drawer</Button>
       <Drawer
         isOpen={opened}
@@ -28,7 +28,7 @@ export const DrawerWidth = () => {
           <DrawerContentArea />
         </DrawerContent>
       </Drawer>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 

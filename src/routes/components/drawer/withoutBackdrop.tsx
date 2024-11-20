@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { Drawer, DrawerTitle, DrawerContent, DrawerButtonPanel, Button, InputField } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const Separator = styled.div`
   height: 20px;
@@ -47,7 +47,7 @@ export const DrawerWithoutBackdrop = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <ContentArea>
+    <ExampleSection>
       <Button onClick={() => setOpened(true)}>Open drawer without backdrop</Button>
       <Drawer
         isOpen={opened}
@@ -69,7 +69,7 @@ export const DrawerWithoutBackdrop = () => {
           onNoClick={() => setOpened(false)}
         />
       </Drawer>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 

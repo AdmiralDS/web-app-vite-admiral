@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 import { Drawer, DrawerTitle, DrawerContent, DrawerButtonPanel, Button, InputField } from '@admiral-ds/react-ui';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const Separator = styled.div`
   height: 20px;
@@ -47,7 +47,7 @@ export const DrawerBasic = () => {
   const [opened, setOpened] = useState(false);
 
   return (
-    <ContentArea>
+    <ExampleSection>
       <Button onClick={() => setOpened(true)}>Open drawer with 2 buttons</Button>
       <Drawer
         isOpen={opened}
@@ -65,7 +65,7 @@ export const DrawerBasic = () => {
           onNoClick={() => setOpened(false)}
         />
       </Drawer>
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
