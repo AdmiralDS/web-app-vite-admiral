@@ -6,7 +6,7 @@ import { Button, DropdownContainer, Menu, MenuItem, typography } from '@admiral-
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const StyledAdditionalText = styled.div`
   ${typography['Body/Body 2 Long']}
@@ -60,7 +60,13 @@ export const MenuContainer = () => {
         id: item.id,
         render: (options: RenderOptionProps) => (
           <MenuItem key={item.id} {...options}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
               {item.label} <CardSolid width={24} height={24} />
             </div>
             <StyledAdditionalText>Дополнительный текст</StyledAdditionalText>
@@ -88,7 +94,7 @@ export const MenuContainer = () => {
   };
 
   return (
-    <ContentArea>
+    <ExampleSection text="При необходимости можно использовать вместо компонента DropMenu комбинацию компонентов DropdownContainer и Menu. Это дает более широкие возможности кастомизации.">
       <Button ref={buttonRef} onClick={() => setOpen(!open)}>
         Карты
       </Button>
@@ -109,11 +115,11 @@ export const MenuContainer = () => {
           />
         </DropdownContainer>
       )}
-    </ContentArea>
+    </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/dropdownContainer/menuContainer')({
+export const Route = createFileRoute('/components/dropdown/customDropdownContainer')({
   component: () => <MenuContainer />,
   staticData: {
     title: 'Контейнер с меню',

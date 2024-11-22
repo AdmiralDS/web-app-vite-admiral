@@ -60,7 +60,13 @@ export const ExampleSection = ({ header, text, children, cssMixin, ...props }: E
   return (
     <SectionWrapper>
       {(header || text) && <SectionDescription header={header} text={text} />}
-      <ContentArea {...props} $cssMixin={cssMixin}>{children}</ContentArea>
+      <ContentArea {...props} $cssMixin={cssMixin}>
+        {children}
+      </ContentArea>
     </SectionWrapper>
   );
 };
+
+export function uid(): string {
+  return (performance.now().toString(36) + Math.random().toString(36)).replace(/\./g, '');
+}

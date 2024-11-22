@@ -169,22 +169,30 @@ export const components = [
     ],
   },
   {
-    name: 'DropdownContainer',
-    path: '/components/dropdownContainer',
+    name: 'Dropdown Menu',
+    path: '/components/dropdown',
     routes: [
-      { name: 'Простой контейнер', path: '/components/dropdownContainer' },
-      { name: 'Контейнер с меню', path: '/components/dropdownContainer/menuContainer' },
-    ],
-  },
-  {
-    name: 'DropMenu',
-    path: '/components/dropMenu',
-    routes: [
-      { name: 'Базовый пример', path: '/components/dropMenu' },
-      { name: 'Пример с группами', path: '/components/dropMenu/category' },
-      { name: 'Пример с Tooltip', path: '/components/dropMenu/tooltip' },
-      { name: 'Пример с Checkbox', path: '/components/dropMenu/withCheckbox' },
-      { name: 'Пример с Radiobutton', path: '/components/dropMenu/withRadiobutton' },
+      { name: 'Базовый пример', path: '/components/dropdown' },
+      { name: 'DropMenu. Неконтроллируемое состояние видимости', path: '/components/dropdown/dropMenuUncontrolled' },
+      { name: 'DropMenu. Контроллируемое состояние видимости', path: '/components/dropdown/dropMenuControlled' },
+      { name: 'DropdownContainer. Контейнер с меню', path: '/components/dropdown/customDropdownContainer' },
+      { name: 'Menu. Размеры', path: '/components/dropdown/menuDimensions' },
+      { name: 'Menu. С иконками', path: '/components/dropdown/menuWithIcons' },
+      { name: 'Menu. С дополнительным текстом и иконками', path: '/components/dropdown/menuWithAddTextAndIcons' },
+      { name: 'Menu. С RadioButton', path: '/components/dropdown/menuWithRadioButton' },
+      { name: 'Menu. С Checkbox', path: '/components/dropdown/menuWithCheckbox' },
+      { name: 'Menu. С CheckboxGroup', path: '/components/dropdown/menuWithCheckboxGroup' },
+      { name: 'Menu. Длинный текст', path: '/components/dropdown/menuWithTooltip' },
+      { name: 'Menu. Категории', path: '/components/dropdown/menuCategories' },
+      { name: 'Menu. Кастомные пункты меню', path: '/components/dropdown/menuCustomItems' },
+      { name: 'Menu. Многострочные пункты', path: '/components/dropdown/menuMultiLine' },
+      { name: 'Menu. Пример с Actions с двумя кнопками', path: '/components/dropdown/menuActionTwoButtons' },
+      { name: 'Menu. Пример с Actions и Search', path: '/components/dropdown/menuActionSearch' },
+      { name: 'Menu. Пример с большим количеством item', path: '/components/dropdown/menuManyItems' },
+      { name: 'Menu. Пример без цикла обхода пунктов', path: '/components/dropdown/menuLockCycleScroll' },
+      { name: 'Menu. Виртуальный скролл', path: '/components/dropdown/menuVirtualScroll' },
+      { name: 'Menu. Многоуровневое меню', path: '/components/dropdown/menuMultiLevel' },
+      { name: 'Menu. Меню c состоянием preselect', path: '/components/dropdown/menuPreselect' },
     ],
   },
   {
@@ -203,3 +211,23 @@ export const components = [
     ],
   },
 ];
+
+/*
+const MenuDimensions = () => {
+  return (
+    <>
+      <ExampleSection>
+        <Menu />
+      </ExampleSection>
+    </>
+  );
+};
+
+export const Route = createFileRoute('/components/dropdown/menuDimensions')({
+  component: () => <MenuDimensions />,
+  staticData: {
+    title: '',
+    description: '',
+  },
+});
+*/

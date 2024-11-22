@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
+import { useMemo, useState } from 'react';
+
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 import { Button, DropMenu, MenuItem, TooltipHoc } from '@admiral-ds/react-ui';
-import { useMemo, useState } from 'react';
-import { ContentArea } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const STORY_ITEMS = [
   {
@@ -43,21 +43,6 @@ const STORY_ITEMS = [
   },
 ];
 
-const WrapperVertical = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-`;
-
-const Desc = styled.div`
-  font-family: 'VTB Group UI';
-  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-  font-size: 16px;
-  line-height: 24px;
-`;
-
 const handleVisibilityChangeControlledState = (isVisible: boolean) => {
   // eslint-disable-next-line no-console
   console.log('onVisibilityChange with controlled state');
@@ -72,7 +57,7 @@ const handleVisibilityChangeControlledState = (isVisible: boolean) => {
 
 const MenuItemWithTooltip = TooltipHoc(MenuItem);
 
-export const DropMenuTooltip = () => {
+export const DropMenuControlled = () => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
@@ -119,46 +104,48 @@ export const DropMenuTooltip = () => {
   };
 
   return (
-    <ContentArea>
-      <WrapperVertical>
-        <Desc>
+    <ExampleSection
+      text={
+        <>
           Состояние видимости меню полностью контроллируется вне DropMenu:
-          <br />
-          - используется кастомный обработчик клика по кнопке (handleButtonClick) для открытия/закрытия выпадающего
-          списка;
-          <br />- после выбора опции из выпадающего списка (handleSelectItem) происходит закрытие меню;
-          <br />- используется кастомный обработчик при клике вне области выпадающего списка (handleClickOutside).
-        </Desc>
-        <DropMenu
-          items={model}
-          isVisible={isVisible}
-          onVisibilityChange={handleVisibilityChange}
-          onSelectItem={handleSelectItem}
-          onClickOutside={handleClickOutside}
-          selected={selected}
-          renderContentProp={({ buttonRef, handleKeyDown, statusIcon, disabled }) => {
-            return (
-              <Button
-                ref={buttonRef as React.Ref<HTMLButtonElement>}
-                disabled={disabled}
-                onKeyDown={handleKeyDown}
-                onClick={handleButtonClick}
-              >
-                Нажми
-                {statusIcon}
-              </Button>
-            );
-          }}
-        />
-      </WrapperVertical>
-    </ContentArea>
+          <li>
+            используется кастомный обработчик клика по кнопке (handleButtonClick) для открытия/закрытия выпадающего
+            списка;
+          </li>
+          <li>после выбора опции из выпадающего списка (handleSelectItem) происходит закрытие меню;</li>
+          <li>используется кастомный обработчик при клике вне области выпадающего списка (handleClickOutside).</li>
+        </>
+      }
+    >
+      <DropMenu
+        items={model}
+        isVisible={isVisible}
+        onVisibilityChange={handleVisibilityChange}
+        onSelectItem={handleSelectItem}
+        onClickOutside={handleClickOutside}
+        selected={selected}
+        renderContentProp={({ buttonRef, handleKeyDown, statusIcon, disabled }) => {
+          return (
+            <Button
+              ref={buttonRef as React.Ref<HTMLButtonElement>}
+              disabled={disabled}
+              onKeyDown={handleKeyDown}
+              onClick={handleButtonClick}
+            >
+              Нажми
+              {statusIcon}
+            </Button>
+          );
+        }}
+      />
+    </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/dropMenu/tooltip')({
-  component: () => <DropMenuTooltip />,
+export const Route = createFileRoute('/components/dropdown/dropMenuControlled')({
+  component: () => <DropMenuControlled />,
   staticData: {
-    title: 'DropMenu. Пример с Tooltip',
-    description: 'Для того чтобы добавить tooltip к пункту меню, его необходимо обернуть TooltipHoc.',
+    title: 'DropMenu. Контроллируемое состояние видимости',
+    description: '',
   },
 });
