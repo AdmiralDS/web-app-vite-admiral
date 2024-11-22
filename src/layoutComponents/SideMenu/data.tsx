@@ -127,6 +127,19 @@ export const components = [
     ],
   },
   {
+    name: 'Toggle',
+    path: '/components/toggle',
+    routes: [
+      { name: 'Базовый пример', path: '/components/toggle' },
+      { name: 'Размеры', path: '/components/toggle/sizes' },
+      { name: 'Состояния', path: '/components/toggle/states' },
+      { name: 'Расположение текста', path: '/components/toggle/labelPosition' },
+      { name: 'Дополнительный текст', path: '/components/toggle/extraText' },
+      { name: 'Адаптив', path: '/components/toggle/mobile' },
+      //{ name: 'Группа', path: '/components/toggle/fieldSet' },
+    ],
+  },
+  {
     name: 'Chips',
     path: '/components/chips',
     routes: [
@@ -213,18 +226,21 @@ export const components = [
 ];
 
 /*
-const MenuDimensions = () => {
+import { createFileRoute } from '@tanstack/react-router'
+import { ExampleSection } from '../../-helpers/examples';
+
+const ToggleBase = () => {
   return (
     <>
       <ExampleSection>
-        <Menu />
+
       </ExampleSection>
     </>
   );
 };
 
-export const Route = createFileRoute('/components/dropdown/menuDimensions')({
-  component: () => <MenuDimensions />,
+export const Route = createFileRoute('/components/toggle/')({
+  component: () => <ToggleBase />,
   staticData: {
     title: '',
     description: '',

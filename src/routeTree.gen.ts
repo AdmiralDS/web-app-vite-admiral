@@ -15,6 +15,7 @@ import { Route as GeneralImport } from './routes/general'
 import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
+import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
@@ -33,6 +34,11 @@ import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/i
 import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
 import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
+import { Route as ComponentsToggleStatesImport } from './routes/components/toggle/states'
+import { Route as ComponentsToggleSizesImport } from './routes/components/toggle/sizes'
+import { Route as ComponentsToggleMobileImport } from './routes/components/toggle/mobile'
+import { Route as ComponentsToggleLabelPositionImport } from './routes/components/toggle/labelPosition'
+import { Route as ComponentsToggleExtraTextImport } from './routes/components/toggle/extraText'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
@@ -145,6 +151,12 @@ const GeneralResourcesRoute = GeneralResourcesImport.update({
   id: '/resources',
   path: '/resources',
   getParentRoute: () => GeneralRoute,
+} as any)
+
+const ComponentsToggleIndexRoute = ComponentsToggleIndexImport.update({
+  id: '/toggle/',
+  path: '/toggle/',
+  getParentRoute: () => ComponentsRoute,
 } as any)
 
 const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
@@ -262,6 +274,37 @@ const ComponentsActionBarIndexRoute = ComponentsActionBarIndexImport.update({
 const ComponentsAccordionIndexRoute = ComponentsAccordionIndexImport.update({
   id: '/accordion/',
   path: '/accordion/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsToggleStatesRoute = ComponentsToggleStatesImport.update({
+  id: '/toggle/states',
+  path: '/toggle/states',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsToggleSizesRoute = ComponentsToggleSizesImport.update({
+  id: '/toggle/sizes',
+  path: '/toggle/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsToggleMobileRoute = ComponentsToggleMobileImport.update({
+  id: '/toggle/mobile',
+  path: '/toggle/mobile',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsToggleLabelPositionRoute =
+  ComponentsToggleLabelPositionImport.update({
+    id: '/toggle/labelPosition',
+    path: '/toggle/labelPosition',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsToggleExtraTextRoute = ComponentsToggleExtraTextImport.update({
+  id: '/toggle/extraText',
+  path: '/toggle/extraText',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1506,6 +1549,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/toggle/extraText': {
+      id: '/components/toggle/extraText'
+      path: '/toggle/extraText'
+      fullPath: '/components/toggle/extraText'
+      preLoaderRoute: typeof ComponentsToggleExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/toggle/labelPosition': {
+      id: '/components/toggle/labelPosition'
+      path: '/toggle/labelPosition'
+      fullPath: '/components/toggle/labelPosition'
+      preLoaderRoute: typeof ComponentsToggleLabelPositionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/toggle/mobile': {
+      id: '/components/toggle/mobile'
+      path: '/toggle/mobile'
+      fullPath: '/components/toggle/mobile'
+      preLoaderRoute: typeof ComponentsToggleMobileImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/toggle/sizes': {
+      id: '/components/toggle/sizes'
+      path: '/toggle/sizes'
+      fullPath: '/components/toggle/sizes'
+      preLoaderRoute: typeof ComponentsToggleSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/toggle/states': {
+      id: '/components/toggle/states'
+      path: '/toggle/states'
+      fullPath: '/components/toggle/states'
+      preLoaderRoute: typeof ComponentsToggleStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/accordion/': {
       id: '/components/accordion/'
       path: '/accordion'
@@ -1632,6 +1710,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/toggle/': {
+      id: '/components/toggle/'
+      path: '/toggle'
+      fullPath: '/components/toggle'
+      preLoaderRoute: typeof ComponentsToggleIndexImport
+      parentRoute: typeof ComponentsImport
+    }
   }
 }
 
@@ -1725,6 +1810,11 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
+  ComponentsToggleExtraTextRoute: typeof ComponentsToggleExtraTextRoute
+  ComponentsToggleLabelPositionRoute: typeof ComponentsToggleLabelPositionRoute
+  ComponentsToggleMobileRoute: typeof ComponentsToggleMobileRoute
+  ComponentsToggleSizesRoute: typeof ComponentsToggleSizesRoute
+  ComponentsToggleStatesRoute: typeof ComponentsToggleStatesRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
   ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
   ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
@@ -1743,6 +1833,7 @@ interface ComponentsRouteChildren {
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
+  ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
 }
 
 const ComponentsRouteChildren: ComponentsRouteChildren = {
@@ -1859,6 +1950,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableLoadOnScrollSkeletonRoute,
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
+  ComponentsToggleExtraTextRoute: ComponentsToggleExtraTextRoute,
+  ComponentsToggleLabelPositionRoute: ComponentsToggleLabelPositionRoute,
+  ComponentsToggleMobileRoute: ComponentsToggleMobileRoute,
+  ComponentsToggleSizesRoute: ComponentsToggleSizesRoute,
+  ComponentsToggleStatesRoute: ComponentsToggleStatesRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
   ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
   ComponentsAvatarIndexRoute: ComponentsAvatarIndexRoute,
@@ -1877,6 +1973,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
+  ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
 }
 
 const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
@@ -1986,6 +2083,11 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
+  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
+  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
+  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
+  '/components/toggle/states': typeof ComponentsToggleStatesRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
@@ -2004,6 +2106,7 @@ export interface FileRoutesByFullPath {
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
+  '/components/toggle': typeof ComponentsToggleIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -2098,6 +2201,11 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
+  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
+  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
+  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
+  '/components/toggle/states': typeof ComponentsToggleStatesRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
@@ -2116,6 +2224,7 @@ export interface FileRoutesByTo {
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
+  '/components/toggle': typeof ComponentsToggleIndexRoute
 }
 
 export interface FileRoutesById {
@@ -2211,6 +2320,11 @@ export interface FileRoutesById {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
+  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
+  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
+  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
+  '/components/toggle/states': typeof ComponentsToggleStatesRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
   '/components/actionBar/': typeof ComponentsActionBarIndexRoute
   '/components/avatar/': typeof ComponentsAvatarIndexRoute
@@ -2229,6 +2343,7 @@ export interface FileRoutesById {
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
+  '/components/toggle/': typeof ComponentsToggleIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -2325,6 +2440,11 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/toggle/extraText'
+    | '/components/toggle/labelPosition'
+    | '/components/toggle/mobile'
+    | '/components/toggle/sizes'
+    | '/components/toggle/states'
     | '/components/accordion'
     | '/components/actionBar'
     | '/components/avatar'
@@ -2343,6 +2463,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer'
     | '/components/radiobutton'
     | '/components/table'
+    | '/components/toggle'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -2436,6 +2557,11 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/toggle/extraText'
+    | '/components/toggle/labelPosition'
+    | '/components/toggle/mobile'
+    | '/components/toggle/sizes'
+    | '/components/toggle/states'
     | '/components/accordion'
     | '/components/actionBar'
     | '/components/avatar'
@@ -2454,6 +2580,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer'
     | '/components/radiobutton'
     | '/components/table'
+    | '/components/toggle'
   id:
     | '__root__'
     | '/'
@@ -2547,6 +2674,11 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/toggle/extraText'
+    | '/components/toggle/labelPosition'
+    | '/components/toggle/mobile'
+    | '/components/toggle/sizes'
+    | '/components/toggle/states'
     | '/components/accordion/'
     | '/components/actionBar/'
     | '/components/avatar/'
@@ -2565,6 +2697,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer/'
     | '/components/radiobutton/'
     | '/components/table/'
+    | '/components/toggle/'
   fileRoutesById: FileRoutesById
 }
 
@@ -2688,6 +2821,11 @@ export const routeTree = rootRoute
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
+        "/components/toggle/extraText",
+        "/components/toggle/labelPosition",
+        "/components/toggle/mobile",
+        "/components/toggle/sizes",
+        "/components/toggle/states",
         "/components/accordion/",
         "/components/actionBar/",
         "/components/avatar/",
@@ -2705,7 +2843,8 @@ export const routeTree = rootRoute
         "/components/dropdown/",
         "/components/imageViewer/",
         "/components/radiobutton/",
-        "/components/table/"
+        "/components/table/",
+        "/components/toggle/"
       ]
     },
     "/general": {
@@ -3066,6 +3205,26 @@ export const routeTree = rootRoute
       "filePath": "components/table/loadOnScrollSpinner.tsx",
       "parent": "/components"
     },
+    "/components/toggle/extraText": {
+      "filePath": "components/toggle/extraText.tsx",
+      "parent": "/components"
+    },
+    "/components/toggle/labelPosition": {
+      "filePath": "components/toggle/labelPosition.tsx",
+      "parent": "/components"
+    },
+    "/components/toggle/mobile": {
+      "filePath": "components/toggle/mobile.tsx",
+      "parent": "/components"
+    },
+    "/components/toggle/sizes": {
+      "filePath": "components/toggle/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/toggle/states": {
+      "filePath": "components/toggle/states.tsx",
+      "parent": "/components"
+    },
     "/components/accordion/": {
       "filePath": "components/accordion/index.tsx",
       "parent": "/components"
@@ -3136,6 +3295,10 @@ export const routeTree = rootRoute
     },
     "/components/table/": {
       "filePath": "components/table/index.tsx",
+      "parent": "/components"
+    },
+    "/components/toggle/": {
+      "filePath": "components/toggle/index.tsx",
       "parent": "/components"
     }
   }
