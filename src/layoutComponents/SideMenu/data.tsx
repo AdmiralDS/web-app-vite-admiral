@@ -130,6 +130,15 @@ export const components = [
     ],
   },
   {
+    name: 'TextButton',
+    path: '/components/textButton',
+    routes: [
+      { name: 'Базовый пример', path: '/components/textButton' },
+      { name: 'Размеры и стили', path: '/components/textButton/styles' },
+      { name: 'Состояния', path: '/components/textButton/states' },
+    ],
+  },
+  {
     name: 'Carousel',
     path: '/components/carousel',
     routes: [
