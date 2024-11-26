@@ -120,6 +120,16 @@ export const components = [
     ],
   },
   {
+    name: 'IconButtonGroup',
+    path: '/components/iconButtonGroup',
+    routes: [
+      { name: 'Базовый пример', path: '/components/iconButtonGroup' },
+      { name: 'Размеры', path: '/components/iconButtonGroup/sizes' },
+      { name: 'Состояния', path: '/components/iconButtonGroup/states' },
+      { name: 'Tooltip', path: '/components/iconButtonGroup/tooltip' },
+    ],
+  },
+  {
     name: 'Carousel',
     path: '/components/carousel',
     routes: [
