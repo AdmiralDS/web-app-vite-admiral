@@ -21,6 +21,7 @@ import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/r
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
+import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
 import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
@@ -59,6 +60,8 @@ import { Route as ComponentsMenuButtonMultiLevelMenuImport } from './routes/comp
 import { Route as ComponentsMenuButtonCheckboxAndTopPanelImport } from './routes/components/menuButton/checkboxAndTopPanel'
 import { Route as ComponentsMenuButtonCheckboxAndBottomPanelImport } from './routes/components/menuButton/checkboxAndBottomPanel'
 import { Route as ComponentsMenuButtonActionsImport } from './routes/components/menuButton/actions'
+import { Route as ComponentsIconButtonStylesImport } from './routes/components/iconButton/styles'
+import { Route as ComponentsIconButtonStatesImport } from './routes/components/iconButton/states'
 import { Route as ComponentsDropdownMenuWithTooltipImport } from './routes/components/dropdown/menuWithTooltip'
 import { Route as ComponentsDropdownMenuWithRadioButtonImport } from './routes/components/dropdown/menuWithRadioButton'
 import { Route as ComponentsDropdownMenuWithIconsImport } from './routes/components/dropdown/menuWithIcons'
@@ -206,6 +209,12 @@ const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsIconButtonIndexRoute = ComponentsIconButtonIndexImport.update({
+  id: '/iconButton/',
+  path: '/iconButton/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsDropdownIndexRoute = ComponentsDropdownIndexImport.update({
   id: '/dropdown/',
@@ -462,6 +471,22 @@ const ComponentsMenuButtonActionsRoute =
     path: '/menuButton/actions',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsIconButtonStylesRoute = ComponentsIconButtonStylesImport.update(
+  {
+    id: '/iconButton/styles',
+    path: '/iconButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsIconButtonStatesRoute = ComponentsIconButtonStatesImport.update(
+  {
+    id: '/iconButton/states',
+    path: '/iconButton/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsDropdownMenuWithTooltipRoute =
   ComponentsDropdownMenuWithTooltipImport.update({
@@ -1591,6 +1616,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDropdownMenuWithTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/iconButton/states': {
+      id: '/components/iconButton/states'
+      path: '/iconButton/states'
+      fullPath: '/components/iconButton/states'
+      preLoaderRoute: typeof ComponentsIconButtonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/iconButton/styles': {
+      id: '/components/iconButton/styles'
+      path: '/iconButton/styles'
+      fullPath: '/components/iconButton/styles'
+      preLoaderRoute: typeof ComponentsIconButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/actions': {
       id: '/components/menuButton/actions'
       path: '/menuButton/actions'
@@ -1857,6 +1896,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDropdownIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/iconButton/': {
+      id: '/components/iconButton/'
+      path: '/iconButton'
+      fullPath: '/components/iconButton'
+      preLoaderRoute: typeof ComponentsIconButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/': {
       id: '/components/imageViewer/'
       path: '/imageViewer'
@@ -1984,6 +2030,8 @@ interface ComponentsRouteChildren {
   ComponentsDropdownMenuWithIconsRoute: typeof ComponentsDropdownMenuWithIconsRoute
   ComponentsDropdownMenuWithRadioButtonRoute: typeof ComponentsDropdownMenuWithRadioButtonRoute
   ComponentsDropdownMenuWithTooltipRoute: typeof ComponentsDropdownMenuWithTooltipRoute
+  ComponentsIconButtonStatesRoute: typeof ComponentsIconButtonStatesRoute
+  ComponentsIconButtonStylesRoute: typeof ComponentsIconButtonStylesRoute
   ComponentsMenuButtonActionsRoute: typeof ComponentsMenuButtonActionsRoute
   ComponentsMenuButtonCheckboxAndBottomPanelRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   ComponentsMenuButtonCheckboxAndTopPanelRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2022,6 +2070,7 @@ interface ComponentsRouteChildren {
   ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
+  ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
@@ -2134,6 +2183,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsDropdownMenuWithRadioButtonRoute,
   ComponentsDropdownMenuWithTooltipRoute:
     ComponentsDropdownMenuWithTooltipRoute,
+  ComponentsIconButtonStatesRoute: ComponentsIconButtonStatesRoute,
+  ComponentsIconButtonStylesRoute: ComponentsIconButtonStylesRoute,
   ComponentsMenuButtonActionsRoute: ComponentsMenuButtonActionsRoute,
   ComponentsMenuButtonCheckboxAndBottomPanelRoute:
     ComponentsMenuButtonCheckboxAndBottomPanelRoute,
@@ -2177,6 +2228,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
+  ComponentsIconButtonIndexRoute: ComponentsIconButtonIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
@@ -2284,6 +2336,8 @@ export interface FileRoutesByFullPath {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
+  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2322,6 +2376,7 @@ export interface FileRoutesByFullPath {
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
@@ -2414,6 +2469,8 @@ export interface FileRoutesByTo {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
+  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2452,6 +2509,7 @@ export interface FileRoutesByTo {
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
@@ -2545,6 +2603,8 @@ export interface FileRoutesById {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
+  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2583,6 +2643,7 @@ export interface FileRoutesById {
   '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
+  '/components/iconButton/': typeof ComponentsIconButtonIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
@@ -2677,6 +2738,8 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/iconButton/states'
+    | '/components/iconButton/styles'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -2715,6 +2778,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/iconButton'
     | '/components/imageViewer'
     | '/components/menuButton'
     | '/components/multiButton'
@@ -2806,6 +2870,8 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/iconButton/states'
+    | '/components/iconButton/styles'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -2844,6 +2910,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/iconButton'
     | '/components/imageViewer'
     | '/components/menuButton'
     | '/components/multiButton'
@@ -2935,6 +3002,8 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/iconButton/states'
+    | '/components/iconButton/styles'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -2973,6 +3042,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher/'
     | '/components/drawer/'
     | '/components/dropdown/'
+    | '/components/iconButton/'
     | '/components/imageViewer/'
     | '/components/menuButton/'
     | '/components/multiButton/'
@@ -3094,6 +3164,8 @@ export const routeTree = rootRoute
         "/components/dropdown/menuWithIcons",
         "/components/dropdown/menuWithRadioButton",
         "/components/dropdown/menuWithTooltip",
+        "/components/iconButton/states",
+        "/components/iconButton/styles",
         "/components/menuButton/actions",
         "/components/menuButton/checkboxAndBottomPanel",
         "/components/menuButton/checkboxAndTopPanel",
@@ -3132,6 +3204,7 @@ export const routeTree = rootRoute
         "/components/contentSwitcher/",
         "/components/drawer/",
         "/components/dropdown/",
+        "/components/iconButton/",
         "/components/imageViewer/",
         "/components/menuButton/",
         "/components/multiButton/",
@@ -3466,6 +3539,14 @@ export const routeTree = rootRoute
       "filePath": "components/dropdown/menuWithTooltip.tsx",
       "parent": "/components"
     },
+    "/components/iconButton/states": {
+      "filePath": "components/iconButton/states.tsx",
+      "parent": "/components"
+    },
+    "/components/iconButton/styles": {
+      "filePath": "components/iconButton/styles.tsx",
+      "parent": "/components"
+    },
     "/components/menuButton/actions": {
       "filePath": "components/menuButton/actions.tsx",
       "parent": "/components"
@@ -3616,6 +3697,10 @@ export const routeTree = rootRoute
     },
     "/components/dropdown/": {
       "filePath": "components/dropdown/index.tsx",
+      "parent": "/components"
+    },
+    "/components/iconButton/": {
+      "filePath": "components/iconButton/index.tsx",
       "parent": "/components"
     },
     "/components/imageViewer/": {

@@ -111,6 +111,15 @@ export const components = [
     ],
   },
   {
+    name: 'IconButton',
+    path: '/components/iconButton',
+    routes: [
+      { name: 'Базовый пример', path: '/components/iconButton' },
+      { name: 'Стили', path: '/components/iconButton/styles' },
+      { name: 'Состояния', path: '/components/iconButton/states' },
+    ],
+  },
+  {
     name: 'Carousel',
     path: '/components/carousel',
     routes: [
