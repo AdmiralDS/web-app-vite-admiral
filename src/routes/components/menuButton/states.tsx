@@ -310,7 +310,7 @@ export const States = () => {
 export const Route = createFileRoute('/components/menuButton/states')({
   component: () => <States />,
   staticData: {
-    title: 'Button. Состояния',
+    title: 'MenuButton. Состояния',
     description: 'Состояния аналогичны Button.',
   },
 });

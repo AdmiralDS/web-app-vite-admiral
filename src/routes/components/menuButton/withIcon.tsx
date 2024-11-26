@@ -403,7 +403,7 @@ export const WithIcon = () => {
 export const Route = createFileRoute('/components/menuButton/withIcon')({
   component: () => <WithIcon />,
   staticData: {
-    title: 'Button. С иконкой',
+    title: 'MenuButton. С иконкой',
     description: '',
   },
 });

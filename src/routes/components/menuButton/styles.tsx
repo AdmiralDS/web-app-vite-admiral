@@ -382,7 +382,7 @@ export const Styles = () => {
 export const Route = createFileRoute('/components/menuButton/styles')({
   component: () => <Styles />,
   staticData: {
-    title: 'Button. Стили и размеры',
+    title: 'MenuButton. Стили и размеры',
     description: 'Кнопки представлены в пяти стилях, размеры аналогичны Button.',
   },
 });
