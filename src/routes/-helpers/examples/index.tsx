@@ -16,6 +16,13 @@ export const columnFlexMixin = css`
   gap: 20px;
 `;
 
+export const rowFlexMixin = css`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
 export const SubHeader = styled.div`
   ${typography['Subtitle/Subtitle 3']}
   margin-bottom: 8px;

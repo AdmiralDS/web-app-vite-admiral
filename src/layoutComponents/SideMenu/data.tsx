@@ -84,6 +84,20 @@ export const components = [
     ],
   },
   {
+    name: 'MenuButton',
+    path: '/components/menuButton',
+    routes: [
+      { name: 'Базовый пример', path: '/components/menuButton' },
+      { name: 'Задизейбленные и кастомизированные опции и панель с кнопками', path: '/components/menuButton/actions' },
+      { name: 'Стили', path: '/components/menuButton/styles' },
+      { name: 'Состояния', path: '/components/menuButton/states' },
+      { name: 'С иконкой', path: '/components/menuButton/withIcon' },
+      { name: 'С чекбоксами и нижней панелью в выпадающем меню', path: '/components/menuButton/checkboxAndBottomPanel' },
+      { name: 'С чекбоксами и верхней панелью в выпадающем меню', path: '/components/menuButton/checkboxAndTopPanel' },
+      { name: 'С многоуровневым меню', path: '/components/menuButton/multiLevelMenu' },
+    ],
+  },
+  {
     name: 'Carousel',
     path: '/components/carousel',
     routes: [
@@ -136,7 +150,6 @@ export const components = [
       { name: 'Расположение текста', path: '/components/toggle/labelPosition' },
       { name: 'Дополнительный текст', path: '/components/toggle/extraText' },
       { name: 'Адаптив', path: '/components/toggle/mobile' },
-      //{ name: 'Группа', path: '/components/toggle/fieldSet' },
     ],
   },
   {
