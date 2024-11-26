@@ -18,6 +18,7 @@ import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
+import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
@@ -48,6 +49,9 @@ import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/r
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
 import { Route as ComponentsRadiobuttonFieldSetImport } from './routes/components/radiobutton/fieldSet'
 import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/components/radiobutton/extraText'
+import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
+import { Route as ComponentsMultiButtonStylesImport } from './routes/components/multiButton/styles'
+import { Route as ComponentsMultiButtonStatesImport } from './routes/components/multiButton/states'
 import { Route as ComponentsMenuButtonWithIconImport } from './routes/components/menuButton/withIcon'
 import { Route as ComponentsMenuButtonStylesImport } from './routes/components/menuButton/styles'
 import { Route as ComponentsMenuButtonStatesImport } from './routes/components/menuButton/states'
@@ -177,6 +181,14 @@ const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
   {
     id: '/radiobutton/',
     path: '/radiobutton/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update(
+  {
+    id: '/multiButton/',
+    path: '/multiButton/',
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
@@ -376,6 +388,27 @@ const ComponentsRadiobuttonExtraTextRoute =
   ComponentsRadiobuttonExtraTextImport.update({
     id: '/radiobutton/extraText',
     path: '/radiobutton/extraText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsMultiButtonWithIconRoute =
+  ComponentsMultiButtonWithIconImport.update({
+    id: '/multiButton/withIcon',
+    path: '/multiButton/withIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsMultiButtonStylesRoute =
+  ComponentsMultiButtonStylesImport.update({
+    id: '/multiButton/styles',
+    path: '/multiButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsMultiButtonStatesRoute =
+  ComponentsMultiButtonStatesImport.update({
+    id: '/multiButton/states',
+    path: '/multiButton/states',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1607,6 +1640,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMenuButtonWithIconImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/multiButton/states': {
+      id: '/components/multiButton/states'
+      path: '/multiButton/states'
+      fullPath: '/components/multiButton/states'
+      preLoaderRoute: typeof ComponentsMultiButtonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/multiButton/styles': {
+      id: '/components/multiButton/styles'
+      path: '/multiButton/styles'
+      fullPath: '/components/multiButton/styles'
+      preLoaderRoute: typeof ComponentsMultiButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/multiButton/withIcon': {
+      id: '/components/multiButton/withIcon'
+      path: '/multiButton/withIcon'
+      fullPath: '/components/multiButton/withIcon'
+      preLoaderRoute: typeof ComponentsMultiButtonWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/extraText': {
       id: '/components/radiobutton/extraText'
       path: '/radiobutton/extraText'
@@ -1817,6 +1871,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMenuButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/multiButton/': {
+      id: '/components/multiButton/'
+      path: '/multiButton'
+      fullPath: '/components/multiButton'
+      preLoaderRoute: typeof ComponentsMultiButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/': {
       id: '/components/radiobutton/'
       path: '/radiobutton'
@@ -1930,6 +1991,9 @@ interface ComponentsRouteChildren {
   ComponentsMenuButtonStatesRoute: typeof ComponentsMenuButtonStatesRoute
   ComponentsMenuButtonStylesRoute: typeof ComponentsMenuButtonStylesRoute
   ComponentsMenuButtonWithIconRoute: typeof ComponentsMenuButtonWithIconRoute
+  ComponentsMultiButtonStatesRoute: typeof ComponentsMultiButtonStatesRoute
+  ComponentsMultiButtonStylesRoute: typeof ComponentsMultiButtonStylesRoute
+  ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
   ComponentsRadiobuttonExtraTextRoute: typeof ComponentsRadiobuttonExtraTextRoute
   ComponentsRadiobuttonFieldSetRoute: typeof ComponentsRadiobuttonFieldSetRoute
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
@@ -1960,6 +2024,7 @@ interface ComponentsRouteChildren {
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
+  ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
@@ -2079,6 +2144,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMenuButtonStatesRoute: ComponentsMenuButtonStatesRoute,
   ComponentsMenuButtonStylesRoute: ComponentsMenuButtonStylesRoute,
   ComponentsMenuButtonWithIconRoute: ComponentsMenuButtonWithIconRoute,
+  ComponentsMultiButtonStatesRoute: ComponentsMultiButtonStatesRoute,
+  ComponentsMultiButtonStylesRoute: ComponentsMultiButtonStylesRoute,
+  ComponentsMultiButtonWithIconRoute: ComponentsMultiButtonWithIconRoute,
   ComponentsRadiobuttonExtraTextRoute: ComponentsRadiobuttonExtraTextRoute,
   ComponentsRadiobuttonFieldSetRoute: ComponentsRadiobuttonFieldSetRoute,
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
@@ -2111,6 +2179,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
+  ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
@@ -2222,6 +2291,9 @@ export interface FileRoutesByFullPath {
   '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
   '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
   '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
+  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
+  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -2252,6 +2324,7 @@ export interface FileRoutesByFullPath {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
+  '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
@@ -2348,6 +2421,9 @@ export interface FileRoutesByTo {
   '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
   '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
   '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
+  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
+  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -2378,6 +2454,7 @@ export interface FileRoutesByTo {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
+  '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
@@ -2475,6 +2552,9 @@ export interface FileRoutesById {
   '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
   '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
   '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
+  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
+  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -2505,6 +2585,7 @@ export interface FileRoutesById {
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
+  '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
@@ -2603,6 +2684,9 @@ export interface FileRouteTypes {
     | '/components/menuButton/states'
     | '/components/menuButton/styles'
     | '/components/menuButton/withIcon'
+    | '/components/multiButton/states'
+    | '/components/multiButton/styles'
+    | '/components/multiButton/withIcon'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -2633,6 +2717,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/imageViewer'
     | '/components/menuButton'
+    | '/components/multiButton'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/toggle'
@@ -2728,6 +2813,9 @@ export interface FileRouteTypes {
     | '/components/menuButton/states'
     | '/components/menuButton/styles'
     | '/components/menuButton/withIcon'
+    | '/components/multiButton/states'
+    | '/components/multiButton/styles'
+    | '/components/multiButton/withIcon'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -2758,6 +2846,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/imageViewer'
     | '/components/menuButton'
+    | '/components/multiButton'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/toggle'
@@ -2853,6 +2942,9 @@ export interface FileRouteTypes {
     | '/components/menuButton/states'
     | '/components/menuButton/styles'
     | '/components/menuButton/withIcon'
+    | '/components/multiButton/states'
+    | '/components/multiButton/styles'
+    | '/components/multiButton/withIcon'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -2883,6 +2975,7 @@ export interface FileRouteTypes {
     | '/components/dropdown/'
     | '/components/imageViewer/'
     | '/components/menuButton/'
+    | '/components/multiButton/'
     | '/components/radiobutton/'
     | '/components/table/'
     | '/components/toggle/'
@@ -3008,6 +3101,9 @@ export const routeTree = rootRoute
         "/components/menuButton/states",
         "/components/menuButton/styles",
         "/components/menuButton/withIcon",
+        "/components/multiButton/states",
+        "/components/multiButton/styles",
+        "/components/multiButton/withIcon",
         "/components/radiobutton/extraText",
         "/components/radiobutton/fieldSet",
         "/components/radiobutton/informer",
@@ -3038,6 +3134,7 @@ export const routeTree = rootRoute
         "/components/dropdown/",
         "/components/imageViewer/",
         "/components/menuButton/",
+        "/components/multiButton/",
         "/components/radiobutton/",
         "/components/table/",
         "/components/toggle/"
@@ -3397,6 +3494,18 @@ export const routeTree = rootRoute
       "filePath": "components/menuButton/withIcon.tsx",
       "parent": "/components"
     },
+    "/components/multiButton/states": {
+      "filePath": "components/multiButton/states.tsx",
+      "parent": "/components"
+    },
+    "/components/multiButton/styles": {
+      "filePath": "components/multiButton/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/multiButton/withIcon": {
+      "filePath": "components/multiButton/withIcon.tsx",
+      "parent": "/components"
+    },
     "/components/radiobutton/extraText": {
       "filePath": "components/radiobutton/extraText.tsx",
       "parent": "/components"
@@ -3515,6 +3624,10 @@ export const routeTree = rootRoute
     },
     "/components/menuButton/": {
       "filePath": "components/menuButton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/multiButton/": {
+      "filePath": "components/multiButton/index.tsx",
       "parent": "/components"
     },
     "/components/radiobutton/": {

@@ -88,13 +88,26 @@ export const components = [
     path: '/components/menuButton',
     routes: [
       { name: 'Базовый пример', path: '/components/menuButton' },
-      { name: 'Задизейбленные и кастомизированные опции и панель с кнопками', path: '/components/menuButton/actions' },
       { name: 'Стили', path: '/components/menuButton/styles' },
-      { name: 'Состояния', path: '/components/menuButton/states' },
       { name: 'С иконкой', path: '/components/menuButton/withIcon' },
-      { name: 'С чекбоксами и нижней панелью в выпадающем меню', path: '/components/menuButton/checkboxAndBottomPanel' },
+      { name: 'Состояния', path: '/components/menuButton/states' },
+      { name: 'Задизейбленные и кастомизированные опции и панель с кнопками', path: '/components/menuButton/actions' },
+      {
+        name: 'С чекбоксами и нижней панелью в выпадающем меню',
+        path: '/components/menuButton/checkboxAndBottomPanel',
+      },
       { name: 'С чекбоксами и верхней панелью в выпадающем меню', path: '/components/menuButton/checkboxAndTopPanel' },
       { name: 'С многоуровневым меню', path: '/components/menuButton/multiLevelMenu' },
+    ],
+  },
+  {
+    name: 'MultiButton',
+    path: '/components/multiButton',
+    routes: [
+      { name: 'Базовый пример', path: '/components/multiButton' },
+      { name: 'Стили', path: '/components/multiButton/styles' },
+      { name: 'С иконкой', path: '/components/multiButton/withIcon' },
+      { name: 'Состояния', path: '/components/multiButton/states' },
     ],
   },
   {
