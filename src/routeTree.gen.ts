@@ -18,6 +18,7 @@ import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
+import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
@@ -50,6 +51,11 @@ import { Route as ComponentsTextButtonMenuStylesImport } from './routes/componen
 import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
 import { Route as ComponentsTextButtonStatesImport } from './routes/components/textButton/states'
+import { Route as ComponentsTagWithIconImport } from './routes/components/tag/withIcon'
+import { Route as ComponentsTagTooltipImport } from './routes/components/tag/tooltip'
+import { Route as ComponentsTagTagsImport } from './routes/components/tag/tags'
+import { Route as ComponentsTagStylesImport } from './routes/components/tag/styles'
+import { Route as ComponentsTagMenuImport } from './routes/components/tag/menu'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
@@ -198,6 +204,12 @@ const ComponentsTextButtonMenuIndexRoute =
 const ComponentsTextButtonIndexRoute = ComponentsTextButtonIndexImport.update({
   id: '/textButton/',
   path: '/textButton/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTagIndexRoute = ComponentsTagIndexImport.update({
+  id: '/tag/',
+  path: '/tag/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -413,6 +425,36 @@ const ComponentsTextButtonStatesRoute = ComponentsTextButtonStatesImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsTagWithIconRoute = ComponentsTagWithIconImport.update({
+  id: '/tag/withIcon',
+  path: '/tag/withIcon',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTagTooltipRoute = ComponentsTagTooltipImport.update({
+  id: '/tag/tooltip',
+  path: '/tag/tooltip',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTagTagsRoute = ComponentsTagTagsImport.update({
+  id: '/tag/tags',
+  path: '/tag/tags',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTagStylesRoute = ComponentsTagStylesImport.update({
+  id: '/tag/styles',
+  path: '/tag/styles',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTagMenuRoute = ComponentsTagMenuImport.update({
+  id: '/tag/menu',
+  path: '/tag/menu',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsTableLoadOnScrollSpinnerRoute =
   ComponentsTableLoadOnScrollSpinnerImport.update({
@@ -1911,6 +1953,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tag/menu': {
+      id: '/components/tag/menu'
+      path: '/tag/menu'
+      fullPath: '/components/tag/menu'
+      preLoaderRoute: typeof ComponentsTagMenuImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tag/styles': {
+      id: '/components/tag/styles'
+      path: '/tag/styles'
+      fullPath: '/components/tag/styles'
+      preLoaderRoute: typeof ComponentsTagStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tag/tags': {
+      id: '/components/tag/tags'
+      path: '/tag/tags'
+      fullPath: '/components/tag/tags'
+      preLoaderRoute: typeof ComponentsTagTagsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tag/tooltip': {
+      id: '/components/tag/tooltip'
+      path: '/tag/tooltip'
+      fullPath: '/components/tag/tooltip'
+      preLoaderRoute: typeof ComponentsTagTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tag/withIcon': {
+      id: '/components/tag/withIcon'
+      path: '/tag/withIcon'
+      fullPath: '/components/tag/withIcon'
+      preLoaderRoute: typeof ComponentsTagWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButton/states': {
       id: '/components/textButton/states'
       path: '/textButton/states'
@@ -2135,6 +2212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tag/': {
+      id: '/components/tag/'
+      path: '/tag'
+      fullPath: '/components/tag'
+      preLoaderRoute: typeof ComponentsTagIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButton/': {
       id: '/components/textButton/'
       path: '/textButton'
@@ -2267,6 +2351,11 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
+  ComponentsTagMenuRoute: typeof ComponentsTagMenuRoute
+  ComponentsTagStylesRoute: typeof ComponentsTagStylesRoute
+  ComponentsTagTagsRoute: typeof ComponentsTagTagsRoute
+  ComponentsTagTooltipRoute: typeof ComponentsTagTooltipRoute
+  ComponentsTagWithIconRoute: typeof ComponentsTagWithIconRoute
   ComponentsTextButtonStatesRoute: typeof ComponentsTextButtonStatesRoute
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
   ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
@@ -2299,6 +2388,7 @@ interface ComponentsRouteChildren {
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
+  ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
@@ -2439,6 +2529,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableLoadOnScrollSkeletonRoute,
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
+  ComponentsTagMenuRoute: ComponentsTagMenuRoute,
+  ComponentsTagStylesRoute: ComponentsTagStylesRoute,
+  ComponentsTagTagsRoute: ComponentsTagTagsRoute,
+  ComponentsTagTooltipRoute: ComponentsTagTooltipRoute,
+  ComponentsTagWithIconRoute: ComponentsTagWithIconRoute,
   ComponentsTextButtonStatesRoute: ComponentsTextButtonStatesRoute,
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
@@ -2471,6 +2566,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
+  ComponentsTagIndexRoute: ComponentsTagIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
@@ -2601,6 +2697,11 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/tag/menu': typeof ComponentsTagMenuRoute
+  '/components/tag/styles': typeof ComponentsTagStylesRoute
+  '/components/tag/tags': typeof ComponentsTagTagsRoute
+  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
+  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
@@ -2633,6 +2734,7 @@ export interface FileRoutesByFullPath {
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
+  '/components/tag': typeof ComponentsTagIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
@@ -2748,6 +2850,11 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/tag/menu': typeof ComponentsTagMenuRoute
+  '/components/tag/styles': typeof ComponentsTagStylesRoute
+  '/components/tag/tags': typeof ComponentsTagTagsRoute
+  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
+  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
@@ -2780,6 +2887,7 @@ export interface FileRoutesByTo {
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
+  '/components/tag': typeof ComponentsTagIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
@@ -2896,6 +3004,11 @@ export interface FileRoutesById {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/tag/menu': typeof ComponentsTagMenuRoute
+  '/components/tag/styles': typeof ComponentsTagStylesRoute
+  '/components/tag/tags': typeof ComponentsTagTagsRoute
+  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
+  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
@@ -2928,6 +3041,7 @@ export interface FileRoutesById {
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
+  '/components/tag/': typeof ComponentsTagIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
@@ -3045,6 +3159,11 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/tag/menu'
+    | '/components/tag/styles'
+    | '/components/tag/tags'
+    | '/components/tag/tooltip'
+    | '/components/tag/withIcon'
     | '/components/textButton/states'
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
@@ -3077,6 +3196,7 @@ export interface FileRouteTypes {
     | '/components/multiButton'
     | '/components/radiobutton'
     | '/components/table'
+    | '/components/tag'
     | '/components/textButton'
     | '/components/textButtonMenu'
     | '/components/toggle'
@@ -3191,6 +3311,11 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/tag/menu'
+    | '/components/tag/styles'
+    | '/components/tag/tags'
+    | '/components/tag/tooltip'
+    | '/components/tag/withIcon'
     | '/components/textButton/states'
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
@@ -3223,6 +3348,7 @@ export interface FileRouteTypes {
     | '/components/multiButton'
     | '/components/radiobutton'
     | '/components/table'
+    | '/components/tag'
     | '/components/textButton'
     | '/components/textButtonMenu'
     | '/components/toggle'
@@ -3337,6 +3463,11 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/tag/menu'
+    | '/components/tag/styles'
+    | '/components/tag/tags'
+    | '/components/tag/tooltip'
+    | '/components/tag/withIcon'
     | '/components/textButton/states'
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
@@ -3369,6 +3500,7 @@ export interface FileRouteTypes {
     | '/components/multiButton/'
     | '/components/radiobutton/'
     | '/components/table/'
+    | '/components/tag/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
     | '/components/toggle/'
@@ -3513,6 +3645,11 @@ export const routeTree = rootRoute
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
+        "/components/tag/menu",
+        "/components/tag/styles",
+        "/components/tag/tags",
+        "/components/tag/tooltip",
+        "/components/tag/withIcon",
         "/components/textButton/states",
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
@@ -3545,6 +3682,7 @@ export const routeTree = rootRoute
         "/components/multiButton/",
         "/components/radiobutton/",
         "/components/table/",
+        "/components/tag/",
         "/components/textButton/",
         "/components/textButtonMenu/",
         "/components/toggle/"
@@ -3980,6 +4118,26 @@ export const routeTree = rootRoute
       "filePath": "components/table/loadOnScrollSpinner.tsx",
       "parent": "/components"
     },
+    "/components/tag/menu": {
+      "filePath": "components/tag/menu.tsx",
+      "parent": "/components"
+    },
+    "/components/tag/styles": {
+      "filePath": "components/tag/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/tag/tags": {
+      "filePath": "components/tag/tags.tsx",
+      "parent": "/components"
+    },
+    "/components/tag/tooltip": {
+      "filePath": "components/tag/tooltip.tsx",
+      "parent": "/components"
+    },
+    "/components/tag/withIcon": {
+      "filePath": "components/tag/withIcon.tsx",
+      "parent": "/components"
+    },
     "/components/textButton/states": {
       "filePath": "components/textButton/states.tsx",
       "parent": "/components"
@@ -4106,6 +4264,10 @@ export const routeTree = rootRoute
     },
     "/components/table/": {
       "filePath": "components/table/index.tsx",
+      "parent": "/components"
+    },
+    "/components/tag/": {
+      "filePath": "components/tag/index.tsx",
       "parent": "/components"
     },
     "/components/textButton/": {

@@ -31,15 +31,6 @@ export const components = [
     ],
   },
   {
-    name: 'Badge',
-    path: '/components/badge',
-    routes: [
-      { name: 'Базовый пример', path: '/components/badge' },
-      { name: 'Варианты использования', path: '/components/badge/badgeVariants' },
-      { name: 'Accessibility', path: '/components/badge/badgeAccessibility' },
-    ],
-  },
-  {
     name: 'BadgeDot',
     path: '/components/badgeDot',
     routes: [
@@ -238,6 +229,27 @@ export const components = [
       { name: 'Chips с текстом и выбором', path: '/components/chips/select' },
       { name: 'Chips для множественного выбора', path: '/components/chips/multiSelect' },
       { name: 'Chips с Tooltip', path: '/components/chips/withTooltip' },
+    ],
+  },
+  {
+    name: 'Tag',
+    path: '/components/tag',
+    routes: [
+      { name: 'Базовый пример', path: '/components/tag' },
+      { name: 'Стили и размеры', path: '/components/tag/styles' },
+      { name: 'Тултип', path: '/components/tag/tooltip' },
+      { name: 'С иконкой', path: '/components/tag/withIcon' },
+      { name: 'Группа тэгов', path: '/components/tag/tags' },
+      { name: 'С выпадающим меню', path: '/components/tag/menu' },
+    ],
+  },
+  {
+    name: 'Badge',
+    path: '/components/badge',
+    routes: [
+      { name: 'Базовый пример', path: '/components/badge' },
+      { name: 'Варианты использования', path: '/components/badge/badgeVariants' },
+      { name: 'Accessibility', path: '/components/badge/badgeAccessibility' },
     ],
   },
   {
