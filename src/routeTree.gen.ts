@@ -24,6 +24,7 @@ import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/r
 import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
+import { Route as ComponentsLinkIndexImport } from './routes/components/link/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
 import { Route as ComponentsIconPlacementIndexImport } from './routes/components/iconPlacement/index'
 import { Route as ComponentsIconButtonGroupIndexImport } from './routes/components/iconButtonGroup/index'
@@ -78,6 +79,10 @@ import { Route as ComponentsMenuButtonMultiLevelMenuImport } from './routes/comp
 import { Route as ComponentsMenuButtonCheckboxAndTopPanelImport } from './routes/components/menuButton/checkboxAndTopPanel'
 import { Route as ComponentsMenuButtonCheckboxAndBottomPanelImport } from './routes/components/menuButton/checkboxAndBottomPanel'
 import { Route as ComponentsMenuButtonActionsImport } from './routes/components/menuButton/actions'
+import { Route as ComponentsLinkWithIconImport } from './routes/components/link/withIcon'
+import { Route as ComponentsLinkStylesImport } from './routes/components/link/styles'
+import { Route as ComponentsLinkCssMixinImport } from './routes/components/link/cssMixin'
+import { Route as ComponentsLinkAsPropImport } from './routes/components/link/asProp'
 import { Route as ComponentsIconPlacementVariantsImport } from './routes/components/iconPlacement/variants'
 import { Route as ComponentsIconPlacementStylesImport } from './routes/components/iconPlacement/styles'
 import { Route as ComponentsIconPlacementSizesImport } from './routes/components/iconPlacement/sizes'
@@ -248,6 +253,12 @@ const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update(
 const ComponentsMenuButtonIndexRoute = ComponentsMenuButtonIndexImport.update({
   id: '/menuButton/',
   path: '/menuButton/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsLinkIndexRoute = ComponentsLinkIndexImport.update({
+  id: '/link/',
+  path: '/link/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -612,6 +623,30 @@ const ComponentsMenuButtonActionsRoute =
     path: '/menuButton/actions',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsLinkWithIconRoute = ComponentsLinkWithIconImport.update({
+  id: '/link/withIcon',
+  path: '/link/withIcon',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsLinkStylesRoute = ComponentsLinkStylesImport.update({
+  id: '/link/styles',
+  path: '/link/styles',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsLinkCssMixinRoute = ComponentsLinkCssMixinImport.update({
+  id: '/link/cssMixin',
+  path: '/link/cssMixin',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsLinkAsPropRoute = ComponentsLinkAsPropImport.update({
+  id: '/link/asProp',
+  path: '/link/asProp',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsIconPlacementVariantsRoute =
   ComponentsIconPlacementVariantsImport.update({
@@ -1855,6 +1890,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsIconPlacementVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/link/asProp': {
+      id: '/components/link/asProp'
+      path: '/link/asProp'
+      fullPath: '/components/link/asProp'
+      preLoaderRoute: typeof ComponentsLinkAsPropImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/link/cssMixin': {
+      id: '/components/link/cssMixin'
+      path: '/link/cssMixin'
+      fullPath: '/components/link/cssMixin'
+      preLoaderRoute: typeof ComponentsLinkCssMixinImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/link/styles': {
+      id: '/components/link/styles'
+      path: '/link/styles'
+      fullPath: '/components/link/styles'
+      preLoaderRoute: typeof ComponentsLinkStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/link/withIcon': {
+      id: '/components/link/withIcon'
+      path: '/link/withIcon'
+      fullPath: '/components/link/withIcon'
+      preLoaderRoute: typeof ComponentsLinkWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/actions': {
       id: '/components/menuButton/actions'
       path: '/menuButton/actions'
@@ -2233,6 +2296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsImageViewerIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/link/': {
+      id: '/components/link/'
+      path: '/link'
+      fullPath: '/components/link'
+      preLoaderRoute: typeof ComponentsLinkIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/': {
       id: '/components/menuButton/'
       path: '/menuButton'
@@ -2389,6 +2459,10 @@ interface ComponentsRouteChildren {
   ComponentsIconPlacementSizesRoute: typeof ComponentsIconPlacementSizesRoute
   ComponentsIconPlacementStylesRoute: typeof ComponentsIconPlacementStylesRoute
   ComponentsIconPlacementVariantsRoute: typeof ComponentsIconPlacementVariantsRoute
+  ComponentsLinkAsPropRoute: typeof ComponentsLinkAsPropRoute
+  ComponentsLinkCssMixinRoute: typeof ComponentsLinkCssMixinRoute
+  ComponentsLinkStylesRoute: typeof ComponentsLinkStylesRoute
+  ComponentsLinkWithIconRoute: typeof ComponentsLinkWithIconRoute
   ComponentsMenuButtonActionsRoute: typeof ComponentsMenuButtonActionsRoute
   ComponentsMenuButtonCheckboxAndBottomPanelRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   ComponentsMenuButtonCheckboxAndTopPanelRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2443,6 +2517,7 @@ interface ComponentsRouteChildren {
   ComponentsIconButtonGroupIndexRoute: typeof ComponentsIconButtonGroupIndexRoute
   ComponentsIconPlacementIndexRoute: typeof ComponentsIconPlacementIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
+  ComponentsLinkIndexRoute: typeof ComponentsLinkIndexRoute
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
@@ -2566,6 +2641,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsIconPlacementSizesRoute: ComponentsIconPlacementSizesRoute,
   ComponentsIconPlacementStylesRoute: ComponentsIconPlacementStylesRoute,
   ComponentsIconPlacementVariantsRoute: ComponentsIconPlacementVariantsRoute,
+  ComponentsLinkAsPropRoute: ComponentsLinkAsPropRoute,
+  ComponentsLinkCssMixinRoute: ComponentsLinkCssMixinRoute,
+  ComponentsLinkStylesRoute: ComponentsLinkStylesRoute,
+  ComponentsLinkWithIconRoute: ComponentsLinkWithIconRoute,
   ComponentsMenuButtonActionsRoute: ComponentsMenuButtonActionsRoute,
   ComponentsMenuButtonCheckboxAndBottomPanelRoute:
     ComponentsMenuButtonCheckboxAndBottomPanelRoute,
@@ -2625,6 +2704,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsIconButtonGroupIndexRoute: ComponentsIconButtonGroupIndexRoute,
   ComponentsIconPlacementIndexRoute: ComponentsIconPlacementIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
+  ComponentsLinkIndexRoute: ComponentsLinkIndexRoute,
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
@@ -2743,6 +2823,10 @@ export interface FileRoutesByFullPath {
   '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
   '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
   '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/link/asProp': typeof ComponentsLinkAsPropRoute
+  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
+  '/components/link/styles': typeof ComponentsLinkStylesRoute
+  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2797,6 +2881,7 @@ export interface FileRoutesByFullPath {
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
   '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
+  '/components/link': typeof ComponentsLinkIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
@@ -2900,6 +2985,10 @@ export interface FileRoutesByTo {
   '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
   '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
   '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/link/asProp': typeof ComponentsLinkAsPropRoute
+  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
+  '/components/link/styles': typeof ComponentsLinkStylesRoute
+  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2954,6 +3043,7 @@ export interface FileRoutesByTo {
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
   '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
+  '/components/link': typeof ComponentsLinkIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
@@ -3058,6 +3148,10 @@ export interface FileRoutesById {
   '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
   '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
   '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/link/asProp': typeof ComponentsLinkAsPropRoute
+  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
+  '/components/link/styles': typeof ComponentsLinkStylesRoute
+  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -3112,6 +3206,7 @@ export interface FileRoutesById {
   '/components/iconButtonGroup/': typeof ComponentsIconButtonGroupIndexRoute
   '/components/iconPlacement/': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
+  '/components/link/': typeof ComponentsLinkIndexRoute
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/pills/': typeof ComponentsPillsIndexRoute
@@ -3217,6 +3312,10 @@ export interface FileRouteTypes {
     | '/components/iconPlacement/sizes'
     | '/components/iconPlacement/styles'
     | '/components/iconPlacement/variants'
+    | '/components/link/asProp'
+    | '/components/link/cssMixin'
+    | '/components/link/styles'
+    | '/components/link/withIcon'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3271,6 +3370,7 @@ export interface FileRouteTypes {
     | '/components/iconButtonGroup'
     | '/components/iconPlacement'
     | '/components/imageViewer'
+    | '/components/link'
     | '/components/menuButton'
     | '/components/multiButton'
     | '/components/pills'
@@ -3373,6 +3473,10 @@ export interface FileRouteTypes {
     | '/components/iconPlacement/sizes'
     | '/components/iconPlacement/styles'
     | '/components/iconPlacement/variants'
+    | '/components/link/asProp'
+    | '/components/link/cssMixin'
+    | '/components/link/styles'
+    | '/components/link/withIcon'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3427,6 +3531,7 @@ export interface FileRouteTypes {
     | '/components/iconButtonGroup'
     | '/components/iconPlacement'
     | '/components/imageViewer'
+    | '/components/link'
     | '/components/menuButton'
     | '/components/multiButton'
     | '/components/pills'
@@ -3529,6 +3634,10 @@ export interface FileRouteTypes {
     | '/components/iconPlacement/sizes'
     | '/components/iconPlacement/styles'
     | '/components/iconPlacement/variants'
+    | '/components/link/asProp'
+    | '/components/link/cssMixin'
+    | '/components/link/styles'
+    | '/components/link/withIcon'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3583,6 +3692,7 @@ export interface FileRouteTypes {
     | '/components/iconButtonGroup/'
     | '/components/iconPlacement/'
     | '/components/imageViewer/'
+    | '/components/link/'
     | '/components/menuButton/'
     | '/components/multiButton/'
     | '/components/pills/'
@@ -3715,6 +3825,10 @@ export const routeTree = rootRoute
         "/components/iconPlacement/sizes",
         "/components/iconPlacement/styles",
         "/components/iconPlacement/variants",
+        "/components/link/asProp",
+        "/components/link/cssMixin",
+        "/components/link/styles",
+        "/components/link/withIcon",
         "/components/menuButton/actions",
         "/components/menuButton/checkboxAndBottomPanel",
         "/components/menuButton/checkboxAndTopPanel",
@@ -3769,6 +3883,7 @@ export const routeTree = rootRoute
         "/components/iconButtonGroup/",
         "/components/iconPlacement/",
         "/components/imageViewer/",
+        "/components/link/",
         "/components/menuButton/",
         "/components/multiButton/",
         "/components/pills/",
@@ -4138,6 +4253,22 @@ export const routeTree = rootRoute
       "filePath": "components/iconPlacement/variants.tsx",
       "parent": "/components"
     },
+    "/components/link/asProp": {
+      "filePath": "components/link/asProp.tsx",
+      "parent": "/components"
+    },
+    "/components/link/cssMixin": {
+      "filePath": "components/link/cssMixin.tsx",
+      "parent": "/components"
+    },
+    "/components/link/styles": {
+      "filePath": "components/link/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/link/withIcon": {
+      "filePath": "components/link/withIcon.tsx",
+      "parent": "/components"
+    },
     "/components/menuButton/actions": {
       "filePath": "components/menuButton/actions.tsx",
       "parent": "/components"
@@ -4352,6 +4483,10 @@ export const routeTree = rootRoute
     },
     "/components/imageViewer/": {
       "filePath": "components/imageViewer/index.tsx",
+      "parent": "/components"
+    },
+    "/components/link/": {
+      "filePath": "components/link/index.tsx",
       "parent": "/components"
     },
     "/components/menuButton/": {

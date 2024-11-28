@@ -43,6 +43,17 @@ export const components = [
     ],
   },
   {
+    name: 'Link',
+    path: '/components/link',
+    routes: [
+      { name: 'Базовый пример', path: '/components/link' },
+      { name: 'Стили', path: '/components/link/styles' },
+      { name: 'С иконками', path: '/components/link/withIcon' },
+      { name: 'Css Mixin', path: '/components/link/cssMixin' },
+      { name: 'Link As Prop', path: '/components/link/asProp' },
+    ],
+  },
+  {
     name: 'Button',
     path: '/components/button',
     routes: [
