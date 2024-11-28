@@ -23,6 +23,7 @@ import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/r
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
+import { Route as ComponentsIconPlacementIndexImport } from './routes/components/iconPlacement/index'
 import { Route as ComponentsIconButtonGroupIndexImport } from './routes/components/iconButtonGroup/index'
 import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
@@ -67,6 +68,9 @@ import { Route as ComponentsMenuButtonMultiLevelMenuImport } from './routes/comp
 import { Route as ComponentsMenuButtonCheckboxAndTopPanelImport } from './routes/components/menuButton/checkboxAndTopPanel'
 import { Route as ComponentsMenuButtonCheckboxAndBottomPanelImport } from './routes/components/menuButton/checkboxAndBottomPanel'
 import { Route as ComponentsMenuButtonActionsImport } from './routes/components/menuButton/actions'
+import { Route as ComponentsIconPlacementVariantsImport } from './routes/components/iconPlacement/variants'
+import { Route as ComponentsIconPlacementStylesImport } from './routes/components/iconPlacement/styles'
+import { Route as ComponentsIconPlacementSizesImport } from './routes/components/iconPlacement/sizes'
 import { Route as ComponentsIconButtonGroupTooltipImport } from './routes/components/iconButtonGroup/tooltip'
 import { Route as ComponentsIconButtonGroupStatesImport } from './routes/components/iconButtonGroup/states'
 import { Route as ComponentsIconButtonGroupSizesImport } from './routes/components/iconButtonGroup/sizes'
@@ -232,6 +236,13 @@ const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsIconPlacementIndexRoute =
+  ComponentsIconPlacementIndexImport.update({
+    id: '/iconPlacement/',
+    path: '/iconPlacement/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsIconButtonGroupIndexRoute =
   ComponentsIconButtonGroupIndexImport.update({
@@ -529,6 +540,27 @@ const ComponentsMenuButtonActionsRoute =
   ComponentsMenuButtonActionsImport.update({
     id: '/menuButton/actions',
     path: '/menuButton/actions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsIconPlacementVariantsRoute =
+  ComponentsIconPlacementVariantsImport.update({
+    id: '/iconPlacement/variants',
+    path: '/iconPlacement/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsIconPlacementStylesRoute =
+  ComponentsIconPlacementStylesImport.update({
+    id: '/iconPlacement/styles',
+    path: '/iconPlacement/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsIconPlacementSizesRoute =
+  ComponentsIconPlacementSizesImport.update({
+    id: '/iconPlacement/sizes',
+    path: '/iconPlacement/sizes',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1732,6 +1764,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsIconButtonGroupTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/iconPlacement/sizes': {
+      id: '/components/iconPlacement/sizes'
+      path: '/iconPlacement/sizes'
+      fullPath: '/components/iconPlacement/sizes'
+      preLoaderRoute: typeof ComponentsIconPlacementSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/iconPlacement/styles': {
+      id: '/components/iconPlacement/styles'
+      path: '/iconPlacement/styles'
+      fullPath: '/components/iconPlacement/styles'
+      preLoaderRoute: typeof ComponentsIconPlacementStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/iconPlacement/variants': {
+      id: '/components/iconPlacement/variants'
+      path: '/iconPlacement/variants'
+      fullPath: '/components/iconPlacement/variants'
+      preLoaderRoute: typeof ComponentsIconPlacementVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/actions': {
       id: '/components/menuButton/actions'
       path: '/menuButton/actions'
@@ -2040,6 +2093,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsIconButtonGroupIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/iconPlacement/': {
+      id: '/components/iconPlacement/'
+      path: '/iconPlacement'
+      fullPath: '/components/iconPlacement'
+      preLoaderRoute: typeof ComponentsIconPlacementIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/': {
       id: '/components/imageViewer/'
       path: '/imageViewer'
@@ -2186,6 +2246,9 @@ interface ComponentsRouteChildren {
   ComponentsIconButtonGroupSizesRoute: typeof ComponentsIconButtonGroupSizesRoute
   ComponentsIconButtonGroupStatesRoute: typeof ComponentsIconButtonGroupStatesRoute
   ComponentsIconButtonGroupTooltipRoute: typeof ComponentsIconButtonGroupTooltipRoute
+  ComponentsIconPlacementSizesRoute: typeof ComponentsIconPlacementSizesRoute
+  ComponentsIconPlacementStylesRoute: typeof ComponentsIconPlacementStylesRoute
+  ComponentsIconPlacementVariantsRoute: typeof ComponentsIconPlacementVariantsRoute
   ComponentsMenuButtonActionsRoute: typeof ComponentsMenuButtonActionsRoute
   ComponentsMenuButtonCheckboxAndBottomPanelRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   ComponentsMenuButtonCheckboxAndTopPanelRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2230,6 +2293,7 @@ interface ComponentsRouteChildren {
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
   ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute
   ComponentsIconButtonGroupIndexRoute: typeof ComponentsIconButtonGroupIndexRoute
+  ComponentsIconPlacementIndexRoute: typeof ComponentsIconPlacementIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
@@ -2349,6 +2413,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsIconButtonGroupSizesRoute: ComponentsIconButtonGroupSizesRoute,
   ComponentsIconButtonGroupStatesRoute: ComponentsIconButtonGroupStatesRoute,
   ComponentsIconButtonGroupTooltipRoute: ComponentsIconButtonGroupTooltipRoute,
+  ComponentsIconPlacementSizesRoute: ComponentsIconPlacementSizesRoute,
+  ComponentsIconPlacementStylesRoute: ComponentsIconPlacementStylesRoute,
+  ComponentsIconPlacementVariantsRoute: ComponentsIconPlacementVariantsRoute,
   ComponentsMenuButtonActionsRoute: ComponentsMenuButtonActionsRoute,
   ComponentsMenuButtonCheckboxAndBottomPanelRoute:
     ComponentsMenuButtonCheckboxAndBottomPanelRoute,
@@ -2398,6 +2465,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
   ComponentsIconButtonIndexRoute: ComponentsIconButtonIndexRoute,
   ComponentsIconButtonGroupIndexRoute: ComponentsIconButtonGroupIndexRoute,
+  ComponentsIconPlacementIndexRoute: ComponentsIconPlacementIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
@@ -2512,6 +2580,9 @@ export interface FileRoutesByFullPath {
   '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
   '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute
   '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute
+  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
+  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
+  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2556,6 +2627,7 @@ export interface FileRoutesByFullPath {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
+  '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
@@ -2655,6 +2727,9 @@ export interface FileRoutesByTo {
   '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
   '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute
   '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute
+  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
+  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
+  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2699,6 +2774,7 @@ export interface FileRoutesByTo {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
+  '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
@@ -2799,6 +2875,9 @@ export interface FileRoutesById {
   '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
   '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute
   '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute
+  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
+  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
+  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2843,6 +2922,7 @@ export interface FileRoutesById {
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
   '/components/iconButton/': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup/': typeof ComponentsIconButtonGroupIndexRoute
+  '/components/iconPlacement/': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
@@ -2944,6 +3024,9 @@ export interface FileRouteTypes {
     | '/components/iconButtonGroup/sizes'
     | '/components/iconButtonGroup/states'
     | '/components/iconButtonGroup/tooltip'
+    | '/components/iconPlacement/sizes'
+    | '/components/iconPlacement/styles'
+    | '/components/iconPlacement/variants'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -2988,6 +3071,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/iconButton'
     | '/components/iconButtonGroup'
+    | '/components/iconPlacement'
     | '/components/imageViewer'
     | '/components/menuButton'
     | '/components/multiButton'
@@ -3086,6 +3170,9 @@ export interface FileRouteTypes {
     | '/components/iconButtonGroup/sizes'
     | '/components/iconButtonGroup/states'
     | '/components/iconButtonGroup/tooltip'
+    | '/components/iconPlacement/sizes'
+    | '/components/iconPlacement/styles'
+    | '/components/iconPlacement/variants'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3130,6 +3217,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/iconButton'
     | '/components/iconButtonGroup'
+    | '/components/iconPlacement'
     | '/components/imageViewer'
     | '/components/menuButton'
     | '/components/multiButton'
@@ -3228,6 +3316,9 @@ export interface FileRouteTypes {
     | '/components/iconButtonGroup/sizes'
     | '/components/iconButtonGroup/states'
     | '/components/iconButtonGroup/tooltip'
+    | '/components/iconPlacement/sizes'
+    | '/components/iconPlacement/styles'
+    | '/components/iconPlacement/variants'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3272,6 +3363,7 @@ export interface FileRouteTypes {
     | '/components/dropdown/'
     | '/components/iconButton/'
     | '/components/iconButtonGroup/'
+    | '/components/iconPlacement/'
     | '/components/imageViewer/'
     | '/components/menuButton/'
     | '/components/multiButton/'
@@ -3400,6 +3492,9 @@ export const routeTree = rootRoute
         "/components/iconButtonGroup/sizes",
         "/components/iconButtonGroup/states",
         "/components/iconButtonGroup/tooltip",
+        "/components/iconPlacement/sizes",
+        "/components/iconPlacement/styles",
+        "/components/iconPlacement/variants",
         "/components/menuButton/actions",
         "/components/menuButton/checkboxAndBottomPanel",
         "/components/menuButton/checkboxAndTopPanel",
@@ -3444,6 +3539,7 @@ export const routeTree = rootRoute
         "/components/dropdown/",
         "/components/iconButton/",
         "/components/iconButtonGroup/",
+        "/components/iconPlacement/",
         "/components/imageViewer/",
         "/components/menuButton/",
         "/components/multiButton/",
@@ -3800,6 +3896,18 @@ export const routeTree = rootRoute
       "filePath": "components/iconButtonGroup/tooltip.tsx",
       "parent": "/components"
     },
+    "/components/iconPlacement/sizes": {
+      "filePath": "components/iconPlacement/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/iconPlacement/styles": {
+      "filePath": "components/iconPlacement/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/iconPlacement/variants": {
+      "filePath": "components/iconPlacement/variants.tsx",
+      "parent": "/components"
+    },
     "/components/menuButton/actions": {
       "filePath": "components/menuButton/actions.tsx",
       "parent": "/components"
@@ -3974,6 +4082,10 @@ export const routeTree = rootRoute
     },
     "/components/iconButtonGroup/": {
       "filePath": "components/iconButtonGroup/index.tsx",
+      "parent": "/components"
+    },
+    "/components/iconPlacement/": {
+      "filePath": "components/iconPlacement/index.tsx",
       "parent": "/components"
     },
     "/components/imageViewer/": {

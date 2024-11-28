@@ -103,6 +103,16 @@ export const components = [
     ],
   },
   {
+    name: 'IconPlacement',
+    path: '/components/iconPlacement',
+    routes: [
+      { name: 'Базовый пример', path: '/components/iconPlacement' },
+      { name: 'Стили', path: '/components/iconPlacement/styles' },
+      { name: 'Размеры', path: '/components/iconPlacement/sizes' },
+      { name: 'Варианты использования', path: '/components/iconPlacement/variants' },
+    ],
+  },
+  {
     name: 'MenuButton',
     path: '/components/menuButton',
     routes: [
@@ -203,6 +213,19 @@ export const components = [
     ],
   },
   {
+    name: 'ContentSwitcher',
+    path: '/components/contentSwitcher',
+    routes: [
+      { name: 'Базовый пример', path: '/components/contentSwitcher' },
+      { name: 'Размеры', path: '/components/contentSwitcher/sizes' },
+      { name: 'Стили', path: '/components/contentSwitcher/styles' },
+      { name: 'С иконками', path: '/components/contentSwitcher/withIcons' },
+      { name: 'С Badge', path: '/components/contentSwitcher/withBadge' },
+      { name: 'Иконки без текста', path: '/components/contentSwitcher/iconsOnly' },
+      { name: 'Адаптив', path: '/components/contentSwitcher/adaptive' },
+    ],
+  },
+  {
     name: 'Chips',
     path: '/components/chips',
     routes: [
@@ -215,19 +238,6 @@ export const components = [
       { name: 'Chips с текстом и выбором', path: '/components/chips/select' },
       { name: 'Chips для множественного выбора', path: '/components/chips/multiSelect' },
       { name: 'Chips с Tooltip', path: '/components/chips/withTooltip' },
-    ],
-  },
-  {
-    name: 'ContentSwitcher',
-    path: '/components/contentSwitcher',
-    routes: [
-      { name: 'Базовый пример', path: '/components/contentSwitcher' },
-      { name: 'Размеры', path: '/components/contentSwitcher/sizes' },
-      { name: 'Стили', path: '/components/contentSwitcher/styles' },
-      { name: 'С иконками', path: '/components/contentSwitcher/withIcons' },
-      { name: 'С Badge', path: '/components/contentSwitcher/withBadge' },
-      { name: 'Иконки без текста', path: '/components/contentSwitcher/iconsOnly' },
-      { name: 'Адаптив', path: '/components/contentSwitcher/adaptive' },
     ],
   },
   {
