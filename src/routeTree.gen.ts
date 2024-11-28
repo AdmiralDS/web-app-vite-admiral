@@ -21,6 +21,7 @@ import { Route as ComponentsTextButtonIndexImport } from './routes/components/te
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
+import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
@@ -64,6 +65,9 @@ import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/r
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
 import { Route as ComponentsRadiobuttonFieldSetImport } from './routes/components/radiobutton/fieldSet'
 import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/components/radiobutton/extraText'
+import { Route as ComponentsPillsTooltipImport } from './routes/components/pills/tooltip'
+import { Route as ComponentsPillsNestedImport } from './routes/components/pills/nested'
+import { Route as ComponentsPillsMenuImport } from './routes/components/pills/menu'
 import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
 import { Route as ComponentsMultiButtonStylesImport } from './routes/components/multiButton/styles'
 import { Route as ComponentsMultiButtonStatesImport } from './routes/components/multiButton/states'
@@ -226,6 +230,12 @@ const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsPillsIndexRoute = ComponentsPillsIndexImport.update({
+  id: '/pills/',
+  path: '/pills/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update(
   {
@@ -512,6 +522,24 @@ const ComponentsRadiobuttonExtraTextRoute =
     path: '/radiobutton/extraText',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsPillsTooltipRoute = ComponentsPillsTooltipImport.update({
+  id: '/pills/tooltip',
+  path: '/pills/tooltip',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsPillsNestedRoute = ComponentsPillsNestedImport.update({
+  id: '/pills/nested',
+  path: '/pills/nested',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsPillsMenuRoute = ComponentsPillsMenuImport.update({
+  id: '/pills/menu',
+  path: '/pills/menu',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsMultiButtonWithIconRoute =
   ComponentsMultiButtonWithIconImport.update({
@@ -1897,6 +1925,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMultiButtonWithIconImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/pills/menu': {
+      id: '/components/pills/menu'
+      path: '/pills/menu'
+      fullPath: '/components/pills/menu'
+      preLoaderRoute: typeof ComponentsPillsMenuImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/pills/nested': {
+      id: '/components/pills/nested'
+      path: '/pills/nested'
+      fullPath: '/components/pills/nested'
+      preLoaderRoute: typeof ComponentsPillsNestedImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/pills/tooltip': {
+      id: '/components/pills/tooltip'
+      path: '/pills/tooltip'
+      fullPath: '/components/pills/tooltip'
+      preLoaderRoute: typeof ComponentsPillsTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/extraText': {
       id: '/components/radiobutton/extraText'
       path: '/radiobutton/extraText'
@@ -2198,6 +2247,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMultiButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/pills/': {
+      id: '/components/pills/'
+      path: '/pills'
+      fullPath: '/components/pills'
+      preLoaderRoute: typeof ComponentsPillsIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/': {
       id: '/components/radiobutton/'
       path: '/radiobutton'
@@ -2343,6 +2399,9 @@ interface ComponentsRouteChildren {
   ComponentsMultiButtonStatesRoute: typeof ComponentsMultiButtonStatesRoute
   ComponentsMultiButtonStylesRoute: typeof ComponentsMultiButtonStylesRoute
   ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
+  ComponentsPillsMenuRoute: typeof ComponentsPillsMenuRoute
+  ComponentsPillsNestedRoute: typeof ComponentsPillsNestedRoute
+  ComponentsPillsTooltipRoute: typeof ComponentsPillsTooltipRoute
   ComponentsRadiobuttonExtraTextRoute: typeof ComponentsRadiobuttonExtraTextRoute
   ComponentsRadiobuttonFieldSetRoute: typeof ComponentsRadiobuttonFieldSetRoute
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
@@ -2386,6 +2445,7 @@ interface ComponentsRouteChildren {
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
+  ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
@@ -2519,6 +2579,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiButtonStatesRoute: ComponentsMultiButtonStatesRoute,
   ComponentsMultiButtonStylesRoute: ComponentsMultiButtonStylesRoute,
   ComponentsMultiButtonWithIconRoute: ComponentsMultiButtonWithIconRoute,
+  ComponentsPillsMenuRoute: ComponentsPillsMenuRoute,
+  ComponentsPillsNestedRoute: ComponentsPillsNestedRoute,
+  ComponentsPillsTooltipRoute: ComponentsPillsTooltipRoute,
   ComponentsRadiobuttonExtraTextRoute: ComponentsRadiobuttonExtraTextRoute,
   ComponentsRadiobuttonFieldSetRoute: ComponentsRadiobuttonFieldSetRoute,
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
@@ -2564,6 +2627,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
+  ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
@@ -2689,6 +2753,9 @@ export interface FileRoutesByFullPath {
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/pills/menu': typeof ComponentsPillsMenuRoute
+  '/components/pills/nested': typeof ComponentsPillsNestedRoute
+  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -2732,6 +2799,7 @@ export interface FileRoutesByFullPath {
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
+  '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -2842,6 +2910,9 @@ export interface FileRoutesByTo {
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/pills/menu': typeof ComponentsPillsMenuRoute
+  '/components/pills/nested': typeof ComponentsPillsNestedRoute
+  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -2885,6 +2956,7 @@ export interface FileRoutesByTo {
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
+  '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -2996,6 +3068,9 @@ export interface FileRoutesById {
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/pills/menu': typeof ComponentsPillsMenuRoute
+  '/components/pills/nested': typeof ComponentsPillsNestedRoute
+  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -3039,6 +3114,7 @@ export interface FileRoutesById {
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
+  '/components/pills/': typeof ComponentsPillsIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
@@ -3151,6 +3227,9 @@ export interface FileRouteTypes {
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
+    | '/components/pills/menu'
+    | '/components/pills/nested'
+    | '/components/pills/tooltip'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -3194,6 +3273,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer'
     | '/components/menuButton'
     | '/components/multiButton'
+    | '/components/pills'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/tag'
@@ -3303,6 +3383,9 @@ export interface FileRouteTypes {
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
+    | '/components/pills/menu'
+    | '/components/pills/nested'
+    | '/components/pills/tooltip'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -3346,6 +3429,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer'
     | '/components/menuButton'
     | '/components/multiButton'
+    | '/components/pills'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/tag'
@@ -3455,6 +3539,9 @@ export interface FileRouteTypes {
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
+    | '/components/pills/menu'
+    | '/components/pills/nested'
+    | '/components/pills/tooltip'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -3498,6 +3585,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer/'
     | '/components/menuButton/'
     | '/components/multiButton/'
+    | '/components/pills/'
     | '/components/radiobutton/'
     | '/components/table/'
     | '/components/tag/'
@@ -3637,6 +3725,9 @@ export const routeTree = rootRoute
         "/components/multiButton/states",
         "/components/multiButton/styles",
         "/components/multiButton/withIcon",
+        "/components/pills/menu",
+        "/components/pills/nested",
+        "/components/pills/tooltip",
         "/components/radiobutton/extraText",
         "/components/radiobutton/fieldSet",
         "/components/radiobutton/informer",
@@ -3680,6 +3771,7 @@ export const routeTree = rootRoute
         "/components/imageViewer/",
         "/components/menuButton/",
         "/components/multiButton/",
+        "/components/pills/",
         "/components/radiobutton/",
         "/components/table/",
         "/components/tag/",
@@ -4086,6 +4178,18 @@ export const routeTree = rootRoute
       "filePath": "components/multiButton/withIcon.tsx",
       "parent": "/components"
     },
+    "/components/pills/menu": {
+      "filePath": "components/pills/menu.tsx",
+      "parent": "/components"
+    },
+    "/components/pills/nested": {
+      "filePath": "components/pills/nested.tsx",
+      "parent": "/components"
+    },
+    "/components/pills/tooltip": {
+      "filePath": "components/pills/tooltip.tsx",
+      "parent": "/components"
+    },
     "/components/radiobutton/extraText": {
       "filePath": "components/radiobutton/extraText.tsx",
       "parent": "/components"
@@ -4256,6 +4360,10 @@ export const routeTree = rootRoute
     },
     "/components/multiButton/": {
       "filePath": "components/multiButton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/pills/": {
+      "filePath": "components/pills/index.tsx",
       "parent": "/components"
     },
     "/components/radiobutton/": {

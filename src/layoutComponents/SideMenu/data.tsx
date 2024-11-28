@@ -31,14 +31,6 @@ export const components = [
     ],
   },
   {
-    name: 'BadgeDot',
-    path: '/components/badgeDot',
-    routes: [
-      { name: 'Базовый пример', path: '/components/badgeDot' },
-      { name: 'Варианты использования', path: '/components/badgeDot/variants' },
-    ],
-  },
-  {
     name: 'Breadcrumbs',
     path: '/components/breadcrumbs',
     routes: [
@@ -250,6 +242,24 @@ export const components = [
       { name: 'Базовый пример', path: '/components/badge' },
       { name: 'Варианты использования', path: '/components/badge/badgeVariants' },
       { name: 'Accessibility', path: '/components/badge/badgeAccessibility' },
+    ],
+  },
+  {
+    name: 'BadgeDot',
+    path: '/components/badgeDot',
+    routes: [
+      { name: 'Базовый пример', path: '/components/badgeDot' },
+      { name: 'Варианты использования', path: '/components/badgeDot/variants' },
+    ],
+  },
+  {
+    name: 'Pills',
+    path: '/components/pills',
+    routes: [
+      { name: 'Базовый пример', path: '/components/pills' },
+      { name: 'С выпадающим меню', path: '/components/pills/menu' },
+      { name: 'Тултип', path: '/components/pills/tooltip' },
+      { name: 'Двойные Pills', path: '/components/pills/nested' },
     ],
   },
   {
