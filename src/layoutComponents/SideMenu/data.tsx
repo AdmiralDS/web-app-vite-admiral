@@ -84,6 +84,25 @@ export const components = [
     ],
   },
   {
+    name: 'IconButton',
+    path: '/components/iconButton',
+    routes: [
+      { name: 'Базовый пример', path: '/components/iconButton' },
+      { name: 'Стили', path: '/components/iconButton/styles' },
+      { name: 'Состояния', path: '/components/iconButton/states' },
+    ],
+  },
+  {
+    name: 'IconButtonGroup',
+    path: '/components/iconButtonGroup',
+    routes: [
+      { name: 'Базовый пример', path: '/components/iconButtonGroup' },
+      { name: 'Размеры', path: '/components/iconButtonGroup/sizes' },
+      { name: 'Состояния', path: '/components/iconButtonGroup/states' },
+      { name: 'Tooltip', path: '/components/iconButtonGroup/tooltip' },
+    ],
+  },
+  {
     name: 'MenuButton',
     path: '/components/menuButton',
     routes: [
@@ -111,31 +130,21 @@ export const components = [
     ],
   },
   {
-    name: 'IconButton',
-    path: '/components/iconButton',
-    routes: [
-      { name: 'Базовый пример', path: '/components/iconButton' },
-      { name: 'Стили', path: '/components/iconButton/styles' },
-      { name: 'Состояния', path: '/components/iconButton/states' },
-    ],
-  },
-  {
-    name: 'IconButtonGroup',
-    path: '/components/iconButtonGroup',
-    routes: [
-      { name: 'Базовый пример', path: '/components/iconButtonGroup' },
-      { name: 'Размеры', path: '/components/iconButtonGroup/sizes' },
-      { name: 'Состояния', path: '/components/iconButtonGroup/states' },
-      { name: 'Tooltip', path: '/components/iconButtonGroup/tooltip' },
-    ],
-  },
-  {
     name: 'TextButton',
     path: '/components/textButton',
     routes: [
       { name: 'Базовый пример', path: '/components/textButton' },
       { name: 'Размеры и стили', path: '/components/textButton/styles' },
       { name: 'Состояния', path: '/components/textButton/states' },
+    ],
+  },
+  {
+    name: 'TextButtonMenu',
+    path: '/components/textButtonMenu',
+    routes: [
+      { name: 'Базовый пример', path: '/components/textButtonMenu' },
+      { name: 'Размеры и стили', path: '/components/textButtonMenu/styles' },
+      { name: 'Состояния', path: '/components/textButtonMenu/states' },
     ],
   },
   {
@@ -278,26 +287,3 @@ export const components = [
     ],
   },
 ];
-
-/*
-import { createFileRoute } from '@tanstack/react-router'
-import { ExampleSection } from '../../-helpers/examples';
-
-const ToggleBase = () => {
-  return (
-    <>
-      <ExampleSection>
-
-      </ExampleSection>
-    </>
-  );
-};
-
-export const Route = createFileRoute('/components/toggle/')({
-  component: () => <ToggleBase />,
-  staticData: {
-    title: '',
-    description: '',
-  },
-});
-*/

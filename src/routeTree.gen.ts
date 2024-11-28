@@ -16,6 +16,7 @@ import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
+import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
@@ -44,6 +45,8 @@ import { Route as ComponentsToggleSizesImport } from './routes/components/toggle
 import { Route as ComponentsToggleMobileImport } from './routes/components/toggle/mobile'
 import { Route as ComponentsToggleLabelPositionImport } from './routes/components/toggle/labelPosition'
 import { Route as ComponentsToggleExtraTextImport } from './routes/components/toggle/extraText'
+import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles'
+import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
 import { Route as ComponentsTextButtonStatesImport } from './routes/components/textButton/states'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
@@ -180,6 +183,13 @@ const ComponentsToggleIndexRoute = ComponentsToggleIndexImport.update({
   path: '/toggle/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsTextButtonMenuIndexRoute =
+  ComponentsTextButtonMenuIndexImport.update({
+    id: '/textButtonMenu/',
+    path: '/textButtonMenu/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTextButtonIndexRoute = ComponentsTextButtonIndexImport.update({
   id: '/textButton/',
@@ -362,6 +372,20 @@ const ComponentsToggleExtraTextRoute = ComponentsToggleExtraTextImport.update({
   path: '/toggle/extraText',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsTextButtonMenuStylesRoute =
+  ComponentsTextButtonMenuStylesImport.update({
+    id: '/textButtonMenu/styles',
+    path: '/textButtonMenu/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextButtonMenuStatesRoute =
+  ComponentsTextButtonMenuStatesImport.update({
+    id: '/textButtonMenu/states',
+    path: '/textButtonMenu/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTextButtonStylesRoute = ComponentsTextButtonStylesImport.update(
   {
@@ -1848,6 +1872,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textButtonMenu/states': {
+      id: '/components/textButtonMenu/states'
+      path: '/textButtonMenu/states'
+      fullPath: '/components/textButtonMenu/states'
+      preLoaderRoute: typeof ComponentsTextButtonMenuStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textButtonMenu/styles': {
+      id: '/components/textButtonMenu/styles'
+      path: '/textButtonMenu/styles'
+      fullPath: '/components/textButtonMenu/styles'
+      preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/extraText': {
       id: '/components/toggle/extraText'
       path: '/toggle/extraText'
@@ -2044,6 +2082,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textButtonMenu/': {
+      id: '/components/textButtonMenu/'
+      path: '/textButtonMenu'
+      fullPath: '/components/textButtonMenu'
+      preLoaderRoute: typeof ComponentsTextButtonMenuIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/': {
       id: '/components/toggle/'
       path: '/toggle'
@@ -2161,6 +2206,8 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
   ComponentsTextButtonStatesRoute: typeof ComponentsTextButtonStatesRoute
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
+  ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
+  ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute
   ComponentsToggleExtraTextRoute: typeof ComponentsToggleExtraTextRoute
   ComponentsToggleLabelPositionRoute: typeof ComponentsToggleLabelPositionRoute
   ComponentsToggleMobileRoute: typeof ComponentsToggleMobileRoute
@@ -2189,6 +2236,7 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
+  ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
 }
 
@@ -2326,6 +2374,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsTextButtonStatesRoute: ComponentsTextButtonStatesRoute,
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
+  ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
+  ComponentsTextButtonMenuStylesRoute: ComponentsTextButtonMenuStylesRoute,
   ComponentsToggleExtraTextRoute: ComponentsToggleExtraTextRoute,
   ComponentsToggleLabelPositionRoute: ComponentsToggleLabelPositionRoute,
   ComponentsToggleMobileRoute: ComponentsToggleMobileRoute,
@@ -2354,6 +2404,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
+  ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
 }
 
@@ -2481,6 +2532,8 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
+  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
+  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -2509,6 +2562,7 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
+  '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
 }
 
@@ -2621,6 +2675,8 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
+  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
+  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -2649,6 +2705,7 @@ export interface FileRoutesByTo {
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
+  '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
 }
 
@@ -2762,6 +2819,8 @@ export interface FileRoutesById {
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
+  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
+  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -2790,6 +2849,7 @@ export interface FileRoutesById {
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
+  '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
 }
 
@@ -2904,6 +2964,8 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSpinner'
     | '/components/textButton/states'
     | '/components/textButton/styles'
+    | '/components/textButtonMenu/states'
+    | '/components/textButtonMenu/styles'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -2932,6 +2994,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton'
     | '/components/table'
     | '/components/textButton'
+    | '/components/textButtonMenu'
     | '/components/toggle'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -3043,6 +3106,8 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSpinner'
     | '/components/textButton/states'
     | '/components/textButton/styles'
+    | '/components/textButtonMenu/states'
+    | '/components/textButtonMenu/styles'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -3071,6 +3136,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton'
     | '/components/table'
     | '/components/textButton'
+    | '/components/textButtonMenu'
     | '/components/toggle'
   id:
     | '__root__'
@@ -3182,6 +3248,8 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScrollSpinner'
     | '/components/textButton/states'
     | '/components/textButton/styles'
+    | '/components/textButtonMenu/states'
+    | '/components/textButtonMenu/styles'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -3210,6 +3278,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton/'
     | '/components/table/'
     | '/components/textButton/'
+    | '/components/textButtonMenu/'
     | '/components/toggle/'
   fileRoutesById: FileRoutesById
 }
@@ -3351,6 +3420,8 @@ export const routeTree = rootRoute
         "/components/table/loadOnScrollSpinner",
         "/components/textButton/states",
         "/components/textButton/styles",
+        "/components/textButtonMenu/states",
+        "/components/textButtonMenu/styles",
         "/components/toggle/extraText",
         "/components/toggle/labelPosition",
         "/components/toggle/mobile",
@@ -3379,6 +3450,7 @@ export const routeTree = rootRoute
         "/components/radiobutton/",
         "/components/table/",
         "/components/textButton/",
+        "/components/textButtonMenu/",
         "/components/toggle/"
       ]
     },
@@ -3808,6 +3880,14 @@ export const routeTree = rootRoute
       "filePath": "components/textButton/styles.tsx",
       "parent": "/components"
     },
+    "/components/textButtonMenu/states": {
+      "filePath": "components/textButtonMenu/states.tsx",
+      "parent": "/components"
+    },
+    "/components/textButtonMenu/styles": {
+      "filePath": "components/textButtonMenu/styles.tsx",
+      "parent": "/components"
+    },
     "/components/toggle/extraText": {
       "filePath": "components/toggle/extraText.tsx",
       "parent": "/components"
@@ -3918,6 +3998,10 @@ export const routeTree = rootRoute
     },
     "/components/textButton/": {
       "filePath": "components/textButton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/textButtonMenu/": {
+      "filePath": "components/textButtonMenu/index.tsx",
       "parent": "/components"
     },
     "/components/toggle/": {
