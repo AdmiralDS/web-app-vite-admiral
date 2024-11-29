@@ -152,6 +152,19 @@ export const components = [
     ],
   },
   {
+    name: 'FloatingButton',
+    path: '/components/floatingButton',
+    routes: [
+      { name: 'Базовый пример', path: '/components/floatingButton' },
+      { name: 'Размеры и стили', path: '/components/floatingButton/styles' },
+      { name: 'Пример с Tooltip', path: '/components/floatingButton/tooltip' },
+      { name: 'Расположение', path: '/components/floatingButton/position' },
+      { name: 'Mobile', path: '/components/floatingButton/mobile' },
+      { name: 'FloatingButtonMenu', path: '/components/floatingButton/withMenu' },
+      { name: 'FloatingButtonMenu. Режимы использования', path: '/components/floatingButton/withMenuModes' },
+    ],
+  },
+  {
     name: 'Carousel',
     path: '/components/carousel',
     routes: [

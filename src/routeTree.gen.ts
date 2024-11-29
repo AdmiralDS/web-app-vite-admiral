@@ -29,6 +29,7 @@ import { Route as ComponentsImageViewerIndexImport } from './routes/components/i
 import { Route as ComponentsIconPlacementIndexImport } from './routes/components/iconPlacement/index'
 import { Route as ComponentsIconButtonGroupIndexImport } from './routes/components/iconButtonGroup/index'
 import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index'
+import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
 import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
@@ -91,6 +92,12 @@ import { Route as ComponentsIconButtonGroupStatesImport } from './routes/compone
 import { Route as ComponentsIconButtonGroupSizesImport } from './routes/components/iconButtonGroup/sizes'
 import { Route as ComponentsIconButtonStylesImport } from './routes/components/iconButton/styles'
 import { Route as ComponentsIconButtonStatesImport } from './routes/components/iconButton/states'
+import { Route as ComponentsFloatingButtonWithMenuModesImport } from './routes/components/floatingButton/withMenuModes'
+import { Route as ComponentsFloatingButtonWithMenuImport } from './routes/components/floatingButton/withMenu'
+import { Route as ComponentsFloatingButtonTooltipImport } from './routes/components/floatingButton/tooltip'
+import { Route as ComponentsFloatingButtonStylesImport } from './routes/components/floatingButton/styles'
+import { Route as ComponentsFloatingButtonPositionImport } from './routes/components/floatingButton/position'
+import { Route as ComponentsFloatingButtonMobileImport } from './routes/components/floatingButton/mobile'
 import { Route as ComponentsDropdownMenuWithTooltipImport } from './routes/components/dropdown/menuWithTooltip'
 import { Route as ComponentsDropdownMenuWithRadioButtonImport } from './routes/components/dropdown/menuWithRadioButton'
 import { Route as ComponentsDropdownMenuWithIconsImport } from './routes/components/dropdown/menuWithIcons'
@@ -289,6 +296,13 @@ const ComponentsIconButtonIndexRoute = ComponentsIconButtonIndexImport.update({
   path: '/iconButton/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsFloatingButtonIndexRoute =
+  ComponentsFloatingButtonIndexImport.update({
+    id: '/floatingButton/',
+    path: '/floatingButton/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDropdownIndexRoute = ComponentsDropdownIndexImport.update({
   id: '/dropdown/',
@@ -705,6 +719,48 @@ const ComponentsIconButtonStatesRoute = ComponentsIconButtonStatesImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsFloatingButtonWithMenuModesRoute =
+  ComponentsFloatingButtonWithMenuModesImport.update({
+    id: '/floatingButton/withMenuModes',
+    path: '/floatingButton/withMenuModes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFloatingButtonWithMenuRoute =
+  ComponentsFloatingButtonWithMenuImport.update({
+    id: '/floatingButton/withMenu',
+    path: '/floatingButton/withMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFloatingButtonTooltipRoute =
+  ComponentsFloatingButtonTooltipImport.update({
+    id: '/floatingButton/tooltip',
+    path: '/floatingButton/tooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFloatingButtonStylesRoute =
+  ComponentsFloatingButtonStylesImport.update({
+    id: '/floatingButton/styles',
+    path: '/floatingButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFloatingButtonPositionRoute =
+  ComponentsFloatingButtonPositionImport.update({
+    id: '/floatingButton/position',
+    path: '/floatingButton/position',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFloatingButtonMobileRoute =
+  ComponentsFloatingButtonMobileImport.update({
+    id: '/floatingButton/mobile',
+    path: '/floatingButton/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDropdownMenuWithTooltipRoute =
   ComponentsDropdownMenuWithTooltipImport.update({
@@ -1834,6 +1890,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDropdownMenuWithTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/floatingButton/mobile': {
+      id: '/components/floatingButton/mobile'
+      path: '/floatingButton/mobile'
+      fullPath: '/components/floatingButton/mobile'
+      preLoaderRoute: typeof ComponentsFloatingButtonMobileImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/floatingButton/position': {
+      id: '/components/floatingButton/position'
+      path: '/floatingButton/position'
+      fullPath: '/components/floatingButton/position'
+      preLoaderRoute: typeof ComponentsFloatingButtonPositionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/floatingButton/styles': {
+      id: '/components/floatingButton/styles'
+      path: '/floatingButton/styles'
+      fullPath: '/components/floatingButton/styles'
+      preLoaderRoute: typeof ComponentsFloatingButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/floatingButton/tooltip': {
+      id: '/components/floatingButton/tooltip'
+      path: '/floatingButton/tooltip'
+      fullPath: '/components/floatingButton/tooltip'
+      preLoaderRoute: typeof ComponentsFloatingButtonTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/floatingButton/withMenu': {
+      id: '/components/floatingButton/withMenu'
+      path: '/floatingButton/withMenu'
+      fullPath: '/components/floatingButton/withMenu'
+      preLoaderRoute: typeof ComponentsFloatingButtonWithMenuImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/floatingButton/withMenuModes': {
+      id: '/components/floatingButton/withMenuModes'
+      path: '/floatingButton/withMenuModes'
+      fullPath: '/components/floatingButton/withMenuModes'
+      preLoaderRoute: typeof ComponentsFloatingButtonWithMenuModesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButton/states': {
       id: '/components/iconButton/states'
       path: '/iconButton/states'
@@ -2268,6 +2366,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDropdownIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/floatingButton/': {
+      id: '/components/floatingButton/'
+      path: '/floatingButton'
+      fullPath: '/components/floatingButton'
+      preLoaderRoute: typeof ComponentsFloatingButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButton/': {
       id: '/components/iconButton/'
       path: '/iconButton'
@@ -2451,6 +2556,12 @@ interface ComponentsRouteChildren {
   ComponentsDropdownMenuWithIconsRoute: typeof ComponentsDropdownMenuWithIconsRoute
   ComponentsDropdownMenuWithRadioButtonRoute: typeof ComponentsDropdownMenuWithRadioButtonRoute
   ComponentsDropdownMenuWithTooltipRoute: typeof ComponentsDropdownMenuWithTooltipRoute
+  ComponentsFloatingButtonMobileRoute: typeof ComponentsFloatingButtonMobileRoute
+  ComponentsFloatingButtonPositionRoute: typeof ComponentsFloatingButtonPositionRoute
+  ComponentsFloatingButtonStylesRoute: typeof ComponentsFloatingButtonStylesRoute
+  ComponentsFloatingButtonTooltipRoute: typeof ComponentsFloatingButtonTooltipRoute
+  ComponentsFloatingButtonWithMenuRoute: typeof ComponentsFloatingButtonWithMenuRoute
+  ComponentsFloatingButtonWithMenuModesRoute: typeof ComponentsFloatingButtonWithMenuModesRoute
   ComponentsIconButtonStatesRoute: typeof ComponentsIconButtonStatesRoute
   ComponentsIconButtonStylesRoute: typeof ComponentsIconButtonStylesRoute
   ComponentsIconButtonGroupSizesRoute: typeof ComponentsIconButtonGroupSizesRoute
@@ -2513,6 +2624,7 @@ interface ComponentsRouteChildren {
   ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
+  ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
   ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute
   ComponentsIconButtonGroupIndexRoute: typeof ComponentsIconButtonGroupIndexRoute
   ComponentsIconPlacementIndexRoute: typeof ComponentsIconPlacementIndexRoute
@@ -2633,6 +2745,13 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsDropdownMenuWithRadioButtonRoute,
   ComponentsDropdownMenuWithTooltipRoute:
     ComponentsDropdownMenuWithTooltipRoute,
+  ComponentsFloatingButtonMobileRoute: ComponentsFloatingButtonMobileRoute,
+  ComponentsFloatingButtonPositionRoute: ComponentsFloatingButtonPositionRoute,
+  ComponentsFloatingButtonStylesRoute: ComponentsFloatingButtonStylesRoute,
+  ComponentsFloatingButtonTooltipRoute: ComponentsFloatingButtonTooltipRoute,
+  ComponentsFloatingButtonWithMenuRoute: ComponentsFloatingButtonWithMenuRoute,
+  ComponentsFloatingButtonWithMenuModesRoute:
+    ComponentsFloatingButtonWithMenuModesRoute,
   ComponentsIconButtonStatesRoute: ComponentsIconButtonStatesRoute,
   ComponentsIconButtonStylesRoute: ComponentsIconButtonStylesRoute,
   ComponentsIconButtonGroupSizesRoute: ComponentsIconButtonGroupSizesRoute,
@@ -2700,6 +2819,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
+  ComponentsFloatingButtonIndexRoute: ComponentsFloatingButtonIndexRoute,
   ComponentsIconButtonIndexRoute: ComponentsIconButtonIndexRoute,
   ComponentsIconButtonGroupIndexRoute: ComponentsIconButtonGroupIndexRoute,
   ComponentsIconPlacementIndexRoute: ComponentsIconPlacementIndexRoute,
@@ -2815,6 +2935,12 @@ export interface FileRoutesByFullPath {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
+  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
+  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
+  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
+  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
+  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
   '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
   '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
   '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
@@ -2877,6 +3003,7 @@ export interface FileRoutesByFullPath {
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
   '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
@@ -2977,6 +3104,12 @@ export interface FileRoutesByTo {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
+  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
+  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
+  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
+  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
+  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
   '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
   '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
   '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
@@ -3039,6 +3172,7 @@ export interface FileRoutesByTo {
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
   '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
@@ -3140,6 +3274,12 @@ export interface FileRoutesById {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
+  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
+  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
+  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
+  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
+  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
   '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
   '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
   '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
@@ -3202,6 +3342,7 @@ export interface FileRoutesById {
   '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
+  '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
   '/components/iconButton/': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup/': typeof ComponentsIconButtonGroupIndexRoute
   '/components/iconPlacement/': typeof ComponentsIconPlacementIndexRoute
@@ -3304,6 +3445,12 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/floatingButton/mobile'
+    | '/components/floatingButton/position'
+    | '/components/floatingButton/styles'
+    | '/components/floatingButton/tooltip'
+    | '/components/floatingButton/withMenu'
+    | '/components/floatingButton/withMenuModes'
     | '/components/iconButton/states'
     | '/components/iconButton/styles'
     | '/components/iconButtonGroup/sizes'
@@ -3366,6 +3513,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/floatingButton'
     | '/components/iconButton'
     | '/components/iconButtonGroup'
     | '/components/iconPlacement'
@@ -3465,6 +3613,12 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/floatingButton/mobile'
+    | '/components/floatingButton/position'
+    | '/components/floatingButton/styles'
+    | '/components/floatingButton/tooltip'
+    | '/components/floatingButton/withMenu'
+    | '/components/floatingButton/withMenuModes'
     | '/components/iconButton/states'
     | '/components/iconButton/styles'
     | '/components/iconButtonGroup/sizes'
@@ -3527,6 +3681,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/floatingButton'
     | '/components/iconButton'
     | '/components/iconButtonGroup'
     | '/components/iconPlacement'
@@ -3626,6 +3781,12 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/floatingButton/mobile'
+    | '/components/floatingButton/position'
+    | '/components/floatingButton/styles'
+    | '/components/floatingButton/tooltip'
+    | '/components/floatingButton/withMenu'
+    | '/components/floatingButton/withMenuModes'
     | '/components/iconButton/states'
     | '/components/iconButton/styles'
     | '/components/iconButtonGroup/sizes'
@@ -3688,6 +3849,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher/'
     | '/components/drawer/'
     | '/components/dropdown/'
+    | '/components/floatingButton/'
     | '/components/iconButton/'
     | '/components/iconButtonGroup/'
     | '/components/iconPlacement/'
@@ -3817,6 +3979,12 @@ export const routeTree = rootRoute
         "/components/dropdown/menuWithIcons",
         "/components/dropdown/menuWithRadioButton",
         "/components/dropdown/menuWithTooltip",
+        "/components/floatingButton/mobile",
+        "/components/floatingButton/position",
+        "/components/floatingButton/styles",
+        "/components/floatingButton/tooltip",
+        "/components/floatingButton/withMenu",
+        "/components/floatingButton/withMenuModes",
         "/components/iconButton/states",
         "/components/iconButton/styles",
         "/components/iconButtonGroup/sizes",
@@ -3879,6 +4047,7 @@ export const routeTree = rootRoute
         "/components/contentSwitcher/",
         "/components/drawer/",
         "/components/dropdown/",
+        "/components/floatingButton/",
         "/components/iconButton/",
         "/components/iconButtonGroup/",
         "/components/iconPlacement/",
@@ -4221,6 +4390,30 @@ export const routeTree = rootRoute
       "filePath": "components/dropdown/menuWithTooltip.tsx",
       "parent": "/components"
     },
+    "/components/floatingButton/mobile": {
+      "filePath": "components/floatingButton/mobile.tsx",
+      "parent": "/components"
+    },
+    "/components/floatingButton/position": {
+      "filePath": "components/floatingButton/position.tsx",
+      "parent": "/components"
+    },
+    "/components/floatingButton/styles": {
+      "filePath": "components/floatingButton/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/floatingButton/tooltip": {
+      "filePath": "components/floatingButton/tooltip.tsx",
+      "parent": "/components"
+    },
+    "/components/floatingButton/withMenu": {
+      "filePath": "components/floatingButton/withMenu.tsx",
+      "parent": "/components"
+    },
+    "/components/floatingButton/withMenuModes": {
+      "filePath": "components/floatingButton/withMenuModes.tsx",
+      "parent": "/components"
+    },
     "/components/iconButton/states": {
       "filePath": "components/iconButton/states.tsx",
       "parent": "/components"
@@ -4467,6 +4660,10 @@ export const routeTree = rootRoute
     },
     "/components/dropdown/": {
       "filePath": "components/dropdown/index.tsx",
+      "parent": "/components"
+    },
+    "/components/floatingButton/": {
+      "filePath": "components/floatingButton/index.tsx",
       "parent": "/components"
     },
     "/components/iconButton/": {
