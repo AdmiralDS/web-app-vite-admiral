@@ -24,6 +24,7 @@ import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/r
 import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
+import { Route as ComponentsListIndexImport } from './routes/components/list/index'
 import { Route as ComponentsLinkIndexImport } from './routes/components/link/index'
 import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
 import { Route as ComponentsIconPlacementIndexImport } from './routes/components/iconPlacement/index'
@@ -80,6 +81,12 @@ import { Route as ComponentsMenuButtonMultiLevelMenuImport } from './routes/comp
 import { Route as ComponentsMenuButtonCheckboxAndTopPanelImport } from './routes/components/menuButton/checkboxAndTopPanel'
 import { Route as ComponentsMenuButtonCheckboxAndBottomPanelImport } from './routes/components/menuButton/checkboxAndBottomPanel'
 import { Route as ComponentsMenuButtonActionsImport } from './routes/components/menuButton/actions'
+import { Route as ComponentsListUnorderedListImport } from './routes/components/list/unorderedList'
+import { Route as ComponentsListOrderedListImport } from './routes/components/list/orderedList'
+import { Route as ComponentsListNestedImport } from './routes/components/list/nested'
+import { Route as ComponentsListMultilineImport } from './routes/components/list/multiline'
+import { Route as ComponentsListMarkerColorImport } from './routes/components/list/markerColor'
+import { Route as ComponentsListCustomMarkerImport } from './routes/components/list/customMarker'
 import { Route as ComponentsLinkWithIconImport } from './routes/components/link/withIcon'
 import { Route as ComponentsLinkStylesImport } from './routes/components/link/styles'
 import { Route as ComponentsLinkCssMixinImport } from './routes/components/link/cssMixin'
@@ -260,6 +267,12 @@ const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update(
 const ComponentsMenuButtonIndexRoute = ComponentsMenuButtonIndexImport.update({
   id: '/menuButton/',
   path: '/menuButton/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsListIndexRoute = ComponentsListIndexImport.update({
+  id: '/list/',
+  path: '/list/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -637,6 +650,45 @@ const ComponentsMenuButtonActionsRoute =
     path: '/menuButton/actions',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsListUnorderedListRoute =
+  ComponentsListUnorderedListImport.update({
+    id: '/list/unorderedList',
+    path: '/list/unorderedList',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsListOrderedListRoute = ComponentsListOrderedListImport.update({
+  id: '/list/orderedList',
+  path: '/list/orderedList',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsListNestedRoute = ComponentsListNestedImport.update({
+  id: '/list/nested',
+  path: '/list/nested',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsListMultilineRoute = ComponentsListMultilineImport.update({
+  id: '/list/multiline',
+  path: '/list/multiline',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsListMarkerColorRoute = ComponentsListMarkerColorImport.update({
+  id: '/list/markerColor',
+  path: '/list/markerColor',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsListCustomMarkerRoute = ComponentsListCustomMarkerImport.update(
+  {
+    id: '/list/customMarker',
+    path: '/list/customMarker',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsLinkWithIconRoute = ComponentsLinkWithIconImport.update({
   id: '/link/withIcon',
@@ -2016,6 +2068,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsLinkWithIconImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/list/customMarker': {
+      id: '/components/list/customMarker'
+      path: '/list/customMarker'
+      fullPath: '/components/list/customMarker'
+      preLoaderRoute: typeof ComponentsListCustomMarkerImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/list/markerColor': {
+      id: '/components/list/markerColor'
+      path: '/list/markerColor'
+      fullPath: '/components/list/markerColor'
+      preLoaderRoute: typeof ComponentsListMarkerColorImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/list/multiline': {
+      id: '/components/list/multiline'
+      path: '/list/multiline'
+      fullPath: '/components/list/multiline'
+      preLoaderRoute: typeof ComponentsListMultilineImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/list/nested': {
+      id: '/components/list/nested'
+      path: '/list/nested'
+      fullPath: '/components/list/nested'
+      preLoaderRoute: typeof ComponentsListNestedImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/list/orderedList': {
+      id: '/components/list/orderedList'
+      path: '/list/orderedList'
+      fullPath: '/components/list/orderedList'
+      preLoaderRoute: typeof ComponentsListOrderedListImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/list/unorderedList': {
+      id: '/components/list/unorderedList'
+      path: '/list/unorderedList'
+      fullPath: '/components/list/unorderedList'
+      preLoaderRoute: typeof ComponentsListUnorderedListImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/actions': {
       id: '/components/menuButton/actions'
       path: '/menuButton/actions'
@@ -2408,6 +2502,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsLinkIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/list/': {
+      id: '/components/list/'
+      path: '/list'
+      fullPath: '/components/list'
+      preLoaderRoute: typeof ComponentsListIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/': {
       id: '/components/menuButton/'
       path: '/menuButton'
@@ -2574,6 +2675,12 @@ interface ComponentsRouteChildren {
   ComponentsLinkCssMixinRoute: typeof ComponentsLinkCssMixinRoute
   ComponentsLinkStylesRoute: typeof ComponentsLinkStylesRoute
   ComponentsLinkWithIconRoute: typeof ComponentsLinkWithIconRoute
+  ComponentsListCustomMarkerRoute: typeof ComponentsListCustomMarkerRoute
+  ComponentsListMarkerColorRoute: typeof ComponentsListMarkerColorRoute
+  ComponentsListMultilineRoute: typeof ComponentsListMultilineRoute
+  ComponentsListNestedRoute: typeof ComponentsListNestedRoute
+  ComponentsListOrderedListRoute: typeof ComponentsListOrderedListRoute
+  ComponentsListUnorderedListRoute: typeof ComponentsListUnorderedListRoute
   ComponentsMenuButtonActionsRoute: typeof ComponentsMenuButtonActionsRoute
   ComponentsMenuButtonCheckboxAndBottomPanelRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   ComponentsMenuButtonCheckboxAndTopPanelRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -2630,6 +2737,7 @@ interface ComponentsRouteChildren {
   ComponentsIconPlacementIndexRoute: typeof ComponentsIconPlacementIndexRoute
   ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
   ComponentsLinkIndexRoute: typeof ComponentsLinkIndexRoute
+  ComponentsListIndexRoute: typeof ComponentsListIndexRoute
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
@@ -2764,6 +2872,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsLinkCssMixinRoute: ComponentsLinkCssMixinRoute,
   ComponentsLinkStylesRoute: ComponentsLinkStylesRoute,
   ComponentsLinkWithIconRoute: ComponentsLinkWithIconRoute,
+  ComponentsListCustomMarkerRoute: ComponentsListCustomMarkerRoute,
+  ComponentsListMarkerColorRoute: ComponentsListMarkerColorRoute,
+  ComponentsListMultilineRoute: ComponentsListMultilineRoute,
+  ComponentsListNestedRoute: ComponentsListNestedRoute,
+  ComponentsListOrderedListRoute: ComponentsListOrderedListRoute,
+  ComponentsListUnorderedListRoute: ComponentsListUnorderedListRoute,
   ComponentsMenuButtonActionsRoute: ComponentsMenuButtonActionsRoute,
   ComponentsMenuButtonCheckboxAndBottomPanelRoute:
     ComponentsMenuButtonCheckboxAndBottomPanelRoute,
@@ -2825,6 +2939,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsIconPlacementIndexRoute: ComponentsIconPlacementIndexRoute,
   ComponentsImageViewerIndexRoute: ComponentsImageViewerIndexRoute,
   ComponentsLinkIndexRoute: ComponentsLinkIndexRoute,
+  ComponentsListIndexRoute: ComponentsListIndexRoute,
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
@@ -2953,6 +3068,12 @@ export interface FileRoutesByFullPath {
   '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
   '/components/link/styles': typeof ComponentsLinkStylesRoute
   '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
+  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute
+  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute
+  '/components/list/multiline': typeof ComponentsListMultilineRoute
+  '/components/list/nested': typeof ComponentsListNestedRoute
+  '/components/list/orderedList': typeof ComponentsListOrderedListRoute
+  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -3009,6 +3130,7 @@ export interface FileRoutesByFullPath {
   '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/link': typeof ComponentsLinkIndexRoute
+  '/components/list': typeof ComponentsListIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
@@ -3122,6 +3244,12 @@ export interface FileRoutesByTo {
   '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
   '/components/link/styles': typeof ComponentsLinkStylesRoute
   '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
+  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute
+  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute
+  '/components/list/multiline': typeof ComponentsListMultilineRoute
+  '/components/list/nested': typeof ComponentsListNestedRoute
+  '/components/list/orderedList': typeof ComponentsListOrderedListRoute
+  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -3178,6 +3306,7 @@ export interface FileRoutesByTo {
   '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
   '/components/link': typeof ComponentsLinkIndexRoute
+  '/components/list': typeof ComponentsListIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
@@ -3292,6 +3421,12 @@ export interface FileRoutesById {
   '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
   '/components/link/styles': typeof ComponentsLinkStylesRoute
   '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
+  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute
+  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute
+  '/components/list/multiline': typeof ComponentsListMultilineRoute
+  '/components/list/nested': typeof ComponentsListNestedRoute
+  '/components/list/orderedList': typeof ComponentsListOrderedListRoute
+  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute
   '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
   '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
   '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
@@ -3348,6 +3483,7 @@ export interface FileRoutesById {
   '/components/iconPlacement/': typeof ComponentsIconPlacementIndexRoute
   '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
   '/components/link/': typeof ComponentsLinkIndexRoute
+  '/components/list/': typeof ComponentsListIndexRoute
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/pills/': typeof ComponentsPillsIndexRoute
@@ -3463,6 +3599,12 @@ export interface FileRouteTypes {
     | '/components/link/cssMixin'
     | '/components/link/styles'
     | '/components/link/withIcon'
+    | '/components/list/customMarker'
+    | '/components/list/markerColor'
+    | '/components/list/multiline'
+    | '/components/list/nested'
+    | '/components/list/orderedList'
+    | '/components/list/unorderedList'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3519,6 +3661,7 @@ export interface FileRouteTypes {
     | '/components/iconPlacement'
     | '/components/imageViewer'
     | '/components/link'
+    | '/components/list'
     | '/components/menuButton'
     | '/components/multiButton'
     | '/components/pills'
@@ -3631,6 +3774,12 @@ export interface FileRouteTypes {
     | '/components/link/cssMixin'
     | '/components/link/styles'
     | '/components/link/withIcon'
+    | '/components/list/customMarker'
+    | '/components/list/markerColor'
+    | '/components/list/multiline'
+    | '/components/list/nested'
+    | '/components/list/orderedList'
+    | '/components/list/unorderedList'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3687,6 +3836,7 @@ export interface FileRouteTypes {
     | '/components/iconPlacement'
     | '/components/imageViewer'
     | '/components/link'
+    | '/components/list'
     | '/components/menuButton'
     | '/components/multiButton'
     | '/components/pills'
@@ -3799,6 +3949,12 @@ export interface FileRouteTypes {
     | '/components/link/cssMixin'
     | '/components/link/styles'
     | '/components/link/withIcon'
+    | '/components/list/customMarker'
+    | '/components/list/markerColor'
+    | '/components/list/multiline'
+    | '/components/list/nested'
+    | '/components/list/orderedList'
+    | '/components/list/unorderedList'
     | '/components/menuButton/actions'
     | '/components/menuButton/checkboxAndBottomPanel'
     | '/components/menuButton/checkboxAndTopPanel'
@@ -3855,6 +4011,7 @@ export interface FileRouteTypes {
     | '/components/iconPlacement/'
     | '/components/imageViewer/'
     | '/components/link/'
+    | '/components/list/'
     | '/components/menuButton/'
     | '/components/multiButton/'
     | '/components/pills/'
@@ -3997,6 +4154,12 @@ export const routeTree = rootRoute
         "/components/link/cssMixin",
         "/components/link/styles",
         "/components/link/withIcon",
+        "/components/list/customMarker",
+        "/components/list/markerColor",
+        "/components/list/multiline",
+        "/components/list/nested",
+        "/components/list/orderedList",
+        "/components/list/unorderedList",
         "/components/menuButton/actions",
         "/components/menuButton/checkboxAndBottomPanel",
         "/components/menuButton/checkboxAndTopPanel",
@@ -4053,6 +4216,7 @@ export const routeTree = rootRoute
         "/components/iconPlacement/",
         "/components/imageViewer/",
         "/components/link/",
+        "/components/list/",
         "/components/menuButton/",
         "/components/multiButton/",
         "/components/pills/",
@@ -4462,6 +4626,30 @@ export const routeTree = rootRoute
       "filePath": "components/link/withIcon.tsx",
       "parent": "/components"
     },
+    "/components/list/customMarker": {
+      "filePath": "components/list/customMarker.tsx",
+      "parent": "/components"
+    },
+    "/components/list/markerColor": {
+      "filePath": "components/list/markerColor.tsx",
+      "parent": "/components"
+    },
+    "/components/list/multiline": {
+      "filePath": "components/list/multiline.tsx",
+      "parent": "/components"
+    },
+    "/components/list/nested": {
+      "filePath": "components/list/nested.tsx",
+      "parent": "/components"
+    },
+    "/components/list/orderedList": {
+      "filePath": "components/list/orderedList.tsx",
+      "parent": "/components"
+    },
+    "/components/list/unorderedList": {
+      "filePath": "components/list/unorderedList.tsx",
+      "parent": "/components"
+    },
     "/components/menuButton/actions": {
       "filePath": "components/menuButton/actions.tsx",
       "parent": "/components"
@@ -4684,6 +4872,10 @@ export const routeTree = rootRoute
     },
     "/components/link/": {
       "filePath": "components/link/index.tsx",
+      "parent": "/components"
+    },
+    "/components/list/": {
+      "filePath": "components/list/index.tsx",
       "parent": "/components"
     },
     "/components/menuButton/": {

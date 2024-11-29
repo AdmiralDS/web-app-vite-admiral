@@ -342,4 +342,17 @@ export const components = [
       { name: 'Загрузка данных при скролле со скелетоном', path: '/components/table/loadOnScrollSkeleton' },
     ],
   },
+  {
+    name: 'List',
+    path: '/components/list',
+    routes: [
+      { name: 'Базовый пример', path: '/components/list' },
+      { name: 'OrderedList. Виды и размеры.', path: '/components/list/orderedList' },
+      { name: 'UnorderedList. Виды и размеры.', path: '/components/list/unorderedList' },
+      { name: 'Многострочность и регулировка ширины списка', path: '/components/list/multiline' },
+      { name: 'Вложенные списки', path: '/components/list/nested' },
+      { name: 'Кастомный цвет маркера', path: '/components/list/markerColor' },
+      { name: 'Кастомизация маркеров', path: '/components/list/customMarker' },
+    ],
+  },
 ];
