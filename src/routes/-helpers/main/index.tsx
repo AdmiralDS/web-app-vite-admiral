@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { typography } from '@admiral-ds/react-ui';
 
+export * from './prismThemes/light';
+export * from './prismThemes/dark';
+export * from './CodeTabMenu';
+
 export const Title = styled.h5`
   ${typography['Header/H5']}
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
