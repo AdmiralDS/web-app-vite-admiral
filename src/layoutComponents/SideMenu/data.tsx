@@ -355,4 +355,13 @@ export const components = [
       { name: 'Кастомизация маркеров', path: '/components/list/customMarker' },
     ],
   },
+  {
+    name: 'Notification',
+    path: '/components/notification',
+    routes: [
+      { name: 'Базовый пример', path: '/components/notification' },
+      { name: 'Стили', path: '/components/notification/styles' },
+      { name: 'Состояния', path: '/components/notification/states' },
+    ],
+  },
 ];
