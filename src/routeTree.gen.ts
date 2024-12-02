@@ -16,6 +16,7 @@ import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
+import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
@@ -52,6 +53,9 @@ import { Route as ComponentsToggleSizesImport } from './routes/components/toggle
 import { Route as ComponentsToggleMobileImport } from './routes/components/toggle/mobile'
 import { Route as ComponentsToggleLabelPositionImport } from './routes/components/toggle/labelPosition'
 import { Route as ComponentsToggleExtraTextImport } from './routes/components/toggle/extraText'
+import { Route as ComponentsToastWithProgressBarImport } from './routes/components/toast/withProgressBar'
+import { Route as ComponentsToastPositionImport } from './routes/components/toast/position'
+import { Route as ComponentsToastLineNotificationImport } from './routes/components/toast/lineNotification'
 import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles'
 import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
@@ -217,6 +221,12 @@ const GeneralResourcesRoute = GeneralResourcesImport.update({
 const ComponentsToggleIndexRoute = ComponentsToggleIndexImport.update({
   id: '/toggle/',
   path: '/toggle/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsToastIndexRoute = ComponentsToastIndexImport.update({
+  id: '/toast/',
+  path: '/toast/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -453,6 +463,26 @@ const ComponentsToggleExtraTextRoute = ComponentsToggleExtraTextImport.update({
   path: '/toggle/extraText',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsToastWithProgressBarRoute =
+  ComponentsToastWithProgressBarImport.update({
+    id: '/toast/withProgressBar',
+    path: '/toast/withProgressBar',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsToastPositionRoute = ComponentsToastPositionImport.update({
+  id: '/toast/position',
+  path: '/toast/position',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsToastLineNotificationRoute =
+  ComponentsToastLineNotificationImport.update({
+    id: '/toast/lineNotification',
+    path: '/toast/lineNotification',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTextButtonMenuStylesRoute =
   ComponentsTextButtonMenuStylesImport.update({
@@ -2358,6 +2388,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/toast/lineNotification': {
+      id: '/components/toast/lineNotification'
+      path: '/toast/lineNotification'
+      fullPath: '/components/toast/lineNotification'
+      preLoaderRoute: typeof ComponentsToastLineNotificationImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/toast/position': {
+      id: '/components/toast/position'
+      path: '/toast/position'
+      fullPath: '/components/toast/position'
+      preLoaderRoute: typeof ComponentsToastPositionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/toast/withProgressBar': {
+      id: '/components/toast/withProgressBar'
+      path: '/toast/withProgressBar'
+      fullPath: '/components/toast/withProgressBar'
+      preLoaderRoute: typeof ComponentsToastWithProgressBarImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/extraText': {
       id: '/components/toggle/extraText'
       path: '/toggle/extraText'
@@ -2610,6 +2661,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonMenuIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/toast/': {
+      id: '/components/toast/'
+      path: '/toast'
+      fullPath: '/components/toast'
+      preLoaderRoute: typeof ComponentsToastIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/': {
       id: '/components/toggle/'
       path: '/toggle'
@@ -2758,6 +2816,9 @@ interface ComponentsRouteChildren {
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
   ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
   ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute
+  ComponentsToastLineNotificationRoute: typeof ComponentsToastLineNotificationRoute
+  ComponentsToastPositionRoute: typeof ComponentsToastPositionRoute
+  ComponentsToastWithProgressBarRoute: typeof ComponentsToastWithProgressBarRoute
   ComponentsToggleExtraTextRoute: typeof ComponentsToggleExtraTextRoute
   ComponentsToggleLabelPositionRoute: typeof ComponentsToggleLabelPositionRoute
   ComponentsToggleMobileRoute: typeof ComponentsToggleMobileRoute
@@ -2794,6 +2855,7 @@ interface ComponentsRouteChildren {
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
+  ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
 }
 
@@ -2963,6 +3025,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
   ComponentsTextButtonMenuStylesRoute: ComponentsTextButtonMenuStylesRoute,
+  ComponentsToastLineNotificationRoute: ComponentsToastLineNotificationRoute,
+  ComponentsToastPositionRoute: ComponentsToastPositionRoute,
+  ComponentsToastWithProgressBarRoute: ComponentsToastWithProgressBarRoute,
   ComponentsToggleExtraTextRoute: ComponentsToggleExtraTextRoute,
   ComponentsToggleLabelPositionRoute: ComponentsToggleLabelPositionRoute,
   ComponentsToggleMobileRoute: ComponentsToggleMobileRoute,
@@ -2999,6 +3064,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
+  ComponentsToastIndexRoute: ComponentsToastIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
 }
 
@@ -3157,6 +3223,9 @@ export interface FileRoutesByFullPath {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
+  '/components/toast/position': typeof ComponentsToastPositionRoute
+  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -3193,6 +3262,7 @@ export interface FileRoutesByFullPath {
   '/components/tag': typeof ComponentsTagIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
 }
 
@@ -3336,6 +3406,9 @@ export interface FileRoutesByTo {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
+  '/components/toast/position': typeof ComponentsToastPositionRoute
+  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -3372,6 +3445,7 @@ export interface FileRoutesByTo {
   '/components/tag': typeof ComponentsTagIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
 }
 
@@ -3516,6 +3590,9 @@ export interface FileRoutesById {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
+  '/components/toast/position': typeof ComponentsToastPositionRoute
+  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -3552,6 +3629,7 @@ export interface FileRoutesById {
   '/components/tag/': typeof ComponentsTagIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/toast/': typeof ComponentsToastIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
 }
 
@@ -3697,6 +3775,9 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/toast/lineNotification'
+    | '/components/toast/position'
+    | '/components/toast/withProgressBar'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -3733,6 +3814,7 @@ export interface FileRouteTypes {
     | '/components/tag'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/toast'
     | '/components/toggle'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -3875,6 +3957,9 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/toast/lineNotification'
+    | '/components/toast/position'
+    | '/components/toast/withProgressBar'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -3911,6 +3996,7 @@ export interface FileRouteTypes {
     | '/components/tag'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/toast'
     | '/components/toggle'
   id:
     | '__root__'
@@ -4053,6 +4139,9 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/toast/lineNotification'
+    | '/components/toast/position'
+    | '/components/toast/withProgressBar'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -4089,6 +4178,7 @@ export interface FileRouteTypes {
     | '/components/tag/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
+    | '/components/toast/'
     | '/components/toggle/'
   fileRoutesById: FileRoutesById
 }
@@ -4261,6 +4351,9 @@ export const routeTree = rootRoute
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
         "/components/textButtonMenu/styles",
+        "/components/toast/lineNotification",
+        "/components/toast/position",
+        "/components/toast/withProgressBar",
         "/components/toggle/extraText",
         "/components/toggle/labelPosition",
         "/components/toggle/mobile",
@@ -4297,6 +4390,7 @@ export const routeTree = rootRoute
         "/components/tag/",
         "/components/textButton/",
         "/components/textButtonMenu/",
+        "/components/toast/",
         "/components/toggle/"
       ]
     },
@@ -4850,6 +4944,18 @@ export const routeTree = rootRoute
       "filePath": "components/textButtonMenu/styles.tsx",
       "parent": "/components"
     },
+    "/components/toast/lineNotification": {
+      "filePath": "components/toast/lineNotification.tsx",
+      "parent": "/components"
+    },
+    "/components/toast/position": {
+      "filePath": "components/toast/position.tsx",
+      "parent": "/components"
+    },
+    "/components/toast/withProgressBar": {
+      "filePath": "components/toast/withProgressBar.tsx",
+      "parent": "/components"
+    },
     "/components/toggle/extraText": {
       "filePath": "components/toggle/extraText.tsx",
       "parent": "/components"
@@ -4992,6 +5098,10 @@ export const routeTree = rootRoute
     },
     "/components/textButtonMenu/": {
       "filePath": "components/textButtonMenu/index.tsx",
+      "parent": "/components"
+    },
+    "/components/toast/": {
+      "filePath": "components/toast/index.tsx",
       "parent": "/components"
     },
     "/components/toggle/": {

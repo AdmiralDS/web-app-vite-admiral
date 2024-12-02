@@ -364,4 +364,14 @@ export const components = [
       { name: 'Состояния', path: '/components/notification/states' },
     ],
   },
+  {
+    name: 'Toast',
+    path: '/components/toast',
+    routes: [
+      { name: 'Базовый пример', path: '/components/toast' },
+      { name: 'Расположение уведомлений', path: '/components/toast/position' },
+      { name: 'Опция Countdown', path: '/components/toast/withProgressBar' },
+      { name: 'Line Notification', path: '/components/toast/lineNotification' },
+    ],
+  },
 ];
