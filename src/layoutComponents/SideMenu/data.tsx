@@ -1,4 +1,4 @@
-export const components = [
+const data = [
   {
     name: 'Accordion',
     path: '/components/accordion',
@@ -383,3 +383,5 @@ export const components = [
     ],
   },
 ];
+
+export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

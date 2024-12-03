@@ -15,6 +15,7 @@ import { Route as GeneralImport } from './routes/general'
 import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
+import { Route as GeneralInstallationImport } from './routes/general/installation'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
@@ -217,6 +218,12 @@ const IndexRoute = IndexImport.update({
 const GeneralResourcesRoute = GeneralResourcesImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => GeneralRoute,
+} as any)
+
+const GeneralInstallationRoute = GeneralInstallationImport.update({
+  id: '/installation',
+  path: '/installation',
   getParentRoute: () => GeneralRoute,
 } as any)
 
@@ -1451,6 +1458,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/general'
       preLoaderRoute: typeof GeneralImport
       parentRoute: typeof rootRoute
+    }
+    '/general/installation': {
+      id: '/general/installation'
+      path: '/installation'
+      fullPath: '/general/installation'
+      preLoaderRoute: typeof GeneralInstallationImport
+      parentRoute: typeof GeneralImport
     }
     '/general/resources': {
       id: '/general/resources'
@@ -3107,10 +3121,12 @@ const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
 )
 
 interface GeneralRouteChildren {
+  GeneralInstallationRoute: typeof GeneralInstallationRoute
   GeneralResourcesRoute: typeof GeneralResourcesRoute
 }
 
 const GeneralRouteChildren: GeneralRouteChildren = {
+  GeneralInstallationRoute: GeneralInstallationRoute,
   GeneralResourcesRoute: GeneralResourcesRoute,
 }
 
@@ -3121,6 +3137,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
@@ -3306,6 +3323,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
@@ -3492,6 +3510,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
@@ -3679,6 +3698,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/installation'
     | '/general/resources'
     | '/components/accordion/accordionDimension'
     | '/components/accordion/accordionDivider'
@@ -3863,6 +3883,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/installation'
     | '/general/resources'
     | '/components/accordion/accordionDimension'
     | '/components/accordion/accordionDivider'
@@ -4047,6 +4068,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/installation'
     | '/general/resources'
     | '/components/accordion/accordionDimension'
     | '/components/accordion/accordionDivider'
@@ -4445,8 +4467,13 @@ export const routeTree = rootRoute
     "/general": {
       "filePath": "general.tsx",
       "children": [
+        "/general/installation",
         "/general/resources"
       ]
+    },
+    "/general/installation": {
+      "filePath": "general/installation.tsx",
+      "parent": "/general"
     },
     "/general/resources": {
       "filePath": "general/resources.tsx",
