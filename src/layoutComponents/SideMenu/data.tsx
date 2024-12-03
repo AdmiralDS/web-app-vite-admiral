@@ -374,4 +374,12 @@ export const components = [
       { name: 'Line Notification', path: '/components/toast/lineNotification' },
     ],
   },
+  {
+    name: 'OverflowMenu',
+    path: '/components/overflowMenu',
+    routes: [
+      { name: 'Базовый пример', path: '/components/overflowMenu' },
+      { name: 'Размеры и ориентация', path: '/components/overflowMenu/styles' },
+    ],
+  },
 ];

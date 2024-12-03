@@ -23,6 +23,7 @@ import { Route as ComponentsTagIndexImport } from './routes/components/tag/index
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
+import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
 import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
@@ -76,6 +77,7 @@ import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/componen
 import { Route as ComponentsPillsTooltipImport } from './routes/components/pills/tooltip'
 import { Route as ComponentsPillsNestedImport } from './routes/components/pills/nested'
 import { Route as ComponentsPillsMenuImport } from './routes/components/pills/menu'
+import { Route as ComponentsOverflowMenuStylesImport } from './routes/components/overflowMenu/styles'
 import { Route as ComponentsNotificationStylesImport } from './routes/components/notification/styles'
 import { Route as ComponentsNotificationStatesImport } from './routes/components/notification/states'
 import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
@@ -268,6 +270,13 @@ const ComponentsPillsIndexRoute = ComponentsPillsIndexImport.update({
   path: '/pills/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsOverflowMenuIndexRoute =
+  ComponentsOverflowMenuIndexImport.update({
+    id: '/overflowMenu/',
+    path: '/overflowMenu/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsNotificationIndexRoute =
   ComponentsNotificationIndexImport.update({
@@ -618,6 +627,13 @@ const ComponentsPillsMenuRoute = ComponentsPillsMenuImport.update({
   path: '/pills/menu',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsOverflowMenuStylesRoute =
+  ComponentsOverflowMenuStylesImport.update({
+    id: '/overflowMenu/styles',
+    path: '/overflowMenu/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsNotificationStylesRoute =
   ComponentsNotificationStylesImport.update({
@@ -2248,6 +2264,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsNotificationStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/overflowMenu/styles': {
+      id: '/components/overflowMenu/styles'
+      path: '/overflowMenu/styles'
+      fullPath: '/components/overflowMenu/styles'
+      preLoaderRoute: typeof ComponentsOverflowMenuStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/menu': {
       id: '/components/pills/menu'
       path: '/pills/menu'
@@ -2619,6 +2642,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsNotificationIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/overflowMenu/': {
+      id: '/components/overflowMenu/'
+      path: '/overflowMenu'
+      fullPath: '/components/overflowMenu'
+      preLoaderRoute: typeof ComponentsOverflowMenuIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/': {
       id: '/components/pills/'
       path: '/pills'
@@ -2796,6 +2826,7 @@ interface ComponentsRouteChildren {
   ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
   ComponentsNotificationStatesRoute: typeof ComponentsNotificationStatesRoute
   ComponentsNotificationStylesRoute: typeof ComponentsNotificationStylesRoute
+  ComponentsOverflowMenuStylesRoute: typeof ComponentsOverflowMenuStylesRoute
   ComponentsPillsMenuRoute: typeof ComponentsPillsMenuRoute
   ComponentsPillsNestedRoute: typeof ComponentsPillsNestedRoute
   ComponentsPillsTooltipRoute: typeof ComponentsPillsTooltipRoute
@@ -2849,6 +2880,7 @@ interface ComponentsRouteChildren {
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute
+  ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
   ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
@@ -3003,6 +3035,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiButtonWithIconRoute: ComponentsMultiButtonWithIconRoute,
   ComponentsNotificationStatesRoute: ComponentsNotificationStatesRoute,
   ComponentsNotificationStylesRoute: ComponentsNotificationStylesRoute,
+  ComponentsOverflowMenuStylesRoute: ComponentsOverflowMenuStylesRoute,
   ComponentsPillsMenuRoute: ComponentsPillsMenuRoute,
   ComponentsPillsNestedRoute: ComponentsPillsNestedRoute,
   ComponentsPillsTooltipRoute: ComponentsPillsTooltipRoute,
@@ -3058,6 +3091,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsNotificationIndexRoute: ComponentsNotificationIndexRoute,
+  ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
   ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
@@ -3203,6 +3237,7 @@ export interface FileRoutesByFullPath {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -3256,6 +3291,7 @@ export interface FileRoutesByFullPath {
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -3386,6 +3422,7 @@ export interface FileRoutesByTo {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -3439,6 +3476,7 @@ export interface FileRoutesByTo {
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -3570,6 +3608,7 @@ export interface FileRoutesById {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -3623,6 +3662,7 @@ export interface FileRoutesById {
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/notification/': typeof ComponentsNotificationIndexRoute
+  '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
   '/components/pills/': typeof ComponentsPillsIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
@@ -3755,6 +3795,7 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/overflowMenu/styles'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -3808,6 +3849,7 @@ export interface FileRouteTypes {
     | '/components/menuButton'
     | '/components/multiButton'
     | '/components/notification'
+    | '/components/overflowMenu'
     | '/components/pills'
     | '/components/radiobutton'
     | '/components/table'
@@ -3937,6 +3979,7 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/overflowMenu/styles'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -3990,6 +4033,7 @@ export interface FileRouteTypes {
     | '/components/menuButton'
     | '/components/multiButton'
     | '/components/notification'
+    | '/components/overflowMenu'
     | '/components/pills'
     | '/components/radiobutton'
     | '/components/table'
@@ -4119,6 +4163,7 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/overflowMenu/styles'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -4172,6 +4217,7 @@ export interface FileRouteTypes {
     | '/components/menuButton/'
     | '/components/multiButton/'
     | '/components/notification/'
+    | '/components/overflowMenu/'
     | '/components/pills/'
     | '/components/radiobutton/'
     | '/components/table/'
@@ -4331,6 +4377,7 @@ export const routeTree = rootRoute
         "/components/multiButton/withIcon",
         "/components/notification/states",
         "/components/notification/styles",
+        "/components/overflowMenu/styles",
         "/components/pills/menu",
         "/components/pills/nested",
         "/components/pills/tooltip",
@@ -4384,6 +4431,7 @@ export const routeTree = rootRoute
         "/components/menuButton/",
         "/components/multiButton/",
         "/components/notification/",
+        "/components/overflowMenu/",
         "/components/pills/",
         "/components/radiobutton/",
         "/components/table/",
@@ -4864,6 +4912,10 @@ export const routeTree = rootRoute
       "filePath": "components/notification/styles.tsx",
       "parent": "/components"
     },
+    "/components/overflowMenu/styles": {
+      "filePath": "components/overflowMenu/styles.tsx",
+      "parent": "/components"
+    },
     "/components/pills/menu": {
       "filePath": "components/pills/menu.tsx",
       "parent": "/components"
@@ -5074,6 +5126,10 @@ export const routeTree = rootRoute
     },
     "/components/notification/": {
       "filePath": "components/notification/index.tsx",
+      "parent": "/components"
+    },
+    "/components/overflowMenu/": {
+      "filePath": "components/overflowMenu/index.tsx",
       "parent": "/components"
     },
     "/components/pills/": {
