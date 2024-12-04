@@ -27,6 +27,7 @@ import { Route as ComponentsPillsIndexImport } from './routes/components/pills/i
 import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
 import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
+import { Route as ComponentsModalIndexImport } from './routes/components/modal/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
 import { Route as ComponentsListIndexImport } from './routes/components/list/index'
 import { Route as ComponentsLinkIndexImport } from './routes/components/link/index'
@@ -84,6 +85,12 @@ import { Route as ComponentsNotificationStatesImport } from './routes/components
 import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
 import { Route as ComponentsMultiButtonStylesImport } from './routes/components/multiButton/styles'
 import { Route as ComponentsMultiButtonStatesImport } from './routes/components/multiButton/states'
+import { Route as ComponentsModalVariantsImport } from './routes/components/modal/variants'
+import { Route as ComponentsModalStatusIconsImport } from './routes/components/modal/statusIcons'
+import { Route as ComponentsModalSizesImport } from './routes/components/modal/sizes'
+import { Route as ComponentsModalScrollImport } from './routes/components/modal/scroll'
+import { Route as ComponentsModalCustomOverlayImport } from './routes/components/modal/customOverlay'
+import { Route as ComponentsModalCloseIconImport } from './routes/components/modal/closeIcon'
 import { Route as ComponentsMenuButtonWithIconImport } from './routes/components/menuButton/withIcon'
 import { Route as ComponentsMenuButtonStylesImport } from './routes/components/menuButton/styles'
 import { Route as ComponentsMenuButtonStatesImport } from './routes/components/menuButton/states'
@@ -299,6 +306,12 @@ const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsModalIndexRoute = ComponentsModalIndexImport.update({
+  id: '/modal/',
+  path: '/modal/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsMenuButtonIndexRoute = ComponentsMenuButtonIndexImport.update({
   id: '/menuButton/',
@@ -676,6 +689,45 @@ const ComponentsMultiButtonStatesRoute =
     path: '/multiButton/states',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsModalVariantsRoute = ComponentsModalVariantsImport.update({
+  id: '/modal/variants',
+  path: '/modal/variants',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsModalStatusIconsRoute = ComponentsModalStatusIconsImport.update(
+  {
+    id: '/modal/statusIcons',
+    path: '/modal/statusIcons',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsModalSizesRoute = ComponentsModalSizesImport.update({
+  id: '/modal/sizes',
+  path: '/modal/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsModalScrollRoute = ComponentsModalScrollImport.update({
+  id: '/modal/scroll',
+  path: '/modal/scroll',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsModalCustomOverlayRoute =
+  ComponentsModalCustomOverlayImport.update({
+    id: '/modal/customOverlay',
+    path: '/modal/customOverlay',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsModalCloseIconRoute = ComponentsModalCloseIconImport.update({
+  id: '/modal/closeIcon',
+  path: '/modal/closeIcon',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsMenuButtonWithIconRoute =
   ComponentsMenuButtonWithIconImport.update({
@@ -2243,6 +2295,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMenuButtonWithIconImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/modal/closeIcon': {
+      id: '/components/modal/closeIcon'
+      path: '/modal/closeIcon'
+      fullPath: '/components/modal/closeIcon'
+      preLoaderRoute: typeof ComponentsModalCloseIconImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/modal/customOverlay': {
+      id: '/components/modal/customOverlay'
+      path: '/modal/customOverlay'
+      fullPath: '/components/modal/customOverlay'
+      preLoaderRoute: typeof ComponentsModalCustomOverlayImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/modal/scroll': {
+      id: '/components/modal/scroll'
+      path: '/modal/scroll'
+      fullPath: '/components/modal/scroll'
+      preLoaderRoute: typeof ComponentsModalScrollImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/modal/sizes': {
+      id: '/components/modal/sizes'
+      path: '/modal/sizes'
+      fullPath: '/components/modal/sizes'
+      preLoaderRoute: typeof ComponentsModalSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/modal/statusIcons': {
+      id: '/components/modal/statusIcons'
+      path: '/modal/statusIcons'
+      fullPath: '/components/modal/statusIcons'
+      preLoaderRoute: typeof ComponentsModalStatusIconsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/modal/variants': {
+      id: '/components/modal/variants'
+      path: '/modal/variants'
+      fullPath: '/components/modal/variants'
+      preLoaderRoute: typeof ComponentsModalVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiButton/states': {
       id: '/components/multiButton/states'
       path: '/multiButton/states'
@@ -2642,6 +2736,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMenuButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/modal/': {
+      id: '/components/modal/'
+      path: '/modal'
+      fullPath: '/components/modal'
+      preLoaderRoute: typeof ComponentsModalIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiButton/': {
       id: '/components/multiButton/'
       path: '/multiButton'
@@ -2835,6 +2936,12 @@ interface ComponentsRouteChildren {
   ComponentsMenuButtonStatesRoute: typeof ComponentsMenuButtonStatesRoute
   ComponentsMenuButtonStylesRoute: typeof ComponentsMenuButtonStylesRoute
   ComponentsMenuButtonWithIconRoute: typeof ComponentsMenuButtonWithIconRoute
+  ComponentsModalCloseIconRoute: typeof ComponentsModalCloseIconRoute
+  ComponentsModalCustomOverlayRoute: typeof ComponentsModalCustomOverlayRoute
+  ComponentsModalScrollRoute: typeof ComponentsModalScrollRoute
+  ComponentsModalSizesRoute: typeof ComponentsModalSizesRoute
+  ComponentsModalStatusIconsRoute: typeof ComponentsModalStatusIconsRoute
+  ComponentsModalVariantsRoute: typeof ComponentsModalVariantsRoute
   ComponentsMultiButtonStatesRoute: typeof ComponentsMultiButtonStatesRoute
   ComponentsMultiButtonStylesRoute: typeof ComponentsMultiButtonStylesRoute
   ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
@@ -2892,6 +2999,7 @@ interface ComponentsRouteChildren {
   ComponentsLinkIndexRoute: typeof ComponentsLinkIndexRoute
   ComponentsListIndexRoute: typeof ComponentsListIndexRoute
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
+  ComponentsModalIndexRoute: typeof ComponentsModalIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute
   ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
@@ -3044,6 +3152,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMenuButtonStatesRoute: ComponentsMenuButtonStatesRoute,
   ComponentsMenuButtonStylesRoute: ComponentsMenuButtonStylesRoute,
   ComponentsMenuButtonWithIconRoute: ComponentsMenuButtonWithIconRoute,
+  ComponentsModalCloseIconRoute: ComponentsModalCloseIconRoute,
+  ComponentsModalCustomOverlayRoute: ComponentsModalCustomOverlayRoute,
+  ComponentsModalScrollRoute: ComponentsModalScrollRoute,
+  ComponentsModalSizesRoute: ComponentsModalSizesRoute,
+  ComponentsModalStatusIconsRoute: ComponentsModalStatusIconsRoute,
+  ComponentsModalVariantsRoute: ComponentsModalVariantsRoute,
   ComponentsMultiButtonStatesRoute: ComponentsMultiButtonStatesRoute,
   ComponentsMultiButtonStylesRoute: ComponentsMultiButtonStylesRoute,
   ComponentsMultiButtonWithIconRoute: ComponentsMultiButtonWithIconRoute,
@@ -3103,6 +3217,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsLinkIndexRoute: ComponentsLinkIndexRoute,
   ComponentsListIndexRoute: ComponentsListIndexRoute,
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
+  ComponentsModalIndexRoute: ComponentsModalIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsNotificationIndexRoute: ComponentsNotificationIndexRoute,
   ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
@@ -3249,6 +3364,12 @@ export interface FileRoutesByFullPath {
   '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
   '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
   '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute
+  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute
+  '/components/modal/scroll': typeof ComponentsModalScrollRoute
+  '/components/modal/sizes': typeof ComponentsModalSizesRoute
+  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute
+  '/components/modal/variants': typeof ComponentsModalVariantsRoute
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
@@ -3306,6 +3427,7 @@ export interface FileRoutesByFullPath {
   '/components/link': typeof ComponentsLinkIndexRoute
   '/components/list': typeof ComponentsListIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
+  '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
@@ -3435,6 +3557,12 @@ export interface FileRoutesByTo {
   '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
   '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
   '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute
+  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute
+  '/components/modal/scroll': typeof ComponentsModalScrollRoute
+  '/components/modal/sizes': typeof ComponentsModalSizesRoute
+  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute
+  '/components/modal/variants': typeof ComponentsModalVariantsRoute
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
@@ -3492,6 +3620,7 @@ export interface FileRoutesByTo {
   '/components/link': typeof ComponentsLinkIndexRoute
   '/components/list': typeof ComponentsListIndexRoute
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
+  '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
@@ -3622,6 +3751,12 @@ export interface FileRoutesById {
   '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
   '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
   '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute
+  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute
+  '/components/modal/scroll': typeof ComponentsModalScrollRoute
+  '/components/modal/sizes': typeof ComponentsModalSizesRoute
+  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute
+  '/components/modal/variants': typeof ComponentsModalVariantsRoute
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
@@ -3679,6 +3814,7 @@ export interface FileRoutesById {
   '/components/link/': typeof ComponentsLinkIndexRoute
   '/components/list/': typeof ComponentsListIndexRoute
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
+  '/components/modal/': typeof ComponentsModalIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/notification/': typeof ComponentsNotificationIndexRoute
   '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
@@ -3810,6 +3946,12 @@ export interface FileRouteTypes {
     | '/components/menuButton/states'
     | '/components/menuButton/styles'
     | '/components/menuButton/withIcon'
+    | '/components/modal/closeIcon'
+    | '/components/modal/customOverlay'
+    | '/components/modal/scroll'
+    | '/components/modal/sizes'
+    | '/components/modal/statusIcons'
+    | '/components/modal/variants'
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
@@ -3867,6 +4009,7 @@ export interface FileRouteTypes {
     | '/components/link'
     | '/components/list'
     | '/components/menuButton'
+    | '/components/modal'
     | '/components/multiButton'
     | '/components/notification'
     | '/components/overflowMenu'
@@ -3995,6 +4138,12 @@ export interface FileRouteTypes {
     | '/components/menuButton/states'
     | '/components/menuButton/styles'
     | '/components/menuButton/withIcon'
+    | '/components/modal/closeIcon'
+    | '/components/modal/customOverlay'
+    | '/components/modal/scroll'
+    | '/components/modal/sizes'
+    | '/components/modal/statusIcons'
+    | '/components/modal/variants'
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
@@ -4052,6 +4201,7 @@ export interface FileRouteTypes {
     | '/components/link'
     | '/components/list'
     | '/components/menuButton'
+    | '/components/modal'
     | '/components/multiButton'
     | '/components/notification'
     | '/components/overflowMenu'
@@ -4180,6 +4330,12 @@ export interface FileRouteTypes {
     | '/components/menuButton/states'
     | '/components/menuButton/styles'
     | '/components/menuButton/withIcon'
+    | '/components/modal/closeIcon'
+    | '/components/modal/customOverlay'
+    | '/components/modal/scroll'
+    | '/components/modal/sizes'
+    | '/components/modal/statusIcons'
+    | '/components/modal/variants'
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
@@ -4237,6 +4393,7 @@ export interface FileRouteTypes {
     | '/components/link/'
     | '/components/list/'
     | '/components/menuButton/'
+    | '/components/modal/'
     | '/components/multiButton/'
     | '/components/notification/'
     | '/components/overflowMenu/'
@@ -4394,6 +4551,12 @@ export const routeTree = rootRoute
         "/components/menuButton/states",
         "/components/menuButton/styles",
         "/components/menuButton/withIcon",
+        "/components/modal/closeIcon",
+        "/components/modal/customOverlay",
+        "/components/modal/scroll",
+        "/components/modal/sizes",
+        "/components/modal/statusIcons",
+        "/components/modal/variants",
         "/components/multiButton/states",
         "/components/multiButton/styles",
         "/components/multiButton/withIcon",
@@ -4451,6 +4614,7 @@ export const routeTree = rootRoute
         "/components/link/",
         "/components/list/",
         "/components/menuButton/",
+        "/components/modal/",
         "/components/multiButton/",
         "/components/notification/",
         "/components/overflowMenu/",
@@ -4919,6 +5083,30 @@ export const routeTree = rootRoute
       "filePath": "components/menuButton/withIcon.tsx",
       "parent": "/components"
     },
+    "/components/modal/closeIcon": {
+      "filePath": "components/modal/closeIcon.tsx",
+      "parent": "/components"
+    },
+    "/components/modal/customOverlay": {
+      "filePath": "components/modal/customOverlay.tsx",
+      "parent": "/components"
+    },
+    "/components/modal/scroll": {
+      "filePath": "components/modal/scroll.tsx",
+      "parent": "/components"
+    },
+    "/components/modal/sizes": {
+      "filePath": "components/modal/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/modal/statusIcons": {
+      "filePath": "components/modal/statusIcons.tsx",
+      "parent": "/components"
+    },
+    "/components/modal/variants": {
+      "filePath": "components/modal/variants.tsx",
+      "parent": "/components"
+    },
     "/components/multiButton/states": {
       "filePath": "components/multiButton/states.tsx",
       "parent": "/components"
@@ -5145,6 +5333,10 @@ export const routeTree = rootRoute
     },
     "/components/menuButton/": {
       "filePath": "components/menuButton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/modal/": {
+      "filePath": "components/modal/index.tsx",
       "parent": "/components"
     },
     "/components/multiButton/": {

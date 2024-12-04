@@ -382,6 +382,19 @@ const data = [
       { name: 'Размеры и ориентация', path: '/components/overflowMenu/styles' },
     ],
   },
+  {
+    name: 'Modal',
+    path: '/components/modal',
+    routes: [
+      { name: 'Базовый пример', path: '/components/modal' },
+      { name: 'Размеры', path: '/components/modal/sizes' },
+      { name: 'Наполнение', path: '/components/modal/variants' },
+      { name: 'Скролл', path: '/components/modal/scroll' },
+      { name: 'Кастомизация подложки модального окна', path: '/components/modal/customOverlay' },
+      { name: 'Иконка закрытия', path: '/components/modal/closeIcon' },
+      { name: 'Статусные иконки', path: '/components/modal/statusIcons' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
