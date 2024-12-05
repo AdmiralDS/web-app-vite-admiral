@@ -395,6 +395,19 @@ const data = [
       { name: 'Статусные иконки', path: '/components/modal/statusIcons' },
     ],
   },
+  {
+    name: 'Hint',
+    path: '/components/hint',
+    routes: [
+      { name: 'Базовый пример', path: '/components/hint' },
+      { name: 'Размеры', path: '/components/hint/sizes' },
+      { name: 'Сценарии появления', path: '/components/hint/scenario' },
+      { name: 'Позиционирование', path: '/components/hint/position' },
+      { name: 'Наполнение', path: '/components/hint/variants' },
+      { name: 'ClassName', path: '/components/hint/className' },
+      { name: 'Стилизация внешнего контейнера', path: '/components/hint/anchorCssMixin' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
