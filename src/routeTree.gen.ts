@@ -16,6 +16,7 @@ import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as GeneralInstallationImport } from './routes/general/installation'
+import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
@@ -52,6 +53,17 @@ import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/i
 import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
 import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
+import { Route as ComponentsTooltipWithMenuButtonImport } from './routes/components/tooltip/withMenuButton'
+import { Route as ComponentsTooltipVariantsImport } from './routes/components/tooltip/variants'
+import { Route as ComponentsTooltipSizesImport } from './routes/components/tooltip/sizes'
+import { Route as ComponentsTooltipScenarioImport } from './routes/components/tooltip/scenario'
+import { Route as ComponentsTooltipRefImport } from './routes/components/tooltip/ref'
+import { Route as ComponentsTooltipPositionImport } from './routes/components/tooltip/position'
+import { Route as ComponentsTooltipHocRefSetterImport } from './routes/components/tooltip/hocRefSetter'
+import { Route as ComponentsTooltipHocRefImport } from './routes/components/tooltip/hocRef'
+import { Route as ComponentsTooltipHocFCImport } from './routes/components/tooltip/hocFC'
+import { Route as ComponentsTooltipHocClassImport } from './routes/components/tooltip/hocClass'
+import { Route as ComponentsTooltipHocBaseImport } from './routes/components/tooltip/hocBase'
 import { Route as ComponentsToggleStatesImport } from './routes/components/toggle/states'
 import { Route as ComponentsToggleSizesImport } from './routes/components/toggle/sizes'
 import { Route as ComponentsToggleMobileImport } from './routes/components/toggle/mobile'
@@ -239,6 +251,12 @@ const GeneralInstallationRoute = GeneralInstallationImport.update({
   id: '/installation',
   path: '/installation',
   getParentRoute: () => GeneralRoute,
+} as any)
+
+const ComponentsTooltipIndexRoute = ComponentsTooltipIndexImport.update({
+  id: '/tooltip/',
+  path: '/tooltip/',
+  getParentRoute: () => ComponentsRoute,
 } as any)
 
 const ComponentsToggleIndexRoute = ComponentsToggleIndexImport.update({
@@ -472,6 +490,74 @@ const ComponentsActionBarIndexRoute = ComponentsActionBarIndexImport.update({
 const ComponentsAccordionIndexRoute = ComponentsAccordionIndexImport.update({
   id: '/accordion/',
   path: '/accordion/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipWithMenuButtonRoute =
+  ComponentsTooltipWithMenuButtonImport.update({
+    id: '/tooltip/withMenuButton',
+    path: '/tooltip/withMenuButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTooltipVariantsRoute = ComponentsTooltipVariantsImport.update({
+  id: '/tooltip/variants',
+  path: '/tooltip/variants',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipSizesRoute = ComponentsTooltipSizesImport.update({
+  id: '/tooltip/sizes',
+  path: '/tooltip/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipScenarioRoute = ComponentsTooltipScenarioImport.update({
+  id: '/tooltip/scenario',
+  path: '/tooltip/scenario',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipRefRoute = ComponentsTooltipRefImport.update({
+  id: '/tooltip/ref',
+  path: '/tooltip/ref',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipPositionRoute = ComponentsTooltipPositionImport.update({
+  id: '/tooltip/position',
+  path: '/tooltip/position',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipHocRefSetterRoute =
+  ComponentsTooltipHocRefSetterImport.update({
+    id: '/tooltip/hocRefSetter',
+    path: '/tooltip/hocRefSetter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTooltipHocRefRoute = ComponentsTooltipHocRefImport.update({
+  id: '/tooltip/hocRef',
+  path: '/tooltip/hocRef',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipHocFCRoute = ComponentsTooltipHocFCImport.update({
+  id: '/tooltip/hocFC',
+  path: '/tooltip/hocFC',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipHocClassRoute = ComponentsTooltipHocClassImport.update({
+  id: '/tooltip/hocClass',
+  path: '/tooltip/hocClass',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTooltipHocBaseRoute = ComponentsTooltipHocBaseImport.update({
+  id: '/tooltip/hocBase',
+  path: '/tooltip/hocBase',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -2667,6 +2753,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsToggleStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tooltip/hocBase': {
+      id: '/components/tooltip/hocBase'
+      path: '/tooltip/hocBase'
+      fullPath: '/components/tooltip/hocBase'
+      preLoaderRoute: typeof ComponentsTooltipHocBaseImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/hocClass': {
+      id: '/components/tooltip/hocClass'
+      path: '/tooltip/hocClass'
+      fullPath: '/components/tooltip/hocClass'
+      preLoaderRoute: typeof ComponentsTooltipHocClassImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/hocFC': {
+      id: '/components/tooltip/hocFC'
+      path: '/tooltip/hocFC'
+      fullPath: '/components/tooltip/hocFC'
+      preLoaderRoute: typeof ComponentsTooltipHocFCImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/hocRef': {
+      id: '/components/tooltip/hocRef'
+      path: '/tooltip/hocRef'
+      fullPath: '/components/tooltip/hocRef'
+      preLoaderRoute: typeof ComponentsTooltipHocRefImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/hocRefSetter': {
+      id: '/components/tooltip/hocRefSetter'
+      path: '/tooltip/hocRefSetter'
+      fullPath: '/components/tooltip/hocRefSetter'
+      preLoaderRoute: typeof ComponentsTooltipHocRefSetterImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/position': {
+      id: '/components/tooltip/position'
+      path: '/tooltip/position'
+      fullPath: '/components/tooltip/position'
+      preLoaderRoute: typeof ComponentsTooltipPositionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/ref': {
+      id: '/components/tooltip/ref'
+      path: '/tooltip/ref'
+      fullPath: '/components/tooltip/ref'
+      preLoaderRoute: typeof ComponentsTooltipRefImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/scenario': {
+      id: '/components/tooltip/scenario'
+      path: '/tooltip/scenario'
+      fullPath: '/components/tooltip/scenario'
+      preLoaderRoute: typeof ComponentsTooltipScenarioImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/sizes': {
+      id: '/components/tooltip/sizes'
+      path: '/tooltip/sizes'
+      fullPath: '/components/tooltip/sizes'
+      preLoaderRoute: typeof ComponentsTooltipSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/variants': {
+      id: '/components/tooltip/variants'
+      path: '/tooltip/variants'
+      fullPath: '/components/tooltip/variants'
+      preLoaderRoute: typeof ComponentsTooltipVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tooltip/withMenuButton': {
+      id: '/components/tooltip/withMenuButton'
+      path: '/tooltip/withMenuButton'
+      fullPath: '/components/tooltip/withMenuButton'
+      preLoaderRoute: typeof ComponentsTooltipWithMenuButtonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/accordion/': {
       id: '/components/accordion/'
       path: '/accordion'
@@ -2919,6 +3082,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsToggleIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tooltip/': {
+      id: '/components/tooltip/'
+      path: '/tooltip'
+      fullPath: '/components/tooltip'
+      preLoaderRoute: typeof ComponentsTooltipIndexImport
+      parentRoute: typeof ComponentsImport
+    }
   }
 }
 
@@ -3081,6 +3251,17 @@ interface ComponentsRouteChildren {
   ComponentsToggleMobileRoute: typeof ComponentsToggleMobileRoute
   ComponentsToggleSizesRoute: typeof ComponentsToggleSizesRoute
   ComponentsToggleStatesRoute: typeof ComponentsToggleStatesRoute
+  ComponentsTooltipHocBaseRoute: typeof ComponentsTooltipHocBaseRoute
+  ComponentsTooltipHocClassRoute: typeof ComponentsTooltipHocClassRoute
+  ComponentsTooltipHocFCRoute: typeof ComponentsTooltipHocFCRoute
+  ComponentsTooltipHocRefRoute: typeof ComponentsTooltipHocRefRoute
+  ComponentsTooltipHocRefSetterRoute: typeof ComponentsTooltipHocRefSetterRoute
+  ComponentsTooltipPositionRoute: typeof ComponentsTooltipPositionRoute
+  ComponentsTooltipRefRoute: typeof ComponentsTooltipRefRoute
+  ComponentsTooltipScenarioRoute: typeof ComponentsTooltipScenarioRoute
+  ComponentsTooltipSizesRoute: typeof ComponentsTooltipSizesRoute
+  ComponentsTooltipVariantsRoute: typeof ComponentsTooltipVariantsRoute
+  ComponentsTooltipWithMenuButtonRoute: typeof ComponentsTooltipWithMenuButtonRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
   ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
   ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
@@ -3117,6 +3298,7 @@ interface ComponentsRouteChildren {
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
   ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
+  ComponentsTooltipIndexRoute: typeof ComponentsTooltipIndexRoute
 }
 
 const ComponentsRouteChildren: ComponentsRouteChildren = {
@@ -3306,6 +3488,17 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsToggleMobileRoute: ComponentsToggleMobileRoute,
   ComponentsToggleSizesRoute: ComponentsToggleSizesRoute,
   ComponentsToggleStatesRoute: ComponentsToggleStatesRoute,
+  ComponentsTooltipHocBaseRoute: ComponentsTooltipHocBaseRoute,
+  ComponentsTooltipHocClassRoute: ComponentsTooltipHocClassRoute,
+  ComponentsTooltipHocFCRoute: ComponentsTooltipHocFCRoute,
+  ComponentsTooltipHocRefRoute: ComponentsTooltipHocRefRoute,
+  ComponentsTooltipHocRefSetterRoute: ComponentsTooltipHocRefSetterRoute,
+  ComponentsTooltipPositionRoute: ComponentsTooltipPositionRoute,
+  ComponentsTooltipRefRoute: ComponentsTooltipRefRoute,
+  ComponentsTooltipScenarioRoute: ComponentsTooltipScenarioRoute,
+  ComponentsTooltipSizesRoute: ComponentsTooltipSizesRoute,
+  ComponentsTooltipVariantsRoute: ComponentsTooltipVariantsRoute,
+  ComponentsTooltipWithMenuButtonRoute: ComponentsTooltipWithMenuButtonRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
   ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
   ComponentsAvatarIndexRoute: ComponentsAvatarIndexRoute,
@@ -3342,6 +3535,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
   ComponentsToastIndexRoute: ComponentsToastIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
+  ComponentsTooltipIndexRoute: ComponentsTooltipIndexRoute,
 }
 
 const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
@@ -3523,6 +3717,17 @@ export interface FileRoutesByFullPath {
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
   '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
   '/components/toggle/states': typeof ComponentsToggleStatesRoute
+  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute
+  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute
+  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute
+  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute
+  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute
+  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute
+  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute
+  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute
+  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
+  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
+  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
@@ -3559,6 +3764,7 @@ export interface FileRoutesByFullPath {
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
+  '/components/tooltip': typeof ComponentsTooltipIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -3723,6 +3929,17 @@ export interface FileRoutesByTo {
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
   '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
   '/components/toggle/states': typeof ComponentsToggleStatesRoute
+  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute
+  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute
+  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute
+  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute
+  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute
+  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute
+  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute
+  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute
+  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
+  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
+  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
@@ -3759,6 +3976,7 @@ export interface FileRoutesByTo {
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
+  '/components/tooltip': typeof ComponentsTooltipIndexRoute
 }
 
 export interface FileRoutesById {
@@ -3924,6 +4142,17 @@ export interface FileRoutesById {
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
   '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
   '/components/toggle/states': typeof ComponentsToggleStatesRoute
+  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute
+  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute
+  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute
+  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute
+  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute
+  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute
+  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute
+  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute
+  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
+  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
+  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
   '/components/actionBar/': typeof ComponentsActionBarIndexRoute
   '/components/avatar/': typeof ComponentsAvatarIndexRoute
@@ -3960,6 +4189,7 @@ export interface FileRoutesById {
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toast/': typeof ComponentsToastIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
+  '/components/tooltip/': typeof ComponentsTooltipIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -4126,6 +4356,17 @@ export interface FileRouteTypes {
     | '/components/toggle/mobile'
     | '/components/toggle/sizes'
     | '/components/toggle/states'
+    | '/components/tooltip/hocBase'
+    | '/components/tooltip/hocClass'
+    | '/components/tooltip/hocFC'
+    | '/components/tooltip/hocRef'
+    | '/components/tooltip/hocRefSetter'
+    | '/components/tooltip/position'
+    | '/components/tooltip/ref'
+    | '/components/tooltip/scenario'
+    | '/components/tooltip/sizes'
+    | '/components/tooltip/variants'
+    | '/components/tooltip/withMenuButton'
     | '/components/accordion'
     | '/components/actionBar'
     | '/components/avatar'
@@ -4162,6 +4403,7 @@ export interface FileRouteTypes {
     | '/components/textButtonMenu'
     | '/components/toast'
     | '/components/toggle'
+    | '/components/tooltip'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -4325,6 +4567,17 @@ export interface FileRouteTypes {
     | '/components/toggle/mobile'
     | '/components/toggle/sizes'
     | '/components/toggle/states'
+    | '/components/tooltip/hocBase'
+    | '/components/tooltip/hocClass'
+    | '/components/tooltip/hocFC'
+    | '/components/tooltip/hocRef'
+    | '/components/tooltip/hocRefSetter'
+    | '/components/tooltip/position'
+    | '/components/tooltip/ref'
+    | '/components/tooltip/scenario'
+    | '/components/tooltip/sizes'
+    | '/components/tooltip/variants'
+    | '/components/tooltip/withMenuButton'
     | '/components/accordion'
     | '/components/actionBar'
     | '/components/avatar'
@@ -4361,6 +4614,7 @@ export interface FileRouteTypes {
     | '/components/textButtonMenu'
     | '/components/toast'
     | '/components/toggle'
+    | '/components/tooltip'
   id:
     | '__root__'
     | '/'
@@ -4524,6 +4778,17 @@ export interface FileRouteTypes {
     | '/components/toggle/mobile'
     | '/components/toggle/sizes'
     | '/components/toggle/states'
+    | '/components/tooltip/hocBase'
+    | '/components/tooltip/hocClass'
+    | '/components/tooltip/hocFC'
+    | '/components/tooltip/hocRef'
+    | '/components/tooltip/hocRefSetter'
+    | '/components/tooltip/position'
+    | '/components/tooltip/ref'
+    | '/components/tooltip/scenario'
+    | '/components/tooltip/sizes'
+    | '/components/tooltip/variants'
+    | '/components/tooltip/withMenuButton'
     | '/components/accordion/'
     | '/components/actionBar/'
     | '/components/avatar/'
@@ -4560,6 +4825,7 @@ export interface FileRouteTypes {
     | '/components/textButtonMenu/'
     | '/components/toast/'
     | '/components/toggle/'
+    | '/components/tooltip/'
   fileRoutesById: FileRoutesById
 }
 
@@ -4752,6 +5018,17 @@ export const routeTree = rootRoute
         "/components/toggle/mobile",
         "/components/toggle/sizes",
         "/components/toggle/states",
+        "/components/tooltip/hocBase",
+        "/components/tooltip/hocClass",
+        "/components/tooltip/hocFC",
+        "/components/tooltip/hocRef",
+        "/components/tooltip/hocRefSetter",
+        "/components/tooltip/position",
+        "/components/tooltip/ref",
+        "/components/tooltip/scenario",
+        "/components/tooltip/sizes",
+        "/components/tooltip/variants",
+        "/components/tooltip/withMenuButton",
         "/components/accordion/",
         "/components/actionBar/",
         "/components/avatar/",
@@ -4787,7 +5064,8 @@ export const routeTree = rootRoute
         "/components/textButton/",
         "/components/textButtonMenu/",
         "/components/toast/",
-        "/components/toggle/"
+        "/components/toggle/",
+        "/components/tooltip/"
       ]
     },
     "/general": {
@@ -5429,6 +5707,50 @@ export const routeTree = rootRoute
       "filePath": "components/toggle/states.tsx",
       "parent": "/components"
     },
+    "/components/tooltip/hocBase": {
+      "filePath": "components/tooltip/hocBase.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/hocClass": {
+      "filePath": "components/tooltip/hocClass.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/hocFC": {
+      "filePath": "components/tooltip/hocFC.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/hocRef": {
+      "filePath": "components/tooltip/hocRef.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/hocRefSetter": {
+      "filePath": "components/tooltip/hocRefSetter.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/position": {
+      "filePath": "components/tooltip/position.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/ref": {
+      "filePath": "components/tooltip/ref.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/scenario": {
+      "filePath": "components/tooltip/scenario.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/sizes": {
+      "filePath": "components/tooltip/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/variants": {
+      "filePath": "components/tooltip/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/withMenuButton": {
+      "filePath": "components/tooltip/withMenuButton.tsx",
+      "parent": "/components"
+    },
     "/components/accordion/": {
       "filePath": "components/accordion/index.tsx",
       "parent": "/components"
@@ -5571,6 +5893,10 @@ export const routeTree = rootRoute
     },
     "/components/toggle/": {
       "filePath": "components/toggle/index.tsx",
+      "parent": "/components"
+    },
+    "/components/tooltip/": {
+      "filePath": "components/tooltip/index.tsx",
       "parent": "/components"
     }
   }

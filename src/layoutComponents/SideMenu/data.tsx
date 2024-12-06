@@ -408,6 +408,24 @@ const data = [
       { name: 'Стилизация внешнего контейнера', path: '/components/hint/anchorCssMixin' },
     ],
   },
+  {
+    name: 'Tooltip',
+    path: '/components/tooltip',
+    routes: [
+      { name: 'Базовый пример', path: '/components/tooltip' },
+      { name: 'Размеры', path: '/components/tooltip/sizes' },
+      { name: 'Сценарии появления', path: '/components/tooltip/scenario' },
+      { name: 'Позиционирование', path: '/components/tooltip/position' },
+      { name: 'Кастомное наполнение', path: '/components/tooltip/variants' },
+      { name: 'Пример с получением ref тултипа', path: '/components/tooltip/ref' },
+      { name: 'Базовый пример с MenuButton', path: '/components/tooltip/withMenuButton' },
+      { name: 'TooltipHoc. Базовый пример', path: '/components/tooltip/hocBase' },
+      { name: 'TooltipHoc. Пример использования с классовым компонентом', path: '/components/tooltip/hocClass' },
+      { name: 'TooltipHoc. Пример использования с функциональным компонентом', path: '/components/tooltip/hocFC' },
+      { name: 'TooltipHoc. Прокидывание ref на результат вызова TooltipHoc', path: '/components/tooltip/hocRef' },
+      { name: 'TooltipHoc. Утилита refSetter для мерджа рефов.', path: '/components/tooltip/hocRefSetter' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
