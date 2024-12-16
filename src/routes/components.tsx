@@ -10,7 +10,7 @@ function RouteComponent() {
         return (
           <Wrapper key={id}>
             {staticData.title && <Title>{staticData.title}</Title>}
-            {staticData.description && <Description>{staticData.description}</Description>}
+            {staticData.description && <Description $grey>{staticData.description}</Description>}
             <Preview>
               <Outlet />
             </Preview>

@@ -1,59 +1,87 @@
 import { createFileRoute } from '@tanstack/react-router';
+import styled from 'styled-components';
+import { useMemo } from 'react';
 
-import { CodeBlock } from '../-helpers/main';
+import { CodeBlock } from '../-helpers/general';
 import { SectionDescription } from '../-helpers/examples';
 
-const data: Array<{
-  header: string;
-  language: string;
-  code: string[] | string;
-  renderTabs: boolean;
-  desc: React.ReactNode;
-}> = [
-  {
-    header: 'Templates',
-    language: 'typescript',
-    code: [
-      `import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport { ThemeProvider } from 'styled-components';\nimport { LIGHT_THEME, 
-      FontsVTBGroup, DropdownProvider } from '@admiral-ds/react-ui';\nimport App from './App';\nimport './index.css';\n\nReactDOM.createRoot(document.
-      getElementById('root')!).render(\n<React.StrictMode>\n<ThemeProvider 
-      theme={LIGHT_THEME}>\n<DropdownProvider>\n<FontsVTBGroup />\n<App />\n</DropdownProvider>\n</ThemeProvider>\n</React.StrictMode>,\n);`,
-    ],
-    renderTabs: false,
-    desc: (
-      <>
-        Для корректной работы @admiral-ds/react-ui требуется использовать компоненты ThemeProvider, FontsVTBGroup и
-        DropdownProvider, их рекомендуется подключать в корне проекта:
-      </>
-    ),
-  },
-];
+const Separator = styled.div<{ height: number }>`
+  height: ${(p) => p.height}px;
+`;
 
-const text = `
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { ThemeProvider } from 'styled-components';
-import { LIGHT_THEME, FontsVTBGroup, DropdownProvider } from '@admiral-ds/react-ui';
-import App from './App';
-import './index.css';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <ThemeProvider theme={LIGHT_THEME}>
-      <DropdownProvider>
-        <FontsVTBGroup />
-        <App />
-      </DropdownProvider>
-    </ThemeProvider>
-  </React.StrictMode>,
-);`;
+function Description() {
+  const code = useMemo(
+    () => `
+    import React from 'react';
+    import ReactDOM from 'react-dom/client';
+    import { ThemeProvider } from 'styled-components';
+    import { LIGHT_THEME, FontsVTBGroup, DropdownProvider } from '@admiral-ds/react-ui';
+    import App from './App';
+    import './index.css';
+    
+    ReactDOM.createRoot(document.getElementById('root')!).render(
+      <React.StrictMode>
+        <ThemeProvider theme={LIGHT_THEME}>
+          <DropdownProvider>
+            <FontsVTBGroup />
+            <App />
+          </DropdownProvider>
+        </ThemeProvider>
+      </React.StrictMode>,
+    );`,
+    [],
+  );
+  return (
+    <>
+      Для корректной работы @admiral-ds/react-ui требуется использовать компоненты ThemeProvider, FontsVTBGroup и
+      DropdownProvider, их рекомендуется подключать в корне проекта:
+      <Separator height={16} />
+      <CodeBlock language="javascript">{code}</CodeBlock>
+    </>
+  );
+}
 
 function RouteComponent() {
   return (
-    <div>
-      <SectionDescription header={data[0].header} text={data[0].desc} />
-      <CodeBlock language={data[0].language}>{text}</CodeBlock>
-    </div>
+    <>
+      <SectionDescription
+        header="Theme Provider"
+        text={
+          <>
+            Для корректного отображения стилей компоненты из библиотеки @admiral-ds/react-ui должны иметь доступ к
+            объекту темы. Это реализуется с помощью компонента ThemeProvider из библиотеки styled-components, в котором
+            в параметре theme необходимо указать объект темы или функцию, возвращающую объект темы. Подробнее об этом
+            можно почитать здесь: Theming и Function themes.
+            <Separator height={12} />
+            Библиотека @admiral-ds/react-ui по умолчанию предоставляет 2 варианта тем: LIGHT_THEME и DARK_THEME.
+            <Separator height={12} />
+            В рамках своего проекта можно использовать несколько вложенных друг в друга ThemeProvider. В таком случае,
+            если компонент обернут в несколько провайдеров, компонент будет использовать тему из ближайшего к нему
+            ThemeProvider. Подробнее об этом: Theming with Styled Components.
+            <Separator height={12} />
+            ВАЖНО!!! Использование ThemeProvider обязательно, отсутствие ThemeProvider будет вызывать ошибки в коде
+          </>
+        }
+      />
+      <SectionDescription
+        header="Fonts VTB Group UI"
+        text={
+          <>
+            Библиотека @admiral-ds/react-ui использует шрифт VTB Group UI по умолчанию. Чтобы применить данный шрифт в
+            своем проекте достаточно в корне проекта подключить компонент FontsVTBGroup.
+          </>
+        }
+      />
+      <SectionDescription
+        header="Dropdown Provider"
+        text={
+          <>
+            Компонент DropdownProvider необходим для корректной работы компонентов, в состав которых входят выпадающие
+            меню или всплывающие подсказки.
+          </>
+        }
+      />
+    </>
   );
 }
 
@@ -61,5 +89,6 @@ export const Route = createFileRoute('/general/usage')({
   component: RouteComponent,
   staticData: {
     title: 'Usage',
+    description: <Description />,
   },
 });

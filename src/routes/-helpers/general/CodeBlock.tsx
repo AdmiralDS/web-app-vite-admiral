@@ -19,7 +19,12 @@ const SyntaxHighlighterWrapper = styled.div`
 
 const ButtonWithTooltip = TooltipHoc(IconButton);
 
-export const CodeBlock = ({ children, language }: any) => {
+type CodeBlockProps = {
+  language: string;
+  children: string;
+};
+
+export const CodeBlock = ({ children, language }: CodeBlockProps) => {
   const theme = useTheme() || LIGHT_THEME;
   const themeStyle = theme.name == 'light' ? light : dark;
   const [copied, setCopied] = useState(false);

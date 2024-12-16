@@ -1,81 +1,61 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
-import { CodeTabMenu, CodeBlock } from '../-helpers/main';
+import { CodeTabMenu, CodeBlock } from '../-helpers/general';
 import { SectionDescription } from '../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
 `;
 
-const data: Array<{
-  header: string;
-  language: string;
-  code: string[] | string;
-  renderTabs: boolean;
-  desc: React.ReactNode;
-}> = [
-  {
-    header: '',
-    language: 'bash',
-    code: [
+function Description() {
+  const [installMode, setInstallMode] = useState(0);
+  const code = useMemo(
+    () => [
       `$ npm install @admiral-ds/react-ui`,
       `$ yarn add @admiral-ds/react-ui`,
       `$ pnpm add @admiral-ds/react-ui`,
       `$ bun install @admiral-ds/react-ui`,
     ],
-    renderTabs: true,
-    desc: (
-      <>
-        Библиотека @admiral-ds/react-ui – это библиотека React-компонентов, основанная на дизайн системе Admiral 2.1.
-        Для установки библиотеки в вашем проекте запустите команду:
-      </>
-    ),
-  },
-  {
-    header: 'Peer dependencies',
-    language: 'json',
-    code: `"peerDependencies": {\n\t"react": ">=16";\n\t"react-dom": ">=16";\n\t"styled-components": ">=5.1.0";\n}`,
-    renderTabs: false,
-    desc: 'Пожалуйста, обратите внимание, что библиотека @admiral-ds/react-ui требует установки следующих зависимостей:',
-  },
-  {
-    header: 'Templates',
-    language: 'bash',
-    code: [
-      `§ npm create vite@latest my-web-app -- --template react-ts\n$ cd my-web-app\n$ npm install\n$ npm install @admiral-ds/react-ui\n$ npm run dev`,
-    ],
-    renderTabs: false,
-    desc: (
-      <>
-        Вы можете воспользоваться готовым шаблоном приложения с настроенной библиотекой
-        https://github.com/AdmiralDS/web-app-vite-admiral.
-        <Separator height={12} />
-        Также вы можете создать проект с нуля и подключить к нему библиотеку, например, следующим образом:
-      </>
-    ),
-  },
-];
-
-function RouteComponent() {
-  const [installMode, setInstallMode] = useState(0);
+    [],
+  );
   return (
     <>
-      {data.map(({ header, desc, language, renderTabs, code }, index) =>
-        renderTabs && typeof code !== 'string' ? (
-          <div key={header + index}>
-            <SectionDescription text={desc} />
-            <CodeTabMenu updaterFn={(tabId) => setInstallMode(Number(tabId))} />
-            <CodeBlock language={language}>{code[installMode]}</CodeBlock>
-          </div>
-        ) : (
-          <div key={header + index}>
-            <SectionDescription header={header} text={desc} />
-            <CodeBlock language={language}>{code}</CodeBlock>
-          </div>
-        ),
-      )}
+      Библиотека @admiral-ds/react-ui – это библиотека React-компонентов, основанная на дизайн системе Admiral 2.1. Для
+      установки библиотеки в вашем проекте запустите команду:
+      <CodeTabMenu updaterFn={(tabId) => setInstallMode(Number(tabId))} style={{ margin: '40px 0 16px' }} />
+      <CodeBlock language="bash">{code[installMode]}</CodeBlock>
+    </>
+  );
+}
+
+function RouteComponent() {
+  return (
+    <>
+      <div>
+        <SectionDescription
+          header="Peer dependencies"
+          text="Пожалуйста, обратите внимание, что библиотека @admiral-ds/react-ui требует установки следующих зависимостей:"
+        />
+        <CodeBlock language="json">{`"peerDependencies": {\n\t"react": ">=16";\n\t"react-dom": ">=16";\n\t"styled-components": ">=5.1.0";\n}`}</CodeBlock>
+      </div>
+      <div>
+        <SectionDescription
+          header="Templates"
+          text={
+            <>
+              Вы можете воспользоваться готовым шаблоном приложения с настроенной библиотекой
+              https://github.com/AdmiralDS/web-app-vite-admiral.
+              <Separator height={12} />
+              Также вы можете создать проект с нуля и подключить к нему библиотеку, например, следующим образом:
+            </>
+          }
+        />
+        <CodeBlock language="bash">
+          {`§ npm create vite@latest my-web-app -- --template react-ts\n$ cd my-web-app\n$ npm install\n$ npm install @admiral-ds/react-ui\n$ npm run dev`}
+        </CodeBlock>
+      </div>
     </>
   );
 }
@@ -84,5 +64,6 @@ export const Route = createFileRoute('/general/installation')({
   component: RouteComponent,
   staticData: {
     title: 'Installation',
+    description: <Description />,
   },
 });

@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import { typography } from '@admiral-ds/react-ui';
 
-export * from './CodeTabMenu';
-export * from './CodeBlock';
-
 export const Title = styled.h5`
   ${typography['Header/H5']}
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
@@ -11,10 +8,13 @@ export const Title = styled.h5`
   padding: 0;
 `;
 
-export const Description = styled.div`
+export const Description = styled.div<{ $marginTop?: number; $grey?: boolean }>`
   ${typography['Body/Body 2 Long']}
-  color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
-  margin-top: 8px;
+  color: ${(p) =>
+    p.$grey
+      ? `var(--admiral-color-Neutral_Neutral50, ${p.theme.color['Neutral/Neutral 50']})`
+      : `var(--admiral-color-Neutral_Neutral90, ${p.theme.color['Neutral/Neutral 90']})`};
+  margin-top: ${(p) => p.$marginTop ?? 8}px;
   max-width: 720px;
 `;
 
@@ -31,12 +31,12 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Preview = styled.div`
+export const Preview = styled.div<{ $marginTop?: number; $gap?: number }>`
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-top: 40px;
-  gap: 40px;
+  margin-top: ${(p) => p.$marginTop ?? 40}px;
+  gap: ${(p) => p.$gap ?? 40}px;
 `;
