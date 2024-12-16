@@ -1,10 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled, { useTheme } from 'styled-components';
-import { LIGHT_THEME } from '@admiral-ds/react-ui';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
-import { light, dark, CodeTabMenu } from '../-helpers/main';
-import { ExampleSection, Text } from '../-helpers/examples';
+import { CodeBlock } from '../-helpers/main';
+import { SectionDescription } from '../-helpers/examples';
 
 const data: Array<{
   header: string;
@@ -52,12 +49,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 );`;
 
 function RouteComponent() {
-  const theme = useTheme() || LIGHT_THEME;
-  const themeStyle = theme.name == 'light' ? light : dark;
   return (
-    <SyntaxHighlighter language={data[0].language} style={themeStyle}>
-      {text}
-    </SyntaxHighlighter>
+    <div>
+      <SectionDescription header={data[0].header} text={data[0].desc} />
+      <CodeBlock language={data[0].language}>{text}</CodeBlock>
+    </div>
   );
 }
 
