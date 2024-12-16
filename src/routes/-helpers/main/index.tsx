@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { typography } from '@admiral-ds/react-ui';
 
-export * from './prismThemes/light';
-export * from './prismThemes/dark';
 export * from './CodeTabMenu';
+export * from './CodeBlock';
 
 export const Title = styled.h5`
   ${typography['Header/H5']}

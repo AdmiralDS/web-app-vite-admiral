@@ -14,8 +14,10 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as GeneralImport } from './routes/general'
 import { Route as ComponentsImport } from './routes/components'
 import { Route as IndexImport } from './routes/index'
+import { Route as GeneralUsageImport } from './routes/general/usage'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as GeneralInstallationImport } from './routes/general/installation'
+import { Route as GeneralFaqsImport } from './routes/general/faqs'
 import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
@@ -241,6 +243,12 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const GeneralUsageRoute = GeneralUsageImport.update({
+  id: '/usage',
+  path: '/usage',
+  getParentRoute: () => GeneralRoute,
+} as any)
+
 const GeneralResourcesRoute = GeneralResourcesImport.update({
   id: '/resources',
   path: '/resources',
@@ -250,6 +258,12 @@ const GeneralResourcesRoute = GeneralResourcesImport.update({
 const GeneralInstallationRoute = GeneralInstallationImport.update({
   id: '/installation',
   path: '/installation',
+  getParentRoute: () => GeneralRoute,
+} as any)
+
+const GeneralFaqsRoute = GeneralFaqsImport.update({
+  id: '/faqs',
+  path: '/faqs',
   getParentRoute: () => GeneralRoute,
 } as any)
 
@@ -1647,6 +1661,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GeneralImport
       parentRoute: typeof rootRoute
     }
+    '/general/faqs': {
+      id: '/general/faqs'
+      path: '/faqs'
+      fullPath: '/general/faqs'
+      preLoaderRoute: typeof GeneralFaqsImport
+      parentRoute: typeof GeneralImport
+    }
     '/general/installation': {
       id: '/general/installation'
       path: '/installation'
@@ -1659,6 +1680,13 @@ declare module '@tanstack/react-router' {
       path: '/resources'
       fullPath: '/general/resources'
       preLoaderRoute: typeof GeneralResourcesImport
+      parentRoute: typeof GeneralImport
+    }
+    '/general/usage': {
+      id: '/general/usage'
+      path: '/usage'
+      fullPath: '/general/usage'
+      preLoaderRoute: typeof GeneralUsageImport
       parentRoute: typeof GeneralImport
     }
     '/components/accordion/accordionDimension': {
@@ -3543,13 +3571,17 @@ const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
 )
 
 interface GeneralRouteChildren {
+  GeneralFaqsRoute: typeof GeneralFaqsRoute
   GeneralInstallationRoute: typeof GeneralInstallationRoute
   GeneralResourcesRoute: typeof GeneralResourcesRoute
+  GeneralUsageRoute: typeof GeneralUsageRoute
 }
 
 const GeneralRouteChildren: GeneralRouteChildren = {
+  GeneralFaqsRoute: GeneralFaqsRoute,
   GeneralInstallationRoute: GeneralInstallationRoute,
   GeneralResourcesRoute: GeneralResourcesRoute,
+  GeneralUsageRoute: GeneralUsageRoute,
 }
 
 const GeneralRouteWithChildren =
@@ -3559,8 +3591,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
+  '/general/usage': typeof GeneralUsageRoute
   '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
@@ -3771,8 +3805,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
+  '/general/usage': typeof GeneralUsageRoute
   '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
@@ -3984,8 +4020,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
+  '/general/usage': typeof GeneralUsageRoute
   '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
   '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
   '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
@@ -4198,8 +4236,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/faqs'
     | '/general/installation'
     | '/general/resources'
+    | '/general/usage'
     | '/components/accordion/accordionDimension'
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
@@ -4409,8 +4449,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/faqs'
     | '/general/installation'
     | '/general/resources'
+    | '/general/usage'
     | '/components/accordion/accordionDimension'
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
@@ -4620,8 +4662,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/faqs'
     | '/general/installation'
     | '/general/resources'
+    | '/general/usage'
     | '/components/accordion/accordionDimension'
     | '/components/accordion/accordionDivider'
     | '/components/accordion/accordionIcon'
@@ -5071,9 +5115,15 @@ export const routeTree = rootRoute
     "/general": {
       "filePath": "general.tsx",
       "children": [
+        "/general/faqs",
         "/general/installation",
-        "/general/resources"
+        "/general/resources",
+        "/general/usage"
       ]
+    },
+    "/general/faqs": {
+      "filePath": "general/faqs.tsx",
+      "parent": "/general"
     },
     "/general/installation": {
       "filePath": "general/installation.tsx",
@@ -5081,6 +5131,10 @@ export const routeTree = rootRoute
     },
     "/general/resources": {
       "filePath": "general/resources.tsx",
+      "parent": "/general"
+    },
+    "/general/usage": {
+      "filePath": "general/usage.tsx",
       "parent": "/general"
     },
     "/components/accordion/accordionDimension": {

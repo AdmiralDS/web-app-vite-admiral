@@ -1,12 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled, { useTheme } from 'styled-components';
-import { LIGHT_THEME } from '@admiral-ds/react-ui';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import styled from 'styled-components';
 import { useState } from 'react';
-// import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-import { light, dark, CodeTabMenu } from '../-helpers/main';
-import { ExampleSection, Text } from '../-helpers/examples';
+import { CodeTabMenu, CodeBlock } from '../-helpers/main';
+import { SectionDescription } from '../-helpers/examples';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
@@ -54,42 +51,37 @@ const data: Array<{
       <>
         Вы можете воспользоваться готовым шаблоном приложения с настроенной библиотекой
         https://github.com/AdmiralDS/web-app-vite-admiral.
-        <Separator height={16} />
+        <Separator height={12} />
         Также вы можете создать проект с нуля и подключить к нему библиотеку, например, следующим образом:
       </>
     ),
   },
 ];
 
+function RouteComponent() {
+  const [installMode, setInstallMode] = useState(0);
+  return (
+    <>
+      {data.map(({ header, desc, language, renderTabs, code }, index) =>
+        renderTabs && typeof code !== 'string' ? (
+          <div key={header + index}>
+            <SectionDescription text={desc} />
+            <CodeTabMenu updaterFn={(tabId) => setInstallMode(Number(tabId))} />
+            <CodeBlock language={language}>{code[installMode]}</CodeBlock>
+          </div>
+        ) : (
+          <div key={header + index}>
+            <SectionDescription header={header} text={desc} />
+            <CodeBlock language={language}>{code}</CodeBlock>
+          </div>
+        ),
+      )}
+    </>
+  );
+}
+
 export const Route = createFileRoute('/general/installation')({
-  component: () => {
-    const theme = useTheme() || LIGHT_THEME;
-    const themeStyle = theme.name == 'light' ? light : dark;
-    const [installMode, setInstallMode] = useState(0);
-    return (
-      <>
-        {data.map(({ header, desc, language, renderTabs, code }, index) =>
-          renderTabs && typeof code !== 'string' ? (
-            <div key={header + index}>
-              <Text style={{ marginBottom: '40px' }}>{desc}</Text>
-              <CodeTabMenu updaterFn={(tabId) => setInstallMode(Number(tabId))} />
-              <ExampleSection key={header + index} header={header} style={{ padding: '20px' }}>
-                <SyntaxHighlighter language={language} style={themeStyle}>
-                  {code[installMode]}
-                </SyntaxHighlighter>
-              </ExampleSection>
-            </div>
-          ) : (
-            <ExampleSection key={header + index} header={header} text={desc} style={{ padding: '20px' }}>
-              <SyntaxHighlighter language={language} style={themeStyle}>
-                {code}
-              </SyntaxHighlighter>
-            </ExampleSection>
-          ),
-        )}
-      </>
-    );
-  },
+  component: RouteComponent,
   staticData: {
     title: 'Installation',
   },
