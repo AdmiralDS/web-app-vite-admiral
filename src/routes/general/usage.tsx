@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { useMemo } from 'react';
+import { Link } from '@admiral-ds/react-ui';
 
 import { CodeBlock } from '../-helpers/general';
 import { SectionDescription } from '../-helpers/examples';
@@ -51,13 +52,39 @@ function RouteComponent() {
             Для корректного отображения стилей компоненты из библиотеки @admiral-ds/react-ui должны иметь доступ к
             объекту темы. Это реализуется с помощью компонента ThemeProvider из библиотеки styled-components, в котором
             в параметре theme необходимо указать объект темы или функцию, возвращающую объект темы. Подробнее об этом
-            можно почитать здесь: Theming и Function themes.
+            можно почитать здесь:&nbsp;
+            <Link
+              dimension="s"
+              style={{ display: 'inline-flex' }}
+              href="https://styled-components.com/docs/advanced#theming"
+              target="_blank"
+            >
+              Theming
+            </Link>
+            &nbsp; и&nbsp;
+            <Link
+              dimension="s"
+              style={{ display: 'inline-flex' }}
+              href="https://styled-components.com/docs/advanced#function-themes"
+              target="_blank"
+            >
+              Function themes
+            </Link>
+            .
             <Separator height={12} />
             Библиотека @admiral-ds/react-ui по умолчанию предоставляет 2 варианта тем: LIGHT_THEME и DARK_THEME.
-            <Separator height={12} />
-            В рамках своего проекта можно использовать несколько вложенных друг в друга ThemeProvider. В таком случае,
-            если компонент обернут в несколько провайдеров, компонент будет использовать тему из ближайшего к нему
-            ThemeProvider. Подробнее об этом: Theming with Styled Components.
+            <Separator height={12} />В рамках своего проекта можно использовать несколько вложенных друг в друга
+            ThemeProvider. В таком случае, если компонент обернут в несколько провайдеров, компонент будет использовать
+            тему из ближайшего к нему ThemeProvider. Подробнее об этом:&nbsp;
+            <Link
+              dimension="s"
+              style={{ display: 'inline-flex' }}
+              href="https://dev.to/boywithsilverwings/theming-with-styled-components-3ig2"
+              target="_blank"
+            >
+              Theming with Styled Components
+            </Link>
+            .
             <Separator height={12} />
             ВАЖНО!!! Использование ThemeProvider обязательно, отсутствие ThemeProvider будет вызывать ошибки в коде
           </>

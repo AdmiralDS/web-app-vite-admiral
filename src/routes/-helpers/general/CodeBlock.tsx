@@ -44,7 +44,11 @@ export const CodeBlock = ({ children, language }: CodeBlockProps) => {
       <SyntaxHighlighter language={language} style={themeStyle}>
         {children}
       </SyntaxHighlighter>
-      <ButtonWithTooltip dimension="s" renderContent={() => (copied ? 'Copied' : 'Copy')} onClick={copyToClipboard}>
+      <ButtonWithTooltip
+        dimension="s"
+        renderContent={() => (copied ? 'Code copied' : 'Copy code')}
+        onClick={copyToClipboard}
+      >
         {copied ? <SentOutline /> : <CopyOutline />}
       </ButtonWithTooltip>
     </SyntaxHighlighterWrapper>

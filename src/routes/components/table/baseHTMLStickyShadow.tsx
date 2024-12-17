@@ -46,6 +46,7 @@ const HtmlTable = styled.table`
   td:first-child {
     visibility: hidden;
     padding: 0;
+    width: 0;
   }
 
   // 2 колонка фиксирована

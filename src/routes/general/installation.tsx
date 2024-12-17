@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { useState, useMemo } from 'react';
+import { Link } from '@admiral-ds/react-ui';
 
 import { CodeTabMenu, CodeBlock } from '../-helpers/general';
 import { SectionDescription } from '../-helpers/examples';
@@ -45,15 +46,23 @@ function RouteComponent() {
           header="Templates"
           text={
             <>
-              Вы можете воспользоваться готовым шаблоном приложения с настроенной библиотекой
-              https://github.com/AdmiralDS/web-app-vite-admiral.
+              Вы можете воспользоваться&nbsp;
+              <Link
+                dimension="s"
+                style={{ display: 'inline-flex' }}
+                href="https://github.com/AdmiralDS/web-app-vite-admiral/tree/template"
+                target="_blank"
+              >
+                готовым шаблоном
+              </Link>
+              &nbsp; приложения с настроенной библиотекой.
               <Separator height={12} />
               Также вы можете создать проект с нуля и подключить к нему библиотеку, например, следующим образом:
             </>
           }
         />
         <CodeBlock language="bash">
-          {`§ npm create vite@latest my-web-app -- --template react-ts\n$ cd my-web-app\n$ npm install\n$ npm install @admiral-ds/react-ui\n$ npm run dev`}
+          {`$ npm create vite@latest my-web-app -- --template react-ts\n$ cd my-web-app\n$ npm install\n$ npm install @admiral-ds/react-ui\n$ npm run dev`}
         </CodeBlock>
       </div>
     </>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState, useLayoutEffect } from 'react';
 import type { CSSProperties } from 'react';
 
-import { Header, SideMenu, useMediaQuery, getScrollbarSize } from '../layoutComponents';
+import { Header, SideMenu, useMediaQuery, getScrollbarSize } from '../layout';
 
 const Main = styled.div`
   display: flex;

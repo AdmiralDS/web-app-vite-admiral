@@ -1,4 +1,4 @@
-export * from './SideMenu';
-export * from './Header';
+export * from './SideMenu/index.tsx';
+export * from './Header/index.tsx';
 export * from './useMediaQuery.tsx';
 export * from './getScrollbarSize.ts';
