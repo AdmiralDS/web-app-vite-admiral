@@ -22,6 +22,7 @@
   "devDependencies": {
     "@admiral-ds/icons": "^4.3.1",
     "@admiral-ds/web": "^0.0.1",
+    "@playwright/test": "^1.49.1",
     "@tanstack/router-plugin": "^1.76.4",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^14.3.1",
