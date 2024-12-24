@@ -33,14 +33,18 @@ const CustomHorizontalTab = forwardRef<HTMLButtonElement, CustomHorizontalTabPro
   },
 );
 
-export const CodeTabMenu = (props: { updaterFn: (tabId: string) => void }) => {
+interface CodeTabMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+  updaterFn: (tabId: string) => void;
+}
+
+export const CodeTabMenu = ({ updaterFn, style }: CodeTabMenuProps) => {
   const tabsMap = useMemo(() => {
     return tabs.map((tab) => tab.tabId);
   }, [tabs]);
   const [selectedTab, setSelectedTab] = useState<string | undefined>('0');
 
   const handleSelectTab = (tabId: string) => {
-    props.updaterFn(tabId);
+    updaterFn(tabId);
     setSelectedTab(tabId);
   };
   const tabIsDisabled = () => false;
@@ -59,7 +63,7 @@ export const CodeTabMenu = (props: { updaterFn: (tabId: string) => void }) => {
         tabsId={tabsMap}
         renderTab={renderTab}
         tabIsDisabled={tabIsDisabled}
-        style={{ marginBottom: '16px' }}
+        style={style}
       />
     </>
   );

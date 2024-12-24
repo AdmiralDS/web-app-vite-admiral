@@ -340,6 +340,9 @@ const data = [
       { name: 'Загрузка данных при скролле', path: '/components/table/loadOnScroll' },
       { name: 'Загрузка данных при скролле со спиннером', path: '/components/table/loadOnScrollSpinner' },
       { name: 'Загрузка данных при скролле со скелетоном', path: '/components/table/loadOnScrollSkeleton' },
+      { name: 'Базовый HTML table', path: '/components/table/baseHTML' },
+      { name: 'Базовый HTML table с фиксированными столбцами', path: '/components/table/baseHTMLStickyShadow' },
+      { name: 'Базовый HTML table с OverflowMenu', path: '/components/table/baseHTMLOverflowMenu' },
     ],
   },
   {

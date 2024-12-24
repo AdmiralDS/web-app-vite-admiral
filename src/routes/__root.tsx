@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState, useLayoutEffect } from 'react';
 import type { CSSProperties } from 'react';
 
-import { Header, SideMenu, useMediaQuery, getScrollbarSize } from '../layoutComponents';
+import { Header, SideMenu, useMediaQuery, getScrollbarSize } from '../layout';
 
 const Main = styled.div`
   display: flex;
@@ -28,23 +28,25 @@ const Main = styled.div`
 `;
 
 // It's the layout component
+function RouteComponent() {
+  const isMobile = useMediaQuery('(max-width: 1024px)');
+  const [scrollbar, setScrollbar] = useState('0px');
+
+  useLayoutEffect(() => {
+    setScrollbar(getScrollbarSize() + 'px');
+  }, []);
+
+  return (
+    <>
+      {!isMobile && <SideMenu />}
+      <Main style={{ '--scrollbar-width': scrollbar } as CSSProperties}>
+        <Header />
+        <Outlet />
+      </Main>
+    </>
+  );
+}
+
 export const Route = createRootRoute({
-  component: () => {
-    const isMobile = useMediaQuery('(max-width: 1024px)');
-    const [scrollbar, setScrollbar] = useState('0px');
-
-    useLayoutEffect(() => {
-      setScrollbar(getScrollbarSize() + 'px');
-    }, []);
-
-    return (
-      <>
-        {!isMobile && <SideMenu />}
-        <Main style={{ '--scrollbar-width': scrollbar } as CSSProperties}>
-          <Header />
-          <Outlet />
-        </Main>
-      </>
-    );
-  },
+  component: RouteComponent,
 });

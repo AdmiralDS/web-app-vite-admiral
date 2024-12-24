@@ -1,9 +1,6 @@
 import { createFileRoute, Outlet, useChildMatches } from '@tanstack/react-router';
-import { Title, Description, Wrapper, Preview } from './-helpers/main';
 
-export const Route = createFileRoute('/general')({
-  component: RouteComponent,
-});
+import { Title, Description, Wrapper, Preview } from './-helpers/main';
 
 /** TODO: если в дальнейшем структура будет совпадать с разделом Components, то объединить их вместе  */
 
@@ -25,3 +22,7 @@ function RouteComponent() {
     </>
   );
 }
+
+export const Route = createFileRoute('/general')({
+  component: RouteComponent,
+});

@@ -42,10 +42,10 @@ export const light: {
     MozHyphens: 'none',
     msHyphens: 'none',
     hyphens: 'none',
-    padding: '0',
+    padding: '20px 52px 20px 20px',
     margin: '0',
     overflow: 'auto',
-    borderRadius: '0.3em',
+    borderRadius: '8px',
   },
   'code[class*="language-"]::-moz-selection': {
     background: 'hsl(230, 1%, 90%)',

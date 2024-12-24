@@ -102,8 +102,8 @@ const sources = [
   },
 ];
 
-export const Route = createFileRoute('/general/resources')({
-  component: () => (
+function RouteComponent() {
+  return (
     <Sources>
       {sources.map(({ id, icon, iconColor, href, name, description }) => (
         <Source href={href} target="_blank" key={id}>
@@ -113,7 +113,11 @@ export const Route = createFileRoute('/general/resources')({
         </Source>
       ))}
     </Sources>
-  ),
+  );
+}
+
+export const Route = createFileRoute('/general/resources')({
+  component: RouteComponent,
   staticData: {
     title: 'Resources',
     description: 'Полезные материалы и ссылки, которые могут пригодиться при использовании библиотеки Адмирал',
