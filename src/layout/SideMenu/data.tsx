@@ -436,6 +436,13 @@ const data = [
       { name: 'Базовый пример', path: '/components/flex' },
     ],
   },
+  {
+    name: 'GroupActionsPane',
+    path: '/components/groupActionsPane',
+    routes: [
+      { name: 'Базовый пример', path: '/components/groupActionsPane' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

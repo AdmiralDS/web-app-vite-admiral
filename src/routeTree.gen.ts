@@ -38,6 +38,7 @@ import { Route as ComponentsIconPlacementIndexImport } from './routes/components
 import { Route as ComponentsIconButtonGroupIndexImport } from './routes/components/iconButtonGroup/index'
 import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index'
 import { Route as ComponentsHintIndexImport } from './routes/components/hint/index'
+import { Route as ComponentsGroupActionsPaneIndexImport } from './routes/components/groupActionsPane/index'
 import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
 import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
@@ -400,6 +401,13 @@ const ComponentsHintIndexRoute = ComponentsHintIndexImport.update({
   path: '/hint/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsGroupActionsPaneIndexRoute =
+  ComponentsGroupActionsPaneIndexImport.update({
+    id: '/groupActionsPane/',
+    path: '/groupActionsPane/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsFloatingButtonIndexRoute =
   ComponentsFloatingButtonIndexImport.update({
@@ -3014,6 +3022,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsFloatingButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/groupActionsPane/': {
+      id: '/components/groupActionsPane/'
+      path: '/groupActionsPane'
+      fullPath: '/components/groupActionsPane'
+      preLoaderRoute: typeof ComponentsGroupActionsPaneIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/': {
       id: '/components/hint/'
       path: '/hint'
@@ -3354,6 +3369,7 @@ interface ComponentsRouteChildren {
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
   ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute
   ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
+  ComponentsGroupActionsPaneIndexRoute: typeof ComponentsGroupActionsPaneIndexRoute
   ComponentsHintIndexRoute: typeof ComponentsHintIndexRoute
   ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute
   ComponentsIconButtonGroupIndexRoute: typeof ComponentsIconButtonGroupIndexRoute
@@ -3597,6 +3613,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
   ComponentsFlexIndexRoute: ComponentsFlexIndexRoute,
   ComponentsFloatingButtonIndexRoute: ComponentsFloatingButtonIndexRoute,
+  ComponentsGroupActionsPaneIndexRoute: ComponentsGroupActionsPaneIndexRoute,
   ComponentsHintIndexRoute: ComponentsHintIndexRoute,
   ComponentsIconButtonIndexRoute: ComponentsIconButtonIndexRoute,
   ComponentsIconButtonGroupIndexRoute: ComponentsIconButtonGroupIndexRoute,
@@ -3833,6 +3850,7 @@ export interface FileRoutesByFullPath {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
+  '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute
   '/components/hint': typeof ComponentsHintIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
@@ -4050,6 +4068,7 @@ export interface FileRoutesByTo {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
+  '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute
   '/components/hint': typeof ComponentsHintIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
@@ -4268,6 +4287,7 @@ export interface FileRoutesById {
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
   '/components/flex/': typeof ComponentsFlexIndexRoute
   '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
+  '/components/groupActionsPane/': typeof ComponentsGroupActionsPaneIndexRoute
   '/components/hint/': typeof ComponentsHintIndexRoute
   '/components/iconButton/': typeof ComponentsIconButtonIndexRoute
   '/components/iconButtonGroup/': typeof ComponentsIconButtonGroupIndexRoute
@@ -4487,6 +4507,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/flex'
     | '/components/floatingButton'
+    | '/components/groupActionsPane'
     | '/components/hint'
     | '/components/iconButton'
     | '/components/iconButtonGroup'
@@ -4703,6 +4724,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/flex'
     | '/components/floatingButton'
+    | '/components/groupActionsPane'
     | '/components/hint'
     | '/components/iconButton'
     | '/components/iconButtonGroup'
@@ -4919,6 +4941,7 @@ export interface FileRouteTypes {
     | '/components/dropdown/'
     | '/components/flex/'
     | '/components/floatingButton/'
+    | '/components/groupActionsPane/'
     | '/components/hint/'
     | '/components/iconButton/'
     | '/components/iconButtonGroup/'
@@ -5163,6 +5186,7 @@ export const routeTree = rootRoute
         "/components/dropdown/",
         "/components/flex/",
         "/components/floatingButton/",
+        "/components/groupActionsPane/",
         "/components/hint/",
         "/components/iconButton/",
         "/components/iconButtonGroup/",
@@ -5952,6 +5976,10 @@ export const routeTree = rootRoute
     },
     "/components/floatingButton/": {
       "filePath": "components/floatingButton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/groupActionsPane/": {
+      "filePath": "components/groupActionsPane/index.tsx",
       "parent": "/components"
     },
     "/components/hint/": {
