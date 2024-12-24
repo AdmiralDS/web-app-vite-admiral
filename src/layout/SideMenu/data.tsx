@@ -429,6 +429,13 @@ const data = [
       { name: 'TooltipHoc. Утилита refSetter для мерджа рефов.', path: '/components/tooltip/hocRefSetter' },
     ],
   },
+  {
+    name: 'Flex',
+    path: '/components/flex',
+    routes: [
+      { name: 'Базовый пример', path: '/components/flex' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

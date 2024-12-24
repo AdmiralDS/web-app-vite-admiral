@@ -39,6 +39,7 @@ import { Route as ComponentsIconButtonGroupIndexImport } from './routes/componen
 import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index'
 import { Route as ComponentsHintIndexImport } from './routes/components/hint/index'
 import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
+import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
 import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
@@ -406,6 +407,12 @@ const ComponentsFloatingButtonIndexRoute =
     path: '/floatingButton/',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsFlexIndexRoute = ComponentsFlexIndexImport.update({
+  id: '/flex/',
+  path: '/flex/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsDropdownIndexRoute = ComponentsDropdownIndexImport.update({
   id: '/dropdown/',
@@ -2993,6 +3000,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDropdownIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/flex/': {
+      id: '/components/flex/'
+      path: '/flex'
+      fullPath: '/components/flex'
+      preLoaderRoute: typeof ComponentsFlexIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/': {
       id: '/components/floatingButton/'
       path: '/floatingButton'
@@ -3338,6 +3352,7 @@ interface ComponentsRouteChildren {
   ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
+  ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute
   ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
   ComponentsHintIndexRoute: typeof ComponentsHintIndexRoute
   ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute
@@ -3580,6 +3595,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
+  ComponentsFlexIndexRoute: ComponentsFlexIndexRoute,
   ComponentsFloatingButtonIndexRoute: ComponentsFloatingButtonIndexRoute,
   ComponentsHintIndexRoute: ComponentsHintIndexRoute,
   ComponentsIconButtonIndexRoute: ComponentsIconButtonIndexRoute,
@@ -3815,6 +3831,7 @@ export interface FileRoutesByFullPath {
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/hint': typeof ComponentsHintIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
@@ -4031,6 +4048,7 @@ export interface FileRoutesByTo {
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/hint': typeof ComponentsHintIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
@@ -4248,6 +4266,7 @@ export interface FileRoutesById {
   '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
+  '/components/flex/': typeof ComponentsFlexIndexRoute
   '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
   '/components/hint/': typeof ComponentsHintIndexRoute
   '/components/iconButton/': typeof ComponentsIconButtonIndexRoute
@@ -4466,6 +4485,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/flex'
     | '/components/floatingButton'
     | '/components/hint'
     | '/components/iconButton'
@@ -4681,6 +4701,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/flex'
     | '/components/floatingButton'
     | '/components/hint'
     | '/components/iconButton'
@@ -4896,6 +4917,7 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher/'
     | '/components/drawer/'
     | '/components/dropdown/'
+    | '/components/flex/'
     | '/components/floatingButton/'
     | '/components/hint/'
     | '/components/iconButton/'
@@ -5139,6 +5161,7 @@ export const routeTree = rootRoute
         "/components/contentSwitcher/",
         "/components/drawer/",
         "/components/dropdown/",
+        "/components/flex/",
         "/components/floatingButton/",
         "/components/hint/",
         "/components/iconButton/",
@@ -5921,6 +5944,10 @@ export const routeTree = rootRoute
     },
     "/components/dropdown/": {
       "filePath": "components/dropdown/index.tsx",
+      "parent": "/components"
+    },
+    "/components/flex/": {
+      "filePath": "components/flex/index.tsx",
       "parent": "/components"
     },
     "/components/floatingButton/": {
