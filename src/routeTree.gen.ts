@@ -25,6 +25,7 @@ import { Route as ComponentsTextButtonIndexImport } from './routes/components/te
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
+import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
 import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
 import { Route as ComponentsPaginationOneIndexImport } from './routes/components/paginationOne/index'
 import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
@@ -96,6 +97,8 @@ import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/r
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
 import { Route as ComponentsRadiobuttonFieldSetImport } from './routes/components/radiobutton/fieldSet'
 import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/components/radiobutton/extraText'
+import { Route as ComponentsProgressPageStylesImport } from './routes/components/progressPage/styles'
+import { Route as ComponentsProgressPageAnimationImport } from './routes/components/progressPage/animation'
 import { Route as ComponentsPillsTooltipImport } from './routes/components/pills/tooltip'
 import { Route as ComponentsPillsNestedImport } from './routes/components/pills/nested'
 import { Route as ComponentsPillsMenuImport } from './routes/components/pills/menu'
@@ -319,6 +322,13 @@ const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsProgressPageIndexRoute =
+  ComponentsProgressPageIndexImport.update({
+    id: '/progressPage/',
+    path: '/progressPage/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsPillsIndexRoute = ComponentsPillsIndexImport.update({
   id: '/pills/',
@@ -782,6 +792,20 @@ const ComponentsRadiobuttonExtraTextRoute =
   ComponentsRadiobuttonExtraTextImport.update({
     id: '/radiobutton/extraText',
     path: '/radiobutton/extraText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsProgressPageStylesRoute =
+  ComponentsProgressPageStylesImport.update({
+    id: '/progressPage/styles',
+    path: '/progressPage/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsProgressPageAnimationRoute =
+  ComponentsProgressPageAnimationImport.update({
+    id: '/progressPage/animation',
+    path: '/progressPage/animation',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -2683,6 +2707,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsPillsTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/progressPage/animation': {
+      id: '/components/progressPage/animation'
+      path: '/progressPage/animation'
+      fullPath: '/components/progressPage/animation'
+      preLoaderRoute: typeof ComponentsProgressPageAnimationImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/progressPage/styles': {
+      id: '/components/progressPage/styles'
+      path: '/progressPage/styles'
+      fullPath: '/components/progressPage/styles'
+      preLoaderRoute: typeof ComponentsProgressPageStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/extraText': {
       id: '/components/radiobutton/extraText'
       path: '/radiobutton/extraText'
@@ -3180,6 +3218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsPillsIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/progressPage/': {
+      id: '/components/progressPage/'
+      path: '/progressPage'
+      fullPath: '/components/progressPage'
+      preLoaderRoute: typeof ComponentsProgressPageIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/': {
       id: '/components/radiobutton/'
       path: '/radiobutton'
@@ -3376,6 +3421,8 @@ interface ComponentsRouteChildren {
   ComponentsPillsMenuRoute: typeof ComponentsPillsMenuRoute
   ComponentsPillsNestedRoute: typeof ComponentsPillsNestedRoute
   ComponentsPillsTooltipRoute: typeof ComponentsPillsTooltipRoute
+  ComponentsProgressPageAnimationRoute: typeof ComponentsProgressPageAnimationRoute
+  ComponentsProgressPageStylesRoute: typeof ComponentsProgressPageStylesRoute
   ComponentsRadiobuttonExtraTextRoute: typeof ComponentsRadiobuttonExtraTextRoute
   ComponentsRadiobuttonFieldSetRoute: typeof ComponentsRadiobuttonFieldSetRoute
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
@@ -3447,6 +3494,7 @@ interface ComponentsRouteChildren {
   ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
   ComponentsPaginationOneIndexRoute: typeof ComponentsPaginationOneIndexRoute
   ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
+  ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
@@ -3620,6 +3668,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsPillsMenuRoute: ComponentsPillsMenuRoute,
   ComponentsPillsNestedRoute: ComponentsPillsNestedRoute,
   ComponentsPillsTooltipRoute: ComponentsPillsTooltipRoute,
+  ComponentsProgressPageAnimationRoute: ComponentsProgressPageAnimationRoute,
+  ComponentsProgressPageStylesRoute: ComponentsProgressPageStylesRoute,
   ComponentsRadiobuttonExtraTextRoute: ComponentsRadiobuttonExtraTextRoute,
   ComponentsRadiobuttonFieldSetRoute: ComponentsRadiobuttonFieldSetRoute,
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
@@ -3695,6 +3745,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
   ComponentsPaginationOneIndexRoute: ComponentsPaginationOneIndexRoute,
   ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
+  ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
@@ -3865,6 +3916,8 @@ export interface FileRoutesByFullPath {
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
+  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
+  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -3936,6 +3989,7 @@ export interface FileRoutesByFullPath {
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
+  '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -4087,6 +4141,8 @@ export interface FileRoutesByTo {
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
+  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
+  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -4158,6 +4214,7 @@ export interface FileRoutesByTo {
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
+  '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -4310,6 +4367,8 @@ export interface FileRoutesById {
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
+  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
+  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -4381,6 +4440,7 @@ export interface FileRoutesById {
   '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne/': typeof ComponentsPaginationOneIndexRoute
   '/components/pills/': typeof ComponentsPillsIndexRoute
+  '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
@@ -4534,6 +4594,8 @@ export interface FileRouteTypes {
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
+    | '/components/progressPage/animation'
+    | '/components/progressPage/styles'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -4605,6 +4667,7 @@ export interface FileRouteTypes {
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/pills'
+    | '/components/progressPage'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/tag'
@@ -4755,6 +4818,8 @@ export interface FileRouteTypes {
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
+    | '/components/progressPage/animation'
+    | '/components/progressPage/styles'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -4826,6 +4891,7 @@ export interface FileRouteTypes {
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/pills'
+    | '/components/progressPage'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/tag'
@@ -4976,6 +5042,8 @@ export interface FileRouteTypes {
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
+    | '/components/progressPage/animation'
+    | '/components/progressPage/styles'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -5047,6 +5115,7 @@ export interface FileRouteTypes {
     | '/components/overflowMenu/'
     | '/components/paginationOne/'
     | '/components/pills/'
+    | '/components/progressPage/'
     | '/components/radiobutton/'
     | '/components/table/'
     | '/components/tag/'
@@ -5225,6 +5294,8 @@ export const routeTree = rootRoute
         "/components/pills/menu",
         "/components/pills/nested",
         "/components/pills/tooltip",
+        "/components/progressPage/animation",
+        "/components/progressPage/styles",
         "/components/radiobutton/extraText",
         "/components/radiobutton/fieldSet",
         "/components/radiobutton/informer",
@@ -5296,6 +5367,7 @@ export const routeTree = rootRoute
         "/components/overflowMenu/",
         "/components/paginationOne/",
         "/components/pills/",
+        "/components/progressPage/",
         "/components/radiobutton/",
         "/components/table/",
         "/components/tag/",
@@ -5862,6 +5934,14 @@ export const routeTree = rootRoute
       "filePath": "components/pills/tooltip.tsx",
       "parent": "/components"
     },
+    "/components/progressPage/animation": {
+      "filePath": "components/progressPage/animation.tsx",
+      "parent": "/components"
+    },
+    "/components/progressPage/styles": {
+      "filePath": "components/progressPage/styles.tsx",
+      "parent": "/components"
+    },
     "/components/radiobutton/extraText": {
       "filePath": "components/radiobutton/extraText.tsx",
       "parent": "/components"
@@ -6144,6 +6224,10 @@ export const routeTree = rootRoute
     },
     "/components/pills/": {
       "filePath": "components/pills/index.tsx",
+      "parent": "/components"
+    },
+    "/components/progressPage/": {
+      "filePath": "components/progressPage/index.tsx",
       "parent": "/components"
     },
     "/components/radiobutton/": {

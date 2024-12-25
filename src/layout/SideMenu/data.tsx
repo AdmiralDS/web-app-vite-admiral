@@ -453,6 +453,15 @@ const data = [
       { name: 'Опция ввода номера страницы через Input', path: '/components/paginationOne/withInput' },
     ],
   },
+  {
+    name: 'ProgressPage',
+    path: '/components/progressPage',
+    routes: [
+      { name: 'Базовый пример', path: '/components/progressPage' },
+      { name: 'Стили', path: '/components/progressPage/styles' },
+      { name: 'Анимация', path: '/components/progressPage/animation' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
