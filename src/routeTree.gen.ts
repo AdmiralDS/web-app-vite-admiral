@@ -26,6 +26,7 @@ import { Route as ComponentsTagIndexImport } from './routes/components/tag/index
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
+import { Route as ComponentsPaginationTwoIndexImport } from './routes/components/paginationTwo/index'
 import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
 import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
@@ -98,6 +99,8 @@ import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/componen
 import { Route as ComponentsPillsTooltipImport } from './routes/components/pills/tooltip'
 import { Route as ComponentsPillsNestedImport } from './routes/components/pills/nested'
 import { Route as ComponentsPillsMenuImport } from './routes/components/pills/menu'
+import { Route as ComponentsPaginationTwoMobileImport } from './routes/components/paginationTwo/mobile'
+import { Route as ComponentsPaginationTwoExamplesImport } from './routes/components/paginationTwo/examples'
 import { Route as ComponentsOverflowMenuStylesImport } from './routes/components/overflowMenu/styles'
 import { Route as ComponentsNotificationStylesImport } from './routes/components/notification/styles'
 import { Route as ComponentsNotificationStatesImport } from './routes/components/notification/states'
@@ -321,6 +324,13 @@ const ComponentsPillsIndexRoute = ComponentsPillsIndexImport.update({
   path: '/pills/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsPaginationTwoIndexRoute =
+  ComponentsPaginationTwoIndexImport.update({
+    id: '/paginationTwo/',
+    path: '/paginationTwo/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsOverflowMenuIndexRoute =
   ComponentsOverflowMenuIndexImport.update({
@@ -791,6 +801,20 @@ const ComponentsPillsMenuRoute = ComponentsPillsMenuImport.update({
   path: '/pills/menu',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsPaginationTwoMobileRoute =
+  ComponentsPaginationTwoMobileImport.update({
+    id: '/paginationTwo/mobile',
+    path: '/paginationTwo/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPaginationTwoExamplesRoute =
+  ComponentsPaginationTwoExamplesImport.update({
+    id: '/paginationTwo/examples',
+    path: '/paginationTwo/examples',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsOverflowMenuStylesRoute =
   ComponentsOverflowMenuStylesImport.update({
@@ -2609,6 +2633,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsOverflowMenuStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/paginationTwo/examples': {
+      id: '/components/paginationTwo/examples'
+      path: '/paginationTwo/examples'
+      fullPath: '/components/paginationTwo/examples'
+      preLoaderRoute: typeof ComponentsPaginationTwoExamplesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/paginationTwo/mobile': {
+      id: '/components/paginationTwo/mobile'
+      path: '/paginationTwo/mobile'
+      fullPath: '/components/paginationTwo/mobile'
+      preLoaderRoute: typeof ComponentsPaginationTwoMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/menu': {
       id: '/components/pills/menu'
       path: '/pills/menu'
@@ -3113,6 +3151,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsOverflowMenuIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/paginationTwo/': {
+      id: '/components/paginationTwo/'
+      path: '/paginationTwo'
+      fullPath: '/components/paginationTwo'
+      preLoaderRoute: typeof ComponentsPaginationTwoIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/': {
       id: '/components/pills/'
       path: '/pills'
@@ -3310,6 +3355,8 @@ interface ComponentsRouteChildren {
   ComponentsNotificationStatesRoute: typeof ComponentsNotificationStatesRoute
   ComponentsNotificationStylesRoute: typeof ComponentsNotificationStylesRoute
   ComponentsOverflowMenuStylesRoute: typeof ComponentsOverflowMenuStylesRoute
+  ComponentsPaginationTwoExamplesRoute: typeof ComponentsPaginationTwoExamplesRoute
+  ComponentsPaginationTwoMobileRoute: typeof ComponentsPaginationTwoMobileRoute
   ComponentsPillsMenuRoute: typeof ComponentsPillsMenuRoute
   ComponentsPillsNestedRoute: typeof ComponentsPillsNestedRoute
   ComponentsPillsTooltipRoute: typeof ComponentsPillsTooltipRoute
@@ -3382,6 +3429,7 @@ interface ComponentsRouteChildren {
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute
   ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
+  ComponentsPaginationTwoIndexRoute: typeof ComponentsPaginationTwoIndexRoute
   ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
@@ -3550,6 +3598,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsNotificationStatesRoute: ComponentsNotificationStatesRoute,
   ComponentsNotificationStylesRoute: ComponentsNotificationStylesRoute,
   ComponentsOverflowMenuStylesRoute: ComponentsOverflowMenuStylesRoute,
+  ComponentsPaginationTwoExamplesRoute: ComponentsPaginationTwoExamplesRoute,
+  ComponentsPaginationTwoMobileRoute: ComponentsPaginationTwoMobileRoute,
   ComponentsPillsMenuRoute: ComponentsPillsMenuRoute,
   ComponentsPillsNestedRoute: ComponentsPillsNestedRoute,
   ComponentsPillsTooltipRoute: ComponentsPillsTooltipRoute,
@@ -3626,6 +3676,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsNotificationIndexRoute: ComponentsNotificationIndexRoute,
   ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
+  ComponentsPaginationTwoIndexRoute: ComponentsPaginationTwoIndexRoute,
   ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
@@ -3791,6 +3842,8 @@ export interface FileRoutesByFullPath {
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationTwo/examples': typeof ComponentsPaginationTwoExamplesRoute
+  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -3863,6 +3916,7 @@ export interface FileRoutesByFullPath {
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
+  '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -4009,6 +4063,8 @@ export interface FileRoutesByTo {
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationTwo/examples': typeof ComponentsPaginationTwoExamplesRoute
+  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -4081,6 +4137,7 @@ export interface FileRoutesByTo {
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
+  '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -4228,6 +4285,8 @@ export interface FileRoutesById {
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationTwo/examples': typeof ComponentsPaginationTwoExamplesRoute
+  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -4300,6 +4359,7 @@ export interface FileRoutesById {
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/notification/': typeof ComponentsNotificationIndexRoute
   '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
+  '/components/paginationTwo/': typeof ComponentsPaginationTwoIndexRoute
   '/components/pills/': typeof ComponentsPillsIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
@@ -4448,6 +4508,8 @@ export interface FileRouteTypes {
     | '/components/notification/states'
     | '/components/notification/styles'
     | '/components/overflowMenu/styles'
+    | '/components/paginationTwo/examples'
+    | '/components/paginationTwo/mobile'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -4520,6 +4582,7 @@ export interface FileRouteTypes {
     | '/components/multiButton'
     | '/components/notification'
     | '/components/overflowMenu'
+    | '/components/paginationTwo'
     | '/components/pills'
     | '/components/radiobutton'
     | '/components/table'
@@ -4665,6 +4728,8 @@ export interface FileRouteTypes {
     | '/components/notification/states'
     | '/components/notification/styles'
     | '/components/overflowMenu/styles'
+    | '/components/paginationTwo/examples'
+    | '/components/paginationTwo/mobile'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -4737,6 +4802,7 @@ export interface FileRouteTypes {
     | '/components/multiButton'
     | '/components/notification'
     | '/components/overflowMenu'
+    | '/components/paginationTwo'
     | '/components/pills'
     | '/components/radiobutton'
     | '/components/table'
@@ -4882,6 +4948,8 @@ export interface FileRouteTypes {
     | '/components/notification/states'
     | '/components/notification/styles'
     | '/components/overflowMenu/styles'
+    | '/components/paginationTwo/examples'
+    | '/components/paginationTwo/mobile'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -4954,6 +5022,7 @@ export interface FileRouteTypes {
     | '/components/multiButton/'
     | '/components/notification/'
     | '/components/overflowMenu/'
+    | '/components/paginationTwo/'
     | '/components/pills/'
     | '/components/radiobutton/'
     | '/components/table/'
@@ -5127,6 +5196,8 @@ export const routeTree = rootRoute
         "/components/notification/states",
         "/components/notification/styles",
         "/components/overflowMenu/styles",
+        "/components/paginationTwo/examples",
+        "/components/paginationTwo/mobile",
         "/components/pills/menu",
         "/components/pills/nested",
         "/components/pills/tooltip",
@@ -5199,6 +5270,7 @@ export const routeTree = rootRoute
         "/components/multiButton/",
         "/components/notification/",
         "/components/overflowMenu/",
+        "/components/paginationTwo/",
         "/components/pills/",
         "/components/radiobutton/",
         "/components/table/",
@@ -5742,6 +5814,14 @@ export const routeTree = rootRoute
       "filePath": "components/overflowMenu/styles.tsx",
       "parent": "/components"
     },
+    "/components/paginationTwo/examples": {
+      "filePath": "components/paginationTwo/examples.tsx",
+      "parent": "/components"
+    },
+    "/components/paginationTwo/mobile": {
+      "filePath": "components/paginationTwo/mobile.tsx",
+      "parent": "/components"
+    },
     "/components/pills/menu": {
       "filePath": "components/pills/menu.tsx",
       "parent": "/components"
@@ -6028,6 +6108,10 @@ export const routeTree = rootRoute
     },
     "/components/overflowMenu/": {
       "filePath": "components/overflowMenu/index.tsx",
+      "parent": "/components"
+    },
+    "/components/paginationTwo/": {
+      "filePath": "components/paginationTwo/index.tsx",
       "parent": "/components"
     },
     "/components/pills/": {

@@ -432,15 +432,20 @@ const data = [
   {
     name: 'Flex',
     path: '/components/flex',
-    routes: [
-      { name: 'Базовый пример', path: '/components/flex' },
-    ],
+    routes: [{ name: 'Базовый пример', path: '/components/flex' }],
   },
   {
     name: 'GroupActionsPane',
     path: '/components/groupActionsPane',
+    routes: [{ name: 'Базовый пример', path: '/components/groupActionsPane' }],
+  },
+  {
+    name: 'PaginationTwo',
+    path: '/components/paginationTwo',
     routes: [
-      { name: 'Базовый пример', path: '/components/groupActionsPane' },
+      { name: 'Базовый пример', path: '/components/paginationTwo' },
+      { name: 'Примеры', path: '/components/paginationTwo/examples' },
+      { name: 'Мобильная версия', path: '/components/paginationTwo/mobile' },
     ],
   },
 ];
