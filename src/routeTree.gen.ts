@@ -25,6 +25,7 @@ import { Route as ComponentsTextButtonIndexImport } from './routes/components/te
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
+import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
 import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
 import { Route as ComponentsProgressHeaderIndexImport } from './routes/components/progressHeader/index'
 import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
@@ -99,6 +100,10 @@ import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/r
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
 import { Route as ComponentsRadiobuttonFieldSetImport } from './routes/components/radiobutton/fieldSet'
 import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/components/radiobutton/extraText'
+import { Route as ComponentsProgressStepperStepsNamingImport } from './routes/components/progressStepper/stepsNaming'
+import { Route as ComponentsProgressStepperScenarioImport } from './routes/components/progressStepper/scenario'
+import { Route as ComponentsProgressStepperMobileImport } from './routes/components/progressStepper/mobile'
+import { Route as ComponentsProgressStepperDescriptionNextStepsImport } from './routes/components/progressStepper/descriptionNextSteps'
 import { Route as ComponentsProgressPageStylesImport } from './routes/components/progressPage/styles'
 import { Route as ComponentsProgressPageAnimationImport } from './routes/components/progressPage/animation'
 import { Route as ComponentsProgressHeaderStylesImport } from './routes/components/progressHeader/styles'
@@ -331,6 +336,13 @@ const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsProgressStepperIndexRoute =
+  ComponentsProgressStepperIndexImport.update({
+    id: '/progressStepper/',
+    path: '/progressStepper/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsProgressPageIndexRoute =
   ComponentsProgressPageIndexImport.update({
@@ -815,6 +827,34 @@ const ComponentsRadiobuttonExtraTextRoute =
   ComponentsRadiobuttonExtraTextImport.update({
     id: '/radiobutton/extraText',
     path: '/radiobutton/extraText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsProgressStepperStepsNamingRoute =
+  ComponentsProgressStepperStepsNamingImport.update({
+    id: '/progressStepper/stepsNaming',
+    path: '/progressStepper/stepsNaming',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsProgressStepperScenarioRoute =
+  ComponentsProgressStepperScenarioImport.update({
+    id: '/progressStepper/scenario',
+    path: '/progressStepper/scenario',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsProgressStepperMobileRoute =
+  ComponentsProgressStepperMobileImport.update({
+    id: '/progressStepper/mobile',
+    path: '/progressStepper/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsProgressStepperDescriptionNextStepsRoute =
+  ComponentsProgressStepperDescriptionNextStepsImport.update({
+    id: '/progressStepper/descriptionNextSteps',
+    path: '/progressStepper/descriptionNextSteps',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -2842,6 +2882,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsProgressPageStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/progressStepper/descriptionNextSteps': {
+      id: '/components/progressStepper/descriptionNextSteps'
+      path: '/progressStepper/descriptionNextSteps'
+      fullPath: '/components/progressStepper/descriptionNextSteps'
+      preLoaderRoute: typeof ComponentsProgressStepperDescriptionNextStepsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/progressStepper/mobile': {
+      id: '/components/progressStepper/mobile'
+      path: '/progressStepper/mobile'
+      fullPath: '/components/progressStepper/mobile'
+      preLoaderRoute: typeof ComponentsProgressStepperMobileImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/progressStepper/scenario': {
+      id: '/components/progressStepper/scenario'
+      path: '/progressStepper/scenario'
+      fullPath: '/components/progressStepper/scenario'
+      preLoaderRoute: typeof ComponentsProgressStepperScenarioImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/progressStepper/stepsNaming': {
+      id: '/components/progressStepper/stepsNaming'
+      path: '/progressStepper/stepsNaming'
+      fullPath: '/components/progressStepper/stepsNaming'
+      preLoaderRoute: typeof ComponentsProgressStepperStepsNamingImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/extraText': {
       id: '/components/radiobutton/extraText'
       path: '/radiobutton/extraText'
@@ -3360,6 +3428,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsProgressPageIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/progressStepper/': {
+      id: '/components/progressStepper/'
+      path: '/progressStepper'
+      fullPath: '/components/progressStepper'
+      preLoaderRoute: typeof ComponentsProgressStepperIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/': {
       id: '/components/radiobutton/'
       path: '/radiobutton'
@@ -3565,6 +3640,10 @@ interface ComponentsRouteChildren {
   ComponentsProgressHeaderStylesRoute: typeof ComponentsProgressHeaderStylesRoute
   ComponentsProgressPageAnimationRoute: typeof ComponentsProgressPageAnimationRoute
   ComponentsProgressPageStylesRoute: typeof ComponentsProgressPageStylesRoute
+  ComponentsProgressStepperDescriptionNextStepsRoute: typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  ComponentsProgressStepperMobileRoute: typeof ComponentsProgressStepperMobileRoute
+  ComponentsProgressStepperScenarioRoute: typeof ComponentsProgressStepperScenarioRoute
+  ComponentsProgressStepperStepsNamingRoute: typeof ComponentsProgressStepperStepsNamingRoute
   ComponentsRadiobuttonExtraTextRoute: typeof ComponentsRadiobuttonExtraTextRoute
   ComponentsRadiobuttonFieldSetRoute: typeof ComponentsRadiobuttonFieldSetRoute
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
@@ -3639,6 +3718,7 @@ interface ComponentsRouteChildren {
   ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
   ComponentsProgressHeaderIndexRoute: typeof ComponentsProgressHeaderIndexRoute
   ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
+  ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
@@ -3822,6 +3902,13 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressHeaderStylesRoute: ComponentsProgressHeaderStylesRoute,
   ComponentsProgressPageAnimationRoute: ComponentsProgressPageAnimationRoute,
   ComponentsProgressPageStylesRoute: ComponentsProgressPageStylesRoute,
+  ComponentsProgressStepperDescriptionNextStepsRoute:
+    ComponentsProgressStepperDescriptionNextStepsRoute,
+  ComponentsProgressStepperMobileRoute: ComponentsProgressStepperMobileRoute,
+  ComponentsProgressStepperScenarioRoute:
+    ComponentsProgressStepperScenarioRoute,
+  ComponentsProgressStepperStepsNamingRoute:
+    ComponentsProgressStepperStepsNamingRoute,
   ComponentsRadiobuttonExtraTextRoute: ComponentsRadiobuttonExtraTextRoute,
   ComponentsRadiobuttonFieldSetRoute: ComponentsRadiobuttonFieldSetRoute,
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
@@ -3900,6 +3987,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
   ComponentsProgressHeaderIndexRoute: ComponentsProgressHeaderIndexRoute,
   ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
+  ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
@@ -4079,6 +4167,10 @@ export interface FileRoutesByFullPath {
   '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute
   '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
   '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
+  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute
+  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute
+  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -4153,6 +4245,7 @@ export interface FileRoutesByFullPath {
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
+  '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -4313,6 +4406,10 @@ export interface FileRoutesByTo {
   '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute
   '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
   '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
+  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute
+  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute
+  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -4387,6 +4484,7 @@ export interface FileRoutesByTo {
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
+  '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -4548,6 +4646,10 @@ export interface FileRoutesById {
   '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute
   '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
   '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
+  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute
+  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute
+  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute
   '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
   '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
@@ -4622,6 +4724,7 @@ export interface FileRoutesById {
   '/components/pills/': typeof ComponentsPillsIndexRoute
   '/components/progressHeader/': typeof ComponentsProgressHeaderIndexRoute
   '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
+  '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
@@ -4784,6 +4887,10 @@ export interface FileRouteTypes {
     | '/components/progressHeader/styles'
     | '/components/progressPage/animation'
     | '/components/progressPage/styles'
+    | '/components/progressStepper/descriptionNextSteps'
+    | '/components/progressStepper/mobile'
+    | '/components/progressStepper/scenario'
+    | '/components/progressStepper/stepsNaming'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -4858,6 +4965,7 @@ export interface FileRouteTypes {
     | '/components/pills'
     | '/components/progressHeader'
     | '/components/progressPage'
+    | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/tag'
@@ -5017,6 +5125,10 @@ export interface FileRouteTypes {
     | '/components/progressHeader/styles'
     | '/components/progressPage/animation'
     | '/components/progressPage/styles'
+    | '/components/progressStepper/descriptionNextSteps'
+    | '/components/progressStepper/mobile'
+    | '/components/progressStepper/scenario'
+    | '/components/progressStepper/stepsNaming'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -5091,6 +5203,7 @@ export interface FileRouteTypes {
     | '/components/pills'
     | '/components/progressHeader'
     | '/components/progressPage'
+    | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/table'
     | '/components/tag'
@@ -5250,6 +5363,10 @@ export interface FileRouteTypes {
     | '/components/progressHeader/styles'
     | '/components/progressPage/animation'
     | '/components/progressPage/styles'
+    | '/components/progressStepper/descriptionNextSteps'
+    | '/components/progressStepper/mobile'
+    | '/components/progressStepper/scenario'
+    | '/components/progressStepper/stepsNaming'
     | '/components/radiobutton/extraText'
     | '/components/radiobutton/fieldSet'
     | '/components/radiobutton/informer'
@@ -5324,6 +5441,7 @@ export interface FileRouteTypes {
     | '/components/pills/'
     | '/components/progressHeader/'
     | '/components/progressPage/'
+    | '/components/progressStepper/'
     | '/components/radiobutton/'
     | '/components/table/'
     | '/components/tag/'
@@ -5511,6 +5629,10 @@ export const routeTree = rootRoute
         "/components/progressHeader/styles",
         "/components/progressPage/animation",
         "/components/progressPage/styles",
+        "/components/progressStepper/descriptionNextSteps",
+        "/components/progressStepper/mobile",
+        "/components/progressStepper/scenario",
+        "/components/progressStepper/stepsNaming",
         "/components/radiobutton/extraText",
         "/components/radiobutton/fieldSet",
         "/components/radiobutton/informer",
@@ -5585,6 +5707,7 @@ export const routeTree = rootRoute
         "/components/pills/",
         "/components/progressHeader/",
         "/components/progressPage/",
+        "/components/progressStepper/",
         "/components/radiobutton/",
         "/components/table/",
         "/components/tag/",
@@ -6187,6 +6310,22 @@ export const routeTree = rootRoute
       "filePath": "components/progressPage/styles.tsx",
       "parent": "/components"
     },
+    "/components/progressStepper/descriptionNextSteps": {
+      "filePath": "components/progressStepper/descriptionNextSteps.tsx",
+      "parent": "/components"
+    },
+    "/components/progressStepper/mobile": {
+      "filePath": "components/progressStepper/mobile.tsx",
+      "parent": "/components"
+    },
+    "/components/progressStepper/scenario": {
+      "filePath": "components/progressStepper/scenario.tsx",
+      "parent": "/components"
+    },
+    "/components/progressStepper/stepsNaming": {
+      "filePath": "components/progressStepper/stepsNaming.tsx",
+      "parent": "/components"
+    },
     "/components/radiobutton/extraText": {
       "filePath": "components/radiobutton/extraText.tsx",
       "parent": "/components"
@@ -6481,6 +6620,10 @@ export const routeTree = rootRoute
     },
     "/components/progressPage/": {
       "filePath": "components/progressPage/index.tsx",
+      "parent": "/components"
+    },
+    "/components/progressStepper/": {
+      "filePath": "components/progressStepper/index.tsx",
       "parent": "/components"
     },
     "/components/radiobutton/": {

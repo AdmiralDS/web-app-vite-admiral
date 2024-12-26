@@ -479,6 +479,17 @@ const data = [
       { name: 'Анимация', path: '/components/progressHeader/animation' },
     ],
   },
+  {
+    name: 'ProgressStepper',
+    path: '/components/progressStepper',
+    routes: [
+      { name: 'Базовый пример', path: '/components/progressStepper' },
+      { name: 'Сценарий прогресса', path: '/components/progressStepper/scenario' },
+      { name: 'Адаптив (mobile)', path: '/components/progressStepper/mobile' },
+      { name: 'Пример настройки названия шага', path: '/components/progressStepper/stepsNaming' },
+      { name: 'Примеры настройки подписи о следующем шаге', path: '/components/progressStepper/descriptionNextSteps' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
