@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection, PStyled } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 import { useState } from 'react';
 import { PaginationTwo } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
@@ -37,12 +37,8 @@ export const Template = () => {
       <ExampleSection
         text={
           <>
-            <PStyled>
-              Рекомендуется в мобильных версиях больших списков использовать “бесконечный скролл” без компонента
-              Pagination. Но если пагинация необходима, то используется мобильная версия.
-            </PStyled>
-            В мобильной версии используется модифицированный компонет с несколько другой логикой Pagination Mobile
-            Simple:
+            Рекомендуется в мобильных версиях больших списков использовать “бесконечный скролл” без компонента
+            Pagination. Но если пагинация необходима, то используется мобильная версия.
           </>
         }
       >

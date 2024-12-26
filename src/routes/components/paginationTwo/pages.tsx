@@ -8,7 +8,7 @@ export const Template = () => {
 
   return (
     <>
-      <ExampleSection text="Если страниц больше, чем 7, то через многоточие указывается ссылка на последнюю страницу в последовательности:">
+      <ExampleSection text="Если страниц больше 7, то через многоточие указывается ссылка на последнюю страницу в последовательности.">
         <PaginationTwo count={16} page={state} onChange={(_, page: number) => setState(page)} />
       </ExampleSection>
     </>
