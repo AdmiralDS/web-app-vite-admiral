@@ -451,6 +451,25 @@ const data = [
       { name: 'Мобильная версия', path: '/components/paginationTwo/mobile' },
     ],
   },
+  {
+    name: 'PaginationOne',
+    path: '/components/paginationOne',
+    routes: [
+      { name: 'Базовый пример', path: '/components/paginationOne' },
+      { name: 'Типы', path: '/components/paginationOne/types' },
+      { name: 'Состояния', path: '/components/paginationOne/states' },
+      { name: 'Опция ввода номера страницы через Input', path: '/components/paginationOne/withInput' },
+    ],
+  },
+  {
+    name: 'ProgressPage',
+    path: '/components/progressPage',
+    routes: [
+      { name: 'Базовый пример', path: '/components/progressPage' },
+      { name: 'Стили', path: '/components/progressPage/styles' },
+      { name: 'Анимация', path: '/components/progressPage/animation' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
