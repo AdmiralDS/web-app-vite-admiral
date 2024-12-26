@@ -1,9 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
+import { ExampleSection, PStyled } from '../../-helpers/examples';
 import { useState } from 'react';
 import { PaginationTwo } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { PStyled } from '.';
 
 const MobileWrapper = styled.div`
   width: 320px;

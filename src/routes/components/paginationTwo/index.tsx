@@ -1,12 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
+import { ExampleSection, PStyled } from '../../-helpers/examples';
 import { PaginationTwo } from '@admiral-ds/react-ui';
 import { useState } from 'react';
-import styled from 'styled-components';
-
-export const PStyled = styled.p`
-  margin-bottom: 20px;
-`;
 
 export const Template = () => {
   const [state, setState] = useState(1);

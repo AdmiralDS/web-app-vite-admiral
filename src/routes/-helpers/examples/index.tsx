@@ -40,6 +40,10 @@ export const Section = styled.div`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
 `;
 
+export const PStyled = styled.p`
+  margin-bottom: 20px;
+`;
+
 export interface SectionDescriptionProps {
   header?: React.ReactNode;
   text?: React.ReactNode;
