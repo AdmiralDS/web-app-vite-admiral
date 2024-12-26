@@ -470,6 +470,15 @@ const data = [
       { name: 'Анимация', path: '/components/progressPage/animation' },
     ],
   },
+  {
+    name: 'ProgressHeader',
+    path: '/components/progressHeader',
+    routes: [
+      { name: 'Базовый пример', path: '/components/progressHeader' },
+      { name: 'Стили', path: '/components/progressHeader/styles' },
+      { name: 'Анимация', path: '/components/progressHeader/animation' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
