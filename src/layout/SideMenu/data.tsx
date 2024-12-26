@@ -432,15 +432,23 @@ const data = [
   {
     name: 'Flex',
     path: '/components/flex',
-    routes: [
-      { name: 'Базовый пример', path: '/components/flex' },
-    ],
+    routes: [{ name: 'Базовый пример', path: '/components/flex' }],
   },
   {
     name: 'GroupActionsPane',
     path: '/components/groupActionsPane',
+    routes: [{ name: 'Базовый пример', path: '/components/groupActionsPane' }],
+  },
+  {
+    name: 'PaginationTwo',
+    path: '/components/paginationTwo',
     routes: [
-      { name: 'Базовый пример', path: '/components/groupActionsPane' },
+      { name: 'Базовый пример', path: '/components/paginationTwo' },
+      { name: 'Количество страниц', path: '/components/paginationTwo/pages' },
+      { name: 'Ввод номера страницы вручную', path: '/components/paginationTwo/withInput' },
+      { name: 'Состояния', path: '/components/paginationTwo/state' },
+      { name: 'Количество записей', path: '/components/paginationTwo/entries' },
+      { name: 'Мобильная версия', path: '/components/paginationTwo/mobile' },
     ],
   },
   {
