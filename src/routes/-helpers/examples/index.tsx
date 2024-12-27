@@ -81,3 +81,59 @@ export const ExampleSection = ({ header, text, children, cssMixin, ...props }: E
 export function uid(): string {
   return (performance.now().toString(36) + Math.random().toString(36)).replace(/\./g, '');
 }
+
+const MobileTopWrapper = styled.div`
+  width: 320px;
+  padding: 20px 8px 80px;
+  box-sizing: border-box;
+  border: 8px solid var(--admiral-color-Neutral_Neutral50, ${({ theme }) => theme.color['Neutral/Neutral 50']});
+  border-bottom-style: none;
+  background-color: var(--admiral-color-Neutral_Neutral00, ${({ theme }) => theme.color['Neutral/Neutral 00']});
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  margin-top: 20px;
+`;
+
+const MobileBottomWrapper = styled.div`
+  width: 320px;
+  padding-top: 16px;
+  box-sizing: border-box;
+  border: 8px solid var(--admiral-color-Neutral_Neutral50, ${({ theme }) => theme.color['Neutral/Neutral 50']});
+  border-top-style: none;
+  background-color: var(--admiral-color-Neutral_Neutral00, ${({ theme }) => theme.color['Neutral/Neutral 00']});
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  margin-bottom: 20px;
+`;
+
+const Wrapper = styled.div`
+  overflow-x: auto;
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+interface MobileProps extends HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
+}
+
+export const MobileTopContainer = ({ children, ...props }: MobileProps) => {
+  return (
+    <MobileTopWrapper {...props}>
+      <Wrapper>{children}</Wrapper>
+    </MobileTopWrapper>
+  );
+};
+
+export const MobileBottomContainer = ({ children, ...props }: MobileProps) => {
+  return (
+    <MobileBottomWrapper {...props}>
+      <Wrapper>{children}</Wrapper>
+    </MobileBottomWrapper>
+  );
+};

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
+import { ExampleSection, MobileTopContainer } from '../../-helpers/examples';
 import { ProgressStepper } from '@admiral-ds/react-ui';
 
 const steps = [
@@ -11,21 +11,15 @@ const steps = [
   'Название шестого шага',
 ];
 
-export const Template = () => {
-  return (
-    <>
-      <ExampleSection header="Первый шаг">
-        <ProgressStepper steps={steps} activeStep={0} mobile />
-      </ExampleSection>
-      <ExampleSection header="Середина прогресса">
-        <ProgressStepper steps={steps} activeStep={2} mobile />
-      </ExampleSection>
-      <ExampleSection header="Последний шаг">
-        <ProgressStepper steps={steps} activeStep={5} mobile />
-      </ExampleSection>
-    </>
-  );
-};
+export const Template = () => (
+  <>
+    <ExampleSection text="Для корректного отображения адаптива элемента на устройстве с шириной экрана меньше 420px стоит вручную настроить минимальную ширину компонента">
+      <MobileTopContainer>
+        <ProgressStepper style={{ minWidth: '100%' }} steps={steps} activeStep={0} mobile />
+      </MobileTopContainer>
+    </ExampleSection>
+  </>
+);
 
 export const Route = createFileRoute('/components/progressStepper/mobile')({
   component: () => <Template />,

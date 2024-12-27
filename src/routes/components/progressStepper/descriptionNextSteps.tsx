@@ -11,22 +11,20 @@ const steps = [
   'Название шестого шага',
 ];
 
-export const Template = () => {
-  return (
-    <>
-      <ExampleSection header="Кастомная подпись о следующем шаге">
-        <ProgressStepper
-          steps={steps}
-          activeStep={2}
-          locale={{ renderNextStepName: (nextStepName) => `Далее следует шаг: ${nextStepName}` }}
-        />
-      </ExampleSection>
-      <ExampleSection header="Отключение подписи о следующем шаге">
-        <ProgressStepper steps={steps} activeStep={2} displayNextStepName={false} mobile />
-      </ExampleSection>
-    </>
-  );
-};
+export const Template = () => (
+  <>
+    <ExampleSection text="Кастомная подпись о следующем шаге">
+      <ProgressStepper
+        steps={steps}
+        activeStep={2}
+        locale={{ renderNextStepName: (nextStepName) => `Далее следует шаг: ${nextStepName}` }}
+      />
+    </ExampleSection>
+    <ExampleSection text="Отключение подписи о следующем шаге">
+      <ProgressStepper steps={steps} activeStep={2} displayNextStepName={false} mobile />
+    </ExampleSection>
+  </>
+);
 
 export const Route = createFileRoute('/components/progressStepper/descriptionNextSteps')({
   component: () => <Template />,

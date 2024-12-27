@@ -14,13 +14,13 @@ const steps = [
 export const Template = () => {
   return (
     <>
-      <ExampleSection header="Первый шаг">
+      <ExampleSection text="Первый шаг">
         <ProgressStepper steps={steps} activeStep={0} />
       </ExampleSection>
-      <ExampleSection header="Середина прогресса">
+      <ExampleSection text="Середина прогресса">
         <ProgressStepper steps={steps} activeStep={2} />
       </ExampleSection>
-      <ExampleSection header="Последний шаг">
+      <ExampleSection text="Последний шаг">
         <ProgressStepper steps={steps} activeStep={5} />
       </ExampleSection>
     </>

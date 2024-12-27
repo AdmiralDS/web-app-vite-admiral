@@ -224,8 +224,8 @@ import { Route as ComponentsButtonGroupStylesImport } from './routes/components/
 import { Route as ComponentsButtonGroupStatesImport } from './routes/components/buttonGroup/states'
 import { Route as ComponentsButtonGroupSizesImport } from './routes/components/buttonGroup/sizes'
 import { Route as ComponentsButtonTypesImport } from './routes/components/button/types'
+import { Route as ComponentsButtonStateImport } from './routes/components/button/state'
 import { Route as ComponentsButtonDimensionImport } from './routes/components/button/dimension'
-import { Route as ComponentsButtonButtonWithLoaderImport } from './routes/components/button/buttonWithLoader'
 import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
 import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
 import { Route as ComponentsButtonAdaptiveImport } from './routes/components/button/adaptive'
@@ -1676,18 +1676,17 @@ const ComponentsButtonTypesRoute = ComponentsButtonTypesImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsButtonStateRoute = ComponentsButtonStateImport.update({
+  id: '/button/state',
+  path: '/button/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
 const ComponentsButtonDimensionRoute = ComponentsButtonDimensionImport.update({
   id: '/button/dimension',
   path: '/button/dimension',
   getParentRoute: () => ComponentsRoute,
 } as any)
-
-const ComponentsButtonButtonWithLoaderRoute =
-  ComponentsButtonButtonWithLoaderImport.update({
-    id: '/button/buttonWithLoader',
-    path: '/button/buttonWithLoader',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
 
 const ComponentsButtonButtonWithIconRoute =
   ComponentsButtonButtonWithIconImport.update({
@@ -2028,18 +2027,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsButtonButtonWithIconImport
       parentRoute: typeof ComponentsImport
     }
-    '/components/button/buttonWithLoader': {
-      id: '/components/button/buttonWithLoader'
-      path: '/button/buttonWithLoader'
-      fullPath: '/components/button/buttonWithLoader'
-      preLoaderRoute: typeof ComponentsButtonButtonWithLoaderImport
-      parentRoute: typeof ComponentsImport
-    }
     '/components/button/dimension': {
       id: '/components/button/dimension'
       path: '/button/dimension'
       fullPath: '/components/button/dimension'
       preLoaderRoute: typeof ComponentsButtonDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/button/state': {
+      id: '/components/button/state'
+      path: '/button/state'
+      fullPath: '/components/button/state'
+      preLoaderRoute: typeof ComponentsButtonStateImport
       parentRoute: typeof ComponentsImport
     }
     '/components/button/types': {
@@ -3518,8 +3517,8 @@ interface ComponentsRouteChildren {
   ComponentsButtonAdaptiveRoute: typeof ComponentsButtonAdaptiveRoute
   ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
   ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
-  ComponentsButtonButtonWithLoaderRoute: typeof ComponentsButtonButtonWithLoaderRoute
   ComponentsButtonDimensionRoute: typeof ComponentsButtonDimensionRoute
+  ComponentsButtonStateRoute: typeof ComponentsButtonStateRoute
   ComponentsButtonTypesRoute: typeof ComponentsButtonTypesRoute
   ComponentsButtonGroupSizesRoute: typeof ComponentsButtonGroupSizesRoute
   ComponentsButtonGroupStatesRoute: typeof ComponentsButtonGroupStatesRoute
@@ -3756,8 +3755,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsButtonAdaptiveRoute: ComponentsButtonAdaptiveRoute,
   ComponentsButtonButtonWithBadgeRoute: ComponentsButtonButtonWithBadgeRoute,
   ComponentsButtonButtonWithIconRoute: ComponentsButtonButtonWithIconRoute,
-  ComponentsButtonButtonWithLoaderRoute: ComponentsButtonButtonWithLoaderRoute,
   ComponentsButtonDimensionRoute: ComponentsButtonDimensionRoute,
+  ComponentsButtonStateRoute: ComponentsButtonStateRoute,
   ComponentsButtonTypesRoute: ComponentsButtonTypesRoute,
   ComponentsButtonGroupSizesRoute: ComponentsButtonGroupSizesRoute,
   ComponentsButtonGroupStatesRoute: ComponentsButtonGroupStatesRoute,
@@ -4045,8 +4044,8 @@ export interface FileRoutesByFullPath {
   '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
-  '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/state': typeof ComponentsButtonStateRoute
   '/components/button/types': typeof ComponentsButtonTypesRoute
   '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
@@ -4284,8 +4283,8 @@ export interface FileRoutesByTo {
   '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
-  '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/state': typeof ComponentsButtonStateRoute
   '/components/button/types': typeof ComponentsButtonTypesRoute
   '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
@@ -4524,8 +4523,8 @@ export interface FileRoutesById {
   '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
   '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
   '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
-  '/components/button/buttonWithLoader': typeof ComponentsButtonButtonWithLoaderRoute
   '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/state': typeof ComponentsButtonStateRoute
   '/components/button/types': typeof ComponentsButtonTypesRoute
   '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
@@ -4765,8 +4764,8 @@ export interface FileRouteTypes {
     | '/components/button/adaptive'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
-    | '/components/button/buttonWithLoader'
     | '/components/button/dimension'
+    | '/components/button/state'
     | '/components/button/types'
     | '/components/buttonGroup/sizes'
     | '/components/buttonGroup/states'
@@ -5003,8 +5002,8 @@ export interface FileRouteTypes {
     | '/components/button/adaptive'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
-    | '/components/button/buttonWithLoader'
     | '/components/button/dimension'
+    | '/components/button/state'
     | '/components/button/types'
     | '/components/buttonGroup/sizes'
     | '/components/buttonGroup/states'
@@ -5241,8 +5240,8 @@ export interface FileRouteTypes {
     | '/components/button/adaptive'
     | '/components/button/buttonWithBadge'
     | '/components/button/buttonWithIcon'
-    | '/components/button/buttonWithLoader'
     | '/components/button/dimension'
+    | '/components/button/state'
     | '/components/button/types'
     | '/components/buttonGroup/sizes'
     | '/components/buttonGroup/states'
@@ -5507,8 +5506,8 @@ export const routeTree = rootRoute
         "/components/button/adaptive",
         "/components/button/buttonWithBadge",
         "/components/button/buttonWithIcon",
-        "/components/button/buttonWithLoader",
         "/components/button/dimension",
+        "/components/button/state",
         "/components/button/types",
         "/components/buttonGroup/sizes",
         "/components/buttonGroup/states",
@@ -5822,12 +5821,12 @@ export const routeTree = rootRoute
       "filePath": "components/button/buttonWithIcon.tsx",
       "parent": "/components"
     },
-    "/components/button/buttonWithLoader": {
-      "filePath": "components/button/buttonWithLoader.tsx",
-      "parent": "/components"
-    },
     "/components/button/dimension": {
       "filePath": "components/button/dimension.tsx",
+      "parent": "/components"
+    },
+    "/components/button/state": {
+      "filePath": "components/button/state.tsx",
       "parent": "/components"
     },
     "/components/button/types": {
