@@ -15,7 +15,7 @@
     "prettier:fix": "prettier --write '**/**/*.{js,jsx,ts,tsx,css,scss}'"
   },
   "dependencies": {
-    "@admiral-ds/react-ui": "^8.16.0",
+    "@admiral-ds/react-ui": "8.29.1",
     "@tanstack/react-router": "^1.90.0",
     "jest-environment-jsdom": "^29.7.0",
     "react": "^18.3.1",
