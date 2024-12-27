@@ -490,6 +490,15 @@ const data = [
       { name: 'Примеры настройки подписи о следующем шаге', path: '/components/progressStepper/descriptionNextSteps' },
     ],
   },
+  {
+    name: 'GlobalSearch',
+    path: '/components/globalSearch',
+    routes: [
+      { name: 'Базовый пример', path: '/components/globalSearch' },
+      { name: 'Размеры', path: '/components/globalSearch/sizes' },
+      { name: 'Варианты', path: '/components/globalSearch/variants' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

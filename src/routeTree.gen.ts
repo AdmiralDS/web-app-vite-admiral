@@ -44,6 +44,7 @@ import { Route as ComponentsIconButtonGroupIndexImport } from './routes/componen
 import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index'
 import { Route as ComponentsHintIndexImport } from './routes/components/hint/index'
 import { Route as ComponentsGroupActionsPaneIndexImport } from './routes/components/groupActionsPane/index'
+import { Route as ComponentsGlobalSearchIndexImport } from './routes/components/globalSearch/index'
 import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
 import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
@@ -162,6 +163,8 @@ import { Route as ComponentsHintScenarioImport } from './routes/components/hint/
 import { Route as ComponentsHintPositionImport } from './routes/components/hint/position'
 import { Route as ComponentsHintClassNameImport } from './routes/components/hint/className'
 import { Route as ComponentsHintAnchorCssMixinImport } from './routes/components/hint/anchorCssMixin'
+import { Route as ComponentsGlobalSearchVariantsImport } from './routes/components/globalSearch/variants'
+import { Route as ComponentsGlobalSearchSizesImport } from './routes/components/globalSearch/sizes'
 import { Route as ComponentsFloatingButtonWithMenuModesImport } from './routes/components/floatingButton/withMenuModes'
 import { Route as ComponentsFloatingButtonWithMenuImport } from './routes/components/floatingButton/withMenu'
 import { Route as ComponentsFloatingButtonTooltipImport } from './routes/components/floatingButton/tooltip'
@@ -462,6 +465,13 @@ const ComponentsGroupActionsPaneIndexRoute =
   ComponentsGroupActionsPaneIndexImport.update({
     id: '/groupActionsPane/',
     path: '/groupActionsPane/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsGlobalSearchIndexRoute =
+  ComponentsGlobalSearchIndexImport.update({
+    id: '/globalSearch/',
+    path: '/globalSearch/',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1247,6 +1257,20 @@ const ComponentsHintAnchorCssMixinRoute =
   ComponentsHintAnchorCssMixinImport.update({
     id: '/hint/anchorCssMixin',
     path: '/hint/anchorCssMixin',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsGlobalSearchVariantsRoute =
+  ComponentsGlobalSearchVariantsImport.update({
+    id: '/globalSearch/variants',
+    path: '/globalSearch/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsGlobalSearchSizesRoute =
+  ComponentsGlobalSearchSizesImport.update({
+    id: '/globalSearch/sizes',
+    path: '/globalSearch/sizes',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -2475,6 +2499,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsFloatingButtonWithMenuModesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/globalSearch/sizes': {
+      id: '/components/globalSearch/sizes'
+      path: '/globalSearch/sizes'
+      fullPath: '/components/globalSearch/sizes'
+      preLoaderRoute: typeof ComponentsGlobalSearchSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/globalSearch/variants': {
+      id: '/components/globalSearch/variants'
+      path: '/globalSearch/variants'
+      fullPath: '/components/globalSearch/variants'
+      preLoaderRoute: typeof ComponentsGlobalSearchVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/anchorCssMixin': {
       id: '/components/hint/anchorCssMixin'
       path: '/hint/anchorCssMixin'
@@ -3301,6 +3339,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsFloatingButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/globalSearch/': {
+      id: '/components/globalSearch/'
+      path: '/globalSearch'
+      fullPath: '/components/globalSearch'
+      preLoaderRoute: typeof ComponentsGlobalSearchIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/groupActionsPane/': {
       id: '/components/groupActionsPane/'
       path: '/groupActionsPane'
@@ -3581,6 +3626,8 @@ interface ComponentsRouteChildren {
   ComponentsFloatingButtonTooltipRoute: typeof ComponentsFloatingButtonTooltipRoute
   ComponentsFloatingButtonWithMenuRoute: typeof ComponentsFloatingButtonWithMenuRoute
   ComponentsFloatingButtonWithMenuModesRoute: typeof ComponentsFloatingButtonWithMenuModesRoute
+  ComponentsGlobalSearchSizesRoute: typeof ComponentsGlobalSearchSizesRoute
+  ComponentsGlobalSearchVariantsRoute: typeof ComponentsGlobalSearchVariantsRoute
   ComponentsHintAnchorCssMixinRoute: typeof ComponentsHintAnchorCssMixinRoute
   ComponentsHintClassNameRoute: typeof ComponentsHintClassNameRoute
   ComponentsHintPositionRoute: typeof ComponentsHintPositionRoute
@@ -3699,6 +3746,7 @@ interface ComponentsRouteChildren {
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
   ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute
   ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
+  ComponentsGlobalSearchIndexRoute: typeof ComponentsGlobalSearchIndexRoute
   ComponentsGroupActionsPaneIndexRoute: typeof ComponentsGroupActionsPaneIndexRoute
   ComponentsHintIndexRoute: typeof ComponentsHintIndexRoute
   ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute
@@ -3839,6 +3887,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsFloatingButtonWithMenuRoute: ComponentsFloatingButtonWithMenuRoute,
   ComponentsFloatingButtonWithMenuModesRoute:
     ComponentsFloatingButtonWithMenuModesRoute,
+  ComponentsGlobalSearchSizesRoute: ComponentsGlobalSearchSizesRoute,
+  ComponentsGlobalSearchVariantsRoute: ComponentsGlobalSearchVariantsRoute,
   ComponentsHintAnchorCssMixinRoute: ComponentsHintAnchorCssMixinRoute,
   ComponentsHintClassNameRoute: ComponentsHintClassNameRoute,
   ComponentsHintPositionRoute: ComponentsHintPositionRoute,
@@ -3968,6 +4018,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
   ComponentsFlexIndexRoute: ComponentsFlexIndexRoute,
   ComponentsFloatingButtonIndexRoute: ComponentsFloatingButtonIndexRoute,
+  ComponentsGlobalSearchIndexRoute: ComponentsGlobalSearchIndexRoute,
   ComponentsGroupActionsPaneIndexRoute: ComponentsGroupActionsPaneIndexRoute,
   ComponentsHintIndexRoute: ComponentsHintIndexRoute,
   ComponentsIconButtonIndexRoute: ComponentsIconButtonIndexRoute,
@@ -4108,6 +4159,8 @@ export interface FileRoutesByFullPath {
   '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
   '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
   '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
+  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute
+  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute
   '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute
   '/components/hint/className': typeof ComponentsHintClassNameRoute
   '/components/hint/position': typeof ComponentsHintPositionRoute
@@ -4226,6 +4279,7 @@ export interface FileRoutesByFullPath {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
+  '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
   '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute
   '/components/hint': typeof ComponentsHintIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
@@ -4347,6 +4401,8 @@ export interface FileRoutesByTo {
   '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
   '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
   '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
+  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute
+  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute
   '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute
   '/components/hint/className': typeof ComponentsHintClassNameRoute
   '/components/hint/position': typeof ComponentsHintPositionRoute
@@ -4465,6 +4521,7 @@ export interface FileRoutesByTo {
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
+  '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
   '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute
   '/components/hint': typeof ComponentsHintIndexRoute
   '/components/iconButton': typeof ComponentsIconButtonIndexRoute
@@ -4587,6 +4644,8 @@ export interface FileRoutesById {
   '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
   '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
   '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
+  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute
+  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute
   '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute
   '/components/hint/className': typeof ComponentsHintClassNameRoute
   '/components/hint/position': typeof ComponentsHintPositionRoute
@@ -4705,6 +4764,7 @@ export interface FileRoutesById {
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
   '/components/flex/': typeof ComponentsFlexIndexRoute
   '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
+  '/components/globalSearch/': typeof ComponentsGlobalSearchIndexRoute
   '/components/groupActionsPane/': typeof ComponentsGroupActionsPaneIndexRoute
   '/components/hint/': typeof ComponentsHintIndexRoute
   '/components/iconButton/': typeof ComponentsIconButtonIndexRoute
@@ -4828,6 +4888,8 @@ export interface FileRouteTypes {
     | '/components/floatingButton/tooltip'
     | '/components/floatingButton/withMenu'
     | '/components/floatingButton/withMenuModes'
+    | '/components/globalSearch/sizes'
+    | '/components/globalSearch/variants'
     | '/components/hint/anchorCssMixin'
     | '/components/hint/className'
     | '/components/hint/position'
@@ -4946,6 +5008,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/flex'
     | '/components/floatingButton'
+    | '/components/globalSearch'
     | '/components/groupActionsPane'
     | '/components/hint'
     | '/components/iconButton'
@@ -5066,6 +5129,8 @@ export interface FileRouteTypes {
     | '/components/floatingButton/tooltip'
     | '/components/floatingButton/withMenu'
     | '/components/floatingButton/withMenuModes'
+    | '/components/globalSearch/sizes'
+    | '/components/globalSearch/variants'
     | '/components/hint/anchorCssMixin'
     | '/components/hint/className'
     | '/components/hint/position'
@@ -5184,6 +5249,7 @@ export interface FileRouteTypes {
     | '/components/dropdown'
     | '/components/flex'
     | '/components/floatingButton'
+    | '/components/globalSearch'
     | '/components/groupActionsPane'
     | '/components/hint'
     | '/components/iconButton'
@@ -5304,6 +5370,8 @@ export interface FileRouteTypes {
     | '/components/floatingButton/tooltip'
     | '/components/floatingButton/withMenu'
     | '/components/floatingButton/withMenuModes'
+    | '/components/globalSearch/sizes'
+    | '/components/globalSearch/variants'
     | '/components/hint/anchorCssMixin'
     | '/components/hint/className'
     | '/components/hint/position'
@@ -5422,6 +5490,7 @@ export interface FileRouteTypes {
     | '/components/dropdown/'
     | '/components/flex/'
     | '/components/floatingButton/'
+    | '/components/globalSearch/'
     | '/components/groupActionsPane/'
     | '/components/hint/'
     | '/components/iconButton/'
@@ -5570,6 +5639,8 @@ export const routeTree = rootRoute
         "/components/floatingButton/tooltip",
         "/components/floatingButton/withMenu",
         "/components/floatingButton/withMenuModes",
+        "/components/globalSearch/sizes",
+        "/components/globalSearch/variants",
         "/components/hint/anchorCssMixin",
         "/components/hint/className",
         "/components/hint/position",
@@ -5688,6 +5759,7 @@ export const routeTree = rootRoute
         "/components/dropdown/",
         "/components/flex/",
         "/components/floatingButton/",
+        "/components/globalSearch/",
         "/components/groupActionsPane/",
         "/components/hint/",
         "/components/iconButton/",
@@ -6075,6 +6147,14 @@ export const routeTree = rootRoute
     },
     "/components/floatingButton/withMenuModes": {
       "filePath": "components/floatingButton/withMenuModes.tsx",
+      "parent": "/components"
+    },
+    "/components/globalSearch/sizes": {
+      "filePath": "components/globalSearch/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/globalSearch/variants": {
+      "filePath": "components/globalSearch/variants.tsx",
       "parent": "/components"
     },
     "/components/hint/anchorCssMixin": {
@@ -6547,6 +6627,10 @@ export const routeTree = rootRoute
     },
     "/components/floatingButton/": {
       "filePath": "components/floatingButton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/globalSearch/": {
+      "filePath": "components/globalSearch/index.tsx",
       "parent": "/components"
     },
     "/components/groupActionsPane/": {
