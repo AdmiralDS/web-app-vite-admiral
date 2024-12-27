@@ -18,6 +18,7 @@
     "@admiral-ds/react-ui": "8.29.1",
     "@tanstack/react-router": "^1.90.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-playwright-jsdom": "^0.0.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "styled-components": "^6.1.12"
