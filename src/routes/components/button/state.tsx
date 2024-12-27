@@ -1,13 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
 
 import { Button } from '@admiral-ds/react-ui';
 import { ExampleSection } from '../../-helpers/examples';
-
-const Wrapper = styled.div`
-  display: flex;
-  gap: 16px;
-`;
 
 const handleClick = () => {
   // eslint-disable-next-line no-console
@@ -16,23 +10,25 @@ const handleClick = () => {
 
 export const ButtonLoader = () => {
   return (
-    <ExampleSection>
-      <Wrapper>
+    <>
+      <ExampleSection text="Loading">
         <Button dimension="xl" appearance="primary" loading onClick={handleClick}>
           Loading
         </Button>
+      </ExampleSection>
+      <ExampleSection text="Disable">
         <Button dimension="xl" disabled onClick={handleClick}>
           Disabled
         </Button>
-      </Wrapper>
-    </ExampleSection>
+      </ExampleSection>
+    </>
   );
 };
 
-export const Route = createFileRoute('/components/button/buttonWithLoader')({
+export const Route = createFileRoute('/components/button/state')({
   component: () => <ButtonLoader />,
   staticData: {
-    title: 'Состояния Loading и Disable',
+    title: 'Состояния',
     description:
       'Кнопки в таких состояниях не активны, не реагируют на нажатие и при наведении отображают соответствующий курсор',
   },

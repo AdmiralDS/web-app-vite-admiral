@@ -60,8 +60,8 @@ const data = [
       { name: 'Базовый пример', path: '/components/button' },
       { name: 'Размеры', path: '/components/button/dimension' },
       { name: 'Типы', path: '/components/button/types' },
+      { name: 'Состояния', path: '/components/button/state' },
       { name: 'С иконкой', path: '/components/button/buttonWithIcon' },
-      { name: 'С лоадером', path: '/components/button/buttonWithLoader' },
       { name: 'С бейджем', path: '/components/button/buttonWithBadge' },
       { name: 'Адаптив', path: '/components/button/adaptive' },
     ],
@@ -477,6 +477,17 @@ const data = [
       { name: 'Базовый пример', path: '/components/progressHeader' },
       { name: 'Стили', path: '/components/progressHeader/styles' },
       { name: 'Анимация', path: '/components/progressHeader/animation' },
+    ],
+  },
+  {
+    name: 'ProgressStepper',
+    path: '/components/progressStepper',
+    routes: [
+      { name: 'Базовый пример', path: '/components/progressStepper' },
+      { name: 'Сценарий прогресса', path: '/components/progressStepper/scenario' },
+      { name: 'Адаптив (mobile)', path: '/components/progressStepper/mobile' },
+      { name: 'Пример настройки названия шага', path: '/components/progressStepper/stepsNaming' },
+      { name: 'Примеры настройки подписи о следующем шаге', path: '/components/progressStepper/descriptionNextSteps' },
     ],
   },
   {

@@ -1,35 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Breadcrumbs } from '@admiral-ds/react-ui';
-import styled from 'styled-components';
-import { ExampleSection } from '../../-helpers/examples';
-
-const MobileWrapper = styled.div`
-  width: 320px;
-  padding: 20px 8px 80px;
-  box-sizing: border-box;
-  border: 8px solid var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
-  border-bottom-style: none;
-  background-color: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  margin-top: 20px;
-`;
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  align-self: flex-start;
-  overflow-x: auto;
-  width: 100%;
-  padding: 0 8px;
-  box-sizing: border-box;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
+import { ExampleSection, MobileTopContainer } from '../../-helpers/examples';
 
 const items = [
   { url: '#', text: 'page 1' },
@@ -49,11 +20,9 @@ const items = [
 export const BreadcrumbsMobile = () => {
   return (
     <ExampleSection>
-      <Wrapper>
-        <MobileWrapper>
-          <Breadcrumbs items={items} mobile />
-        </MobileWrapper>
-      </Wrapper>
+      <MobileTopContainer>
+        <Breadcrumbs items={items} mobile />
+      </MobileTopContainer>
     </ExampleSection>
   );
 };
