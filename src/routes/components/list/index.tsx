@@ -56,6 +56,7 @@ export const Route = createFileRoute('/components/list/')({
   component: () => <Template />,
   staticData: {
     title: 'List. Базовый пример',
-    description: "Компонент для вертикальной группировки связанных по смыслу текстовых пунктов. Представлен в двух вариантах OrderedList и UnorderedList.",
+    description:
+      'Компонент для вертикальной группировки связанных по смыслу текстовых пунктов. Представлен в двух вариантах OrderedList и UnorderedList.',
   },
 });

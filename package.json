@@ -10,7 +10,9 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
     "test": "jest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "prettier": "prettier --check '**/**/*.{js,jsx,ts,tsx,css,scss}'",
+    "prettier:fix": "prettier --write '**/**/*.{js,jsx,ts,tsx,css,scss}'"
   },
   "dependencies": {
     "@admiral-ds/react-ui": "^8.16.0",
