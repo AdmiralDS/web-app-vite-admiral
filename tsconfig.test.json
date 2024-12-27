@@ -22,5 +22,5 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*", "jest.config.ts", ".jest/**/*", "node_modules/@admiral-ds/**/*"]
+  "include": ["src/**/*", "jest.config.ts", "playwright.config.ts", ".jest/**/*", "node_modules/@admiral-ds/**/*"]
 }

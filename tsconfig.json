@@ -23,5 +23,12 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*", "jest.config.ts", "vite.config.ts", ".eslintrc.cjs"]
+  "include": [
+    "src/**/*",
+    "jest.config.ts",
+    "playwright.config.ts",
+    "vite.config.ts",
+    ".eslintrc.cjs",
+    "tests/unit/Table.test.tsx"
+  ]
 }

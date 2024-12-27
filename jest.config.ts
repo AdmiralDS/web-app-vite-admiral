@@ -4,7 +4,7 @@
 export default {
   // The root of your source code, typically /src
   // `<rootDir>` is a token Jest substitutes
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/tests/unit'],
 
   testEnvironment: 'jest-environment-jsdom',
 
@@ -29,7 +29,7 @@ export default {
   // Test spec file resolution pattern
   // Matches parent folder `__tests__` and filename
   // should contain `test` or `spec`.
-  // testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+  // testRegex: "(/.*|(\\.|/)(test|spec))\\.tsx?$",
 
   // Module file extensions for importing
   moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node', 'mdx'],
