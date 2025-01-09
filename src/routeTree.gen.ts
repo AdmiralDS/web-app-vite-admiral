@@ -17,6 +17,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as GeneralUsageImport } from './routes/general/usage'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as GeneralInstallationImport } from './routes/general/installation'
+import { Route as GeneralFaqsImport } from './routes/general/faqs'
 import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
@@ -286,6 +287,12 @@ const GeneralResourcesRoute = GeneralResourcesImport.update({
 const GeneralInstallationRoute = GeneralInstallationImport.update({
   id: '/installation',
   path: '/installation',
+  getParentRoute: () => GeneralRoute,
+} as any)
+
+const GeneralFaqsRoute = GeneralFaqsImport.update({
+  id: '/faqs',
+  path: '/faqs',
   getParentRoute: () => GeneralRoute,
 } as any)
 
@@ -1882,6 +1889,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/general'
       preLoaderRoute: typeof GeneralImport
       parentRoute: typeof rootRoute
+    }
+    '/general/faqs': {
+      id: '/general/faqs'
+      path: '/faqs'
+      fullPath: '/general/faqs'
+      preLoaderRoute: typeof GeneralFaqsImport
+      parentRoute: typeof GeneralImport
     }
     '/general/installation': {
       id: '/general/installation'
@@ -4053,12 +4067,14 @@ const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
 )
 
 interface GeneralRouteChildren {
+  GeneralFaqsRoute: typeof GeneralFaqsRoute
   GeneralInstallationRoute: typeof GeneralInstallationRoute
   GeneralResourcesRoute: typeof GeneralResourcesRoute
   GeneralUsageRoute: typeof GeneralUsageRoute
 }
 
 const GeneralRouteChildren: GeneralRouteChildren = {
+  GeneralFaqsRoute: GeneralFaqsRoute,
   GeneralInstallationRoute: GeneralInstallationRoute,
   GeneralResourcesRoute: GeneralResourcesRoute,
   GeneralUsageRoute: GeneralUsageRoute,
@@ -4071,6 +4087,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/general/usage': typeof GeneralUsageRoute
@@ -4313,6 +4330,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/general/usage': typeof GeneralUsageRoute
@@ -4556,6 +4574,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/components': typeof ComponentsRouteWithChildren
   '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/general/usage': typeof GeneralUsageRoute
@@ -4800,6 +4819,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/faqs'
     | '/general/installation'
     | '/general/resources'
     | '/general/usage'
@@ -5041,6 +5061,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/faqs'
     | '/general/installation'
     | '/general/resources'
     | '/general/usage'
@@ -5282,6 +5303,7 @@ export interface FileRouteTypes {
     | '/'
     | '/components'
     | '/general'
+    | '/general/faqs'
     | '/general/installation'
     | '/general/resources'
     | '/general/usage'
@@ -5792,10 +5814,15 @@ export const routeTree = rootRoute
     "/general": {
       "filePath": "general.tsx",
       "children": [
+        "/general/faqs",
         "/general/installation",
         "/general/resources",
         "/general/usage"
       ]
+    },
+    "/general/faqs": {
+      "filePath": "general/faqs.tsx",
+      "parent": "/general"
     },
     "/general/installation": {
       "filePath": "general/installation.tsx",
