@@ -175,7 +175,7 @@ export const Template = () => {
   };
   return (
     <>
-      <ExampleSection text="Опционально можно выключать серую полоску снизу">
+      <ExampleSection text="Опционально можно выключать серую полоску сбоку">
         <Wrapper>
           <TabMenuVertical
             dimension="l"
@@ -254,6 +254,6 @@ export const Template = () => {
 export const Route = createFileRoute('/components/tabMenu/optionsVerticalTabs')({
   component: () => <Template />,
   staticData: {
-    title: 'TabMenuHorizontal. Опции',
+    title: 'TabMenuVertical. Опции',
   },
 });
