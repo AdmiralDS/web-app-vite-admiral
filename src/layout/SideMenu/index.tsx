@@ -35,6 +35,7 @@ export const SideMenu = () => {
           <MenuItem title="Resources" to="/general/resources" />
           <MenuItem title="Installation" to="/general/installation" />
           <MenuItem title="Usage" to="/general/usage" />
+          <MenuItem title="FAQs" to="/general/faqs" />
         </ExpandedMenuItem>
 
         <ExpandedMenuItem title="Components" className="topLevel" to="/components">
