@@ -43,7 +43,7 @@ const Template = () => {
   const handleActiveChange = (index: number) => {
     setActiveImg(index);
     // eslint-disable-next-line no-console
-    console.log('active image', activeImg);
+    console.log('active image', index);
   };
 
   return (
