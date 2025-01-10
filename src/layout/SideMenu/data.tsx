@@ -499,6 +499,26 @@ const data = [
       { name: 'Варианты', path: '/components/globalSearch/variants' },
     ],
   },
+  {
+    name: 'TabMenu',
+    path: '/components/tabMenu',
+    routes: [
+      { name: 'TabMenuHorizontal. Базовый пример', path: '/components/tabMenu' },
+      { name: 'TabMenuHorizontal. Размеры', path: '/components/tabMenu/size' },
+      { name: 'TabMenuHorizontal. С Overflow Menu', path: '/components/tabMenu/withOverflowMenu' },
+      { name: 'TabMenuHorizontal. Опции', path: '/components/tabMenu/options' },
+      { name: 'TabMenuHorizontal. С добавлением и удалением вкладок', path: '/components/tabMenu/addTab' },
+      { name: 'CardTabMenu. Базовый пример', path: '/components/tabMenu/cardTabMenu' },
+      { name: 'CardTabMenu. С отступами', path: '/components/tabMenu/withPadding' },
+      { name: 'CardTabMenu. С добавлением и удалением вкладок', path: '/components/tabMenu/addCardTab' },
+      { name: 'TabMenuVertical. Базовый пример', path: '/components/tabMenu/tabMenuVertical' },
+      { name: 'TabMenuVertical. Размеры', path: '/components/tabMenu/sizeVerticalTabs' },
+      { name: 'TabMenuVertical. Опции', path: '/components/tabMenu/optionsVerticalTabs' },
+      { name: 'TabMenuVertical. Добавление и удаление вкладок', path: '/components/tabMenu/addTabVertical' },
+      { name: 'TabMenuIcon. Базовый пример', path: '/components/tabMenu/tabMenuIcon' },
+      { name: 'HorizontalTabs. Базовый пример', path: '/components/tabMenu/horizontalTabs' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

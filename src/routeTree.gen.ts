@@ -25,6 +25,7 @@ import { Route as ComponentsTextButtonMenuIndexImport } from './routes/component
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
+import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
 import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
@@ -97,6 +98,19 @@ import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/
 import { Route as ComponentsTableBaseHTMLStickyShadowImport } from './routes/components/table/baseHTMLStickyShadow'
 import { Route as ComponentsTableBaseHTMLOverflowMenuImport } from './routes/components/table/baseHTMLOverflowMenu'
 import { Route as ComponentsTableBaseHTMLImport } from './routes/components/table/baseHTML'
+import { Route as ComponentsTabMenuWithPaddingImport } from './routes/components/tabMenu/withPadding'
+import { Route as ComponentsTabMenuWithOverflowMenuImport } from './routes/components/tabMenu/withOverflowMenu'
+import { Route as ComponentsTabMenuTabMenuVerticalImport } from './routes/components/tabMenu/tabMenuVertical'
+import { Route as ComponentsTabMenuTabMenuIconImport } from './routes/components/tabMenu/tabMenuIcon'
+import { Route as ComponentsTabMenuSizeVerticalTabsImport } from './routes/components/tabMenu/sizeVerticalTabs'
+import { Route as ComponentsTabMenuSizeImport } from './routes/components/tabMenu/size'
+import { Route as ComponentsTabMenuOptionsVerticalTabsImport } from './routes/components/tabMenu/optionsVerticalTabs'
+import { Route as ComponentsTabMenuOptionsImport } from './routes/components/tabMenu/options'
+import { Route as ComponentsTabMenuHorizontalTabsImport } from './routes/components/tabMenu/horizontalTabs'
+import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components/tabMenu/cardTabMenu'
+import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
+import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
+import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
 import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states'
 import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes'
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
@@ -336,6 +350,12 @@ const ComponentsTagIndexRoute = ComponentsTagIndexImport.update({
 const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
   id: '/table/',
   path: '/table/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTabMenuIndexRoute = ComponentsTabMenuIndexImport.update({
+  id: '/tabMenu/',
+  path: '/tabMenu/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -810,6 +830,94 @@ const ComponentsTableBaseHTMLRoute = ComponentsTableBaseHTMLImport.update({
   path: '/table/baseHTML',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsTabMenuWithPaddingRoute =
+  ComponentsTabMenuWithPaddingImport.update({
+    id: '/tabMenu/withPadding',
+    path: '/tabMenu/withPadding',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuWithOverflowMenuRoute =
+  ComponentsTabMenuWithOverflowMenuImport.update({
+    id: '/tabMenu/withOverflowMenu',
+    path: '/tabMenu/withOverflowMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuTabMenuVerticalRoute =
+  ComponentsTabMenuTabMenuVerticalImport.update({
+    id: '/tabMenu/tabMenuVertical',
+    path: '/tabMenu/tabMenuVertical',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuTabMenuIconRoute =
+  ComponentsTabMenuTabMenuIconImport.update({
+    id: '/tabMenu/tabMenuIcon',
+    path: '/tabMenu/tabMenuIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuSizeVerticalTabsRoute =
+  ComponentsTabMenuSizeVerticalTabsImport.update({
+    id: '/tabMenu/sizeVerticalTabs',
+    path: '/tabMenu/sizeVerticalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuSizeRoute = ComponentsTabMenuSizeImport.update({
+  id: '/tabMenu/size',
+  path: '/tabMenu/size',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTabMenuOptionsVerticalTabsRoute =
+  ComponentsTabMenuOptionsVerticalTabsImport.update({
+    id: '/tabMenu/optionsVerticalTabs',
+    path: '/tabMenu/optionsVerticalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuOptionsRoute = ComponentsTabMenuOptionsImport.update({
+  id: '/tabMenu/options',
+  path: '/tabMenu/options',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTabMenuHorizontalTabsRoute =
+  ComponentsTabMenuHorizontalTabsImport.update({
+    id: '/tabMenu/horizontalTabs',
+    path: '/tabMenu/horizontalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuCardTabMenuRoute =
+  ComponentsTabMenuCardTabMenuImport.update({
+    id: '/tabMenu/cardTabMenu',
+    path: '/tabMenu/cardTabMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuAddTabVerticalRoute =
+  ComponentsTabMenuAddTabVerticalImport.update({
+    id: '/tabMenu/addTabVertical',
+    path: '/tabMenu/addTabVertical',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuAddTabRoute = ComponentsTabMenuAddTabImport.update({
+  id: '/tabMenu/addTab',
+  path: '/tabMenu/addTab',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTabMenuAddCardTabRoute =
+  ComponentsTabMenuAddCardTabImport.update({
+    id: '/tabMenu/addCardTab',
+    path: '/tabMenu/addCardTab',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsRadiobuttonStatesRoute =
   ComponentsRadiobuttonStatesImport.update({
@@ -2996,6 +3104,97 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tabMenu/addCardTab': {
+      id: '/components/tabMenu/addCardTab'
+      path: '/tabMenu/addCardTab'
+      fullPath: '/components/tabMenu/addCardTab'
+      preLoaderRoute: typeof ComponentsTabMenuAddCardTabImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/addTab': {
+      id: '/components/tabMenu/addTab'
+      path: '/tabMenu/addTab'
+      fullPath: '/components/tabMenu/addTab'
+      preLoaderRoute: typeof ComponentsTabMenuAddTabImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/addTabVertical': {
+      id: '/components/tabMenu/addTabVertical'
+      path: '/tabMenu/addTabVertical'
+      fullPath: '/components/tabMenu/addTabVertical'
+      preLoaderRoute: typeof ComponentsTabMenuAddTabVerticalImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/cardTabMenu': {
+      id: '/components/tabMenu/cardTabMenu'
+      path: '/tabMenu/cardTabMenu'
+      fullPath: '/components/tabMenu/cardTabMenu'
+      preLoaderRoute: typeof ComponentsTabMenuCardTabMenuImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/horizontalTabs': {
+      id: '/components/tabMenu/horizontalTabs'
+      path: '/tabMenu/horizontalTabs'
+      fullPath: '/components/tabMenu/horizontalTabs'
+      preLoaderRoute: typeof ComponentsTabMenuHorizontalTabsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/options': {
+      id: '/components/tabMenu/options'
+      path: '/tabMenu/options'
+      fullPath: '/components/tabMenu/options'
+      preLoaderRoute: typeof ComponentsTabMenuOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/optionsVerticalTabs': {
+      id: '/components/tabMenu/optionsVerticalTabs'
+      path: '/tabMenu/optionsVerticalTabs'
+      fullPath: '/components/tabMenu/optionsVerticalTabs'
+      preLoaderRoute: typeof ComponentsTabMenuOptionsVerticalTabsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/size': {
+      id: '/components/tabMenu/size'
+      path: '/tabMenu/size'
+      fullPath: '/components/tabMenu/size'
+      preLoaderRoute: typeof ComponentsTabMenuSizeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/sizeVerticalTabs': {
+      id: '/components/tabMenu/sizeVerticalTabs'
+      path: '/tabMenu/sizeVerticalTabs'
+      fullPath: '/components/tabMenu/sizeVerticalTabs'
+      preLoaderRoute: typeof ComponentsTabMenuSizeVerticalTabsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/tabMenuIcon': {
+      id: '/components/tabMenu/tabMenuIcon'
+      path: '/tabMenu/tabMenuIcon'
+      fullPath: '/components/tabMenu/tabMenuIcon'
+      preLoaderRoute: typeof ComponentsTabMenuTabMenuIconImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/tabMenuVertical': {
+      id: '/components/tabMenu/tabMenuVertical'
+      path: '/tabMenu/tabMenuVertical'
+      fullPath: '/components/tabMenu/tabMenuVertical'
+      preLoaderRoute: typeof ComponentsTabMenuTabMenuVerticalImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/withOverflowMenu': {
+      id: '/components/tabMenu/withOverflowMenu'
+      path: '/tabMenu/withOverflowMenu'
+      fullPath: '/components/tabMenu/withOverflowMenu'
+      preLoaderRoute: typeof ComponentsTabMenuWithOverflowMenuImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/withPadding': {
+      id: '/components/tabMenu/withPadding'
+      path: '/tabMenu/withPadding'
+      fullPath: '/components/tabMenu/withPadding'
+      preLoaderRoute: typeof ComponentsTabMenuWithPaddingImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/baseHTML': {
       id: '/components/table/baseHTML'
       path: '/table/baseHTML'
@@ -3500,6 +3699,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tabMenu/': {
+      id: '/components/tabMenu/'
+      path: '/tabMenu'
+      fullPath: '/components/tabMenu'
+      preLoaderRoute: typeof ComponentsTabMenuIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/': {
       id: '/components/table/'
       path: '/table'
@@ -3709,6 +3915,19 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
   ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute
   ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute
+  ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
+  ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
+  ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
+  ComponentsTabMenuCardTabMenuRoute: typeof ComponentsTabMenuCardTabMenuRoute
+  ComponentsTabMenuHorizontalTabsRoute: typeof ComponentsTabMenuHorizontalTabsRoute
+  ComponentsTabMenuOptionsRoute: typeof ComponentsTabMenuOptionsRoute
+  ComponentsTabMenuOptionsVerticalTabsRoute: typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  ComponentsTabMenuSizeRoute: typeof ComponentsTabMenuSizeRoute
+  ComponentsTabMenuSizeVerticalTabsRoute: typeof ComponentsTabMenuSizeVerticalTabsRoute
+  ComponentsTabMenuTabMenuIconRoute: typeof ComponentsTabMenuTabMenuIconRoute
+  ComponentsTabMenuTabMenuVerticalRoute: typeof ComponentsTabMenuTabMenuVerticalRoute
+  ComponentsTabMenuWithOverflowMenuRoute: typeof ComponentsTabMenuWithOverflowMenuRoute
+  ComponentsTabMenuWithPaddingRoute: typeof ComponentsTabMenuWithPaddingRoute
   ComponentsTableBaseHTMLRoute: typeof ComponentsTableBaseHTMLRoute
   ComponentsTableBaseHTMLOverflowMenuRoute: typeof ComponentsTableBaseHTMLOverflowMenuRoute
   ComponentsTableBaseHTMLStickyShadowRoute: typeof ComponentsTableBaseHTMLStickyShadowRoute
@@ -3781,6 +4000,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
+  ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
@@ -3977,6 +4197,22 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
   ComponentsRadiobuttonSizesRoute: ComponentsRadiobuttonSizesRoute,
   ComponentsRadiobuttonStatesRoute: ComponentsRadiobuttonStatesRoute,
+  ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
+  ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
+  ComponentsTabMenuAddTabVerticalRoute: ComponentsTabMenuAddTabVerticalRoute,
+  ComponentsTabMenuCardTabMenuRoute: ComponentsTabMenuCardTabMenuRoute,
+  ComponentsTabMenuHorizontalTabsRoute: ComponentsTabMenuHorizontalTabsRoute,
+  ComponentsTabMenuOptionsRoute: ComponentsTabMenuOptionsRoute,
+  ComponentsTabMenuOptionsVerticalTabsRoute:
+    ComponentsTabMenuOptionsVerticalTabsRoute,
+  ComponentsTabMenuSizeRoute: ComponentsTabMenuSizeRoute,
+  ComponentsTabMenuSizeVerticalTabsRoute:
+    ComponentsTabMenuSizeVerticalTabsRoute,
+  ComponentsTabMenuTabMenuIconRoute: ComponentsTabMenuTabMenuIconRoute,
+  ComponentsTabMenuTabMenuVerticalRoute: ComponentsTabMenuTabMenuVerticalRoute,
+  ComponentsTabMenuWithOverflowMenuRoute:
+    ComponentsTabMenuWithOverflowMenuRoute,
+  ComponentsTabMenuWithPaddingRoute: ComponentsTabMenuWithPaddingRoute,
   ComponentsTableBaseHTMLRoute: ComponentsTableBaseHTMLRoute,
   ComponentsTableBaseHTMLOverflowMenuRoute:
     ComponentsTableBaseHTMLOverflowMenuRoute,
@@ -4053,6 +4289,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
+  ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
@@ -4245,6 +4482,19 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
+  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
+  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
+  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
+  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
+  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute
+  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute
+  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute
+  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute
+  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute
+  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute
   '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
@@ -4317,6 +4567,7 @@ export interface FileRoutesByFullPath {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
@@ -4488,6 +4739,19 @@ export interface FileRoutesByTo {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
+  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
+  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
+  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
+  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
+  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute
+  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute
+  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute
+  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute
+  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute
+  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute
   '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
@@ -4560,6 +4824,7 @@ export interface FileRoutesByTo {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
@@ -4732,6 +4997,19 @@ export interface FileRoutesById {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
+  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
+  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
+  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
+  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
+  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute
+  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute
+  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute
+  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute
+  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute
+  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute
   '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
@@ -4804,6 +5082,7 @@ export interface FileRoutesById {
   '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
+  '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
@@ -4977,6 +5256,19 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/tabMenu/addCardTab'
+    | '/components/tabMenu/addTab'
+    | '/components/tabMenu/addTabVertical'
+    | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/horizontalTabs'
+    | '/components/tabMenu/options'
+    | '/components/tabMenu/optionsVerticalTabs'
+    | '/components/tabMenu/size'
+    | '/components/tabMenu/sizeVerticalTabs'
+    | '/components/tabMenu/tabMenuIcon'
+    | '/components/tabMenu/tabMenuVertical'
+    | '/components/tabMenu/withOverflowMenu'
+    | '/components/tabMenu/withPadding'
     | '/components/table/baseHTML'
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
@@ -5049,6 +5341,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
     | '/components/textButton'
@@ -5219,6 +5512,19 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/tabMenu/addCardTab'
+    | '/components/tabMenu/addTab'
+    | '/components/tabMenu/addTabVertical'
+    | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/horizontalTabs'
+    | '/components/tabMenu/options'
+    | '/components/tabMenu/optionsVerticalTabs'
+    | '/components/tabMenu/size'
+    | '/components/tabMenu/sizeVerticalTabs'
+    | '/components/tabMenu/tabMenuIcon'
+    | '/components/tabMenu/tabMenuVertical'
+    | '/components/tabMenu/withOverflowMenu'
+    | '/components/tabMenu/withPadding'
     | '/components/table/baseHTML'
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
@@ -5291,6 +5597,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
     | '/components/textButton'
@@ -5461,6 +5768,19 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/tabMenu/addCardTab'
+    | '/components/tabMenu/addTab'
+    | '/components/tabMenu/addTabVertical'
+    | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/horizontalTabs'
+    | '/components/tabMenu/options'
+    | '/components/tabMenu/optionsVerticalTabs'
+    | '/components/tabMenu/size'
+    | '/components/tabMenu/sizeVerticalTabs'
+    | '/components/tabMenu/tabMenuIcon'
+    | '/components/tabMenu/tabMenuVertical'
+    | '/components/tabMenu/withOverflowMenu'
+    | '/components/tabMenu/withPadding'
     | '/components/table/baseHTML'
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
@@ -5533,6 +5853,7 @@ export interface FileRouteTypes {
     | '/components/progressPage/'
     | '/components/progressStepper/'
     | '/components/radiobutton/'
+    | '/components/tabMenu/'
     | '/components/table/'
     | '/components/tag/'
     | '/components/textButton/'
@@ -5730,6 +6051,19 @@ export const routeTree = rootRoute
         "/components/radiobutton/informer",
         "/components/radiobutton/sizes",
         "/components/radiobutton/states",
+        "/components/tabMenu/addCardTab",
+        "/components/tabMenu/addTab",
+        "/components/tabMenu/addTabVertical",
+        "/components/tabMenu/cardTabMenu",
+        "/components/tabMenu/horizontalTabs",
+        "/components/tabMenu/options",
+        "/components/tabMenu/optionsVerticalTabs",
+        "/components/tabMenu/size",
+        "/components/tabMenu/sizeVerticalTabs",
+        "/components/tabMenu/tabMenuIcon",
+        "/components/tabMenu/tabMenuVertical",
+        "/components/tabMenu/withOverflowMenu",
+        "/components/tabMenu/withPadding",
         "/components/table/baseHTML",
         "/components/table/baseHTMLOverflowMenu",
         "/components/table/baseHTMLStickyShadow",
@@ -5802,6 +6136,7 @@ export const routeTree = rootRoute
         "/components/progressPage/",
         "/components/progressStepper/",
         "/components/radiobutton/",
+        "/components/tabMenu/",
         "/components/table/",
         "/components/tag/",
         "/components/textButton/",
@@ -6452,6 +6787,58 @@ export const routeTree = rootRoute
       "filePath": "components/radiobutton/states.tsx",
       "parent": "/components"
     },
+    "/components/tabMenu/addCardTab": {
+      "filePath": "components/tabMenu/addCardTab.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/addTab": {
+      "filePath": "components/tabMenu/addTab.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/addTabVertical": {
+      "filePath": "components/tabMenu/addTabVertical.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/cardTabMenu": {
+      "filePath": "components/tabMenu/cardTabMenu.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/horizontalTabs": {
+      "filePath": "components/tabMenu/horizontalTabs.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/options": {
+      "filePath": "components/tabMenu/options.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/optionsVerticalTabs": {
+      "filePath": "components/tabMenu/optionsVerticalTabs.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/size": {
+      "filePath": "components/tabMenu/size.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/sizeVerticalTabs": {
+      "filePath": "components/tabMenu/sizeVerticalTabs.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/tabMenuIcon": {
+      "filePath": "components/tabMenu/tabMenuIcon.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/tabMenuVertical": {
+      "filePath": "components/tabMenu/tabMenuVertical.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/withOverflowMenu": {
+      "filePath": "components/tabMenu/withOverflowMenu.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/withPadding": {
+      "filePath": "components/tabMenu/withPadding.tsx",
+      "parent": "/components"
+    },
     "/components/table/baseHTML": {
       "filePath": "components/table/baseHTML.tsx",
       "parent": "/components"
@@ -6738,6 +7125,10 @@ export const routeTree = rootRoute
     },
     "/components/radiobutton/": {
       "filePath": "components/radiobutton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/": {
+      "filePath": "components/tabMenu/index.tsx",
       "parent": "/components"
     },
     "/components/table/": {
