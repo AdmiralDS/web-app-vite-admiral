@@ -37,7 +37,7 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
   console.log(info);
 };
 
-const Template = () => {
+export const Template = () => {
   const [activeImg, setActiveImg] = useState(0);
 
   const handleActiveChange = (index: number) => {
@@ -48,32 +48,28 @@ const Template = () => {
 
   return (
     <ExampleSection
-      text={
-        <>
-          Основные функции:
-          <li>Просмотр одного или нескольких изображений</li>
-          <li>Увеличение-уменьшение</li>
-          <li>Поворот влево-вправо на 90'</li>
-          <li>Отображение по вертикали-горизонтали</li>
-          <li>Увеличение по двойному клику на изображении</li>
-          <li>Перемещение изображения при зажатой ЛКМ</li>
-        </>
-      }
+      text="Если изображение не загрузилось или присутствует какая-либо ошибка,
+          отображется миниатюра Empty. При нажатии на такую миниатюру, она
+          открывается в режиме просмотра. Размер этой пустой картинки равен
+          размеру миниатюры. Все функциональные клавиши блокируются, кроме
+          стрелок «Назад-Вперед». Взаимодействовать с такой картинкой никак
+          нельзя."
     >
       <ImageViewer
         activeImg={activeImg}
         items={items}
         onTransform={handleTransform}
         onActiveChange={handleActiveChange}
+        appearance="multiple"
       ></ImageViewer>
     </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/imageViewer/')({
+export const Route = createFileRoute('/components/imageViewer/errorOnLoad')({
   component: () => <Template />,
   staticData: {
-    title: 'ImageViewer. Базовый пример',
-    description: 'Компонент для просмотра изображений',
+    title: 'ImageViewer. Ошибки при загрузке',
+    description: '',
   },
 });

@@ -149,6 +149,10 @@ import { Route as ComponentsLinkWithIconImport } from './routes/components/link/
 import { Route as ComponentsLinkStylesImport } from './routes/components/link/styles'
 import { Route as ComponentsLinkCssMixinImport } from './routes/components/link/cssMixin'
 import { Route as ComponentsLinkAsPropImport } from './routes/components/link/asProp'
+import { Route as ComponentsImageViewerViewOptionsImport } from './routes/components/imageViewer/viewOptions'
+import { Route as ComponentsImageViewerKeyboardCommandsImport } from './routes/components/imageViewer/keyboardCommands'
+import { Route as ComponentsImageViewerImageMiniatureImport } from './routes/components/imageViewer/imageMiniature'
+import { Route as ComponentsImageViewerErrorOnLoadImport } from './routes/components/imageViewer/errorOnLoad'
 import { Route as ComponentsIconPlacementVariantsImport } from './routes/components/iconPlacement/variants'
 import { Route as ComponentsIconPlacementStylesImport } from './routes/components/iconPlacement/styles'
 import { Route as ComponentsIconPlacementSizesImport } from './routes/components/iconPlacement/sizes'
@@ -1164,6 +1168,34 @@ const ComponentsLinkAsPropRoute = ComponentsLinkAsPropImport.update({
   path: '/link/asProp',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsImageViewerViewOptionsRoute =
+  ComponentsImageViewerViewOptionsImport.update({
+    id: '/imageViewer/viewOptions',
+    path: '/imageViewer/viewOptions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsImageViewerKeyboardCommandsRoute =
+  ComponentsImageViewerKeyboardCommandsImport.update({
+    id: '/imageViewer/keyboardCommands',
+    path: '/imageViewer/keyboardCommands',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsImageViewerImageMiniatureRoute =
+  ComponentsImageViewerImageMiniatureImport.update({
+    id: '/imageViewer/imageMiniature',
+    path: '/imageViewer/imageMiniature',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsImageViewerErrorOnLoadRoute =
+  ComponentsImageViewerErrorOnLoadImport.update({
+    id: '/imageViewer/errorOnLoad',
+    path: '/imageViewer/errorOnLoad',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsIconPlacementVariantsRoute =
   ComponentsIconPlacementVariantsImport.update({
@@ -2611,6 +2643,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsIconPlacementVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/imageViewer/errorOnLoad': {
+      id: '/components/imageViewer/errorOnLoad'
+      path: '/imageViewer/errorOnLoad'
+      fullPath: '/components/imageViewer/errorOnLoad'
+      preLoaderRoute: typeof ComponentsImageViewerErrorOnLoadImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/imageViewer/imageMiniature': {
+      id: '/components/imageViewer/imageMiniature'
+      path: '/imageViewer/imageMiniature'
+      fullPath: '/components/imageViewer/imageMiniature'
+      preLoaderRoute: typeof ComponentsImageViewerImageMiniatureImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/imageViewer/keyboardCommands': {
+      id: '/components/imageViewer/keyboardCommands'
+      path: '/imageViewer/keyboardCommands'
+      fullPath: '/components/imageViewer/keyboardCommands'
+      preLoaderRoute: typeof ComponentsImageViewerKeyboardCommandsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/imageViewer/viewOptions': {
+      id: '/components/imageViewer/viewOptions'
+      path: '/imageViewer/viewOptions'
+      fullPath: '/components/imageViewer/viewOptions'
+      preLoaderRoute: typeof ComponentsImageViewerViewOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/link/asProp': {
       id: '/components/link/asProp'
       path: '/link/asProp'
@@ -3642,6 +3702,10 @@ interface ComponentsRouteChildren {
   ComponentsIconPlacementSizesRoute: typeof ComponentsIconPlacementSizesRoute
   ComponentsIconPlacementStylesRoute: typeof ComponentsIconPlacementStylesRoute
   ComponentsIconPlacementVariantsRoute: typeof ComponentsIconPlacementVariantsRoute
+  ComponentsImageViewerErrorOnLoadRoute: typeof ComponentsImageViewerErrorOnLoadRoute
+  ComponentsImageViewerImageMiniatureRoute: typeof ComponentsImageViewerImageMiniatureRoute
+  ComponentsImageViewerKeyboardCommandsRoute: typeof ComponentsImageViewerKeyboardCommandsRoute
+  ComponentsImageViewerViewOptionsRoute: typeof ComponentsImageViewerViewOptionsRoute
   ComponentsLinkAsPropRoute: typeof ComponentsLinkAsPropRoute
   ComponentsLinkCssMixinRoute: typeof ComponentsLinkCssMixinRoute
   ComponentsLinkStylesRoute: typeof ComponentsLinkStylesRoute
@@ -3903,6 +3967,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsIconPlacementSizesRoute: ComponentsIconPlacementSizesRoute,
   ComponentsIconPlacementStylesRoute: ComponentsIconPlacementStylesRoute,
   ComponentsIconPlacementVariantsRoute: ComponentsIconPlacementVariantsRoute,
+  ComponentsImageViewerErrorOnLoadRoute: ComponentsImageViewerErrorOnLoadRoute,
+  ComponentsImageViewerImageMiniatureRoute:
+    ComponentsImageViewerImageMiniatureRoute,
+  ComponentsImageViewerKeyboardCommandsRoute:
+    ComponentsImageViewerKeyboardCommandsRoute,
+  ComponentsImageViewerViewOptionsRoute: ComponentsImageViewerViewOptionsRoute,
   ComponentsLinkAsPropRoute: ComponentsLinkAsPropRoute,
   ComponentsLinkCssMixinRoute: ComponentsLinkCssMixinRoute,
   ComponentsLinkStylesRoute: ComponentsLinkStylesRoute,
@@ -4175,6 +4245,10 @@ export interface FileRoutesByFullPath {
   '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
   '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
   '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute
+  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute
+  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
+  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
   '/components/link/asProp': typeof ComponentsLinkAsPropRoute
   '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
   '/components/link/styles': typeof ComponentsLinkStylesRoute
@@ -4417,6 +4491,10 @@ export interface FileRoutesByTo {
   '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
   '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
   '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute
+  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute
+  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
+  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
   '/components/link/asProp': typeof ComponentsLinkAsPropRoute
   '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
   '/components/link/styles': typeof ComponentsLinkStylesRoute
@@ -4660,6 +4738,10 @@ export interface FileRoutesById {
   '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
   '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
   '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute
+  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute
+  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
+  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
   '/components/link/asProp': typeof ComponentsLinkAsPropRoute
   '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
   '/components/link/styles': typeof ComponentsLinkStylesRoute
@@ -4904,6 +4986,10 @@ export interface FileRouteTypes {
     | '/components/iconPlacement/sizes'
     | '/components/iconPlacement/styles'
     | '/components/iconPlacement/variants'
+    | '/components/imageViewer/errorOnLoad'
+    | '/components/imageViewer/imageMiniature'
+    | '/components/imageViewer/keyboardCommands'
+    | '/components/imageViewer/viewOptions'
     | '/components/link/asProp'
     | '/components/link/cssMixin'
     | '/components/link/styles'
@@ -5145,6 +5231,10 @@ export interface FileRouteTypes {
     | '/components/iconPlacement/sizes'
     | '/components/iconPlacement/styles'
     | '/components/iconPlacement/variants'
+    | '/components/imageViewer/errorOnLoad'
+    | '/components/imageViewer/imageMiniature'
+    | '/components/imageViewer/keyboardCommands'
+    | '/components/imageViewer/viewOptions'
     | '/components/link/asProp'
     | '/components/link/cssMixin'
     | '/components/link/styles'
@@ -5386,6 +5476,10 @@ export interface FileRouteTypes {
     | '/components/iconPlacement/sizes'
     | '/components/iconPlacement/styles'
     | '/components/iconPlacement/variants'
+    | '/components/imageViewer/errorOnLoad'
+    | '/components/imageViewer/imageMiniature'
+    | '/components/imageViewer/keyboardCommands'
+    | '/components/imageViewer/viewOptions'
     | '/components/link/asProp'
     | '/components/link/cssMixin'
     | '/components/link/styles'
@@ -5655,6 +5749,10 @@ export const routeTree = rootRoute
         "/components/iconPlacement/sizes",
         "/components/iconPlacement/styles",
         "/components/iconPlacement/variants",
+        "/components/imageViewer/errorOnLoad",
+        "/components/imageViewer/imageMiniature",
+        "/components/imageViewer/keyboardCommands",
+        "/components/imageViewer/viewOptions",
         "/components/link/asProp",
         "/components/link/cssMixin",
         "/components/link/styles",
@@ -6211,6 +6309,22 @@ export const routeTree = rootRoute
     },
     "/components/iconPlacement/variants": {
       "filePath": "components/iconPlacement/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/imageViewer/errorOnLoad": {
+      "filePath": "components/imageViewer/errorOnLoad.tsx",
+      "parent": "/components"
+    },
+    "/components/imageViewer/imageMiniature": {
+      "filePath": "components/imageViewer/imageMiniature.tsx",
+      "parent": "/components"
+    },
+    "/components/imageViewer/keyboardCommands": {
+      "filePath": "components/imageViewer/keyboardCommands.tsx",
+      "parent": "/components"
+    },
+    "/components/imageViewer/viewOptions": {
+      "filePath": "components/imageViewer/viewOptions.tsx",
       "parent": "/components"
     },
     "/components/link/asProp": {

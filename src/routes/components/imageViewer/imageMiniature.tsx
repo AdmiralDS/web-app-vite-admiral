@@ -48,17 +48,8 @@ const Template = () => {
 
   return (
     <ExampleSection
-      text={
-        <>
-          Основные функции:
-          <li>Просмотр одного или нескольких изображений</li>
-          <li>Увеличение-уменьшение</li>
-          <li>Поворот влево-вправо на 90'</li>
-          <li>Отображение по вертикали-горизонтали</li>
-          <li>Увеличение по двойному клику на изображении</li>
-          <li>Перемещение изображения при зажатой ЛКМ</li>
-        </>
-      }
+      text="Может использоваться как отдельно, так и в группе, если изображений
+          несколько. Присутствует 6 размеров."
     >
       <ImageViewer
         activeImg={activeImg}
@@ -70,10 +61,10 @@ const Template = () => {
   );
 };
 
-export const Route = createFileRoute('/components/imageViewer/')({
+export const Route = createFileRoute('/components/imageViewer/imageMiniature')({
   component: () => <Template />,
   staticData: {
-    title: 'ImageViewer. Базовый пример',
-    description: 'Компонент для просмотра изображений',
+    title: 'ImageViewer. Отображение миниатюр',
+    description: '',
   },
 });
