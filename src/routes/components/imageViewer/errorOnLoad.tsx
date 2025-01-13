@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 
 import { ImageViewer } from '@admiral-ds/react-ui';
@@ -38,14 +37,6 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
 };
 
 export const Template = () => {
-  const [activeImg, setActiveImg] = useState(0);
-
-  const handleActiveChange = (index: number) => {
-    setActiveImg(index);
-    // eslint-disable-next-line no-console
-    console.log('active image', activeImg);
-  };
-
   return (
     <ExampleSection
       text="Если изображение не загрузилось или присутствует какая-либо ошибка,
@@ -56,10 +47,8 @@ export const Template = () => {
           нельзя."
     >
       <ImageViewer
-        activeImg={activeImg}
         items={items}
         onTransform={handleTransform}
-        onActiveChange={handleActiveChange}
         appearance="multiple"
       ></ImageViewer>
     </ExampleSection>

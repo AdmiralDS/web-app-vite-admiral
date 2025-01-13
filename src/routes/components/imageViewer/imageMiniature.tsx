@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 
 import { ImageViewer } from '@admiral-ds/react-ui';
@@ -26,11 +25,6 @@ const items: ImageProps[] = [
     alt: 'Cute norwitch',
     onError: handleError,
   },
-  {
-    src: 'ds.yandex.net/i?id=5b90edeb3a4635e999b9331f3e5b34df_l-4551895-images-thumbs&n=13',
-    alt: 'Cute corgie',
-    onError: handleError,
-  },
 ];
 const handleTransform = (info: { transform: TransformType; action: TransformAction }) => {
   // eslint-disable-next-line no-console
@@ -38,26 +32,27 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
 };
 
 const Template = () => {
-  const [activeImg, setActiveImg] = useState(0);
-
-  const handleActiveChange = (index: number) => {
-    setActiveImg(index);
-    // eslint-disable-next-line no-console
-    console.log('active image', activeImg);
-  };
-
   return (
-    <ExampleSection
-      text="Может использоваться как отдельно, так и в группе, если изображений
-          несколько. Присутствует 6 размеров."
-    >
-      <ImageViewer
-        activeImg={activeImg}
-        items={items}
-        onTransform={handleTransform}
-        onActiveChange={handleActiveChange}
-      ></ImageViewer>
-    </ExampleSection>
+    <>
+      <ExampleSection text="Размер XL">
+        <ImageViewer appearance="multiple" dimension="xl" items={items} onTransform={handleTransform}></ImageViewer>
+      </ExampleSection>
+      <ExampleSection text="Размер L">
+        <ImageViewer appearance="multiple" dimension="l" items={items} onTransform={handleTransform}></ImageViewer>
+      </ExampleSection>
+      <ExampleSection text="Размер M">
+        <ImageViewer appearance="multiple" dimension="m" items={items} onTransform={handleTransform}></ImageViewer>
+      </ExampleSection>
+      <ExampleSection text="Размер S">
+        <ImageViewer appearance="multiple" dimension="s" items={items} onTransform={handleTransform}></ImageViewer>
+      </ExampleSection>
+      <ExampleSection text="Размер XS">
+        <ImageViewer appearance="multiple" dimension="xs" items={items} onTransform={handleTransform}></ImageViewer>
+      </ExampleSection>
+      <ExampleSection text="Размер XXS">
+        <ImageViewer appearance="multiple" dimension="xxs" items={items} onTransform={handleTransform}></ImageViewer>
+      </ExampleSection>
+    </>
   );
 };
 
@@ -65,6 +60,7 @@ export const Route = createFileRoute('/components/imageViewer/imageMiniature')({
   component: () => <Template />,
   staticData: {
     title: 'ImageViewer. Отображение миниатюр',
-    description: '',
+    description:
+      'Может использоваться как отдельно, так и в группе, если изображений несколько. Присутствует 6 размеров.',
   },
 });
