@@ -525,6 +525,16 @@ const data = [
       { name: 'HorizontalTabs. Базовый пример', path: '/components/tabMenu/horizontalTabs' },
     ],
   },
+  {
+    name: 'StatusIndicator',
+    path: '/components/statusIndicator',
+    routes: [
+      { name: 'Базовый пример', path: '/components/statusIndicator' },
+      { name: 'Размеры', path: '/components/statusIndicator/sizes' },
+      { name: 'Варианты', path: '/components/statusIndicator/variants' },
+      { name: 'Состояния', path: '/components/statusIndicator/states' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

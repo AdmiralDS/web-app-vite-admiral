@@ -26,6 +26,7 @@ import { Route as ComponentsTextButtonIndexImport } from './routes/components/te
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
+import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
 import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
@@ -111,6 +112,9 @@ import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components
 import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
 import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
 import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
+import { Route as ComponentsStatusIndicatorVariantsImport } from './routes/components/statusIndicator/variants'
+import { Route as ComponentsStatusIndicatorStatesImport } from './routes/components/statusIndicator/states'
+import { Route as ComponentsStatusIndicatorSizesImport } from './routes/components/statusIndicator/sizes'
 import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states'
 import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes'
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
@@ -362,6 +366,13 @@ const ComponentsTabMenuIndexRoute = ComponentsTabMenuIndexImport.update({
   path: '/tabMenu/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsStatusIndicatorIndexRoute =
+  ComponentsStatusIndicatorIndexImport.update({
+    id: '/statusIndicator/',
+    path: '/statusIndicator/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
   {
@@ -920,6 +931,27 @@ const ComponentsTabMenuAddCardTabRoute =
   ComponentsTabMenuAddCardTabImport.update({
     id: '/tabMenu/addCardTab',
     path: '/tabMenu/addCardTab',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsStatusIndicatorVariantsRoute =
+  ComponentsStatusIndicatorVariantsImport.update({
+    id: '/statusIndicator/variants',
+    path: '/statusIndicator/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsStatusIndicatorStatesRoute =
+  ComponentsStatusIndicatorStatesImport.update({
+    id: '/statusIndicator/states',
+    path: '/statusIndicator/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsStatusIndicatorSizesRoute =
+  ComponentsStatusIndicatorSizesImport.update({
+    id: '/statusIndicator/sizes',
+    path: '/statusIndicator/sizes',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -3164,6 +3196,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/statusIndicator/sizes': {
+      id: '/components/statusIndicator/sizes'
+      path: '/statusIndicator/sizes'
+      fullPath: '/components/statusIndicator/sizes'
+      preLoaderRoute: typeof ComponentsStatusIndicatorSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/statusIndicator/states': {
+      id: '/components/statusIndicator/states'
+      path: '/statusIndicator/states'
+      fullPath: '/components/statusIndicator/states'
+      preLoaderRoute: typeof ComponentsStatusIndicatorStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/statusIndicator/variants': {
+      id: '/components/statusIndicator/variants'
+      path: '/statusIndicator/variants'
+      fullPath: '/components/statusIndicator/variants'
+      preLoaderRoute: typeof ComponentsStatusIndicatorVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/addCardTab': {
       id: '/components/tabMenu/addCardTab'
       path: '/tabMenu/addCardTab'
@@ -3759,6 +3812,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/statusIndicator/': {
+      id: '/components/statusIndicator/'
+      path: '/statusIndicator'
+      fullPath: '/components/statusIndicator'
+      preLoaderRoute: typeof ComponentsStatusIndicatorIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/': {
       id: '/components/tabMenu/'
       path: '/tabMenu'
@@ -3979,6 +4039,9 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
   ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute
   ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute
+  ComponentsStatusIndicatorSizesRoute: typeof ComponentsStatusIndicatorSizesRoute
+  ComponentsStatusIndicatorStatesRoute: typeof ComponentsStatusIndicatorStatesRoute
+  ComponentsStatusIndicatorVariantsRoute: typeof ComponentsStatusIndicatorVariantsRoute
   ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
   ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
   ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
@@ -4064,6 +4127,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
+  ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
@@ -4267,6 +4331,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
   ComponentsRadiobuttonSizesRoute: ComponentsRadiobuttonSizesRoute,
   ComponentsRadiobuttonStatesRoute: ComponentsRadiobuttonStatesRoute,
+  ComponentsStatusIndicatorSizesRoute: ComponentsStatusIndicatorSizesRoute,
+  ComponentsStatusIndicatorStatesRoute: ComponentsStatusIndicatorStatesRoute,
+  ComponentsStatusIndicatorVariantsRoute:
+    ComponentsStatusIndicatorVariantsRoute,
   ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
   ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
   ComponentsTabMenuAddTabVerticalRoute: ComponentsTabMenuAddTabVerticalRoute,
@@ -4359,6 +4427,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
+  ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
@@ -4556,6 +4625,9 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -4641,6 +4713,7 @@ export interface FileRoutesByFullPath {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -4817,6 +4890,9 @@ export interface FileRoutesByTo {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -4902,6 +4978,7 @@ export interface FileRoutesByTo {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -5079,6 +5156,9 @@ export interface FileRoutesById {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -5164,6 +5244,7 @@ export interface FileRoutesById {
   '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
+  '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
@@ -5342,6 +5423,9 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/statusIndicator/sizes'
+    | '/components/statusIndicator/states'
+    | '/components/statusIndicator/variants'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -5427,6 +5511,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/statusIndicator'
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
@@ -5602,6 +5687,9 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/statusIndicator/sizes'
+    | '/components/statusIndicator/states'
+    | '/components/statusIndicator/variants'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -5687,6 +5775,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/statusIndicator'
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
@@ -5862,6 +5951,9 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/statusIndicator/sizes'
+    | '/components/statusIndicator/states'
+    | '/components/statusIndicator/variants'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -5947,6 +6039,7 @@ export interface FileRouteTypes {
     | '/components/progressPage/'
     | '/components/progressStepper/'
     | '/components/radiobutton/'
+    | '/components/statusIndicator/'
     | '/components/tabMenu/'
     | '/components/table/'
     | '/components/tag/'
@@ -6149,6 +6242,9 @@ export const routeTree = rootRoute
         "/components/radiobutton/informer",
         "/components/radiobutton/sizes",
         "/components/radiobutton/states",
+        "/components/statusIndicator/sizes",
+        "/components/statusIndicator/states",
+        "/components/statusIndicator/variants",
         "/components/tabMenu/addCardTab",
         "/components/tabMenu/addTab",
         "/components/tabMenu/addTabVertical",
@@ -6234,6 +6330,7 @@ export const routeTree = rootRoute
         "/components/progressPage/",
         "/components/progressStepper/",
         "/components/radiobutton/",
+        "/components/statusIndicator/",
         "/components/tabMenu/",
         "/components/table/",
         "/components/tag/",
@@ -6901,6 +6998,18 @@ export const routeTree = rootRoute
       "filePath": "components/radiobutton/states.tsx",
       "parent": "/components"
     },
+    "/components/statusIndicator/sizes": {
+      "filePath": "components/statusIndicator/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/statusIndicator/states": {
+      "filePath": "components/statusIndicator/states.tsx",
+      "parent": "/components"
+    },
+    "/components/statusIndicator/variants": {
+      "filePath": "components/statusIndicator/variants.tsx",
+      "parent": "/components"
+    },
     "/components/tabMenu/addCardTab": {
       "filePath": "components/tabMenu/addCardTab.tsx",
       "parent": "/components"
@@ -7239,6 +7348,10 @@ export const routeTree = rootRoute
     },
     "/components/radiobutton/": {
       "filePath": "components/radiobutton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/statusIndicator/": {
+      "filePath": "components/statusIndicator/index.tsx",
       "parent": "/components"
     },
     "/components/tabMenu/": {
