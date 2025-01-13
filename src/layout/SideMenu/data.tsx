@@ -330,7 +330,13 @@ const data = [
   {
     name: 'ImageViewer',
     path: '/components/imageViewer',
-    routes: [{ name: 'Базовый пример', path: '/components/imageViewer' }],
+    routes: [
+      { name: 'Базовый пример', path: '/components/imageViewer' },
+      { name: 'Отображение миниатюр', path: '/components/imageViewer/imageMiniature' },
+      { name: 'Алгоритм отображения', path: '/components/imageViewer/viewOptions' },
+      { name: 'Ошибки при загрузке', path: '/components/imageViewer/errorOnLoad' },
+      { name: 'Клавиатурные команды', path: '/components/imageViewer/keyboardCommands' },
+    ],
   },
   {
     name: 'Table',

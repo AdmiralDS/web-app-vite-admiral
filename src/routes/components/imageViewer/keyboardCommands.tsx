@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 
 import { ImageViewer } from '@admiral-ds/react-ui';
@@ -38,42 +37,34 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
 };
 
 const Template = () => {
-  const [activeImg, setActiveImg] = useState(0);
-
-  const handleActiveChange = (index: number) => {
-    setActiveImg(index);
-    // eslint-disable-next-line no-console
-    console.log('active image', index);
-  };
-
   return (
     <ExampleSection
       text={
         <>
-          Основные функции:
-          <li>Просмотр одного или нескольких изображений</li>
-          <li>Увеличение-уменьшение</li>
-          <li>Поворот влево-вправо на 90'</li>
-          <li>Отображение по вертикали-горизонтали</li>
-          <li>Увеличение по двойному клику на изображении</li>
-          <li>Перемещение изображения при зажатой ЛКМ</li>
+          <li>Esc — закрывает показ</li>
+          <li>Стрелки влево/вправо — листают изображения</li>
+          <li>Стрелки вверх/вниз — изменяют масштаб</li>
+          <li>
+            F — изображение заполняет весь экран по вертикали или горизонтали в зависимости от того, какое событие
+            наступит первым. Повторное нажатие — дефолтный масштаб.
+          </li>
+          <li>Enter — устанавливает масштаб 1:1, повторное нажатие — дефолтный масштаб</li>
+          <li>Space — листает изображения вправо</li>
         </>
       }
     >
       <ImageViewer
-        activeImg={activeImg}
         items={items}
         onTransform={handleTransform}
-        onActiveChange={handleActiveChange}
       ></ImageViewer>
     </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/imageViewer/')({
+export const Route = createFileRoute('/components/imageViewer/keyboardCommands')({
   component: () => <Template />,
   staticData: {
-    title: 'ImageViewer. Базовый пример',
-    description: 'Компонент для просмотра изображений',
+    title: 'ImageViewer. Клавиатурные команды',
+    description: '',
   },
 });
