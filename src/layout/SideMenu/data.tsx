@@ -525,6 +525,19 @@ const data = [
       { name: 'HorizontalTabs. Базовый пример', path: '/components/tabMenu/horizontalTabs' },
     ],
   },
+  {
+    name: 'Stepper',
+    path: '/components/stepper',
+    routes: [
+      { name: 'Базовый пример', path: '/components/stepper' },
+      { name: 'Состояния', path: '/components/stepper/state' },
+      { name: 'Опции', path: '/components/stepper/options' },
+      { name: 'Кастомный StepContent', path: '/components/stepper/custom' },
+      { name: 'Вертикальный Stepper', path: '/components/stepper/vertical' },
+      { name: 'Адаптив', path: '/components/stepper/adaptive' },
+      { name: 'Мобильная версия', path: '/components/stepper/mobile' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
