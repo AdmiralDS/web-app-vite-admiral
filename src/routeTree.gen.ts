@@ -27,6 +27,7 @@ import { Route as ComponentsTagIndexImport } from './routes/components/tag/index
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
+import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
 import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
@@ -118,6 +119,9 @@ import { Route as ComponentsStepperOptionsImport } from './routes/components/ste
 import { Route as ComponentsStepperMobileImport } from './routes/components/stepper/mobile'
 import { Route as ComponentsStepperCustomImport } from './routes/components/stepper/custom'
 import { Route as ComponentsStepperAdaptiveImport } from './routes/components/stepper/adaptive'
+import { Route as ComponentsStatusIndicatorVariantsImport } from './routes/components/statusIndicator/variants'
+import { Route as ComponentsStatusIndicatorStatesImport } from './routes/components/statusIndicator/states'
+import { Route as ComponentsStatusIndicatorSizesImport } from './routes/components/statusIndicator/sizes'
 import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states'
 import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes'
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
@@ -375,6 +379,13 @@ const ComponentsStepperIndexRoute = ComponentsStepperIndexImport.update({
   path: '/stepper/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsStatusIndicatorIndexRoute =
+  ComponentsStatusIndicatorIndexImport.update({
+    id: '/statusIndicator/',
+    path: '/statusIndicator/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
   {
@@ -971,6 +982,27 @@ const ComponentsStepperAdaptiveRoute = ComponentsStepperAdaptiveImport.update({
   path: '/stepper/adaptive',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsStatusIndicatorVariantsRoute =
+  ComponentsStatusIndicatorVariantsImport.update({
+    id: '/statusIndicator/variants',
+    path: '/statusIndicator/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsStatusIndicatorStatesRoute =
+  ComponentsStatusIndicatorStatesImport.update({
+    id: '/statusIndicator/states',
+    path: '/statusIndicator/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsStatusIndicatorSizesRoute =
+  ComponentsStatusIndicatorSizesImport.update({
+    id: '/statusIndicator/sizes',
+    path: '/statusIndicator/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsRadiobuttonStatesRoute =
   ComponentsRadiobuttonStatesImport.update({
@@ -3213,6 +3245,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/statusIndicator/sizes': {
+      id: '/components/statusIndicator/sizes'
+      path: '/statusIndicator/sizes'
+      fullPath: '/components/statusIndicator/sizes'
+      preLoaderRoute: typeof ComponentsStatusIndicatorSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/statusIndicator/states': {
+      id: '/components/statusIndicator/states'
+      path: '/statusIndicator/states'
+      fullPath: '/components/statusIndicator/states'
+      preLoaderRoute: typeof ComponentsStatusIndicatorStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/statusIndicator/variants': {
+      id: '/components/statusIndicator/variants'
+      path: '/statusIndicator/variants'
+      fullPath: '/components/statusIndicator/variants'
+      preLoaderRoute: typeof ComponentsStatusIndicatorVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/adaptive': {
       id: '/components/stepper/adaptive'
       path: '/stepper/adaptive'
@@ -3850,6 +3903,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/statusIndicator/': {
+      id: '/components/statusIndicator/'
+      path: '/statusIndicator'
+      fullPath: '/components/statusIndicator'
+      preLoaderRoute: typeof ComponentsStatusIndicatorIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/': {
       id: '/components/stepper/'
       path: '/stepper'
@@ -4077,6 +4137,9 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
   ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute
   ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute
+  ComponentsStatusIndicatorSizesRoute: typeof ComponentsStatusIndicatorSizesRoute
+  ComponentsStatusIndicatorStatesRoute: typeof ComponentsStatusIndicatorStatesRoute
+  ComponentsStatusIndicatorVariantsRoute: typeof ComponentsStatusIndicatorVariantsRoute
   ComponentsStepperAdaptiveRoute: typeof ComponentsStepperAdaptiveRoute
   ComponentsStepperCustomRoute: typeof ComponentsStepperCustomRoute
   ComponentsStepperMobileRoute: typeof ComponentsStepperMobileRoute
@@ -4168,6 +4231,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
+  ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
@@ -4372,6 +4436,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
   ComponentsRadiobuttonSizesRoute: ComponentsRadiobuttonSizesRoute,
   ComponentsRadiobuttonStatesRoute: ComponentsRadiobuttonStatesRoute,
+  ComponentsStatusIndicatorSizesRoute: ComponentsStatusIndicatorSizesRoute,
+  ComponentsStatusIndicatorStatesRoute: ComponentsStatusIndicatorStatesRoute,
+  ComponentsStatusIndicatorVariantsRoute:
+    ComponentsStatusIndicatorVariantsRoute,
   ComponentsStepperAdaptiveRoute: ComponentsStepperAdaptiveRoute,
   ComponentsStepperCustomRoute: ComponentsStepperCustomRoute,
   ComponentsStepperMobileRoute: ComponentsStepperMobileRoute,
@@ -4470,6 +4538,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
+  ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
@@ -4668,6 +4737,9 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
   '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
   '/components/stepper/custom': typeof ComponentsStepperCustomRoute
   '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
@@ -4759,6 +4831,7 @@ export interface FileRoutesByFullPath {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -4936,6 +5009,9 @@ export interface FileRoutesByTo {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
   '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
   '/components/stepper/custom': typeof ComponentsStepperCustomRoute
   '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
@@ -5027,6 +5103,7 @@ export interface FileRoutesByTo {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -5205,6 +5282,9 @@ export interface FileRoutesById {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
   '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
   '/components/stepper/custom': typeof ComponentsStepperCustomRoute
   '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
@@ -5296,6 +5376,7 @@ export interface FileRoutesById {
   '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
+  '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
@@ -5475,6 +5556,9 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/statusIndicator/sizes'
+    | '/components/statusIndicator/states'
+    | '/components/statusIndicator/variants'
     | '/components/stepper/adaptive'
     | '/components/stepper/custom'
     | '/components/stepper/mobile'
@@ -5566,6 +5650,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/statusIndicator'
     | '/components/stepper'
     | '/components/tabMenu'
     | '/components/table'
@@ -5742,6 +5827,9 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/statusIndicator/sizes'
+    | '/components/statusIndicator/states'
+    | '/components/statusIndicator/variants'
     | '/components/stepper/adaptive'
     | '/components/stepper/custom'
     | '/components/stepper/mobile'
@@ -5833,6 +5921,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/statusIndicator'
     | '/components/stepper'
     | '/components/tabMenu'
     | '/components/table'
@@ -6009,6 +6098,9 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/statusIndicator/sizes'
+    | '/components/statusIndicator/states'
+    | '/components/statusIndicator/variants'
     | '/components/stepper/adaptive'
     | '/components/stepper/custom'
     | '/components/stepper/mobile'
@@ -6100,6 +6192,7 @@ export interface FileRouteTypes {
     | '/components/progressPage/'
     | '/components/progressStepper/'
     | '/components/radiobutton/'
+    | '/components/statusIndicator/'
     | '/components/stepper/'
     | '/components/tabMenu/'
     | '/components/table/'
@@ -6303,6 +6396,9 @@ export const routeTree = rootRoute
         "/components/radiobutton/informer",
         "/components/radiobutton/sizes",
         "/components/radiobutton/states",
+        "/components/statusIndicator/sizes",
+        "/components/statusIndicator/states",
+        "/components/statusIndicator/variants",
         "/components/stepper/adaptive",
         "/components/stepper/custom",
         "/components/stepper/mobile",
@@ -6394,6 +6490,7 @@ export const routeTree = rootRoute
         "/components/progressPage/",
         "/components/progressStepper/",
         "/components/radiobutton/",
+        "/components/statusIndicator/",
         "/components/stepper/",
         "/components/tabMenu/",
         "/components/table/",
@@ -7062,6 +7159,18 @@ export const routeTree = rootRoute
       "filePath": "components/radiobutton/states.tsx",
       "parent": "/components"
     },
+    "/components/statusIndicator/sizes": {
+      "filePath": "components/statusIndicator/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/statusIndicator/states": {
+      "filePath": "components/statusIndicator/states.tsx",
+      "parent": "/components"
+    },
+    "/components/statusIndicator/variants": {
+      "filePath": "components/statusIndicator/variants.tsx",
+      "parent": "/components"
+    },
     "/components/stepper/adaptive": {
       "filePath": "components/stepper/adaptive.tsx",
       "parent": "/components"
@@ -7424,6 +7533,10 @@ export const routeTree = rootRoute
     },
     "/components/radiobutton/": {
       "filePath": "components/radiobutton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/statusIndicator/": {
+      "filePath": "components/statusIndicator/index.tsx",
       "parent": "/components"
     },
     "/components/stepper/": {

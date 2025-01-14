@@ -526,6 +526,16 @@ const data = [
     ],
   },
   {
+    name: 'StatusIndicator',
+    path: '/components/statusIndicator',
+    routes: [
+      { name: 'Базовый пример', path: '/components/statusIndicator' },
+      { name: 'Размеры', path: '/components/statusIndicator/sizes' },
+      { name: 'Варианты', path: '/components/statusIndicator/variants' },
+      { name: 'Состояния', path: '/components/statusIndicator/states' },
+    ],
+  },
+  {
     name: 'Stepper',
     path: '/components/stepper',
     routes: [
