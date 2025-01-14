@@ -3,12 +3,12 @@ import { ExampleSection, PStyled } from '../../-helpers/examples';
 import { Step, StepContent, Stepper } from '@admiral-ds/react-ui';
 
 const steps = [
-  { key: 0, content: 'Warning шаг', warning: true },
-  { key: 1, content: 'Disabled шаг', disabled: true },
-  { key: 2, content: 'Error шаг', error: true },
-  { key: 3, content: 'Сompleted шаг', completed: true },
-  { key: 4, content: 'Активный шаг' },
-  { key: 5, content: 'Неактивный шаг' },
+  { content: 'Warning шаг', warning: true },
+  { content: 'Disabled шаг', disabled: true },
+  { content: 'Error шаг', error: true },
+  { content: 'Сompleted шаг', completed: true },
+  { content: 'Активный шаг' },
+  { content: 'Неактивный шаг' },
 ];
 
 export const Template = () => {
@@ -33,10 +33,10 @@ export const Template = () => {
       }
     >
       <Stepper activeStep={4}>
-        {steps.map(({ content, ...step }) => {
+        {steps.map(({ content, ...step }, id) => {
           return (
             // eslint-disable-next-line no-console
-            <Step {...step} onClick={(step) => console.log(step.index)}>
+            <Step {...step} key={id} onClick={(step) => console.log(step.index)}>
               <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
             </Step>
           );

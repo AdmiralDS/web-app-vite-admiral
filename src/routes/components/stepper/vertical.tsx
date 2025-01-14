@@ -4,17 +4,15 @@ import { Step, StepContent, Stepper } from '@admiral-ds/react-ui';
 
 const steps = [
   {
-    key: 0,
     content: 'Завершенный шаг, текст занимает максимум три строки, далее идет сокращение',
     completed: true,
   },
   {
-    key: 1,
     content: 'Завершенный шаг, текст занимает максимум три строки, далее идет сокращение',
     completed: true,
   },
-  { key: 2, content: 'Активный шаг, текст занимает максимум три строки' },
-  { key: 3, content: 'Неактивный шаг, текст занимает максимум три строки' },
+  { content: 'Активный шаг, текст занимает максимум три строки' },
+  { content: 'Неактивный шаг, текст занимает максимум три строки' },
 ];
 
 export const Template = () => {
@@ -34,16 +32,15 @@ export const Template = () => {
             В мобильной версии, ввиду ограниченного пространства, рекомендуется применять горизонтальную версию
             степпера.
           </PStyled>
-          <PStyled>В последнем шаге выключается статусная полоса</PStyled>
           <PStyled>Вертикальный Stepper имеет такие же опции, кастом и состояния как и горизонтальный</PStyled>
         </>
       }
     >
       <Stepper activeStep={2} orientation="vertical" style={{ width: '225px' }}>
-        {steps.map(({ content, ...step }) => {
+        {steps.map(({ content, ...step }, id) => {
           return (
             // eslint-disable-next-line no-console
-            <Step {...step} onClick={(step) => console.log(step.index)}>
+            <Step {...step} key={id} onClick={(step) => console.log(step.index)}>
               <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
             </Step>
           );

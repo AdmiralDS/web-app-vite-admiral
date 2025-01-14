@@ -1,46 +1,42 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection, PStyled } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 import { Step, StepContent, Stepper } from '@admiral-ds/react-ui';
 import { useState } from 'react';
 
 const initialSteps = [
   {
-    key: 0,
     content: '1. Пройденный шаг',
     completed: true,
   },
-  { key: 1, content: '2. Ранее пройденный шаг, на котрый мы вернулись с 4го шага' },
-  { key: 2, content: '3. Пройденный шаг', completed: true },
-  { key: 3, content: '4. Отсюда мы вернулись на 2 шаг.', completed: true },
-  { key: 4, content: '5. Неактивный шаг, еще не пройденный' },
+  { content: '2. Ранее пройденный шаг, на котрый мы вернулись с 4го шага' },
+  { content: '3. Пройденный шаг', completed: true },
+  { content: '4. Отсюда мы вернулись на 2 шаг.', completed: true },
+  { content: '5. Неактивный шаг, еще не пройденный' },
 ];
 
 const initialSteps2 = [
   {
-    key: 0,
     content: 'Завершенный шаг, текст занимает максимум три строки, далее идет сокращение',
     completed: true,
   },
-  { key: 1, content: 'Завершенный шаг, текст занимает максимум три строки, далее идет сокращение', completed: true },
-  { key: 2, content: 'Активный шаг, текст занимает максимум три строки' },
-  { key: 3, content: 'Неактивный шаг, текст занимает максимум три строки' },
+  { content: 'Завершенный шаг, текст занимает максимум три строки, далее идет сокращение', completed: true },
+  { content: 'Активный шаг, текст занимает максимум три строки' },
+  { content: 'Неактивный шаг, текст занимает максимум три строки' },
 ];
 
 const initialSteps3 = [
   {
-    key: 0,
     content: 'Завершенный шаг, текст занимает максимум три строки, далее идет сокращение',
     link: '#',
     completed: true,
   },
   {
-    key: 1,
     content: 'Завершенный шаг, текст занимает максимум три строки, далее идет сокращение',
     link: '#',
     completed: true,
   },
-  { key: 2, content: 'Активный шаг, текст занимает максимум три строки', link: '#' },
-  { key: 3, content: 'Неактивный шаг, текст занимает максимум три строки', link: '#' },
+  { content: 'Активный шаг, текст занимает максимум три строки', link: '#' },
+  { content: 'Неактивный шаг, текст занимает максимум три строки', link: '#' },
 ];
 
 export const Template = () => {
@@ -55,12 +51,24 @@ export const Template = () => {
 
   return (
     <>
-      <ExampleSection text="Кликабельные шаги">
-        <Stepper activeStep={activeStep}>
-          {initialSteps2.map(({ content, ...step }) => {
+      <ExampleSection text="В последнем шаге опционально можно выключать статусную полосу">
+        <Stepper hideLastStepLine={true} lineClamp={3} activeStep={2}>
+          {initialSteps2.map(({ content, ...step }, id) => {
             return (
               // eslint-disable-next-line no-console
-              <Step {...step} onClick={(step) => console.log(step.index)}>
+              <Step {...step} key={`fourth-example-${id}`} onClick={(step) => console.log(step.index)}>
+                <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
+              </Step>
+            );
+          })}
+        </Stepper>
+      </ExampleSection>
+      <ExampleSection text="Кликабельные шаги">
+        <Stepper activeStep={activeStep}>
+          {initialSteps2.map(({ content, ...step }, id) => {
+            return (
+              // eslint-disable-next-line no-console
+              <Step {...step} key={`first-example-${id}`} onClick={(step) => console.log(step.index)}>
                 <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
               </Step>
             );
@@ -69,9 +77,9 @@ export const Template = () => {
       </ExampleSection>
       <ExampleSection text="Шаги в виде ссылок">
         <Stepper activeStep={activeStep}>
-          {initialSteps3.map(({ content, ...step }) => {
+          {initialSteps3.map(({ content, ...step }, id) => {
             return (
-              <Step {...step}>
+              <Step {...step} key={`second-example-${id}`}>
                 <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
               </Step>
             );
@@ -80,67 +88,9 @@ export const Template = () => {
       </ExampleSection>
       <ExampleSection text="В случаях необходимости и когда это позволяет логика шагов, например, результаты предыдущих шагов не влияют на последующие, допускается возможность возврата к предыдущим шагам. В этом сценарии уже выполненные шаги становятся кликабельными и при нажатии возвращают к пройденому шагу.  Возможны заблокированные для перехода шаги - Disable. Зоной клика является вся площадь сегмента.">
         <Stepper lineClamp={2} activeStep={activeStep}>
-          {steps.map(({ content, ...step }) => {
+          {steps.map(({ content, ...step }, id) => {
             return (
-              <Step {...step} onClick={handleStepClick}>
-                <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
-              </Step>
-            );
-          })}
-        </Stepper>
-      </ExampleSection>
-      <ExampleSection text="В последнем шаге опционально можно выключать статусную полосу">
-        <Stepper hideLastStepLine={true} lineClamp={3} activeStep={2}>
-          {initialSteps2.map(({ content, ...step }) => {
-            return (
-              // eslint-disable-next-line no-console
-              <Step {...step} onClick={(step) => console.log(step.index)}>
-                <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
-              </Step>
-            );
-          })}
-        </Stepper>
-      </ExampleSection>
-      <ExampleSection
-        text={
-          <>
-            <PStyled>
-              В случае переполнения текста при наведении на текст появляется подсказка с полным содержанием, также можно
-              регулировать максимальное количество отображаемых строк
-            </PStyled>
-            <PStyled>Максимум 1 строка</PStyled>
-          </>
-        }
-      >
-        <Stepper hideLastStepLine={true} lineClamp={1} activeStep={2}>
-          {initialSteps2.map(({ content, ...step }) => {
-            return (
-              // eslint-disable-next-line no-console
-              <Step {...step} onClick={(step) => console.log(step.index)}>
-                <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
-              </Step>
-            );
-          })}
-        </Stepper>
-      </ExampleSection>
-      <ExampleSection text="Максимум 2 строки">
-        <Stepper hideLastStepLine={true} lineClamp={2} activeStep={2}>
-          {initialSteps2.map(({ content, ...step }) => {
-            return (
-              // eslint-disable-next-line no-console
-              <Step {...step} onClick={(step) => console.log(step.index)}>
-                <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
-              </Step>
-            );
-          })}
-        </Stepper>
-      </ExampleSection>
-      <ExampleSection text="Максимум 3 строки">
-        <Stepper hideLastStepLine={true} lineClamp={2} activeStep={2}>
-          {initialSteps2.map(({ content, ...step }) => {
-            return (
-              // eslint-disable-next-line no-console
-              <Step {...step} onClick={(step) => console.log(step.index)}>
+              <Step {...step} key={`third-example-${id}`} onClick={handleStepClick}>
                 <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
               </Step>
             );

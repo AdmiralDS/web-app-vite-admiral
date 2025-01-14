@@ -5,12 +5,11 @@ import { useState } from 'react';
 
 const initialSteps = [
   {
-    key: 0,
     content: 'Текст занимает максимум три строки, далее идет сокращение',
   },
-  { key: 1, content: 'Текст занимает максимум три строки, далее идет сокращение' },
-  { key: 2, content: 'Текст занимает максимум три строки, далее идет сокращение' },
-  { key: 3, content: 'Текст занимает максимум три строки, далее идет сокращение' },
+  { content: 'Текст занимает максимум три строки, далее идет сокращение' },
+  { content: 'Текст занимает максимум три строки, далее идет сокращение' },
+  { content: 'Текст занимает максимум три строки, далее идет сокращение' },
 ];
 
 export const Template = () => {
@@ -61,9 +60,9 @@ export const Template = () => {
           </Button>
         </div>
         <Stepper activeStep={activeStep} mobile>
-          {steps.map(({ content, ...step }) => {
+          {steps.map(({ content, ...step }, id) => {
             return (
-              <Step {...step}>
+              <Step {...step} key={id}>
                 <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
               </Step>
             );

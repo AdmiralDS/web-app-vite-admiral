@@ -114,6 +114,7 @@ import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/compone
 import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
 import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
 import { Route as ComponentsStepperVerticalImport } from './routes/components/stepper/vertical'
+import { Route as ComponentsStepperVariantsImport } from './routes/components/stepper/variants'
 import { Route as ComponentsStepperStateImport } from './routes/components/stepper/state'
 import { Route as ComponentsStepperOptionsImport } from './routes/components/stepper/options'
 import { Route as ComponentsStepperMobileImport } from './routes/components/stepper/mobile'
@@ -950,6 +951,12 @@ const ComponentsTabMenuAddCardTabRoute =
 const ComponentsStepperVerticalRoute = ComponentsStepperVerticalImport.update({
   id: '/stepper/vertical',
   path: '/stepper/vertical',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperVariantsRoute = ComponentsStepperVariantsImport.update({
+  id: '/stepper/variants',
+  path: '/stepper/variants',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -3301,6 +3308,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStepperStateImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/stepper/variants': {
+      id: '/components/stepper/variants'
+      path: '/stepper/variants'
+      fullPath: '/components/stepper/variants'
+      preLoaderRoute: typeof ComponentsStepperVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/vertical': {
       id: '/components/stepper/vertical'
       path: '/stepper/vertical'
@@ -4145,6 +4159,7 @@ interface ComponentsRouteChildren {
   ComponentsStepperMobileRoute: typeof ComponentsStepperMobileRoute
   ComponentsStepperOptionsRoute: typeof ComponentsStepperOptionsRoute
   ComponentsStepperStateRoute: typeof ComponentsStepperStateRoute
+  ComponentsStepperVariantsRoute: typeof ComponentsStepperVariantsRoute
   ComponentsStepperVerticalRoute: typeof ComponentsStepperVerticalRoute
   ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
   ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
@@ -4445,6 +4460,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsStepperMobileRoute: ComponentsStepperMobileRoute,
   ComponentsStepperOptionsRoute: ComponentsStepperOptionsRoute,
   ComponentsStepperStateRoute: ComponentsStepperStateRoute,
+  ComponentsStepperVariantsRoute: ComponentsStepperVariantsRoute,
   ComponentsStepperVerticalRoute: ComponentsStepperVerticalRoute,
   ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
   ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
@@ -4745,6 +4761,7 @@ export interface FileRoutesByFullPath {
   '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
   '/components/stepper/options': typeof ComponentsStepperOptionsRoute
   '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
@@ -5017,6 +5034,7 @@ export interface FileRoutesByTo {
   '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
   '/components/stepper/options': typeof ComponentsStepperOptionsRoute
   '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
@@ -5290,6 +5308,7 @@ export interface FileRoutesById {
   '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
   '/components/stepper/options': typeof ComponentsStepperOptionsRoute
   '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
@@ -5564,6 +5583,7 @@ export interface FileRouteTypes {
     | '/components/stepper/mobile'
     | '/components/stepper/options'
     | '/components/stepper/state'
+    | '/components/stepper/variants'
     | '/components/stepper/vertical'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
@@ -5835,6 +5855,7 @@ export interface FileRouteTypes {
     | '/components/stepper/mobile'
     | '/components/stepper/options'
     | '/components/stepper/state'
+    | '/components/stepper/variants'
     | '/components/stepper/vertical'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
@@ -6106,6 +6127,7 @@ export interface FileRouteTypes {
     | '/components/stepper/mobile'
     | '/components/stepper/options'
     | '/components/stepper/state'
+    | '/components/stepper/variants'
     | '/components/stepper/vertical'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
@@ -6404,6 +6426,7 @@ export const routeTree = rootRoute
         "/components/stepper/mobile",
         "/components/stepper/options",
         "/components/stepper/state",
+        "/components/stepper/variants",
         "/components/stepper/vertical",
         "/components/tabMenu/addCardTab",
         "/components/tabMenu/addTab",
@@ -7189,6 +7212,10 @@ export const routeTree = rootRoute
     },
     "/components/stepper/state": {
       "filePath": "components/stepper/state.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/variants": {
+      "filePath": "components/stepper/variants.tsx",
       "parent": "/components"
     },
     "/components/stepper/vertical": {

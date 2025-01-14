@@ -541,6 +541,7 @@ const data = [
     routes: [
       { name: 'Базовый пример', path: '/components/stepper' },
       { name: 'Состояния', path: '/components/stepper/state' },
+      { name: 'Варианты отображения строк', path: '/components/stepper/variants' },
       { name: 'Опции', path: '/components/stepper/options' },
       { name: 'Кастомный StepContent', path: '/components/stepper/custom' },
       { name: 'Вертикальный Stepper', path: '/components/stepper/vertical' },

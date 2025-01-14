@@ -22,36 +22,42 @@ export const Template = () => {
         text={
           <>
             <PStyled>
-              С помощью параметра stepWidth можно задать ширину шага. Если данный параметр не задан, то ширина шага
-              будет рассчитываться следующим образом:
+              В случае переполнения текста при наведении на текст появляется подсказка с полным содержанием, также можно
+              регулировать максимальное количество отображаемых строк
             </PStyled>
-            <PStyled>
-              <li>
-                при горизонтальной ориентации все шаги будут в равной степени делить между собой свободное пространство;
-              </li>
-              <li>при вертикальной ориентации каждый шаг займет 100% ширины степпера.</li>
-            </PStyled>
-            <PStyled>
-              Таким образом шаги будут пропорционально увеличиваться/уменьшаться при изменении ширины степпера.
-            </PStyled>
+            <PStyled>Максимум 1 строка</PStyled>
           </>
         }
       >
-        <Stepper activeStep={2}>
+        <Stepper lineClamp={1} activeStep={2}>
           {steps.map(({ content, ...step }, id) => {
             return (
-              <Step {...step} key={`first-example-${id}`}>
+              // eslint-disable-next-line no-console
+              <Step {...step} key={`first-example-${id}`} onClick={(step) => console.log(step.index)}>
                 <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
               </Step>
             );
           })}
         </Stepper>
       </ExampleSection>
-      <ExampleSection>
-        <Stepper activeStep={2} orientation="vertical" style={{ width: '25%' }}>
+      <ExampleSection text="Максимум 2 строки">
+        <Stepper lineClamp={2} activeStep={2}>
           {steps.map(({ content, ...step }, id) => {
             return (
-              <Step {...step} key={`second-example-${id}`}>
+              // eslint-disable-next-line no-console
+              <Step {...step} key={`second-example-${id}`} onClick={(step) => console.log(step.index)}>
+                <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
+              </Step>
+            );
+          })}
+        </Stepper>
+      </ExampleSection>
+      <ExampleSection text="Максимум 3 строки">
+        <Stepper lineClamp={2} activeStep={2}>
+          {steps.map(({ content, ...step }, id) => {
+            return (
+              // eslint-disable-next-line no-console
+              <Step {...step} key={`third-example-${id}`} onClick={(step) => console.log(step.index)}>
                 <StepContent tooltipProps={{ style: { maxWidth: '300px' } }}>{content}</StepContent>
               </Step>
             );
@@ -62,9 +68,9 @@ export const Template = () => {
   );
 };
 
-export const Route = createFileRoute('/components/stepper/adaptive')({
+export const Route = createFileRoute('/components/stepper/variants')({
   component: () => <Template />,
   staticData: {
-    title: 'Stepper. Адаптив',
+    title: 'Stepper. Варианты отображения строк',
   },
 });
