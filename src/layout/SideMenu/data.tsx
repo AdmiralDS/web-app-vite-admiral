@@ -536,6 +536,20 @@ const data = [
     ],
   },
   {
+    name: 'Stepper',
+    path: '/components/stepper',
+    routes: [
+      { name: 'Базовый пример', path: '/components/stepper' },
+      { name: 'Состояния', path: '/components/stepper/state' },
+      { name: 'Варианты отображения строк', path: '/components/stepper/variants' },
+      { name: 'Опции', path: '/components/stepper/options' },
+      { name: 'Кастомный StepContent', path: '/components/stepper/custom' },
+      { name: 'Вертикальный Stepper', path: '/components/stepper/vertical' },
+      { name: 'Адаптив', path: '/components/stepper/adaptive' },
+      { name: 'Мобильная версия', path: '/components/stepper/mobile' },
+    ],
+  },
+  {
     name: 'SegmentedControl',
     path: '/components/segmentedControl',
     routes: [
@@ -546,7 +560,6 @@ const data = [
       { name: 'Состояния', path: '/components/segmentedControl/states' },
       { name: 'Режим radio button', path: '/components/segmentedControl/radioButtonMode' },
       { name: 'Режим checkbox', path: '/components/segmentedControl/checkBoxMode' },
-
     ],
   },
 ];

@@ -26,6 +26,7 @@ import { Route as ComponentsTextButtonIndexImport } from './routes/components/te
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
+import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
@@ -113,6 +114,13 @@ import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components
 import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
 import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
 import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
+import { Route as ComponentsStepperVerticalImport } from './routes/components/stepper/vertical'
+import { Route as ComponentsStepperVariantsImport } from './routes/components/stepper/variants'
+import { Route as ComponentsStepperStateImport } from './routes/components/stepper/state'
+import { Route as ComponentsStepperOptionsImport } from './routes/components/stepper/options'
+import { Route as ComponentsStepperMobileImport } from './routes/components/stepper/mobile'
+import { Route as ComponentsStepperCustomImport } from './routes/components/stepper/custom'
+import { Route as ComponentsStepperAdaptiveImport } from './routes/components/stepper/adaptive'
 import { Route as ComponentsStatusIndicatorVariantsImport } from './routes/components/statusIndicator/variants'
 import { Route as ComponentsStatusIndicatorStatesImport } from './routes/components/statusIndicator/states'
 import { Route as ComponentsStatusIndicatorSizesImport } from './routes/components/statusIndicator/sizes'
@@ -371,6 +379,12 @@ const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
 const ComponentsTabMenuIndexRoute = ComponentsTabMenuIndexImport.update({
   id: '/tabMenu/',
   path: '/tabMenu/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperIndexRoute = ComponentsStepperIndexImport.update({
+  id: '/stepper/',
+  path: '/stepper/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -947,6 +961,48 @@ const ComponentsTabMenuAddCardTabRoute =
     path: '/tabMenu/addCardTab',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsStepperVerticalRoute = ComponentsStepperVerticalImport.update({
+  id: '/stepper/vertical',
+  path: '/stepper/vertical',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperVariantsRoute = ComponentsStepperVariantsImport.update({
+  id: '/stepper/variants',
+  path: '/stepper/variants',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperStateRoute = ComponentsStepperStateImport.update({
+  id: '/stepper/state',
+  path: '/stepper/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperOptionsRoute = ComponentsStepperOptionsImport.update({
+  id: '/stepper/options',
+  path: '/stepper/options',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperMobileRoute = ComponentsStepperMobileImport.update({
+  id: '/stepper/mobile',
+  path: '/stepper/mobile',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperCustomRoute = ComponentsStepperCustomImport.update({
+  id: '/stepper/custom',
+  path: '/stepper/custom',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsStepperAdaptiveRoute = ComponentsStepperAdaptiveImport.update({
+  id: '/stepper/adaptive',
+  path: '/stepper/adaptive',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsStatusIndicatorVariantsRoute =
   ComponentsStatusIndicatorVariantsImport.update({
@@ -3315,6 +3371,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStatusIndicatorVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/stepper/adaptive': {
+      id: '/components/stepper/adaptive'
+      path: '/stepper/adaptive'
+      fullPath: '/components/stepper/adaptive'
+      preLoaderRoute: typeof ComponentsStepperAdaptiveImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/stepper/custom': {
+      id: '/components/stepper/custom'
+      path: '/stepper/custom'
+      fullPath: '/components/stepper/custom'
+      preLoaderRoute: typeof ComponentsStepperCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/stepper/mobile': {
+      id: '/components/stepper/mobile'
+      path: '/stepper/mobile'
+      fullPath: '/components/stepper/mobile'
+      preLoaderRoute: typeof ComponentsStepperMobileImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/stepper/options': {
+      id: '/components/stepper/options'
+      path: '/stepper/options'
+      fullPath: '/components/stepper/options'
+      preLoaderRoute: typeof ComponentsStepperOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/stepper/state': {
+      id: '/components/stepper/state'
+      path: '/stepper/state'
+      fullPath: '/components/stepper/state'
+      preLoaderRoute: typeof ComponentsStepperStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/stepper/variants': {
+      id: '/components/stepper/variants'
+      path: '/stepper/variants'
+      fullPath: '/components/stepper/variants'
+      preLoaderRoute: typeof ComponentsStepperVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/stepper/vertical': {
+      id: '/components/stepper/vertical'
+      path: '/stepper/vertical'
+      fullPath: '/components/stepper/vertical'
+      preLoaderRoute: typeof ComponentsStepperVerticalImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/addCardTab': {
       id: '/components/tabMenu/addCardTab'
       path: '/tabMenu/addCardTab'
@@ -3924,6 +4029,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStatusIndicatorIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/stepper/': {
+      id: '/components/stepper/'
+      path: '/stepper'
+      fullPath: '/components/stepper'
+      preLoaderRoute: typeof ComponentsStepperIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/': {
       id: '/components/tabMenu/'
       path: '/tabMenu'
@@ -4153,6 +4265,13 @@ interface ComponentsRouteChildren {
   ComponentsStatusIndicatorSizesRoute: typeof ComponentsStatusIndicatorSizesRoute
   ComponentsStatusIndicatorStatesRoute: typeof ComponentsStatusIndicatorStatesRoute
   ComponentsStatusIndicatorVariantsRoute: typeof ComponentsStatusIndicatorVariantsRoute
+  ComponentsStepperAdaptiveRoute: typeof ComponentsStepperAdaptiveRoute
+  ComponentsStepperCustomRoute: typeof ComponentsStepperCustomRoute
+  ComponentsStepperMobileRoute: typeof ComponentsStepperMobileRoute
+  ComponentsStepperOptionsRoute: typeof ComponentsStepperOptionsRoute
+  ComponentsStepperStateRoute: typeof ComponentsStepperStateRoute
+  ComponentsStepperVariantsRoute: typeof ComponentsStepperVariantsRoute
+  ComponentsStepperVerticalRoute: typeof ComponentsStepperVerticalRoute
   ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
   ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
   ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
@@ -4240,6 +4359,7 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
+  ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
@@ -4456,6 +4576,13 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsStatusIndicatorStatesRoute: ComponentsStatusIndicatorStatesRoute,
   ComponentsStatusIndicatorVariantsRoute:
     ComponentsStatusIndicatorVariantsRoute,
+  ComponentsStepperAdaptiveRoute: ComponentsStepperAdaptiveRoute,
+  ComponentsStepperCustomRoute: ComponentsStepperCustomRoute,
+  ComponentsStepperMobileRoute: ComponentsStepperMobileRoute,
+  ComponentsStepperOptionsRoute: ComponentsStepperOptionsRoute,
+  ComponentsStepperStateRoute: ComponentsStepperStateRoute,
+  ComponentsStepperVariantsRoute: ComponentsStepperVariantsRoute,
+  ComponentsStepperVerticalRoute: ComponentsStepperVerticalRoute,
   ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
   ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
   ComponentsTabMenuAddTabVerticalRoute: ComponentsTabMenuAddTabVerticalRoute,
@@ -4550,6 +4677,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsSegmentedControlIndexRoute: ComponentsSegmentedControlIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
+  ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
@@ -4756,6 +4884,13 @@ export interface FileRoutesByFullPath {
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
+  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
+  '/components/stepper/custom': typeof ComponentsStepperCustomRoute
+  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
+  '/components/stepper/options': typeof ComponentsStepperOptionsRoute
+  '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
+  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -4843,6 +4978,7 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
+  '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -5028,6 +5164,13 @@ export interface FileRoutesByTo {
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
+  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
+  '/components/stepper/custom': typeof ComponentsStepperCustomRoute
+  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
+  '/components/stepper/options': typeof ComponentsStepperOptionsRoute
+  '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
+  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -5115,6 +5258,7 @@ export interface FileRoutesByTo {
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
+  '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -5301,6 +5445,13 @@ export interface FileRoutesById {
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
+  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
+  '/components/stepper/custom': typeof ComponentsStepperCustomRoute
+  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
+  '/components/stepper/options': typeof ComponentsStepperOptionsRoute
+  '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
+  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -5388,6 +5539,7 @@ export interface FileRoutesById {
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
+  '/components/stepper/': typeof ComponentsStepperIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
@@ -5575,6 +5727,13 @@ export interface FileRouteTypes {
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
+    | '/components/stepper/adaptive'
+    | '/components/stepper/custom'
+    | '/components/stepper/mobile'
+    | '/components/stepper/options'
+    | '/components/stepper/state'
+    | '/components/stepper/variants'
+    | '/components/stepper/vertical'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -5662,6 +5821,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton'
     | '/components/segmentedControl'
     | '/components/statusIndicator'
+    | '/components/stepper'
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
@@ -5846,6 +6006,13 @@ export interface FileRouteTypes {
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
+    | '/components/stepper/adaptive'
+    | '/components/stepper/custom'
+    | '/components/stepper/mobile'
+    | '/components/stepper/options'
+    | '/components/stepper/state'
+    | '/components/stepper/variants'
+    | '/components/stepper/vertical'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -5933,6 +6100,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton'
     | '/components/segmentedControl'
     | '/components/statusIndicator'
+    | '/components/stepper'
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
@@ -6117,6 +6285,13 @@ export interface FileRouteTypes {
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
+    | '/components/stepper/adaptive'
+    | '/components/stepper/custom'
+    | '/components/stepper/mobile'
+    | '/components/stepper/options'
+    | '/components/stepper/state'
+    | '/components/stepper/variants'
+    | '/components/stepper/vertical'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -6204,6 +6379,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton/'
     | '/components/segmentedControl/'
     | '/components/statusIndicator/'
+    | '/components/stepper/'
     | '/components/tabMenu/'
     | '/components/table/'
     | '/components/tag/'
@@ -6415,6 +6591,13 @@ export const routeTree = rootRoute
         "/components/statusIndicator/sizes",
         "/components/statusIndicator/states",
         "/components/statusIndicator/variants",
+        "/components/stepper/adaptive",
+        "/components/stepper/custom",
+        "/components/stepper/mobile",
+        "/components/stepper/options",
+        "/components/stepper/state",
+        "/components/stepper/variants",
+        "/components/stepper/vertical",
         "/components/tabMenu/addCardTab",
         "/components/tabMenu/addTab",
         "/components/tabMenu/addTabVertical",
@@ -6502,6 +6685,7 @@ export const routeTree = rootRoute
         "/components/radiobutton/",
         "/components/segmentedControl/",
         "/components/statusIndicator/",
+        "/components/stepper/",
         "/components/tabMenu/",
         "/components/table/",
         "/components/tag/",
@@ -7205,6 +7389,34 @@ export const routeTree = rootRoute
       "filePath": "components/statusIndicator/variants.tsx",
       "parent": "/components"
     },
+    "/components/stepper/adaptive": {
+      "filePath": "components/stepper/adaptive.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/custom": {
+      "filePath": "components/stepper/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/mobile": {
+      "filePath": "components/stepper/mobile.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/options": {
+      "filePath": "components/stepper/options.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/state": {
+      "filePath": "components/stepper/state.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/variants": {
+      "filePath": "components/stepper/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/vertical": {
+      "filePath": "components/stepper/vertical.tsx",
+      "parent": "/components"
+    },
     "/components/tabMenu/addCardTab": {
       "filePath": "components/tabMenu/addCardTab.tsx",
       "parent": "/components"
@@ -7551,6 +7763,10 @@ export const routeTree = rootRoute
     },
     "/components/statusIndicator/": {
       "filePath": "components/statusIndicator/index.tsx",
+      "parent": "/components"
+    },
+    "/components/stepper/": {
+      "filePath": "components/stepper/index.tsx",
       "parent": "/components"
     },
     "/components/tabMenu/": {
