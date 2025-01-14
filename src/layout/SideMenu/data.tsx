@@ -535,6 +535,20 @@ const data = [
       { name: 'Состояния', path: '/components/statusIndicator/states' },
     ],
   },
+  {
+    name: 'Stepper',
+    path: '/components/stepper',
+    routes: [
+      { name: 'Базовый пример', path: '/components/stepper' },
+      { name: 'Состояния', path: '/components/stepper/state' },
+      { name: 'Варианты отображения строк', path: '/components/stepper/variants' },
+      { name: 'Опции', path: '/components/stepper/options' },
+      { name: 'Кастомный StepContent', path: '/components/stepper/custom' },
+      { name: 'Вертикальный Stepper', path: '/components/stepper/vertical' },
+      { name: 'Адаптив', path: '/components/stepper/adaptive' },
+      { name: 'Мобильная версия', path: '/components/stepper/mobile' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
