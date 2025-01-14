@@ -28,6 +28,7 @@ import { Route as ComponentsTableIndexImport } from './routes/components/table/i
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
+import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
 import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
@@ -123,6 +124,12 @@ import { Route as ComponentsStepperAdaptiveImport } from './routes/components/st
 import { Route as ComponentsStatusIndicatorVariantsImport } from './routes/components/statusIndicator/variants'
 import { Route as ComponentsStatusIndicatorStatesImport } from './routes/components/statusIndicator/states'
 import { Route as ComponentsStatusIndicatorSizesImport } from './routes/components/statusIndicator/sizes'
+import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants'
+import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles'
+import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states'
+import { Route as ComponentsSegmentedControlSizesImport } from './routes/components/segmentedControl/sizes'
+import { Route as ComponentsSegmentedControlRadioButtonModeImport } from './routes/components/segmentedControl/radioButtonMode'
+import { Route as ComponentsSegmentedControlCheckBoxModeImport } from './routes/components/segmentedControl/checkBoxMode'
 import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states'
 import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes'
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
@@ -385,6 +392,13 @@ const ComponentsStatusIndicatorIndexRoute =
   ComponentsStatusIndicatorIndexImport.update({
     id: '/statusIndicator/',
     path: '/statusIndicator/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlIndexRoute =
+  ComponentsSegmentedControlIndexImport.update({
+    id: '/segmentedControl/',
+    path: '/segmentedControl/',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1008,6 +1022,48 @@ const ComponentsStatusIndicatorSizesRoute =
   ComponentsStatusIndicatorSizesImport.update({
     id: '/statusIndicator/sizes',
     path: '/statusIndicator/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlVariantsRoute =
+  ComponentsSegmentedControlVariantsImport.update({
+    id: '/segmentedControl/variants',
+    path: '/segmentedControl/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlStylesRoute =
+  ComponentsSegmentedControlStylesImport.update({
+    id: '/segmentedControl/styles',
+    path: '/segmentedControl/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlStatesRoute =
+  ComponentsSegmentedControlStatesImport.update({
+    id: '/segmentedControl/states',
+    path: '/segmentedControl/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlSizesRoute =
+  ComponentsSegmentedControlSizesImport.update({
+    id: '/segmentedControl/sizes',
+    path: '/segmentedControl/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlRadioButtonModeRoute =
+  ComponentsSegmentedControlRadioButtonModeImport.update({
+    id: '/segmentedControl/radioButtonMode',
+    path: '/segmentedControl/radioButtonMode',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlCheckBoxModeRoute =
+  ComponentsSegmentedControlCheckBoxModeImport.update({
+    id: '/segmentedControl/checkBoxMode',
+    path: '/segmentedControl/checkBoxMode',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -3252,6 +3308,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/segmentedControl/checkBoxMode': {
+      id: '/components/segmentedControl/checkBoxMode'
+      path: '/segmentedControl/checkBoxMode'
+      fullPath: '/components/segmentedControl/checkBoxMode'
+      preLoaderRoute: typeof ComponentsSegmentedControlCheckBoxModeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/segmentedControl/radioButtonMode': {
+      id: '/components/segmentedControl/radioButtonMode'
+      path: '/segmentedControl/radioButtonMode'
+      fullPath: '/components/segmentedControl/radioButtonMode'
+      preLoaderRoute: typeof ComponentsSegmentedControlRadioButtonModeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/segmentedControl/sizes': {
+      id: '/components/segmentedControl/sizes'
+      path: '/segmentedControl/sizes'
+      fullPath: '/components/segmentedControl/sizes'
+      preLoaderRoute: typeof ComponentsSegmentedControlSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/segmentedControl/states': {
+      id: '/components/segmentedControl/states'
+      path: '/segmentedControl/states'
+      fullPath: '/components/segmentedControl/states'
+      preLoaderRoute: typeof ComponentsSegmentedControlStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/segmentedControl/styles': {
+      id: '/components/segmentedControl/styles'
+      path: '/segmentedControl/styles'
+      fullPath: '/components/segmentedControl/styles'
+      preLoaderRoute: typeof ComponentsSegmentedControlStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/segmentedControl/variants': {
+      id: '/components/segmentedControl/variants'
+      path: '/segmentedControl/variants'
+      fullPath: '/components/segmentedControl/variants'
+      preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/sizes': {
       id: '/components/statusIndicator/sizes'
       path: '/statusIndicator/sizes'
@@ -3917,6 +4015,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/segmentedControl/': {
+      id: '/components/segmentedControl/'
+      path: '/segmentedControl'
+      fullPath: '/components/segmentedControl'
+      preLoaderRoute: typeof ComponentsSegmentedControlIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/': {
       id: '/components/statusIndicator/'
       path: '/statusIndicator'
@@ -4151,6 +4256,12 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
   ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute
   ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute
+  ComponentsSegmentedControlCheckBoxModeRoute: typeof ComponentsSegmentedControlCheckBoxModeRoute
+  ComponentsSegmentedControlRadioButtonModeRoute: typeof ComponentsSegmentedControlRadioButtonModeRoute
+  ComponentsSegmentedControlSizesRoute: typeof ComponentsSegmentedControlSizesRoute
+  ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute
+  ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute
+  ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute
   ComponentsStatusIndicatorSizesRoute: typeof ComponentsStatusIndicatorSizesRoute
   ComponentsStatusIndicatorStatesRoute: typeof ComponentsStatusIndicatorStatesRoute
   ComponentsStatusIndicatorVariantsRoute: typeof ComponentsStatusIndicatorVariantsRoute
@@ -4246,6 +4357,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
+  ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
@@ -4451,6 +4563,15 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
   ComponentsRadiobuttonSizesRoute: ComponentsRadiobuttonSizesRoute,
   ComponentsRadiobuttonStatesRoute: ComponentsRadiobuttonStatesRoute,
+  ComponentsSegmentedControlCheckBoxModeRoute:
+    ComponentsSegmentedControlCheckBoxModeRoute,
+  ComponentsSegmentedControlRadioButtonModeRoute:
+    ComponentsSegmentedControlRadioButtonModeRoute,
+  ComponentsSegmentedControlSizesRoute: ComponentsSegmentedControlSizesRoute,
+  ComponentsSegmentedControlStatesRoute: ComponentsSegmentedControlStatesRoute,
+  ComponentsSegmentedControlStylesRoute: ComponentsSegmentedControlStylesRoute,
+  ComponentsSegmentedControlVariantsRoute:
+    ComponentsSegmentedControlVariantsRoute,
   ComponentsStatusIndicatorSizesRoute: ComponentsStatusIndicatorSizesRoute,
   ComponentsStatusIndicatorStatesRoute: ComponentsStatusIndicatorStatesRoute,
   ComponentsStatusIndicatorVariantsRoute:
@@ -4554,6 +4675,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
+  ComponentsSegmentedControlIndexRoute: ComponentsSegmentedControlIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
@@ -4753,6 +4875,12 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
+  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
+  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
+  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
+  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
+  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
@@ -4848,6 +4976,7 @@ export interface FileRoutesByFullPath {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
@@ -5026,6 +5155,12 @@ export interface FileRoutesByTo {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
+  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
+  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
+  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
+  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
+  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
@@ -5121,6 +5256,7 @@ export interface FileRoutesByTo {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
@@ -5300,6 +5436,12 @@ export interface FileRoutesById {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
+  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
+  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
+  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
+  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
+  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
@@ -5395,6 +5537,7 @@ export interface FileRoutesById {
   '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
+  '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
@@ -5575,6 +5718,12 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/segmentedControl/checkBoxMode'
+    | '/components/segmentedControl/radioButtonMode'
+    | '/components/segmentedControl/sizes'
+    | '/components/segmentedControl/states'
+    | '/components/segmentedControl/styles'
+    | '/components/segmentedControl/variants'
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
@@ -5670,6 +5819,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/segmentedControl'
     | '/components/statusIndicator'
     | '/components/stepper'
     | '/components/tabMenu'
@@ -5847,6 +5997,12 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/segmentedControl/checkBoxMode'
+    | '/components/segmentedControl/radioButtonMode'
+    | '/components/segmentedControl/sizes'
+    | '/components/segmentedControl/states'
+    | '/components/segmentedControl/styles'
+    | '/components/segmentedControl/variants'
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
@@ -5942,6 +6098,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/segmentedControl'
     | '/components/statusIndicator'
     | '/components/stepper'
     | '/components/tabMenu'
@@ -6119,6 +6276,12 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/segmentedControl/checkBoxMode'
+    | '/components/segmentedControl/radioButtonMode'
+    | '/components/segmentedControl/sizes'
+    | '/components/segmentedControl/states'
+    | '/components/segmentedControl/styles'
+    | '/components/segmentedControl/variants'
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
@@ -6214,6 +6377,7 @@ export interface FileRouteTypes {
     | '/components/progressPage/'
     | '/components/progressStepper/'
     | '/components/radiobutton/'
+    | '/components/segmentedControl/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
     | '/components/tabMenu/'
@@ -6418,6 +6582,12 @@ export const routeTree = rootRoute
         "/components/radiobutton/informer",
         "/components/radiobutton/sizes",
         "/components/radiobutton/states",
+        "/components/segmentedControl/checkBoxMode",
+        "/components/segmentedControl/radioButtonMode",
+        "/components/segmentedControl/sizes",
+        "/components/segmentedControl/states",
+        "/components/segmentedControl/styles",
+        "/components/segmentedControl/variants",
         "/components/statusIndicator/sizes",
         "/components/statusIndicator/states",
         "/components/statusIndicator/variants",
@@ -6513,6 +6683,7 @@ export const routeTree = rootRoute
         "/components/progressPage/",
         "/components/progressStepper/",
         "/components/radiobutton/",
+        "/components/segmentedControl/",
         "/components/statusIndicator/",
         "/components/stepper/",
         "/components/tabMenu/",
@@ -7182,6 +7353,30 @@ export const routeTree = rootRoute
       "filePath": "components/radiobutton/states.tsx",
       "parent": "/components"
     },
+    "/components/segmentedControl/checkBoxMode": {
+      "filePath": "components/segmentedControl/checkBoxMode.tsx",
+      "parent": "/components"
+    },
+    "/components/segmentedControl/radioButtonMode": {
+      "filePath": "components/segmentedControl/radioButtonMode.tsx",
+      "parent": "/components"
+    },
+    "/components/segmentedControl/sizes": {
+      "filePath": "components/segmentedControl/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/segmentedControl/states": {
+      "filePath": "components/segmentedControl/states.tsx",
+      "parent": "/components"
+    },
+    "/components/segmentedControl/styles": {
+      "filePath": "components/segmentedControl/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/segmentedControl/variants": {
+      "filePath": "components/segmentedControl/variants.tsx",
+      "parent": "/components"
+    },
     "/components/statusIndicator/sizes": {
       "filePath": "components/statusIndicator/sizes.tsx",
       "parent": "/components"
@@ -7560,6 +7755,10 @@ export const routeTree = rootRoute
     },
     "/components/radiobutton/": {
       "filePath": "components/radiobutton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/segmentedControl/": {
+      "filePath": "components/segmentedControl/index.tsx",
       "parent": "/components"
     },
     "/components/statusIndicator/": {

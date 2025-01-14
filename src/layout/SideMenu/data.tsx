@@ -549,6 +549,19 @@ const data = [
       { name: 'Мобильная версия', path: '/components/stepper/mobile' },
     ],
   },
+  {
+    name: 'SegmentedControl',
+    path: '/components/segmentedControl',
+    routes: [
+      { name: 'Базовый пример', path: '/components/segmentedControl' },
+      { name: 'Стили', path: '/components/segmentedControl/styles' },
+      { name: 'Размеры', path: '/components/segmentedControl/sizes' },
+      { name: 'Варианты', path: '/components/segmentedControl/variants' },
+      { name: 'Состояния', path: '/components/segmentedControl/states' },
+      { name: 'Режим radio button', path: '/components/segmentedControl/radioButtonMode' },
+      { name: 'Режим checkbox', path: '/components/segmentedControl/checkBoxMode' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
