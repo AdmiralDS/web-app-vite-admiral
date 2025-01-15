@@ -562,6 +562,16 @@ const data = [
       { name: 'Режим checkbox', path: '/components/segmentedControl/checkBoxMode' },
     ],
   },
+  {
+    name: 'Slider',
+    path: '/components/slider',
+    routes: [
+      { name: 'Базовый пример', path: '/components/slider' },
+      { name: 'Размеры', path: '/components/slider/size' },
+      { name: 'C настройками minValue, maxValue', path: '/components/slider/options' },
+      { name: 'C отметками и кастомизированными подписями к ним', path: '/components/slider/custom' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
