@@ -562,6 +562,16 @@ const data = [
       { name: 'Режим checkbox', path: '/components/segmentedControl/checkBoxMode' },
     ],
   },
+  {
+    name: 'Spinner',
+    path: '/components/spinner',
+    routes: [
+      { name: 'Базовый пример', path: '/components/spinner' },
+      { name: 'Размеры', path: '/components/spinner/sizes' },
+      { name: 'Варианты', path: '/components/spinner/variants' },
+      { name: 'В составе других компонентов', path: '/components/spinner/withOtherComponents' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

@@ -28,6 +28,7 @@ import { Route as ComponentsTableIndexImport } from './routes/components/table/i
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
+import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
 import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
@@ -124,6 +125,9 @@ import { Route as ComponentsStepperAdaptiveImport } from './routes/components/st
 import { Route as ComponentsStatusIndicatorVariantsImport } from './routes/components/statusIndicator/variants'
 import { Route as ComponentsStatusIndicatorStatesImport } from './routes/components/statusIndicator/states'
 import { Route as ComponentsStatusIndicatorSizesImport } from './routes/components/statusIndicator/sizes'
+import { Route as ComponentsSpinnerWithOtherComponentsImport } from './routes/components/spinner/withOtherComponents'
+import { Route as ComponentsSpinnerVariantsImport } from './routes/components/spinner/variants'
+import { Route as ComponentsSpinnerSizesImport } from './routes/components/spinner/sizes'
 import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants'
 import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles'
 import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states'
@@ -394,6 +398,12 @@ const ComponentsStatusIndicatorIndexRoute =
     path: '/statusIndicator/',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsSpinnerIndexRoute = ComponentsSpinnerIndexImport.update({
+  id: '/spinner/',
+  path: '/spinner/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsSegmentedControlIndexRoute =
   ComponentsSegmentedControlIndexImport.update({
@@ -1024,6 +1034,25 @@ const ComponentsStatusIndicatorSizesRoute =
     path: '/statusIndicator/sizes',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsSpinnerWithOtherComponentsRoute =
+  ComponentsSpinnerWithOtherComponentsImport.update({
+    id: '/spinner/withOtherComponents',
+    path: '/spinner/withOtherComponents',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSpinnerVariantsRoute = ComponentsSpinnerVariantsImport.update({
+  id: '/spinner/variants',
+  path: '/spinner/variants',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSpinnerSizesRoute = ComponentsSpinnerSizesImport.update({
+  id: '/spinner/sizes',
+  path: '/spinner/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsSegmentedControlVariantsRoute =
   ComponentsSegmentedControlVariantsImport.update({
@@ -3350,6 +3379,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/spinner/sizes': {
+      id: '/components/spinner/sizes'
+      path: '/spinner/sizes'
+      fullPath: '/components/spinner/sizes'
+      preLoaderRoute: typeof ComponentsSpinnerSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/spinner/variants': {
+      id: '/components/spinner/variants'
+      path: '/spinner/variants'
+      fullPath: '/components/spinner/variants'
+      preLoaderRoute: typeof ComponentsSpinnerVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/spinner/withOtherComponents': {
+      id: '/components/spinner/withOtherComponents'
+      path: '/spinner/withOtherComponents'
+      fullPath: '/components/spinner/withOtherComponents'
+      preLoaderRoute: typeof ComponentsSpinnerWithOtherComponentsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/sizes': {
       id: '/components/statusIndicator/sizes'
       path: '/statusIndicator/sizes'
@@ -4022,6 +4072,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/spinner/': {
+      id: '/components/spinner/'
+      path: '/spinner'
+      fullPath: '/components/spinner'
+      preLoaderRoute: typeof ComponentsSpinnerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/': {
       id: '/components/statusIndicator/'
       path: '/statusIndicator'
@@ -4262,6 +4319,9 @@ interface ComponentsRouteChildren {
   ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute
   ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute
   ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute
+  ComponentsSpinnerSizesRoute: typeof ComponentsSpinnerSizesRoute
+  ComponentsSpinnerVariantsRoute: typeof ComponentsSpinnerVariantsRoute
+  ComponentsSpinnerWithOtherComponentsRoute: typeof ComponentsSpinnerWithOtherComponentsRoute
   ComponentsStatusIndicatorSizesRoute: typeof ComponentsStatusIndicatorSizesRoute
   ComponentsStatusIndicatorStatesRoute: typeof ComponentsStatusIndicatorStatesRoute
   ComponentsStatusIndicatorVariantsRoute: typeof ComponentsStatusIndicatorVariantsRoute
@@ -4358,6 +4418,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
+  ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
@@ -4572,6 +4633,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSegmentedControlStylesRoute: ComponentsSegmentedControlStylesRoute,
   ComponentsSegmentedControlVariantsRoute:
     ComponentsSegmentedControlVariantsRoute,
+  ComponentsSpinnerSizesRoute: ComponentsSpinnerSizesRoute,
+  ComponentsSpinnerVariantsRoute: ComponentsSpinnerVariantsRoute,
+  ComponentsSpinnerWithOtherComponentsRoute:
+    ComponentsSpinnerWithOtherComponentsRoute,
   ComponentsStatusIndicatorSizesRoute: ComponentsStatusIndicatorSizesRoute,
   ComponentsStatusIndicatorStatesRoute: ComponentsStatusIndicatorStatesRoute,
   ComponentsStatusIndicatorVariantsRoute:
@@ -4676,6 +4741,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsSegmentedControlIndexRoute: ComponentsSegmentedControlIndexRoute,
+  ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
@@ -4881,6 +4947,9 @@ export interface FileRoutesByFullPath {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
+  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
+  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
@@ -4977,6 +5046,7 @@ export interface FileRoutesByFullPath {
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
@@ -5161,6 +5231,9 @@ export interface FileRoutesByTo {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
+  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
+  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
@@ -5257,6 +5330,7 @@ export interface FileRoutesByTo {
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
@@ -5442,6 +5516,9 @@ export interface FileRoutesById {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
+  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
+  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
   '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
   '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
   '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
@@ -5538,6 +5615,7 @@ export interface FileRoutesById {
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
+  '/components/spinner/': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
@@ -5724,6 +5802,9 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/spinner/sizes'
+    | '/components/spinner/variants'
+    | '/components/spinner/withOtherComponents'
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
@@ -5820,6 +5901,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/segmentedControl'
+    | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
     | '/components/tabMenu'
@@ -6003,6 +6085,9 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/spinner/sizes'
+    | '/components/spinner/variants'
+    | '/components/spinner/withOtherComponents'
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
@@ -6099,6 +6184,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/segmentedControl'
+    | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
     | '/components/tabMenu'
@@ -6282,6 +6368,9 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/spinner/sizes'
+    | '/components/spinner/variants'
+    | '/components/spinner/withOtherComponents'
     | '/components/statusIndicator/sizes'
     | '/components/statusIndicator/states'
     | '/components/statusIndicator/variants'
@@ -6378,6 +6467,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper/'
     | '/components/radiobutton/'
     | '/components/segmentedControl/'
+    | '/components/spinner/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
     | '/components/tabMenu/'
@@ -6588,6 +6678,9 @@ export const routeTree = rootRoute
         "/components/segmentedControl/states",
         "/components/segmentedControl/styles",
         "/components/segmentedControl/variants",
+        "/components/spinner/sizes",
+        "/components/spinner/variants",
+        "/components/spinner/withOtherComponents",
         "/components/statusIndicator/sizes",
         "/components/statusIndicator/states",
         "/components/statusIndicator/variants",
@@ -6684,6 +6777,7 @@ export const routeTree = rootRoute
         "/components/progressStepper/",
         "/components/radiobutton/",
         "/components/segmentedControl/",
+        "/components/spinner/",
         "/components/statusIndicator/",
         "/components/stepper/",
         "/components/tabMenu/",
@@ -7377,6 +7471,18 @@ export const routeTree = rootRoute
       "filePath": "components/segmentedControl/variants.tsx",
       "parent": "/components"
     },
+    "/components/spinner/sizes": {
+      "filePath": "components/spinner/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/spinner/variants": {
+      "filePath": "components/spinner/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/spinner/withOtherComponents": {
+      "filePath": "components/spinner/withOtherComponents.tsx",
+      "parent": "/components"
+    },
     "/components/statusIndicator/sizes": {
       "filePath": "components/statusIndicator/sizes.tsx",
       "parent": "/components"
@@ -7759,6 +7865,10 @@ export const routeTree = rootRoute
     },
     "/components/segmentedControl/": {
       "filePath": "components/segmentedControl/index.tsx",
+      "parent": "/components"
+    },
+    "/components/spinner/": {
+      "filePath": "components/spinner/index.tsx",
       "parent": "/components"
     },
     "/components/statusIndicator/": {
