@@ -29,6 +29,7 @@ import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMe
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
+import { Route as ComponentsSliderIndexImport } from './routes/components/slider/index'
 import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
@@ -128,6 +129,9 @@ import { Route as ComponentsStatusIndicatorSizesImport } from './routes/componen
 import { Route as ComponentsSpinnerWithOtherComponentsImport } from './routes/components/spinner/withOtherComponents'
 import { Route as ComponentsSpinnerVariantsImport } from './routes/components/spinner/variants'
 import { Route as ComponentsSpinnerSizesImport } from './routes/components/spinner/sizes'
+import { Route as ComponentsSliderSizeImport } from './routes/components/slider/size'
+import { Route as ComponentsSliderOptionsImport } from './routes/components/slider/options'
+import { Route as ComponentsSliderCustomImport } from './routes/components/slider/custom'
 import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants'
 import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles'
 import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states'
@@ -402,6 +406,12 @@ const ComponentsStatusIndicatorIndexRoute =
 const ComponentsSpinnerIndexRoute = ComponentsSpinnerIndexImport.update({
   id: '/spinner/',
   path: '/spinner/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSliderIndexRoute = ComponentsSliderIndexImport.update({
+  id: '/slider/',
+  path: '/slider/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1051,6 +1061,24 @@ const ComponentsSpinnerVariantsRoute = ComponentsSpinnerVariantsImport.update({
 const ComponentsSpinnerSizesRoute = ComponentsSpinnerSizesImport.update({
   id: '/spinner/sizes',
   path: '/spinner/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSliderSizeRoute = ComponentsSliderSizeImport.update({
+  id: '/slider/size',
+  path: '/slider/size',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSliderOptionsRoute = ComponentsSliderOptionsImport.update({
+  id: '/slider/options',
+  path: '/slider/options',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSliderCustomRoute = ComponentsSliderCustomImport.update({
+  id: '/slider/custom',
+  path: '/slider/custom',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -3379,6 +3407,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/slider/custom': {
+      id: '/components/slider/custom'
+      path: '/slider/custom'
+      fullPath: '/components/slider/custom'
+      preLoaderRoute: typeof ComponentsSliderCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/slider/options': {
+      id: '/components/slider/options'
+      path: '/slider/options'
+      fullPath: '/components/slider/options'
+      preLoaderRoute: typeof ComponentsSliderOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/slider/size': {
+      id: '/components/slider/size'
+      path: '/slider/size'
+      fullPath: '/components/slider/size'
+      preLoaderRoute: typeof ComponentsSliderSizeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/sizes': {
       id: '/components/spinner/sizes'
       path: '/spinner/sizes'
@@ -4072,6 +4121,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/slider/': {
+      id: '/components/slider/'
+      path: '/slider'
+      fullPath: '/components/slider'
+      preLoaderRoute: typeof ComponentsSliderIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/': {
       id: '/components/spinner/'
       path: '/spinner'
@@ -4319,6 +4375,9 @@ interface ComponentsRouteChildren {
   ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute
   ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute
   ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute
+  ComponentsSliderCustomRoute: typeof ComponentsSliderCustomRoute
+  ComponentsSliderOptionsRoute: typeof ComponentsSliderOptionsRoute
+  ComponentsSliderSizeRoute: typeof ComponentsSliderSizeRoute
   ComponentsSpinnerSizesRoute: typeof ComponentsSpinnerSizesRoute
   ComponentsSpinnerVariantsRoute: typeof ComponentsSpinnerVariantsRoute
   ComponentsSpinnerWithOtherComponentsRoute: typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -4418,6 +4477,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
+  ComponentsSliderIndexRoute: typeof ComponentsSliderIndexRoute
   ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
@@ -4633,6 +4693,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSegmentedControlStylesRoute: ComponentsSegmentedControlStylesRoute,
   ComponentsSegmentedControlVariantsRoute:
     ComponentsSegmentedControlVariantsRoute,
+  ComponentsSliderCustomRoute: ComponentsSliderCustomRoute,
+  ComponentsSliderOptionsRoute: ComponentsSliderOptionsRoute,
+  ComponentsSliderSizeRoute: ComponentsSliderSizeRoute,
   ComponentsSpinnerSizesRoute: ComponentsSpinnerSizesRoute,
   ComponentsSpinnerVariantsRoute: ComponentsSpinnerVariantsRoute,
   ComponentsSpinnerWithOtherComponentsRoute:
@@ -4741,6 +4804,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsSegmentedControlIndexRoute: ComponentsSegmentedControlIndexRoute,
+  ComponentsSliderIndexRoute: ComponentsSliderIndexRoute,
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
@@ -4947,6 +5011,9 @@ export interface FileRoutesByFullPath {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/slider/custom': typeof ComponentsSliderCustomRoute
+  '/components/slider/options': typeof ComponentsSliderOptionsRoute
+  '/components/slider/size': typeof ComponentsSliderSizeRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -5046,6 +5113,7 @@ export interface FileRoutesByFullPath {
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
@@ -5231,6 +5299,9 @@ export interface FileRoutesByTo {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/slider/custom': typeof ComponentsSliderCustomRoute
+  '/components/slider/options': typeof ComponentsSliderOptionsRoute
+  '/components/slider/size': typeof ComponentsSliderSizeRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -5330,6 +5401,7 @@ export interface FileRoutesByTo {
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
@@ -5516,6 +5588,9 @@ export interface FileRoutesById {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/slider/custom': typeof ComponentsSliderCustomRoute
+  '/components/slider/options': typeof ComponentsSliderOptionsRoute
+  '/components/slider/size': typeof ComponentsSliderSizeRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -5615,6 +5690,7 @@ export interface FileRoutesById {
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
+  '/components/slider/': typeof ComponentsSliderIndexRoute
   '/components/spinner/': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
@@ -5802,6 +5878,9 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/slider/custom'
+    | '/components/slider/options'
+    | '/components/slider/size'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -5901,6 +5980,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/segmentedControl'
+    | '/components/slider'
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
@@ -6085,6 +6165,9 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/slider/custom'
+    | '/components/slider/options'
+    | '/components/slider/size'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -6184,6 +6267,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/segmentedControl'
+    | '/components/slider'
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
@@ -6368,6 +6452,9 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/slider/custom'
+    | '/components/slider/options'
+    | '/components/slider/size'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -6467,6 +6554,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper/'
     | '/components/radiobutton/'
     | '/components/segmentedControl/'
+    | '/components/slider/'
     | '/components/spinner/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
@@ -6678,6 +6766,9 @@ export const routeTree = rootRoute
         "/components/segmentedControl/states",
         "/components/segmentedControl/styles",
         "/components/segmentedControl/variants",
+        "/components/slider/custom",
+        "/components/slider/options",
+        "/components/slider/size",
         "/components/spinner/sizes",
         "/components/spinner/variants",
         "/components/spinner/withOtherComponents",
@@ -6777,6 +6868,7 @@ export const routeTree = rootRoute
         "/components/progressStepper/",
         "/components/radiobutton/",
         "/components/segmentedControl/",
+        "/components/slider/",
         "/components/spinner/",
         "/components/statusIndicator/",
         "/components/stepper/",
@@ -7471,6 +7563,18 @@ export const routeTree = rootRoute
       "filePath": "components/segmentedControl/variants.tsx",
       "parent": "/components"
     },
+    "/components/slider/custom": {
+      "filePath": "components/slider/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/options": {
+      "filePath": "components/slider/options.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/size": {
+      "filePath": "components/slider/size.tsx",
+      "parent": "/components"
+    },
     "/components/spinner/sizes": {
       "filePath": "components/spinner/sizes.tsx",
       "parent": "/components"
@@ -7865,6 +7969,10 @@ export const routeTree = rootRoute
     },
     "/components/segmentedControl/": {
       "filePath": "components/segmentedControl/index.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/": {
+      "filePath": "components/slider/index.tsx",
       "parent": "/components"
     },
     "/components/spinner/": {
