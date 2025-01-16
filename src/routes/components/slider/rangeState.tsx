@@ -19,7 +19,7 @@ export const Template = () => {
           }}
         />
       </ExampleSection>
-      <ExampleSection text="Sceleton">
+      <ExampleSection text="Skeleton">
         <Range
           skeleton
           value={rangeValue}
