@@ -28,6 +28,6 @@ export const Route = createFileRoute('/components/spinner/sizes')({
   component: () => <Template />,
   staticData: {
     title: 'Spinner. Размеры',
-    description: 'Компонент существует в 5 размерах s, ms, m, l, xl',
+    description: 'Существует в пяти размерах - 16px (s), 20px (ms), 24px (m), 48px (l) и 64px (xl)',
   },
 });
