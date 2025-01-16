@@ -563,6 +563,16 @@ const data = [
     ],
   },
   {
+    name: 'Spinner',
+    path: '/components/spinner',
+    routes: [
+      { name: 'Базовый пример', path: '/components/spinner' },
+      { name: 'Размеры', path: '/components/spinner/sizes' },
+      { name: 'Варианты', path: '/components/spinner/variants' },
+      { name: 'В составе других компонентов', path: '/components/spinner/withOtherComponents' },
+    ],
+  },
+  {
     name: 'Slider',
     path: '/components/slider',
     routes: [
