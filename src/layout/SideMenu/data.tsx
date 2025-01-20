@@ -592,6 +592,15 @@ const data = [
     path: '/components/skeleton',
     routes: [{ name: 'Базовый пример', path: '/components/skeleton' }],
   },
+  {
+    name: 'T',
+    path: '/components/t',
+    routes: [
+      { name: 'Базовый пример', path: '/components/t' },
+      { name: 'Варианты использования', path: '/components/t/variants' },
+      { name: 'Список стилей', path: '/components/t/stylesList' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
