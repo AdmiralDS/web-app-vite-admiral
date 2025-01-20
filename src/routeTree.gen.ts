@@ -138,8 +138,6 @@ import { Route as ComponentsSliderRangeOptionsImport } from './routes/components
 import { Route as ComponentsSliderRangeImport } from './routes/components/slider/range'
 import { Route as ComponentsSliderOptionsImport } from './routes/components/slider/options'
 import { Route as ComponentsSliderCustomImport } from './routes/components/slider/custom'
-import { Route as ComponentsSkeletonPseudoTextImport } from './routes/components/skeleton/pseudoText'
-import { Route as ComponentsSkeletonPseudoIconImport } from './routes/components/skeleton/pseudoIcon'
 import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants'
 import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles'
 import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states'
@@ -1130,20 +1128,6 @@ const ComponentsSliderCustomRoute = ComponentsSliderCustomImport.update({
   path: '/slider/custom',
   getParentRoute: () => ComponentsRoute,
 } as any)
-
-const ComponentsSkeletonPseudoTextRoute =
-  ComponentsSkeletonPseudoTextImport.update({
-    id: '/skeleton/pseudoText',
-    path: '/skeleton/pseudoText',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-
-const ComponentsSkeletonPseudoIconRoute =
-  ComponentsSkeletonPseudoIconImport.update({
-    id: '/skeleton/pseudoIcon',
-    path: '/skeleton/pseudoIcon',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
 
 const ComponentsSegmentedControlVariantsRoute =
   ComponentsSegmentedControlVariantsImport.update({
@@ -3470,20 +3454,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport
       parentRoute: typeof ComponentsImport
     }
-    '/components/skeleton/pseudoIcon': {
-      id: '/components/skeleton/pseudoIcon'
-      path: '/skeleton/pseudoIcon'
-      fullPath: '/components/skeleton/pseudoIcon'
-      preLoaderRoute: typeof ComponentsSkeletonPseudoIconImport
-      parentRoute: typeof ComponentsImport
-    }
-    '/components/skeleton/pseudoText': {
-      id: '/components/skeleton/pseudoText'
-      path: '/skeleton/pseudoText'
-      fullPath: '/components/skeleton/pseudoText'
-      preLoaderRoute: typeof ComponentsSkeletonPseudoTextImport
-      parentRoute: typeof ComponentsImport
-    }
     '/components/slider/custom': {
       id: '/components/slider/custom'
       path: '/slider/custom'
@@ -4494,8 +4464,6 @@ interface ComponentsRouteChildren {
   ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute
   ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute
   ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute
-  ComponentsSkeletonPseudoIconRoute: typeof ComponentsSkeletonPseudoIconRoute
-  ComponentsSkeletonPseudoTextRoute: typeof ComponentsSkeletonPseudoTextRoute
   ComponentsSliderCustomRoute: typeof ComponentsSliderCustomRoute
   ComponentsSliderOptionsRoute: typeof ComponentsSliderOptionsRoute
   ComponentsSliderRangeRoute: typeof ComponentsSliderRangeRoute
@@ -4820,8 +4788,6 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSegmentedControlStylesRoute: ComponentsSegmentedControlStylesRoute,
   ComponentsSegmentedControlVariantsRoute:
     ComponentsSegmentedControlVariantsRoute,
-  ComponentsSkeletonPseudoIconRoute: ComponentsSkeletonPseudoIconRoute,
-  ComponentsSkeletonPseudoTextRoute: ComponentsSkeletonPseudoTextRoute,
   ComponentsSliderCustomRoute: ComponentsSliderCustomRoute,
   ComponentsSliderOptionsRoute: ComponentsSliderOptionsRoute,
   ComponentsSliderRangeRoute: ComponentsSliderRangeRoute,
@@ -5146,8 +5112,6 @@ export interface FileRoutesByFullPath {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
-  '/components/skeleton/pseudoIcon': typeof ComponentsSkeletonPseudoIconRoute
-  '/components/skeleton/pseudoText': typeof ComponentsSkeletonPseudoTextRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -5442,8 +5406,6 @@ export interface FileRoutesByTo {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
-  '/components/skeleton/pseudoIcon': typeof ComponentsSkeletonPseudoIconRoute
-  '/components/skeleton/pseudoText': typeof ComponentsSkeletonPseudoTextRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -5739,8 +5701,6 @@ export interface FileRoutesById {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
-  '/components/skeleton/pseudoIcon': typeof ComponentsSkeletonPseudoIconRoute
-  '/components/skeleton/pseudoText': typeof ComponentsSkeletonPseudoTextRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -6037,8 +5997,6 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
-    | '/components/skeleton/pseudoIcon'
-    | '/components/skeleton/pseudoText'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -6332,8 +6290,6 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
-    | '/components/skeleton/pseudoIcon'
-    | '/components/skeleton/pseudoText'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -6627,8 +6583,6 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
-    | '/components/skeleton/pseudoIcon'
-    | '/components/skeleton/pseudoText'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -6949,8 +6903,6 @@ export const routeTree = rootRoute
         "/components/segmentedControl/states",
         "/components/segmentedControl/styles",
         "/components/segmentedControl/variants",
-        "/components/skeleton/pseudoIcon",
-        "/components/skeleton/pseudoText",
         "/components/slider/custom",
         "/components/slider/options",
         "/components/slider/range",
@@ -7752,14 +7704,6 @@ export const routeTree = rootRoute
     },
     "/components/segmentedControl/variants": {
       "filePath": "components/segmentedControl/variants.tsx",
-      "parent": "/components"
-    },
-    "/components/skeleton/pseudoIcon": {
-      "filePath": "components/skeleton/pseudoIcon.tsx",
-      "parent": "/components"
-    },
-    "/components/skeleton/pseudoText": {
-      "filePath": "components/skeleton/pseudoText.tsx",
       "parent": "/components"
     },
     "/components/slider/custom": {

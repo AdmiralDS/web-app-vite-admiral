@@ -590,11 +590,7 @@ const data = [
   {
     name: 'Skeleton',
     path: '/components/skeleton',
-    routes: [
-      { name: 'Базовый пример', path: '/components/skeleton' },
-      { name: 'PseudoIcon', path: '/components/skeleton/pseudoIcon' },
-      { name: 'PseudoText', path: '/components/skeleton/pseudoText' },
-    ],
+    routes: [{ name: 'Базовый пример', path: '/components/skeleton' }],
   },
 ];
 
