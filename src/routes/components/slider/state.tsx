@@ -4,41 +4,38 @@ import { useState } from 'react';
 import { Slider } from '@admiral-ds/react-ui';
 
 export const Template = () => {
-  const [rangeValueM, setRangeValueM] = useState(0);
-  const [rangeValueXL, setRangeValueXL] = useState(0);
+  const [rangeValue, setRangeValue] = useState(0);
 
   return (
     <>
-      <ExampleSection text="Размер M">
+      <ExampleSection text="Disabled">
         <Slider
-          value={rangeValueM}
+          disabled
+          value={rangeValue}
           onChange={(e: React.SyntheticEvent, value: number) => {
             // eslint-disable-next-line no-console
-            console.log({ event: e.type, value });
-            setRangeValueM(value);
+            console.log({ e, value });
+            setRangeValue(value);
           }}
-          dimension="m"
         />
       </ExampleSection>
-      <ExampleSection text="Размер XL">
+      <ExampleSection text="Skeleton">
         <Slider
-          value={rangeValueXL}
+          skeleton
+          value={rangeValue}
           onChange={(e: React.SyntheticEvent, value: number) => {
             // eslint-disable-next-line no-console
-            console.log({ event: e.type, value });
-            setRangeValueXL(value);
+            console.log({ e, value });
           }}
-          dimension="xl"
         />
       </ExampleSection>
     </>
   );
 };
 
-export const Route = createFileRoute('/components/slider/size')({
+export const Route = createFileRoute('/components/slider/state')({
   component: () => <Template />,
   staticData: {
-    title: 'Slider. Размеры',
-    description: 'Компонент Slider существует в 2 размерах M и XL',
+    title: 'Slider. Состояния',
   },
 });

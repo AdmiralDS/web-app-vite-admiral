@@ -130,7 +130,12 @@ import { Route as ComponentsStatusIndicatorSizesImport } from './routes/componen
 import { Route as ComponentsSpinnerWithOtherComponentsImport } from './routes/components/spinner/withOtherComponents'
 import { Route as ComponentsSpinnerVariantsImport } from './routes/components/spinner/variants'
 import { Route as ComponentsSpinnerSizesImport } from './routes/components/spinner/sizes'
-import { Route as ComponentsSliderSizeImport } from './routes/components/slider/size'
+import { Route as ComponentsSliderStateImport } from './routes/components/slider/state'
+import { Route as ComponentsSliderSizesImport } from './routes/components/slider/sizes'
+import { Route as ComponentsSliderRangeStateImport } from './routes/components/slider/rangeState'
+import { Route as ComponentsSliderRangeSizesImport } from './routes/components/slider/rangeSizes'
+import { Route as ComponentsSliderRangeOptionsImport } from './routes/components/slider/rangeOptions'
+import { Route as ComponentsSliderRangeImport } from './routes/components/slider/range'
 import { Route as ComponentsSliderOptionsImport } from './routes/components/slider/options'
 import { Route as ComponentsSliderCustomImport } from './routes/components/slider/custom'
 import { Route as ComponentsSkeletonPseudoTextImport } from './routes/components/skeleton/pseudoText'
@@ -1073,9 +1078,44 @@ const ComponentsSpinnerSizesRoute = ComponentsSpinnerSizesImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
-const ComponentsSliderSizeRoute = ComponentsSliderSizeImport.update({
-  id: '/slider/size',
-  path: '/slider/size',
+const ComponentsSliderStateRoute = ComponentsSliderStateImport.update({
+  id: '/slider/state',
+  path: '/slider/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSliderSizesRoute = ComponentsSliderSizesImport.update({
+  id: '/slider/sizes',
+  path: '/slider/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSliderRangeStateRoute = ComponentsSliderRangeStateImport.update(
+  {
+    id: '/slider/rangeState',
+    path: '/slider/rangeState',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsSliderRangeSizesRoute = ComponentsSliderRangeSizesImport.update(
+  {
+    id: '/slider/rangeSizes',
+    path: '/slider/rangeSizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsSliderRangeOptionsRoute =
+  ComponentsSliderRangeOptionsImport.update({
+    id: '/slider/rangeOptions',
+    path: '/slider/rangeOptions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSliderRangeRoute = ComponentsSliderRangeImport.update({
+  id: '/slider/range',
+  path: '/slider/range',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -3458,11 +3498,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSliderOptionsImport
       parentRoute: typeof ComponentsImport
     }
-    '/components/slider/size': {
-      id: '/components/slider/size'
-      path: '/slider/size'
-      fullPath: '/components/slider/size'
-      preLoaderRoute: typeof ComponentsSliderSizeImport
+    '/components/slider/range': {
+      id: '/components/slider/range'
+      path: '/slider/range'
+      fullPath: '/components/slider/range'
+      preLoaderRoute: typeof ComponentsSliderRangeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/slider/rangeOptions': {
+      id: '/components/slider/rangeOptions'
+      path: '/slider/rangeOptions'
+      fullPath: '/components/slider/rangeOptions'
+      preLoaderRoute: typeof ComponentsSliderRangeOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/slider/rangeSizes': {
+      id: '/components/slider/rangeSizes'
+      path: '/slider/rangeSizes'
+      fullPath: '/components/slider/rangeSizes'
+      preLoaderRoute: typeof ComponentsSliderRangeSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/slider/rangeState': {
+      id: '/components/slider/rangeState'
+      path: '/slider/rangeState'
+      fullPath: '/components/slider/rangeState'
+      preLoaderRoute: typeof ComponentsSliderRangeStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/slider/sizes': {
+      id: '/components/slider/sizes'
+      path: '/slider/sizes'
+      fullPath: '/components/slider/sizes'
+      preLoaderRoute: typeof ComponentsSliderSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/slider/state': {
+      id: '/components/slider/state'
+      path: '/slider/state'
+      fullPath: '/components/slider/state'
+      preLoaderRoute: typeof ComponentsSliderStateImport
       parentRoute: typeof ComponentsImport
     }
     '/components/spinner/sizes': {
@@ -4423,7 +4498,12 @@ interface ComponentsRouteChildren {
   ComponentsSkeletonPseudoTextRoute: typeof ComponentsSkeletonPseudoTextRoute
   ComponentsSliderCustomRoute: typeof ComponentsSliderCustomRoute
   ComponentsSliderOptionsRoute: typeof ComponentsSliderOptionsRoute
-  ComponentsSliderSizeRoute: typeof ComponentsSliderSizeRoute
+  ComponentsSliderRangeRoute: typeof ComponentsSliderRangeRoute
+  ComponentsSliderRangeOptionsRoute: typeof ComponentsSliderRangeOptionsRoute
+  ComponentsSliderRangeSizesRoute: typeof ComponentsSliderRangeSizesRoute
+  ComponentsSliderRangeStateRoute: typeof ComponentsSliderRangeStateRoute
+  ComponentsSliderSizesRoute: typeof ComponentsSliderSizesRoute
+  ComponentsSliderStateRoute: typeof ComponentsSliderStateRoute
   ComponentsSpinnerSizesRoute: typeof ComponentsSpinnerSizesRoute
   ComponentsSpinnerVariantsRoute: typeof ComponentsSpinnerVariantsRoute
   ComponentsSpinnerWithOtherComponentsRoute: typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -4744,7 +4824,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSkeletonPseudoTextRoute: ComponentsSkeletonPseudoTextRoute,
   ComponentsSliderCustomRoute: ComponentsSliderCustomRoute,
   ComponentsSliderOptionsRoute: ComponentsSliderOptionsRoute,
-  ComponentsSliderSizeRoute: ComponentsSliderSizeRoute,
+  ComponentsSliderRangeRoute: ComponentsSliderRangeRoute,
+  ComponentsSliderRangeOptionsRoute: ComponentsSliderRangeOptionsRoute,
+  ComponentsSliderRangeSizesRoute: ComponentsSliderRangeSizesRoute,
+  ComponentsSliderRangeStateRoute: ComponentsSliderRangeStateRoute,
+  ComponentsSliderSizesRoute: ComponentsSliderSizesRoute,
+  ComponentsSliderStateRoute: ComponentsSliderStateRoute,
   ComponentsSpinnerSizesRoute: ComponentsSpinnerSizesRoute,
   ComponentsSpinnerVariantsRoute: ComponentsSpinnerVariantsRoute,
   ComponentsSpinnerWithOtherComponentsRoute:
@@ -5065,7 +5150,12 @@ export interface FileRoutesByFullPath {
   '/components/skeleton/pseudoText': typeof ComponentsSkeletonPseudoTextRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
-  '/components/slider/size': typeof ComponentsSliderSizeRoute
+  '/components/slider/range': typeof ComponentsSliderRangeRoute
+  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute
+  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute
+  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute
+  '/components/slider/sizes': typeof ComponentsSliderSizesRoute
+  '/components/slider/state': typeof ComponentsSliderStateRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -5356,7 +5446,12 @@ export interface FileRoutesByTo {
   '/components/skeleton/pseudoText': typeof ComponentsSkeletonPseudoTextRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
-  '/components/slider/size': typeof ComponentsSliderSizeRoute
+  '/components/slider/range': typeof ComponentsSliderRangeRoute
+  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute
+  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute
+  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute
+  '/components/slider/sizes': typeof ComponentsSliderSizesRoute
+  '/components/slider/state': typeof ComponentsSliderStateRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -5648,7 +5743,12 @@ export interface FileRoutesById {
   '/components/skeleton/pseudoText': typeof ComponentsSkeletonPseudoTextRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
-  '/components/slider/size': typeof ComponentsSliderSizeRoute
+  '/components/slider/range': typeof ComponentsSliderRangeRoute
+  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute
+  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute
+  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute
+  '/components/slider/sizes': typeof ComponentsSliderSizesRoute
+  '/components/slider/state': typeof ComponentsSliderStateRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -5941,7 +6041,12 @@ export interface FileRouteTypes {
     | '/components/skeleton/pseudoText'
     | '/components/slider/custom'
     | '/components/slider/options'
-    | '/components/slider/size'
+    | '/components/slider/range'
+    | '/components/slider/rangeOptions'
+    | '/components/slider/rangeSizes'
+    | '/components/slider/rangeState'
+    | '/components/slider/sizes'
+    | '/components/slider/state'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -6231,7 +6336,12 @@ export interface FileRouteTypes {
     | '/components/skeleton/pseudoText'
     | '/components/slider/custom'
     | '/components/slider/options'
-    | '/components/slider/size'
+    | '/components/slider/range'
+    | '/components/slider/rangeOptions'
+    | '/components/slider/rangeSizes'
+    | '/components/slider/rangeState'
+    | '/components/slider/sizes'
+    | '/components/slider/state'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -6521,7 +6631,12 @@ export interface FileRouteTypes {
     | '/components/skeleton/pseudoText'
     | '/components/slider/custom'
     | '/components/slider/options'
-    | '/components/slider/size'
+    | '/components/slider/range'
+    | '/components/slider/rangeOptions'
+    | '/components/slider/rangeSizes'
+    | '/components/slider/rangeState'
+    | '/components/slider/sizes'
+    | '/components/slider/state'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -6838,7 +6953,12 @@ export const routeTree = rootRoute
         "/components/skeleton/pseudoText",
         "/components/slider/custom",
         "/components/slider/options",
-        "/components/slider/size",
+        "/components/slider/range",
+        "/components/slider/rangeOptions",
+        "/components/slider/rangeSizes",
+        "/components/slider/rangeState",
+        "/components/slider/sizes",
+        "/components/slider/state",
         "/components/spinner/sizes",
         "/components/spinner/variants",
         "/components/spinner/withOtherComponents",
@@ -7650,8 +7770,28 @@ export const routeTree = rootRoute
       "filePath": "components/slider/options.tsx",
       "parent": "/components"
     },
-    "/components/slider/size": {
-      "filePath": "components/slider/size.tsx",
+    "/components/slider/range": {
+      "filePath": "components/slider/range.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/rangeOptions": {
+      "filePath": "components/slider/rangeOptions.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/rangeSizes": {
+      "filePath": "components/slider/rangeSizes.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/rangeState": {
+      "filePath": "components/slider/rangeState.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/sizes": {
+      "filePath": "components/slider/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/slider/state": {
+      "filePath": "components/slider/state.tsx",
       "parent": "/components"
     },
     "/components/spinner/sizes": {

@@ -577,9 +577,14 @@ const data = [
     path: '/components/slider',
     routes: [
       { name: 'Базовый пример', path: '/components/slider' },
-      { name: 'Размеры', path: '/components/slider/size' },
+      { name: 'Размеры', path: '/components/slider/sizes' },
+      { name: 'Состояния', path: '/components/slider/state' },
       { name: 'C настройками minValue, maxValue', path: '/components/slider/options' },
       { name: 'C отметками и кастомизированными подписями к ним', path: '/components/slider/custom' },
+      { name: 'Range. Базовый пример', path: '/components/slider/range' },
+      { name: 'Range. Размеры', path: '/components/slider/rangeSizes' },
+      { name: 'Range. Состояния', path: '/components/slider/rangeState' },
+      { name: 'Range. C настройками minValue, maxValue', path: '/components/slider/rangeOptions' },
     ],
   },
   {
