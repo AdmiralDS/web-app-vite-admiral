@@ -582,6 +582,15 @@ const data = [
       { name: 'C отметками и кастомизированными подписями к ним', path: '/components/slider/custom' },
     ],
   },
+  {
+    name: 'Skeleton',
+    path: '/components/skeleton',
+    routes: [
+      { name: 'Базовый пример', path: '/components/skeleton' },
+      { name: 'PseudoIcon', path: '/components/skeleton/pseudoIcon' },
+      { name: 'PseudoText', path: '/components/skeleton/pseudoText' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

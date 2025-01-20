@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 import { useMemo, useState } from 'react';
-import { ExampleSection, rowFlexMixin } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 import { MenuItem, RenderOptionProps, TextButtonMenu } from '@admiral-ds/react-ui';
 
 const handleVisibilityChange = (isVisible: boolean) => {
@@ -65,66 +65,58 @@ export const Template = () => {
   }, []);
 
   return (
-    <ExampleSection cssMixin={rowFlexMixin}>
-      <TextButtonMenu
-        text="Text Button"
-        iconStart={<AttachFileOutline />}
-        selected={selected}
-        onSelectItem={(id) => {
-          logSelectedId(id);
-          setSelected(id);
-        }}
-        items={model}
-        onVisibilityChange={handleVisibilityChange}
-        data-dropdown-container-id="text-button-menu-with-dropdown"
-        className="text-button-menu-class"
-        dropContainerClassName="dropContainerClass"
-      />
-      <TextButtonMenu
-        text="Text Button"
-        disabled
-        iconStart={<AttachFileOutline />}
-        selected={selected}
-        onSelectItem={(id) => {
-          logSelectedId(id);
-          setSelected(id);
-        }}
-        items={model}
-        onVisibilityChange={handleVisibilityChange}
-        data-dropdown-container-id="text-button-menu-with-dropdown"
-        className="text-button-menu-class"
-        dropContainerClassName="dropContainerClass"
-      />
-      <TextButtonMenu
-        text="Text Button"
-        loading
-        iconStart={<AttachFileOutline />}
-        selected={selected}
-        onSelectItem={(id) => {
-          logSelectedId(id);
-          setSelected(id);
-        }}
-        items={model}
-        onVisibilityChange={handleVisibilityChange}
-        data-dropdown-container-id="text-button-menu-with-dropdown"
-        className="text-button-menu-class"
-        dropContainerClassName="dropContainerClass"
-      />
-      <TextButtonMenu
-        text="Text Button"
-        skeleton
-        selected={selected}
-        onSelectItem={(id) => {
-          logSelectedId(id);
-          setSelected(id);
-        }}
-        items={model}
-        onVisibilityChange={handleVisibilityChange}
-        data-dropdown-container-id="text-button-menu-with-dropdown"
-        className="text-button-menu-class"
-        dropContainerClassName="dropContainerClass"
-      />
-    </ExampleSection>
+    <>
+      <ExampleSection text="Disabled">
+        <TextButtonMenu
+          text="Text Button"
+          disabled
+          iconStart={<AttachFileOutline />}
+          selected={selected}
+          onSelectItem={(id) => {
+            logSelectedId(id);
+            setSelected(id);
+          }}
+          items={model}
+          onVisibilityChange={handleVisibilityChange}
+          data-dropdown-container-id="text-button-menu-with-dropdown"
+          className="text-button-menu-class"
+          dropContainerClassName="dropContainerClass"
+        />
+      </ExampleSection>
+      <ExampleSection text="Loading">
+        <TextButtonMenu
+          text="Text Button"
+          loading
+          iconStart={<AttachFileOutline />}
+          selected={selected}
+          onSelectItem={(id) => {
+            logSelectedId(id);
+            setSelected(id);
+          }}
+          items={model}
+          onVisibilityChange={handleVisibilityChange}
+          data-dropdown-container-id="text-button-menu-with-dropdown"
+          className="text-button-menu-class"
+          dropContainerClassName="dropContainerClass"
+        />
+      </ExampleSection>
+      <ExampleSection text="Skeleton">
+        <TextButtonMenu
+          text="Text Button"
+          skeleton
+          selected={selected}
+          onSelectItem={(id) => {
+            logSelectedId(id);
+            setSelected(id);
+          }}
+          items={model}
+          onVisibilityChange={handleVisibilityChange}
+          data-dropdown-container-id="text-button-menu-with-dropdown"
+          className="text-button-menu-class"
+          dropContainerClassName="dropContainerClass"
+        />
+      </ExampleSection>
+    </>
   );
 };
 
@@ -132,6 +124,5 @@ export const Route = createFileRoute('/components/textButtonMenu/states')({
   component: () => <Template />,
   staticData: {
     title: 'TextButtonMenu. Состояния',
-    description: 'Disabled, loading, skeleton',
   },
 });

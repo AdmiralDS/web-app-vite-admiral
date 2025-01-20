@@ -21,6 +21,11 @@ export const ButtonLoader = () => {
           Disabled
         </Button>
       </ExampleSection>
+      <ExampleSection text="Skeleton">
+        <Button dimension="xl" skeleton onClick={handleClick}>
+          Skeleton
+        </Button>
+      </ExampleSection>
     </>
   );
 };
