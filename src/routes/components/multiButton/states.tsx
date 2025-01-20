@@ -2,8 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { MultiButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
-import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
-import { ExampleSection, rowFlexMixin } from '../../-helpers/examples';
+import { ExampleSection } from '../../-helpers/examples';
 
 const handleVisibilityChange = (isVisible: boolean) => {
   if (isVisible) {
@@ -72,7 +71,7 @@ export const States = () => {
   }, []);
   return (
     <>
-      <ExampleSection cssMixin={rowFlexMixin} text="Primary">
+      <ExampleSection text="Disabled">
         <MultiButton
           appearance="primary"
           disabled
@@ -86,20 +85,8 @@ export const States = () => {
         >
           Button 56
         </MultiButton>
-        <MultiButton
-          appearance="primary"
-          disabled
-          selected={selected}
-          onSelectItem={(id) => {
-            logSelectedId(id);
-            setSelected(id);
-          }}
-          items={model}
-          onVisibilityChange={handleVisibilityChange}
-        >
-          <StarSolid />
-          Button 56
-        </MultiButton>
+      </ExampleSection>
+      <ExampleSection text="Disabled main button">
         <MultiButton
           appearance="primary"
           disabledMainButton
@@ -115,80 +102,10 @@ export const States = () => {
           Button 56
         </MultiButton>
       </ExampleSection>
-      <ExampleSection cssMixin={rowFlexMixin} text="Secondary">
+      <ExampleSection text="Skeleton">
         <MultiButton
-          appearance="secondary"
-          disabled
-          selected={selected}
-          onSelectItem={(id) => {
-            logSelectedId(id);
-            setSelected(id);
-          }}
-          items={model}
-          onVisibilityChange={handleVisibilityChange}
-        >
-          Button 56
-        </MultiButton>
-        <MultiButton
-          appearance="secondary"
-          disabled
-          selected={selected}
-          onSelectItem={(id) => {
-            logSelectedId(id);
-            setSelected(id);
-          }}
-          items={model}
-          onVisibilityChange={handleVisibilityChange}
-        >
-          <StarSolid />
-          Button 56
-        </MultiButton>
-        <MultiButton
-          appearance="secondary"
-          disabledMainButton
-          selected={selected}
-          onSelectItem={(id) => {
-            logSelectedId(id);
-            setSelected(id);
-          }}
-          items={model}
-          onVisibilityChange={handleVisibilityChange}
-          onMainButtonClick={handleMainButtonClick}
-        >
-          Button 56
-        </MultiButton>
-      </ExampleSection>
-      <ExampleSection cssMixin={rowFlexMixin} text="Tertiary">
-        <MultiButton
-          appearance="tertiary"
-          disabled
-          selected={selected}
-          onSelectItem={(id) => {
-            logSelectedId(id);
-            setSelected(id);
-          }}
-          items={model}
-          onVisibilityChange={handleVisibilityChange}
-        >
-          Button 56
-        </MultiButton>
-        <MultiButton
-          appearance="tertiary"
-          disabled
-          selected={selected}
-          onSelectItem={(id) => {
-            logSelectedId(id);
-            setSelected(id);
-          }}
-          items={model}
-          onVisibilityChange={handleVisibilityChange}
-        >
-          <StarSolid />
-          Button 56
-        </MultiButton>
-        <MultiButton
-          appearance="tertiary"
-          disabledMainButton
+          appearance="primary"
+          skeleton
           selected={selected}
           onSelectItem={(id) => {
             logSelectedId(id);
@@ -209,6 +126,5 @@ export const Route = createFileRoute('/components/multiButton/states')({
   component: () => <States />,
   staticData: {
     title: 'MultiButton. Состояния',
-    description: 'Состояния аналогичны Button.',
   },
 });

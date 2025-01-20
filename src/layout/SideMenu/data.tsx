@@ -587,6 +587,11 @@ const data = [
       { name: 'Range. C настройками minValue, maxValue', path: '/components/slider/rangeOptions' },
     ],
   },
+  {
+    name: 'Skeleton',
+    path: '/components/skeleton',
+    routes: [{ name: 'Базовый пример', path: '/components/skeleton' }],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

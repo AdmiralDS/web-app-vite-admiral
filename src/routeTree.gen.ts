@@ -30,6 +30,7 @@ import { Route as ComponentsStepperIndexImport } from './routes/components/stepp
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
 import { Route as ComponentsSliderIndexImport } from './routes/components/slider/index'
+import { Route as ComponentsSkeletonIndexImport } from './routes/components/skeleton/index'
 import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
@@ -417,6 +418,12 @@ const ComponentsSpinnerIndexRoute = ComponentsSpinnerIndexImport.update({
 const ComponentsSliderIndexRoute = ComponentsSliderIndexImport.update({
   id: '/slider/',
   path: '/slider/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSkeletonIndexRoute = ComponentsSkeletonIndexImport.update({
+  id: '/skeleton/',
+  path: '/skeleton/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -4196,6 +4203,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/skeleton/': {
+      id: '/components/skeleton/'
+      path: '/skeleton'
+      fullPath: '/components/skeleton'
+      preLoaderRoute: typeof ComponentsSkeletonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/': {
       id: '/components/slider/'
       path: '/slider'
@@ -4557,6 +4571,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
+  ComponentsSkeletonIndexRoute: typeof ComponentsSkeletonIndexRoute
   ComponentsSliderIndexRoute: typeof ComponentsSliderIndexRoute
   ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
@@ -4889,6 +4904,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsSegmentedControlIndexRoute: ComponentsSegmentedControlIndexRoute,
+  ComponentsSkeletonIndexRoute: ComponentsSkeletonIndexRoute,
   ComponentsSliderIndexRoute: ComponentsSliderIndexRoute,
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
@@ -5203,6 +5219,7 @@ export interface FileRoutesByFullPath {
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
@@ -5496,6 +5513,7 @@ export interface FileRoutesByTo {
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
@@ -5790,6 +5808,7 @@ export interface FileRoutesById {
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
+  '/components/skeleton/': typeof ComponentsSkeletonIndexRoute
   '/components/slider/': typeof ComponentsSliderIndexRoute
   '/components/spinner/': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
@@ -6085,6 +6104,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/segmentedControl'
+    | '/components/skeleton'
     | '/components/slider'
     | '/components/spinner'
     | '/components/statusIndicator'
@@ -6377,6 +6397,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper'
     | '/components/radiobutton'
     | '/components/segmentedControl'
+    | '/components/skeleton'
     | '/components/slider'
     | '/components/spinner'
     | '/components/statusIndicator'
@@ -6669,6 +6690,7 @@ export interface FileRouteTypes {
     | '/components/progressStepper/'
     | '/components/radiobutton/'
     | '/components/segmentedControl/'
+    | '/components/skeleton/'
     | '/components/slider/'
     | '/components/spinner/'
     | '/components/statusIndicator/'
@@ -6988,6 +7010,7 @@ export const routeTree = rootRoute
         "/components/progressStepper/",
         "/components/radiobutton/",
         "/components/segmentedControl/",
+        "/components/skeleton/",
         "/components/slider/",
         "/components/spinner/",
         "/components/statusIndicator/",
@@ -8109,6 +8132,10 @@ export const routeTree = rootRoute
     },
     "/components/segmentedControl/": {
       "filePath": "components/segmentedControl/index.tsx",
+      "parent": "/components"
+    },
+    "/components/skeleton/": {
+      "filePath": "components/skeleton/index.tsx",
       "parent": "/components"
     },
     "/components/slider/": {
