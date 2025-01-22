@@ -9,7 +9,20 @@ export const Template = () => {
         text={
           <>
             <PStyled>
-              Text — компонент для работы с Typography. Компонент отображает текст{' '}
+              Основным шрифтом в дизайн-системе банка ВТБ является VTB Group UI. Представлен расширеный набор стилей,
+              которые могут использоваться в интерфейсах разной плотности. Используется три начертания — Book, Medium и
+              Semibold. Book, как основной стиль системы. Medium используется в кнопках. Semibold для заголовков и
+              акцентированных текстов.
+            </PStyled>
+            <PStyled>
+              Скачать шрифт VTB Group UI можно по{' '}
+              <a target="_blank" href="https://disk.yandex.ru/d/SMG2NwRJ0RGILw" rel="noopener noreferrer">
+                ссылке
+              </a>
+              .
+            </PStyled>
+            <PStyled>
+              T — компонент для работы с Typography. Компонент отображает текст{' '}
               <a
                 target="_blank"
                 href="https://styled-components.com/docs/api#as-polymorphic-prop"

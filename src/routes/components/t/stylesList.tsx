@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '../../-helpers/examples';
-import { DefaultFontColorName, LIGHT_THEME, T, TooltipHoc, typography } from '@admiral-ds/react-ui';
+import { ColorName, DefaultFontColorName, LIGHT_THEME, T, TooltipHoc, typography } from '@admiral-ds/react-ui';
 import styled, { useTheme } from 'styled-components';
-import { FONTS, NEW_FONTS } from '../../-helpers/t/storyDescriptions';
+import { NEW_FONTS } from '../../-helpers/t/storyDescriptions';
 import { forwardRef } from 'react';
 
 import CopyOutline from '@admiral-ds/icons/build/documents/CopyOutline.svg?react';
@@ -23,16 +23,18 @@ const Table = styled.table`
   ${typography['Body/Body 2 Long']}
   border-collapse: collapse;
   border-spacing: 0;
+  border-radius: 6px;
   width: 100%;
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color[DefaultFontColorName]});
 
-  th,
   td[data-label] {
     text-align: left;
-    padding: 8px 60px 8px 8px;
-    border-bottom: 1px solid var(--admiral-color-Neutral_Neutral70, ${(p) => p.theme.color['Neutral/Neutral 70']});
+    padding: 8px 30px 8px 8px;
+    border-top: 1px solid var(--admiral-color-Neutral_Neutral70, ${(p) => p.theme.color['Neutral/Neutral 70']});
   }
   th {
+    text-align: left;
+    padding: 8px 30px 8px 8px;
     ${typography['Header/H3']}
     color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
   }
@@ -40,15 +42,51 @@ const Table = styled.table`
     padding: 8px;
   }
 
+  th[data-label='Style'],
+  td[data-label='Style'] {
+    width: 130px;
+    white-space: nowrap;
+  }
+  th[data-label='Manual'],
   td[data-label='Manual'] {
-    min-width: 300px;
-    width: 300px;
+    width: auto;
+    min-width: 200px;
+  }
+  th[data-label='Props'],
+  td[data-label='Props'] {
+    width: 250px;
+    max-width: 250px;
+  }
+  th[data-label='Colors'],
+  td[data-label='Colors'] {
+    width: 180px;
+    max-width: 180px;
   }
 `;
 
 const CopyOutlineWrapper = styled.div`
   display: inline-flex;
   cursor: pointer;
+`;
+
+export const ColorCircle = styled.div<{ $color: ColorName; $border?: boolean }>`
+  display: flex;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: ${({ theme, $color }) => {
+    const cssCustomProp = `--admiral-color-${$color.replace('/', '_').replaceAll(' ', '')}`;
+    return $color ? `var(${cssCustomProp}, ${theme.color[$color]})` : 'transparent';
+  }};
+  ${({ $border, theme }) =>
+    $border && `border: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']});`}
+  box-sizing: border-box;
+`;
+
+export const FlexBox = styled.div`
+  display: flex;
+  gap: 8px;
 `;
 
 const CopyIcon = forwardRef<HTMLDivElement, { text: string }>(({ text }, ref) => {
@@ -79,24 +117,23 @@ const CopyIcon = forwardRef<HTMLDivElement, { text: string }>(({ text }, ref) =>
 });
 
 const CopyButton = TooltipHoc(CopyIcon);
+const InfoCircle = TooltipHoc(ColorCircle);
 
 export const Template = () => {
-  const theme = useTheme() || LIGHT_THEME;
-
-  return (
-    <>
-      <ExampleSection>
-        <Table>
-          <thead>
-            <tr>
-              <th data-label="Style">Стиль</th>
-              <th data-label="Props">Характеристики</th>
-              <th data-label="Manual">Применение</th>
-            </tr>
-          </thead>
-          <tbody>
-            {NEW_FONTS.map((item, index: number) => {
-              const text = `
+  return NEW_FONTS.map((group, index: number) => (
+    <ExampleSection style={{ overflowX: 'auto' }} header={<T font="Header/H3">{group.groupName}</T>} key={index}>
+      <Table>
+        <thead>
+          <tr>
+            <th data-label="Style">Стиль</th>
+            <th data-label="Props">Характеристики</th>
+            <th data-label="Manual">Применение</th>
+            <th data-label="Colors">Цвета</th>
+          </tr>
+        </thead>
+        <tbody>
+          {group.fonts.map((item, index: number) => {
+            const text = `
             import { T, typography } from '@admiral-ds/react-ui';
             import styled from 'styled-components';
 
@@ -114,99 +151,47 @@ export const Template = () => {
               );
              }
             `;
-              return (
-                <tr key={index}>
-                  <td data-label="Style">
-                    <T font={item.name} as="div">
-                      {item.name}
-                    </T>
-                    <CopyButton text={text} renderContent={() => 'Копировать пример использования'} />
-                  </td>
-                  <td data-label="Props">
-                    <FontDesc>
-                      <tbody>
-                        <tr>
-                          <td>Шрифт:</td>
-                          <td>{theme.fontFamily}</td>
+            const exampleText = item.name.split('/')[1];
+            return (
+              <tr key={index}>
+                <td data-label="Style">
+                  <T font={item.name} as="div">
+                    {exampleText}
+                  </T>
+                  <CopyButton text={text} renderContent={() => 'Копировать пример использования'} />
+                </td>
+                <td data-label="Props">
+                  <FontDesc>
+                    <tbody>
+                      {item.style.map((st, index: number) => (
+                        <tr key={index}>
+                          <td>{st.name}</td>
+                          <td>{st.value}</td>
                         </tr>
-                        {item.style.map((st, index: number) => (
-                          <tr key={index}>
-                            <td>{st.name}</td>
-                            <td>{st.value}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </FontDesc>
-                  </td>
-                  <td data-label="Manual">{item.description}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
-      </ExampleSection>
-      <ExampleSection header={<T font="Header/H3">Old version</T>}>
-        <Table>
-          <thead>
-            <tr>
-              <th data-label="Style">Стиль</th>
-              <th data-label="Props">Характеристики</th>
-              <th data-label="Manual">Применение</th>
-            </tr>
-          </thead>
-          <tbody>
-            {FONTS.map((item, index: number) => {
-              const text = `
-            import { T, typography } from '@admiral-ds/react-ui';
-            import styled from 'styled-components';
-
-            const Paragraph = styled.p\`
-              \${typography['${item.name}']}
-              color: #2B313B;
-            \`
-
-            const Example = () => {
-              return(
-                <>
-                  <T font='${item.name}'>Использование StyledComponent</T>
-                  <Paragraph>Использование ThemedCssFunction</Paragraph>
-                </>
-              );
-             }
-            `;
-              return (
-                <tr key={index}>
-                  <td data-label="Style">
-                    <T font={item.name} as="div">
-                      {item.name}
-                    </T>
-                    <CopyButton text={text} renderContent={() => 'Копировать пример использования'} />
-                  </td>
-                  <td data-label="Props">
-                    <FontDesc>
-                      <tbody>
-                        <tr>
-                          <td>Шрифт:</td>
-                          <td>{theme.fontFamily}</td>
-                        </tr>
-                        {item.style.map((st, index: number) => (
-                          <tr key={index}>
-                            <td>{st.name}</td>
-                            <td>{st.value}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </FontDesc>
-                  </td>
-                  <td data-label="Manual">{item.description}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
-      </ExampleSection>
-    </>
-  );
+                      ))}
+                    </tbody>
+                  </FontDesc>
+                </td>
+                <td data-label="Manual">{item.description}</td>
+                <td data-label="Colors">
+                  <FlexBox>
+                    {group.colors.map((color, index) => (
+                      <InfoCircle
+                        renderContent={() => color}
+                        key={index}
+                        $color={color}
+                        $border={color === 'Special/Static White'}
+                      ></InfoCircle>
+                    ))}
+                  </FlexBox>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+    </ExampleSection>
+  ));
 };
 
 export const Route = createFileRoute('/components/t/stylesList')({
