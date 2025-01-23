@@ -59,8 +59,9 @@ const Table = styled.table`
   }
   th[data-label='Colors'],
   td[data-label='Colors'] {
-    width: 180px;
-    max-width: 180px;
+    width: 100px;
+    max-width: 100px;
+    min-width: 100px;
   }
 `;
 
@@ -84,9 +85,10 @@ export const ColorCircle = styled.div<{ $color: ColorName; $border?: boolean }>`
   box-sizing: border-box;
 `;
 
-export const FlexBox = styled.div`
+export const ColorBox = styled.div`
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 `;
 
 const CopyIcon = forwardRef<HTMLDivElement, { text: string }>(({ text }, ref) => {
@@ -174,7 +176,7 @@ export const Template = () => {
                 </td>
                 <td data-label="Manual">{item.description}</td>
                 <td data-label="Colors">
-                  <FlexBox>
+                  <ColorBox>
                     {group.colors.map((color, index) => (
                       <InfoCircle
                         renderContent={() => color}
@@ -183,7 +185,7 @@ export const Template = () => {
                         $border={color === 'Special/Static White'}
                       ></InfoCircle>
                     ))}
-                  </FlexBox>
+                  </ColorBox>
                 </td>
               </tr>
             );
