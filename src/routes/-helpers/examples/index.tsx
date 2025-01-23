@@ -109,7 +109,7 @@ const MobileBottomWrapper = styled.div`
 const Wrapper = styled.div`
   overflow-x: auto;
   width: 100%;
-  padding: 0 8px;
+  padding: 8px;
   box-sizing: border-box;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

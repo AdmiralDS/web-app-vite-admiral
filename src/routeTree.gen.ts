@@ -18,6 +18,7 @@ import { Route as GeneralUsageImport } from './routes/general/usage'
 import { Route as GeneralResourcesImport } from './routes/general/resources'
 import { Route as GeneralInstallationImport } from './routes/general/installation'
 import { Route as GeneralFaqsImport } from './routes/general/faqs'
+import { Route as ComponentsTreeIndexImport } from './routes/components/tree/index'
 import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
@@ -70,6 +71,12 @@ import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/i
 import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
 import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
+import { Route as ComponentsTreeWithOnChangeHandlerImport } from './routes/components/tree/withOnChangeHandler'
+import { Route as ComponentsTreeWithControlCheckCountImport } from './routes/components/tree/withControlCheckCount'
+import { Route as ComponentsTreeUncontrolledImport } from './routes/components/tree/uncontrolled'
+import { Route as ComponentsTreeSizesImport } from './routes/components/tree/sizes'
+import { Route as ComponentsTreeMobileImport } from './routes/components/tree/mobile'
+import { Route as ComponentsTreeCustomImport } from './routes/components/tree/custom'
 import { Route as ComponentsTooltipWithMenuButtonImport } from './routes/components/tooltip/withMenuButton'
 import { Route as ComponentsTooltipVariantsImport } from './routes/components/tooltip/variants'
 import { Route as ComponentsTooltipSizesImport } from './routes/components/tooltip/sizes'
@@ -345,6 +352,12 @@ const GeneralFaqsRoute = GeneralFaqsImport.update({
   id: '/faqs',
   path: '/faqs',
   getParentRoute: () => GeneralRoute,
+} as any)
+
+const ComponentsTreeIndexRoute = ComponentsTreeIndexImport.update({
+  id: '/tree/',
+  path: '/tree/',
+  getParentRoute: () => ComponentsRoute,
 } as any)
 
 const ComponentsTooltipIndexRoute = ComponentsTooltipIndexImport.update({
@@ -683,6 +696,46 @@ const ComponentsActionBarIndexRoute = ComponentsActionBarIndexImport.update({
 const ComponentsAccordionIndexRoute = ComponentsAccordionIndexImport.update({
   id: '/accordion/',
   path: '/accordion/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTreeWithOnChangeHandlerRoute =
+  ComponentsTreeWithOnChangeHandlerImport.update({
+    id: '/tree/withOnChangeHandler',
+    path: '/tree/withOnChangeHandler',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTreeWithControlCheckCountRoute =
+  ComponentsTreeWithControlCheckCountImport.update({
+    id: '/tree/withControlCheckCount',
+    path: '/tree/withControlCheckCount',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTreeUncontrolledRoute = ComponentsTreeUncontrolledImport.update(
+  {
+    id: '/tree/uncontrolled',
+    path: '/tree/uncontrolled',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsTreeSizesRoute = ComponentsTreeSizesImport.update({
+  id: '/tree/sizes',
+  path: '/tree/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTreeMobileRoute = ComponentsTreeMobileImport.update({
+  id: '/tree/mobile',
+  path: '/tree/mobile',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTreeCustomRoute = ComponentsTreeCustomImport.update({
+  id: '/tree/custom',
+  path: '/tree/custom',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -3930,6 +3983,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTooltipWithMenuButtonImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tree/custom': {
+      id: '/components/tree/custom'
+      path: '/tree/custom'
+      fullPath: '/components/tree/custom'
+      preLoaderRoute: typeof ComponentsTreeCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tree/mobile': {
+      id: '/components/tree/mobile'
+      path: '/tree/mobile'
+      fullPath: '/components/tree/mobile'
+      preLoaderRoute: typeof ComponentsTreeMobileImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tree/sizes': {
+      id: '/components/tree/sizes'
+      path: '/tree/sizes'
+      fullPath: '/components/tree/sizes'
+      preLoaderRoute: typeof ComponentsTreeSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tree/uncontrolled': {
+      id: '/components/tree/uncontrolled'
+      path: '/tree/uncontrolled'
+      fullPath: '/components/tree/uncontrolled'
+      preLoaderRoute: typeof ComponentsTreeUncontrolledImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tree/withControlCheckCount': {
+      id: '/components/tree/withControlCheckCount'
+      path: '/tree/withControlCheckCount'
+      fullPath: '/components/tree/withControlCheckCount'
+      preLoaderRoute: typeof ComponentsTreeWithControlCheckCountImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tree/withOnChangeHandler': {
+      id: '/components/tree/withOnChangeHandler'
+      path: '/tree/withOnChangeHandler'
+      fullPath: '/components/tree/withOnChangeHandler'
+      preLoaderRoute: typeof ComponentsTreeWithOnChangeHandlerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/accordion/': {
       id: '/components/accordion/'
       path: '/accordion'
@@ -4294,6 +4389,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTooltipIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tree/': {
+      id: '/components/tree/'
+      path: '/tree'
+      fullPath: '/components/tree'
+      preLoaderRoute: typeof ComponentsTreeIndexImport
+      parentRoute: typeof ComponentsImport
+    }
   }
 }
 
@@ -4532,6 +4634,12 @@ interface ComponentsRouteChildren {
   ComponentsTooltipSizesRoute: typeof ComponentsTooltipSizesRoute
   ComponentsTooltipVariantsRoute: typeof ComponentsTooltipVariantsRoute
   ComponentsTooltipWithMenuButtonRoute: typeof ComponentsTooltipWithMenuButtonRoute
+  ComponentsTreeCustomRoute: typeof ComponentsTreeCustomRoute
+  ComponentsTreeMobileRoute: typeof ComponentsTreeMobileRoute
+  ComponentsTreeSizesRoute: typeof ComponentsTreeSizesRoute
+  ComponentsTreeUncontrolledRoute: typeof ComponentsTreeUncontrolledRoute
+  ComponentsTreeWithControlCheckCountRoute: typeof ComponentsTreeWithControlCheckCountRoute
+  ComponentsTreeWithOnChangeHandlerRoute: typeof ComponentsTreeWithOnChangeHandlerRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
   ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
   ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
@@ -4584,6 +4692,7 @@ interface ComponentsRouteChildren {
   ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
   ComponentsTooltipIndexRoute: typeof ComponentsTooltipIndexRoute
+  ComponentsTreeIndexRoute: typeof ComponentsTreeIndexRoute
 }
 
 const ComponentsRouteChildren: ComponentsRouteChildren = {
@@ -4865,6 +4974,14 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTooltipSizesRoute: ComponentsTooltipSizesRoute,
   ComponentsTooltipVariantsRoute: ComponentsTooltipVariantsRoute,
   ComponentsTooltipWithMenuButtonRoute: ComponentsTooltipWithMenuButtonRoute,
+  ComponentsTreeCustomRoute: ComponentsTreeCustomRoute,
+  ComponentsTreeMobileRoute: ComponentsTreeMobileRoute,
+  ComponentsTreeSizesRoute: ComponentsTreeSizesRoute,
+  ComponentsTreeUncontrolledRoute: ComponentsTreeUncontrolledRoute,
+  ComponentsTreeWithControlCheckCountRoute:
+    ComponentsTreeWithControlCheckCountRoute,
+  ComponentsTreeWithOnChangeHandlerRoute:
+    ComponentsTreeWithOnChangeHandlerRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
   ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
   ComponentsAvatarIndexRoute: ComponentsAvatarIndexRoute,
@@ -4917,6 +5034,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsToastIndexRoute: ComponentsToastIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
   ComponentsTooltipIndexRoute: ComponentsTooltipIndexRoute,
+  ComponentsTreeIndexRoute: ComponentsTreeIndexRoute,
 }
 
 const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
@@ -5180,6 +5298,12 @@ export interface FileRoutesByFullPath {
   '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
   '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
   '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
+  '/components/tree/custom': typeof ComponentsTreeCustomRoute
+  '/components/tree/mobile': typeof ComponentsTreeMobileRoute
+  '/components/tree/sizes': typeof ComponentsTreeSizesRoute
+  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
+  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
@@ -5232,6 +5356,7 @@ export interface FileRoutesByFullPath {
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
   '/components/tooltip': typeof ComponentsTooltipIndexRoute
+  '/components/tree': typeof ComponentsTreeIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -5474,6 +5599,12 @@ export interface FileRoutesByTo {
   '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
   '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
   '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
+  '/components/tree/custom': typeof ComponentsTreeCustomRoute
+  '/components/tree/mobile': typeof ComponentsTreeMobileRoute
+  '/components/tree/sizes': typeof ComponentsTreeSizesRoute
+  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
+  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
@@ -5526,6 +5657,7 @@ export interface FileRoutesByTo {
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
   '/components/tooltip': typeof ComponentsTooltipIndexRoute
+  '/components/tree': typeof ComponentsTreeIndexRoute
 }
 
 export interface FileRoutesById {
@@ -5769,6 +5901,12 @@ export interface FileRoutesById {
   '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
   '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
   '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
+  '/components/tree/custom': typeof ComponentsTreeCustomRoute
+  '/components/tree/mobile': typeof ComponentsTreeMobileRoute
+  '/components/tree/sizes': typeof ComponentsTreeSizesRoute
+  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
+  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
   '/components/actionBar/': typeof ComponentsActionBarIndexRoute
   '/components/avatar/': typeof ComponentsAvatarIndexRoute
@@ -5821,6 +5959,7 @@ export interface FileRoutesById {
   '/components/toast/': typeof ComponentsToastIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
   '/components/tooltip/': typeof ComponentsTooltipIndexRoute
+  '/components/tree/': typeof ComponentsTreeIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -6065,6 +6204,12 @@ export interface FileRouteTypes {
     | '/components/tooltip/sizes'
     | '/components/tooltip/variants'
     | '/components/tooltip/withMenuButton'
+    | '/components/tree/custom'
+    | '/components/tree/mobile'
+    | '/components/tree/sizes'
+    | '/components/tree/uncontrolled'
+    | '/components/tree/withControlCheckCount'
+    | '/components/tree/withOnChangeHandler'
     | '/components/accordion'
     | '/components/actionBar'
     | '/components/avatar'
@@ -6117,6 +6262,7 @@ export interface FileRouteTypes {
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
+    | '/components/tree'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -6358,6 +6504,12 @@ export interface FileRouteTypes {
     | '/components/tooltip/sizes'
     | '/components/tooltip/variants'
     | '/components/tooltip/withMenuButton'
+    | '/components/tree/custom'
+    | '/components/tree/mobile'
+    | '/components/tree/sizes'
+    | '/components/tree/uncontrolled'
+    | '/components/tree/withControlCheckCount'
+    | '/components/tree/withOnChangeHandler'
     | '/components/accordion'
     | '/components/actionBar'
     | '/components/avatar'
@@ -6410,6 +6562,7 @@ export interface FileRouteTypes {
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
+    | '/components/tree'
   id:
     | '__root__'
     | '/'
@@ -6651,6 +6804,12 @@ export interface FileRouteTypes {
     | '/components/tooltip/sizes'
     | '/components/tooltip/variants'
     | '/components/tooltip/withMenuButton'
+    | '/components/tree/custom'
+    | '/components/tree/mobile'
+    | '/components/tree/sizes'
+    | '/components/tree/uncontrolled'
+    | '/components/tree/withControlCheckCount'
+    | '/components/tree/withOnChangeHandler'
     | '/components/accordion/'
     | '/components/actionBar/'
     | '/components/avatar/'
@@ -6703,6 +6862,7 @@ export interface FileRouteTypes {
     | '/components/toast/'
     | '/components/toggle/'
     | '/components/tooltip/'
+    | '/components/tree/'
   fileRoutesById: FileRoutesById
 }
 
@@ -6971,6 +7131,12 @@ export const routeTree = rootRoute
         "/components/tooltip/sizes",
         "/components/tooltip/variants",
         "/components/tooltip/withMenuButton",
+        "/components/tree/custom",
+        "/components/tree/mobile",
+        "/components/tree/sizes",
+        "/components/tree/uncontrolled",
+        "/components/tree/withControlCheckCount",
+        "/components/tree/withOnChangeHandler",
         "/components/accordion/",
         "/components/actionBar/",
         "/components/avatar/",
@@ -7022,7 +7188,8 @@ export const routeTree = rootRoute
         "/components/textButtonMenu/",
         "/components/toast/",
         "/components/toggle/",
-        "/components/tooltip/"
+        "/components/tooltip/",
+        "/components/tree/"
       ]
     },
     "/general": {
@@ -7978,6 +8145,30 @@ export const routeTree = rootRoute
       "filePath": "components/tooltip/withMenuButton.tsx",
       "parent": "/components"
     },
+    "/components/tree/custom": {
+      "filePath": "components/tree/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/tree/mobile": {
+      "filePath": "components/tree/mobile.tsx",
+      "parent": "/components"
+    },
+    "/components/tree/sizes": {
+      "filePath": "components/tree/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/tree/uncontrolled": {
+      "filePath": "components/tree/uncontrolled.tsx",
+      "parent": "/components"
+    },
+    "/components/tree/withControlCheckCount": {
+      "filePath": "components/tree/withControlCheckCount.tsx",
+      "parent": "/components"
+    },
+    "/components/tree/withOnChangeHandler": {
+      "filePath": "components/tree/withOnChangeHandler.tsx",
+      "parent": "/components"
+    },
     "/components/accordion/": {
       "filePath": "components/accordion/index.tsx",
       "parent": "/components"
@@ -8184,6 +8375,10 @@ export const routeTree = rootRoute
     },
     "/components/tooltip/": {
       "filePath": "components/tooltip/index.tsx",
+      "parent": "/components"
+    },
+    "/components/tree/": {
+      "filePath": "components/tree/index.tsx",
       "parent": "/components"
     }
   }
