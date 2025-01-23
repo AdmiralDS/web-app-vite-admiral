@@ -27,6 +27,7 @@ import { Route as ComponentsTextButtonIndexImport } from './routes/components/te
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
+import { Route as ComponentsTIndexImport } from './routes/components/t/index'
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
@@ -124,6 +125,8 @@ import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components
 import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
 import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
 import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
+import { Route as ComponentsTVariantsImport } from './routes/components/t/variants'
+import { Route as ComponentsTStylesListImport } from './routes/components/t/stylesList'
 import { Route as ComponentsStepperVerticalImport } from './routes/components/stepper/vertical'
 import { Route as ComponentsStepperVariantsImport } from './routes/components/stepper/variants'
 import { Route as ComponentsStepperStateImport } from './routes/components/stepper/state'
@@ -406,6 +409,12 @@ const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
 const ComponentsTabMenuIndexRoute = ComponentsTabMenuIndexImport.update({
   id: '/tabMenu/',
   path: '/tabMenu/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTIndexRoute = ComponentsTIndexImport.update({
+  id: '/t/',
+  path: '/t/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1046,6 +1055,18 @@ const ComponentsTabMenuAddCardTabRoute =
     path: '/tabMenu/addCardTab',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsTVariantsRoute = ComponentsTVariantsImport.update({
+  id: '/t/variants',
+  path: '/t/variants',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTStylesListRoute = ComponentsTStylesListImport.update({
+  id: '/t/stylesList',
+  path: '/t/stylesList',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsStepperVerticalRoute = ComponentsStepperVerticalImport.update({
   id: '/stepper/vertical',
@@ -3654,6 +3675,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStepperVerticalImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/t/stylesList': {
+      id: '/components/t/stylesList'
+      path: '/t/stylesList'
+      fullPath: '/components/t/stylesList'
+      preLoaderRoute: typeof ComponentsTStylesListImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/t/variants': {
+      id: '/components/t/variants'
+      path: '/t/variants'
+      fullPath: '/components/t/variants'
+      preLoaderRoute: typeof ComponentsTVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/addCardTab': {
       id: '/components/tabMenu/addCardTab'
       path: '/tabMenu/addCardTab'
@@ -4333,6 +4368,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStepperIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/t/': {
+      id: '/components/t/'
+      path: '/t'
+      fullPath: '/components/t'
+      preLoaderRoute: typeof ComponentsTIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/': {
       id: '/components/tabMenu/'
       path: '/tabMenu'
@@ -4587,6 +4629,8 @@ interface ComponentsRouteChildren {
   ComponentsStepperStateRoute: typeof ComponentsStepperStateRoute
   ComponentsStepperVariantsRoute: typeof ComponentsStepperVariantsRoute
   ComponentsStepperVerticalRoute: typeof ComponentsStepperVerticalRoute
+  ComponentsTStylesListRoute: typeof ComponentsTStylesListRoute
+  ComponentsTVariantsRoute: typeof ComponentsTVariantsRoute
   ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
   ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
   ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
@@ -4684,6 +4728,7 @@ interface ComponentsRouteChildren {
   ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
+  ComponentsTIndexRoute: typeof ComponentsTIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
@@ -4920,6 +4965,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsStepperStateRoute: ComponentsStepperStateRoute,
   ComponentsStepperVariantsRoute: ComponentsStepperVariantsRoute,
   ComponentsStepperVerticalRoute: ComponentsStepperVerticalRoute,
+  ComponentsTStylesListRoute: ComponentsTStylesListRoute,
+  ComponentsTVariantsRoute: ComponentsTVariantsRoute,
   ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
   ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
   ComponentsTabMenuAddTabVerticalRoute: ComponentsTabMenuAddTabVerticalRoute,
@@ -5026,6 +5073,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
+  ComponentsTIndexRoute: ComponentsTIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
@@ -5251,6 +5299,8 @@ export interface FileRoutesByFullPath {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/t/stylesList': typeof ComponentsTStylesListRoute
+  '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -5348,6 +5398,7 @@ export interface FileRoutesByFullPath {
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/t': typeof ComponentsTIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -5552,6 +5603,8 @@ export interface FileRoutesByTo {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/t/stylesList': typeof ComponentsTStylesListRoute
+  '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -5649,6 +5702,7 @@ export interface FileRoutesByTo {
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/t': typeof ComponentsTIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
@@ -5854,6 +5908,8 @@ export interface FileRoutesById {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/t/stylesList': typeof ComponentsTStylesListRoute
+  '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
@@ -5951,6 +6007,7 @@ export interface FileRoutesById {
   '/components/spinner/': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
+  '/components/t/': typeof ComponentsTIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
@@ -6157,6 +6214,8 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/t/stylesList'
+    | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -6254,6 +6313,7 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
+    | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
@@ -6457,6 +6517,8 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/t/stylesList'
+    | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -6554,6 +6616,7 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
+    | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
@@ -6757,6 +6820,8 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/t/stylesList'
+    | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
@@ -6854,6 +6919,7 @@ export interface FileRouteTypes {
     | '/components/spinner/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
+    | '/components/t/'
     | '/components/tabMenu/'
     | '/components/table/'
     | '/components/tag/'
@@ -7084,6 +7150,8 @@ export const routeTree = rootRoute
         "/components/stepper/state",
         "/components/stepper/variants",
         "/components/stepper/vertical",
+        "/components/t/stylesList",
+        "/components/t/variants",
         "/components/tabMenu/addCardTab",
         "/components/tabMenu/addTab",
         "/components/tabMenu/addTabVertical",
@@ -7181,6 +7249,7 @@ export const routeTree = rootRoute
         "/components/spinner/",
         "/components/statusIndicator/",
         "/components/stepper/",
+        "/components/t/",
         "/components/tabMenu/",
         "/components/table/",
         "/components/tag/",
@@ -7957,6 +8026,14 @@ export const routeTree = rootRoute
       "filePath": "components/stepper/vertical.tsx",
       "parent": "/components"
     },
+    "/components/t/stylesList": {
+      "filePath": "components/t/stylesList.tsx",
+      "parent": "/components"
+    },
+    "/components/t/variants": {
+      "filePath": "components/t/variants.tsx",
+      "parent": "/components"
+    },
     "/components/tabMenu/addCardTab": {
       "filePath": "components/tabMenu/addCardTab.tsx",
       "parent": "/components"
@@ -8343,6 +8420,10 @@ export const routeTree = rootRoute
     },
     "/components/stepper/": {
       "filePath": "components/stepper/index.tsx",
+      "parent": "/components"
+    },
+    "/components/t/": {
+      "filePath": "components/t/index.tsx",
       "parent": "/components"
     },
     "/components/tabMenu/": {
