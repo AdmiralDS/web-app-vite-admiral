@@ -593,6 +593,20 @@ const data = [
     routes: [{ name: 'Базовый пример', path: '/components/skeleton' }],
   },
   {
+    name: 'Tree',
+    path: '/components/tree',
+    routes: [
+      { name: 'Базовый пример', path: '/components/tree' },
+      { name: 'Размеры', path: '/components/tree/sizes' },
+      { name: 'Варианты', path: '/components/tree/variants' },
+      { name: 'Произвольный контент', path: '/components/tree/custom' },
+      { name: 'Неконтролируемое дерево', path: '/components/tree/uncontrolled' },
+      { name: 'Со счётчиком', path: '/components/tree/withControlCheckCount' },
+      { name: 'Обработка событий onExpandChange и onCheckedChange', path: '/components/tree/withOnChangeHandler' },
+      { name: 'Мобильная версия', path: '/components/tree/mobile' },
+    ],
+  },
+  {
     name: 'T',
     path: '/components/t',
     routes: [
