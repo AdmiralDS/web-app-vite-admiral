@@ -3,7 +3,7 @@ import { ExampleSection } from '../../-helpers/examples';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
 import ErrorTriangleSolid from '@admiral-ds/icons/build/service/ErrorTriangleSolid.svg?react';
-import { Button, T, Tree, TreeItemProps, TreeNode, TreeNodeRenderOptionProps } from '@admiral-ds/react-ui';
+import { Link, T, TextButton, Tree, TreeItemProps, TreeNode, TreeNodeRenderOptionProps } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 
 const handleNodeClick = (id: string) => {
@@ -56,9 +56,9 @@ const demo2_TreeModel: Array<TreeItemProps> = [
             render: (options: TreeNodeRenderOptionProps) => (
               <div style={{ paddingLeft: '138px' }}>
                 <T font="Subtitle/Subtitle 2" as="div" key={'1-1-2'} {...options}>
-                  Кастомный элемент с кнопкой
+                  Кастомный заголовок с кнопкой
                 </T>
-                <Button appearance="success">Кнопка</Button>
+                <TextButton text="Кнопка" />
               </div>
             ),
             id: '1-1-2',
@@ -69,8 +69,15 @@ const demo2_TreeModel: Array<TreeItemProps> = [
   },
   {
     render: (options: TreeNodeRenderOptionProps) => (
-      <TreeNode key={'4'} icon={FolderSolid} {...options}>
-        Кастомный заголовок с иконкой <ErrorTriangleSolid style={{ width: '20px', marginLeft: '8px' }} />
+      <TreeNode key={'4'} {...options}>
+        <Link
+          appearance="secondary"
+          dimension="s"
+          href=""
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault()}
+        >
+          Ссылка <ErrorTriangleSolid style={{ width: '20px', marginLeft: '8px' }} />
+        </Link>
       </TreeNode>
     ),
     id: '4',
@@ -81,7 +88,7 @@ const demo2_TreeModel: Array<TreeItemProps> = [
         <T font="Subtitle/Subtitle 2" as="div" key={'5'} {...options}>
           Кастомный элемент с кнопкой
         </T>
-        <Button>Кнопка</Button>
+        <TextButton text="Кнопка" />
       </>
     ),
     children: [],
@@ -107,6 +114,6 @@ export const Template = () => {
 export const Route = createFileRoute('/components/tree/custom')({
   component: () => <Template />,
   staticData: {
-    title: 'Tree. Кастом',
+    title: 'Tree. Произвольный контент',
   },
 });

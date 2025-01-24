@@ -598,9 +598,10 @@ const data = [
     routes: [
       { name: 'Базовый пример', path: '/components/tree' },
       { name: 'Размеры', path: '/components/tree/sizes' },
-      { name: 'Кастом', path: '/components/tree/custom' },
+      { name: 'Варианты', path: '/components/tree/variants' },
+      { name: 'Произвольный контент', path: '/components/tree/custom' },
       { name: 'Неконтролируемое дерево', path: '/components/tree/uncontrolled' },
-      { name: 'С счётчиком выбраннх элементов', path: '/components/tree/withControlCheckCount' },
+      { name: 'Со счётчиком', path: '/components/tree/withControlCheckCount' },
       { name: 'Обработка событий onExpandChange и onCheckedChange', path: '/components/tree/withOnChangeHandler' },
       { name: 'Мобильная версия', path: '/components/tree/mobile' },
     ],

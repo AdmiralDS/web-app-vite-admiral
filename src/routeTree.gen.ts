@@ -74,6 +74,7 @@ import { Route as ComponentsActionBarIndexImport } from './routes/components/act
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
 import { Route as ComponentsTreeWithOnChangeHandlerImport } from './routes/components/tree/withOnChangeHandler'
 import { Route as ComponentsTreeWithControlCheckCountImport } from './routes/components/tree/withControlCheckCount'
+import { Route as ComponentsTreeVariantsImport } from './routes/components/tree/variants'
 import { Route as ComponentsTreeUncontrolledImport } from './routes/components/tree/uncontrolled'
 import { Route as ComponentsTreeSizesImport } from './routes/components/tree/sizes'
 import { Route as ComponentsTreeMobileImport } from './routes/components/tree/mobile'
@@ -721,6 +722,12 @@ const ComponentsTreeWithControlCheckCountRoute =
     path: '/tree/withControlCheckCount',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsTreeVariantsRoute = ComponentsTreeVariantsImport.update({
+  id: '/tree/variants',
+  path: '/tree/variants',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsTreeUncontrolledRoute = ComponentsTreeUncontrolledImport.update(
   {
@@ -4046,6 +4053,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTreeUncontrolledImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tree/variants': {
+      id: '/components/tree/variants'
+      path: '/tree/variants'
+      fullPath: '/components/tree/variants'
+      preLoaderRoute: typeof ComponentsTreeVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/withControlCheckCount': {
       id: '/components/tree/withControlCheckCount'
       path: '/tree/withControlCheckCount'
@@ -4682,6 +4696,7 @@ interface ComponentsRouteChildren {
   ComponentsTreeMobileRoute: typeof ComponentsTreeMobileRoute
   ComponentsTreeSizesRoute: typeof ComponentsTreeSizesRoute
   ComponentsTreeUncontrolledRoute: typeof ComponentsTreeUncontrolledRoute
+  ComponentsTreeVariantsRoute: typeof ComponentsTreeVariantsRoute
   ComponentsTreeWithControlCheckCountRoute: typeof ComponentsTreeWithControlCheckCountRoute
   ComponentsTreeWithOnChangeHandlerRoute: typeof ComponentsTreeWithOnChangeHandlerRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
@@ -5025,6 +5040,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTreeMobileRoute: ComponentsTreeMobileRoute,
   ComponentsTreeSizesRoute: ComponentsTreeSizesRoute,
   ComponentsTreeUncontrolledRoute: ComponentsTreeUncontrolledRoute,
+  ComponentsTreeVariantsRoute: ComponentsTreeVariantsRoute,
   ComponentsTreeWithControlCheckCountRoute:
     ComponentsTreeWithControlCheckCountRoute,
   ComponentsTreeWithOnChangeHandlerRoute:
@@ -5352,6 +5368,7 @@ export interface FileRoutesByFullPath {
   '/components/tree/mobile': typeof ComponentsTreeMobileRoute
   '/components/tree/sizes': typeof ComponentsTreeSizesRoute
   '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/variants': typeof ComponentsTreeVariantsRoute
   '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
   '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
@@ -5656,6 +5673,7 @@ export interface FileRoutesByTo {
   '/components/tree/mobile': typeof ComponentsTreeMobileRoute
   '/components/tree/sizes': typeof ComponentsTreeSizesRoute
   '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/variants': typeof ComponentsTreeVariantsRoute
   '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
   '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
@@ -5961,6 +5979,7 @@ export interface FileRoutesById {
   '/components/tree/mobile': typeof ComponentsTreeMobileRoute
   '/components/tree/sizes': typeof ComponentsTreeSizesRoute
   '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/variants': typeof ComponentsTreeVariantsRoute
   '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
   '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
@@ -6267,6 +6286,7 @@ export interface FileRouteTypes {
     | '/components/tree/mobile'
     | '/components/tree/sizes'
     | '/components/tree/uncontrolled'
+    | '/components/tree/variants'
     | '/components/tree/withControlCheckCount'
     | '/components/tree/withOnChangeHandler'
     | '/components/accordion'
@@ -6570,6 +6590,7 @@ export interface FileRouteTypes {
     | '/components/tree/mobile'
     | '/components/tree/sizes'
     | '/components/tree/uncontrolled'
+    | '/components/tree/variants'
     | '/components/tree/withControlCheckCount'
     | '/components/tree/withOnChangeHandler'
     | '/components/accordion'
@@ -6873,6 +6894,7 @@ export interface FileRouteTypes {
     | '/components/tree/mobile'
     | '/components/tree/sizes'
     | '/components/tree/uncontrolled'
+    | '/components/tree/variants'
     | '/components/tree/withControlCheckCount'
     | '/components/tree/withOnChangeHandler'
     | '/components/accordion/'
@@ -7203,6 +7225,7 @@ export const routeTree = rootRoute
         "/components/tree/mobile",
         "/components/tree/sizes",
         "/components/tree/uncontrolled",
+        "/components/tree/variants",
         "/components/tree/withControlCheckCount",
         "/components/tree/withOnChangeHandler",
         "/components/accordion/",
@@ -8236,6 +8259,10 @@ export const routeTree = rootRoute
     },
     "/components/tree/uncontrolled": {
       "filePath": "components/tree/uncontrolled.tsx",
+      "parent": "/components"
+    },
+    "/components/tree/variants": {
+      "filePath": "components/tree/variants.tsx",
       "parent": "/components"
     },
     "/components/tree/withControlCheckCount": {
