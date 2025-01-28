@@ -9,17 +9,24 @@ const Wrapper = styled.div`
   max-height: 400px;
   display: flex;
   flex-direction: column;
+  padding-left: 12px;
 `;
 
 const ScrollContainerStyled = styled(ScrollContainer)`
   padding: 0 20px 20px 0;
-  & > div {
-    padding-left: 12px;
-  }
 `;
 
 const PWithFont = styled(PStyled)`
   ${typography['Body/Body 2 Long']}
+`;
+
+const ToggleStyled = styled(Toggle)`
+  margin-top: 15px;
+`;
+
+const Box = styled.div`
+  width: 700px;
+  height: 200px;
 `;
 
 export const Template = () => {
@@ -45,11 +52,11 @@ export const Template = () => {
             предварительно отключив нативные скролы на контейнере с помощью миксина hideNativeScrollbarsCss и передав
             его нод в параметр contentNode
           </PWithFont>
-          {checked && <div style={{ width: 700, height: 200 }}></div>}
+          {checked && <Box />}
         </ScrollContainerStyled>
-        <Toggle checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}>
+        <ToggleStyled checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}>
           еще больше переполнить контейнер
-        </Toggle>
+        </ToggleStyled>
       </Wrapper>
     </ExampleSection>
   );

@@ -9,17 +9,24 @@ const Wrapper = styled.div`
   max-height: 400px;
   display: flex;
   flex-direction: column;
+  padding-left: 12px;
 `;
 
 const ScrollContainerStyled = styled(ScrollContainer)`
   padding: 0 20px 20px 0;
-  & > div {
-    padding-left: 12px;
-  }
 `;
 
 const PWithFont = styled(PStyled)`
   ${typography['Body/Body 2 Long']}
+`;
+
+const ToggleStyled = styled(Toggle)`
+  margin-top: 15px;
+`;
+
+const Box = styled.div`
+  width: 700px;
+  height: 700px;
 `;
 
 export const Content = () => (
@@ -53,22 +60,22 @@ export const Template = () => {
         <Wrapper>
           <ScrollContainerStyled minThumbSize={10}>
             <Content />
-            {checked2 && <div style={{ width: 700, height: 700 }}></div>}
+            {checked2 && <Box />}
           </ScrollContainerStyled>
-          <Toggle checked={checked2} onChange={(event) => setChecked2(event.currentTarget.checked)}>
+          <ToggleStyled checked={checked2} onChange={(event) => setChecked2(event.currentTarget.checked)}>
             еще больше переполнить контейнер
-          </Toggle>
+          </ToggleStyled>
         </Wrapper>
       </ExampleSection>
       <ExampleSection text="minThumbSize={250}">
         <Wrapper>
           <ScrollContainerStyled minThumbSize={250}>
             <Content />
-            {checked && <div style={{ width: 700, height: 700 }}></div>}
+            {checked && <Box />}
           </ScrollContainerStyled>
-          <Toggle checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}>
+          <ToggleStyled checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}>
             еще больше переполнить контейнер
-          </Toggle>
+          </ToggleStyled>
         </Wrapper>
       </ExampleSection>
     </>
