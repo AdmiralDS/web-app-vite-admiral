@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '../../-helpers/examples';
-import { ScrollContainer, Toggle } from '@admiral-ds/react-ui';
+import { ScrollContainer, Toggle, typography } from '@admiral-ds/react-ui';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -12,9 +12,14 @@ const Wrapper = styled.div`
 `;
 
 const ScrollContainerStyled = styled(ScrollContainer)`
+  padding: 0 20px 20px 0;
   & > div {
     padding-left: 12px;
   }
+`;
+
+const PWithFont = styled(PStyled)`
+  ${typography['Body/Body 2 Long']}
 `;
 
 export const Template = () => {
@@ -23,28 +28,28 @@ export const Template = () => {
     <ExampleSection>
       <Wrapper>
         <ScrollContainerStyled>
-          <PStyled>ScrollContainer – контейнер в котором скроллбары выглядят одинаково на всех платформах.</PStyled>
-          <PStyled>Скролбары появляется автоматически при переполнении.</PStyled>
-          <PStyled>
+          <PWithFont>ScrollContainer – контейнер в котором скроллбары выглядят одинаково на всех платформах.</PWithFont>
+          <PWithFont>Скролбары появляется автоматически при переполнении.</PWithFont>
+          <PWithFont>
             Отслеживание состояния контейнера происходит через requestAnimationFrame, по этому синхронизация скролбаров
             происходит при любых изменениях и позволяет организовать внутри контейнера виртуальный скрол и не трогать
             поведение нативного скрола.
-          </PStyled>
-          <PStyled>
+          </PWithFont>
+          <PWithFont>
             Использование requestAnimationFrame не нагружает браузер, так как в функции обратного вызова происходит
             только чтение состояния контейнера и только при появлении изменений управление передается на синхронизацию
             позиции скрола.
-          </PStyled>
-          <PStyled>
+          </PWithFont>
+          <PWithFont>
             Если необходимо расположить скролы вне контейнера, то можно использовать компонент Scrollbars,
             предварительно отключив нативные скролы на контейнере с помощью миксина hideNativeScrollbarsCss и передав
             его нод в параметр contentNode
-          </PStyled>
-          {checked && <div style={{ width: 700, height: 500 }}></div>}
-          <Toggle checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}>
-            еще больше переполнить контейнер
-          </Toggle>
+          </PWithFont>
+          {checked && <div style={{ width: 700, height: 200 }}></div>}
         </ScrollContainerStyled>
+        <Toggle checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)}>
+          еще больше переполнить контейнер
+        </Toggle>
       </Wrapper>
     </ExampleSection>
   );
