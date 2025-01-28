@@ -34,6 +34,7 @@ import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinn
 import { Route as ComponentsSliderIndexImport } from './routes/components/slider/index'
 import { Route as ComponentsSkeletonIndexImport } from './routes/components/skeleton/index'
 import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
+import { Route as ComponentsScrollContainerIndexImport } from './routes/components/scrollContainer/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
 import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
 import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
@@ -155,6 +156,7 @@ import { Route as ComponentsSegmentedControlStatesImport } from './routes/compon
 import { Route as ComponentsSegmentedControlSizesImport } from './routes/components/segmentedControl/sizes'
 import { Route as ComponentsSegmentedControlRadioButtonModeImport } from './routes/components/segmentedControl/radioButtonMode'
 import { Route as ComponentsSegmentedControlCheckBoxModeImport } from './routes/components/segmentedControl/checkBoxMode'
+import { Route as ComponentsScrollContainerStateImport } from './routes/components/scrollContainer/state'
 import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states'
 import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes'
 import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
@@ -454,6 +456,13 @@ const ComponentsSegmentedControlIndexRoute =
   ComponentsSegmentedControlIndexImport.update({
     id: '/segmentedControl/',
     path: '/segmentedControl/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsScrollContainerIndexRoute =
+  ComponentsScrollContainerIndexImport.update({
+    id: '/scrollContainer/',
+    path: '/scrollContainer/',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1249,6 +1258,13 @@ const ComponentsSegmentedControlCheckBoxModeRoute =
   ComponentsSegmentedControlCheckBoxModeImport.update({
     id: '/segmentedControl/checkBoxMode',
     path: '/segmentedControl/checkBoxMode',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsScrollContainerStateRoute =
+  ComponentsScrollContainerStateImport.update({
+    id: '/scrollContainer/state',
+    path: '/scrollContainer/state',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -3493,6 +3509,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/scrollContainer/state': {
+      id: '/components/scrollContainer/state'
+      path: '/scrollContainer/state'
+      fullPath: '/components/scrollContainer/state'
+      preLoaderRoute: typeof ComponentsScrollContainerStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/checkBoxMode': {
       id: '/components/segmentedControl/checkBoxMode'
       path: '/segmentedControl/checkBoxMode'
@@ -4340,6 +4363,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsRadiobuttonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/scrollContainer/': {
+      id: '/components/scrollContainer/'
+      path: '/scrollContainer'
+      fullPath: '/components/scrollContainer'
+      preLoaderRoute: typeof ComponentsScrollContainerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/': {
       id: '/components/segmentedControl/'
       path: '/segmentedControl'
@@ -4616,6 +4646,7 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
   ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute
   ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute
+  ComponentsScrollContainerStateRoute: typeof ComponentsScrollContainerStateRoute
   ComponentsSegmentedControlCheckBoxModeRoute: typeof ComponentsSegmentedControlCheckBoxModeRoute
   ComponentsSegmentedControlRadioButtonModeRoute: typeof ComponentsSegmentedControlRadioButtonModeRoute
   ComponentsSegmentedControlSizesRoute: typeof ComponentsSegmentedControlSizesRoute
@@ -4737,6 +4768,7 @@ interface ComponentsRouteChildren {
   ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
   ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
+  ComponentsScrollContainerIndexRoute: typeof ComponentsScrollContainerIndexRoute
   ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
   ComponentsSkeletonIndexRoute: typeof ComponentsSkeletonIndexRoute
   ComponentsSliderIndexRoute: typeof ComponentsSliderIndexRoute
@@ -4948,6 +4980,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
   ComponentsRadiobuttonSizesRoute: ComponentsRadiobuttonSizesRoute,
   ComponentsRadiobuttonStatesRoute: ComponentsRadiobuttonStatesRoute,
+  ComponentsScrollContainerStateRoute: ComponentsScrollContainerStateRoute,
   ComponentsSegmentedControlCheckBoxModeRoute:
     ComponentsSegmentedControlCheckBoxModeRoute,
   ComponentsSegmentedControlRadioButtonModeRoute:
@@ -5083,6 +5116,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
   ComponentsProgressStepperIndexRoute: ComponentsProgressStepperIndexRoute,
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
+  ComponentsScrollContainerIndexRoute: ComponentsScrollContainerIndexRoute,
   ComponentsSegmentedControlIndexRoute: ComponentsSegmentedControlIndexRoute,
   ComponentsSkeletonIndexRoute: ComponentsSkeletonIndexRoute,
   ComponentsSliderIndexRoute: ComponentsSliderIndexRoute,
@@ -5288,6 +5322,7 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute
   '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
   '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
   '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
@@ -5409,6 +5444,7 @@ export interface FileRoutesByFullPath {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
   '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
@@ -5593,6 +5629,7 @@ export interface FileRoutesByTo {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute
   '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
   '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
   '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
@@ -5714,6 +5751,7 @@ export interface FileRoutesByTo {
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
   '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
@@ -5899,6 +5937,7 @@ export interface FileRoutesById {
   '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
   '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
   '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute
   '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
   '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
   '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
@@ -6020,6 +6059,7 @@ export interface FileRoutesById {
   '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
   '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
+  '/components/scrollContainer/': typeof ComponentsScrollContainerIndexRoute
   '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
   '/components/skeleton/': typeof ComponentsSkeletonIndexRoute
   '/components/slider/': typeof ComponentsSliderIndexRoute
@@ -6206,6 +6246,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/scrollContainer/state'
     | '/components/segmentedControl/checkBoxMode'
     | '/components/segmentedControl/radioButtonMode'
     | '/components/segmentedControl/sizes'
@@ -6327,6 +6368,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/scrollContainer'
     | '/components/segmentedControl'
     | '/components/skeleton'
     | '/components/slider'
@@ -6510,6 +6552,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/scrollContainer/state'
     | '/components/segmentedControl/checkBoxMode'
     | '/components/segmentedControl/radioButtonMode'
     | '/components/segmentedControl/sizes'
@@ -6631,6 +6674,7 @@ export interface FileRouteTypes {
     | '/components/progressPage'
     | '/components/progressStepper'
     | '/components/radiobutton'
+    | '/components/scrollContainer'
     | '/components/segmentedControl'
     | '/components/skeleton'
     | '/components/slider'
@@ -6814,6 +6858,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton/informer'
     | '/components/radiobutton/sizes'
     | '/components/radiobutton/states'
+    | '/components/scrollContainer/state'
     | '/components/segmentedControl/checkBoxMode'
     | '/components/segmentedControl/radioButtonMode'
     | '/components/segmentedControl/sizes'
@@ -6935,6 +6980,7 @@ export interface FileRouteTypes {
     | '/components/progressPage/'
     | '/components/progressStepper/'
     | '/components/radiobutton/'
+    | '/components/scrollContainer/'
     | '/components/segmentedControl/'
     | '/components/skeleton/'
     | '/components/slider/'
@@ -7145,6 +7191,7 @@ export const routeTree = rootRoute
         "/components/radiobutton/informer",
         "/components/radiobutton/sizes",
         "/components/radiobutton/states",
+        "/components/scrollContainer/state",
         "/components/segmentedControl/checkBoxMode",
         "/components/segmentedControl/radioButtonMode",
         "/components/segmentedControl/sizes",
@@ -7266,6 +7313,7 @@ export const routeTree = rootRoute
         "/components/progressPage/",
         "/components/progressStepper/",
         "/components/radiobutton/",
+        "/components/scrollContainer/",
         "/components/segmentedControl/",
         "/components/skeleton/",
         "/components/slider/",
@@ -7941,6 +7989,10 @@ export const routeTree = rootRoute
       "filePath": "components/radiobutton/states.tsx",
       "parent": "/components"
     },
+    "/components/scrollContainer/state": {
+      "filePath": "components/scrollContainer/state.tsx",
+      "parent": "/components"
+    },
     "/components/segmentedControl/checkBoxMode": {
       "filePath": "components/segmentedControl/checkBoxMode.tsx",
       "parent": "/components"
@@ -8423,6 +8475,10 @@ export const routeTree = rootRoute
     },
     "/components/radiobutton/": {
       "filePath": "components/radiobutton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/scrollContainer/": {
+      "filePath": "components/scrollContainer/index.tsx",
       "parent": "/components"
     },
     "/components/segmentedControl/": {

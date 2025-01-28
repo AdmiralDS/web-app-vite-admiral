@@ -615,6 +615,14 @@ const data = [
       { name: 'Список стилей', path: '/components/t/stylesList' },
     ],
   },
+  {
+    name: 'ScrollContainer',
+    path: '/components/scrollContainer',
+    routes: [
+      { name: 'Базовый пример', path: '/components/scrollContainer' },
+      { name: 'Состояния', path: '/components/scrollContainer/state' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
