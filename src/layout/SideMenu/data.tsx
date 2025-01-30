@@ -623,6 +623,14 @@ const data = [
       { name: 'Состояния', path: '/components/scrollContainer/state' },
     ],
   },
+  {
+    name: 'Select',
+    path: '/components/select',
+    routes: [
+      { name: 'Базовый пример', path: '/components/select' },
+      { name: 'Состояния', path: '/components/select/state' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
