@@ -61,6 +61,7 @@ import { Route as ComponentsFloatingButtonIndexImport } from './routes/component
 import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index';
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index';
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index';
+import { Route as ComponentsDateInputIndexImport } from './routes/components/dateInput/index';
 import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index';
 import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index';
 import { Route as ComponentsCheckboxIndexImport } from './routes/components/checkbox/index';
@@ -265,6 +266,15 @@ import { Route as ComponentsDrawerPositionImport } from './routes/components/dra
 import { Route as ComponentsDrawerNonClosableImport } from './routes/components/drawer/nonClosable';
 import { Route as ComponentsDrawerMobileImport } from './routes/components/drawer/mobile';
 import { Route as ComponentsDrawerCustomContentImport } from './routes/components/drawer/customContent';
+import { Route as ComponentsDateInputVariantsImport } from './routes/components/dateInput/variants';
+import { Route as ComponentsDateInputStatusImport } from './routes/components/dateInput/status';
+import { Route as ComponentsDateInputStateImport } from './routes/components/dateInput/state';
+import { Route as ComponentsDateInputSpecialDatesImport } from './routes/components/dateInput/specialDates';
+import { Route as ComponentsDateInputSizesImport } from './routes/components/dateInput/sizes';
+import { Route as ComponentsDateInputRangeImport } from './routes/components/dateInput/range';
+import { Route as ComponentsDateInputDateFieldStateImport } from './routes/components/dateInput/dateFieldState';
+import { Route as ComponentsDateInputDateFieldImport } from './routes/components/dateInput/dateField';
+import { Route as ComponentsDateInputCustomImport } from './routes/components/dateInput/custom';
 import { Route as ComponentsContentSwitcherWithIconsImport } from './routes/components/contentSwitcher/withIcons';
 import { Route as ComponentsContentSwitcherWithBadgeImport } from './routes/components/contentSwitcher/withBadge';
 import { Route as ComponentsContentSwitcherStylesImport } from './routes/components/contentSwitcher/styles';
@@ -617,6 +627,12 @@ const ComponentsDropdownIndexRoute = ComponentsDropdownIndexImport.update({
 const ComponentsDrawerIndexRoute = ComponentsDrawerIndexImport.update({
   id: '/drawer/',
   path: '/drawer/',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputIndexRoute = ComponentsDateInputIndexImport.update({
+  id: '/dateInput/',
+  path: '/dateInput/',
   getParentRoute: () => ComponentsRoute,
 } as any);
 
@@ -1844,6 +1860,60 @@ const ComponentsDrawerCustomContentRoute = ComponentsDrawerCustomContentImport.u
   getParentRoute: () => ComponentsRoute,
 } as any);
 
+const ComponentsDateInputVariantsRoute = ComponentsDateInputVariantsImport.update({
+  id: '/dateInput/variants',
+  path: '/dateInput/variants',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputStatusRoute = ComponentsDateInputStatusImport.update({
+  id: '/dateInput/status',
+  path: '/dateInput/status',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputStateRoute = ComponentsDateInputStateImport.update({
+  id: '/dateInput/state',
+  path: '/dateInput/state',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputSpecialDatesRoute = ComponentsDateInputSpecialDatesImport.update({
+  id: '/dateInput/specialDates',
+  path: '/dateInput/specialDates',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputSizesRoute = ComponentsDateInputSizesImport.update({
+  id: '/dateInput/sizes',
+  path: '/dateInput/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputRangeRoute = ComponentsDateInputRangeImport.update({
+  id: '/dateInput/range',
+  path: '/dateInput/range',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputDateFieldStateRoute = ComponentsDateInputDateFieldStateImport.update({
+  id: '/dateInput/dateFieldState',
+  path: '/dateInput/dateFieldState',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputDateFieldRoute = ComponentsDateInputDateFieldImport.update({
+  id: '/dateInput/dateField',
+  path: '/dateInput/dateField',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
+const ComponentsDateInputCustomRoute = ComponentsDateInputCustomImport.update({
+  id: '/dateInput/custom',
+  path: '/dateInput/custom',
+  getParentRoute: () => ComponentsRoute,
+} as any);
+
 const ComponentsContentSwitcherWithIconsRoute = ComponentsContentSwitcherWithIconsImport.update({
   id: '/contentSwitcher/withIcons',
   path: '/contentSwitcher/withIcons',
@@ -2572,6 +2642,69 @@ declare module '@tanstack/react-router' {
       path: '/contentSwitcher/withIcons';
       fullPath: '/components/contentSwitcher/withIcons';
       preLoaderRoute: typeof ComponentsContentSwitcherWithIconsImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/custom': {
+      id: '/components/dateInput/custom';
+      path: '/dateInput/custom';
+      fullPath: '/components/dateInput/custom';
+      preLoaderRoute: typeof ComponentsDateInputCustomImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/dateField': {
+      id: '/components/dateInput/dateField';
+      path: '/dateInput/dateField';
+      fullPath: '/components/dateInput/dateField';
+      preLoaderRoute: typeof ComponentsDateInputDateFieldImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/dateFieldState': {
+      id: '/components/dateInput/dateFieldState';
+      path: '/dateInput/dateFieldState';
+      fullPath: '/components/dateInput/dateFieldState';
+      preLoaderRoute: typeof ComponentsDateInputDateFieldStateImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/range': {
+      id: '/components/dateInput/range';
+      path: '/dateInput/range';
+      fullPath: '/components/dateInput/range';
+      preLoaderRoute: typeof ComponentsDateInputRangeImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/sizes': {
+      id: '/components/dateInput/sizes';
+      path: '/dateInput/sizes';
+      fullPath: '/components/dateInput/sizes';
+      preLoaderRoute: typeof ComponentsDateInputSizesImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/specialDates': {
+      id: '/components/dateInput/specialDates';
+      path: '/dateInput/specialDates';
+      fullPath: '/components/dateInput/specialDates';
+      preLoaderRoute: typeof ComponentsDateInputSpecialDatesImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/state': {
+      id: '/components/dateInput/state';
+      path: '/dateInput/state';
+      fullPath: '/components/dateInput/state';
+      preLoaderRoute: typeof ComponentsDateInputStateImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/status': {
+      id: '/components/dateInput/status';
+      path: '/dateInput/status';
+      fullPath: '/components/dateInput/status';
+      preLoaderRoute: typeof ComponentsDateInputStatusImport;
+      parentRoute: typeof ComponentsImport;
+    };
+    '/components/dateInput/variants': {
+      id: '/components/dateInput/variants';
+      path: '/dateInput/variants';
+      fullPath: '/components/dateInput/variants';
+      preLoaderRoute: typeof ComponentsDateInputVariantsImport;
       parentRoute: typeof ComponentsImport;
     };
     '/components/drawer/customContent': {
@@ -4002,6 +4135,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsContentSwitcherIndexImport;
       parentRoute: typeof ComponentsImport;
     };
+    '/components/dateInput/': {
+      id: '/components/dateInput/';
+      path: '/dateInput';
+      fullPath: '/components/dateInput';
+      preLoaderRoute: typeof ComponentsDateInputIndexImport;
+      parentRoute: typeof ComponentsImport;
+    };
     '/components/drawer/': {
       id: '/components/drawer/';
       path: '/drawer';
@@ -4361,6 +4501,15 @@ interface ComponentsRouteChildren {
   ComponentsContentSwitcherStylesRoute: typeof ComponentsContentSwitcherStylesRoute;
   ComponentsContentSwitcherWithBadgeRoute: typeof ComponentsContentSwitcherWithBadgeRoute;
   ComponentsContentSwitcherWithIconsRoute: typeof ComponentsContentSwitcherWithIconsRoute;
+  ComponentsDateInputCustomRoute: typeof ComponentsDateInputCustomRoute;
+  ComponentsDateInputDateFieldRoute: typeof ComponentsDateInputDateFieldRoute;
+  ComponentsDateInputDateFieldStateRoute: typeof ComponentsDateInputDateFieldStateRoute;
+  ComponentsDateInputRangeRoute: typeof ComponentsDateInputRangeRoute;
+  ComponentsDateInputSizesRoute: typeof ComponentsDateInputSizesRoute;
+  ComponentsDateInputSpecialDatesRoute: typeof ComponentsDateInputSpecialDatesRoute;
+  ComponentsDateInputStateRoute: typeof ComponentsDateInputStateRoute;
+  ComponentsDateInputStatusRoute: typeof ComponentsDateInputStatusRoute;
+  ComponentsDateInputVariantsRoute: typeof ComponentsDateInputVariantsRoute;
   ComponentsDrawerCustomContentRoute: typeof ComponentsDrawerCustomContentRoute;
   ComponentsDrawerMobileRoute: typeof ComponentsDrawerMobileRoute;
   ComponentsDrawerNonClosableRoute: typeof ComponentsDrawerNonClosableRoute;
@@ -4565,6 +4714,7 @@ interface ComponentsRouteChildren {
   ComponentsCheckboxIndexRoute: typeof ComponentsCheckboxIndexRoute;
   ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute;
   ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute;
+  ComponentsDateInputIndexRoute: typeof ComponentsDateInputIndexRoute;
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute;
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute;
   ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute;
@@ -4663,6 +4813,15 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsContentSwitcherStylesRoute: ComponentsContentSwitcherStylesRoute,
   ComponentsContentSwitcherWithBadgeRoute: ComponentsContentSwitcherWithBadgeRoute,
   ComponentsContentSwitcherWithIconsRoute: ComponentsContentSwitcherWithIconsRoute,
+  ComponentsDateInputCustomRoute: ComponentsDateInputCustomRoute,
+  ComponentsDateInputDateFieldRoute: ComponentsDateInputDateFieldRoute,
+  ComponentsDateInputDateFieldStateRoute: ComponentsDateInputDateFieldStateRoute,
+  ComponentsDateInputRangeRoute: ComponentsDateInputRangeRoute,
+  ComponentsDateInputSizesRoute: ComponentsDateInputSizesRoute,
+  ComponentsDateInputSpecialDatesRoute: ComponentsDateInputSpecialDatesRoute,
+  ComponentsDateInputStateRoute: ComponentsDateInputStateRoute,
+  ComponentsDateInputStatusRoute: ComponentsDateInputStatusRoute,
+  ComponentsDateInputVariantsRoute: ComponentsDateInputVariantsRoute,
   ComponentsDrawerCustomContentRoute: ComponentsDrawerCustomContentRoute,
   ComponentsDrawerMobileRoute: ComponentsDrawerMobileRoute,
   ComponentsDrawerNonClosableRoute: ComponentsDrawerNonClosableRoute,
@@ -4867,6 +5026,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsCheckboxIndexRoute: ComponentsCheckboxIndexRoute,
   ComponentsChipsIndexRoute: ComponentsChipsIndexRoute,
   ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
+  ComponentsDateInputIndexRoute: ComponentsDateInputIndexRoute,
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
   ComponentsFlexIndexRoute: ComponentsFlexIndexRoute,
@@ -4990,6 +5150,15 @@ export interface FileRoutesByFullPath {
   '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute;
   '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute;
   '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute;
+  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute;
+  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute;
+  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute;
+  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute;
+  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute;
+  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute;
+  '/components/dateInput/state': typeof ComponentsDateInputStateRoute;
+  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute;
+  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute;
   '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute;
   '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute;
   '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute;
@@ -5194,6 +5363,7 @@ export interface FileRoutesByFullPath {
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute;
   '/components/chips': typeof ComponentsChipsIndexRoute;
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute;
+  '/components/dateInput': typeof ComponentsDateInputIndexRoute;
   '/components/drawer': typeof ComponentsDrawerIndexRoute;
   '/components/dropdown': typeof ComponentsDropdownIndexRoute;
   '/components/flex': typeof ComponentsFlexIndexRoute;
@@ -5299,6 +5469,15 @@ export interface FileRoutesByTo {
   '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute;
   '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute;
   '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute;
+  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute;
+  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute;
+  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute;
+  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute;
+  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute;
+  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute;
+  '/components/dateInput/state': typeof ComponentsDateInputStateRoute;
+  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute;
+  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute;
   '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute;
   '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute;
   '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute;
@@ -5503,6 +5682,7 @@ export interface FileRoutesByTo {
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute;
   '/components/chips': typeof ComponentsChipsIndexRoute;
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute;
+  '/components/dateInput': typeof ComponentsDateInputIndexRoute;
   '/components/drawer': typeof ComponentsDrawerIndexRoute;
   '/components/dropdown': typeof ComponentsDropdownIndexRoute;
   '/components/flex': typeof ComponentsFlexIndexRoute;
@@ -5609,6 +5789,15 @@ export interface FileRoutesById {
   '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute;
   '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute;
   '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute;
+  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute;
+  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute;
+  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute;
+  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute;
+  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute;
+  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute;
+  '/components/dateInput/state': typeof ComponentsDateInputStateRoute;
+  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute;
+  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute;
   '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute;
   '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute;
   '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute;
@@ -5813,6 +6002,7 @@ export interface FileRoutesById {
   '/components/checkbox/': typeof ComponentsCheckboxIndexRoute;
   '/components/chips/': typeof ComponentsChipsIndexRoute;
   '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute;
+  '/components/dateInput/': typeof ComponentsDateInputIndexRoute;
   '/components/drawer/': typeof ComponentsDrawerIndexRoute;
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute;
   '/components/flex/': typeof ComponentsFlexIndexRoute;
@@ -5920,6 +6110,15 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher/styles'
     | '/components/contentSwitcher/withBadge'
     | '/components/contentSwitcher/withIcons'
+    | '/components/dateInput/custom'
+    | '/components/dateInput/dateField'
+    | '/components/dateInput/dateFieldState'
+    | '/components/dateInput/range'
+    | '/components/dateInput/sizes'
+    | '/components/dateInput/specialDates'
+    | '/components/dateInput/state'
+    | '/components/dateInput/status'
+    | '/components/dateInput/variants'
     | '/components/drawer/customContent'
     | '/components/drawer/mobile'
     | '/components/drawer/nonClosable'
@@ -6124,6 +6323,7 @@ export interface FileRouteTypes {
     | '/components/checkbox'
     | '/components/chips'
     | '/components/contentSwitcher'
+    | '/components/dateInput'
     | '/components/drawer'
     | '/components/dropdown'
     | '/components/flex'
@@ -6228,6 +6428,15 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher/styles'
     | '/components/contentSwitcher/withBadge'
     | '/components/contentSwitcher/withIcons'
+    | '/components/dateInput/custom'
+    | '/components/dateInput/dateField'
+    | '/components/dateInput/dateFieldState'
+    | '/components/dateInput/range'
+    | '/components/dateInput/sizes'
+    | '/components/dateInput/specialDates'
+    | '/components/dateInput/state'
+    | '/components/dateInput/status'
+    | '/components/dateInput/variants'
     | '/components/drawer/customContent'
     | '/components/drawer/mobile'
     | '/components/drawer/nonClosable'
@@ -6432,6 +6641,7 @@ export interface FileRouteTypes {
     | '/components/checkbox'
     | '/components/chips'
     | '/components/contentSwitcher'
+    | '/components/dateInput'
     | '/components/drawer'
     | '/components/dropdown'
     | '/components/flex'
@@ -6536,6 +6746,15 @@ export interface FileRouteTypes {
     | '/components/contentSwitcher/styles'
     | '/components/contentSwitcher/withBadge'
     | '/components/contentSwitcher/withIcons'
+    | '/components/dateInput/custom'
+    | '/components/dateInput/dateField'
+    | '/components/dateInput/dateFieldState'
+    | '/components/dateInput/range'
+    | '/components/dateInput/sizes'
+    | '/components/dateInput/specialDates'
+    | '/components/dateInput/state'
+    | '/components/dateInput/status'
+    | '/components/dateInput/variants'
     | '/components/drawer/customContent'
     | '/components/drawer/mobile'
     | '/components/drawer/nonClosable'
@@ -6740,6 +6959,7 @@ export interface FileRouteTypes {
     | '/components/checkbox/'
     | '/components/chips/'
     | '/components/contentSwitcher/'
+    | '/components/dateInput/'
     | '/components/drawer/'
     | '/components/dropdown/'
     | '/components/flex/'
@@ -6869,6 +7089,15 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
         "/components/contentSwitcher/styles",
         "/components/contentSwitcher/withBadge",
         "/components/contentSwitcher/withIcons",
+        "/components/dateInput/custom",
+        "/components/dateInput/dateField",
+        "/components/dateInput/dateFieldState",
+        "/components/dateInput/range",
+        "/components/dateInput/sizes",
+        "/components/dateInput/specialDates",
+        "/components/dateInput/state",
+        "/components/dateInput/status",
+        "/components/dateInput/variants",
         "/components/drawer/customContent",
         "/components/drawer/mobile",
         "/components/drawer/nonClosable",
@@ -7073,6 +7302,7 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
         "/components/checkbox/",
         "/components/chips/",
         "/components/contentSwitcher/",
+        "/components/dateInput/",
         "/components/drawer/",
         "/components/dropdown/",
         "/components/flex/",
@@ -7349,6 +7579,42 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
     },
     "/components/contentSwitcher/withIcons": {
       "filePath": "components/contentSwitcher/withIcons.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/custom": {
+      "filePath": "components/dateInput/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/dateField": {
+      "filePath": "components/dateInput/dateField.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/dateFieldState": {
+      "filePath": "components/dateInput/dateFieldState.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/range": {
+      "filePath": "components/dateInput/range.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/sizes": {
+      "filePath": "components/dateInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/specialDates": {
+      "filePath": "components/dateInput/specialDates.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/state": {
+      "filePath": "components/dateInput/state.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/status": {
+      "filePath": "components/dateInput/status.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/variants": {
+      "filePath": "components/dateInput/variants.tsx",
       "parent": "/components"
     },
     "/components/drawer/customContent": {
@@ -8165,6 +8431,10 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
     },
     "/components/contentSwitcher/": {
       "filePath": "components/contentSwitcher/index.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/": {
+      "filePath": "components/dateInput/index.tsx",
       "parent": "/components"
     },
     "/components/drawer/": {

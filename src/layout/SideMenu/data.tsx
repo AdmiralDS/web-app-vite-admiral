@@ -624,6 +624,22 @@ const data = [
     ],
   },
   {
+    name: 'DateInput',
+    path: '/components/dateInput',
+    routes: [
+      { name: 'Базовый пример', path: '/components/dateInput' },
+      { name: 'Размеры', path: '/components/dateInput/sizes' },
+      { name: 'Состояния', path: '/components/DateInput/state' },
+      { name: 'Статусы', path: '/components/DateInput/status' },
+      { name: 'Type "date-range"', path: '/components/DateInput/range' },
+      { name: 'Варианты отображения дат', path: '/components/DateInput/variants' },
+      { name: 'С альтернативной иконкой', path: '/components/DateInput/custom' },
+      { name: 'Выделение определённых дат', path: '/components/DateInput/specialDates' },
+      { name: 'DateField. Базовый пример', path: '/components/DateInput/dateField' },
+      { name: 'DateField. Состояния', path: '/components/DateInput/dateFieldState' },
+    ],
+  },
+  {
     name: 'Select',
     path: '/components/select',
     routes: [
