@@ -639,6 +639,15 @@ const data = [
       { name: 'DateField. Состояния', path: '/components/DateInput/dateFieldState' },
     ],
   },
+  {
+    name: 'Select',
+    path: '/components/select',
+    routes: [
+      { name: 'Базовый пример', path: '/components/select' },
+      { name: 'Состояния', path: '/components/select/state' },
+      { name: 'MultiSelect с кнопкой "Выбрать все"', path: '/components/select/multiSelectChooseAll' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
