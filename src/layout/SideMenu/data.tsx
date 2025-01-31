@@ -645,6 +645,7 @@ const data = [
     routes: [
       { name: 'Базовый пример', path: '/components/select' },
       { name: 'Состояния', path: '/components/select/state' },
+      { name: 'MultiSelect с кнопкой "Выбрать все"', path: '/components/select/multiSelectChooseAll' },
     ],
   },
 ];
