@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@admiral-ds/react-ui": "8.29.4",
+    "@admiral-ds/react-ui": "8.32.0",
     "@tanstack/react-router": "^1.90.0",
     "jest-environment-jsdom": "^29.7.0",
     "react": "^18.3.1",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@admiral-ds/icons": "^4.3.1",
     "@admiral-ds/web": "^0.0.1",
+    "@tanstack/react-query": "^5.59.14",
     "@tanstack/router-plugin": "^1.76.4",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^14.3.1",
@@ -32,7 +33,6 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "@tanstack/react-query": "^5.59.14",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
