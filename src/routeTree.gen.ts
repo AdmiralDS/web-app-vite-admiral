@@ -73,6 +73,7 @@ import { Route as ComponentsBreadcrumbsIndexImport } from './routes/components/b
 import { Route as ComponentsBadgeDotIndexImport } from './routes/components/badgeDot/index'
 import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
 import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
+import { Route as ComponentsAnchorIndexImport } from './routes/components/anchor/index'
 import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
 import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
 import { Route as ComponentsTreeWithOnChangeHandlerImport } from './routes/components/tree/withOnChangeHandler'
@@ -322,6 +323,9 @@ import { Route as ComponentsAvatarStylesImport } from './routes/components/avata
 import { Route as ComponentsAvatarSizeXXSImport } from './routes/components/avatar/sizeXXS'
 import { Route as ComponentsAvatarAvatarGroupLimitedWidthImport } from './routes/components/avatar/avatarGroupLimitedWidth'
 import { Route as ComponentsAvatarAvatarGroupImport } from './routes/components/avatar/avatarGroup'
+import { Route as ComponentsAnchorTreeImport } from './routes/components/anchor/tree'
+import { Route as ComponentsAnchorStateImport } from './routes/components/anchor/state'
+import { Route as ComponentsAnchorSizesImport } from './routes/components/anchor/sizes'
 import { Route as ComponentsActionBarDimensionsImport } from './routes/components/actionBar/dimensions'
 import { Route as ComponentsActionBarAdaptiveImport } from './routes/components/actionBar/adaptive'
 import { Route as ComponentsAccordionAccordionModesImport } from './routes/components/accordion/accordionModes'
@@ -728,6 +732,12 @@ const ComponentsBadgeIndexRoute = ComponentsBadgeIndexImport.update({
 const ComponentsAvatarIndexRoute = ComponentsAvatarIndexImport.update({
   id: '/avatar/',
   path: '/avatar/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsAnchorIndexRoute = ComponentsAnchorIndexImport.update({
+  id: '/anchor/',
+  path: '/anchor/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -2404,6 +2414,24 @@ const ComponentsAvatarAvatarGroupRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsAnchorTreeRoute = ComponentsAnchorTreeImport.update({
+  id: '/anchor/tree',
+  path: '/anchor/tree',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsAnchorStateRoute = ComponentsAnchorStateImport.update({
+  id: '/anchor/state',
+  path: '/anchor/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsAnchorSizesRoute = ComponentsAnchorSizesImport.update({
+  id: '/anchor/sizes',
+  path: '/anchor/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
 const ComponentsActionBarDimensionsRoute =
   ComponentsActionBarDimensionsImport.update({
     id: '/actionBar/dimensions',
@@ -2539,6 +2567,27 @@ declare module '@tanstack/react-router' {
       path: '/actionBar/dimensions'
       fullPath: '/components/actionBar/dimensions'
       preLoaderRoute: typeof ComponentsActionBarDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/anchor/sizes': {
+      id: '/components/anchor/sizes'
+      path: '/anchor/sizes'
+      fullPath: '/components/anchor/sizes'
+      preLoaderRoute: typeof ComponentsAnchorSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/anchor/state': {
+      id: '/components/anchor/state'
+      path: '/anchor/state'
+      fullPath: '/components/anchor/state'
+      preLoaderRoute: typeof ComponentsAnchorStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/anchor/tree': {
+      id: '/components/anchor/tree'
+      path: '/anchor/tree'
+      fullPath: '/components/anchor/tree'
+      preLoaderRoute: typeof ComponentsAnchorTreeImport
       parentRoute: typeof ComponentsImport
     }
     '/components/avatar/avatarGroup': {
@@ -4284,6 +4333,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsActionBarIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/anchor/': {
+      id: '/components/anchor/'
+      path: '/anchor'
+      fullPath: '/components/anchor'
+      preLoaderRoute: typeof ComponentsAnchorIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/avatar/': {
       id: '/components/avatar/'
       path: '/avatar'
@@ -4681,6 +4737,9 @@ interface ComponentsRouteChildren {
   ComponentsAccordionAccordionModesRoute: typeof ComponentsAccordionAccordionModesRoute
   ComponentsActionBarAdaptiveRoute: typeof ComponentsActionBarAdaptiveRoute
   ComponentsActionBarDimensionsRoute: typeof ComponentsActionBarDimensionsRoute
+  ComponentsAnchorSizesRoute: typeof ComponentsAnchorSizesRoute
+  ComponentsAnchorStateRoute: typeof ComponentsAnchorStateRoute
+  ComponentsAnchorTreeRoute: typeof ComponentsAnchorTreeRoute
   ComponentsAvatarAvatarGroupRoute: typeof ComponentsAvatarAvatarGroupRoute
   ComponentsAvatarAvatarGroupLimitedWidthRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   ComponentsAvatarSizeXXSRoute: typeof ComponentsAvatarSizeXXSRoute
@@ -4930,6 +4989,7 @@ interface ComponentsRouteChildren {
   ComponentsTreeWithOnChangeHandlerRoute: typeof ComponentsTreeWithOnChangeHandlerRoute
   ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
   ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
+  ComponentsAnchorIndexRoute: typeof ComponentsAnchorIndexRoute
   ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
   ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
   ComponentsBadgeDotIndexRoute: typeof ComponentsBadgeDotIndexRoute
@@ -4997,6 +5057,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsAccordionAccordionModesRoute,
   ComponentsActionBarAdaptiveRoute: ComponentsActionBarAdaptiveRoute,
   ComponentsActionBarDimensionsRoute: ComponentsActionBarDimensionsRoute,
+  ComponentsAnchorSizesRoute: ComponentsAnchorSizesRoute,
+  ComponentsAnchorStateRoute: ComponentsAnchorStateRoute,
+  ComponentsAnchorTreeRoute: ComponentsAnchorTreeRoute,
   ComponentsAvatarAvatarGroupRoute: ComponentsAvatarAvatarGroupRoute,
   ComponentsAvatarAvatarGroupLimitedWidthRoute:
     ComponentsAvatarAvatarGroupLimitedWidthRoute,
@@ -5293,6 +5356,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTreeWithOnChangeHandlerRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
   ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
+  ComponentsAnchorIndexRoute: ComponentsAnchorIndexRoute,
   ComponentsAvatarIndexRoute: ComponentsAvatarIndexRoute,
   ComponentsBadgeIndexRoute: ComponentsBadgeIndexRoute,
   ComponentsBadgeDotIndexRoute: ComponentsBadgeDotIndexRoute,
@@ -5385,6 +5449,9 @@ export interface FileRoutesByFullPath {
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
   '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
   '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
+  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute
+  '/components/anchor/state': typeof ComponentsAnchorStateRoute
+  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute
   '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
   '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
@@ -5634,6 +5701,7 @@ export interface FileRoutesByFullPath {
   '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
+  '/components/anchor': typeof ComponentsAnchorIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
@@ -5705,6 +5773,9 @@ export interface FileRoutesByTo {
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
   '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
   '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
+  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute
+  '/components/anchor/state': typeof ComponentsAnchorStateRoute
+  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute
   '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
   '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
@@ -5954,6 +6025,7 @@ export interface FileRoutesByTo {
   '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion': typeof ComponentsAccordionIndexRoute
   '/components/actionBar': typeof ComponentsActionBarIndexRoute
+  '/components/anchor': typeof ComponentsAnchorIndexRoute
   '/components/avatar': typeof ComponentsAvatarIndexRoute
   '/components/badge': typeof ComponentsBadgeIndexRoute
   '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
@@ -6026,6 +6098,9 @@ export interface FileRoutesById {
   '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
   '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
   '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
+  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute
+  '/components/anchor/state': typeof ComponentsAnchorStateRoute
+  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute
   '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
   '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
   '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
@@ -6275,6 +6350,7 @@ export interface FileRoutesById {
   '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
   '/components/accordion/': typeof ComponentsAccordionIndexRoute
   '/components/actionBar/': typeof ComponentsActionBarIndexRoute
+  '/components/anchor/': typeof ComponentsAnchorIndexRoute
   '/components/avatar/': typeof ComponentsAvatarIndexRoute
   '/components/badge/': typeof ComponentsBadgeIndexRoute
   '/components/badgeDot/': typeof ComponentsBadgeDotIndexRoute
@@ -6348,6 +6424,9 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionModes'
     | '/components/actionBar/adaptive'
     | '/components/actionBar/dimensions'
+    | '/components/anchor/sizes'
+    | '/components/anchor/state'
+    | '/components/anchor/tree'
     | '/components/avatar/avatarGroup'
     | '/components/avatar/avatarGroupLimitedWidth'
     | '/components/avatar/sizeXXS'
@@ -6597,6 +6676,7 @@ export interface FileRouteTypes {
     | '/components/tree/withOnChangeHandler'
     | '/components/accordion'
     | '/components/actionBar'
+    | '/components/anchor'
     | '/components/avatar'
     | '/components/badge'
     | '/components/badgeDot'
@@ -6667,6 +6747,9 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionModes'
     | '/components/actionBar/adaptive'
     | '/components/actionBar/dimensions'
+    | '/components/anchor/sizes'
+    | '/components/anchor/state'
+    | '/components/anchor/tree'
     | '/components/avatar/avatarGroup'
     | '/components/avatar/avatarGroupLimitedWidth'
     | '/components/avatar/sizeXXS'
@@ -6916,6 +6999,7 @@ export interface FileRouteTypes {
     | '/components/tree/withOnChangeHandler'
     | '/components/accordion'
     | '/components/actionBar'
+    | '/components/anchor'
     | '/components/avatar'
     | '/components/badge'
     | '/components/badgeDot'
@@ -6986,6 +7070,9 @@ export interface FileRouteTypes {
     | '/components/accordion/accordionModes'
     | '/components/actionBar/adaptive'
     | '/components/actionBar/dimensions'
+    | '/components/anchor/sizes'
+    | '/components/anchor/state'
+    | '/components/anchor/tree'
     | '/components/avatar/avatarGroup'
     | '/components/avatar/avatarGroupLimitedWidth'
     | '/components/avatar/sizeXXS'
@@ -7235,6 +7322,7 @@ export interface FileRouteTypes {
     | '/components/tree/withOnChangeHandler'
     | '/components/accordion/'
     | '/components/actionBar/'
+    | '/components/anchor/'
     | '/components/avatar/'
     | '/components/badge/'
     | '/components/badgeDot/'
@@ -7332,6 +7420,9 @@ export const routeTree = rootRoute
         "/components/accordion/accordionModes",
         "/components/actionBar/adaptive",
         "/components/actionBar/dimensions",
+        "/components/anchor/sizes",
+        "/components/anchor/state",
+        "/components/anchor/tree",
         "/components/avatar/avatarGroup",
         "/components/avatar/avatarGroupLimitedWidth",
         "/components/avatar/sizeXXS",
@@ -7581,6 +7672,7 @@ export const routeTree = rootRoute
         "/components/tree/withOnChangeHandler",
         "/components/accordion/",
         "/components/actionBar/",
+        "/components/anchor/",
         "/components/avatar/",
         "/components/badge/",
         "/components/badgeDot/",
@@ -7685,6 +7777,18 @@ export const routeTree = rootRoute
     },
     "/components/actionBar/dimensions": {
       "filePath": "components/actionBar/dimensions.tsx",
+      "parent": "/components"
+    },
+    "/components/anchor/sizes": {
+      "filePath": "components/anchor/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/anchor/state": {
+      "filePath": "components/anchor/state.tsx",
+      "parent": "/components"
+    },
+    "/components/anchor/tree": {
+      "filePath": "components/anchor/tree.tsx",
       "parent": "/components"
     },
     "/components/avatar/avatarGroup": {
@@ -8681,6 +8785,10 @@ export const routeTree = rootRoute
     },
     "/components/actionBar/": {
       "filePath": "components/actionBar/index.tsx",
+      "parent": "/components"
+    },
+    "/components/anchor/": {
+      "filePath": "components/anchor/index.tsx",
       "parent": "/components"
     },
     "/components/avatar/": {

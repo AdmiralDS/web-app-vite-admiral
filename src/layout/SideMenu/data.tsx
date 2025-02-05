@@ -648,6 +648,16 @@ const data = [
       { name: 'MultiSelect с кнопкой "Выбрать все"', path: '/components/select/multiSelectChooseAll' },
     ],
   },
+  {
+    name: 'Anchor',
+    path: '/components/anchor',
+    routes: [
+      { name: 'Базовый пример', path: '/components/anchor' },
+      { name: 'Размеры', path: '/components/anchor/sizes' },
+      { name: 'Tree', path: '/components/anchor/tree' },
+      { name: 'Состояния', path: '/components/anchor/state' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
