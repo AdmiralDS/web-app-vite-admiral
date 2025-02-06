@@ -13,3 +13,27 @@ import 'jest-styled-components';
 // import * as ResizeObserverModule from 'resize-observer-polyfill';
 
 // window.ResizeObserver = ResizeObserverModule.default;
+
+export class IntersectionObserver {
+  root = null;
+  rootMargin = '';
+  thresholds = [];
+
+  disconnect() {
+    return null;
+  }
+
+  observe() {
+    return null;
+  }
+
+  takeRecords() {
+    return [];
+  }
+
+  unobserve() {
+    return null;
+  }
+}
+window.IntersectionObserver = IntersectionObserver;
+global.IntersectionObserver = IntersectionObserver;
