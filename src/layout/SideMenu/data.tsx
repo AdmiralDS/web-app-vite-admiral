@@ -640,6 +640,16 @@ const data = [
     ],
   },
   {
+    name: 'Anchor',
+    path: '/components/anchor',
+    routes: [
+      { name: 'Базовый пример', path: '/components/anchor' },
+      { name: 'Размеры', path: '/components/anchor/sizes' },
+      { name: 'Tree', path: '/components/anchor/tree' },
+      { name: 'Состояния', path: '/components/anchor/state' },
+    ],
+  },
+  {
     name: 'Divider',
     path: '/components/divider',
     routes: [
