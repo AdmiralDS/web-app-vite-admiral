@@ -20,8 +20,6 @@ const DividerType = () => {
 export const Route = createFileRoute('/components/divider/type')({
   component: () => <DividerType />,
   staticData: {
-    title: 'Divider. Тип (orientation)',
-    description:
-      'Компонент для визуального разделения групп контента, создания визуальной иерархии или упорядочивания длинного списка элементов.',
+    title: 'Divider. Тип (orientation)'
   },
 })

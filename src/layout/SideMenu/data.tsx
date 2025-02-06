@@ -657,7 +657,6 @@ const data = [
       { name: 'Тип (ориентация)', path: '/components/divider/type' },
       { name: 'Стиль', path: '/components/divider/style' },
       { name: 'Толщина линии', path: '/components/divider/thikness' },
-      { name: 'Тема', path: '/components/divider/theme' },
       { name: 'Длина', path: '/components/divider/length' },
     ],
   },

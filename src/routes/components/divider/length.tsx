@@ -32,8 +32,6 @@ const DividerType = () => {
 export const Route = createFileRoute('/components/divider/length')({
   component: () => <DividerType />,
   staticData: {
-    title: 'Divider. Длина линии (length)',
-    description:
-      'Компонент для визуального разделения групп контента, создания визуальной иерархии или упорядочивания длинного списка элементов.',
+    title: 'Divider. Длина линии (length)'
   },
 })

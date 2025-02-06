@@ -64,16 +64,6 @@ const DividerType = () => {
             <Divider dimension="s" orientation="vertical" length="150px" appearance="primary" />
           </WrapperVertical>
       </ExampleSection>
-      <ExampleSection text={'Стиль custom'}>
-          <Divider dimension="s" appearance="#84106e" />
-          <SeparatorHorizontal height={16} />
-          <Divider appearance="#84106e" />
-          <WrapperVertical>
-            <Divider orientation="vertical" length="150px" appearance="#84106e" />
-            <SeparatorVertical width={16} />
-            <Divider dimension="s" orientation="vertical" length="150px" appearance="#84106e" />
-          </WrapperVertical>
-      </ExampleSection>
       <ExampleSectionDark text={'Стиль staticWhite'}>
           <Divider dimension="s" appearance="staticWhite" />
           <SeparatorHorizontal height={16} />
@@ -84,6 +74,16 @@ const DividerType = () => {
             <Divider dimension="s" orientation="vertical" length="150px" appearance="staticWhite" />
           </WrapperVertical>
       </ExampleSectionDark>
+      <ExampleSection text={'Стиль custom'}>
+          <Divider dimension="s" appearance="#84106e" />
+          <SeparatorHorizontal height={16} />
+          <Divider appearance="#84106e" />
+          <WrapperVertical>
+            <Divider orientation="vertical" length="150px" appearance="#84106e" />
+            <SeparatorVertical width={16} />
+            <Divider dimension="s" orientation="vertical" length="150px" appearance="#84106e" />
+          </WrapperVertical>
+      </ExampleSection>
     </>
   )
 }
@@ -91,8 +91,6 @@ const DividerType = () => {
 export const Route = createFileRoute('/components/divider/style')({
   component: () => <DividerType />,
   staticData: {
-    title: 'Divider. Стиль (appearance)',
-    description:
-      'Компонент для визуального разделения групп контента, создания визуальной иерархии или упорядочивания длинного списка элементов.',
+    title: 'Divider. Стиль (appearance)'
   },
 })
