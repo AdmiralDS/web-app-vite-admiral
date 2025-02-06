@@ -34,6 +34,7 @@ const DividerType = () => {
 export const Route = createFileRoute('/components/divider/thikness')({
   component: () => <DividerType />,
   staticData: {
-    title: 'Divider. Толщина линии (dimension)'
+    title: 'Divider. Толщина линии (dimension)',
+    description: 'Размер компонента, определяет толщину разделителя "s","m"'
   },
 })
