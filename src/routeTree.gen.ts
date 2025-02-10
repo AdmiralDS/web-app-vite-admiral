@@ -61,6 +61,7 @@ import { Route as ComponentsFlexIndexImport } from './routes/components/flex/ind
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
 import { Route as ComponentsDividerIndexImport } from './routes/components/divider/index'
+import { Route as ComponentsDateTimeFieldIndexImport } from './routes/components/dateTimeField/index'
 import { Route as ComponentsDateInputIndexImport } from './routes/components/dateInput/index'
 import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
 import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index'
@@ -270,6 +271,10 @@ import { Route as ComponentsDividerTypeImport } from './routes/components/divide
 import { Route as ComponentsDividerThiknessImport } from './routes/components/divider/thikness'
 import { Route as ComponentsDividerStyleImport } from './routes/components/divider/style'
 import { Route as ComponentsDividerLengthImport } from './routes/components/divider/length'
+import { Route as ComponentsDateTimeFieldStatusImport } from './routes/components/dateTimeField/status'
+import { Route as ComponentsDateTimeFieldExtraTextImport } from './routes/components/dateTimeField/extraText'
+import { Route as ComponentsDateTimeFieldDisplayInlineImport } from './routes/components/dateTimeField/displayInline'
+import { Route as ComponentsDateTimeFieldDimensionImport } from './routes/components/dateTimeField/dimension'
 import { Route as ComponentsDateInputVariantsImport } from './routes/components/dateInput/variants'
 import { Route as ComponentsDateInputStatusImport } from './routes/components/dateInput/status'
 import { Route as ComponentsDateInputStateImport } from './routes/components/dateInput/state'
@@ -658,6 +663,13 @@ const ComponentsDividerIndexRoute = ComponentsDividerIndexImport.update({
   path: '/divider/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsDateTimeFieldIndexRoute =
+  ComponentsDateTimeFieldIndexImport.update({
+    id: '/dateTimeField/',
+    path: '/dateTimeField/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDateInputIndexRoute = ComponentsDateInputIndexImport.update({
   id: '/dateInput/',
@@ -2055,6 +2067,34 @@ const ComponentsDividerLengthRoute = ComponentsDividerLengthImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsDateTimeFieldStatusRoute =
+  ComponentsDateTimeFieldStatusImport.update({
+    id: '/dateTimeField/status',
+    path: '/dateTimeField/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDateTimeFieldExtraTextRoute =
+  ComponentsDateTimeFieldExtraTextImport.update({
+    id: '/dateTimeField/extraText',
+    path: '/dateTimeField/extraText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDateTimeFieldDisplayInlineRoute =
+  ComponentsDateTimeFieldDisplayInlineImport.update({
+    id: '/dateTimeField/displayInline',
+    path: '/dateTimeField/displayInline',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDateTimeFieldDimensionRoute =
+  ComponentsDateTimeFieldDimensionImport.update({
+    id: '/dateTimeField/dimension',
+    path: '/dateTimeField/dimension',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsDateInputVariantsRoute =
   ComponentsDateInputVariantsImport.update({
     id: '/dateInput/variants',
@@ -2986,6 +3026,34 @@ declare module '@tanstack/react-router' {
       path: '/dateInput/variants'
       fullPath: '/components/dateInput/variants'
       preLoaderRoute: typeof ComponentsDateInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateTimeField/dimension': {
+      id: '/components/dateTimeField/dimension'
+      path: '/dateTimeField/dimension'
+      fullPath: '/components/dateTimeField/dimension'
+      preLoaderRoute: typeof ComponentsDateTimeFieldDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateTimeField/displayInline': {
+      id: '/components/dateTimeField/displayInline'
+      path: '/dateTimeField/displayInline'
+      fullPath: '/components/dateTimeField/displayInline'
+      preLoaderRoute: typeof ComponentsDateTimeFieldDisplayInlineImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateTimeField/extraText': {
+      id: '/components/dateTimeField/extraText'
+      path: '/dateTimeField/extraText'
+      fullPath: '/components/dateTimeField/extraText'
+      preLoaderRoute: typeof ComponentsDateTimeFieldExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateTimeField/status': {
+      id: '/components/dateTimeField/status'
+      path: '/dateTimeField/status'
+      fullPath: '/components/dateTimeField/status'
+      preLoaderRoute: typeof ComponentsDateTimeFieldStatusImport
       parentRoute: typeof ComponentsImport
     }
     '/components/divider/length': {
@@ -4451,6 +4519,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDateInputIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/dateTimeField/': {
+      id: '/components/dateTimeField/'
+      path: '/dateTimeField'
+      fullPath: '/components/dateTimeField'
+      preLoaderRoute: typeof ComponentsDateTimeFieldIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/': {
       id: '/components/divider/'
       path: '/divider'
@@ -4822,6 +4897,10 @@ interface ComponentsRouteChildren {
   ComponentsDateInputStateRoute: typeof ComponentsDateInputStateRoute
   ComponentsDateInputStatusRoute: typeof ComponentsDateInputStatusRoute
   ComponentsDateInputVariantsRoute: typeof ComponentsDateInputVariantsRoute
+  ComponentsDateTimeFieldDimensionRoute: typeof ComponentsDateTimeFieldDimensionRoute
+  ComponentsDateTimeFieldDisplayInlineRoute: typeof ComponentsDateTimeFieldDisplayInlineRoute
+  ComponentsDateTimeFieldExtraTextRoute: typeof ComponentsDateTimeFieldExtraTextRoute
+  ComponentsDateTimeFieldStatusRoute: typeof ComponentsDateTimeFieldStatusRoute
   ComponentsDividerLengthRoute: typeof ComponentsDividerLengthRoute
   ComponentsDividerStyleRoute: typeof ComponentsDividerStyleRoute
   ComponentsDividerThiknessRoute: typeof ComponentsDividerThiknessRoute
@@ -5031,6 +5110,7 @@ interface ComponentsRouteChildren {
   ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute
   ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
   ComponentsDateInputIndexRoute: typeof ComponentsDateInputIndexRoute
+  ComponentsDateTimeFieldIndexRoute: typeof ComponentsDateTimeFieldIndexRoute
   ComponentsDividerIndexRoute: typeof ComponentsDividerIndexRoute
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
@@ -5153,6 +5233,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDateInputStateRoute: ComponentsDateInputStateRoute,
   ComponentsDateInputStatusRoute: ComponentsDateInputStatusRoute,
   ComponentsDateInputVariantsRoute: ComponentsDateInputVariantsRoute,
+  ComponentsDateTimeFieldDimensionRoute: ComponentsDateTimeFieldDimensionRoute,
+  ComponentsDateTimeFieldDisplayInlineRoute:
+    ComponentsDateTimeFieldDisplayInlineRoute,
+  ComponentsDateTimeFieldExtraTextRoute: ComponentsDateTimeFieldExtraTextRoute,
+  ComponentsDateTimeFieldStatusRoute: ComponentsDateTimeFieldStatusRoute,
   ComponentsDividerLengthRoute: ComponentsDividerLengthRoute,
   ComponentsDividerStyleRoute: ComponentsDividerStyleRoute,
   ComponentsDividerThiknessRoute: ComponentsDividerThiknessRoute,
@@ -5399,6 +5484,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsChipsIndexRoute: ComponentsChipsIndexRoute,
   ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
   ComponentsDateInputIndexRoute: ComponentsDateInputIndexRoute,
+  ComponentsDateTimeFieldIndexRoute: ComponentsDateTimeFieldIndexRoute,
   ComponentsDividerIndexRoute: ComponentsDividerIndexRoute,
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
@@ -5537,6 +5623,10 @@ export interface FileRoutesByFullPath {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
   '/components/divider/length': typeof ComponentsDividerLengthRoute
   '/components/divider/style': typeof ComponentsDividerStyleRoute
   '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
@@ -5746,6 +5836,7 @@ export interface FileRoutesByFullPath {
   '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/dateInput': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute
   '/components/divider': typeof ComponentsDividerIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
@@ -5863,6 +5954,10 @@ export interface FileRoutesByTo {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
   '/components/divider/length': typeof ComponentsDividerLengthRoute
   '/components/divider/style': typeof ComponentsDividerStyleRoute
   '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
@@ -6072,6 +6167,7 @@ export interface FileRoutesByTo {
   '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/dateInput': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute
   '/components/divider': typeof ComponentsDividerIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
@@ -6190,6 +6286,10 @@ export interface FileRoutesById {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
   '/components/divider/length': typeof ComponentsDividerLengthRoute
   '/components/divider/style': typeof ComponentsDividerStyleRoute
   '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
@@ -6399,6 +6499,7 @@ export interface FileRoutesById {
   '/components/chips/': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
   '/components/dateInput/': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField/': typeof ComponentsDateTimeFieldIndexRoute
   '/components/divider/': typeof ComponentsDividerIndexRoute
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
@@ -6518,6 +6619,10 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateTimeField/dimension'
+    | '/components/dateTimeField/displayInline'
+    | '/components/dateTimeField/extraText'
+    | '/components/dateTimeField/status'
     | '/components/divider/length'
     | '/components/divider/style'
     | '/components/divider/thikness'
@@ -6727,6 +6832,7 @@ export interface FileRouteTypes {
     | '/components/chips'
     | '/components/contentSwitcher'
     | '/components/dateInput'
+    | '/components/dateTimeField'
     | '/components/divider'
     | '/components/drawer'
     | '/components/dropdown'
@@ -6843,6 +6949,10 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateTimeField/dimension'
+    | '/components/dateTimeField/displayInline'
+    | '/components/dateTimeField/extraText'
+    | '/components/dateTimeField/status'
     | '/components/divider/length'
     | '/components/divider/style'
     | '/components/divider/thikness'
@@ -7052,6 +7162,7 @@ export interface FileRouteTypes {
     | '/components/chips'
     | '/components/contentSwitcher'
     | '/components/dateInput'
+    | '/components/dateTimeField'
     | '/components/divider'
     | '/components/drawer'
     | '/components/dropdown'
@@ -7168,6 +7279,10 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateTimeField/dimension'
+    | '/components/dateTimeField/displayInline'
+    | '/components/dateTimeField/extraText'
+    | '/components/dateTimeField/status'
     | '/components/divider/length'
     | '/components/divider/style'
     | '/components/divider/thikness'
@@ -7377,6 +7492,7 @@ export interface FileRouteTypes {
     | '/components/chips/'
     | '/components/contentSwitcher/'
     | '/components/dateInput/'
+    | '/components/dateTimeField/'
     | '/components/divider/'
     | '/components/drawer/'
     | '/components/dropdown/'
@@ -7520,6 +7636,10 @@ export const routeTree = rootRoute
         "/components/dateInput/state",
         "/components/dateInput/status",
         "/components/dateInput/variants",
+        "/components/dateTimeField/dimension",
+        "/components/dateTimeField/displayInline",
+        "/components/dateTimeField/extraText",
+        "/components/dateTimeField/status",
         "/components/divider/length",
         "/components/divider/style",
         "/components/divider/thikness",
@@ -7729,6 +7849,7 @@ export const routeTree = rootRoute
         "/components/chips/",
         "/components/contentSwitcher/",
         "/components/dateInput/",
+        "/components/dateTimeField/",
         "/components/divider/",
         "/components/drawer/",
         "/components/dropdown/",
@@ -8053,6 +8174,22 @@ export const routeTree = rootRoute
     },
     "/components/dateInput/variants": {
       "filePath": "components/dateInput/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/dimension": {
+      "filePath": "components/dateTimeField/dimension.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/displayInline": {
+      "filePath": "components/dateTimeField/displayInline.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/extraText": {
+      "filePath": "components/dateTimeField/extraText.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/status": {
+      "filePath": "components/dateTimeField/status.tsx",
       "parent": "/components"
     },
     "/components/divider/length": {
@@ -8889,6 +9026,10 @@ export const routeTree = rootRoute
     },
     "/components/dateInput/": {
       "filePath": "components/dateInput/index.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/": {
+      "filePath": "components/dateTimeField/index.tsx",
       "parent": "/components"
     },
     "/components/divider/": {

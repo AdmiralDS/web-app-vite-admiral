@@ -650,6 +650,17 @@ const data = [
     ],
   },
   {
+    name: 'DateTimeField',
+    path: '/components/dateTimeField',
+    routes: [
+      { name: 'Базовый пример', path: '/components/dateTimeField' },
+      { name: 'Размеры', path: '/components/dateTimeField/dimension' },
+      { name: 'Дополнительный текст', path: '/components/dateTimeField/extraText' },
+      { name: 'С подписью в одну линию', path: '/components/dateTimeField/displayInline' },
+      { name: 'Состояние/статус', path: '/components/dateTimeField/status' },
+    ],
+  },
+  {
     name: 'Divider',
     path: '/components/divider',
     routes: [
