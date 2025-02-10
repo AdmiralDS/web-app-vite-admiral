@@ -22,10 +22,7 @@ const Example = () => {
 
   return (
     <>
-      <PStyled>
-        Для многострочного ввода используйте компонент EditModeAria
-      </PStyled>
-      <ExampleSection>
+      <ExampleSection text='Для многострочного ввода используйте компонент EditModeAria'>
         <Wrapper>
           <EditMode
             value={localValue}

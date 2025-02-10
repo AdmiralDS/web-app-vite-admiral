@@ -36,12 +36,6 @@ return (
 const Examples = () => {
   return (
     <>
-      <PStyled>
-        Присутствует в 4 размерах: S, M (имеют написание Regular и Bold) и XL,
-        XXL (только Bold). Переключение между Regular и Bold не изменяют размеры
-        компонента. В режиме редактирования может применяться с поясняющим
-        текстом или без него.
-      </PStyled>
       <ExampleSection text='Размер S'>
         <Component dimension='s' />
         <Component dimension='s' bold />
@@ -71,5 +65,6 @@ export const Route = createFileRoute('/components/editMode/dimensions')({
   component: () => <EditModeDimensions />,
   staticData: {
     title: 'Edit mode. Размеры',
+    description: 'Присутствует в 4 размерах: S, M (имеют написание Regular и Bold) и XL, XXL (только Bold). Переключение между Regular и Bold не изменяют размеры компонента. В режиме редактирования может применяться с поясняющим текстом или без него.'
   },
 })
