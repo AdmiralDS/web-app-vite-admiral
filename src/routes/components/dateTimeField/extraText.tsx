@@ -7,7 +7,7 @@ import {
   DateTimeTimeInput,
   Field
 } from '@admiral-ds/react-ui'
-import { ExampleSection, PStyled } from '../../-helpers/examples'
+import { ExampleSection } from '../../-helpers/examples'
 
 const CompoundComponent = ({
   extraText,
@@ -28,7 +28,6 @@ const CompoundComponent = ({
 const Example = () => {
   return (
     <>
-      <PStyled>Дополнительный текст, который отображается под полем ввода</PStyled>
       <ExampleSection>
         <CompoundComponent extraText={'Дополнительный текст'} />
       </ExampleSection>
@@ -44,5 +43,6 @@ export const Route = createFileRoute('/components/dateTimeField/extraText')({
   component: () => <DateTimeFieldExtraText />,
   staticData: {
     title: 'DateTime Field. Дополнительный текст',
+    description: 'Дополнительный текст, который отображается под полем ввода'
   },
 })

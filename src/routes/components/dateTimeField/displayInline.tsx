@@ -7,7 +7,7 @@ import {
   DateTimeTimeInput,
   Field,
 } from '@admiral-ds/react-ui'
-import { ExampleSection, PStyled } from '../../-helpers/examples'
+import { ExampleSection } from '../../-helpers/examples'
 
 const CompoundComponent = ({ displayInline, label }: { displayInline?: boolean, label: string }) => {
   return (
@@ -24,9 +24,6 @@ const CompoundComponent = ({ displayInline, label }: { displayInline?: boolean, 
 const Example = () => {
   return (
     <>
-      <PStyled>
-        Лэйбл отображается на одном уровне с полем ввода
-      </PStyled>
       <ExampleSection>
         <CompoundComponent displayInline label={'Введите дату'} />
       </ExampleSection>
@@ -43,6 +40,7 @@ export const Route = createFileRoute('/components/dateTimeField/displayInline')(
     component: () => <DateTimeFieldDisplayLine />,
     staticData: {
       title: 'DateTime Field. Подпись в одну линию с полем ввода',
+      description: 'Лэйбл отображается на одном уровне с полем ввода'
     },
   },
 )
