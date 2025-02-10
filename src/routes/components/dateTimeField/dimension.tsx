@@ -8,7 +8,7 @@ import {
   Field,
   ComponentDimension
 } from '@admiral-ds/react-ui'
-import { ExampleSection, PStyled } from '../../-helpers/examples'
+import { ExampleSection } from '../../-helpers/examples'
 
 const CompoundComponent = ({dimension}: {dimension?: ComponentDimension}) => {
   return (
@@ -25,9 +25,6 @@ const CompoundComponent = ({dimension}: {dimension?: ComponentDimension}) => {
 const Example = () => {
   return (
     <>
-      <PStyled>
-        Компонент представлен в трёх размерах - xl, m и s
-      </PStyled>
       <ExampleSection text={'Размер xl'}>
         <CompoundComponent dimension={'xl'} />
       </ExampleSection>
@@ -50,6 +47,7 @@ export const DateTimeFieldDimension = () => {
 export const Route = createFileRoute('/components/dateTimeField/dimension')({
   component: () => <DateTimeFieldDimension />,
   staticData: {
-    title: 'DateTime Field. Размеры'
+    title: 'DateTime Field. Размеры',
+    description: 'Компонент представлен в трёх размерах - xl, m и s',
   },
 })

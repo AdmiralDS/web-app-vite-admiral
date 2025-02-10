@@ -17,22 +17,27 @@ const CompoundComponent = ({
   readOnly,
   status,
   defaultDateValue,
-  defaultTimeValue
+  defaultTimeValue,
+  label,
+  skeleton
 }: {
   disabled?: boolean, 
   readOnly?: boolean, 
   status?: InputStatus,
   defaultDateValue?: DateInputProps['defaultValue'],
-  defaultTimeValue?: TimeInputProps['defaultValue']
+  defaultTimeValue?: TimeInputProps['defaultValue'],
+  label?: string,
+  skeleton?: boolean
 }) => {
   return (
-    <Field>
+    <Field label={label} skeleton={skeleton}>
       <DateTimeContainer>
         <DateTimeDateInput 
           status={status} 
           disabled={disabled} 
           readOnly={readOnly} 
           defaultValue={defaultDateValue}
+          skeleton={skeleton}
           />
         <DateTimeSeparator />
         <DateTimeTimeInput 
@@ -40,6 +45,7 @@ const CompoundComponent = ({
           disabled={disabled} 
           readOnly={readOnly} 
           defaultValue={defaultTimeValue}
+          skeleton={skeleton}
           />
       </DateTimeContainer>
     </Field>
@@ -60,6 +66,9 @@ const Example = () => {
       </ExampleSection>
       <ExampleSection text={'Статус error'}>
         <CompoundComponent status='error' />
+      </ExampleSection>
+      <ExampleSection text={'Состояние загрузки'}>
+        <CompoundComponent label='Подпись' skeleton />
       </ExampleSection>
     </>
   )

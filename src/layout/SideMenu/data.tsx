@@ -658,7 +658,6 @@ const data = [
       { name: 'Дополнительный текст', path: '/components/dateTimeField/extraText' },
       { name: 'С подписью в одну линию', path: '/components/dateTimeField/displayInline' },
       { name: 'Состояние/статус', path: '/components/dateTimeField/status' },
-      { name: 'Режим загрузки', path: '/components/dateTimeField/skeleton' },
     ],
   },
   {
