@@ -660,6 +660,19 @@ const data = [
       { name: 'Длина', path: '/components/divider/length' },
     ],
   },
+  {
+    name: 'EditMode',
+    path: '/components/editmode',
+    routes: [
+      { name: 'Базовый пример', path: '/components/editmode' },
+      { name: 'Размеры', path: '/components/editmode/dimensions' },
+      { name: 'Статусы/состояния', path: '/components/editmode/status' },
+      { name: 'Несколько строк', path: '/components/editmode/multiline' },
+      { name: 'Невозможность копирования', path: '/components/editmode/disablecopying' },
+      { name: 'Тултип', path: '/components/editmode/tooltip' },
+      { name: 'Дополнительный текст', path: '/components/editmode/extratext' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
