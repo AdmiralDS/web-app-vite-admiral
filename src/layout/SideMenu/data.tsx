@@ -661,6 +661,17 @@ const data = [
       { name: 'Режим загрузки', path: '/components/dateTimeField/skeleton' },
     ],
   },
+  {
+    name: 'Divider',
+    path: '/components/divider',
+    routes: [
+      { name: 'Базовый пример', path: '/components/divider' },
+      { name: 'Тип (ориентация)', path: '/components/divider/type' },
+      { name: 'Стиль', path: '/components/divider/style' },
+      { name: 'Толщина линии', path: '/components/divider/thikness' },
+      { name: 'Длина', path: '/components/divider/length' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
