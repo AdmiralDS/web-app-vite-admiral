@@ -684,6 +684,17 @@ const data = [
       { name: 'Дополнительный текст', path: '/components/editmode/extratext' },
     ],
   },
+  {
+    name: 'EditModeAria',
+    path: '/components/editmodearia',
+    routes: [
+      { name: 'Базовый пример', path: '/components/editmodearia' },
+      { name: 'Размеры', path: '/components/editmodearia/dimensions' },
+      { name: 'Статусы/состояния', path: '/components/editmodearia/status' },
+      { name: 'Невозможность копирования', path: '/components/editmodearia/disablecopying' },
+      { name: 'Дополнительный текст', path: '/components/editmodearia/extratext' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

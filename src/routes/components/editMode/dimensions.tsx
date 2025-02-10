@@ -3,7 +3,7 @@ import { useState } from 'react'
 import type { ChangeEvent } from 'react'
 
 import { EditMode } from '@admiral-ds/react-ui'
-import { ExampleSection, PStyled } from '../../-helpers/examples'
+import { ExampleSection } from '../../-helpers/examples'
 import type { EditModeProps } from '@admiral-ds/react-ui'
 
 const Component = ({

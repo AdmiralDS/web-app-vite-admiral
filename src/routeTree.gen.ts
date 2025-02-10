@@ -58,6 +58,7 @@ import { Route as ComponentsGroupActionsPaneIndexImport } from './routes/compone
 import { Route as ComponentsGlobalSearchIndexImport } from './routes/components/globalSearch/index'
 import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
 import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index'
+import { Route as ComponentsEditModeAriaIndexImport } from './routes/components/editModeAria/index'
 import { Route as ComponentsEditModeIndexImport } from './routes/components/editMode/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
@@ -241,6 +242,10 @@ import { Route as ComponentsFloatingButtonTooltipImport } from './routes/compone
 import { Route as ComponentsFloatingButtonStylesImport } from './routes/components/floatingButton/styles'
 import { Route as ComponentsFloatingButtonPositionImport } from './routes/components/floatingButton/position'
 import { Route as ComponentsFloatingButtonMobileImport } from './routes/components/floatingButton/mobile'
+import { Route as ComponentsEditModeAriaStatusImport } from './routes/components/editModeAria/status'
+import { Route as ComponentsEditModeAriaExtratextImport } from './routes/components/editModeAria/extratext'
+import { Route as ComponentsEditModeAriaDisablecopyingImport } from './routes/components/editModeAria/disablecopying'
+import { Route as ComponentsEditModeAriaDimensionsImport } from './routes/components/editModeAria/dimensions'
 import { Route as ComponentsEditModeTooltipImport } from './routes/components/editMode/tooltip'
 import { Route as ComponentsEditModeStatusImport } from './routes/components/editMode/status'
 import { Route as ComponentsEditModeMultilineImport } from './routes/components/editMode/multiline'
@@ -652,6 +657,13 @@ const ComponentsFlexIndexRoute = ComponentsFlexIndexImport.update({
   path: '/flex/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsEditModeAriaIndexRoute =
+  ComponentsEditModeAriaIndexImport.update({
+    id: '/editModeAria/',
+    path: '/editModeAria/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsEditModeIndexRoute = ComponentsEditModeIndexImport.update({
   id: '/editMode/',
@@ -1867,6 +1879,34 @@ const ComponentsFloatingButtonMobileRoute =
   ComponentsFloatingButtonMobileImport.update({
     id: '/floatingButton/mobile',
     path: '/floatingButton/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsEditModeAriaStatusRoute =
+  ComponentsEditModeAriaStatusImport.update({
+    id: '/editModeAria/status',
+    path: '/editModeAria/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsEditModeAriaExtratextRoute =
+  ComponentsEditModeAriaExtratextImport.update({
+    id: '/editModeAria/extratext',
+    path: '/editModeAria/extratext',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsEditModeAriaDisablecopyingRoute =
+  ComponentsEditModeAriaDisablecopyingImport.update({
+    id: '/editModeAria/disablecopying',
+    path: '/editModeAria/disablecopying',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsEditModeAriaDimensionsRoute =
+  ComponentsEditModeAriaDimensionsImport.update({
+    id: '/editModeAria/dimensions',
+    path: '/editModeAria/dimensions',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -3368,6 +3408,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsEditModeTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/editModeAria/dimensions': {
+      id: '/components/editModeAria/dimensions'
+      path: '/editModeAria/dimensions'
+      fullPath: '/components/editModeAria/dimensions'
+      preLoaderRoute: typeof ComponentsEditModeAriaDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editModeAria/disablecopying': {
+      id: '/components/editModeAria/disablecopying'
+      path: '/editModeAria/disablecopying'
+      fullPath: '/components/editModeAria/disablecopying'
+      preLoaderRoute: typeof ComponentsEditModeAriaDisablecopyingImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editModeAria/extratext': {
+      id: '/components/editModeAria/extratext'
+      path: '/editModeAria/extratext'
+      fullPath: '/components/editModeAria/extratext'
+      preLoaderRoute: typeof ComponentsEditModeAriaExtratextImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editModeAria/status': {
+      id: '/components/editModeAria/status'
+      path: '/editModeAria/status'
+      fullPath: '/components/editModeAria/status'
+      preLoaderRoute: typeof ComponentsEditModeAriaStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/mobile': {
       id: '/components/floatingButton/mobile'
       path: '/floatingButton/mobile'
@@ -4649,6 +4717,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsEditModeIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/editModeAria/': {
+      id: '/components/editModeAria/'
+      path: '/editModeAria'
+      fullPath: '/components/editModeAria'
+      preLoaderRoute: typeof ComponentsEditModeAriaIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/flex/': {
       id: '/components/flex/'
       path: '/flex'
@@ -5040,6 +5115,10 @@ interface ComponentsRouteChildren {
   ComponentsEditModeMultilineRoute: typeof ComponentsEditModeMultilineRoute
   ComponentsEditModeStatusRoute: typeof ComponentsEditModeStatusRoute
   ComponentsEditModeTooltipRoute: typeof ComponentsEditModeTooltipRoute
+  ComponentsEditModeAriaDimensionsRoute: typeof ComponentsEditModeAriaDimensionsRoute
+  ComponentsEditModeAriaDisablecopyingRoute: typeof ComponentsEditModeAriaDisablecopyingRoute
+  ComponentsEditModeAriaExtratextRoute: typeof ComponentsEditModeAriaExtratextRoute
+  ComponentsEditModeAriaStatusRoute: typeof ComponentsEditModeAriaStatusRoute
   ComponentsFloatingButtonMobileRoute: typeof ComponentsFloatingButtonMobileRoute
   ComponentsFloatingButtonPositionRoute: typeof ComponentsFloatingButtonPositionRoute
   ComponentsFloatingButtonStylesRoute: typeof ComponentsFloatingButtonStylesRoute
@@ -5223,6 +5302,7 @@ interface ComponentsRouteChildren {
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
   ComponentsEditModeIndexRoute: typeof ComponentsEditModeIndexRoute
+  ComponentsEditModeAriaIndexRoute: typeof ComponentsEditModeAriaIndexRoute
   ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute
   ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
   ComponentsGlobalSearchIndexRoute: typeof ComponentsGlobalSearchIndexRoute
@@ -5397,6 +5477,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsEditModeMultilineRoute: ComponentsEditModeMultilineRoute,
   ComponentsEditModeStatusRoute: ComponentsEditModeStatusRoute,
   ComponentsEditModeTooltipRoute: ComponentsEditModeTooltipRoute,
+  ComponentsEditModeAriaDimensionsRoute: ComponentsEditModeAriaDimensionsRoute,
+  ComponentsEditModeAriaDisablecopyingRoute:
+    ComponentsEditModeAriaDisablecopyingRoute,
+  ComponentsEditModeAriaExtratextRoute: ComponentsEditModeAriaExtratextRoute,
+  ComponentsEditModeAriaStatusRoute: ComponentsEditModeAriaStatusRoute,
   ComponentsFloatingButtonMobileRoute: ComponentsFloatingButtonMobileRoute,
   ComponentsFloatingButtonPositionRoute: ComponentsFloatingButtonPositionRoute,
   ComponentsFloatingButtonStylesRoute: ComponentsFloatingButtonStylesRoute,
@@ -5604,6 +5689,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
   ComponentsEditModeIndexRoute: ComponentsEditModeIndexRoute,
+  ComponentsEditModeAriaIndexRoute: ComponentsEditModeAriaIndexRoute,
   ComponentsFlexIndexRoute: ComponentsFlexIndexRoute,
   ComponentsFloatingButtonIndexRoute: ComponentsFloatingButtonIndexRoute,
   ComponentsGlobalSearchIndexRoute: ComponentsGlobalSearchIndexRoute,
@@ -5780,6 +5866,10 @@ export interface FileRoutesByFullPath {
   '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
   '/components/editMode/status': typeof ComponentsEditModeStatusRoute
   '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/editModeAria/dimensions': typeof ComponentsEditModeAriaDimensionsRoute
+  '/components/editModeAria/disablecopying': typeof ComponentsEditModeAriaDisablecopyingRoute
+  '/components/editModeAria/extratext': typeof ComponentsEditModeAriaExtratextRoute
+  '/components/editModeAria/status': typeof ComponentsEditModeAriaStatusRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -5963,6 +6053,7 @@ export interface FileRoutesByFullPath {
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/editMode': typeof ComponentsEditModeIndexRoute
+  '/components/editModeAria': typeof ComponentsEditModeAriaIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
@@ -6118,6 +6209,10 @@ export interface FileRoutesByTo {
   '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
   '/components/editMode/status': typeof ComponentsEditModeStatusRoute
   '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/editModeAria/dimensions': typeof ComponentsEditModeAriaDimensionsRoute
+  '/components/editModeAria/disablecopying': typeof ComponentsEditModeAriaDisablecopyingRoute
+  '/components/editModeAria/extratext': typeof ComponentsEditModeAriaExtratextRoute
+  '/components/editModeAria/status': typeof ComponentsEditModeAriaStatusRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -6301,6 +6396,7 @@ export interface FileRoutesByTo {
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/editMode': typeof ComponentsEditModeIndexRoute
+  '/components/editModeAria': typeof ComponentsEditModeAriaIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
@@ -6457,6 +6553,10 @@ export interface FileRoutesById {
   '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
   '/components/editMode/status': typeof ComponentsEditModeStatusRoute
   '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/editModeAria/dimensions': typeof ComponentsEditModeAriaDimensionsRoute
+  '/components/editModeAria/disablecopying': typeof ComponentsEditModeAriaDisablecopyingRoute
+  '/components/editModeAria/extratext': typeof ComponentsEditModeAriaExtratextRoute
+  '/components/editModeAria/status': typeof ComponentsEditModeAriaStatusRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -6640,6 +6740,7 @@ export interface FileRoutesById {
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
   '/components/editMode/': typeof ComponentsEditModeIndexRoute
+  '/components/editModeAria/': typeof ComponentsEditModeAriaIndexRoute
   '/components/flex/': typeof ComponentsFlexIndexRoute
   '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch/': typeof ComponentsGlobalSearchIndexRoute
@@ -6797,6 +6898,10 @@ export interface FileRouteTypes {
     | '/components/editMode/multiline'
     | '/components/editMode/status'
     | '/components/editMode/tooltip'
+    | '/components/editModeAria/dimensions'
+    | '/components/editModeAria/disablecopying'
+    | '/components/editModeAria/extratext'
+    | '/components/editModeAria/status'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -6980,6 +7085,7 @@ export interface FileRouteTypes {
     | '/components/drawer'
     | '/components/dropdown'
     | '/components/editMode'
+    | '/components/editModeAria'
     | '/components/flex'
     | '/components/floatingButton'
     | '/components/globalSearch'
@@ -7134,6 +7240,10 @@ export interface FileRouteTypes {
     | '/components/editMode/multiline'
     | '/components/editMode/status'
     | '/components/editMode/tooltip'
+    | '/components/editModeAria/dimensions'
+    | '/components/editModeAria/disablecopying'
+    | '/components/editModeAria/extratext'
+    | '/components/editModeAria/status'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -7317,6 +7427,7 @@ export interface FileRouteTypes {
     | '/components/drawer'
     | '/components/dropdown'
     | '/components/editMode'
+    | '/components/editModeAria'
     | '/components/flex'
     | '/components/floatingButton'
     | '/components/globalSearch'
@@ -7471,6 +7582,10 @@ export interface FileRouteTypes {
     | '/components/editMode/multiline'
     | '/components/editMode/status'
     | '/components/editMode/tooltip'
+    | '/components/editModeAria/dimensions'
+    | '/components/editModeAria/disablecopying'
+    | '/components/editModeAria/extratext'
+    | '/components/editModeAria/status'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -7654,6 +7769,7 @@ export interface FileRouteTypes {
     | '/components/drawer/'
     | '/components/dropdown/'
     | '/components/editMode/'
+    | '/components/editModeAria/'
     | '/components/flex/'
     | '/components/floatingButton/'
     | '/components/globalSearch/'
@@ -7835,6 +7951,10 @@ export const routeTree = rootRoute
         "/components/editMode/multiline",
         "/components/editMode/status",
         "/components/editMode/tooltip",
+        "/components/editModeAria/dimensions",
+        "/components/editModeAria/disablecopying",
+        "/components/editModeAria/extratext",
+        "/components/editModeAria/status",
         "/components/floatingButton/mobile",
         "/components/floatingButton/position",
         "/components/floatingButton/styles",
@@ -8018,6 +8138,7 @@ export const routeTree = rootRoute
         "/components/drawer/",
         "/components/dropdown/",
         "/components/editMode/",
+        "/components/editModeAria/",
         "/components/flex/",
         "/components/floatingButton/",
         "/components/globalSearch/",
@@ -8503,6 +8624,22 @@ export const routeTree = rootRoute
     },
     "/components/editMode/tooltip": {
       "filePath": "components/editMode/tooltip.tsx",
+      "parent": "/components"
+    },
+    "/components/editModeAria/dimensions": {
+      "filePath": "components/editModeAria/dimensions.tsx",
+      "parent": "/components"
+    },
+    "/components/editModeAria/disablecopying": {
+      "filePath": "components/editModeAria/disablecopying.tsx",
+      "parent": "/components"
+    },
+    "/components/editModeAria/extratext": {
+      "filePath": "components/editModeAria/extratext.tsx",
+      "parent": "/components"
+    },
+    "/components/editModeAria/status": {
+      "filePath": "components/editModeAria/status.tsx",
       "parent": "/components"
     },
     "/components/floatingButton/mobile": {
@@ -9235,6 +9372,10 @@ export const routeTree = rootRoute
     },
     "/components/editMode/": {
       "filePath": "components/editMode/index.tsx",
+      "parent": "/components"
+    },
+    "/components/editModeAria/": {
+      "filePath": "components/editModeAria/index.tsx",
       "parent": "/components"
     },
     "/components/flex/": {

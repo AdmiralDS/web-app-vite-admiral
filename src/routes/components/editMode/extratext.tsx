@@ -3,7 +3,7 @@ import { useState } from 'react'
 import type { ChangeEvent } from 'react'
 
 import { EditMode, Field } from '@admiral-ds/react-ui'
-import { ExampleSection, SectionDescription } from '../../-helpers/examples'
+import { ExampleSection } from '../../-helpers/examples'
 
 const Example = () => {
   const value = 'Привет!'

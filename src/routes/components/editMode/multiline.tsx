@@ -4,7 +4,7 @@ import type { ChangeEvent } from 'react'
 
 import { EditMode } from '@admiral-ds/react-ui'
 import styled from 'styled-components'
-import { ExampleSection, PStyled } from '../../-helpers/examples'
+import { ExampleSection } from '../../-helpers/examples'
 
 const Wrapper = styled.div`
   width: 250px;
