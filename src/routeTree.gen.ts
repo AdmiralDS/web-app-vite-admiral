@@ -129,6 +129,7 @@ import { Route as ComponentsTabMenuSizeImport } from './routes/components/tabMen
 import { Route as ComponentsTabMenuOptionsVerticalTabsImport } from './routes/components/tabMenu/optionsVerticalTabs'
 import { Route as ComponentsTabMenuOptionsImport } from './routes/components/tabMenu/options'
 import { Route as ComponentsTabMenuHorizontalTabsImport } from './routes/components/tabMenu/horizontalTabs'
+import { Route as ComponentsTabMenuCardTabMenuWithoutBorderImport } from './routes/components/tabMenu/cardTabMenuWithoutBorder'
 import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components/tabMenu/cardTabMenu'
 import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
 import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
@@ -283,6 +284,7 @@ import { Route as ComponentsDateTimeFieldStatusImport } from './routes/component
 import { Route as ComponentsDateTimeFieldExtraTextImport } from './routes/components/dateTimeField/extraText'
 import { Route as ComponentsDateTimeFieldDisplayInlineImport } from './routes/components/dateTimeField/displayInline'
 import { Route as ComponentsDateTimeFieldDimensionImport } from './routes/components/dateTimeField/dimension'
+import { Route as ComponentsDateInputWithButtonImport } from './routes/components/dateInput/withButton'
 import { Route as ComponentsDateInputVariantsImport } from './routes/components/dateInput/variants'
 import { Route as ComponentsDateInputStatusImport } from './routes/components/dateInput/status'
 import { Route as ComponentsDateInputStateImport } from './routes/components/dateInput/state'
@@ -1119,6 +1121,13 @@ const ComponentsTabMenuHorizontalTabsRoute =
   ComponentsTabMenuHorizontalTabsImport.update({
     id: '/tabMenu/horizontalTabs',
     path: '/tabMenu/horizontalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuCardTabMenuWithoutBorderRoute =
+  ComponentsTabMenuCardTabMenuWithoutBorderImport.update({
+    id: '/tabMenu/cardTabMenuWithoutBorder',
+    path: '/tabMenu/cardTabMenuWithoutBorder',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -2160,6 +2169,13 @@ const ComponentsDateTimeFieldDimensionRoute =
   ComponentsDateTimeFieldDimensionImport.update({
     id: '/dateTimeField/dimension',
     path: '/dateTimeField/dimension',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDateInputWithButtonRoute =
+  ComponentsDateInputWithButtonImport.update({
+    id: '/dateInput/withButton',
+    path: '/dateInput/withButton',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -3205,6 +3221,13 @@ declare module '@tanstack/react-router' {
       path: '/dateInput/variants'
       fullPath: '/components/dateInput/variants'
       preLoaderRoute: typeof ComponentsDateInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateInput/withButton': {
+      id: '/components/dateInput/withButton'
+      path: '/dateInput/withButton'
+      fullPath: '/components/dateInput/withButton'
+      preLoaderRoute: typeof ComponentsDateInputWithButtonImport
       parentRoute: typeof ComponentsImport
     }
     '/components/dateTimeField/dimension': {
@@ -4285,6 +4308,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTabMenuCardTabMenuImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tabMenu/cardTabMenuWithoutBorder': {
+      id: '/components/tabMenu/cardTabMenuWithoutBorder'
+      path: '/tabMenu/cardTabMenuWithoutBorder'
+      fullPath: '/components/tabMenu/cardTabMenuWithoutBorder'
+      preLoaderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/horizontalTabs': {
       id: '/components/tabMenu/horizontalTabs'
       path: '/tabMenu/horizontalTabs'
@@ -5140,6 +5170,7 @@ interface ComponentsRouteChildren {
   ComponentsDateInputStateRoute: typeof ComponentsDateInputStateRoute
   ComponentsDateInputStatusRoute: typeof ComponentsDateInputStatusRoute
   ComponentsDateInputVariantsRoute: typeof ComponentsDateInputVariantsRoute
+  ComponentsDateInputWithButtonRoute: typeof ComponentsDateInputWithButtonRoute
   ComponentsDateTimeFieldDimensionRoute: typeof ComponentsDateTimeFieldDimensionRoute
   ComponentsDateTimeFieldDisplayInlineRoute: typeof ComponentsDateTimeFieldDisplayInlineRoute
   ComponentsDateTimeFieldExtraTextRoute: typeof ComponentsDateTimeFieldExtraTextRoute
@@ -5294,6 +5325,7 @@ interface ComponentsRouteChildren {
   ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
   ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
   ComponentsTabMenuCardTabMenuRoute: typeof ComponentsTabMenuCardTabMenuRoute
+  ComponentsTabMenuCardTabMenuWithoutBorderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   ComponentsTabMenuHorizontalTabsRoute: typeof ComponentsTabMenuHorizontalTabsRoute
   ComponentsTabMenuOptionsRoute: typeof ComponentsTabMenuOptionsRoute
   ComponentsTabMenuOptionsVerticalTabsRoute: typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -5494,6 +5526,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDateInputStateRoute: ComponentsDateInputStateRoute,
   ComponentsDateInputStatusRoute: ComponentsDateInputStatusRoute,
   ComponentsDateInputVariantsRoute: ComponentsDateInputVariantsRoute,
+  ComponentsDateInputWithButtonRoute: ComponentsDateInputWithButtonRoute,
   ComponentsDateTimeFieldDimensionRoute: ComponentsDateTimeFieldDimensionRoute,
   ComponentsDateTimeFieldDisplayInlineRoute:
     ComponentsDateTimeFieldDisplayInlineRoute,
@@ -5677,6 +5710,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
   ComponentsTabMenuAddTabVerticalRoute: ComponentsTabMenuAddTabVerticalRoute,
   ComponentsTabMenuCardTabMenuRoute: ComponentsTabMenuCardTabMenuRoute,
+  ComponentsTabMenuCardTabMenuWithoutBorderRoute:
+    ComponentsTabMenuCardTabMenuWithoutBorderRoute,
   ComponentsTabMenuHorizontalTabsRoute: ComponentsTabMenuHorizontalTabsRoute,
   ComponentsTabMenuOptionsRoute: ComponentsTabMenuOptionsRoute,
   ComponentsTabMenuOptionsVerticalTabsRoute:
@@ -5900,6 +5935,7 @@ export interface FileRoutesByFullPath {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
   '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
   '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
   '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
@@ -6054,6 +6090,7 @@ export interface FileRoutesByFullPath {
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -6247,6 +6284,7 @@ export interface FileRoutesByTo {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
   '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
   '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
   '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
@@ -6401,6 +6439,7 @@ export interface FileRoutesByTo {
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -6595,6 +6634,7 @@ export interface FileRoutesById {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
   '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
   '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
   '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
@@ -6749,6 +6789,7 @@ export interface FileRoutesById {
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -6944,6 +6985,7 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateInput/withButton'
     | '/components/dateTimeField/dimension'
     | '/components/dateTimeField/displayInline'
     | '/components/dateTimeField/extraText'
@@ -7098,6 +7140,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/cardTabMenuWithoutBorder'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -7290,6 +7333,7 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateInput/withButton'
     | '/components/dateTimeField/dimension'
     | '/components/dateTimeField/displayInline'
     | '/components/dateTimeField/extraText'
@@ -7444,6 +7488,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/cardTabMenuWithoutBorder'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -7636,6 +7681,7 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateInput/withButton'
     | '/components/dateTimeField/dimension'
     | '/components/dateTimeField/displayInline'
     | '/components/dateTimeField/extraText'
@@ -7790,6 +7836,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/cardTabMenuWithoutBorder'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -8009,6 +8056,7 @@ export const routeTree = rootRoute
         "/components/dateInput/state",
         "/components/dateInput/status",
         "/components/dateInput/variants",
+        "/components/dateInput/withButton",
         "/components/dateTimeField/dimension",
         "/components/dateTimeField/displayInline",
         "/components/dateTimeField/extraText",
@@ -8163,6 +8211,7 @@ export const routeTree = rootRoute
         "/components/tabMenu/addTab",
         "/components/tabMenu/addTabVertical",
         "/components/tabMenu/cardTabMenu",
+        "/components/tabMenu/cardTabMenuWithoutBorder",
         "/components/tabMenu/horizontalTabs",
         "/components/tabMenu/options",
         "/components/tabMenu/optionsVerticalTabs",
@@ -8587,6 +8636,10 @@ export const routeTree = rootRoute
     },
     "/components/dateInput/variants": {
       "filePath": "components/dateInput/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/withButton": {
+      "filePath": "components/dateInput/withButton.tsx",
       "parent": "/components"
     },
     "/components/dateTimeField/dimension": {
@@ -9203,6 +9256,10 @@ export const routeTree = rootRoute
     },
     "/components/tabMenu/cardTabMenu": {
       "filePath": "components/tabMenu/cardTabMenu.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/cardTabMenuWithoutBorder": {
+      "filePath": "components/tabMenu/cardTabMenuWithoutBorder.tsx",
       "parent": "/components"
     },
     "/components/tabMenu/horizontalTabs": {
