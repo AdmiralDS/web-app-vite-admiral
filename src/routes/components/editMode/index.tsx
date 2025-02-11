@@ -2,12 +2,15 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import type { ChangeEvent } from 'react';
 
-import { EditMode } from '@admiral-ds/react-ui'
+import { EditMode, EditModeField } from '@admiral-ds/react-ui'
 import { ExampleSection, PStyled } from '../../-helpers/examples'
 
 const Description = () => {
   return (
     <>
+    <PStyled>
+      Компонент можно разделить на 4 вида: EditMode, EditModeArea, а также компоненты, у которых присутствует лэйбл и дополнительный текст - EditModeField и EditModeAreaField
+    </PStyled>
       <PStyled>
         Присутствует в 4 размерах: S, M (имеют написание Regular и Bold) и XL, XXL (только Bold). Переключение между Regular и Bold не изменяют размеры компонента.
         В режиме редактирования может применяться с поясняющим текстом или без него.
@@ -19,7 +22,7 @@ const Description = () => {
   )
 }
 
-const Example = () => {
+const EditModeBasic = () => {
   const value = 'Привет!';
   const placeholder = 'Placeholder';
   const [localValue, setValue] = useState<string>(String(value) ?? '');
@@ -30,20 +33,52 @@ const Example = () => {
   };
 
   return (
-    <EditMode value={localValue} onChange={handleChange} placeholder={placeholder} />
+    <>
+      <EditMode 
+        value={localValue} 
+        onChange={handleChange} 
+        placeholder={placeholder} 
+      />
+    </>
   )
 }
 
-export const EditModeBasic = () => {
+const EditModeFieldExample = () => {
+  const value = 'Привет!';
+  const placeholder = 'Placeholder';
+  const [localValue, setValue] = useState<string>(String(value) ?? '');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    setValue(inputValue);
+  };
+
   return (
-    <ExampleSection text={<Description />}>
-      <Example />  
-    </ExampleSection>
+    <EditModeField
+      value={localValue} 
+      onChange={handleChange} 
+      placeholder={placeholder} 
+      label="Лейбл"
+      extraText="Дополнительный текст"
+    />
+  );
+}
+
+export const Example = () => {
+  return (
+    <>
+      <ExampleSection text={<Description />}>
+        <EditModeBasic />  
+      </ExampleSection>
+      <ExampleSection>
+        <EditModeFieldExample />
+      </ExampleSection>
+    </>
   )
 }
 
 export const Route = createFileRoute('/components/editMode/')({
-  component: () => <EditModeBasic />,
+  component: () => <Example />,
   staticData: {
     title: 'Edit mode. Базовый пример',
     description: 'Компонент для редактирования текста. Может быть с лэйблом или без него.',

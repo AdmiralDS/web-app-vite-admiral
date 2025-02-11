@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useState } from 'react'
 import type { ChangeEvent } from 'react'
 
-import { EditMode, Field } from '@admiral-ds/react-ui'
+import { EditModeField } from '@admiral-ds/react-ui'
 import { ExampleSection } from '../../-helpers/examples'
 
 const Example = () => {
@@ -17,24 +17,24 @@ const Example = () => {
 
   return (
     <>
-    <ExampleSection text='Пример с лэйблом и дополнительным текстом'>
-    <Field label='Label' extraText='Extra text'>
-      <EditMode
+    <ExampleSection text='Пример с лэйблом и дополнительным текстом, компонент EditModeField'>
+      <EditModeField
         value={localValue}
         onChange={handleChange}
         placeholder={placeholder}
+        label='Label' 
+        extraText='Extra text'
       />
-    </Field>
     </ExampleSection>
-    <ExampleSection text='Пример в статусе error'>
-    <Field extraText='Extra text' status='error'>
-      <EditMode
+    <ExampleSection text='Пример в статусе error, компонент EditModeField'>
+      <EditModeField
         value={localValue}
         onChange={handleChange}
         placeholder={placeholder}
         status='error'
+        extraText='Extra text'
+        label='Label'
       />
-    </Field>
     </ExampleSection>
     </>
   )
