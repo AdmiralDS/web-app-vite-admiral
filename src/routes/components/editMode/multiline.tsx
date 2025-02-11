@@ -22,7 +22,7 @@ const Example = () => {
 
   return (
     <>
-      <ExampleSection text='Для многострочного ввода используйте компонент EditModeAria'>
+      <ExampleSection text='Для многострочного ввода используйте компонент EditModeArea'>
         <Wrapper>
           <EditModeArea
             value={localValue}
@@ -47,7 +47,7 @@ const ExampleField = () => {
 
   return (
     <>
-      <ExampleSection text='Для многострочного ввода с лэйблом и дополнительным текстом используйте компонент EditModeAriaField'>
+      <ExampleSection text='Для многострочного ввода с лэйблом и дополнительным текстом используйте компонент EditModeAreaField'>
         <Wrapper>
           <EditModeAreaField
             value={localValue}
