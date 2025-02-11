@@ -678,7 +678,7 @@ const data = [
       { name: 'Базовый пример', path: '/components/editmode' },
       { name: 'Размеры', path: '/components/editmode/dimensions' },
       { name: 'Статусы/состояния', path: '/components/editmode/status' },
-      { name: 'Несколько строк', path: '/components/editmode/multiline' },
+      { name: 'Многострочный компонент', path: '/components/editmode/multiline' },
       { name: 'Невозможность копирования', path: '/components/editmode/disablecopying' },
       { name: 'Тултип', path: '/components/editmode/tooltip' },
       { name: 'Дополнительный текст', path: '/components/editmode/extratext' },
