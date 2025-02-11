@@ -58,9 +58,11 @@ import { Route as ComponentsGroupActionsPaneIndexImport } from './routes/compone
 import { Route as ComponentsGlobalSearchIndexImport } from './routes/components/globalSearch/index'
 import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
 import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index'
+import { Route as ComponentsEditModeIndexImport } from './routes/components/editMode/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
 import { Route as ComponentsDividerIndexImport } from './routes/components/divider/index'
+import { Route as ComponentsDateTimeFieldIndexImport } from './routes/components/dateTimeField/index'
 import { Route as ComponentsDateInputIndexImport } from './routes/components/dateInput/index'
 import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
 import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index'
@@ -240,6 +242,12 @@ import { Route as ComponentsFloatingButtonTooltipImport } from './routes/compone
 import { Route as ComponentsFloatingButtonStylesImport } from './routes/components/floatingButton/styles'
 import { Route as ComponentsFloatingButtonPositionImport } from './routes/components/floatingButton/position'
 import { Route as ComponentsFloatingButtonMobileImport } from './routes/components/floatingButton/mobile'
+import { Route as ComponentsEditModeTooltipImport } from './routes/components/editMode/tooltip'
+import { Route as ComponentsEditModeStatusImport } from './routes/components/editMode/status'
+import { Route as ComponentsEditModeMultilineImport } from './routes/components/editMode/multiline'
+import { Route as ComponentsEditModeExtratextImport } from './routes/components/editMode/extratext'
+import { Route as ComponentsEditModeDisablecopyingImport } from './routes/components/editMode/disablecopying'
+import { Route as ComponentsEditModeDimensionsImport } from './routes/components/editMode/dimensions'
 import { Route as ComponentsDropdownMenuWithTooltipImport } from './routes/components/dropdown/menuWithTooltip'
 import { Route as ComponentsDropdownMenuWithRadioButtonImport } from './routes/components/dropdown/menuWithRadioButton'
 import { Route as ComponentsDropdownMenuWithIconsImport } from './routes/components/dropdown/menuWithIcons'
@@ -271,6 +279,10 @@ import { Route as ComponentsDividerTypeImport } from './routes/components/divide
 import { Route as ComponentsDividerThiknessImport } from './routes/components/divider/thikness'
 import { Route as ComponentsDividerStyleImport } from './routes/components/divider/style'
 import { Route as ComponentsDividerLengthImport } from './routes/components/divider/length'
+import { Route as ComponentsDateTimeFieldStatusImport } from './routes/components/dateTimeField/status'
+import { Route as ComponentsDateTimeFieldExtraTextImport } from './routes/components/dateTimeField/extraText'
+import { Route as ComponentsDateTimeFieldDisplayInlineImport } from './routes/components/dateTimeField/displayInline'
+import { Route as ComponentsDateTimeFieldDimensionImport } from './routes/components/dateTimeField/dimension'
 import { Route as ComponentsDateInputVariantsImport } from './routes/components/dateInput/variants'
 import { Route as ComponentsDateInputStatusImport } from './routes/components/dateInput/status'
 import { Route as ComponentsDateInputStateImport } from './routes/components/dateInput/state'
@@ -650,6 +662,12 @@ const ComponentsFlexIndexRoute = ComponentsFlexIndexImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsEditModeIndexRoute = ComponentsEditModeIndexImport.update({
+  id: '/editMode/',
+  path: '/editMode/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
 const ComponentsDropdownIndexRoute = ComponentsDropdownIndexImport.update({
   id: '/dropdown/',
   path: '/dropdown/',
@@ -667,6 +685,13 @@ const ComponentsDividerIndexRoute = ComponentsDividerIndexImport.update({
   path: '/divider/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsDateTimeFieldIndexRoute =
+  ComponentsDateTimeFieldIndexImport.update({
+    id: '/dateTimeField/',
+    path: '/dateTimeField/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDateInputIndexRoute = ComponentsDateInputIndexImport.update({
   id: '/dateInput/',
@@ -1860,6 +1885,46 @@ const ComponentsFloatingButtonMobileRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsEditModeTooltipRoute = ComponentsEditModeTooltipImport.update({
+  id: '/editMode/tooltip',
+  path: '/editMode/tooltip',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsEditModeStatusRoute = ComponentsEditModeStatusImport.update({
+  id: '/editMode/status',
+  path: '/editMode/status',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsEditModeMultilineRoute =
+  ComponentsEditModeMultilineImport.update({
+    id: '/editMode/multiline',
+    path: '/editMode/multiline',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsEditModeExtratextRoute =
+  ComponentsEditModeExtratextImport.update({
+    id: '/editMode/extratext',
+    path: '/editMode/extratext',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsEditModeDisablecopyingRoute =
+  ComponentsEditModeDisablecopyingImport.update({
+    id: '/editMode/disablecopying',
+    path: '/editMode/disablecopying',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsEditModeDimensionsRoute =
+  ComponentsEditModeDimensionsImport.update({
+    id: '/editMode/dimensions',
+    path: '/editMode/dimensions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsDropdownMenuWithTooltipRoute =
   ComponentsDropdownMenuWithTooltipImport.update({
     id: '/dropdown/menuWithTooltip',
@@ -2069,6 +2134,34 @@ const ComponentsDividerLengthRoute = ComponentsDividerLengthImport.update({
   path: '/divider/length',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsDateTimeFieldStatusRoute =
+  ComponentsDateTimeFieldStatusImport.update({
+    id: '/dateTimeField/status',
+    path: '/dateTimeField/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDateTimeFieldExtraTextRoute =
+  ComponentsDateTimeFieldExtraTextImport.update({
+    id: '/dateTimeField/extraText',
+    path: '/dateTimeField/extraText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDateTimeFieldDisplayInlineRoute =
+  ComponentsDateTimeFieldDisplayInlineImport.update({
+    id: '/dateTimeField/displayInline',
+    path: '/dateTimeField/displayInline',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsDateTimeFieldDimensionRoute =
+  ComponentsDateTimeFieldDimensionImport.update({
+    id: '/dateTimeField/dimension',
+    path: '/dateTimeField/dimension',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDateInputVariantsRoute =
   ComponentsDateInputVariantsImport.update({
@@ -3114,6 +3207,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDateInputVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/dateTimeField/dimension': {
+      id: '/components/dateTimeField/dimension'
+      path: '/dateTimeField/dimension'
+      fullPath: '/components/dateTimeField/dimension'
+      preLoaderRoute: typeof ComponentsDateTimeFieldDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateTimeField/displayInline': {
+      id: '/components/dateTimeField/displayInline'
+      path: '/dateTimeField/displayInline'
+      fullPath: '/components/dateTimeField/displayInline'
+      preLoaderRoute: typeof ComponentsDateTimeFieldDisplayInlineImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateTimeField/extraText': {
+      id: '/components/dateTimeField/extraText'
+      path: '/dateTimeField/extraText'
+      fullPath: '/components/dateTimeField/extraText'
+      preLoaderRoute: typeof ComponentsDateTimeFieldExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateTimeField/status': {
+      id: '/components/dateTimeField/status'
+      path: '/dateTimeField/status'
+      fullPath: '/components/dateTimeField/status'
+      preLoaderRoute: typeof ComponentsDateTimeFieldStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/length': {
       id: '/components/divider/length'
       path: '/divider/length'
@@ -3329,6 +3450,48 @@ declare module '@tanstack/react-router' {
       path: '/dropdown/menuWithTooltip'
       fullPath: '/components/dropdown/menuWithTooltip'
       preLoaderRoute: typeof ComponentsDropdownMenuWithTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editMode/dimensions': {
+      id: '/components/editMode/dimensions'
+      path: '/editMode/dimensions'
+      fullPath: '/components/editMode/dimensions'
+      preLoaderRoute: typeof ComponentsEditModeDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editMode/disablecopying': {
+      id: '/components/editMode/disablecopying'
+      path: '/editMode/disablecopying'
+      fullPath: '/components/editMode/disablecopying'
+      preLoaderRoute: typeof ComponentsEditModeDisablecopyingImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editMode/extratext': {
+      id: '/components/editMode/extratext'
+      path: '/editMode/extratext'
+      fullPath: '/components/editMode/extratext'
+      preLoaderRoute: typeof ComponentsEditModeExtratextImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editMode/multiline': {
+      id: '/components/editMode/multiline'
+      path: '/editMode/multiline'
+      fullPath: '/components/editMode/multiline'
+      preLoaderRoute: typeof ComponentsEditModeMultilineImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editMode/status': {
+      id: '/components/editMode/status'
+      path: '/editMode/status'
+      fullPath: '/components/editMode/status'
+      preLoaderRoute: typeof ComponentsEditModeStatusImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editMode/tooltip': {
+      id: '/components/editMode/tooltip'
+      path: '/editMode/tooltip'
+      fullPath: '/components/editMode/tooltip'
+      preLoaderRoute: typeof ComponentsEditModeTooltipImport
       parentRoute: typeof ComponentsImport
     }
     '/components/floatingButton/mobile': {
@@ -4584,6 +4747,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsDateInputIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/dateTimeField/': {
+      id: '/components/dateTimeField/'
+      path: '/dateTimeField'
+      fullPath: '/components/dateTimeField'
+      preLoaderRoute: typeof ComponentsDateTimeFieldIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/': {
       id: '/components/divider/'
       path: '/divider'
@@ -4603,6 +4773,13 @@ declare module '@tanstack/react-router' {
       path: '/dropdown'
       fullPath: '/components/dropdown'
       preLoaderRoute: typeof ComponentsDropdownIndexImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/editMode/': {
+      id: '/components/editMode/'
+      path: '/editMode'
+      fullPath: '/components/editMode'
+      preLoaderRoute: typeof ComponentsEditModeIndexImport
       parentRoute: typeof ComponentsImport
     }
     '/components/flex/': {
@@ -4963,6 +5140,10 @@ interface ComponentsRouteChildren {
   ComponentsDateInputStateRoute: typeof ComponentsDateInputStateRoute
   ComponentsDateInputStatusRoute: typeof ComponentsDateInputStatusRoute
   ComponentsDateInputVariantsRoute: typeof ComponentsDateInputVariantsRoute
+  ComponentsDateTimeFieldDimensionRoute: typeof ComponentsDateTimeFieldDimensionRoute
+  ComponentsDateTimeFieldDisplayInlineRoute: typeof ComponentsDateTimeFieldDisplayInlineRoute
+  ComponentsDateTimeFieldExtraTextRoute: typeof ComponentsDateTimeFieldExtraTextRoute
+  ComponentsDateTimeFieldStatusRoute: typeof ComponentsDateTimeFieldStatusRoute
   ComponentsDividerLengthRoute: typeof ComponentsDividerLengthRoute
   ComponentsDividerStyleRoute: typeof ComponentsDividerStyleRoute
   ComponentsDividerThiknessRoute: typeof ComponentsDividerThiknessRoute
@@ -4994,6 +5175,12 @@ interface ComponentsRouteChildren {
   ComponentsDropdownMenuWithIconsRoute: typeof ComponentsDropdownMenuWithIconsRoute
   ComponentsDropdownMenuWithRadioButtonRoute: typeof ComponentsDropdownMenuWithRadioButtonRoute
   ComponentsDropdownMenuWithTooltipRoute: typeof ComponentsDropdownMenuWithTooltipRoute
+  ComponentsEditModeDimensionsRoute: typeof ComponentsEditModeDimensionsRoute
+  ComponentsEditModeDisablecopyingRoute: typeof ComponentsEditModeDisablecopyingRoute
+  ComponentsEditModeExtratextRoute: typeof ComponentsEditModeExtratextRoute
+  ComponentsEditModeMultilineRoute: typeof ComponentsEditModeMultilineRoute
+  ComponentsEditModeStatusRoute: typeof ComponentsEditModeStatusRoute
+  ComponentsEditModeTooltipRoute: typeof ComponentsEditModeTooltipRoute
   ComponentsFloatingButtonMobileRoute: typeof ComponentsFloatingButtonMobileRoute
   ComponentsFloatingButtonPositionRoute: typeof ComponentsFloatingButtonPositionRoute
   ComponentsFloatingButtonStylesRoute: typeof ComponentsFloatingButtonStylesRoute
@@ -5173,9 +5360,11 @@ interface ComponentsRouteChildren {
   ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute
   ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
   ComponentsDateInputIndexRoute: typeof ComponentsDateInputIndexRoute
+  ComponentsDateTimeFieldIndexRoute: typeof ComponentsDateTimeFieldIndexRoute
   ComponentsDividerIndexRoute: typeof ComponentsDividerIndexRoute
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
+  ComponentsEditModeIndexRoute: typeof ComponentsEditModeIndexRoute
   ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute
   ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
   ComponentsGlobalSearchIndexRoute: typeof ComponentsGlobalSearchIndexRoute
@@ -5305,6 +5494,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDateInputStateRoute: ComponentsDateInputStateRoute,
   ComponentsDateInputStatusRoute: ComponentsDateInputStatusRoute,
   ComponentsDateInputVariantsRoute: ComponentsDateInputVariantsRoute,
+  ComponentsDateTimeFieldDimensionRoute: ComponentsDateTimeFieldDimensionRoute,
+  ComponentsDateTimeFieldDisplayInlineRoute:
+    ComponentsDateTimeFieldDisplayInlineRoute,
+  ComponentsDateTimeFieldExtraTextRoute: ComponentsDateTimeFieldExtraTextRoute,
+  ComponentsDateTimeFieldStatusRoute: ComponentsDateTimeFieldStatusRoute,
   ComponentsDividerLengthRoute: ComponentsDividerLengthRoute,
   ComponentsDividerStyleRoute: ComponentsDividerStyleRoute,
   ComponentsDividerThiknessRoute: ComponentsDividerThiknessRoute,
@@ -5349,6 +5543,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsDropdownMenuWithRadioButtonRoute,
   ComponentsDropdownMenuWithTooltipRoute:
     ComponentsDropdownMenuWithTooltipRoute,
+  ComponentsEditModeDimensionsRoute: ComponentsEditModeDimensionsRoute,
+  ComponentsEditModeDisablecopyingRoute: ComponentsEditModeDisablecopyingRoute,
+  ComponentsEditModeExtratextRoute: ComponentsEditModeExtratextRoute,
+  ComponentsEditModeMultilineRoute: ComponentsEditModeMultilineRoute,
+  ComponentsEditModeStatusRoute: ComponentsEditModeStatusRoute,
+  ComponentsEditModeTooltipRoute: ComponentsEditModeTooltipRoute,
   ComponentsFloatingButtonMobileRoute: ComponentsFloatingButtonMobileRoute,
   ComponentsFloatingButtonPositionRoute: ComponentsFloatingButtonPositionRoute,
   ComponentsFloatingButtonStylesRoute: ComponentsFloatingButtonStylesRoute,
@@ -5552,9 +5752,11 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsChipsIndexRoute: ComponentsChipsIndexRoute,
   ComponentsContentSwitcherIndexRoute: ComponentsContentSwitcherIndexRoute,
   ComponentsDateInputIndexRoute: ComponentsDateInputIndexRoute,
+  ComponentsDateTimeFieldIndexRoute: ComponentsDateTimeFieldIndexRoute,
   ComponentsDividerIndexRoute: ComponentsDividerIndexRoute,
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
+  ComponentsEditModeIndexRoute: ComponentsEditModeIndexRoute,
   ComponentsFlexIndexRoute: ComponentsFlexIndexRoute,
   ComponentsFloatingButtonIndexRoute: ComponentsFloatingButtonIndexRoute,
   ComponentsGlobalSearchIndexRoute: ComponentsGlobalSearchIndexRoute,
@@ -5698,6 +5900,10 @@ export interface FileRoutesByFullPath {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
   '/components/divider/length': typeof ComponentsDividerLengthRoute
   '/components/divider/style': typeof ComponentsDividerStyleRoute
   '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
@@ -5729,6 +5935,12 @@ export interface FileRoutesByFullPath {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute
+  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute
+  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute
+  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
+  '/components/editMode/status': typeof ComponentsEditModeStatusRoute
+  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -5908,9 +6120,11 @@ export interface FileRoutesByFullPath {
   '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/dateInput': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute
   '/components/divider': typeof ComponentsDividerIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/editMode': typeof ComponentsEditModeIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
@@ -6033,6 +6247,10 @@ export interface FileRoutesByTo {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
   '/components/divider/length': typeof ComponentsDividerLengthRoute
   '/components/divider/style': typeof ComponentsDividerStyleRoute
   '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
@@ -6064,6 +6282,12 @@ export interface FileRoutesByTo {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute
+  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute
+  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute
+  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
+  '/components/editMode/status': typeof ComponentsEditModeStatusRoute
+  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -6243,9 +6467,11 @@ export interface FileRoutesByTo {
   '/components/chips': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
   '/components/dateInput': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute
   '/components/divider': typeof ComponentsDividerIndexRoute
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/editMode': typeof ComponentsEditModeIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
@@ -6369,6 +6595,10 @@ export interface FileRoutesById {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
   '/components/divider/length': typeof ComponentsDividerLengthRoute
   '/components/divider/style': typeof ComponentsDividerStyleRoute
   '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
@@ -6400,6 +6630,12 @@ export interface FileRoutesById {
   '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
   '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
   '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute
+  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute
+  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute
+  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
+  '/components/editMode/status': typeof ComponentsEditModeStatusRoute
+  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -6579,9 +6815,11 @@ export interface FileRoutesById {
   '/components/chips/': typeof ComponentsChipsIndexRoute
   '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
   '/components/dateInput/': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField/': typeof ComponentsDateTimeFieldIndexRoute
   '/components/divider/': typeof ComponentsDividerIndexRoute
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
+  '/components/editMode/': typeof ComponentsEditModeIndexRoute
   '/components/flex/': typeof ComponentsFlexIndexRoute
   '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch/': typeof ComponentsGlobalSearchIndexRoute
@@ -6706,6 +6944,10 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateTimeField/dimension'
+    | '/components/dateTimeField/displayInline'
+    | '/components/dateTimeField/extraText'
+    | '/components/dateTimeField/status'
     | '/components/divider/length'
     | '/components/divider/style'
     | '/components/divider/thikness'
@@ -6737,6 +6979,12 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/editMode/dimensions'
+    | '/components/editMode/disablecopying'
+    | '/components/editMode/extratext'
+    | '/components/editMode/multiline'
+    | '/components/editMode/status'
+    | '/components/editMode/tooltip'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -6916,9 +7164,11 @@ export interface FileRouteTypes {
     | '/components/chips'
     | '/components/contentSwitcher'
     | '/components/dateInput'
+    | '/components/dateTimeField'
     | '/components/divider'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/editMode'
     | '/components/flex'
     | '/components/floatingButton'
     | '/components/globalSearch'
@@ -7040,6 +7290,10 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateTimeField/dimension'
+    | '/components/dateTimeField/displayInline'
+    | '/components/dateTimeField/extraText'
+    | '/components/dateTimeField/status'
     | '/components/divider/length'
     | '/components/divider/style'
     | '/components/divider/thikness'
@@ -7071,6 +7325,12 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/editMode/dimensions'
+    | '/components/editMode/disablecopying'
+    | '/components/editMode/extratext'
+    | '/components/editMode/multiline'
+    | '/components/editMode/status'
+    | '/components/editMode/tooltip'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -7250,9 +7510,11 @@ export interface FileRouteTypes {
     | '/components/chips'
     | '/components/contentSwitcher'
     | '/components/dateInput'
+    | '/components/dateTimeField'
     | '/components/divider'
     | '/components/drawer'
     | '/components/dropdown'
+    | '/components/editMode'
     | '/components/flex'
     | '/components/floatingButton'
     | '/components/globalSearch'
@@ -7374,6 +7636,10 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateTimeField/dimension'
+    | '/components/dateTimeField/displayInline'
+    | '/components/dateTimeField/extraText'
+    | '/components/dateTimeField/status'
     | '/components/divider/length'
     | '/components/divider/style'
     | '/components/divider/thikness'
@@ -7405,6 +7671,12 @@ export interface FileRouteTypes {
     | '/components/dropdown/menuWithIcons'
     | '/components/dropdown/menuWithRadioButton'
     | '/components/dropdown/menuWithTooltip'
+    | '/components/editMode/dimensions'
+    | '/components/editMode/disablecopying'
+    | '/components/editMode/extratext'
+    | '/components/editMode/multiline'
+    | '/components/editMode/status'
+    | '/components/editMode/tooltip'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -7584,9 +7856,11 @@ export interface FileRouteTypes {
     | '/components/chips/'
     | '/components/contentSwitcher/'
     | '/components/dateInput/'
+    | '/components/dateTimeField/'
     | '/components/divider/'
     | '/components/drawer/'
     | '/components/dropdown/'
+    | '/components/editMode/'
     | '/components/flex/'
     | '/components/floatingButton/'
     | '/components/globalSearch/'
@@ -7735,6 +8009,10 @@ export const routeTree = rootRoute
         "/components/dateInput/state",
         "/components/dateInput/status",
         "/components/dateInput/variants",
+        "/components/dateTimeField/dimension",
+        "/components/dateTimeField/displayInline",
+        "/components/dateTimeField/extraText",
+        "/components/dateTimeField/status",
         "/components/divider/length",
         "/components/divider/style",
         "/components/divider/thikness",
@@ -7766,6 +8044,12 @@ export const routeTree = rootRoute
         "/components/dropdown/menuWithIcons",
         "/components/dropdown/menuWithRadioButton",
         "/components/dropdown/menuWithTooltip",
+        "/components/editMode/dimensions",
+        "/components/editMode/disablecopying",
+        "/components/editMode/extratext",
+        "/components/editMode/multiline",
+        "/components/editMode/status",
+        "/components/editMode/tooltip",
         "/components/floatingButton/mobile",
         "/components/floatingButton/position",
         "/components/floatingButton/styles",
@@ -7945,9 +8229,11 @@ export const routeTree = rootRoute
         "/components/chips/",
         "/components/contentSwitcher/",
         "/components/dateInput/",
+        "/components/dateTimeField/",
         "/components/divider/",
         "/components/drawer/",
         "/components/dropdown/",
+        "/components/editMode/",
         "/components/flex/",
         "/components/floatingButton/",
         "/components/globalSearch/",
@@ -8303,6 +8589,22 @@ export const routeTree = rootRoute
       "filePath": "components/dateInput/variants.tsx",
       "parent": "/components"
     },
+    "/components/dateTimeField/dimension": {
+      "filePath": "components/dateTimeField/dimension.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/displayInline": {
+      "filePath": "components/dateTimeField/displayInline.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/extraText": {
+      "filePath": "components/dateTimeField/extraText.tsx",
+      "parent": "/components"
+    },
+    "/components/dateTimeField/status": {
+      "filePath": "components/dateTimeField/status.tsx",
+      "parent": "/components"
+    },
     "/components/divider/length": {
       "filePath": "components/divider/length.tsx",
       "parent": "/components"
@@ -8425,6 +8727,30 @@ export const routeTree = rootRoute
     },
     "/components/dropdown/menuWithTooltip": {
       "filePath": "components/dropdown/menuWithTooltip.tsx",
+      "parent": "/components"
+    },
+    "/components/editMode/dimensions": {
+      "filePath": "components/editMode/dimensions.tsx",
+      "parent": "/components"
+    },
+    "/components/editMode/disablecopying": {
+      "filePath": "components/editMode/disablecopying.tsx",
+      "parent": "/components"
+    },
+    "/components/editMode/extratext": {
+      "filePath": "components/editMode/extratext.tsx",
+      "parent": "/components"
+    },
+    "/components/editMode/multiline": {
+      "filePath": "components/editMode/multiline.tsx",
+      "parent": "/components"
+    },
+    "/components/editMode/status": {
+      "filePath": "components/editMode/status.tsx",
+      "parent": "/components"
+    },
+    "/components/editMode/tooltip": {
+      "filePath": "components/editMode/tooltip.tsx",
       "parent": "/components"
     },
     "/components/floatingButton/mobile": {
@@ -9143,6 +9469,10 @@ export const routeTree = rootRoute
       "filePath": "components/dateInput/index.tsx",
       "parent": "/components"
     },
+    "/components/dateTimeField/": {
+      "filePath": "components/dateTimeField/index.tsx",
+      "parent": "/components"
+    },
     "/components/divider/": {
       "filePath": "components/divider/index.tsx",
       "parent": "/components"
@@ -9153,6 +9483,10 @@ export const routeTree = rootRoute
     },
     "/components/dropdown/": {
       "filePath": "components/dropdown/index.tsx",
+      "parent": "/components"
+    },
+    "/components/editMode/": {
+      "filePath": "components/editMode/index.tsx",
       "parent": "/components"
     },
     "/components/flex/": {

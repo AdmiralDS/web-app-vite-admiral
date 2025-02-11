@@ -650,6 +650,17 @@ const data = [
     ],
   },
   {
+    name: 'DateTimeField',
+    path: '/components/dateTimeField',
+    routes: [
+      { name: 'Базовый пример', path: '/components/dateTimeField' },
+      { name: 'Размеры', path: '/components/dateTimeField/dimension' },
+      { name: 'Дополнительный текст', path: '/components/dateTimeField/extraText' },
+      { name: 'С подписью в одну линию', path: '/components/dateTimeField/displayInline' },
+      { name: 'Состояние/статус', path: '/components/dateTimeField/status' },
+    ],
+  },
+  {
     name: 'Divider',
     path: '/components/divider',
     routes: [
@@ -682,6 +693,19 @@ const data = [
         name: 'Выделение определённых дат',
         path: '/components/calendar/specialDates',
       },
+    ],
+  },
+  {
+    name: 'EditMode',
+    path: '/components/editmode',
+    routes: [
+      { name: 'Базовый пример', path: '/components/editmode' },
+      { name: 'Размеры', path: '/components/editmode/dimensions' },
+      { name: 'Статусы/состояния', path: '/components/editmode/status' },
+      { name: 'Несколько строк', path: '/components/editmode/multiline' },
+      { name: 'Невозможность копирования', path: '/components/editmode/disablecopying' },
+      { name: 'Тултип', path: '/components/editmode/tooltip' },
+      { name: 'Дополнительный текст', path: '/components/editmode/extratext' },
     ],
   },
 ];
