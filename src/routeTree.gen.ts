@@ -67,6 +67,7 @@ import { Route as ComponentsChipsIndexImport } from './routes/components/chips/i
 import { Route as ComponentsCheckboxIndexImport } from './routes/components/checkbox/index'
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
+import { Route as ComponentsCalendarIndexImport } from './routes/components/calendar/index'
 import { Route as ComponentsButtonGroupIndexImport } from './routes/components/buttonGroup/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
 import { Route as ComponentsBreadcrumbsIndexImport } from './routes/components/breadcrumbs/index'
@@ -303,6 +304,14 @@ import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from 
 import { Route as ComponentsCarouselSliderPositionImport } from './routes/components/carousel/sliderPosition'
 import { Route as ComponentsCarouselCarouselAutoChangeImport } from './routes/components/carousel/carouselAutoChange'
 import { Route as ComponentsCarouselArrowsImport } from './routes/components/carousel/arrows'
+import { Route as ComponentsCalendarViewDateMonthsYearsImport } from './routes/components/calendar/viewDateMonthsYears'
+import { Route as ComponentsCalendarViewDateAfterChooseImport } from './routes/components/calendar/viewDateAfterChoose'
+import { Route as ComponentsCalendarSpecialDatesImport } from './routes/components/calendar/specialDates'
+import { Route as ComponentsCalendarRangeImport } from './routes/components/calendar/range'
+import { Route as ComponentsCalendarMaxDateImport } from './routes/components/calendar/maxDate'
+import { Route as ComponentsCalendarFilterDateImport } from './routes/components/calendar/filterDate'
+import { Route as ComponentsCalendarCallbackImport } from './routes/components/calendar/callback'
+import { Route as ComponentsCalendarActiveViewDateImport } from './routes/components/calendar/activeViewDate'
 import { Route as ComponentsButtonGroupVariantsImport } from './routes/components/buttonGroup/variants'
 import { Route as ComponentsButtonGroupStylesImport } from './routes/components/buttonGroup/styles'
 import { Route as ComponentsButtonGroupStatesImport } from './routes/components/buttonGroup/states'
@@ -694,6 +703,12 @@ const ComponentsCarouselSliderIndexRoute =
 const ComponentsCarouselIndexRoute = ComponentsCarouselIndexImport.update({
   id: '/carousel/',
   path: '/carousel/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsCalendarIndexRoute = ComponentsCalendarIndexImport.update({
+  id: '/calendar/',
+  path: '/calendar/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -2276,6 +2291,61 @@ const ComponentsCarouselArrowsRoute = ComponentsCarouselArrowsImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsCalendarViewDateMonthsYearsRoute =
+  ComponentsCalendarViewDateMonthsYearsImport.update({
+    id: '/calendar/viewDateMonthsYears',
+    path: '/calendar/viewDateMonthsYears',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarViewDateAfterChooseRoute =
+  ComponentsCalendarViewDateAfterChooseImport.update({
+    id: '/calendar/viewDateAfterChoose',
+    path: '/calendar/viewDateAfterChoose',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarSpecialDatesRoute =
+  ComponentsCalendarSpecialDatesImport.update({
+    id: '/calendar/specialDates',
+    path: '/calendar/specialDates',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarRangeRoute = ComponentsCalendarRangeImport.update({
+  id: '/calendar/range',
+  path: '/calendar/range',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsCalendarMaxDateRoute = ComponentsCalendarMaxDateImport.update({
+  id: '/calendar/maxDate',
+  path: '/calendar/maxDate',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsCalendarFilterDateRoute =
+  ComponentsCalendarFilterDateImport.update({
+    id: '/calendar/filterDate',
+    path: '/calendar/filterDate',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarCallbackRoute = ComponentsCalendarCallbackImport.update(
+  {
+    id: '/calendar/callback',
+    path: '/calendar/callback',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsCalendarActiveViewDateRoute =
+  ComponentsCalendarActiveViewDateImport.update({
+    id: '/calendar/activeViewDate',
+    path: '/calendar/activeViewDate',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsButtonGroupVariantsRoute =
   ComponentsButtonGroupVariantsImport.update({
     id: '/buttonGroup/variants',
@@ -2755,6 +2825,62 @@ declare module '@tanstack/react-router' {
       path: '/buttonGroup/variants'
       fullPath: '/components/buttonGroup/variants'
       preLoaderRoute: typeof ComponentsButtonGroupVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/activeViewDate': {
+      id: '/components/calendar/activeViewDate'
+      path: '/calendar/activeViewDate'
+      fullPath: '/components/calendar/activeViewDate'
+      preLoaderRoute: typeof ComponentsCalendarActiveViewDateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/callback': {
+      id: '/components/calendar/callback'
+      path: '/calendar/callback'
+      fullPath: '/components/calendar/callback'
+      preLoaderRoute: typeof ComponentsCalendarCallbackImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/filterDate': {
+      id: '/components/calendar/filterDate'
+      path: '/calendar/filterDate'
+      fullPath: '/components/calendar/filterDate'
+      preLoaderRoute: typeof ComponentsCalendarFilterDateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/maxDate': {
+      id: '/components/calendar/maxDate'
+      path: '/calendar/maxDate'
+      fullPath: '/components/calendar/maxDate'
+      preLoaderRoute: typeof ComponentsCalendarMaxDateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/range': {
+      id: '/components/calendar/range'
+      path: '/calendar/range'
+      fullPath: '/components/calendar/range'
+      preLoaderRoute: typeof ComponentsCalendarRangeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/specialDates': {
+      id: '/components/calendar/specialDates'
+      path: '/calendar/specialDates'
+      fullPath: '/components/calendar/specialDates'
+      preLoaderRoute: typeof ComponentsCalendarSpecialDatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/viewDateAfterChoose': {
+      id: '/components/calendar/viewDateAfterChoose'
+      path: '/calendar/viewDateAfterChoose'
+      fullPath: '/components/calendar/viewDateAfterChoose'
+      preLoaderRoute: typeof ComponentsCalendarViewDateAfterChooseImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/viewDateMonthsYears': {
+      id: '/components/calendar/viewDateMonthsYears'
+      path: '/calendar/viewDateMonthsYears'
+      fullPath: '/components/calendar/viewDateMonthsYears'
+      preLoaderRoute: typeof ComponentsCalendarViewDateMonthsYearsImport
       parentRoute: typeof ComponentsImport
     }
     '/components/carousel/arrows': {
@@ -4409,6 +4535,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsButtonGroupIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/calendar/': {
+      id: '/components/calendar/'
+      path: '/calendar'
+      fullPath: '/components/calendar'
+      preLoaderRoute: typeof ComponentsCalendarIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/': {
       id: '/components/carousel/'
       path: '/carousel'
@@ -4789,6 +4922,14 @@ interface ComponentsRouteChildren {
   ComponentsButtonGroupStatesRoute: typeof ComponentsButtonGroupStatesRoute
   ComponentsButtonGroupStylesRoute: typeof ComponentsButtonGroupStylesRoute
   ComponentsButtonGroupVariantsRoute: typeof ComponentsButtonGroupVariantsRoute
+  ComponentsCalendarActiveViewDateRoute: typeof ComponentsCalendarActiveViewDateRoute
+  ComponentsCalendarCallbackRoute: typeof ComponentsCalendarCallbackRoute
+  ComponentsCalendarFilterDateRoute: typeof ComponentsCalendarFilterDateRoute
+  ComponentsCalendarMaxDateRoute: typeof ComponentsCalendarMaxDateRoute
+  ComponentsCalendarRangeRoute: typeof ComponentsCalendarRangeRoute
+  ComponentsCalendarSpecialDatesRoute: typeof ComponentsCalendarSpecialDatesRoute
+  ComponentsCalendarViewDateAfterChooseRoute: typeof ComponentsCalendarViewDateAfterChooseRoute
+  ComponentsCalendarViewDateMonthsYearsRoute: typeof ComponentsCalendarViewDateMonthsYearsRoute
   ComponentsCarouselArrowsRoute: typeof ComponentsCarouselArrowsRoute
   ComponentsCarouselCarouselAutoChangeRoute: typeof ComponentsCarouselCarouselAutoChangeRoute
   ComponentsCarouselSliderPositionRoute: typeof ComponentsCarouselSliderPositionRoute
@@ -5025,6 +5166,7 @@ interface ComponentsRouteChildren {
   ComponentsBreadcrumbsIndexRoute: typeof ComponentsBreadcrumbsIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsButtonGroupIndexRoute: typeof ComponentsButtonGroupIndexRoute
+  ComponentsCalendarIndexRoute: typeof ComponentsCalendarIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
   ComponentsCheckboxIndexRoute: typeof ComponentsCheckboxIndexRoute
@@ -5113,6 +5255,16 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsButtonGroupStatesRoute: ComponentsButtonGroupStatesRoute,
   ComponentsButtonGroupStylesRoute: ComponentsButtonGroupStylesRoute,
   ComponentsButtonGroupVariantsRoute: ComponentsButtonGroupVariantsRoute,
+  ComponentsCalendarActiveViewDateRoute: ComponentsCalendarActiveViewDateRoute,
+  ComponentsCalendarCallbackRoute: ComponentsCalendarCallbackRoute,
+  ComponentsCalendarFilterDateRoute: ComponentsCalendarFilterDateRoute,
+  ComponentsCalendarMaxDateRoute: ComponentsCalendarMaxDateRoute,
+  ComponentsCalendarRangeRoute: ComponentsCalendarRangeRoute,
+  ComponentsCalendarSpecialDatesRoute: ComponentsCalendarSpecialDatesRoute,
+  ComponentsCalendarViewDateAfterChooseRoute:
+    ComponentsCalendarViewDateAfterChooseRoute,
+  ComponentsCalendarViewDateMonthsYearsRoute:
+    ComponentsCalendarViewDateMonthsYearsRoute,
   ComponentsCarouselArrowsRoute: ComponentsCarouselArrowsRoute,
   ComponentsCarouselCarouselAutoChangeRoute:
     ComponentsCarouselCarouselAutoChangeRoute,
@@ -5393,6 +5545,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsBreadcrumbsIndexRoute: ComponentsBreadcrumbsIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsButtonGroupIndexRoute: ComponentsButtonGroupIndexRoute,
+  ComponentsCalendarIndexRoute: ComponentsCalendarIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
   ComponentsCheckboxIndexRoute: ComponentsCheckboxIndexRoute,
@@ -5504,6 +5657,14 @@ export interface FileRoutesByFullPath {
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
   '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
   '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
@@ -5740,6 +5901,7 @@ export interface FileRoutesByFullPath {
   '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar': typeof ComponentsCalendarIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
@@ -5830,6 +5992,14 @@ export interface FileRoutesByTo {
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
   '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
   '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
@@ -6066,6 +6236,7 @@ export interface FileRoutesByTo {
   '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar': typeof ComponentsCalendarIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
@@ -6157,6 +6328,14 @@ export interface FileRoutesById {
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
   '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
   '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
@@ -6393,6 +6572,7 @@ export interface FileRoutesById {
   '/components/breadcrumbs/': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/buttonGroup/': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar/': typeof ComponentsCalendarIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox/': typeof ComponentsCheckboxIndexRoute
@@ -6485,6 +6665,14 @@ export interface FileRouteTypes {
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
     | '/components/buttonGroup/variants'
+    | '/components/calendar/activeViewDate'
+    | '/components/calendar/callback'
+    | '/components/calendar/filterDate'
+    | '/components/calendar/maxDate'
+    | '/components/calendar/range'
+    | '/components/calendar/specialDates'
+    | '/components/calendar/viewDateAfterChoose'
+    | '/components/calendar/viewDateMonthsYears'
     | '/components/carousel/arrows'
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
@@ -6721,6 +6909,7 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs'
     | '/components/button'
     | '/components/buttonGroup'
+    | '/components/calendar'
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/checkbox'
@@ -6810,6 +6999,14 @@ export interface FileRouteTypes {
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
     | '/components/buttonGroup/variants'
+    | '/components/calendar/activeViewDate'
+    | '/components/calendar/callback'
+    | '/components/calendar/filterDate'
+    | '/components/calendar/maxDate'
+    | '/components/calendar/range'
+    | '/components/calendar/specialDates'
+    | '/components/calendar/viewDateAfterChoose'
+    | '/components/calendar/viewDateMonthsYears'
     | '/components/carousel/arrows'
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
@@ -7046,6 +7243,7 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs'
     | '/components/button'
     | '/components/buttonGroup'
+    | '/components/calendar'
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/checkbox'
@@ -7135,6 +7333,14 @@ export interface FileRouteTypes {
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
     | '/components/buttonGroup/variants'
+    | '/components/calendar/activeViewDate'
+    | '/components/calendar/callback'
+    | '/components/calendar/filterDate'
+    | '/components/calendar/maxDate'
+    | '/components/calendar/range'
+    | '/components/calendar/specialDates'
+    | '/components/calendar/viewDateAfterChoose'
+    | '/components/calendar/viewDateMonthsYears'
     | '/components/carousel/arrows'
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
@@ -7371,6 +7577,7 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs/'
     | '/components/button/'
     | '/components/buttonGroup/'
+    | '/components/calendar/'
     | '/components/carousel/'
     | '/components/carouselSlider/'
     | '/components/checkbox/'
@@ -7487,6 +7694,14 @@ export const routeTree = rootRoute
         "/components/buttonGroup/states",
         "/components/buttonGroup/styles",
         "/components/buttonGroup/variants",
+        "/components/calendar/activeViewDate",
+        "/components/calendar/callback",
+        "/components/calendar/filterDate",
+        "/components/calendar/maxDate",
+        "/components/calendar/range",
+        "/components/calendar/specialDates",
+        "/components/calendar/viewDateAfterChoose",
+        "/components/calendar/viewDateMonthsYears",
         "/components/carousel/arrows",
         "/components/carousel/carouselAutoChange",
         "/components/carousel/sliderPosition",
@@ -7723,6 +7938,7 @@ export const routeTree = rootRoute
         "/components/breadcrumbs/",
         "/components/button/",
         "/components/buttonGroup/",
+        "/components/calendar/",
         "/components/carousel/",
         "/components/carouselSlider/",
         "/components/checkbox/",
@@ -7921,6 +8137,38 @@ export const routeTree = rootRoute
     },
     "/components/buttonGroup/variants": {
       "filePath": "components/buttonGroup/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/activeViewDate": {
+      "filePath": "components/calendar/activeViewDate.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/callback": {
+      "filePath": "components/calendar/callback.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/filterDate": {
+      "filePath": "components/calendar/filterDate.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/maxDate": {
+      "filePath": "components/calendar/maxDate.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/range": {
+      "filePath": "components/calendar/range.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/specialDates": {
+      "filePath": "components/calendar/specialDates.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/viewDateAfterChoose": {
+      "filePath": "components/calendar/viewDateAfterChoose.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/viewDateMonthsYears": {
+      "filePath": "components/calendar/viewDateMonthsYears.tsx",
       "parent": "/components"
     },
     "/components/carousel/arrows": {
@@ -8865,6 +9113,10 @@ export const routeTree = rootRoute
     },
     "/components/buttonGroup/": {
       "filePath": "components/buttonGroup/index.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/": {
+      "filePath": "components/calendar/index.tsx",
       "parent": "/components"
     },
     "/components/carousel/": {

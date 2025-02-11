@@ -660,6 +660,30 @@ const data = [
       { name: 'Длина', path: '/components/divider/length' },
     ],
   },
+  {
+    name: 'Calendar',
+    path: '/components/calendar',
+    routes: [
+      { name: 'Базовый пример', path: '/components/calendar' },
+      { name: 'Range', path: '/components/calendar/range' },
+      { name: 'Ограничение максимальной даты', path: '/components/calendar/maxDate' },
+      { name: 'Недоступные для выбора даты', path: '/components/calendar/filterDate' },
+      { name: 'Callback', path: '/components/calendar/callback' },
+      { name: 'Переключение экранов выбора дат', path: '/components/calendar/activeViewDate' },
+      {
+        name: 'Пример с открытием экрана выбора месяца после выбора года',
+        path: '/components/calendar/viewDateAfterChoose',
+      },
+      {
+        name: 'Пример с выбором только месяца/года',
+        path: '/components/calendar/viewDateMonthsYears',
+      },
+      {
+        name: 'Выделение определённых дат',
+        path: '/components/calendar/specialDates',
+      },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
