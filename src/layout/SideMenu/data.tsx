@@ -710,6 +710,20 @@ const data = [
       { name: 'Дополнительный текст', path: '/components/editmode/extratext' },
     ],
   },
+  {
+    name: 'NumberInput',
+    path: '/components/numberInput',
+    routes: [
+      { name: 'Базовый пример', path: '/components/numberInput' },
+      { name: 'Размеры', path: '/components/numberInput/sizes' },
+      { name: 'Состояния', path: '/components/numberInput/state' },
+      { name: 'Статусы', path: '/components/numberInput/status' },
+      { name: 'С minValue, maxValue', path: '/components/numberInput/minMaxValue' },
+      { name: 'С изменением настроек suffix, precision, thousand', path: '/components/numberInput/custom' },
+      { name: 'Скрытые пробелы', path: '/components/numberInput/spaces' },
+      { name: 'Контролируемый инпут', path: '/components/numberInput/controlledInput' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
