@@ -194,6 +194,7 @@ import { Route as ComponentsNumberInputStatusImport } from './routes/components/
 import { Route as ComponentsNumberInputStateImport } from './routes/components/numberInput/state'
 import { Route as ComponentsNumberInputSpacesImport } from './routes/components/numberInput/spaces'
 import { Route as ComponentsNumberInputSizesImport } from './routes/components/numberInput/sizes'
+import { Route as ComponentsNumberInputNumberInputFieldImport } from './routes/components/numberInput/numberInputField'
 import { Route as ComponentsNumberInputMinMaxValueImport } from './routes/components/numberInput/minMaxValue'
 import { Route as ComponentsNumberInputCustomImport } from './routes/components/numberInput/custom'
 import { Route as ComponentsNumberInputControlledInputImport } from './routes/components/numberInput/controlledInput'
@@ -1572,6 +1573,13 @@ const ComponentsNumberInputSizesRoute = ComponentsNumberInputSizesImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsNumberInputNumberInputFieldRoute =
+  ComponentsNumberInputNumberInputFieldImport.update({
+    id: '/numberInput/numberInputField',
+    path: '/numberInput/numberInputField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsNumberInputMinMaxValueRoute =
   ComponentsNumberInputMinMaxValueImport.update({
@@ -3983,6 +3991,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsNumberInputMinMaxValueImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/numberInput/numberInputField': {
+      id: '/components/numberInput/numberInputField'
+      path: '/numberInput/numberInputField'
+      fullPath: '/components/numberInput/numberInputField'
+      preLoaderRoute: typeof ComponentsNumberInputNumberInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/sizes': {
       id: '/components/numberInput/sizes'
       path: '/numberInput/sizes'
@@ -5392,6 +5407,7 @@ interface ComponentsRouteChildren {
   ComponentsNumberInputControlledInputRoute: typeof ComponentsNumberInputControlledInputRoute
   ComponentsNumberInputCustomRoute: typeof ComponentsNumberInputCustomRoute
   ComponentsNumberInputMinMaxValueRoute: typeof ComponentsNumberInputMinMaxValueRoute
+  ComponentsNumberInputNumberInputFieldRoute: typeof ComponentsNumberInputNumberInputFieldRoute
   ComponentsNumberInputSizesRoute: typeof ComponentsNumberInputSizesRoute
   ComponentsNumberInputSpacesRoute: typeof ComponentsNumberInputSpacesRoute
   ComponentsNumberInputStateRoute: typeof ComponentsNumberInputStateRoute
@@ -5777,6 +5793,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsNumberInputControlledInputRoute,
   ComponentsNumberInputCustomRoute: ComponentsNumberInputCustomRoute,
   ComponentsNumberInputMinMaxValueRoute: ComponentsNumberInputMinMaxValueRoute,
+  ComponentsNumberInputNumberInputFieldRoute:
+    ComponentsNumberInputNumberInputFieldRoute,
   ComponentsNumberInputSizesRoute: ComponentsNumberInputSizesRoute,
   ComponentsNumberInputSpacesRoute: ComponentsNumberInputSpacesRoute,
   ComponentsNumberInputStateRoute: ComponentsNumberInputStateRoute,
@@ -6174,6 +6192,7 @@ export interface FileRoutesByFullPath {
   '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
   '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
   '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
   '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
   '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
   '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
@@ -6531,6 +6550,7 @@ export interface FileRoutesByTo {
   '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
   '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
   '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
   '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
   '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
   '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
@@ -6889,6 +6909,7 @@ export interface FileRoutesById {
   '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
   '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
   '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
   '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
   '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
   '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
@@ -7248,6 +7269,7 @@ export interface FileRouteTypes {
     | '/components/numberInput/controlledInput'
     | '/components/numberInput/custom'
     | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
     | '/components/numberInput/sizes'
     | '/components/numberInput/spaces'
     | '/components/numberInput/state'
@@ -7604,6 +7626,7 @@ export interface FileRouteTypes {
     | '/components/numberInput/controlledInput'
     | '/components/numberInput/custom'
     | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
     | '/components/numberInput/sizes'
     | '/components/numberInput/spaces'
     | '/components/numberInput/state'
@@ -7960,6 +7983,7 @@ export interface FileRouteTypes {
     | '/components/numberInput/controlledInput'
     | '/components/numberInput/custom'
     | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
     | '/components/numberInput/sizes'
     | '/components/numberInput/spaces'
     | '/components/numberInput/state'
@@ -8343,6 +8367,7 @@ export const routeTree = rootRoute
         "/components/numberInput/controlledInput",
         "/components/numberInput/custom",
         "/components/numberInput/minMaxValue",
+        "/components/numberInput/numberInputField",
         "/components/numberInput/sizes",
         "/components/numberInput/spaces",
         "/components/numberInput/state",
@@ -9228,6 +9253,10 @@ export const routeTree = rootRoute
     },
     "/components/numberInput/minMaxValue": {
       "filePath": "components/numberInput/minMaxValue.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/numberInputField": {
+      "filePath": "components/numberInput/numberInputField.tsx",
       "parent": "/components"
     },
     "/components/numberInput/sizes": {

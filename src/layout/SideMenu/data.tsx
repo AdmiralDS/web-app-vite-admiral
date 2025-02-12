@@ -722,6 +722,7 @@ const data = [
       { name: 'С изменением настроек suffix, precision, thousand', path: '/components/numberInput/custom' },
       { name: 'Скрытые пробелы', path: '/components/numberInput/spaces' },
       { name: 'Контролируемый инпут', path: '/components/numberInput/controlledInput' },
+      { name: 'NumberInputField', path: '/components/numberInput/numberInputField' },
     ],
   },
 ];
