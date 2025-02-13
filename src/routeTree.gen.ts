@@ -198,6 +198,7 @@ import { Route as ComponentsPaginationTwoEntriesImport } from './routes/componen
 import { Route as ComponentsPaginationOneWithInputImport } from './routes/components/paginationOne/withInput'
 import { Route as ComponentsPaginationOneTypesImport } from './routes/components/paginationOne/types'
 import { Route as ComponentsPaginationOneStatesImport } from './routes/components/paginationOne/states'
+import { Route as ComponentsPaginationOneSizesImport } from './routes/components/paginationOne/sizes'
 import { Route as ComponentsOverflowMenuStylesImport } from './routes/components/overflowMenu/styles'
 import { Route as ComponentsNumberInputStatusImport } from './routes/components/numberInput/status'
 import { Route as ComponentsNumberInputStateImport } from './routes/components/numberInput/state'
@@ -1611,6 +1612,13 @@ const ComponentsPaginationOneStatesRoute =
   ComponentsPaginationOneStatesImport.update({
     id: '/paginationOne/states',
     path: '/paginationOne/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPaginationOneSizesRoute =
+  ComponentsPaginationOneSizesImport.update({
+    id: '/paginationOne/sizes',
+    path: '/paginationOne/sizes',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -4193,6 +4201,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsOverflowMenuStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/paginationOne/sizes': {
+      id: '/components/paginationOne/sizes'
+      path: '/paginationOne/sizes'
+      fullPath: '/components/paginationOne/sizes'
+      preLoaderRoute: typeof ComponentsPaginationOneSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationOne/states': {
       id: '/components/paginationOne/states'
       path: '/paginationOne/states'
@@ -5642,6 +5657,7 @@ interface ComponentsRouteChildren {
   ComponentsNumberInputStateRoute: typeof ComponentsNumberInputStateRoute
   ComponentsNumberInputStatusRoute: typeof ComponentsNumberInputStatusRoute
   ComponentsOverflowMenuStylesRoute: typeof ComponentsOverflowMenuStylesRoute
+  ComponentsPaginationOneSizesRoute: typeof ComponentsPaginationOneSizesRoute
   ComponentsPaginationOneStatesRoute: typeof ComponentsPaginationOneStatesRoute
   ComponentsPaginationOneTypesRoute: typeof ComponentsPaginationOneTypesRoute
   ComponentsPaginationOneWithInputRoute: typeof ComponentsPaginationOneWithInputRoute
@@ -6045,6 +6061,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsNumberInputStateRoute: ComponentsNumberInputStateRoute,
   ComponentsNumberInputStatusRoute: ComponentsNumberInputStatusRoute,
   ComponentsOverflowMenuStylesRoute: ComponentsOverflowMenuStylesRoute,
+  ComponentsPaginationOneSizesRoute: ComponentsPaginationOneSizesRoute,
   ComponentsPaginationOneStatesRoute: ComponentsPaginationOneStatesRoute,
   ComponentsPaginationOneTypesRoute: ComponentsPaginationOneTypesRoute,
   ComponentsPaginationOneWithInputRoute: ComponentsPaginationOneWithInputRoute,
@@ -6462,6 +6479,7 @@ export interface FileRoutesByFullPath {
   '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
   '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
   '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute
@@ -6835,6 +6853,7 @@ export interface FileRoutesByTo {
   '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
   '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
   '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute
@@ -7209,6 +7228,7 @@ export interface FileRoutesById {
   '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
   '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
   '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute
@@ -7584,6 +7604,7 @@ export interface FileRouteTypes {
     | '/components/numberInput/state'
     | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
+    | '/components/paginationOne/sizes'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
     | '/components/paginationOne/withInput'
@@ -7956,6 +7977,7 @@ export interface FileRouteTypes {
     | '/components/numberInput/state'
     | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
+    | '/components/paginationOne/sizes'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
     | '/components/paginationOne/withInput'
@@ -8328,6 +8350,7 @@ export interface FileRouteTypes {
     | '/components/numberInput/state'
     | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
+    | '/components/paginationOne/sizes'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
     | '/components/paginationOne/withInput'
@@ -8727,6 +8750,7 @@ export const routeTree = rootRoute
         "/components/numberInput/state",
         "/components/numberInput/status",
         "/components/overflowMenu/styles",
+        "/components/paginationOne/sizes",
         "/components/paginationOne/states",
         "/components/paginationOne/types",
         "/components/paginationOne/withInput",
@@ -9664,6 +9688,10 @@ export const routeTree = rootRoute
     },
     "/components/overflowMenu/styles": {
       "filePath": "components/overflowMenu/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/paginationOne/sizes": {
+      "filePath": "components/paginationOne/sizes.tsx",
       "parent": "/components"
     },
     "/components/paginationOne/states": {
