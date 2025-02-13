@@ -642,6 +642,15 @@ const data = [
     ],
   },
   {
+    name: 'Select',
+    path: '/components/select',
+    routes: [
+      { name: 'Базовый пример', path: '/components/select' },
+      { name: 'Состояния', path: '/components/select/state' },
+      { name: 'MultiSelect с кнопкой "Выбрать все"', path: '/components/select/multiSelectChooseAll' },
+    ],
+  },
+  {
     name: 'Anchor',
     path: '/components/anchor',
     routes: [

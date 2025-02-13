@@ -33,6 +33,7 @@ import { Route as ComponentsStatusIndicatorIndexImport } from './routes/componen
 import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
 import { Route as ComponentsSliderIndexImport } from './routes/components/slider/index'
 import { Route as ComponentsSkeletonIndexImport } from './routes/components/skeleton/index'
+import { Route as ComponentsSelectIndexImport } from './routes/components/select/index'
 import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
 import { Route as ComponentsScrollContainerIndexImport } from './routes/components/scrollContainer/index'
 import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
@@ -160,6 +161,8 @@ import { Route as ComponentsSliderRangeOptionsImport } from './routes/components
 import { Route as ComponentsSliderRangeImport } from './routes/components/slider/range'
 import { Route as ComponentsSliderOptionsImport } from './routes/components/slider/options'
 import { Route as ComponentsSliderCustomImport } from './routes/components/slider/custom'
+import { Route as ComponentsSelectStateImport } from './routes/components/select/state'
+import { Route as ComponentsSelectMultiSelectChooseAllImport } from './routes/components/select/multiSelectChooseAll'
 import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants'
 import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles'
 import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states'
@@ -515,6 +518,12 @@ const ComponentsSliderIndexRoute = ComponentsSliderIndexImport.update({
 const ComponentsSkeletonIndexRoute = ComponentsSkeletonIndexImport.update({
   id: '/skeleton/',
   path: '/skeleton/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSelectIndexRoute = ComponentsSelectIndexImport.update({
+  id: '/select/',
+  path: '/select/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1349,6 +1358,19 @@ const ComponentsSliderCustomRoute = ComponentsSliderCustomImport.update({
   path: '/slider/custom',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsSelectStateRoute = ComponentsSelectStateImport.update({
+  id: '/select/state',
+  path: '/select/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsSelectMultiSelectChooseAllRoute =
+  ComponentsSelectMultiSelectChooseAllImport.update({
+    id: '/select/multiSelectChooseAll',
+    path: '/select/multiSelectChooseAll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSegmentedControlVariantsRoute =
   ComponentsSegmentedControlVariantsImport.update({
@@ -4459,6 +4481,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/select/multiSelectChooseAll': {
+      id: '/components/select/multiSelectChooseAll'
+      path: '/select/multiSelectChooseAll'
+      fullPath: '/components/select/multiSelectChooseAll'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectChooseAllImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/select/state': {
+      id: '/components/select/state'
+      path: '/select/state'
+      fullPath: '/components/select/state'
+      preLoaderRoute: typeof ComponentsSelectStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/custom': {
       id: '/components/slider/custom'
       path: '/slider/custom'
@@ -5348,6 +5384,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/select/': {
+      id: '/components/select/'
+      path: '/select'
+      fullPath: '/components/select'
+      preLoaderRoute: typeof ComponentsSelectIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/skeleton/': {
       id: '/components/skeleton/'
       path: '/skeleton'
@@ -5680,6 +5723,8 @@ interface ComponentsRouteChildren {
   ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute
   ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute
   ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute
+  ComponentsSelectMultiSelectChooseAllRoute: typeof ComponentsSelectMultiSelectChooseAllRoute
+  ComponentsSelectStateRoute: typeof ComponentsSelectStateRoute
   ComponentsSliderCustomRoute: typeof ComponentsSliderCustomRoute
   ComponentsSliderOptionsRoute: typeof ComponentsSliderOptionsRoute
   ComponentsSliderRangeRoute: typeof ComponentsSliderRangeRoute
@@ -5807,6 +5852,7 @@ interface ComponentsRouteChildren {
   ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
   ComponentsScrollContainerIndexRoute: typeof ComponentsScrollContainerIndexRoute
   ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
+  ComponentsSelectIndexRoute: typeof ComponentsSelectIndexRoute
   ComponentsSkeletonIndexRoute: typeof ComponentsSkeletonIndexRoute
   ComponentsSliderIndexRoute: typeof ComponentsSliderIndexRoute
   ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
@@ -6094,6 +6140,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSegmentedControlStylesRoute: ComponentsSegmentedControlStylesRoute,
   ComponentsSegmentedControlVariantsRoute:
     ComponentsSegmentedControlVariantsRoute,
+  ComponentsSelectMultiSelectChooseAllRoute:
+    ComponentsSelectMultiSelectChooseAllRoute,
+  ComponentsSelectStateRoute: ComponentsSelectStateRoute,
   ComponentsSliderCustomRoute: ComponentsSliderCustomRoute,
   ComponentsSliderOptionsRoute: ComponentsSliderOptionsRoute,
   ComponentsSliderRangeRoute: ComponentsSliderRangeRoute,
@@ -6233,6 +6282,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsRadiobuttonIndexRoute: ComponentsRadiobuttonIndexRoute,
   ComponentsScrollContainerIndexRoute: ComponentsScrollContainerIndexRoute,
   ComponentsSegmentedControlIndexRoute: ComponentsSegmentedControlIndexRoute,
+  ComponentsSelectIndexRoute: ComponentsSelectIndexRoute,
   ComponentsSkeletonIndexRoute: ComponentsSkeletonIndexRoute,
   ComponentsSliderIndexRoute: ComponentsSliderIndexRoute,
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
@@ -6500,6 +6550,8 @@ export interface FileRoutesByFullPath {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
+  '/components/select/state': typeof ComponentsSelectStateRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -6627,6 +6679,7 @@ export interface FileRoutesByFullPath {
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/select': typeof ComponentsSelectIndexRoute
   '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
@@ -6873,6 +6926,8 @@ export interface FileRoutesByTo {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
+  '/components/select/state': typeof ComponentsSelectStateRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -7000,6 +7055,7 @@ export interface FileRoutesByTo {
   '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
   '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute
   '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/select': typeof ComponentsSelectIndexRoute
   '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
@@ -7247,6 +7303,8 @@ export interface FileRoutesById {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
+  '/components/select/state': typeof ComponentsSelectStateRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -7374,6 +7432,7 @@ export interface FileRoutesById {
   '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
   '/components/scrollContainer/': typeof ComponentsScrollContainerIndexRoute
   '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
+  '/components/select/': typeof ComponentsSelectIndexRoute
   '/components/skeleton/': typeof ComponentsSkeletonIndexRoute
   '/components/slider/': typeof ComponentsSliderIndexRoute
   '/components/spinner/': typeof ComponentsSpinnerIndexRoute
@@ -7622,6 +7681,8 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/select/multiSelectChooseAll'
+    | '/components/select/state'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -7749,6 +7810,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton'
     | '/components/scrollContainer'
     | '/components/segmentedControl'
+    | '/components/select'
     | '/components/skeleton'
     | '/components/slider'
     | '/components/spinner'
@@ -7994,6 +8056,8 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/select/multiSelectChooseAll'
+    | '/components/select/state'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -8121,6 +8185,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton'
     | '/components/scrollContainer'
     | '/components/segmentedControl'
+    | '/components/select'
     | '/components/skeleton'
     | '/components/slider'
     | '/components/spinner'
@@ -8366,6 +8431,8 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/select/multiSelectChooseAll'
+    | '/components/select/state'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -8493,6 +8560,7 @@ export interface FileRouteTypes {
     | '/components/radiobutton/'
     | '/components/scrollContainer/'
     | '/components/segmentedControl/'
+    | '/components/select/'
     | '/components/skeleton/'
     | '/components/slider/'
     | '/components/spinner/'
@@ -8765,6 +8833,8 @@ export const routeTree = rootRoute
         "/components/segmentedControl/states",
         "/components/segmentedControl/styles",
         "/components/segmentedControl/variants",
+        "/components/select/multiSelectChooseAll",
+        "/components/select/state",
         "/components/slider/custom",
         "/components/slider/options",
         "/components/slider/range",
@@ -8892,6 +8962,7 @@ export const routeTree = rootRoute
         "/components/radiobutton/",
         "/components/scrollContainer/",
         "/components/segmentedControl/",
+        "/components/select/",
         "/components/skeleton/",
         "/components/slider/",
         "/components/spinner/",
@@ -9818,6 +9889,14 @@ export const routeTree = rootRoute
       "filePath": "components/segmentedControl/variants.tsx",
       "parent": "/components"
     },
+    "/components/select/multiSelectChooseAll": {
+      "filePath": "components/select/multiSelectChooseAll.tsx",
+      "parent": "/components"
+    },
+    "/components/select/state": {
+      "filePath": "components/select/state.tsx",
+      "parent": "/components"
+    },
     "/components/slider/custom": {
       "filePath": "components/slider/custom.tsx",
       "parent": "/components"
@@ -10324,6 +10403,10 @@ export const routeTree = rootRoute
     },
     "/components/segmentedControl/": {
       "filePath": "components/segmentedControl/index.tsx",
+      "parent": "/components"
+    },
+    "/components/select/": {
+      "filePath": "components/select/index.tsx",
       "parent": "/components"
     },
     "/components/skeleton/": {
