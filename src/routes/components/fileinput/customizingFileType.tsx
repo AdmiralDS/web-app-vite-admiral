@@ -1,8 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { useRef, useState } from 'react'
+import { createFileRoute } from '@tanstack/react-router';
+import { useRef, useState } from 'react';
 
-import { FileInput, FileItem } from '@admiral-ds/react-ui'
-import type { FileAttributeProps, InputStatus } from '@admiral-ds/react-ui'
+import { FileInput, FileItem } from '@admiral-ds/react-ui';
+import type { FileAttributeProps, InputStatus } from '@admiral-ds/react-ui';
 import PDFSolid from '@admiral-ds/icons/build/documents/PDFSolid.svg?react';
 import PPTSolid from '@admiral-ds/icons/build/documents/PPTSolid.svg?react';
 import FileWordSolid from '@admiral-ds/icons/build/documents/FileWordSolid.svg?react';
@@ -12,15 +12,15 @@ import JpgSolid from '@admiral-ds/icons/build/documents/JpgSolid.svg?react';
 import ZIPSolid from '@admiral-ds/icons/build/documents/ZIPSolid.svg?react';
 import FileCSVSolid from '@admiral-ds/icons/build/documents/FileCSVSolid.svg?react';
 import EmailsOutline from '@admiral-ds/icons/build/category/EmailsOutline.svg?react';
-import { ExampleSection, PStyled, uid } from '../../-helpers/examples'
+import { ExampleSection, PStyled, uid } from '../../-helpers/examples';
 
 const filesAreEqual = (file1: File, file2: File) =>
   file1.name === file2.name &&
   file1.size === file2.size &&
   file1.type === file2.type &&
-  file1.lastModified === file2.lastModified
+  file1.lastModified === file2.lastModified;
 
-  /**
+/**
  * https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#important_mime_types_for_web_developers
  * https://www.iana.org/assignments/media-types/media-types.xhtml
  * @param type {string}
@@ -103,18 +103,16 @@ const getCustomFileTypeIcon = (type: string) => {
 };
 
 const FileInputTemplate = () => {
-  const dimension = 'xl'
-  const width = '480px'
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [fileList, setFileList] = useState<File[]>([])
-  const [fileAttributesMap, setFileAttributesMap] = useState(
-    new Map<File, FileAttributeProps>(),
-  )
+  const dimension = 'xl';
+  const width = '480px';
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [fileList, setFileList] = useState<File[]>([]);
+  const [fileAttributesMap, setFileAttributesMap] = useState(new Map<File, FileAttributeProps>());
 
   const handlePreviewIconClick = (file: File) => {
     // eslint-disable-next-line no-console
-    console.log(`Preview icon on file "${file.name}" was clicked`)
-  }
+    console.log(`Preview icon on file "${file.name}" was clicked`);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const userSelectedFileList = Array.from(e.target.files || []);
@@ -148,20 +146,16 @@ const FileInputTemplate = () => {
   };
 
   const handleRemoveFile = (fileToRemove: File) => {
-    const updatedFileList = fileList.filter(
-      (file) => !filesAreEqual(file, fileToRemove),
-    )
-    const updatedFileAttributesMap = new Map<File, FileAttributeProps>(
-      fileAttributesMap,
-    )
-    const attributes = fileAttributesMap.get(fileToRemove)
+    const updatedFileList = fileList.filter((file) => !filesAreEqual(file, fileToRemove));
+    const updatedFileAttributesMap = new Map<File, FileAttributeProps>(fileAttributesMap);
+    const attributes = fileAttributesMap.get(fileToRemove);
     if (attributes && attributes.previewImageURL) {
-      URL.revokeObjectURL(attributes.previewImageURL)
+      URL.revokeObjectURL(attributes.previewImageURL);
     }
-    updatedFileAttributesMap.delete(fileToRemove)
-    setFileList(updatedFileList)
-    setFileAttributesMap(updatedFileAttributesMap)
-  }
+    updatedFileAttributesMap.delete(fileToRemove);
+    setFileList(updatedFileList);
+    setFileAttributesMap(updatedFileAttributesMap);
+  };
 
   const renderFileList = () => {
     return fileList.map((file) => {
@@ -196,9 +190,9 @@ const FileInputTemplate = () => {
       text={
         <>
           <PStyled>
-            Функцию загрузки файла можно “повесить” на другие компоненты, например, кнопки, сделав соответствующие текстовые инструкции. 
-            В этом случае нужно воспользоваться методом renderCustomFileInput для отрисовки реакт-компонента. 
-            Для отображения выбранных файлов можно использовать кастомные компоненты.
+            Функцию загрузки файла можно “повесить” на другие компоненты, например, кнопки, сделав соответствующие
+            текстовые инструкции. В этом случае нужно воспользоваться методом renderCustomFileInput для отрисовки
+            реакт-компонента. Для отображения выбранных файлов можно использовать кастомные компоненты.
           </PStyled>
         </>
       }
@@ -214,22 +208,20 @@ const FileInputTemplate = () => {
         {renderFileList()}
       </FileInput>
     </ExampleSection>
-  )
-}
+  );
+};
 
 export const FileInputFileType = () => {
   return (
     <>
       <FileInputTemplate />
     </>
-  )
-}
+  );
+};
 
-export const Route = createFileRoute(
-  '/components/fileinput/customizingFileType',
-)({
+export const Route = createFileRoute('/components/fileinput/customizingFileType')({
   component: () => <FileInputFileType />,
   staticData: {
     title: 'File input. Кастомизация типов файлов',
   },
-})
+});

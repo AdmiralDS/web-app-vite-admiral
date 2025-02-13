@@ -1,9 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 
-import { FileInput, FileInputField, FileItem } from '@admiral-ds/react-ui'
+import { FileInput, FileInputField, FileItem } from '@admiral-ds/react-ui';
 import type { FileAttributeProps, InputStatus } from '@admiral-ds/react-ui';
-import { ExampleSection, PStyled, uid } from '../../-helpers/examples'
+import { ExampleSection, PStyled, uid } from '../../-helpers/examples';
 
 const filesAreEqual = (file1: File, file2: File) =>
   file1.name === file2.name &&
@@ -11,9 +11,9 @@ const filesAreEqual = (file1: File, file2: File) =>
   file1.type === file2.type &&
   file1.lastModified === file2.lastModified;
 
-  const accept = ['image/*', '.pdf', 'application/json'];
-  const ACCEPT_STR = accept.join(', ');
-  const maxFilesNumber = 3;
+const accept = ['image/*', '.pdf', 'application/json'];
+const ACCEPT_STR = accept.join(', ');
+const maxFilesNumber = 3;
 
 const FileInputTemplate = () => {
   const dimension = 'xl';
@@ -101,27 +101,26 @@ const FileInputTemplate = () => {
   };
 
   return (
-    <ExampleSection 
+    <ExampleSection
       text={
         <>
-        <PStyled>
-          Компонент позволяет выбирать локальные файлы пользователя для последующей загрузки их на сервер. 
-          Выбирать файлы можно как через нажатие на компонент, так и через Drag and Drop на компонент. 
-          Компонент имеет две разновидности отображения — размер XL с превью изображения или иконкой формата файла и размер M без превью, передается параметром fileDimension.
-        </PStyled>
-        <PStyled>
-          Для отображения компонента в другом варианте можно использовать параметр renderCustomFileInput.
-        </PStyled>
-        <PStyled>
-        В компоненте есть возможность синхронизировать внешний стейт списка файлов с внутренним стейтом нативного инпута через параметр files.
-        </PStyled>
-        <PStyled>
-          Компонент позволяет загружать файлы на сервер. Используется в двух вариантах - для загрузки одного или нескольких файлов. 
-          Позволяет как загружать файлы через браузер файлов, так и через Drag and Drop (перетаскивание файлов). 
-          Компонент можно изменять по ширине, минимальная ширина 320px.
-        </PStyled>
-      </>
-      }>
+          <PStyled>
+            Компонент позволяет выбирать локальные файлы пользователя для последующей загрузки их на сервер. Выбирать
+            файлы можно как через нажатие на компонент, так и через Drag and Drop на компонент. Компонент имеет две
+            разновидности отображения — размер XL с превью изображения или иконкой формата файла и размер M без превью,
+            передается параметром fileDimension.
+          </PStyled>
+          <PStyled>
+            Для отображения компонента в другом варианте можно использовать параметр renderCustomFileInput.
+          </PStyled>
+          <PStyled>
+            В компоненте есть возможность синхронизировать внешний стейт списка файлов с внутренним стейтом нативного
+            инпута через параметр files.
+          </PStyled>
+          <PStyled>Компонент можно изменять по ширине, минимальная ширина 320px.</PStyled>
+        </>
+      }
+    >
       <FileInput
         dimension={dimension}
         width={width}
@@ -135,8 +134,8 @@ const FileInputTemplate = () => {
         {renderFileList()}
       </FileInput>
     </ExampleSection>
-  )
-}
+  );
+};
 
 const FileInputFieldTemplate = () => {
   const dimension = 'xl';
@@ -224,14 +223,15 @@ const FileInputFieldTemplate = () => {
   };
 
   return (
-    <ExampleSection 
+    <ExampleSection
       text={
         <>
-        <PStyled>
-          Для того, чтобы добавть лэйбл или дополнительный текст, используйте компонент FileInputField
-        </PStyled>
-      </>
-      }>
+          <PStyled>
+            Для того, чтобы добавть лэйбл или дополнительный текст, используйте компонент FileInputField
+          </PStyled>
+        </>
+      }
+    >
       <FileInputField
         dimension={dimension}
         width={width}
@@ -241,14 +241,14 @@ const FileInputFieldTemplate = () => {
         accept={ACCEPT_STR}
         files={fileList}
         status={status}
-        label='Лэйбл'
-        extraText='Дополнительный текст'
+        label="Лэйбл"
+        extraText="Дополнительный текст"
       >
         {renderFileList()}
       </FileInputField>
     </ExampleSection>
-  )
-}
+  );
+};
 
 export const FileInputBasic = () => {
   return (
@@ -256,12 +256,12 @@ export const FileInputBasic = () => {
       <FileInputTemplate />
       <FileInputFieldTemplate />
     </>
-  )
-}
+  );
+};
 
 export const Route = createFileRoute('/components/fileinput/')({
   component: () => <FileInputBasic />,
   staticData: {
     title: 'File input. Базовый пример',
   },
-})
+});

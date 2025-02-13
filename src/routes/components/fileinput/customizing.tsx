@@ -1,13 +1,13 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { useRef, useState } from 'react'
-import styled from 'styled-components'
+import { createFileRoute } from '@tanstack/react-router';
+import { useRef, useState } from 'react';
+import styled from 'styled-components';
 import type { css } from 'styled-components';
 
-import { FileInput, Button, fullWidthPositionMixin } from '@admiral-ds/react-ui'
+import { FileInput, Button, fullWidthPositionMixin } from '@admiral-ds/react-ui';
 import type { RenderFileInputProps } from '@admiral-ds/react-ui';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react';
-import { ExampleSection, PStyled } from '../../-helpers/examples'
+import { ExampleSection, PStyled } from '../../-helpers/examples';
 
 interface MyFileItemProps extends React.HTMLAttributes<HTMLDivElement> {
   filesLayoutCssMixin?: ReturnType<typeof css>;
@@ -62,7 +62,7 @@ const CustomFileItem = ({ children, filesLayoutCssMixin, onCloseIconClick, ...pr
 };
 
 const FileInputTemplate = () => {
-  const dimension = 'xl'
+  const dimension = 'xl';
   const inputRef = useRef<HTMLInputElement>(null);
   const [fileList, setFileList] = useState<File[]>([]);
 
@@ -119,9 +119,9 @@ const FileInputTemplate = () => {
       text={
         <>
           <PStyled>
-            Функцию загрузки файла можно “повесить” на другие компоненты, например, кнопки, сделав соответствующие текстовые
-            инструкции. В этом случае нужно воспользоваться методом renderCustomFileInput для отрисовки реакт-компонента.
-            Для отображения выбранных файлов можно использовать кастомные компоненты.
+            Функцию загрузки файла можно “повесить” на другие компоненты, например, кнопки, сделав соответствующие
+            текстовые инструкции. В этом случае нужно воспользоваться методом renderCustomFileInput для отрисовки
+            реакт-компонента. Для отображения выбранных файлов можно использовать кастомные компоненты.
           </PStyled>
         </>
       }
@@ -137,20 +137,20 @@ const FileInputTemplate = () => {
         {renderFileList()}
       </FileInput>
     </ExampleSection>
-  )
-}
+  );
+};
 
 export const FileInputCastomizing = () => {
   return (
     <>
       <FileInputTemplate />
     </>
-  )
-}
+  );
+};
 
 export const Route = createFileRoute('/components/fileinput/customizing')({
   component: () => <FileInputCastomizing />,
   staticData: {
     title: 'File input. Базовый пример',
   },
-})
+});
