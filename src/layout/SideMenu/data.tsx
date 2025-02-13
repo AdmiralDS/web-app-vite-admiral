@@ -462,6 +462,7 @@ const data = [
     path: '/components/paginationOne',
     routes: [
       { name: 'Базовый пример', path: '/components/paginationOne' },
+      { name: 'Размеры', path: '/components/paginationOne/sizes' },
       { name: 'Типы', path: '/components/paginationOne/types' },
       { name: 'Состояния', path: '/components/paginationOne/states' },
       { name: 'Опция ввода номера страницы через Input', path: '/components/paginationOne/withInput' },
