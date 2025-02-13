@@ -724,6 +724,34 @@ const data = [
       { name: 'PhoneNumberInputField', path: '/components/phoneNumberInput/phoneNumberInputField' },
     ],
   },
+  {
+    name: 'NumberInput',
+    path: '/components/numberInput',
+    routes: [
+      { name: 'Базовый пример', path: '/components/numberInput' },
+      { name: 'Размеры', path: '/components/numberInput/sizes' },
+      { name: 'Состояния', path: '/components/numberInput/state' },
+      { name: 'Статусы', path: '/components/numberInput/status' },
+      { name: 'С minValue, maxValue', path: '/components/numberInput/minMaxValue' },
+      { name: 'С изменением настроек suffix, precision, thousand', path: '/components/numberInput/custom' },
+      { name: 'Скрытые пробелы', path: '/components/numberInput/spaces' },
+      { name: 'Контролируемый инпут', path: '/components/numberInput/controlledInput' },
+      { name: 'NumberInputField', path: '/components/numberInput/numberInputField' },
+    ],
+  },
+  {
+    name: 'FileInput',
+    path: '/components/fileinput',
+    routes: [
+      { name: 'Базовый пример', path: '/components/fileinput' },
+      { name: 'Размеры', path: '/components/fileinput/dimensions' },
+      { name: 'Состояния/статусы', path: '/components/fileinput/state' },
+      { name: 'Дополнительный текст', path: '/components/fileinput/extratext' },
+      { name: 'Статусы загрузки файлов', path: '/components/fileinput/filestatus' },
+      { name: 'Катомизация', path: '/components/fileinput/customizing' },
+      { name: 'Катомизация типов файлов', path: '/components/fileinput/customizingFileType' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));

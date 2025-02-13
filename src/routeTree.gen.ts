@@ -44,6 +44,7 @@ import { Route as ComponentsPhoneNumberInputIndexImport } from './routes/compone
 import { Route as ComponentsPaginationTwoIndexImport } from './routes/components/paginationTwo/index'
 import { Route as ComponentsPaginationOneIndexImport } from './routes/components/paginationOne/index'
 import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
+import { Route as ComponentsNumberInputIndexImport } from './routes/components/numberInput/index'
 import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsModalIndexImport } from './routes/components/modal/index'
@@ -59,6 +60,7 @@ import { Route as ComponentsGroupActionsPaneIndexImport } from './routes/compone
 import { Route as ComponentsGlobalSearchIndexImport } from './routes/components/globalSearch/index'
 import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
 import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index'
+import { Route as ComponentsFileinputIndexImport } from './routes/components/fileinput/index'
 import { Route as ComponentsEditModeIndexImport } from './routes/components/editMode/index'
 import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
 import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
@@ -197,6 +199,14 @@ import { Route as ComponentsPaginationOneWithInputImport } from './routes/compon
 import { Route as ComponentsPaginationOneTypesImport } from './routes/components/paginationOne/types'
 import { Route as ComponentsPaginationOneStatesImport } from './routes/components/paginationOne/states'
 import { Route as ComponentsOverflowMenuStylesImport } from './routes/components/overflowMenu/styles'
+import { Route as ComponentsNumberInputStatusImport } from './routes/components/numberInput/status'
+import { Route as ComponentsNumberInputStateImport } from './routes/components/numberInput/state'
+import { Route as ComponentsNumberInputSpacesImport } from './routes/components/numberInput/spaces'
+import { Route as ComponentsNumberInputSizesImport } from './routes/components/numberInput/sizes'
+import { Route as ComponentsNumberInputNumberInputFieldImport } from './routes/components/numberInput/numberInputField'
+import { Route as ComponentsNumberInputMinMaxValueImport } from './routes/components/numberInput/minMaxValue'
+import { Route as ComponentsNumberInputCustomImport } from './routes/components/numberInput/custom'
+import { Route as ComponentsNumberInputControlledInputImport } from './routes/components/numberInput/controlledInput'
 import { Route as ComponentsNotificationStylesImport } from './routes/components/notification/styles'
 import { Route as ComponentsNotificationStatesImport } from './routes/components/notification/states'
 import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
@@ -251,6 +261,12 @@ import { Route as ComponentsFloatingButtonTooltipImport } from './routes/compone
 import { Route as ComponentsFloatingButtonStylesImport } from './routes/components/floatingButton/styles'
 import { Route as ComponentsFloatingButtonPositionImport } from './routes/components/floatingButton/position'
 import { Route as ComponentsFloatingButtonMobileImport } from './routes/components/floatingButton/mobile'
+import { Route as ComponentsFileinputStateImport } from './routes/components/fileinput/state'
+import { Route as ComponentsFileinputFilestatusImport } from './routes/components/fileinput/filestatus'
+import { Route as ComponentsFileinputExtratextImport } from './routes/components/fileinput/extratext'
+import { Route as ComponentsFileinputDimensionsImport } from './routes/components/fileinput/dimensions'
+import { Route as ComponentsFileinputCustomizingFileTypeImport } from './routes/components/fileinput/customizingFileType'
+import { Route as ComponentsFileinputCustomizingImport } from './routes/components/fileinput/customizing'
 import { Route as ComponentsEditModeTooltipImport } from './routes/components/editMode/tooltip'
 import { Route as ComponentsEditModeStatusImport } from './routes/components/editMode/status'
 import { Route as ComponentsEditModeMultilineImport } from './routes/components/editMode/multiline'
@@ -579,6 +595,14 @@ const ComponentsOverflowMenuIndexRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsNumberInputIndexRoute = ComponentsNumberInputIndexImport.update(
+  {
+    id: '/numberInput/',
+    path: '/numberInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
 const ComponentsNotificationIndexRoute =
   ComponentsNotificationIndexImport.update({
     id: '/notification/',
@@ -676,6 +700,12 @@ const ComponentsFloatingButtonIndexRoute =
 const ComponentsFlexIndexRoute = ComponentsFlexIndexImport.update({
   id: '/flex/',
   path: '/flex/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsFileinputIndexRoute = ComponentsFileinputIndexImport.update({
+  id: '/fileinput/',
+  path: '/fileinput/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1591,6 +1621,64 @@ const ComponentsOverflowMenuStylesRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsNumberInputStatusRoute =
+  ComponentsNumberInputStatusImport.update({
+    id: '/numberInput/status',
+    path: '/numberInput/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputStateRoute = ComponentsNumberInputStateImport.update(
+  {
+    id: '/numberInput/state',
+    path: '/numberInput/state',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsNumberInputSpacesRoute =
+  ComponentsNumberInputSpacesImport.update({
+    id: '/numberInput/spaces',
+    path: '/numberInput/spaces',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputSizesRoute = ComponentsNumberInputSizesImport.update(
+  {
+    id: '/numberInput/sizes',
+    path: '/numberInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsNumberInputNumberInputFieldRoute =
+  ComponentsNumberInputNumberInputFieldImport.update({
+    id: '/numberInput/numberInputField',
+    path: '/numberInput/numberInputField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputMinMaxValueRoute =
+  ComponentsNumberInputMinMaxValueImport.update({
+    id: '/numberInput/minMaxValue',
+    path: '/numberInput/minMaxValue',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputCustomRoute =
+  ComponentsNumberInputCustomImport.update({
+    id: '/numberInput/custom',
+    path: '/numberInput/custom',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputControlledInputRoute =
+  ComponentsNumberInputControlledInputImport.update({
+    id: '/numberInput/controlledInput',
+    path: '/numberInput/controlledInput',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsNotificationStylesRoute =
   ComponentsNotificationStylesImport.update({
     id: '/notification/styles',
@@ -1955,6 +2043,47 @@ const ComponentsFloatingButtonMobileRoute =
   ComponentsFloatingButtonMobileImport.update({
     id: '/floatingButton/mobile',
     path: '/floatingButton/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFileinputStateRoute = ComponentsFileinputStateImport.update({
+  id: '/fileinput/state',
+  path: '/fileinput/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsFileinputFilestatusRoute =
+  ComponentsFileinputFilestatusImport.update({
+    id: '/fileinput/filestatus',
+    path: '/fileinput/filestatus',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFileinputExtratextRoute =
+  ComponentsFileinputExtratextImport.update({
+    id: '/fileinput/extratext',
+    path: '/fileinput/extratext',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFileinputDimensionsRoute =
+  ComponentsFileinputDimensionsImport.update({
+    id: '/fileinput/dimensions',
+    path: '/fileinput/dimensions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFileinputCustomizingFileTypeRoute =
+  ComponentsFileinputCustomizingFileTypeImport.update({
+    id: '/fileinput/customizingFileType',
+    path: '/fileinput/customizingFileType',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsFileinputCustomizingRoute =
+  ComponentsFileinputCustomizingImport.update({
+    id: '/fileinput/customizing',
+    path: '/fileinput/customizing',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -3581,6 +3710,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsEditModeTooltipImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/fileinput/customizing': {
+      id: '/components/fileinput/customizing'
+      path: '/fileinput/customizing'
+      fullPath: '/components/fileinput/customizing'
+      preLoaderRoute: typeof ComponentsFileinputCustomizingImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/fileinput/customizingFileType': {
+      id: '/components/fileinput/customizingFileType'
+      path: '/fileinput/customizingFileType'
+      fullPath: '/components/fileinput/customizingFileType'
+      preLoaderRoute: typeof ComponentsFileinputCustomizingFileTypeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/fileinput/dimensions': {
+      id: '/components/fileinput/dimensions'
+      path: '/fileinput/dimensions'
+      fullPath: '/components/fileinput/dimensions'
+      preLoaderRoute: typeof ComponentsFileinputDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/fileinput/extratext': {
+      id: '/components/fileinput/extratext'
+      path: '/fileinput/extratext'
+      fullPath: '/components/fileinput/extratext'
+      preLoaderRoute: typeof ComponentsFileinputExtratextImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/fileinput/filestatus': {
+      id: '/components/fileinput/filestatus'
+      path: '/fileinput/filestatus'
+      fullPath: '/components/fileinput/filestatus'
+      preLoaderRoute: typeof ComponentsFileinputFilestatusImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/fileinput/state': {
+      id: '/components/fileinput/state'
+      path: '/fileinput/state'
+      fullPath: '/components/fileinput/state'
+      preLoaderRoute: typeof ComponentsFileinputStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/mobile': {
       id: '/components/floatingButton/mobile'
       path: '/floatingButton/mobile'
@@ -3957,6 +4128,62 @@ declare module '@tanstack/react-router' {
       path: '/notification/styles'
       fullPath: '/components/notification/styles'
       preLoaderRoute: typeof ComponentsNotificationStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/controlledInput': {
+      id: '/components/numberInput/controlledInput'
+      path: '/numberInput/controlledInput'
+      fullPath: '/components/numberInput/controlledInput'
+      preLoaderRoute: typeof ComponentsNumberInputControlledInputImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/custom': {
+      id: '/components/numberInput/custom'
+      path: '/numberInput/custom'
+      fullPath: '/components/numberInput/custom'
+      preLoaderRoute: typeof ComponentsNumberInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/minMaxValue': {
+      id: '/components/numberInput/minMaxValue'
+      path: '/numberInput/minMaxValue'
+      fullPath: '/components/numberInput/minMaxValue'
+      preLoaderRoute: typeof ComponentsNumberInputMinMaxValueImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/numberInputField': {
+      id: '/components/numberInput/numberInputField'
+      path: '/numberInput/numberInputField'
+      fullPath: '/components/numberInput/numberInputField'
+      preLoaderRoute: typeof ComponentsNumberInputNumberInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/sizes': {
+      id: '/components/numberInput/sizes'
+      path: '/numberInput/sizes'
+      fullPath: '/components/numberInput/sizes'
+      preLoaderRoute: typeof ComponentsNumberInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/spaces': {
+      id: '/components/numberInput/spaces'
+      path: '/numberInput/spaces'
+      fullPath: '/components/numberInput/spaces'
+      preLoaderRoute: typeof ComponentsNumberInputSpacesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/state': {
+      id: '/components/numberInput/state'
+      path: '/numberInput/state'
+      fullPath: '/components/numberInput/state'
+      preLoaderRoute: typeof ComponentsNumberInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/status': {
+      id: '/components/numberInput/status'
+      path: '/numberInput/status'
+      fullPath: '/components/numberInput/status'
+      preLoaderRoute: typeof ComponentsNumberInputStatusImport
       parentRoute: typeof ComponentsImport
     }
     '/components/overflowMenu/styles': {
@@ -4925,6 +5152,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsEditModeIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/fileinput/': {
+      id: '/components/fileinput/'
+      path: '/fileinput'
+      fullPath: '/components/fileinput'
+      preLoaderRoute: typeof ComponentsFileinputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/flex/': {
       id: '/components/flex/'
       path: '/flex'
@@ -5028,6 +5262,13 @@ declare module '@tanstack/react-router' {
       path: '/notification'
       fullPath: '/components/notification'
       preLoaderRoute: typeof ComponentsNotificationIndexImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/': {
+      id: '/components/numberInput/'
+      path: '/numberInput'
+      fullPath: '/components/numberInput'
+      preLoaderRoute: typeof ComponentsNumberInputIndexImport
       parentRoute: typeof ComponentsImport
     }
     '/components/overflowMenu/': {
@@ -5332,6 +5573,12 @@ interface ComponentsRouteChildren {
   ComponentsEditModeMultilineRoute: typeof ComponentsEditModeMultilineRoute
   ComponentsEditModeStatusRoute: typeof ComponentsEditModeStatusRoute
   ComponentsEditModeTooltipRoute: typeof ComponentsEditModeTooltipRoute
+  ComponentsFileinputCustomizingRoute: typeof ComponentsFileinputCustomizingRoute
+  ComponentsFileinputCustomizingFileTypeRoute: typeof ComponentsFileinputCustomizingFileTypeRoute
+  ComponentsFileinputDimensionsRoute: typeof ComponentsFileinputDimensionsRoute
+  ComponentsFileinputExtratextRoute: typeof ComponentsFileinputExtratextRoute
+  ComponentsFileinputFilestatusRoute: typeof ComponentsFileinputFilestatusRoute
+  ComponentsFileinputStateRoute: typeof ComponentsFileinputStateRoute
   ComponentsFloatingButtonMobileRoute: typeof ComponentsFloatingButtonMobileRoute
   ComponentsFloatingButtonPositionRoute: typeof ComponentsFloatingButtonPositionRoute
   ComponentsFloatingButtonStylesRoute: typeof ComponentsFloatingButtonStylesRoute
@@ -5386,6 +5633,14 @@ interface ComponentsRouteChildren {
   ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
   ComponentsNotificationStatesRoute: typeof ComponentsNotificationStatesRoute
   ComponentsNotificationStylesRoute: typeof ComponentsNotificationStylesRoute
+  ComponentsNumberInputControlledInputRoute: typeof ComponentsNumberInputControlledInputRoute
+  ComponentsNumberInputCustomRoute: typeof ComponentsNumberInputCustomRoute
+  ComponentsNumberInputMinMaxValueRoute: typeof ComponentsNumberInputMinMaxValueRoute
+  ComponentsNumberInputNumberInputFieldRoute: typeof ComponentsNumberInputNumberInputFieldRoute
+  ComponentsNumberInputSizesRoute: typeof ComponentsNumberInputSizesRoute
+  ComponentsNumberInputSpacesRoute: typeof ComponentsNumberInputSpacesRoute
+  ComponentsNumberInputStateRoute: typeof ComponentsNumberInputStateRoute
+  ComponentsNumberInputStatusRoute: typeof ComponentsNumberInputStatusRoute
   ComponentsOverflowMenuStylesRoute: typeof ComponentsOverflowMenuStylesRoute
   ComponentsPaginationOneStatesRoute: typeof ComponentsPaginationOneStatesRoute
   ComponentsPaginationOneTypesRoute: typeof ComponentsPaginationOneTypesRoute
@@ -5524,6 +5779,7 @@ interface ComponentsRouteChildren {
   ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
   ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
   ComponentsEditModeIndexRoute: typeof ComponentsEditModeIndexRoute
+  ComponentsFileinputIndexRoute: typeof ComponentsFileinputIndexRoute
   ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute
   ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
   ComponentsGlobalSearchIndexRoute: typeof ComponentsGlobalSearchIndexRoute
@@ -5539,6 +5795,7 @@ interface ComponentsRouteChildren {
   ComponentsModalIndexRoute: typeof ComponentsModalIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute
+  ComponentsNumberInputIndexRoute: typeof ComponentsNumberInputIndexRoute
   ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
   ComponentsPaginationOneIndexRoute: typeof ComponentsPaginationOneIndexRoute
   ComponentsPaginationTwoIndexRoute: typeof ComponentsPaginationTwoIndexRoute
@@ -5710,6 +5967,13 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsEditModeMultilineRoute: ComponentsEditModeMultilineRoute,
   ComponentsEditModeStatusRoute: ComponentsEditModeStatusRoute,
   ComponentsEditModeTooltipRoute: ComponentsEditModeTooltipRoute,
+  ComponentsFileinputCustomizingRoute: ComponentsFileinputCustomizingRoute,
+  ComponentsFileinputCustomizingFileTypeRoute:
+    ComponentsFileinputCustomizingFileTypeRoute,
+  ComponentsFileinputDimensionsRoute: ComponentsFileinputDimensionsRoute,
+  ComponentsFileinputExtratextRoute: ComponentsFileinputExtratextRoute,
+  ComponentsFileinputFilestatusRoute: ComponentsFileinputFilestatusRoute,
+  ComponentsFileinputStateRoute: ComponentsFileinputStateRoute,
   ComponentsFloatingButtonMobileRoute: ComponentsFloatingButtonMobileRoute,
   ComponentsFloatingButtonPositionRoute: ComponentsFloatingButtonPositionRoute,
   ComponentsFloatingButtonStylesRoute: ComponentsFloatingButtonStylesRoute,
@@ -5770,6 +6034,16 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiButtonWithIconRoute: ComponentsMultiButtonWithIconRoute,
   ComponentsNotificationStatesRoute: ComponentsNotificationStatesRoute,
   ComponentsNotificationStylesRoute: ComponentsNotificationStylesRoute,
+  ComponentsNumberInputControlledInputRoute:
+    ComponentsNumberInputControlledInputRoute,
+  ComponentsNumberInputCustomRoute: ComponentsNumberInputCustomRoute,
+  ComponentsNumberInputMinMaxValueRoute: ComponentsNumberInputMinMaxValueRoute,
+  ComponentsNumberInputNumberInputFieldRoute:
+    ComponentsNumberInputNumberInputFieldRoute,
+  ComponentsNumberInputSizesRoute: ComponentsNumberInputSizesRoute,
+  ComponentsNumberInputSpacesRoute: ComponentsNumberInputSpacesRoute,
+  ComponentsNumberInputStateRoute: ComponentsNumberInputStateRoute,
+  ComponentsNumberInputStatusRoute: ComponentsNumberInputStatusRoute,
   ComponentsOverflowMenuStylesRoute: ComponentsOverflowMenuStylesRoute,
   ComponentsPaginationOneStatesRoute: ComponentsPaginationOneStatesRoute,
   ComponentsPaginationOneTypesRoute: ComponentsPaginationOneTypesRoute,
@@ -5931,6 +6205,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDrawerIndexRoute: ComponentsDrawerIndexRoute,
   ComponentsDropdownIndexRoute: ComponentsDropdownIndexRoute,
   ComponentsEditModeIndexRoute: ComponentsEditModeIndexRoute,
+  ComponentsFileinputIndexRoute: ComponentsFileinputIndexRoute,
   ComponentsFlexIndexRoute: ComponentsFlexIndexRoute,
   ComponentsFloatingButtonIndexRoute: ComponentsFloatingButtonIndexRoute,
   ComponentsGlobalSearchIndexRoute: ComponentsGlobalSearchIndexRoute,
@@ -5946,6 +6221,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsModalIndexRoute: ComponentsModalIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsNotificationIndexRoute: ComponentsNotificationIndexRoute,
+  ComponentsNumberInputIndexRoute: ComponentsNumberInputIndexRoute,
   ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
   ComponentsPaginationOneIndexRoute: ComponentsPaginationOneIndexRoute,
   ComponentsPaginationTwoIndexRoute: ComponentsPaginationTwoIndexRoute,
@@ -6117,6 +6393,12 @@ export interface FileRoutesByFullPath {
   '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
   '/components/editMode/status': typeof ComponentsEditModeStatusRoute
   '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute
+  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute
+  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute
+  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute
+  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute
+  '/components/fileinput/state': typeof ComponentsFileinputStateRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -6171,6 +6453,14 @@ export interface FileRoutesByFullPath {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
@@ -6309,6 +6599,7 @@ export interface FileRoutesByFullPath {
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/editMode': typeof ComponentsEditModeIndexRoute
+  '/components/fileinput': typeof ComponentsFileinputIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
@@ -6324,6 +6615,7 @@ export interface FileRoutesByFullPath {
   '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
@@ -6474,6 +6766,12 @@ export interface FileRoutesByTo {
   '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
   '/components/editMode/status': typeof ComponentsEditModeStatusRoute
   '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute
+  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute
+  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute
+  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute
+  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute
+  '/components/fileinput/state': typeof ComponentsFileinputStateRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -6528,6 +6826,14 @@ export interface FileRoutesByTo {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
@@ -6666,6 +6972,7 @@ export interface FileRoutesByTo {
   '/components/drawer': typeof ComponentsDrawerIndexRoute
   '/components/dropdown': typeof ComponentsDropdownIndexRoute
   '/components/editMode': typeof ComponentsEditModeIndexRoute
+  '/components/fileinput': typeof ComponentsFileinputIndexRoute
   '/components/flex': typeof ComponentsFlexIndexRoute
   '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
@@ -6681,6 +6988,7 @@ export interface FileRoutesByTo {
   '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
@@ -6832,6 +7140,12 @@ export interface FileRoutesById {
   '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
   '/components/editMode/status': typeof ComponentsEditModeStatusRoute
   '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute
+  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute
+  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute
+  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute
+  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute
+  '/components/fileinput/state': typeof ComponentsFileinputStateRoute
   '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
   '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
   '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
@@ -6886,6 +7200,14 @@ export interface FileRoutesById {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
@@ -7024,6 +7346,7 @@ export interface FileRoutesById {
   '/components/drawer/': typeof ComponentsDrawerIndexRoute
   '/components/dropdown/': typeof ComponentsDropdownIndexRoute
   '/components/editMode/': typeof ComponentsEditModeIndexRoute
+  '/components/fileinput/': typeof ComponentsFileinputIndexRoute
   '/components/flex/': typeof ComponentsFlexIndexRoute
   '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
   '/components/globalSearch/': typeof ComponentsGlobalSearchIndexRoute
@@ -7039,6 +7362,7 @@ export interface FileRoutesById {
   '/components/modal/': typeof ComponentsModalIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/notification/': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput/': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne/': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo/': typeof ComponentsPaginationTwoIndexRoute
@@ -7191,6 +7515,12 @@ export interface FileRouteTypes {
     | '/components/editMode/multiline'
     | '/components/editMode/status'
     | '/components/editMode/tooltip'
+    | '/components/fileinput/customizing'
+    | '/components/fileinput/customizingFileType'
+    | '/components/fileinput/dimensions'
+    | '/components/fileinput/extratext'
+    | '/components/fileinput/filestatus'
+    | '/components/fileinput/state'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -7245,6 +7575,14 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/numberInput/controlledInput'
+    | '/components/numberInput/custom'
+    | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
+    | '/components/numberInput/sizes'
+    | '/components/numberInput/spaces'
+    | '/components/numberInput/state'
+    | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
@@ -7383,6 +7721,7 @@ export interface FileRouteTypes {
     | '/components/drawer'
     | '/components/dropdown'
     | '/components/editMode'
+    | '/components/fileinput'
     | '/components/flex'
     | '/components/floatingButton'
     | '/components/globalSearch'
@@ -7398,6 +7737,7 @@ export interface FileRouteTypes {
     | '/components/modal'
     | '/components/multiButton'
     | '/components/notification'
+    | '/components/numberInput'
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/paginationTwo'
@@ -7547,6 +7887,12 @@ export interface FileRouteTypes {
     | '/components/editMode/multiline'
     | '/components/editMode/status'
     | '/components/editMode/tooltip'
+    | '/components/fileinput/customizing'
+    | '/components/fileinput/customizingFileType'
+    | '/components/fileinput/dimensions'
+    | '/components/fileinput/extratext'
+    | '/components/fileinput/filestatus'
+    | '/components/fileinput/state'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -7601,6 +7947,14 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/numberInput/controlledInput'
+    | '/components/numberInput/custom'
+    | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
+    | '/components/numberInput/sizes'
+    | '/components/numberInput/spaces'
+    | '/components/numberInput/state'
+    | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
@@ -7739,6 +8093,7 @@ export interface FileRouteTypes {
     | '/components/drawer'
     | '/components/dropdown'
     | '/components/editMode'
+    | '/components/fileinput'
     | '/components/flex'
     | '/components/floatingButton'
     | '/components/globalSearch'
@@ -7754,6 +8109,7 @@ export interface FileRouteTypes {
     | '/components/modal'
     | '/components/multiButton'
     | '/components/notification'
+    | '/components/numberInput'
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/paginationTwo'
@@ -7903,6 +8259,12 @@ export interface FileRouteTypes {
     | '/components/editMode/multiline'
     | '/components/editMode/status'
     | '/components/editMode/tooltip'
+    | '/components/fileinput/customizing'
+    | '/components/fileinput/customizingFileType'
+    | '/components/fileinput/dimensions'
+    | '/components/fileinput/extratext'
+    | '/components/fileinput/filestatus'
+    | '/components/fileinput/state'
     | '/components/floatingButton/mobile'
     | '/components/floatingButton/position'
     | '/components/floatingButton/styles'
@@ -7957,6 +8319,14 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/numberInput/controlledInput'
+    | '/components/numberInput/custom'
+    | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
+    | '/components/numberInput/sizes'
+    | '/components/numberInput/spaces'
+    | '/components/numberInput/state'
+    | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
@@ -8095,6 +8465,7 @@ export interface FileRouteTypes {
     | '/components/drawer/'
     | '/components/dropdown/'
     | '/components/editMode/'
+    | '/components/fileinput/'
     | '/components/flex/'
     | '/components/floatingButton/'
     | '/components/globalSearch/'
@@ -8110,6 +8481,7 @@ export interface FileRouteTypes {
     | '/components/modal/'
     | '/components/multiButton/'
     | '/components/notification/'
+    | '/components/numberInput/'
     | '/components/overflowMenu/'
     | '/components/paginationOne/'
     | '/components/paginationTwo/'
@@ -8286,6 +8658,12 @@ export const routeTree = rootRoute
         "/components/editMode/multiline",
         "/components/editMode/status",
         "/components/editMode/tooltip",
+        "/components/fileinput/customizing",
+        "/components/fileinput/customizingFileType",
+        "/components/fileinput/dimensions",
+        "/components/fileinput/extratext",
+        "/components/fileinput/filestatus",
+        "/components/fileinput/state",
         "/components/floatingButton/mobile",
         "/components/floatingButton/position",
         "/components/floatingButton/styles",
@@ -8340,6 +8718,14 @@ export const routeTree = rootRoute
         "/components/multiButton/withIcon",
         "/components/notification/states",
         "/components/notification/styles",
+        "/components/numberInput/controlledInput",
+        "/components/numberInput/custom",
+        "/components/numberInput/minMaxValue",
+        "/components/numberInput/numberInputField",
+        "/components/numberInput/sizes",
+        "/components/numberInput/spaces",
+        "/components/numberInput/state",
+        "/components/numberInput/status",
         "/components/overflowMenu/styles",
         "/components/paginationOne/states",
         "/components/paginationOne/types",
@@ -8478,6 +8864,7 @@ export const routeTree = rootRoute
         "/components/drawer/",
         "/components/dropdown/",
         "/components/editMode/",
+        "/components/fileinput/",
         "/components/flex/",
         "/components/floatingButton/",
         "/components/globalSearch/",
@@ -8493,6 +8880,7 @@ export const routeTree = rootRoute
         "/components/modal/",
         "/components/multiButton/",
         "/components/notification/",
+        "/components/numberInput/",
         "/components/overflowMenu/",
         "/components/paginationOne/",
         "/components/paginationTwo/",
@@ -9002,6 +9390,30 @@ export const routeTree = rootRoute
       "filePath": "components/editMode/tooltip.tsx",
       "parent": "/components"
     },
+    "/components/fileinput/customizing": {
+      "filePath": "components/fileinput/customizing.tsx",
+      "parent": "/components"
+    },
+    "/components/fileinput/customizingFileType": {
+      "filePath": "components/fileinput/customizingFileType.tsx",
+      "parent": "/components"
+    },
+    "/components/fileinput/dimensions": {
+      "filePath": "components/fileinput/dimensions.tsx",
+      "parent": "/components"
+    },
+    "/components/fileinput/extratext": {
+      "filePath": "components/fileinput/extratext.tsx",
+      "parent": "/components"
+    },
+    "/components/fileinput/filestatus": {
+      "filePath": "components/fileinput/filestatus.tsx",
+      "parent": "/components"
+    },
+    "/components/fileinput/state": {
+      "filePath": "components/fileinput/state.tsx",
+      "parent": "/components"
+    },
     "/components/floatingButton/mobile": {
       "filePath": "components/floatingButton/mobile.tsx",
       "parent": "/components"
@@ -9216,6 +9628,38 @@ export const routeTree = rootRoute
     },
     "/components/notification/styles": {
       "filePath": "components/notification/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/controlledInput": {
+      "filePath": "components/numberInput/controlledInput.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/custom": {
+      "filePath": "components/numberInput/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/minMaxValue": {
+      "filePath": "components/numberInput/minMaxValue.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/numberInputField": {
+      "filePath": "components/numberInput/numberInputField.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/sizes": {
+      "filePath": "components/numberInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/spaces": {
+      "filePath": "components/numberInput/spaces.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/state": {
+      "filePath": "components/numberInput/state.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/status": {
+      "filePath": "components/numberInput/status.tsx",
       "parent": "/components"
     },
     "/components/overflowMenu/styles": {
@@ -9770,6 +10214,10 @@ export const routeTree = rootRoute
       "filePath": "components/editMode/index.tsx",
       "parent": "/components"
     },
+    "/components/fileinput/": {
+      "filePath": "components/fileinput/index.tsx",
+      "parent": "/components"
+    },
     "/components/flex/": {
       "filePath": "components/flex/index.tsx",
       "parent": "/components"
@@ -9828,6 +10276,10 @@ export const routeTree = rootRoute
     },
     "/components/notification/": {
       "filePath": "components/notification/index.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/": {
+      "filePath": "components/numberInput/index.tsx",
       "parent": "/components"
     },
     "/components/overflowMenu/": {
