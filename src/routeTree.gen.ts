@@ -43,6 +43,7 @@ import { Route as ComponentsPillsIndexImport } from './routes/components/pills/i
 import { Route as ComponentsPaginationTwoIndexImport } from './routes/components/paginationTwo/index'
 import { Route as ComponentsPaginationOneIndexImport } from './routes/components/paginationOne/index'
 import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
+import { Route as ComponentsNumberInputIndexImport } from './routes/components/numberInput/index'
 import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsModalIndexImport } from './routes/components/modal/index'
@@ -70,6 +71,7 @@ import { Route as ComponentsChipsIndexImport } from './routes/components/chips/i
 import { Route as ComponentsCheckboxIndexImport } from './routes/components/checkbox/index'
 import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
 import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
+import { Route as ComponentsCalendarIndexImport } from './routes/components/calendar/index'
 import { Route as ComponentsButtonGroupIndexImport } from './routes/components/buttonGroup/index'
 import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
 import { Route as ComponentsBreadcrumbsIndexImport } from './routes/components/breadcrumbs/index'
@@ -129,6 +131,7 @@ import { Route as ComponentsTabMenuSizeImport } from './routes/components/tabMen
 import { Route as ComponentsTabMenuOptionsVerticalTabsImport } from './routes/components/tabMenu/optionsVerticalTabs'
 import { Route as ComponentsTabMenuOptionsImport } from './routes/components/tabMenu/options'
 import { Route as ComponentsTabMenuHorizontalTabsImport } from './routes/components/tabMenu/horizontalTabs'
+import { Route as ComponentsTabMenuCardTabMenuWithoutBorderImport } from './routes/components/tabMenu/cardTabMenuWithoutBorder'
 import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components/tabMenu/cardTabMenu'
 import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
 import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
@@ -188,6 +191,14 @@ import { Route as ComponentsPaginationOneWithInputImport } from './routes/compon
 import { Route as ComponentsPaginationOneTypesImport } from './routes/components/paginationOne/types'
 import { Route as ComponentsPaginationOneStatesImport } from './routes/components/paginationOne/states'
 import { Route as ComponentsOverflowMenuStylesImport } from './routes/components/overflowMenu/styles'
+import { Route as ComponentsNumberInputStatusImport } from './routes/components/numberInput/status'
+import { Route as ComponentsNumberInputStateImport } from './routes/components/numberInput/state'
+import { Route as ComponentsNumberInputSpacesImport } from './routes/components/numberInput/spaces'
+import { Route as ComponentsNumberInputSizesImport } from './routes/components/numberInput/sizes'
+import { Route as ComponentsNumberInputNumberInputFieldImport } from './routes/components/numberInput/numberInputField'
+import { Route as ComponentsNumberInputMinMaxValueImport } from './routes/components/numberInput/minMaxValue'
+import { Route as ComponentsNumberInputCustomImport } from './routes/components/numberInput/custom'
+import { Route as ComponentsNumberInputControlledInputImport } from './routes/components/numberInput/controlledInput'
 import { Route as ComponentsNotificationStylesImport } from './routes/components/notification/styles'
 import { Route as ComponentsNotificationStatesImport } from './routes/components/notification/states'
 import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
@@ -289,6 +300,7 @@ import { Route as ComponentsDateTimeFieldStatusImport } from './routes/component
 import { Route as ComponentsDateTimeFieldExtraTextImport } from './routes/components/dateTimeField/extraText'
 import { Route as ComponentsDateTimeFieldDisplayInlineImport } from './routes/components/dateTimeField/displayInline'
 import { Route as ComponentsDateTimeFieldDimensionImport } from './routes/components/dateTimeField/dimension'
+import { Route as ComponentsDateInputWithButtonImport } from './routes/components/dateInput/withButton'
 import { Route as ComponentsDateInputVariantsImport } from './routes/components/dateInput/variants'
 import { Route as ComponentsDateInputStatusImport } from './routes/components/dateInput/status'
 import { Route as ComponentsDateInputStateImport } from './routes/components/dateInput/state'
@@ -322,6 +334,14 @@ import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from 
 import { Route as ComponentsCarouselSliderPositionImport } from './routes/components/carousel/sliderPosition'
 import { Route as ComponentsCarouselCarouselAutoChangeImport } from './routes/components/carousel/carouselAutoChange'
 import { Route as ComponentsCarouselArrowsImport } from './routes/components/carousel/arrows'
+import { Route as ComponentsCalendarViewDateMonthsYearsImport } from './routes/components/calendar/viewDateMonthsYears'
+import { Route as ComponentsCalendarViewDateAfterChooseImport } from './routes/components/calendar/viewDateAfterChoose'
+import { Route as ComponentsCalendarSpecialDatesImport } from './routes/components/calendar/specialDates'
+import { Route as ComponentsCalendarRangeImport } from './routes/components/calendar/range'
+import { Route as ComponentsCalendarMaxDateImport } from './routes/components/calendar/maxDate'
+import { Route as ComponentsCalendarFilterDateImport } from './routes/components/calendar/filterDate'
+import { Route as ComponentsCalendarCallbackImport } from './routes/components/calendar/callback'
+import { Route as ComponentsCalendarActiveViewDateImport } from './routes/components/calendar/activeViewDate'
 import { Route as ComponentsButtonGroupVariantsImport } from './routes/components/buttonGroup/variants'
 import { Route as ComponentsButtonGroupStylesImport } from './routes/components/buttonGroup/styles'
 import { Route as ComponentsButtonGroupStatesImport } from './routes/components/buttonGroup/states'
@@ -560,6 +580,14 @@ const ComponentsOverflowMenuIndexRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsNumberInputIndexRoute = ComponentsNumberInputIndexImport.update(
+  {
+    id: '/numberInput/',
+    path: '/numberInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
 const ComponentsNotificationIndexRoute =
   ComponentsNotificationIndexImport.update({
     id: '/notification/',
@@ -732,6 +760,12 @@ const ComponentsCarouselSliderIndexRoute =
 const ComponentsCarouselIndexRoute = ComponentsCarouselIndexImport.update({
   id: '/carousel/',
   path: '/carousel/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsCalendarIndexRoute = ComponentsCalendarIndexImport.update({
+  id: '/calendar/',
+  path: '/calendar/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1117,6 +1151,13 @@ const ComponentsTabMenuHorizontalTabsRoute =
   ComponentsTabMenuHorizontalTabsImport.update({
     id: '/tabMenu/horizontalTabs',
     path: '/tabMenu/horizontalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuCardTabMenuWithoutBorderRoute =
+  ComponentsTabMenuCardTabMenuWithoutBorderImport.update({
+    id: '/tabMenu/cardTabMenuWithoutBorder',
+    path: '/tabMenu/cardTabMenuWithoutBorder',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1513,6 +1554,64 @@ const ComponentsOverflowMenuStylesRoute =
   ComponentsOverflowMenuStylesImport.update({
     id: '/overflowMenu/styles',
     path: '/overflowMenu/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputStatusRoute =
+  ComponentsNumberInputStatusImport.update({
+    id: '/numberInput/status',
+    path: '/numberInput/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputStateRoute = ComponentsNumberInputStateImport.update(
+  {
+    id: '/numberInput/state',
+    path: '/numberInput/state',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsNumberInputSpacesRoute =
+  ComponentsNumberInputSpacesImport.update({
+    id: '/numberInput/spaces',
+    path: '/numberInput/spaces',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputSizesRoute = ComponentsNumberInputSizesImport.update(
+  {
+    id: '/numberInput/sizes',
+    path: '/numberInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsNumberInputNumberInputFieldRoute =
+  ComponentsNumberInputNumberInputFieldImport.update({
+    id: '/numberInput/numberInputField',
+    path: '/numberInput/numberInputField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputMinMaxValueRoute =
+  ComponentsNumberInputMinMaxValueImport.update({
+    id: '/numberInput/minMaxValue',
+    path: '/numberInput/minMaxValue',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputCustomRoute =
+  ComponentsNumberInputCustomImport.update({
+    id: '/numberInput/custom',
+    path: '/numberInput/custom',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsNumberInputControlledInputRoute =
+  ComponentsNumberInputControlledInputImport.update({
+    id: '/numberInput/controlledInput',
+    path: '/numberInput/controlledInput',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -2202,6 +2301,13 @@ const ComponentsDateTimeFieldDimensionRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsDateInputWithButtonRoute =
+  ComponentsDateInputWithButtonImport.update({
+    id: '/dateInput/withButton',
+    path: '/dateInput/withButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsDateInputVariantsRoute =
   ComponentsDateInputVariantsImport.update({
     id: '/dateInput/variants',
@@ -2422,6 +2528,61 @@ const ComponentsCarouselArrowsRoute = ComponentsCarouselArrowsImport.update({
   path: '/carousel/arrows',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsCalendarViewDateMonthsYearsRoute =
+  ComponentsCalendarViewDateMonthsYearsImport.update({
+    id: '/calendar/viewDateMonthsYears',
+    path: '/calendar/viewDateMonthsYears',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarViewDateAfterChooseRoute =
+  ComponentsCalendarViewDateAfterChooseImport.update({
+    id: '/calendar/viewDateAfterChoose',
+    path: '/calendar/viewDateAfterChoose',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarSpecialDatesRoute =
+  ComponentsCalendarSpecialDatesImport.update({
+    id: '/calendar/specialDates',
+    path: '/calendar/specialDates',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarRangeRoute = ComponentsCalendarRangeImport.update({
+  id: '/calendar/range',
+  path: '/calendar/range',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsCalendarMaxDateRoute = ComponentsCalendarMaxDateImport.update({
+  id: '/calendar/maxDate',
+  path: '/calendar/maxDate',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsCalendarFilterDateRoute =
+  ComponentsCalendarFilterDateImport.update({
+    id: '/calendar/filterDate',
+    path: '/calendar/filterDate',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsCalendarCallbackRoute = ComponentsCalendarCallbackImport.update(
+  {
+    id: '/calendar/callback',
+    path: '/calendar/callback',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsCalendarActiveViewDateRoute =
+  ComponentsCalendarActiveViewDateImport.update({
+    id: '/calendar/activeViewDate',
+    path: '/calendar/activeViewDate',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsButtonGroupVariantsRoute =
   ComponentsButtonGroupVariantsImport.update({
@@ -2904,6 +3065,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsButtonGroupVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/calendar/activeViewDate': {
+      id: '/components/calendar/activeViewDate'
+      path: '/calendar/activeViewDate'
+      fullPath: '/components/calendar/activeViewDate'
+      preLoaderRoute: typeof ComponentsCalendarActiveViewDateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/callback': {
+      id: '/components/calendar/callback'
+      path: '/calendar/callback'
+      fullPath: '/components/calendar/callback'
+      preLoaderRoute: typeof ComponentsCalendarCallbackImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/filterDate': {
+      id: '/components/calendar/filterDate'
+      path: '/calendar/filterDate'
+      fullPath: '/components/calendar/filterDate'
+      preLoaderRoute: typeof ComponentsCalendarFilterDateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/maxDate': {
+      id: '/components/calendar/maxDate'
+      path: '/calendar/maxDate'
+      fullPath: '/components/calendar/maxDate'
+      preLoaderRoute: typeof ComponentsCalendarMaxDateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/range': {
+      id: '/components/calendar/range'
+      path: '/calendar/range'
+      fullPath: '/components/calendar/range'
+      preLoaderRoute: typeof ComponentsCalendarRangeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/specialDates': {
+      id: '/components/calendar/specialDates'
+      path: '/calendar/specialDates'
+      fullPath: '/components/calendar/specialDates'
+      preLoaderRoute: typeof ComponentsCalendarSpecialDatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/viewDateAfterChoose': {
+      id: '/components/calendar/viewDateAfterChoose'
+      path: '/calendar/viewDateAfterChoose'
+      fullPath: '/components/calendar/viewDateAfterChoose'
+      preLoaderRoute: typeof ComponentsCalendarViewDateAfterChooseImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/calendar/viewDateMonthsYears': {
+      id: '/components/calendar/viewDateMonthsYears'
+      path: '/calendar/viewDateMonthsYears'
+      fullPath: '/components/calendar/viewDateMonthsYears'
+      preLoaderRoute: typeof ComponentsCalendarViewDateMonthsYearsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/arrows': {
       id: '/components/carousel/arrows'
       path: '/carousel/arrows'
@@ -3133,6 +3350,13 @@ declare module '@tanstack/react-router' {
       path: '/dateInput/variants'
       fullPath: '/components/dateInput/variants'
       preLoaderRoute: typeof ComponentsDateInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/dateInput/withButton': {
+      id: '/components/dateInput/withButton'
+      path: '/dateInput/withButton'
+      fullPath: '/components/dateInput/withButton'
+      preLoaderRoute: typeof ComponentsDateInputWithButtonImport
       parentRoute: typeof ComponentsImport
     }
     '/components/dateTimeField/dimension': {
@@ -3842,6 +4066,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsNotificationStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/numberInput/controlledInput': {
+      id: '/components/numberInput/controlledInput'
+      path: '/numberInput/controlledInput'
+      fullPath: '/components/numberInput/controlledInput'
+      preLoaderRoute: typeof ComponentsNumberInputControlledInputImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/custom': {
+      id: '/components/numberInput/custom'
+      path: '/numberInput/custom'
+      fullPath: '/components/numberInput/custom'
+      preLoaderRoute: typeof ComponentsNumberInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/minMaxValue': {
+      id: '/components/numberInput/minMaxValue'
+      path: '/numberInput/minMaxValue'
+      fullPath: '/components/numberInput/minMaxValue'
+      preLoaderRoute: typeof ComponentsNumberInputMinMaxValueImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/numberInputField': {
+      id: '/components/numberInput/numberInputField'
+      path: '/numberInput/numberInputField'
+      fullPath: '/components/numberInput/numberInputField'
+      preLoaderRoute: typeof ComponentsNumberInputNumberInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/sizes': {
+      id: '/components/numberInput/sizes'
+      path: '/numberInput/sizes'
+      fullPath: '/components/numberInput/sizes'
+      preLoaderRoute: typeof ComponentsNumberInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/spaces': {
+      id: '/components/numberInput/spaces'
+      path: '/numberInput/spaces'
+      fullPath: '/components/numberInput/spaces'
+      preLoaderRoute: typeof ComponentsNumberInputSpacesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/state': {
+      id: '/components/numberInput/state'
+      path: '/numberInput/state'
+      fullPath: '/components/numberInput/state'
+      preLoaderRoute: typeof ComponentsNumberInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/status': {
+      id: '/components/numberInput/status'
+      path: '/numberInput/status'
+      fullPath: '/components/numberInput/status'
+      preLoaderRoute: typeof ComponentsNumberInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/overflowMenu/styles': {
       id: '/components/overflowMenu/styles'
       path: '/overflowMenu/styles'
@@ -4253,6 +4533,13 @@ declare module '@tanstack/react-router' {
       path: '/tabMenu/cardTabMenu'
       fullPath: '/components/tabMenu/cardTabMenu'
       preLoaderRoute: typeof ComponentsTabMenuCardTabMenuImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/cardTabMenuWithoutBorder': {
+      id: '/components/tabMenu/cardTabMenuWithoutBorder'
+      path: '/tabMenu/cardTabMenuWithoutBorder'
+      fullPath: '/components/tabMenu/cardTabMenuWithoutBorder'
+      preLoaderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderImport
       parentRoute: typeof ComponentsImport
     }
     '/components/tabMenu/horizontalTabs': {
@@ -4668,6 +4955,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsButtonGroupIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/calendar/': {
+      id: '/components/calendar/'
+      path: '/calendar'
+      fullPath: '/components/calendar'
+      preLoaderRoute: typeof ComponentsCalendarIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/': {
       id: '/components/carousel/'
       path: '/carousel'
@@ -4855,6 +5149,13 @@ declare module '@tanstack/react-router' {
       path: '/notification'
       fullPath: '/components/notification'
       preLoaderRoute: typeof ComponentsNotificationIndexImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/numberInput/': {
+      id: '/components/numberInput/'
+      path: '/numberInput'
+      fullPath: '/components/numberInput'
+      preLoaderRoute: typeof ComponentsNumberInputIndexImport
       parentRoute: typeof ComponentsImport
     }
     '/components/overflowMenu/': {
@@ -5069,6 +5370,14 @@ interface ComponentsRouteChildren {
   ComponentsButtonGroupStatesRoute: typeof ComponentsButtonGroupStatesRoute
   ComponentsButtonGroupStylesRoute: typeof ComponentsButtonGroupStylesRoute
   ComponentsButtonGroupVariantsRoute: typeof ComponentsButtonGroupVariantsRoute
+  ComponentsCalendarActiveViewDateRoute: typeof ComponentsCalendarActiveViewDateRoute
+  ComponentsCalendarCallbackRoute: typeof ComponentsCalendarCallbackRoute
+  ComponentsCalendarFilterDateRoute: typeof ComponentsCalendarFilterDateRoute
+  ComponentsCalendarMaxDateRoute: typeof ComponentsCalendarMaxDateRoute
+  ComponentsCalendarRangeRoute: typeof ComponentsCalendarRangeRoute
+  ComponentsCalendarSpecialDatesRoute: typeof ComponentsCalendarSpecialDatesRoute
+  ComponentsCalendarViewDateAfterChooseRoute: typeof ComponentsCalendarViewDateAfterChooseRoute
+  ComponentsCalendarViewDateMonthsYearsRoute: typeof ComponentsCalendarViewDateMonthsYearsRoute
   ComponentsCarouselArrowsRoute: typeof ComponentsCarouselArrowsRoute
   ComponentsCarouselCarouselAutoChangeRoute: typeof ComponentsCarouselCarouselAutoChangeRoute
   ComponentsCarouselSliderPositionRoute: typeof ComponentsCarouselSliderPositionRoute
@@ -5102,6 +5411,7 @@ interface ComponentsRouteChildren {
   ComponentsDateInputStateRoute: typeof ComponentsDateInputStateRoute
   ComponentsDateInputStatusRoute: typeof ComponentsDateInputStatusRoute
   ComponentsDateInputVariantsRoute: typeof ComponentsDateInputVariantsRoute
+  ComponentsDateInputWithButtonRoute: typeof ComponentsDateInputWithButtonRoute
   ComponentsDateTimeFieldDimensionRoute: typeof ComponentsDateTimeFieldDimensionRoute
   ComponentsDateTimeFieldDisplayInlineRoute: typeof ComponentsDateTimeFieldDisplayInlineRoute
   ComponentsDateTimeFieldExtraTextRoute: typeof ComponentsDateTimeFieldExtraTextRoute
@@ -5203,6 +5513,14 @@ interface ComponentsRouteChildren {
   ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
   ComponentsNotificationStatesRoute: typeof ComponentsNotificationStatesRoute
   ComponentsNotificationStylesRoute: typeof ComponentsNotificationStylesRoute
+  ComponentsNumberInputControlledInputRoute: typeof ComponentsNumberInputControlledInputRoute
+  ComponentsNumberInputCustomRoute: typeof ComponentsNumberInputCustomRoute
+  ComponentsNumberInputMinMaxValueRoute: typeof ComponentsNumberInputMinMaxValueRoute
+  ComponentsNumberInputNumberInputFieldRoute: typeof ComponentsNumberInputNumberInputFieldRoute
+  ComponentsNumberInputSizesRoute: typeof ComponentsNumberInputSizesRoute
+  ComponentsNumberInputSpacesRoute: typeof ComponentsNumberInputSpacesRoute
+  ComponentsNumberInputStateRoute: typeof ComponentsNumberInputStateRoute
+  ComponentsNumberInputStatusRoute: typeof ComponentsNumberInputStatusRoute
   ComponentsOverflowMenuStylesRoute: typeof ComponentsOverflowMenuStylesRoute
   ComponentsPaginationOneStatesRoute: typeof ComponentsPaginationOneStatesRoute
   ComponentsPaginationOneTypesRoute: typeof ComponentsPaginationOneTypesRoute
@@ -5262,6 +5580,7 @@ interface ComponentsRouteChildren {
   ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
   ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
   ComponentsTabMenuCardTabMenuRoute: typeof ComponentsTabMenuCardTabMenuRoute
+  ComponentsTabMenuCardTabMenuWithoutBorderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   ComponentsTabMenuHorizontalTabsRoute: typeof ComponentsTabMenuHorizontalTabsRoute
   ComponentsTabMenuOptionsRoute: typeof ComponentsTabMenuOptionsRoute
   ComponentsTabMenuOptionsVerticalTabsRoute: typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -5321,6 +5640,7 @@ interface ComponentsRouteChildren {
   ComponentsBreadcrumbsIndexRoute: typeof ComponentsBreadcrumbsIndexRoute
   ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
   ComponentsButtonGroupIndexRoute: typeof ComponentsButtonGroupIndexRoute
+  ComponentsCalendarIndexRoute: typeof ComponentsCalendarIndexRoute
   ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
   ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
   ComponentsCheckboxIndexRoute: typeof ComponentsCheckboxIndexRoute
@@ -5348,6 +5668,7 @@ interface ComponentsRouteChildren {
   ComponentsModalIndexRoute: typeof ComponentsModalIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
   ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute
+  ComponentsNumberInputIndexRoute: typeof ComponentsNumberInputIndexRoute
   ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
   ComponentsPaginationOneIndexRoute: typeof ComponentsPaginationOneIndexRoute
   ComponentsPaginationTwoIndexRoute: typeof ComponentsPaginationTwoIndexRoute
@@ -5412,6 +5733,16 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsButtonGroupStatesRoute: ComponentsButtonGroupStatesRoute,
   ComponentsButtonGroupStylesRoute: ComponentsButtonGroupStylesRoute,
   ComponentsButtonGroupVariantsRoute: ComponentsButtonGroupVariantsRoute,
+  ComponentsCalendarActiveViewDateRoute: ComponentsCalendarActiveViewDateRoute,
+  ComponentsCalendarCallbackRoute: ComponentsCalendarCallbackRoute,
+  ComponentsCalendarFilterDateRoute: ComponentsCalendarFilterDateRoute,
+  ComponentsCalendarMaxDateRoute: ComponentsCalendarMaxDateRoute,
+  ComponentsCalendarRangeRoute: ComponentsCalendarRangeRoute,
+  ComponentsCalendarSpecialDatesRoute: ComponentsCalendarSpecialDatesRoute,
+  ComponentsCalendarViewDateAfterChooseRoute:
+    ComponentsCalendarViewDateAfterChooseRoute,
+  ComponentsCalendarViewDateMonthsYearsRoute:
+    ComponentsCalendarViewDateMonthsYearsRoute,
   ComponentsCarouselArrowsRoute: ComponentsCarouselArrowsRoute,
   ComponentsCarouselCarouselAutoChangeRoute:
     ComponentsCarouselCarouselAutoChangeRoute,
@@ -5452,6 +5783,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDateInputStateRoute: ComponentsDateInputStateRoute,
   ComponentsDateInputStatusRoute: ComponentsDateInputStatusRoute,
   ComponentsDateInputVariantsRoute: ComponentsDateInputVariantsRoute,
+  ComponentsDateInputWithButtonRoute: ComponentsDateInputWithButtonRoute,
   ComponentsDateTimeFieldDimensionRoute: ComponentsDateTimeFieldDimensionRoute,
   ComponentsDateTimeFieldDisplayInlineRoute:
     ComponentsDateTimeFieldDisplayInlineRoute,
@@ -5574,6 +5906,16 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiButtonWithIconRoute: ComponentsMultiButtonWithIconRoute,
   ComponentsNotificationStatesRoute: ComponentsNotificationStatesRoute,
   ComponentsNotificationStylesRoute: ComponentsNotificationStylesRoute,
+  ComponentsNumberInputControlledInputRoute:
+    ComponentsNumberInputControlledInputRoute,
+  ComponentsNumberInputCustomRoute: ComponentsNumberInputCustomRoute,
+  ComponentsNumberInputMinMaxValueRoute: ComponentsNumberInputMinMaxValueRoute,
+  ComponentsNumberInputNumberInputFieldRoute:
+    ComponentsNumberInputNumberInputFieldRoute,
+  ComponentsNumberInputSizesRoute: ComponentsNumberInputSizesRoute,
+  ComponentsNumberInputSpacesRoute: ComponentsNumberInputSpacesRoute,
+  ComponentsNumberInputStateRoute: ComponentsNumberInputStateRoute,
+  ComponentsNumberInputStatusRoute: ComponentsNumberInputStatusRoute,
   ComponentsOverflowMenuStylesRoute: ComponentsOverflowMenuStylesRoute,
   ComponentsPaginationOneStatesRoute: ComponentsPaginationOneStatesRoute,
   ComponentsPaginationOneTypesRoute: ComponentsPaginationOneTypesRoute,
@@ -5642,6 +5984,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
   ComponentsTabMenuAddTabVerticalRoute: ComponentsTabMenuAddTabVerticalRoute,
   ComponentsTabMenuCardTabMenuRoute: ComponentsTabMenuCardTabMenuRoute,
+  ComponentsTabMenuCardTabMenuWithoutBorderRoute:
+    ComponentsTabMenuCardTabMenuWithoutBorderRoute,
   ComponentsTabMenuHorizontalTabsRoute: ComponentsTabMenuHorizontalTabsRoute,
   ComponentsTabMenuOptionsRoute: ComponentsTabMenuOptionsRoute,
   ComponentsTabMenuOptionsVerticalTabsRoute:
@@ -5710,6 +6054,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsBreadcrumbsIndexRoute: ComponentsBreadcrumbsIndexRoute,
   ComponentsButtonIndexRoute: ComponentsButtonIndexRoute,
   ComponentsButtonGroupIndexRoute: ComponentsButtonGroupIndexRoute,
+  ComponentsCalendarIndexRoute: ComponentsCalendarIndexRoute,
   ComponentsCarouselIndexRoute: ComponentsCarouselIndexRoute,
   ComponentsCarouselSliderIndexRoute: ComponentsCarouselSliderIndexRoute,
   ComponentsCheckboxIndexRoute: ComponentsCheckboxIndexRoute,
@@ -5737,6 +6082,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsModalIndexRoute: ComponentsModalIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
   ComponentsNotificationIndexRoute: ComponentsNotificationIndexRoute,
+  ComponentsNumberInputIndexRoute: ComponentsNumberInputIndexRoute,
   ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
   ComponentsPaginationOneIndexRoute: ComponentsPaginationOneIndexRoute,
   ComponentsPaginationTwoIndexRoute: ComponentsPaginationTwoIndexRoute,
@@ -5824,6 +6170,14 @@ export interface FileRoutesByFullPath {
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
   '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
   '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
@@ -5857,6 +6211,7 @@ export interface FileRoutesByFullPath {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
   '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
   '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
   '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
@@ -5958,6 +6313,14 @@ export interface FileRoutesByFullPath {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
@@ -6017,6 +6380,7 @@ export interface FileRoutesByFullPath {
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -6076,6 +6440,7 @@ export interface FileRoutesByFullPath {
   '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar': typeof ComponentsCalendarIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
@@ -6103,6 +6468,7 @@ export interface FileRoutesByFullPath {
   '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
@@ -6169,6 +6535,14 @@ export interface FileRoutesByTo {
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
   '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
   '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
@@ -6202,6 +6576,7 @@ export interface FileRoutesByTo {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
   '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
   '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
   '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
@@ -6303,6 +6678,14 @@ export interface FileRoutesByTo {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
@@ -6362,6 +6745,7 @@ export interface FileRoutesByTo {
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -6421,6 +6805,7 @@ export interface FileRoutesByTo {
   '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button': typeof ComponentsButtonIndexRoute
   '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar': typeof ComponentsCalendarIndexRoute
   '/components/carousel': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox': typeof ComponentsCheckboxIndexRoute
@@ -6448,6 +6833,7 @@ export interface FileRoutesByTo {
   '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
@@ -6515,6 +6901,14 @@ export interface FileRoutesById {
   '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
   '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
   '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
   '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
   '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
   '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
@@ -6548,6 +6942,7 @@ export interface FileRoutesById {
   '/components/dateInput/state': typeof ComponentsDateInputStateRoute
   '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
   '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
   '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
   '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
   '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
@@ -6649,6 +7044,14 @@ export interface FileRoutesById {
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
   '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
   '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
   '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
@@ -6708,6 +7111,7 @@ export interface FileRoutesById {
   '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -6767,6 +7171,7 @@ export interface FileRoutesById {
   '/components/breadcrumbs/': typeof ComponentsBreadcrumbsIndexRoute
   '/components/button/': typeof ComponentsButtonIndexRoute
   '/components/buttonGroup/': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar/': typeof ComponentsCalendarIndexRoute
   '/components/carousel/': typeof ComponentsCarouselIndexRoute
   '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
   '/components/checkbox/': typeof ComponentsCheckboxIndexRoute
@@ -6794,6 +7199,7 @@ export interface FileRoutesById {
   '/components/modal/': typeof ComponentsModalIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
   '/components/notification/': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput/': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne/': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo/': typeof ComponentsPaginationTwoIndexRoute
@@ -6862,6 +7268,14 @@ export interface FileRouteTypes {
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
     | '/components/buttonGroup/variants'
+    | '/components/calendar/activeViewDate'
+    | '/components/calendar/callback'
+    | '/components/calendar/filterDate'
+    | '/components/calendar/maxDate'
+    | '/components/calendar/range'
+    | '/components/calendar/specialDates'
+    | '/components/calendar/viewDateAfterChoose'
+    | '/components/calendar/viewDateMonthsYears'
     | '/components/carousel/arrows'
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
@@ -6895,6 +7309,7 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateInput/withButton'
     | '/components/dateTimeField/dimension'
     | '/components/dateTimeField/displayInline'
     | '/components/dateTimeField/extraText'
@@ -6996,6 +7411,14 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/numberInput/controlledInput'
+    | '/components/numberInput/custom'
+    | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
+    | '/components/numberInput/sizes'
+    | '/components/numberInput/spaces'
+    | '/components/numberInput/state'
+    | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
@@ -7055,6 +7478,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/cardTabMenuWithoutBorder'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -7114,6 +7538,7 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs'
     | '/components/button'
     | '/components/buttonGroup'
+    | '/components/calendar'
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/checkbox'
@@ -7141,6 +7566,7 @@ export interface FileRouteTypes {
     | '/components/modal'
     | '/components/multiButton'
     | '/components/notification'
+    | '/components/numberInput'
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/paginationTwo'
@@ -7206,6 +7632,14 @@ export interface FileRouteTypes {
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
     | '/components/buttonGroup/variants'
+    | '/components/calendar/activeViewDate'
+    | '/components/calendar/callback'
+    | '/components/calendar/filterDate'
+    | '/components/calendar/maxDate'
+    | '/components/calendar/range'
+    | '/components/calendar/specialDates'
+    | '/components/calendar/viewDateAfterChoose'
+    | '/components/calendar/viewDateMonthsYears'
     | '/components/carousel/arrows'
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
@@ -7239,6 +7673,7 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateInput/withButton'
     | '/components/dateTimeField/dimension'
     | '/components/dateTimeField/displayInline'
     | '/components/dateTimeField/extraText'
@@ -7340,6 +7775,14 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/numberInput/controlledInput'
+    | '/components/numberInput/custom'
+    | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
+    | '/components/numberInput/sizes'
+    | '/components/numberInput/spaces'
+    | '/components/numberInput/state'
+    | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
@@ -7399,6 +7842,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/cardTabMenuWithoutBorder'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -7458,6 +7902,7 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs'
     | '/components/button'
     | '/components/buttonGroup'
+    | '/components/calendar'
     | '/components/carousel'
     | '/components/carouselSlider'
     | '/components/checkbox'
@@ -7485,6 +7930,7 @@ export interface FileRouteTypes {
     | '/components/modal'
     | '/components/multiButton'
     | '/components/notification'
+    | '/components/numberInput'
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/paginationTwo'
@@ -7550,6 +7996,14 @@ export interface FileRouteTypes {
     | '/components/buttonGroup/states'
     | '/components/buttonGroup/styles'
     | '/components/buttonGroup/variants'
+    | '/components/calendar/activeViewDate'
+    | '/components/calendar/callback'
+    | '/components/calendar/filterDate'
+    | '/components/calendar/maxDate'
+    | '/components/calendar/range'
+    | '/components/calendar/specialDates'
+    | '/components/calendar/viewDateAfterChoose'
+    | '/components/calendar/viewDateMonthsYears'
     | '/components/carousel/arrows'
     | '/components/carousel/carouselAutoChange'
     | '/components/carousel/sliderPosition'
@@ -7583,6 +8037,7 @@ export interface FileRouteTypes {
     | '/components/dateInput/state'
     | '/components/dateInput/status'
     | '/components/dateInput/variants'
+    | '/components/dateInput/withButton'
     | '/components/dateTimeField/dimension'
     | '/components/dateTimeField/displayInline'
     | '/components/dateTimeField/extraText'
@@ -7684,6 +8139,14 @@ export interface FileRouteTypes {
     | '/components/multiButton/withIcon'
     | '/components/notification/states'
     | '/components/notification/styles'
+    | '/components/numberInput/controlledInput'
+    | '/components/numberInput/custom'
+    | '/components/numberInput/minMaxValue'
+    | '/components/numberInput/numberInputField'
+    | '/components/numberInput/sizes'
+    | '/components/numberInput/spaces'
+    | '/components/numberInput/state'
+    | '/components/numberInput/status'
     | '/components/overflowMenu/styles'
     | '/components/paginationOne/states'
     | '/components/paginationOne/types'
@@ -7743,6 +8206,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTab'
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
+    | '/components/tabMenu/cardTabMenuWithoutBorder'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -7802,6 +8266,7 @@ export interface FileRouteTypes {
     | '/components/breadcrumbs/'
     | '/components/button/'
     | '/components/buttonGroup/'
+    | '/components/calendar/'
     | '/components/carousel/'
     | '/components/carouselSlider/'
     | '/components/checkbox/'
@@ -7829,6 +8294,7 @@ export interface FileRouteTypes {
     | '/components/modal/'
     | '/components/multiButton/'
     | '/components/notification/'
+    | '/components/numberInput/'
     | '/components/overflowMenu/'
     | '/components/paginationOne/'
     | '/components/paginationTwo/'
@@ -7921,6 +8387,14 @@ export const routeTree = rootRoute
         "/components/buttonGroup/states",
         "/components/buttonGroup/styles",
         "/components/buttonGroup/variants",
+        "/components/calendar/activeViewDate",
+        "/components/calendar/callback",
+        "/components/calendar/filterDate",
+        "/components/calendar/maxDate",
+        "/components/calendar/range",
+        "/components/calendar/specialDates",
+        "/components/calendar/viewDateAfterChoose",
+        "/components/calendar/viewDateMonthsYears",
         "/components/carousel/arrows",
         "/components/carousel/carouselAutoChange",
         "/components/carousel/sliderPosition",
@@ -7954,6 +8428,7 @@ export const routeTree = rootRoute
         "/components/dateInput/state",
         "/components/dateInput/status",
         "/components/dateInput/variants",
+        "/components/dateInput/withButton",
         "/components/dateTimeField/dimension",
         "/components/dateTimeField/displayInline",
         "/components/dateTimeField/extraText",
@@ -8055,6 +8530,14 @@ export const routeTree = rootRoute
         "/components/multiButton/withIcon",
         "/components/notification/states",
         "/components/notification/styles",
+        "/components/numberInput/controlledInput",
+        "/components/numberInput/custom",
+        "/components/numberInput/minMaxValue",
+        "/components/numberInput/numberInputField",
+        "/components/numberInput/sizes",
+        "/components/numberInput/spaces",
+        "/components/numberInput/state",
+        "/components/numberInput/status",
         "/components/overflowMenu/styles",
         "/components/paginationOne/states",
         "/components/paginationOne/types",
@@ -8114,6 +8597,7 @@ export const routeTree = rootRoute
         "/components/tabMenu/addTab",
         "/components/tabMenu/addTabVertical",
         "/components/tabMenu/cardTabMenu",
+        "/components/tabMenu/cardTabMenuWithoutBorder",
         "/components/tabMenu/horizontalTabs",
         "/components/tabMenu/options",
         "/components/tabMenu/optionsVerticalTabs",
@@ -8173,6 +8657,7 @@ export const routeTree = rootRoute
         "/components/breadcrumbs/",
         "/components/button/",
         "/components/buttonGroup/",
+        "/components/calendar/",
         "/components/carousel/",
         "/components/carouselSlider/",
         "/components/checkbox/",
@@ -8200,6 +8685,7 @@ export const routeTree = rootRoute
         "/components/modal/",
         "/components/multiButton/",
         "/components/notification/",
+        "/components/numberInput/",
         "/components/overflowMenu/",
         "/components/paginationOne/",
         "/components/paginationTwo/",
@@ -8376,6 +8862,38 @@ export const routeTree = rootRoute
       "filePath": "components/buttonGroup/variants.tsx",
       "parent": "/components"
     },
+    "/components/calendar/activeViewDate": {
+      "filePath": "components/calendar/activeViewDate.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/callback": {
+      "filePath": "components/calendar/callback.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/filterDate": {
+      "filePath": "components/calendar/filterDate.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/maxDate": {
+      "filePath": "components/calendar/maxDate.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/range": {
+      "filePath": "components/calendar/range.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/specialDates": {
+      "filePath": "components/calendar/specialDates.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/viewDateAfterChoose": {
+      "filePath": "components/calendar/viewDateAfterChoose.tsx",
+      "parent": "/components"
+    },
+    "/components/calendar/viewDateMonthsYears": {
+      "filePath": "components/calendar/viewDateMonthsYears.tsx",
+      "parent": "/components"
+    },
     "/components/carousel/arrows": {
       "filePath": "components/carousel/arrows.tsx",
       "parent": "/components"
@@ -8506,6 +9024,10 @@ export const routeTree = rootRoute
     },
     "/components/dateInput/variants": {
       "filePath": "components/dateInput/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/dateInput/withButton": {
+      "filePath": "components/dateInput/withButton.tsx",
       "parent": "/components"
     },
     "/components/dateTimeField/dimension": {
@@ -8912,6 +9434,38 @@ export const routeTree = rootRoute
       "filePath": "components/notification/styles.tsx",
       "parent": "/components"
     },
+    "/components/numberInput/controlledInput": {
+      "filePath": "components/numberInput/controlledInput.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/custom": {
+      "filePath": "components/numberInput/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/minMaxValue": {
+      "filePath": "components/numberInput/minMaxValue.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/numberInputField": {
+      "filePath": "components/numberInput/numberInputField.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/sizes": {
+      "filePath": "components/numberInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/spaces": {
+      "filePath": "components/numberInput/spaces.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/state": {
+      "filePath": "components/numberInput/state.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/status": {
+      "filePath": "components/numberInput/status.tsx",
+      "parent": "/components"
+    },
     "/components/overflowMenu/styles": {
       "filePath": "components/overflowMenu/styles.tsx",
       "parent": "/components"
@@ -9146,6 +9700,10 @@ export const routeTree = rootRoute
     },
     "/components/tabMenu/cardTabMenu": {
       "filePath": "components/tabMenu/cardTabMenu.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/cardTabMenuWithoutBorder": {
+      "filePath": "components/tabMenu/cardTabMenuWithoutBorder.tsx",
       "parent": "/components"
     },
     "/components/tabMenu/horizontalTabs": {
@@ -9384,6 +9942,10 @@ export const routeTree = rootRoute
       "filePath": "components/buttonGroup/index.tsx",
       "parent": "/components"
     },
+    "/components/calendar/": {
+      "filePath": "components/calendar/index.tsx",
+      "parent": "/components"
+    },
     "/components/carousel/": {
       "filePath": "components/carousel/index.tsx",
       "parent": "/components"
@@ -9490,6 +10052,10 @@ export const routeTree = rootRoute
     },
     "/components/notification/": {
       "filePath": "components/notification/index.tsx",
+      "parent": "/components"
+    },
+    "/components/numberInput/": {
+      "filePath": "components/numberInput/index.tsx",
       "parent": "/components"
     },
     "/components/overflowMenu/": {

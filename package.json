@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@admiral-ds/react-ui": "8.33.x",
+    "@admiral-ds/react-ui": "8.34.x",
     "@tanstack/react-router": "^1.90.0",
     "jest-environment-jsdom": "^29.7.0",
     "react": "^18.3.1",
