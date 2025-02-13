@@ -40,6 +40,7 @@ import { Route as ComponentsProgressStepperIndexImport } from './routes/componen
 import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
 import { Route as ComponentsProgressHeaderIndexImport } from './routes/components/progressHeader/index'
 import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
+import { Route as ComponentsPhoneNumberInputIndexImport } from './routes/components/phoneNumberInput/index'
 import { Route as ComponentsPaginationTwoIndexImport } from './routes/components/paginationTwo/index'
 import { Route as ComponentsPaginationOneIndexImport } from './routes/components/paginationOne/index'
 import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
@@ -180,6 +181,13 @@ import { Route as ComponentsProgressHeaderAnimationImport } from './routes/compo
 import { Route as ComponentsPillsTooltipImport } from './routes/components/pills/tooltip'
 import { Route as ComponentsPillsNestedImport } from './routes/components/pills/nested'
 import { Route as ComponentsPillsMenuImport } from './routes/components/pills/menu'
+import { Route as ComponentsPhoneNumberInputWithPlaceholderImport } from './routes/components/phoneNumberInput/withPlaceholder'
+import { Route as ComponentsPhoneNumberInputWithFilterImport } from './routes/components/phoneNumberInput/withFilter'
+import { Route as ComponentsPhoneNumberInputStatusImport } from './routes/components/phoneNumberInput/status'
+import { Route as ComponentsPhoneNumberInputStateImport } from './routes/components/phoneNumberInput/state'
+import { Route as ComponentsPhoneNumberInputSizesImport } from './routes/components/phoneNumberInput/sizes'
+import { Route as ComponentsPhoneNumberInputSelectedCountryImport } from './routes/components/phoneNumberInput/selectedCountry'
+import { Route as ComponentsPhoneNumberInputPhoneNumberInputFieldImport } from './routes/components/phoneNumberInput/phoneNumberInputField'
 import { Route as ComponentsPaginationTwoWithInputImport } from './routes/components/paginationTwo/withInput'
 import { Route as ComponentsPaginationTwoStateImport } from './routes/components/paginationTwo/state'
 import { Route as ComponentsPaginationTwoPagesImport } from './routes/components/paginationTwo/pages'
@@ -542,6 +550,13 @@ const ComponentsPillsIndexRoute = ComponentsPillsIndexImport.update({
   path: '/pills/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsPhoneNumberInputIndexRoute =
+  ComponentsPhoneNumberInputIndexImport.update({
+    id: '/phoneNumberInput/',
+    path: '/phoneNumberInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsPaginationTwoIndexRoute =
   ComponentsPaginationTwoIndexImport.update({
@@ -1463,6 +1478,55 @@ const ComponentsPillsMenuRoute = ComponentsPillsMenuImport.update({
   path: '/pills/menu',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsPhoneNumberInputWithPlaceholderRoute =
+  ComponentsPhoneNumberInputWithPlaceholderImport.update({
+    id: '/phoneNumberInput/withPlaceholder',
+    path: '/phoneNumberInput/withPlaceholder',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPhoneNumberInputWithFilterRoute =
+  ComponentsPhoneNumberInputWithFilterImport.update({
+    id: '/phoneNumberInput/withFilter',
+    path: '/phoneNumberInput/withFilter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPhoneNumberInputStatusRoute =
+  ComponentsPhoneNumberInputStatusImport.update({
+    id: '/phoneNumberInput/status',
+    path: '/phoneNumberInput/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPhoneNumberInputStateRoute =
+  ComponentsPhoneNumberInputStateImport.update({
+    id: '/phoneNumberInput/state',
+    path: '/phoneNumberInput/state',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPhoneNumberInputSizesRoute =
+  ComponentsPhoneNumberInputSizesImport.update({
+    id: '/phoneNumberInput/sizes',
+    path: '/phoneNumberInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPhoneNumberInputSelectedCountryRoute =
+  ComponentsPhoneNumberInputSelectedCountryImport.update({
+    id: '/phoneNumberInput/selectedCountry',
+    path: '/phoneNumberInput/selectedCountry',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsPhoneNumberInputPhoneNumberInputFieldRoute =
+  ComponentsPhoneNumberInputPhoneNumberInputFieldImport.update({
+    id: '/phoneNumberInput/phoneNumberInputField',
+    path: '/phoneNumberInput/phoneNumberInputField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsPaginationTwoWithInputRoute =
   ComponentsPaginationTwoWithInputImport.update({
@@ -3958,6 +4022,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsPaginationTwoWithInputImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/phoneNumberInput/phoneNumberInputField': {
+      id: '/components/phoneNumberInput/phoneNumberInputField'
+      path: '/phoneNumberInput/phoneNumberInputField'
+      fullPath: '/components/phoneNumberInput/phoneNumberInputField'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputPhoneNumberInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/phoneNumberInput/selectedCountry': {
+      id: '/components/phoneNumberInput/selectedCountry'
+      path: '/phoneNumberInput/selectedCountry'
+      fullPath: '/components/phoneNumberInput/selectedCountry'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputSelectedCountryImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/phoneNumberInput/sizes': {
+      id: '/components/phoneNumberInput/sizes'
+      path: '/phoneNumberInput/sizes'
+      fullPath: '/components/phoneNumberInput/sizes'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/phoneNumberInput/state': {
+      id: '/components/phoneNumberInput/state'
+      path: '/phoneNumberInput/state'
+      fullPath: '/components/phoneNumberInput/state'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/phoneNumberInput/status': {
+      id: '/components/phoneNumberInput/status'
+      path: '/phoneNumberInput/status'
+      fullPath: '/components/phoneNumberInput/status'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/phoneNumberInput/withFilter': {
+      id: '/components/phoneNumberInput/withFilter'
+      path: '/phoneNumberInput/withFilter'
+      fullPath: '/components/phoneNumberInput/withFilter'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputWithFilterImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/phoneNumberInput/withPlaceholder': {
+      id: '/components/phoneNumberInput/withPlaceholder'
+      path: '/phoneNumberInput/withPlaceholder'
+      fullPath: '/components/phoneNumberInput/withPlaceholder'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputWithPlaceholderImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/menu': {
       id: '/components/pills/menu'
       path: '/pills/menu'
@@ -4938,6 +5051,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsPaginationTwoIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/phoneNumberInput/': {
+      id: '/components/phoneNumberInput/'
+      path: '/phoneNumberInput'
+      fullPath: '/components/phoneNumberInput'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/': {
       id: '/components/pills/'
       path: '/pills'
@@ -5275,6 +5395,13 @@ interface ComponentsRouteChildren {
   ComponentsPaginationTwoPagesRoute: typeof ComponentsPaginationTwoPagesRoute
   ComponentsPaginationTwoStateRoute: typeof ComponentsPaginationTwoStateRoute
   ComponentsPaginationTwoWithInputRoute: typeof ComponentsPaginationTwoWithInputRoute
+  ComponentsPhoneNumberInputPhoneNumberInputFieldRoute: typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  ComponentsPhoneNumberInputSelectedCountryRoute: typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  ComponentsPhoneNumberInputSizesRoute: typeof ComponentsPhoneNumberInputSizesRoute
+  ComponentsPhoneNumberInputStateRoute: typeof ComponentsPhoneNumberInputStateRoute
+  ComponentsPhoneNumberInputStatusRoute: typeof ComponentsPhoneNumberInputStatusRoute
+  ComponentsPhoneNumberInputWithFilterRoute: typeof ComponentsPhoneNumberInputWithFilterRoute
+  ComponentsPhoneNumberInputWithPlaceholderRoute: typeof ComponentsPhoneNumberInputWithPlaceholderRoute
   ComponentsPillsMenuRoute: typeof ComponentsPillsMenuRoute
   ComponentsPillsNestedRoute: typeof ComponentsPillsNestedRoute
   ComponentsPillsTooltipRoute: typeof ComponentsPillsTooltipRoute
@@ -5415,6 +5542,7 @@ interface ComponentsRouteChildren {
   ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
   ComponentsPaginationOneIndexRoute: typeof ComponentsPaginationOneIndexRoute
   ComponentsPaginationTwoIndexRoute: typeof ComponentsPaginationTwoIndexRoute
+  ComponentsPhoneNumberInputIndexRoute: typeof ComponentsPhoneNumberInputIndexRoute
   ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
   ComponentsProgressHeaderIndexRoute: typeof ComponentsProgressHeaderIndexRoute
   ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
@@ -5651,6 +5779,17 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsPaginationTwoPagesRoute: ComponentsPaginationTwoPagesRoute,
   ComponentsPaginationTwoStateRoute: ComponentsPaginationTwoStateRoute,
   ComponentsPaginationTwoWithInputRoute: ComponentsPaginationTwoWithInputRoute,
+  ComponentsPhoneNumberInputPhoneNumberInputFieldRoute:
+    ComponentsPhoneNumberInputPhoneNumberInputFieldRoute,
+  ComponentsPhoneNumberInputSelectedCountryRoute:
+    ComponentsPhoneNumberInputSelectedCountryRoute,
+  ComponentsPhoneNumberInputSizesRoute: ComponentsPhoneNumberInputSizesRoute,
+  ComponentsPhoneNumberInputStateRoute: ComponentsPhoneNumberInputStateRoute,
+  ComponentsPhoneNumberInputStatusRoute: ComponentsPhoneNumberInputStatusRoute,
+  ComponentsPhoneNumberInputWithFilterRoute:
+    ComponentsPhoneNumberInputWithFilterRoute,
+  ComponentsPhoneNumberInputWithPlaceholderRoute:
+    ComponentsPhoneNumberInputWithPlaceholderRoute,
   ComponentsPillsMenuRoute: ComponentsPillsMenuRoute,
   ComponentsPillsNestedRoute: ComponentsPillsNestedRoute,
   ComponentsPillsTooltipRoute: ComponentsPillsTooltipRoute,
@@ -5810,6 +5949,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
   ComponentsPaginationOneIndexRoute: ComponentsPaginationOneIndexRoute,
   ComponentsPaginationTwoIndexRoute: ComponentsPaginationTwoIndexRoute,
+  ComponentsPhoneNumberInputIndexRoute: ComponentsPhoneNumberInputIndexRoute,
   ComponentsPillsIndexRoute: ComponentsPillsIndexRoute,
   ComponentsProgressHeaderIndexRoute: ComponentsProgressHeaderIndexRoute,
   ComponentsProgressPageIndexRoute: ComponentsProgressPageIndexRoute,
@@ -6040,6 +6180,13 @@ export interface FileRoutesByFullPath {
   '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute
   '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute
   '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute
+  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute
+  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute
+  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute
+  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute
+  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -6180,6 +6327,7 @@ export interface FileRoutesByFullPath {
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
+  '/components/phoneNumberInput': typeof ComponentsPhoneNumberInputIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
@@ -6389,6 +6537,13 @@ export interface FileRoutesByTo {
   '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute
   '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute
   '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute
+  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute
+  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute
+  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute
+  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute
+  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -6529,6 +6684,7 @@ export interface FileRoutesByTo {
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
+  '/components/phoneNumberInput': typeof ComponentsPhoneNumberInputIndexRoute
   '/components/pills': typeof ComponentsPillsIndexRoute
   '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute
   '/components/progressPage': typeof ComponentsProgressPageIndexRoute
@@ -6739,6 +6895,13 @@ export interface FileRoutesById {
   '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute
   '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute
   '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute
+  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute
+  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute
+  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute
+  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute
+  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute
   '/components/pills/menu': typeof ComponentsPillsMenuRoute
   '/components/pills/nested': typeof ComponentsPillsNestedRoute
   '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
@@ -6879,6 +7042,7 @@ export interface FileRoutesById {
   '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
   '/components/paginationOne/': typeof ComponentsPaginationOneIndexRoute
   '/components/paginationTwo/': typeof ComponentsPaginationTwoIndexRoute
+  '/components/phoneNumberInput/': typeof ComponentsPhoneNumberInputIndexRoute
   '/components/pills/': typeof ComponentsPillsIndexRoute
   '/components/progressHeader/': typeof ComponentsProgressHeaderIndexRoute
   '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
@@ -7090,6 +7254,13 @@ export interface FileRouteTypes {
     | '/components/paginationTwo/pages'
     | '/components/paginationTwo/state'
     | '/components/paginationTwo/withInput'
+    | '/components/phoneNumberInput/phoneNumberInputField'
+    | '/components/phoneNumberInput/selectedCountry'
+    | '/components/phoneNumberInput/sizes'
+    | '/components/phoneNumberInput/state'
+    | '/components/phoneNumberInput/status'
+    | '/components/phoneNumberInput/withFilter'
+    | '/components/phoneNumberInput/withPlaceholder'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -7230,6 +7401,7 @@ export interface FileRouteTypes {
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/paginationTwo'
+    | '/components/phoneNumberInput'
     | '/components/pills'
     | '/components/progressHeader'
     | '/components/progressPage'
@@ -7438,6 +7610,13 @@ export interface FileRouteTypes {
     | '/components/paginationTwo/pages'
     | '/components/paginationTwo/state'
     | '/components/paginationTwo/withInput'
+    | '/components/phoneNumberInput/phoneNumberInputField'
+    | '/components/phoneNumberInput/selectedCountry'
+    | '/components/phoneNumberInput/sizes'
+    | '/components/phoneNumberInput/state'
+    | '/components/phoneNumberInput/status'
+    | '/components/phoneNumberInput/withFilter'
+    | '/components/phoneNumberInput/withPlaceholder'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -7578,6 +7757,7 @@ export interface FileRouteTypes {
     | '/components/overflowMenu'
     | '/components/paginationOne'
     | '/components/paginationTwo'
+    | '/components/phoneNumberInput'
     | '/components/pills'
     | '/components/progressHeader'
     | '/components/progressPage'
@@ -7786,6 +7966,13 @@ export interface FileRouteTypes {
     | '/components/paginationTwo/pages'
     | '/components/paginationTwo/state'
     | '/components/paginationTwo/withInput'
+    | '/components/phoneNumberInput/phoneNumberInputField'
+    | '/components/phoneNumberInput/selectedCountry'
+    | '/components/phoneNumberInput/sizes'
+    | '/components/phoneNumberInput/state'
+    | '/components/phoneNumberInput/status'
+    | '/components/phoneNumberInput/withFilter'
+    | '/components/phoneNumberInput/withPlaceholder'
     | '/components/pills/menu'
     | '/components/pills/nested'
     | '/components/pills/tooltip'
@@ -7926,6 +8113,7 @@ export interface FileRouteTypes {
     | '/components/overflowMenu/'
     | '/components/paginationOne/'
     | '/components/paginationTwo/'
+    | '/components/phoneNumberInput/'
     | '/components/pills/'
     | '/components/progressHeader/'
     | '/components/progressPage/'
@@ -8161,6 +8349,13 @@ export const routeTree = rootRoute
         "/components/paginationTwo/pages",
         "/components/paginationTwo/state",
         "/components/paginationTwo/withInput",
+        "/components/phoneNumberInput/phoneNumberInputField",
+        "/components/phoneNumberInput/selectedCountry",
+        "/components/phoneNumberInput/sizes",
+        "/components/phoneNumberInput/state",
+        "/components/phoneNumberInput/status",
+        "/components/phoneNumberInput/withFilter",
+        "/components/phoneNumberInput/withPlaceholder",
         "/components/pills/menu",
         "/components/pills/nested",
         "/components/pills/tooltip",
@@ -8301,6 +8496,7 @@ export const routeTree = rootRoute
         "/components/overflowMenu/",
         "/components/paginationOne/",
         "/components/paginationTwo/",
+        "/components/phoneNumberInput/",
         "/components/pills/",
         "/components/progressHeader/",
         "/components/progressPage/",
@@ -9058,6 +9254,34 @@ export const routeTree = rootRoute
       "filePath": "components/paginationTwo/withInput.tsx",
       "parent": "/components"
     },
+    "/components/phoneNumberInput/phoneNumberInputField": {
+      "filePath": "components/phoneNumberInput/phoneNumberInputField.tsx",
+      "parent": "/components"
+    },
+    "/components/phoneNumberInput/selectedCountry": {
+      "filePath": "components/phoneNumberInput/selectedCountry.tsx",
+      "parent": "/components"
+    },
+    "/components/phoneNumberInput/sizes": {
+      "filePath": "components/phoneNumberInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/phoneNumberInput/state": {
+      "filePath": "components/phoneNumberInput/state.tsx",
+      "parent": "/components"
+    },
+    "/components/phoneNumberInput/status": {
+      "filePath": "components/phoneNumberInput/status.tsx",
+      "parent": "/components"
+    },
+    "/components/phoneNumberInput/withFilter": {
+      "filePath": "components/phoneNumberInput/withFilter.tsx",
+      "parent": "/components"
+    },
+    "/components/phoneNumberInput/withPlaceholder": {
+      "filePath": "components/phoneNumberInput/withPlaceholder.tsx",
+      "parent": "/components"
+    },
     "/components/pills/menu": {
       "filePath": "components/pills/menu.tsx",
       "parent": "/components"
@@ -9616,6 +9840,10 @@ export const routeTree = rootRoute
     },
     "/components/paginationTwo/": {
       "filePath": "components/paginationTwo/index.tsx",
+      "parent": "/components"
+    },
+    "/components/phoneNumberInput/": {
+      "filePath": "components/phoneNumberInput/index.tsx",
       "parent": "/components"
     },
     "/components/pills/": {

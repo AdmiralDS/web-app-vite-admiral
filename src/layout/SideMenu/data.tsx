@@ -710,6 +710,20 @@ const data = [
       { name: 'Дополнительный текст', path: '/components/editmode/extratext' },
     ],
   },
+  {
+    name: 'PhoneNumberInput',
+    path: '/components/phoneNumberInput',
+    routes: [
+      { name: 'Базовый пример', path: '/components/phoneNumberInput' },
+      { name: 'Размеры', path: '/components/phoneNumberInput/sizes' },
+      { name: 'Состояния', path: '/components/phoneNumberInput/state' },
+      { name: 'Статусы', path: '/components/phoneNumberInput/status' },
+      { name: 'С фильтрацией списка', path: '/components/phoneNumberInput/withFilter' },
+      { name: 'С заданной страной по умолчанию', path: '/components/phoneNumberInput/selectedCountry' },
+      { name: 'С placeholder', path: '/components/phoneNumberInput/withPlaceholder' },
+      { name: 'PhoneNumberInputField', path: '/components/phoneNumberInput/phoneNumberInputField' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
