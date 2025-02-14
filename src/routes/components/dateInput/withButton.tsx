@@ -1,11 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '../../-helpers/examples';
-import { ActionsPanel, DateInput, TextButton } from '@admiral-ds/react-ui';
-import { useState } from 'react';
+import { ActionsPanel, DateInput, TextButton, changeInputData, refSetter } from '@admiral-ds/react-ui';
+import type { DateInputProps } from '@admiral-ds/react-ui';
+import { useState, forwardRef, useRef } from 'react';
 
-export const Template = () => {
-  const [localValue, setValue] = useState('');
-  const [viewDateLocal, setViewDateLocal] = useState<Date | null>(localValue !== '' ? new Date(localValue) : null);
+const CustomDateInput = forwardRef<HTMLInputElement, DateInputProps>((props, ref) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [viewDateLocal, setViewDateLocal] = useState<Date | null>(null);
 
   const handleViewDateLocalChange = (newDate: Date) => {
     setViewDateLocal(newDate);
@@ -17,6 +18,8 @@ export const Template = () => {
       e.stopPropagation();
       const today = new Date();
       handleViewDateLocalChange(today);
+      if (inputRef.current)
+        changeInputData(inputRef.current, { value: today.toLocaleDateString('ru', { timeZone: 'UTC' }) });
     };
     return (
       <ActionsPanel>
@@ -26,16 +29,29 @@ export const Template = () => {
   };
 
   return (
+    <DateInput
+      {...props}
+      ref={refSetter(ref, inputRef)}
+      viewDate={viewDateLocal}
+      onViewDateChange={handleViewDateLocalChange}
+      renderBottomPanel={renderPanelToday}
+    />
+  );
+});
+
+export const Template = () => {
+  const [localValue, setValue] = useState('');
+  return (
     <ExampleSection>
-      <DateInput
+      <CustomDateInput
         value={localValue}
-        onChange={(e) => setValue(e.currentTarget.value)}
-        viewDate={viewDateLocal}
-        onViewDateChange={handleViewDateLocalChange}
+        onChange={(e) => {
+          console.log(`new value:${e.target.value}`);
+          setValue(e.currentTarget.value);
+        }}
         placeholder="Some placeholder"
         style={{ maxWidth: 300 }}
         dropContainerClassName="dropContainerClass"
-        renderBottomPanel={renderPanelToday}
       />
     </ExampleSection>
   );
@@ -43,7 +59,5 @@ export const Template = () => {
 
 export const Route = createFileRoute('/components/dateInput/withButton')({
   component: () => <Template />,
-  staticData: {
-    title: 'DateInput. С кнопкой "Сегодня"',
-  },
+  staticData: { title: 'DateInput. С кнопкой "Сегодня"' },
 });
