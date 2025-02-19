@@ -53,6 +53,6 @@ export const Template = (props: SelectProps) => {
 export const Route = createFileRoute('/components/select/groupOfOptions')({
   component: () => <Template />,
   staticData: {
-    title: 'Использование групп',
+    title: 'Использование групп опций',
   },
 });
