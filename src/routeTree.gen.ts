@@ -238,6 +238,7 @@ import { Route as ComponentsLinkCssMixinImport } from './routes/components/link/
 import { Route as ComponentsLinkAsPropImport } from './routes/components/link/asProp'
 import { Route as ComponentsInputExWithPrefixImport } from './routes/components/inputEx/withPrefix'
 import { Route as ComponentsInputExMinMaxvalueImport } from './routes/components/inputEx/minMaxvalue'
+import { Route as ComponentsInputExCurrencyInputFieldImport } from './routes/components/inputEx/currencyInputField'
 import { Route as ComponentsInputExCurrencyInputImport } from './routes/components/inputEx/currencyInput'
 import { Route as ComponentsImageViewerViewOptionsImport } from './routes/components/imageViewer/viewOptions'
 import { Route as ComponentsImageViewerKeyboardCommandsImport } from './routes/components/imageViewer/keyboardCommands'
@@ -1889,6 +1890,13 @@ const ComponentsInputExMinMaxvalueRoute =
   ComponentsInputExMinMaxvalueImport.update({
     id: '/inputEx/minMaxvalue',
     path: '/inputEx/minMaxvalue',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsInputExCurrencyInputFieldRoute =
+  ComponentsInputExCurrencyInputFieldImport.update({
+    id: '/inputEx/currencyInputField',
+    path: '/inputEx/currencyInputField',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -3973,6 +3981,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsInputExCurrencyInputImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/inputEx/currencyInputField': {
+      id: '/components/inputEx/currencyInputField'
+      path: '/inputEx/currencyInputField'
+      fullPath: '/components/inputEx/currencyInputField'
+      preLoaderRoute: typeof ComponentsInputExCurrencyInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/minMaxvalue': {
       id: '/components/inputEx/minMaxvalue'
       path: '/inputEx/minMaxvalue'
@@ -5666,6 +5681,7 @@ interface ComponentsRouteChildren {
   ComponentsImageViewerKeyboardCommandsRoute: typeof ComponentsImageViewerKeyboardCommandsRoute
   ComponentsImageViewerViewOptionsRoute: typeof ComponentsImageViewerViewOptionsRoute
   ComponentsInputExCurrencyInputRoute: typeof ComponentsInputExCurrencyInputRoute
+  ComponentsInputExCurrencyInputFieldRoute: typeof ComponentsInputExCurrencyInputFieldRoute
   ComponentsInputExMinMaxvalueRoute: typeof ComponentsInputExMinMaxvalueRoute
   ComponentsInputExWithPrefixRoute: typeof ComponentsInputExWithPrefixRoute
   ComponentsLinkAsPropRoute: typeof ComponentsLinkAsPropRoute
@@ -6068,6 +6084,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsImageViewerKeyboardCommandsRoute,
   ComponentsImageViewerViewOptionsRoute: ComponentsImageViewerViewOptionsRoute,
   ComponentsInputExCurrencyInputRoute: ComponentsInputExCurrencyInputRoute,
+  ComponentsInputExCurrencyInputFieldRoute:
+    ComponentsInputExCurrencyInputFieldRoute,
   ComponentsInputExMinMaxvalueRoute: ComponentsInputExMinMaxvalueRoute,
   ComponentsInputExWithPrefixRoute: ComponentsInputExWithPrefixRoute,
   ComponentsLinkAsPropRoute: ComponentsLinkAsPropRoute,
@@ -6494,6 +6512,7 @@ export interface FileRoutesByFullPath {
   '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
   '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
   '/components/inputEx/currencyInput': typeof ComponentsInputExCurrencyInputRoute
+  '/components/inputEx/currencyInputField': typeof ComponentsInputExCurrencyInputFieldRoute
   '/components/inputEx/minMaxvalue': typeof ComponentsInputExMinMaxvalueRoute
   '/components/inputEx/withPrefix': typeof ComponentsInputExWithPrefixRoute
   '/components/link/asProp': typeof ComponentsLinkAsPropRoute
@@ -6871,6 +6890,7 @@ export interface FileRoutesByTo {
   '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
   '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
   '/components/inputEx/currencyInput': typeof ComponentsInputExCurrencyInputRoute
+  '/components/inputEx/currencyInputField': typeof ComponentsInputExCurrencyInputFieldRoute
   '/components/inputEx/minMaxvalue': typeof ComponentsInputExMinMaxvalueRoute
   '/components/inputEx/withPrefix': typeof ComponentsInputExWithPrefixRoute
   '/components/link/asProp': typeof ComponentsLinkAsPropRoute
@@ -7249,6 +7269,7 @@ export interface FileRoutesById {
   '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
   '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
   '/components/inputEx/currencyInput': typeof ComponentsInputExCurrencyInputRoute
+  '/components/inputEx/currencyInputField': typeof ComponentsInputExCurrencyInputFieldRoute
   '/components/inputEx/minMaxvalue': typeof ComponentsInputExMinMaxvalueRoute
   '/components/inputEx/withPrefix': typeof ComponentsInputExWithPrefixRoute
   '/components/link/asProp': typeof ComponentsLinkAsPropRoute
@@ -7628,6 +7649,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer/keyboardCommands'
     | '/components/imageViewer/viewOptions'
     | '/components/inputEx/currencyInput'
+    | '/components/inputEx/currencyInputField'
     | '/components/inputEx/minMaxvalue'
     | '/components/inputEx/withPrefix'
     | '/components/link/asProp'
@@ -8004,6 +8026,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer/keyboardCommands'
     | '/components/imageViewer/viewOptions'
     | '/components/inputEx/currencyInput'
+    | '/components/inputEx/currencyInputField'
     | '/components/inputEx/minMaxvalue'
     | '/components/inputEx/withPrefix'
     | '/components/link/asProp'
@@ -8380,6 +8403,7 @@ export interface FileRouteTypes {
     | '/components/imageViewer/keyboardCommands'
     | '/components/imageViewer/viewOptions'
     | '/components/inputEx/currencyInput'
+    | '/components/inputEx/currencyInputField'
     | '/components/inputEx/minMaxvalue'
     | '/components/inputEx/withPrefix'
     | '/components/link/asProp'
@@ -8783,6 +8807,7 @@ export const routeTree = rootRoute
         "/components/imageViewer/keyboardCommands",
         "/components/imageViewer/viewOptions",
         "/components/inputEx/currencyInput",
+        "/components/inputEx/currencyInputField",
         "/components/inputEx/minMaxvalue",
         "/components/inputEx/withPrefix",
         "/components/link/asProp",
@@ -9616,6 +9641,10 @@ export const routeTree = rootRoute
     },
     "/components/inputEx/currencyInput": {
       "filePath": "components/inputEx/currencyInput.tsx",
+      "parent": "/components"
+    },
+    "/components/inputEx/currencyInputField": {
+      "filePath": "components/inputEx/currencyInputField.tsx",
       "parent": "/components"
     },
     "/components/inputEx/minMaxvalue": {
