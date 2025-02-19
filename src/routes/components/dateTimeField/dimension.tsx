@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 
 import {
   DateTimeContainer,
@@ -6,11 +6,11 @@ import {
   DateTimeSeparator,
   DateTimeTimeInput,
   Field,
-  ComponentDimension
-} from '@admiral-ds/react-ui'
-import { ExampleSection } from '../../-helpers/examples'
+  ComponentDimension,
+} from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
-const CompoundComponent = ({dimension}: {dimension?: ComponentDimension}) => {
+const CompoundComponent = ({ dimension }: { dimension?: ComponentDimension }) => {
   return (
     <Field>
       <DateTimeContainer>
@@ -19,8 +19,8 @@ const CompoundComponent = ({dimension}: {dimension?: ComponentDimension}) => {
         <DateTimeTimeInput dimension={dimension} />
       </DateTimeContainer>
     </Field>
-  )
-}
+  );
+};
 
 const Example = () => {
   return (
@@ -35,14 +35,12 @@ const Example = () => {
         <CompoundComponent dimension={'s'} />
       </ExampleSection>
     </>
-  )
-}
+  );
+};
 
 export const DateTimeFieldDimension = () => {
-  return (
-    <Example />
-  )
-}
+  return <Example />;
+};
 
 export const Route = createFileRoute('/components/dateTimeField/dimension')({
   component: () => <DateTimeFieldDimension />,
@@ -50,4 +48,4 @@ export const Route = createFileRoute('/components/dateTimeField/dimension')({
     title: 'DateTime Field. Размеры',
     description: 'Компонент представлен в трёх размерах - xl, m и s',
   },
-})
+});

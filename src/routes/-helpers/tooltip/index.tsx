@@ -2,13 +2,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button, ITooltipProps, Tooltip } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
-export interface ButtonWithTooltipProps extends Omit<ITooltipProps, 'renderContent' | 'targetElement'>{
+export interface ButtonWithTooltipProps extends Omit<ITooltipProps, 'renderContent' | 'targetElement'> {
   buttonIcon?: React.ReactNode;
   renderContent?: () => React.ReactNode;
   targetElement?: Element | null;
 }
 
-export const ButtonWithTooltip = ({ dimension, tooltipPosition, buttonIcon, renderContent, targetElement, ...props }: ButtonWithTooltipProps) => {
+export const ButtonWithTooltip = ({
+  dimension,
+  tooltipPosition,
+  buttonIcon,
+  renderContent,
+  targetElement,
+  ...props
+}: ButtonWithTooltipProps) => {
   const btnRef = useRef<HTMLButtonElement>(null);
   const [visible, setVisible] = useState(false);
 

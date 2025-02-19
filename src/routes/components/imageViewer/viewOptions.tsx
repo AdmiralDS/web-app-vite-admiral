@@ -74,10 +74,7 @@ const Template = () => {
         </>
       }
     >
-      <ImageViewer
-        items={items}
-        onTransform={handleTransform}
-      ></ImageViewer>
+      <ImageViewer items={items} onTransform={handleTransform}></ImageViewer>
     </ExampleSection>
   );
 };

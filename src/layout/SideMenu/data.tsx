@@ -643,6 +643,26 @@ const data = [
     ],
   },
   {
+    name: 'Select',
+    path: '/components/select',
+    routes: [
+      { name: 'Базовый пример', path: '/components/select' },
+      { name: 'Размеры', path: '/components/select/sizes' },
+      { name: 'Состояния', path: '/components/select/state' },
+      { name: 'Статусы', path: '/components/select/status' },
+      { name: 'Кастомные опции с кастомной фильтрацией', path: '/components/select/customOptionsWithCustomFilter' },
+      { name: 'Кастомные опции через renderProps', path: '/components/select/customOptionsByRenderProps' },
+      { name: 'Подгрузка данных при scroll', path: '/components/select/progressiveRenderOptionsScroll' },
+      { name: 'Скрыть Tooltip при переполнении Title', path: '/components/select/forceHideOverflowTooltip' },
+      { name: 'Кастомное отображение значения', path: '/components/select/customValues' },
+      { name: 'Кастомное отображение значения с множетвенным выбором', path: '/components/select/multiCustomValues' },
+      { name: 'Нижняя панель с кнопкой "Добавить"', path: '/components/select/panelWithAddButton' },
+      { name: 'Использование групп', path: '/components/select/groupOfOptions' },
+      { name: 'MultiSelect с кнопкой "Выбрать все"', path: '/components/select/multiSelectChooseAll' },
+      { name: 'SelectField. Базовый пример', path: '/components/select/selectField' },
+    ],
+  },
+  {
     name: 'Anchor',
     path: '/components/anchor',
     routes: [

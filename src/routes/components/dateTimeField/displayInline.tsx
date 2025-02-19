@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 
 import {
   DateTimeContainer,
@@ -6,10 +6,10 @@ import {
   DateTimeSeparator,
   DateTimeTimeInput,
   Field,
-} from '@admiral-ds/react-ui'
-import { ExampleSection } from '../../-helpers/examples'
+} from '@admiral-ds/react-ui';
+import { ExampleSection } from '../../-helpers/examples';
 
-const CompoundComponent = ({ displayInline, label }: { displayInline?: boolean, label: string }) => {
+const CompoundComponent = ({ displayInline, label }: { displayInline?: boolean; label: string }) => {
   return (
     <Field displayInline={displayInline} label={label}>
       <DateTimeContainer>
@@ -18,8 +18,8 @@ const CompoundComponent = ({ displayInline, label }: { displayInline?: boolean, 
         <DateTimeTimeInput />
       </DateTimeContainer>
     </Field>
-  )
-}
+  );
+};
 
 const Example = () => {
   return (
@@ -28,19 +28,17 @@ const Example = () => {
         <CompoundComponent displayInline label={'Введите дату'} />
       </ExampleSection>
     </>
-  )
-}
+  );
+};
 
 export const DateTimeFieldDisplayLine = () => {
-  return <Example />
-}
+  return <Example />;
+};
 
-export const Route = createFileRoute('/components/dateTimeField/displayInline')(
-  {
-    component: () => <DateTimeFieldDisplayLine />,
-    staticData: {
-      title: 'DateTime Field. Подпись в одну линию с полем ввода',
-      description: 'Лэйбл отображается на одном уровне с полем ввода'
-    },
+export const Route = createFileRoute('/components/dateTimeField/displayInline')({
+  component: () => <DateTimeFieldDisplayLine />,
+  staticData: {
+    title: 'DateTime Field. Подпись в одну линию с полем ввода',
+    description: 'Лэйбл отображается на одном уровне с полем ввода',
   },
-)
+});

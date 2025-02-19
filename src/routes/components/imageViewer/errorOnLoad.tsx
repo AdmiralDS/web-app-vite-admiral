@@ -46,11 +46,7 @@ export const Template = () => {
           стрелок «Назад-Вперед». Взаимодействовать с такой картинкой никак
           нельзя."
     >
-      <ImageViewer
-        items={items}
-        onTransform={handleTransform}
-        appearance="multiple"
-      ></ImageViewer>
+      <ImageViewer items={items} onTransform={handleTransform} appearance="multiple"></ImageViewer>
     </ExampleSection>
   );
 };

@@ -139,7 +139,6 @@ export const Template = () => {
   const handleCheckedChange = (ids: Array<string>) => {
     // eslint-disable-next-line no-console
     console.log('Выбранные элементы:', ids.toString());
-    // eslint-disable-next-line no-console
   };
   const handleExpandedChange = (ids: Array<string>) => {
     // eslint-disable-next-line no-console

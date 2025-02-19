@@ -17,7 +17,9 @@ const SliderWrapper = styled.div<{ $appearance?: 'white' | 'dark' }>`
       : p.$appearance === 'dark'
         ? `var(--admiral-color-Neutral_Neutral60, ${p.theme.color['Neutral/Neutral 60']})`
         : `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`};
-  ${(p) => p.$appearance === 'white' && `border: 1px solid var(--admiral-color-Neutral_Neutral20, ${p.theme.color['Neutral/Neutral 20']})`}
+  ${(p) =>
+    p.$appearance === 'white' &&
+    `border: 1px solid var(--admiral-color-Neutral_Neutral20, ${p.theme.color['Neutral/Neutral 20']})`}
 `;
 
 export const CarouselSliderBasic = (props: CarouselSliderProps) => {
@@ -33,7 +35,10 @@ export const CarouselSliderBasic = (props: CarouselSliderProps) => {
 
   return (
     <>
-      <ExampleSection text="Вариация Default применяется в составе компонента Carousel только при работе с изображениями. Находится над картинкой и имеет внешнюю обводку толщиной 0,5px для видимости на светлом фоне." style={{ display: 'flex', gap: '20px' }}>
+      <ExampleSection
+        text="Вариация Default применяется в составе компонента Carousel только при работе с изображениями. Находится над картинкой и имеет внешнюю обводку толщиной 0,5px для видимости на светлом фоне."
+        style={{ display: 'flex', gap: '20px' }}
+      >
         <SliderWrapper $appearance="dark">
           <CarouselSlider {...props}>
             {[...Array(5).keys()].map((item) => {

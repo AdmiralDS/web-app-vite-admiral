@@ -9,7 +9,9 @@
     "build": "vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "prettier": "prettier --check '**/**/*.{js,jsx,ts,tsx,css,scss}'",
+    "prettier:fix": "prettier --write '**/**/*.{js,jsx,ts,tsx,css,scss}'"
   },
   "dependencies": {
     "@admiral-ds/react-ui": "8.34.x",
@@ -37,7 +39,7 @@
     "@typescript-eslint/parser": "^7.18.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-hooks": "^4.6.2 || ^5",
     "eslint-plugin-react-refresh": "^0.4.11",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
@@ -48,7 +50,7 @@
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2",
+    "vite": "^5.4.2 || ^6",
     "vite-plugin-svgr": "^4.2.0"
   }
 }

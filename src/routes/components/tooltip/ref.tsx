@@ -41,12 +41,7 @@ export const Template = () => {
         <DeleteOutline height={24} width={24} />
       </Button>
       {visible && (
-        <Tooltip
-          targetElement={btnRef.current}
-          renderContent={() => 'Delete file'}
-          ref={tooltipRef}
-          id="test3"
-        />
+        <Tooltip targetElement={btnRef.current} renderContent={() => 'Delete file'} ref={tooltipRef} id="test3" />
       )}
     </ExampleSection>
   );
