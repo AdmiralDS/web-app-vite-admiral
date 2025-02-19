@@ -13,16 +13,11 @@ export const Template = ({
   options = OPTIONS_CITIES,
   ...props
 }: SelectProps & { options?: string[] }) => {
-  const [selectValueExample1, setSelectValueExample1] = React.useState<string>('');
-  const onChange1 = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueExample1(e.target.value);
+  const [selectValueSuccess, setSelectValueSuccess] = React.useState<string>('');
+  const onChangeSuccess = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueSuccess(e.target.value);
 
-  const [selectValueExample2, setSelectValueExample2] = React.useState<string>('');
-  const onChange2 = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueExample2(e.target.value);
-
-  const handleSelectedChange = (value: string | Array<string>) => {
-    // eslint-disable-next-line no-console
-    console.log(value);
-  };
+  const [selectValueError, setSelectValueError] = React.useState<string>('');
+  const onChangeError = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueError(e.target.value);
 
   const renderOptions = () => {
     return options.map((option, ind) => (
@@ -34,29 +29,28 @@ export const Template = ({
 
   return (
     <>
-      <ExampleSection text='Стандартный Select (default: mode = "select")'>
+      <ExampleSection text="Статус success">
         <Select
           {...props}
           id="props_id0"
-          value={selectValueExample1}
-          onChange={onChange1}
-          onSelectedChange={handleSelectedChange}
+          value={selectValueSuccess}
+          onChange={onChangeSuccess}
           placeholder={placeholder}
           dropContainerClassName="dropContainerClass"
+          status="success"
         >
           {renderOptions()}
         </Select>
       </ExampleSection>
-      <ExampleSection text='mode = "searchSelect"'>
+      <ExampleSection text="Статус error">
         <Select
           {...props}
           id="props_id1"
-          value={selectValueExample2}
-          onChange={onChange2}
-          onSelectedChange={handleSelectedChange}
+          value={selectValueError}
+          onChange={onChangeError}
           placeholder={placeholder}
           dropContainerClassName="dropContainerClass"
-          mode="searchSelect"
+          status="error"
         >
           {renderOptions()}
         </Select>
@@ -65,9 +59,9 @@ export const Template = ({
   );
 };
 
-export const Route = createFileRoute('/components/select/')({
+export const Route = createFileRoute('/components/select/status')({
   component: () => <Template />,
   staticData: {
-    title: 'Select. Базовый пример',
+    title: 'Select. Статусы',
   },
 });

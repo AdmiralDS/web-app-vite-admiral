@@ -46,7 +46,6 @@ export const Route = createFileRoute('/components/segmentedControl/styles')({
   component: () => <Template />,
   staticData: {
     title: 'SegmentedControl. Стили',
-    description:
-      'Присутствуют два типа Segmented Control: Outlined и Filled',
+    description: 'Присутствуют два типа Segmented Control: Outlined и Filled',
   },
 });

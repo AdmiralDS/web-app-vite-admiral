@@ -5,7 +5,8 @@ import {
   SegmentedControl,
   SegmentedControlBadge,
   SegmentedControlItem,
-  SegmentedControlProps, TooltipHoc,
+  SegmentedControlProps,
+  TooltipHoc,
 } from '@admiral-ds/react-ui';
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
 
@@ -80,16 +81,37 @@ export const Template = () => {
           </SegmentedControl>
         ))}
       </ExampleSectionColumn>
-      <ExampleSectionColumn header="Icon Only" text="При использовании компонента только с иконками, обязательно используйте подсказки">
+      <ExampleSectionColumn
+        header="Icon Only"
+        text="При использовании компонента только с иконками, обязательно используйте подсказки"
+      >
         {appearanceMap.map((appearance, index) => (
           <SegmentedControl
             appearance={appearance}
             // eslint-disable-next-line no-console
             onChange={(e) => console.log('Button ' + (e.target as HTMLInputElement).value + ' with icon only selected')}
           >
-            <TooltipedSegmentedControlItem renderContent={() => "Button1"} name={`forth${index}`} value="1" iconStart={<StarSolid />} displayAsSquare />
-            <TooltipedSegmentedControlItem renderContent={() => "Button2"} name={`forth${index}`} value="2" iconStart={<StarSolid />} displayAsSquare />
-            <TooltipedSegmentedControlItem renderContent={() => "Button3"} name={`forth${index}`} value="3" iconStart={<StarSolid />} displayAsSquare />
+            <TooltipedSegmentedControlItem
+              renderContent={() => 'Button1'}
+              name={`forth${index}`}
+              value="1"
+              iconStart={<StarSolid />}
+              displayAsSquare
+            />
+            <TooltipedSegmentedControlItem
+              renderContent={() => 'Button2'}
+              name={`forth${index}`}
+              value="2"
+              iconStart={<StarSolid />}
+              displayAsSquare
+            />
+            <TooltipedSegmentedControlItem
+              renderContent={() => 'Button3'}
+              name={`forth${index}`}
+              value="3"
+              iconStart={<StarSolid />}
+              displayAsSquare
+            />
           </SegmentedControl>
         ))}
       </ExampleSectionColumn>

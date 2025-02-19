@@ -7,7 +7,7 @@ import { ExampleSection } from '../../-helpers/examples';
 const Template = () => {
   return (
     <ExampleSection>
-      <StatusIndicator text='Текст индикатора' icon={<CheckOutline />} />
+      <StatusIndicator text="Текст индикатора" icon={<CheckOutline />} />
     </ExampleSection>
   );
 };
@@ -16,7 +16,6 @@ export const Route = createFileRoute('/components/statusIndicator/')({
   component: () => <Template />,
   staticData: {
     title: 'StatusIndicator. Базовый пример',
-    description:
-      'Используется, чтобы описать, в каком состоянии находится тот или иной объект или действие.',
+    description: 'Используется, чтобы описать, в каком состоянии находится тот или иной объект или действие.',
   },
 });

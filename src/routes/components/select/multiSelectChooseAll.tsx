@@ -1,11 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '../../-helpers/examples';
 import { Option, Select, Field, TextButton, MenuActionsPanel } from '@admiral-ds/react-ui';
-import { OPTIONS_CITIES } from '.';
 
 import * as React from 'react';
 import type { ChangeEvent } from 'react';
 import type { SelectProps, FieldProps } from '@admiral-ds/react-ui';
+
+const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
 export const Template = ({
   placeholder = 'Города',
@@ -15,8 +16,8 @@ export const Template = ({
   ...props
 }: SelectProps & FieldProps & { restrictions?: number[]; options?: string[] }) => {
   const [selectValues, setSelectValues] = React.useState<string[]>([]);
-  const [searchValue, setSearchValue] = React.useState<string>('');
-  const [optionsWithoutDisabled, setOptionsWithoutDisabled] = React.useState<string[]>([
+  const [, setSearchValue] = React.useState<string>('');
+  const [optionsWithoutDisabled] = React.useState<string[]>([
     ...options.filter((_, ind) => !restrictions.includes(ind)),
   ]);
 

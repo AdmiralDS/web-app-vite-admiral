@@ -1,35 +1,16 @@
-import styled from 'styled-components';
 import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '../../-helpers/examples';
-import { Option, Select, Field, T } from '@admiral-ds/react-ui';
+import { Option, Select, Field } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
 import React, { ChangeEvent } from 'react';
-import { OPTIONS_CITIES } from '.';
 
-export const Separator = styled.div<{ $height?: number }>`
-  height: ${(p) => p.$height || 24}px;
-`;
+const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-const renderOptions = () => {
-  return OPTIONS_CITIES.map((option, ind) => (
-    <Option key={ind} value={option} disabled={ind === 2}>
-      {option}
-    </Option>
-  ));
-};
-
-const renderOverflowingOptions = () => {
-  return [
-    ...OPTIONS_CITIES,
-    'Гигантский текст, который настолько большой, что, когда он проходил мимо телевизора, ты пропустил 2 серии любимого сериала',
-  ].map((option, ind) => (
-    <Option key={ind} value={option} disabled={ind === 2}>
-      {option}
-    </Option>
-  ));
-};
-
-export const Template = ({ placeholder = 'Город', ...props }: SelectProps) => {
+export const Template = ({
+  placeholder = 'Город',
+  options = OPTIONS_CITIES,
+  ...props
+}: SelectProps & { options?: string[] }) => {
   const [selectValueExample1, setSelectValueExample1] = React.useState<string>('');
   const onChange1 = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueExample1(e.target.value);
 
@@ -39,65 +20,39 @@ export const Template = ({ placeholder = 'Город', ...props }: SelectProps) 
   const [selectValueExample3, setSelectValueExample3] = React.useState<string>('');
   const onChange3 = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueExample3(e.target.value);
 
-  const [selectValueExample4, setSelectValueExample4] = React.useState<string[]>([]);
-  const handleSelectedChange4 = (value: string | Array<string>) => {
-    if (Array.isArray(value)) setSelectValueExample4(value);
+  const [selectValueExample4, setSelectValueExample4] = React.useState<string>('');
+  const onChange4 = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueExample4(e.target.value);
+
+  const [selectValueExample5, setSelectValueExample5] = React.useState<string>('');
+  const onChange5 = (e: ChangeEvent<HTMLSelectElement>) => setSelectValueExample5(e.target.value);
+
+  const renderOptions = () => {
+    return options.map((option, ind) => (
+      <Option key={ind} value={option} disabled={ind === 2}>
+        {option}
+      </Option>
+    ));
   };
 
   return (
     <>
-      <ExampleSection text="Для изменения размера выпадающего списка используется свойство dimension, а для ограничения доступа к опции берут disabled">
-        <Field label='dimension="xl"' id="props_id0">
-          <Select
-            {...props}
-            id="props_id0"
-            placeholder={placeholder}
-            value={selectValueExample1}
-            onChange={onChange1}
-            dropContainerClassName="dropContainerClass"
-            dimension="xl"
-          >
-            {renderOptions()}
-          </Select>
-        </Field>
-
-        <Separator />
-
-        <Field label='dimension="m"' id="props_id1">
-          <Select
-            {...props}
-            id="props_id1"
-            placeholder={placeholder}
-            value={selectValueExample1}
-            onChange={onChange1}
-            dropContainerClassName="dropContainerClass"
-            dimension="m"
-          >
-            {renderOptions()}
-          </Select>
-        </Field>
-
-        <Separator />
-
-        <Field label='dimension="s"' id="props_id2">
-          <Select
-            {...props}
-            id="props_id2"
-            placeholder={placeholder}
-            value={selectValueExample1}
-            onChange={onChange1}
-            dropContainerClassName="dropContainerClass"
-            dimension="s"
-          >
-            {renderOptions()}
-          </Select>
-        </Field>
+      <ExampleSection text="Блокировка выбора опции Select свойством disabled">
+        <Select
+          {...props}
+          id="props_id1"
+          placeholder={placeholder}
+          value={selectValueExample1}
+          onChange={onChange1}
+          dropContainerClassName="dropContainerClass"
+        >
+          {renderOptions()}
+        </Select>
       </ExampleSection>
       <ExampleSection text="Блокировка редактирования Select свойством readOnly">
         <Field label="Вашей категории сотрудников не доступен выбор города для командировки" id="props_id3">
           <Select
             {...props}
-            id="props_id3"
+            id="props_id2"
             placeholder={placeholder}
             value={selectValueExample2}
             onChange={onChange2}
@@ -108,42 +63,44 @@ export const Template = ({ placeholder = 'Город', ...props }: SelectProps) 
           </Select>
         </Field>
       </ExampleSection>
-      <ExampleSection text="Отображается Title, tooltip скрыт">
-        <T font="Body/Body 2 Long" as="div">
-          Для того чтобы скрыть tooltip, отображаемый при переполнении, необходимо установить свойство{' '}
-          <code>forceHideOverflowTooltip</code> в значение <code>true</code>.<Separator $height={8} />
-          Title отображается стандартными средствами браузера, поэтому не кастомизируется.
-        </T>
-        <Separator />
+      <ExampleSection text="Загрузка опций Select свойством isLoading">
         <Select
           {...props}
+          id="props_id3"
           placeholder={placeholder}
           value={selectValueExample3}
           onChange={onChange3}
           dropContainerClassName="dropContainerClass"
-          forceHideOverflowTooltip
+          isLoading={true}
         >
-          {renderOverflowingOptions()}
+          {renderOptions()}
         </Select>
       </ExampleSection>
-      <ExampleSection text="Также можно комбинировать свойства. При необходимости создания селекта множественного выбора (multiple) с чекбоксами на элементах (showCheckbox), кнопкой удаления (displayClearIcon) и поднятием наверх выбранных опций (moveSelectedOnTop) воспользуемся примером:">
-        <Field label="Выберите предпочтительные для командировки города" id="props_id4">
-          <Select
-            {...props}
-            id="props_id4"
-            placeholder={`${placeholder}а`}
-            value={selectValueExample4}
-            onSelectedChange={handleSelectedChange4}
-            dropContainerClassName="dropContainerClass"
-            multiple={true}
-            moveSelectedOnTop={true}
-            showCheckbox={true}
-            displayClearIcon={true}
-            forceHideOverflowTooltip
-          >
-            {renderOptions()}
-          </Select>
-        </Field>
+      <ExampleSection text="Рендеринг Select свойством skeleton">
+        <Select
+          {...props}
+          id="props_id4"
+          placeholder={placeholder}
+          value={selectValueExample4}
+          onChange={onChange4}
+          dropContainerClassName="dropContainerClass"
+          skeleton={true}
+        >
+          {renderOptions()}
+        </Select>
+      </ExampleSection>
+      <ExampleSection text="Отображение кнопки очистки Select свойством displayClearIcon">
+        <Select
+          {...props}
+          id="props_id5"
+          placeholder={placeholder}
+          value={selectValueExample5}
+          onChange={onChange5}
+          dropContainerClassName="dropContainerClass"
+          displayClearIcon={true}
+        >
+          {renderOptions()}
+        </Select>
       </ExampleSection>
     </>
   );

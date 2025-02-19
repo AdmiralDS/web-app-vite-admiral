@@ -52,7 +52,13 @@ async function searchPeopleByName(name: string) {
   return response.json();
 }
 
-export const GlobalSearchWithLogic = ({ submitButtonProps, prefixValue, prefixValueList, onPrefixValueChange, ...props }: GlobalSearchWithLogicProps) => {
+export const GlobalSearchWithLogic = ({
+  submitButtonProps,
+  prefixValue,
+  prefixValueList,
+  onPrefixValueChange,
+  ...props
+}: GlobalSearchWithLogicProps) => {
   const [history, setHistory] = useState<Array<{ value: string; text: string }>>([]);
   const [searchValue, setSearchValue] = useState('');
 
