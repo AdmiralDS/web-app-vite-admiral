@@ -753,6 +753,15 @@ const data = [
       { name: 'Катомизация типов файлов', path: '/components/fileinput/customizingFileType' },
     ],
   },
+  {
+    name: 'InputEx',
+    path: '/components/inputEx',
+    routes: [
+      { name: 'CurrencyInput. Базовый пример', path: '/components/inputEx/currencyInput' },
+      { name: 'CurrencyInput. С префиксом', path: '/components/inputEx/withPrefix' },
+      { name: 'CurrencyInput. С minValue, maxValue', path: '/components/inputEx/minMaxvalue' },
+    ],
+  },
 ];
 
 export const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
