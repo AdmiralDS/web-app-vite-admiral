@@ -73,7 +73,7 @@ export const Template = () => {
   );
 };
 
-export const Route = createFileRoute('/components/inputEx/withPrefix')({
+export const Route = createFileRoute('/components/currencyInput/withPrefix')({
   component: () => <Template />,
   staticData: {
     title: 'CurrencyInput. С преффиксом',

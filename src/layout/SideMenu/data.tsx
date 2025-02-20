@@ -777,10 +777,23 @@ const data = [
     name: 'InputEx',
     path: '/components/inputEx',
     routes: [
-      { name: 'CurrencyInput. Базовый пример', path: '/components/inputEx/currencyInput' },
-      { name: 'CurrencyInput. С префиксом', path: '/components/inputEx/withPrefix' },
-      { name: 'CurrencyInput. С minValue, maxValue', path: '/components/inputEx/minMaxvalue' },
-      { name: 'СurrencyInputField. Базовый пример', path: '/components/inputEx/currencyInputField' },
+      { name: 'Базовый пример', path: '/components/inputEx' },
+      { name: 'Размеры', path: '/components/inputEx/sizes' },
+      { name: 'Состояния', path: '/components/inputEx/state' },
+      { name: 'Статусы', path: '/components/inputEx/status' },
+      { name: 'C выбором префикса и суффикса', path: '/components/inputEx/prefixSuffixSelect' },
+      { name: 'Custom', path: '/components/inputEx/custom' },
+      { name: 'InputExField. Базовый пример', path: '/components/inputEx/inputExField' },
+    ],
+  },
+  {
+    name: 'CurrencyInput',
+    path: '/components/currencyInput',
+    routes: [
+      { name: 'Базовый пример', path: '/components/currencyInput' },
+      { name: 'С префиксом', path: '/components/currencyInput/withPrefix' },
+      { name: 'С minValue, maxValue', path: '/components/currencyInput/minMaxvalue' },
+      { name: 'СurrencyInputField. Базовый пример', path: '/components/currencyInput/currencyInputField' },
     ],
   },
 ];
