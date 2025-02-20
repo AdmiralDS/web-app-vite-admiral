@@ -64,12 +64,13 @@ export const Template = () => {
           dropContainerClassName: 'suffixDropContainerClass',
         }}
         placeholder="Placeholder"
+        style={{ width: '400px' }}
       />
     </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/inputEx/minMaxvalue')({
+export const Route = createFileRoute('/components/currencyInput/minMaxvalue')({
   component: () => <Template />,
   staticData: {
     title: 'CurrencyInput. Пример с minValue, maxValue',

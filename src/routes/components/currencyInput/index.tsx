@@ -45,7 +45,10 @@ export const Template = () => {
             <li>Автопробел каждые три знака в целой части суммы.</li>
             <li>Можно указывать минимальные и максимальные значения для вводимой суммы.</li>
           </PStyled>
-          <PStyled>Для реализации маски была использована библиотека Maskito</PStyled>
+          <PStyled>
+            Так как компонент строится на основе InputEx, он имеет такие же размеры, состояния и статусы.
+          </PStyled>
+          <PStyled>Для реализации маски была использована библиотека Maskito.</PStyled>
         </>
       }
     >
@@ -65,12 +68,13 @@ export const Template = () => {
           dropContainerClassName: 'suffixDropContainerClass',
         }}
         placeholder="Placeholder"
+        style={{ width: '400px' }}
       />
     </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/inputEx/currencyInput')({
+export const Route = createFileRoute('/components/currencyInput/')({
   component: () => <Template />,
   staticData: {
     title: 'CurrencyInput. Базовый пример',

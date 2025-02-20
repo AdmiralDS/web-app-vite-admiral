@@ -64,12 +64,13 @@ export const Template = () => {
           dropContainerClassName: 'suffixDropContainerClass',
         }}
         placeholder="Placeholder"
+        style={{ width: '400px' }}
       />
     </ExampleSection>
   );
 };
 
-export const Route = createFileRoute('/components/inputEx/currencyInputField')({
+export const Route = createFileRoute('/components/currencyInput/currencyInputField')({
   component: () => <Template />,
   staticData: {
     title: 'CurrencyInputField. Базовый пример',
