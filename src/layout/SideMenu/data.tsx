@@ -349,6 +349,7 @@ const data = [
       { name: 'Базовый HTML table', path: '/components/table/baseHTML' },
       { name: 'Базовый HTML table с фиксированными столбцами', path: '/components/table/baseHTMLStickyShadow' },
       { name: 'Базовый HTML table с OverflowMenu', path: '/components/table/baseHTMLOverflowMenu' },
+      { name: 'Базовый HTML table с multi-level header', path: '/components/table/multiLevelHeader' },
     ],
   },
   {

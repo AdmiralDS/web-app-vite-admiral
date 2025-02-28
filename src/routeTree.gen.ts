@@ -120,6 +120,7 @@ import { Route as ComponentsTagTooltipImport } from './routes/components/tag/too
 import { Route as ComponentsTagTagsImport } from './routes/components/tag/tags'
 import { Route as ComponentsTagStylesImport } from './routes/components/tag/styles'
 import { Route as ComponentsTagMenuImport } from './routes/components/tag/menu'
+import { Route as ComponentsTableMultiLevelHeaderImport } from './routes/components/table/multiLevelHeader'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
@@ -1111,6 +1112,13 @@ const ComponentsTagMenuRoute = ComponentsTagMenuImport.update({
   path: '/tag/menu',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsTableMultiLevelHeaderRoute =
+  ComponentsTableMultiLevelHeaderImport.update({
+    id: '/table/multiLevelHeader',
+    path: '/table/multiLevelHeader',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableLoadOnScrollSpinnerRoute =
   ComponentsTableLoadOnScrollSpinnerImport.update({
@@ -5120,6 +5128,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/table/multiLevelHeader': {
+      id: '/components/table/multiLevelHeader'
+      path: '/table/multiLevelHeader'
+      fullPath: '/components/table/multiLevelHeader'
+      preLoaderRoute: typeof ComponentsTableMultiLevelHeaderImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tag/menu': {
       id: '/components/tag/menu'
       path: '/tag/menu'
@@ -6127,6 +6142,7 @@ interface ComponentsRouteChildren {
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
+  ComponentsTableMultiLevelHeaderRoute: typeof ComponentsTableMultiLevelHeaderRoute
   ComponentsTagMenuRoute: typeof ComponentsTagMenuRoute
   ComponentsTagStylesRoute: typeof ComponentsTagStylesRoute
   ComponentsTagTagsRoute: typeof ComponentsTagTagsRoute
@@ -6588,6 +6604,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableLoadOnScrollSkeletonRoute,
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
+  ComponentsTableMultiLevelHeaderRoute: ComponentsTableMultiLevelHeaderRoute,
   ComponentsTagMenuRoute: ComponentsTagMenuRoute,
   ComponentsTagStylesRoute: ComponentsTagStylesRoute,
   ComponentsTagTagsRoute: ComponentsTagTagsRoute,
@@ -7010,6 +7027,7 @@ export interface FileRoutesByFullPath {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
   '/components/tag/menu': typeof ComponentsTagMenuRoute
   '/components/tag/styles': typeof ComponentsTagStylesRoute
   '/components/tag/tags': typeof ComponentsTagTagsRoute
@@ -7409,6 +7427,7 @@ export interface FileRoutesByTo {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
   '/components/tag/menu': typeof ComponentsTagMenuRoute
   '/components/tag/styles': typeof ComponentsTagStylesRoute
   '/components/tag/tags': typeof ComponentsTagTagsRoute
@@ -7809,6 +7828,7 @@ export interface FileRoutesById {
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
   '/components/tag/menu': typeof ComponentsTagMenuRoute
   '/components/tag/styles': typeof ComponentsTagStylesRoute
   '/components/tag/tags': typeof ComponentsTagTagsRoute
@@ -8210,6 +8230,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/table/multiLevelHeader'
     | '/components/tag/menu'
     | '/components/tag/styles'
     | '/components/tag/tags'
@@ -8608,6 +8629,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/table/multiLevelHeader'
     | '/components/tag/menu'
     | '/components/tag/styles'
     | '/components/tag/tags'
@@ -9006,6 +9028,7 @@ export interface FileRouteTypes {
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
+    | '/components/table/multiLevelHeader'
     | '/components/tag/menu'
     | '/components/tag/styles'
     | '/components/tag/tags'
@@ -9431,6 +9454,7 @@ export const routeTree = rootRoute
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
+        "/components/table/multiLevelHeader",
         "/components/tag/menu",
         "/components/tag/styles",
         "/components/tag/tags",
@@ -10706,6 +10730,10 @@ export const routeTree = rootRoute
     },
     "/components/table/loadOnScrollSpinner": {
       "filePath": "components/table/loadOnScrollSpinner.tsx",
+      "parent": "/components"
+    },
+    "/components/table/multiLevelHeader": {
+      "filePath": "components/table/multiLevelHeader.tsx",
       "parent": "/components"
     },
     "/components/tag/menu": {
