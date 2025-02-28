@@ -24,7 +24,7 @@ const HtmlTable = styled.table`
   // фиксируем заголовок при вертикальном скролле
   thead {
     position: sticky;
-    top: 1px;
+    top: 0px;
   }
 
   tr:has(input[type='checkbox']:checked) td {
@@ -75,7 +75,7 @@ const HtmlTable = styled.table`
   // 1 колонка header'a фиксирована при горизонтальном скролле
   th:first-child {
     position: sticky;
-    left: 1px;
+    left: 0px;
     background-color: ${(p) => p.theme.color['Neutral/Neutral 05']};
     width: 80px;
   }
@@ -83,7 +83,7 @@ const HtmlTable = styled.table`
   // 1 колонка фиксирована при горизонтальном скролле
   td:first-child {
     position: sticky;
-    left: 1px;
+    left: 0px;
     background-color: ${(p) => p.theme.color['Neutral/Neutral 00']};
   }
 `;
@@ -140,9 +140,9 @@ const headerModel = [
 
 const renderSettingsMenu = ({ closeMenu }: PaneMenuProps) => <></>;
 
-const TableBaseHTML = () => {
+const TableBaseHTML = (props: React.ComponentProps<typeof TableWrapper>) => {
   return (
-    <TableWrapper>
+    <TableWrapper {...props}>
       <GroupActionsPane renderSettingsMenu={renderSettingsMenu}>
         <TextButton text={'Action 1'} iconStart={<GovernmentOutline />} />
         <TextButton text={'Action 2'} iconStart={<TelegrammOutline />} />
@@ -150,9 +150,9 @@ const TableBaseHTML = () => {
         <PaneSeparator />
         <TextButton text={'Action 4'} iconStart={<CardSolid />} />
       </GroupActionsPane>
-      <HtmlTable style={{ maxHeight: 500, maxWidth: 980 }}>
+      <HtmlTable>
         <tbody>
-          {Array(4)
+          {Array(20)
             .fill(1)
             .map((_, rowIndex) => (
               <tr key={`row_${rowIndex}`}>
@@ -185,8 +185,13 @@ const TableBaseHTML = () => {
   );
 };
 
+const TableExample = styled(TableBaseHTML)`
+  align-self: stretch;
+  box-sizing: border-box;
+  max-height: 600px;
+`;
 export const Route = createFileRoute('/components/table/multiLevelHeader')({
-  component: () => <TableBaseHTML />,
+  component: () => <TableExample />,
   staticData: {
     title: 'Table. Multi-Level Header',
     description:
