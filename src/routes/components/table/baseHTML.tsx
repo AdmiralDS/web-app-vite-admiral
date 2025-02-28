@@ -96,3 +96,4 @@ export const Route = createFileRoute('/components/table/baseHTML')({
     description: `Пример минимальной стилизации html table с фиксированной шапкой при вертикальном скроле.`,
   },
 });
+
