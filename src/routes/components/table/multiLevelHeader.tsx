@@ -73,7 +73,7 @@ const HtmlTable = styled.table`
   }
 
   // 1 колонка header'a фиксирована при горизонтальном скролле
-  th:first-child {
+  tr:first-child th:first-child {
     position: sticky;
     left: 0px;
     background-color: ${(p) => p.theme.color['Neutral/Neutral 05']};
