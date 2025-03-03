@@ -1,25 +1,32 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 
 import { Chips } from '@admiral-ds/react-ui';
-import type { ChipsProps } from '@admiral-ds/react-ui';
 
 import { columnFlexMixin, ExampleSection } from '../../-helpers/examples';
 
-const listData = [
-  {
-    id: '1',
-    label: 'Москва',
-    disabled: false,
-    badge: 1,
-    selected: false,
-  },
-  { id: '2', label: 'Тверь', disabled: false, badge: 2, selected: false },
-  { id: '3', label: 'Самара', disabled: false, badge: 3, selected: false },
-  { id: '4', label: 'Омск', disabled: false, badge: 4, selected: false },
-  { id: '5', label: 'Вильнус', disabled: false, badge: 5, selected: false },
-];
+const listData = (genID: () => string) =>
+  [
+    {
+      id: genID(),
+      children: 'Москва',
+      badge: 1,
+    },
+    { id: genID(), children: 'Тверь', badge: 2 },
+    { id: genID(), children: 'Самара', badge: 3 },
+    { id: genID(), children: 'Омск', disabled: true, badge: 4 },
+    { id: genID(), children: 'Вильнус', badge: 5 },
+  ] satisfies React.ComponentProps<typeof Chips>[];
+
+function getIdList(list: { id: string }[]): string[] {
+  return list.map((elm) => elm.id);
+}
+
+function getElementMapById<T extends { id: string }>(list: T[]): Record<string, T> {
+  return list.reduce((acc, elem) => ({ ...acc, [elem.id]: elem }), {});
+}
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;
@@ -28,44 +35,56 @@ const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   }
 `;
 
-export const ChipsBadges = (props: ChipsProps) => {
-  const [selectedM, setSelectedM] = useState('');
-  const [selectedS, setSelectedS] = useState('');
-  const [dataListM, setDataM] = useState(listData);
-  const [dataListS, setDataS] = useState(listData);
+export const ChipsBadges = () => {
+  const [listM, elemMbyId] = useMemo(() => {
+    const list = listData(uuidv4);
+    return [getIdList(list), getElementMapById(list)];
+  }, []);
 
+  const [idListS, elemSbyId] = useMemo(() => {
+    const list = listData(uuidv4);
+    return [getIdList(list), getElementMapById(list)];
+  }, []);
+
+  const [idListM, setListM] = useState(listM);
+  const [selectedChips, setSelected] = useState<Record<string, boolean>>({});
+
+  const handleChipClick: React.MouseEventHandler<HTMLElement> = (e) => {
+    const id = e.currentTarget.id;
+    setSelected((selected) => ({ ...selected, [id]: !selected[id] }));
+  };
+
+  const handleChipClose = (closeId: string) => {
+    setListM((list) => list.filter((id) => id !== closeId));
+  };
   return (
     <ExampleSection cssMixin={columnFlexMixin}>
       <WrapperChip $dimension="m">
-        {dataListM.map((item) => (
-          <Chips
-            {...props}
-            key={item.id}
-            badge={item.badge}
-            dimension="m"
-            selected={selectedM === item.id}
-            onClick={() => (props.disabled ? null : setSelectedM(item.id))}
-            onClose={item.badge % 2 ? () => setDataM((prev) => prev.filter((d) => d.id !== item.id)) : undefined}
-          >
-            {item.label}
-          </Chips>
-        ))}
+        {idListM
+          .map((id) => elemMbyId[id])
+          .map((item) => (
+            <Chips
+              {...item}
+              key={item.id}
+              selected={selectedChips[item.id]}
+              dimension="m"
+              onClose={() => handleChipClose(item.id)}
+            />
+          ))}
       </WrapperChip>
       <WrapperChip $dimension="s">
-        {dataListS.map((item) => (
-          <Chips
-            {...props}
-            key={item.id}
-            badge={item.badge}
-            dimension="s"
-            appearance="filled"
-            selected={selectedS === item.id}
-            onClick={() => (props.disabled ? null : setSelectedS(item.id))}
-            onClose={item.badge % 2 ? () => setDataS((prev) => prev.filter((d) => d.id !== item.id)) : undefined}
-          >
-            {item.label}
-          </Chips>
-        ))}
+        {idListS
+          .map((id) => elemSbyId[id])
+          .map((item) => (
+            <Chips
+              {...item}
+              key={item.id}
+              dimension="s"
+              selected={selectedChips[item.id]}
+              onClick={handleChipClick}
+              appearance="filled"
+            />
+          ))}
       </WrapperChip>
     </ExampleSection>
   );
