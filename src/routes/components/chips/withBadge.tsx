@@ -5,26 +5,20 @@ import styled from 'styled-components';
 import { Chips } from '@admiral-ds/react-ui';
 import type { ChipsProps } from '@admiral-ds/react-ui';
 
-import VacationIcon from '@admiral-ds/icons/build/category/VacationSolid.svg?react';
-import AlertSolid from '@admiral-ds/icons/build/category/AlertSolid.svg?react';
-import DiamondSolid from '@admiral-ds/icons/build/category/DiamondSolid.svg?react';
-import TrophyIcon from '@admiral-ds/icons/build/category/TrophySolid.svg?react';
-import BurnIcon from '@admiral-ds/icons/build/category/BurnSolid.svg?react';
 import { columnFlexMixin, ExampleSection } from '../../-helpers/examples';
 
-const listDataIcon = [
+const listData = [
   {
     id: '1',
     label: 'Москва',
     disabled: false,
-    iconStart: <VacationIcon />,
-    iconEnd: <AlertSolid />,
+    badge: 1,
     selected: false,
   },
-  { id: '2', label: 'Тверь', disabled: false, iconStart: <TrophyIcon />, selected: false },
-  { id: '3', label: 'Самара', disabled: false, iconEnd: <BurnIcon />, selected: false },
-  { id: '4', label: 'Омск', disabled: false, iconEnd: <DiamondSolid />, selected: false },
-  { id: '5', label: 'Вильнус', disabled: false, iconStart: <BurnIcon />, selected: false, badge: 3 },
+  { id: '2', label: 'Тверь', disabled: false, badge: 2, selected: false },
+  { id: '3', label: 'Самара', disabled: false, badge: 3, selected: false },
+  { id: '4', label: 'Омск', disabled: false, badge: 4, selected: false },
+  { id: '5', label: 'Вильнус', disabled: false, badge: 5, selected: false },
 ];
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
@@ -37,37 +31,37 @@ const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
 export const ChipsBadges = (props: ChipsProps) => {
   const [selectedM, setSelectedM] = useState('');
   const [selectedS, setSelectedS] = useState('');
+  const [dataListM, setDataM] = useState(listData);
+  const [dataListS, setDataS] = useState(listData);
 
   return (
     <ExampleSection cssMixin={columnFlexMixin}>
       <WrapperChip $dimension="m">
-        {listDataIcon.map((item) => (
+        {dataListM.map((item) => (
           <Chips
             {...props}
             key={item.id}
-            badge={props.badge}
+            badge={item.badge}
             dimension="m"
             selected={selectedM === item.id}
             onClick={() => (props.disabled ? null : setSelectedM(item.id))}
-            iconStart={item?.iconStart}
-            iconEnd={item?.iconEnd}
+            onClose={item.badge % 2 ? () => setDataM((prev) => prev.filter((d) => d.id !== item.id)) : undefined}
           >
             {item.label}
           </Chips>
         ))}
       </WrapperChip>
       <WrapperChip $dimension="s">
-        {listDataIcon.map((item) => (
+        {dataListS.map((item) => (
           <Chips
             {...props}
             key={item.id}
-            badge={props.badge}
+            badge={item.badge}
             dimension="s"
             appearance="filled"
             selected={selectedS === item.id}
             onClick={() => (props.disabled ? null : setSelectedS(item.id))}
-            iconStart={item?.iconStart}
-            iconEnd={item?.iconEnd}
+            onClose={item.badge % 2 ? () => setDataS((prev) => prev.filter((d) => d.id !== item.id)) : undefined}
           >
             {item.label}
           </Chips>
