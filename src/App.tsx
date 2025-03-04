@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { LIGHT_THEME, DARK_THEME, LightThemeCssVars, DarkThemeCssVars } from '@admiral-ds/react-ui';
 import type { BorderRadiusType } from '@admiral-ds/react-ui';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './App.css';
 import { SettingsContext } from './SettingsContext';
@@ -26,6 +27,9 @@ declare module '@tanstack/react-router' {
   }
 }
 
+// нужен для примера Select.Ассинхронный поиск
+const queryClient = new QueryClient();
+
 function App() {
   const [theme, toggleTheme] = useState<Theme>('light');
   const [CSSProps, setCSSProps] = useState<CSSPropsIn>('enable');
@@ -37,14 +41,16 @@ function App() {
   }, [theme]);
 
   return (
-    <SettingsContext.Provider value={{ theme, toggleTheme, CSSProps, setCSSProps, borderRadius, setBorderRadius }}>
-      <ThemeProvider theme={theme === 'light' ? LIGHT_THEME : DARK_THEME}>
-        {CSSProps === 'enable' ? theme === 'light' ? <LightThemeCssVars /> : <DarkThemeCssVars /> : null}
-        <ThemeProvider theme={createBorderRadiusSwapper(borderRadius, CSSProps)}>
-          <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <SettingsContext.Provider value={{ theme, toggleTheme, CSSProps, setCSSProps, borderRadius, setBorderRadius }}>
+        <ThemeProvider theme={theme === 'light' ? LIGHT_THEME : DARK_THEME}>
+          {CSSProps === 'enable' ? theme === 'light' ? <LightThemeCssVars /> : <DarkThemeCssVars /> : null}
+          <ThemeProvider theme={createBorderRadiusSwapper(borderRadius, CSSProps)}>
+            <RouterProvider router={router} />
+          </ThemeProvider>
         </ThemeProvider>
-      </ThemeProvider>
-    </SettingsContext.Provider>
+      </SettingsContext.Provider>
+    </QueryClientProvider>
   );
 }
 

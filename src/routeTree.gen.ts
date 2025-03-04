@@ -177,6 +177,7 @@ import { Route as ComponentsSelectForceHideOverflowTooltipImport } from './route
 import { Route as ComponentsSelectCustomValuesImport } from './routes/components/select/customValues'
 import { Route as ComponentsSelectCustomOptionsWithCustomFilterImport } from './routes/components/select/customOptionsWithCustomFilter'
 import { Route as ComponentsSelectCustomOptionsByRenderPropsImport } from './routes/components/select/customOptionsByRenderProps'
+import { Route as ComponentsSelectAsyncSearchImport } from './routes/components/select/asyncSearch'
 import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants'
 import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles'
 import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states'
@@ -1488,6 +1489,13 @@ const ComponentsSelectCustomOptionsByRenderPropsRoute =
   ComponentsSelectCustomOptionsByRenderPropsImport.update({
     id: '/select/customOptionsByRenderProps',
     path: '/select/customOptionsByRenderProps',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectAsyncSearchRoute =
+  ComponentsSelectAsyncSearchImport.update({
+    id: '/select/asyncSearch',
+    path: '/select/asyncSearch',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -4736,6 +4744,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/select/asyncSearch': {
+      id: '/components/select/asyncSearch'
+      path: '/select/asyncSearch'
+      fullPath: '/components/select/asyncSearch'
+      preLoaderRoute: typeof ComponentsSelectAsyncSearchImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/customOptionsByRenderProps': {
       id: '/components/select/customOptionsByRenderProps'
       path: '/select/customOptionsByRenderProps'
@@ -6086,6 +6101,7 @@ interface ComponentsRouteChildren {
   ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute
   ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute
   ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute
+  ComponentsSelectAsyncSearchRoute: typeof ComponentsSelectAsyncSearchRoute
   ComponentsSelectCustomOptionsByRenderPropsRoute: typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   ComponentsSelectCustomOptionsWithCustomFilterRoute: typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   ComponentsSelectCustomValuesRoute: typeof ComponentsSelectCustomValuesRoute
@@ -6531,6 +6547,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSegmentedControlStylesRoute: ComponentsSegmentedControlStylesRoute,
   ComponentsSegmentedControlVariantsRoute:
     ComponentsSegmentedControlVariantsRoute,
+  ComponentsSelectAsyncSearchRoute: ComponentsSelectAsyncSearchRoute,
   ComponentsSelectCustomOptionsByRenderPropsRoute:
     ComponentsSelectCustomOptionsByRenderPropsRoute,
   ComponentsSelectCustomOptionsWithCustomFilterRoute:
@@ -6971,6 +6988,7 @@ export interface FileRoutesByFullPath {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute
   '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
@@ -7371,6 +7389,7 @@ export interface FileRoutesByTo {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute
   '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
@@ -7772,6 +7791,7 @@ export interface FileRoutesById {
   '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
   '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
   '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute
   '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
@@ -8174,6 +8194,7 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/select/asyncSearch'
     | '/components/select/customOptionsByRenderProps'
     | '/components/select/customOptionsWithCustomFilter'
     | '/components/select/customValues'
@@ -8573,6 +8594,7 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/select/asyncSearch'
     | '/components/select/customOptionsByRenderProps'
     | '/components/select/customOptionsWithCustomFilter'
     | '/components/select/customValues'
@@ -8972,6 +8994,7 @@ export interface FileRouteTypes {
     | '/components/segmentedControl/states'
     | '/components/segmentedControl/styles'
     | '/components/segmentedControl/variants'
+    | '/components/select/asyncSearch'
     | '/components/select/customOptionsByRenderProps'
     | '/components/select/customOptionsWithCustomFilter'
     | '/components/select/customValues'
@@ -9398,6 +9421,7 @@ export const routeTree = rootRoute
         "/components/segmentedControl/states",
         "/components/segmentedControl/styles",
         "/components/segmentedControl/variants",
+        "/components/select/asyncSearch",
         "/components/select/customOptionsByRenderProps",
         "/components/select/customOptionsWithCustomFilter",
         "/components/select/customValues",
@@ -10506,6 +10530,10 @@ export const routeTree = rootRoute
     },
     "/components/segmentedControl/variants": {
       "filePath": "components/segmentedControl/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/select/asyncSearch": {
+      "filePath": "components/select/asyncSearch.tsx",
       "parent": "/components"
     },
     "/components/select/customOptionsByRenderProps": {

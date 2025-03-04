@@ -659,6 +659,7 @@ const data = [
       { name: 'Кастомное отображение значения с множетвенным выбором', path: '/components/select/multiCustomValues' },
       { name: 'Нижняя панель с кнопкой "Добавить"', path: '/components/select/panelWithAddButton' },
       { name: 'Использование групп', path: '/components/select/groupOfOptions' },
+      { name: 'Ассинхронный поиск', path: '/components/select/asyncSearch' },
       { name: 'MultiSelect с кнопкой "Выбрать все"', path: '/components/select/multiSelectChooseAll' },
       { name: 'SelectField. Базовый пример', path: '/components/select/selectField' },
     ],
