@@ -83,6 +83,6 @@ export const Template = ({
 export const Route = createFileRoute('/components/select/multiSelectChooseAll')({
   component: () => <Template />,
   staticData: {
-    title: 'MultiSelect с кнопкой "Выбрать все"',
+    title: 'SearchSelect multiple с кнопкой "Выбрать все"',
   },
 });

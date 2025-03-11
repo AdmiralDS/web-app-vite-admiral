@@ -76,7 +76,7 @@ export const Template = (props: SelectProps) => {
   };
 
   return (
-    <ExampleSection text="Кэшированная ассинхронная подгрузка опций при поиске">
+    <ExampleSection text="Кэшированная ассинхронная подгрузка опций при поиске. Нужно дополнительно обернуть App в QueryClientProvider">
       <Select
         {...props}
         value={selectValue}
@@ -98,6 +98,6 @@ export const Template = (props: SelectProps) => {
 export const Route = createFileRoute('/components/select/asyncSearch')({
   component: () => <Template />,
   staticData: {
-    title: 'Search. Асинхронный поиск',
+    title: 'mode = "searchSelect". Асинхронный поиск',
   },
 });
