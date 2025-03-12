@@ -76,6 +76,7 @@ const CustomOptionWrapper = styled(MenuItem)`
 
 export const Template = ({ options = OPTIONS, ...props }: SelectProps & { options?: OptionsType[] }) => {
   const [selectValue, setSelectValue] = React.useState<string>(props.value ? String(props.value) : options[2].value);
+
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectValue(e.target.value);
     props.onChange?.(e);
