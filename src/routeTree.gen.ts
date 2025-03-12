@@ -164,13 +164,17 @@ import { Route as ComponentsSliderRangeOptionsImport } from './routes/components
 import { Route as ComponentsSliderRangeImport } from './routes/components/slider/range'
 import { Route as ComponentsSliderOptionsImport } from './routes/components/slider/options'
 import { Route as ComponentsSliderCustomImport } from './routes/components/slider/custom'
+import { Route as ComponentsSelectVirtualScrollImport } from './routes/components/select/virtualScroll'
 import { Route as ComponentsSelectUncontrolledSubmitSearchImport } from './routes/components/select/uncontrolledSubmitSearch'
 import { Route as ComponentsSelectStatusImport } from './routes/components/select/status'
 import { Route as ComponentsSelectStateImport } from './routes/components/select/state'
 import { Route as ComponentsSelectSizesImport } from './routes/components/select/sizes'
 import { Route as ComponentsSelectSelectFieldImport } from './routes/components/select/selectField'
+import { Route as ComponentsSelectSearchWithClearInputAfterSelectImport } from './routes/components/select/searchWithClearInputAfterSelect'
 import { Route as ComponentsSelectProgressiveRenderOptionsScrollImport } from './routes/components/select/progressiveRenderOptionsScroll'
 import { Route as ComponentsSelectPanelWithAddButtonImport } from './routes/components/select/panelWithAddButton'
+import { Route as ComponentsSelectMultiSelectWithSelectedOnTopImport } from './routes/components/select/multiSelectWithSelectedOnTop'
+import { Route as ComponentsSelectMultiSelectOnChangeImport } from './routes/components/select/multiSelectOnChange'
 import { Route as ComponentsSelectMultiSelectExpandedHeightImport } from './routes/components/select/multiSelectExpandedHeight'
 import { Route as ComponentsSelectMultiSelectChooseAllImport } from './routes/components/select/multiSelectChooseAll'
 import { Route as ComponentsSelectMultiSelectApplyButtonImport } from './routes/components/select/multiSelectApplyButton'
@@ -179,6 +183,7 @@ import { Route as ComponentsSelectMultiCustomOptionsByRenderChipImport } from '.
 import { Route as ComponentsSelectMultiCustomDeleteChipImport } from './routes/components/select/multiCustomDeleteChip'
 import { Route as ComponentsSelectGroupOfOptionsImport } from './routes/components/select/groupOfOptions'
 import { Route as ComponentsSelectForceHideOverflowTooltipImport } from './routes/components/select/forceHideOverflowTooltip'
+import { Route as ComponentsSelectExternalFilterImport } from './routes/components/select/externalFilter'
 import { Route as ComponentsSelectCustomValuesImport } from './routes/components/select/customValues'
 import { Route as ComponentsSelectCustomOptionsWithCustomFilterImport } from './routes/components/select/customOptionsWithCustomFilter'
 import { Route as ComponentsSelectCustomOptionsByRenderPropsImport } from './routes/components/select/customOptionsByRenderProps'
@@ -1409,6 +1414,13 @@ const ComponentsSliderCustomRoute = ComponentsSliderCustomImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsSelectVirtualScrollRoute =
+  ComponentsSelectVirtualScrollImport.update({
+    id: '/select/virtualScroll',
+    path: '/select/virtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsSelectUncontrolledSubmitSearchRoute =
   ComponentsSelectUncontrolledSubmitSearchImport.update({
     id: '/select/uncontrolledSubmitSearch',
@@ -1441,6 +1453,13 @@ const ComponentsSelectSelectFieldRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsSelectSearchWithClearInputAfterSelectRoute =
+  ComponentsSelectSearchWithClearInputAfterSelectImport.update({
+    id: '/select/searchWithClearInputAfterSelect',
+    path: '/select/searchWithClearInputAfterSelect',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsSelectProgressiveRenderOptionsScrollRoute =
   ComponentsSelectProgressiveRenderOptionsScrollImport.update({
     id: '/select/progressiveRenderOptionsScroll',
@@ -1452,6 +1471,20 @@ const ComponentsSelectPanelWithAddButtonRoute =
   ComponentsSelectPanelWithAddButtonImport.update({
     id: '/select/panelWithAddButton',
     path: '/select/panelWithAddButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectMultiSelectWithSelectedOnTopRoute =
+  ComponentsSelectMultiSelectWithSelectedOnTopImport.update({
+    id: '/select/multiSelectWithSelectedOnTop',
+    path: '/select/multiSelectWithSelectedOnTop',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectMultiSelectOnChangeRoute =
+  ComponentsSelectMultiSelectOnChangeImport.update({
+    id: '/select/multiSelectOnChange',
+    path: '/select/multiSelectOnChange',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -1508,6 +1541,13 @@ const ComponentsSelectForceHideOverflowTooltipRoute =
   ComponentsSelectForceHideOverflowTooltipImport.update({
     id: '/select/forceHideOverflowTooltip',
     path: '/select/forceHideOverflowTooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectExternalFilterRoute =
+  ComponentsSelectExternalFilterImport.update({
+    id: '/select/externalFilter',
+    path: '/select/externalFilter',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -4812,6 +4852,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSelectCustomValuesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/select/externalFilter': {
+      id: '/components/select/externalFilter'
+      path: '/select/externalFilter'
+      fullPath: '/components/select/externalFilter'
+      preLoaderRoute: typeof ComponentsSelectExternalFilterImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/forceHideOverflowTooltip': {
       id: '/components/select/forceHideOverflowTooltip'
       path: '/select/forceHideOverflowTooltip'
@@ -4868,6 +4915,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSelectMultiSelectExpandedHeightImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/select/multiSelectOnChange': {
+      id: '/components/select/multiSelectOnChange'
+      path: '/select/multiSelectOnChange'
+      fullPath: '/components/select/multiSelectOnChange'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectOnChangeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/select/multiSelectWithSelectedOnTop': {
+      id: '/components/select/multiSelectWithSelectedOnTop'
+      path: '/select/multiSelectWithSelectedOnTop'
+      fullPath: '/components/select/multiSelectWithSelectedOnTop'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectWithSelectedOnTopImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/panelWithAddButton': {
       id: '/components/select/panelWithAddButton'
       path: '/select/panelWithAddButton'
@@ -4880,6 +4941,13 @@ declare module '@tanstack/react-router' {
       path: '/select/progressiveRenderOptionsScroll'
       fullPath: '/components/select/progressiveRenderOptionsScroll'
       preLoaderRoute: typeof ComponentsSelectProgressiveRenderOptionsScrollImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/select/searchWithClearInputAfterSelect': {
+      id: '/components/select/searchWithClearInputAfterSelect'
+      path: '/select/searchWithClearInputAfterSelect'
+      fullPath: '/components/select/searchWithClearInputAfterSelect'
+      preLoaderRoute: typeof ComponentsSelectSearchWithClearInputAfterSelectImport
       parentRoute: typeof ComponentsImport
     }
     '/components/select/selectField': {
@@ -4915,6 +4983,13 @@ declare module '@tanstack/react-router' {
       path: '/select/uncontrolledSubmitSearch'
       fullPath: '/components/select/uncontrolledSubmitSearch'
       preLoaderRoute: typeof ComponentsSelectUncontrolledSubmitSearchImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/select/virtualScroll': {
+      id: '/components/select/virtualScroll'
+      path: '/select/virtualScroll'
+      fullPath: '/components/select/virtualScroll'
+      preLoaderRoute: typeof ComponentsSelectVirtualScrollImport
       parentRoute: typeof ComponentsImport
     }
     '/components/slider/custom': {
@@ -6180,6 +6255,7 @@ interface ComponentsRouteChildren {
   ComponentsSelectCustomOptionsByRenderPropsRoute: typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   ComponentsSelectCustomOptionsWithCustomFilterRoute: typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   ComponentsSelectCustomValuesRoute: typeof ComponentsSelectCustomValuesRoute
+  ComponentsSelectExternalFilterRoute: typeof ComponentsSelectExternalFilterRoute
   ComponentsSelectForceHideOverflowTooltipRoute: typeof ComponentsSelectForceHideOverflowTooltipRoute
   ComponentsSelectGroupOfOptionsRoute: typeof ComponentsSelectGroupOfOptionsRoute
   ComponentsSelectMultiCustomDeleteChipRoute: typeof ComponentsSelectMultiCustomDeleteChipRoute
@@ -6188,13 +6264,17 @@ interface ComponentsRouteChildren {
   ComponentsSelectMultiSelectApplyButtonRoute: typeof ComponentsSelectMultiSelectApplyButtonRoute
   ComponentsSelectMultiSelectChooseAllRoute: typeof ComponentsSelectMultiSelectChooseAllRoute
   ComponentsSelectMultiSelectExpandedHeightRoute: typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  ComponentsSelectMultiSelectOnChangeRoute: typeof ComponentsSelectMultiSelectOnChangeRoute
+  ComponentsSelectMultiSelectWithSelectedOnTopRoute: typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
   ComponentsSelectPanelWithAddButtonRoute: typeof ComponentsSelectPanelWithAddButtonRoute
   ComponentsSelectProgressiveRenderOptionsScrollRoute: typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  ComponentsSelectSearchWithClearInputAfterSelectRoute: typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
   ComponentsSelectSelectFieldRoute: typeof ComponentsSelectSelectFieldRoute
   ComponentsSelectSizesRoute: typeof ComponentsSelectSizesRoute
   ComponentsSelectStateRoute: typeof ComponentsSelectStateRoute
   ComponentsSelectStatusRoute: typeof ComponentsSelectStatusRoute
   ComponentsSelectUncontrolledSubmitSearchRoute: typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  ComponentsSelectVirtualScrollRoute: typeof ComponentsSelectVirtualScrollRoute
   ComponentsSliderCustomRoute: typeof ComponentsSliderCustomRoute
   ComponentsSliderOptionsRoute: typeof ComponentsSliderOptionsRoute
   ComponentsSliderRangeRoute: typeof ComponentsSliderRangeRoute
@@ -6633,6 +6713,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSelectCustomOptionsWithCustomFilterRoute:
     ComponentsSelectCustomOptionsWithCustomFilterRoute,
   ComponentsSelectCustomValuesRoute: ComponentsSelectCustomValuesRoute,
+  ComponentsSelectExternalFilterRoute: ComponentsSelectExternalFilterRoute,
   ComponentsSelectForceHideOverflowTooltipRoute:
     ComponentsSelectForceHideOverflowTooltipRoute,
   ComponentsSelectGroupOfOptionsRoute: ComponentsSelectGroupOfOptionsRoute,
@@ -6648,16 +6729,23 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsSelectMultiSelectChooseAllRoute,
   ComponentsSelectMultiSelectExpandedHeightRoute:
     ComponentsSelectMultiSelectExpandedHeightRoute,
+  ComponentsSelectMultiSelectOnChangeRoute:
+    ComponentsSelectMultiSelectOnChangeRoute,
+  ComponentsSelectMultiSelectWithSelectedOnTopRoute:
+    ComponentsSelectMultiSelectWithSelectedOnTopRoute,
   ComponentsSelectPanelWithAddButtonRoute:
     ComponentsSelectPanelWithAddButtonRoute,
   ComponentsSelectProgressiveRenderOptionsScrollRoute:
     ComponentsSelectProgressiveRenderOptionsScrollRoute,
+  ComponentsSelectSearchWithClearInputAfterSelectRoute:
+    ComponentsSelectSearchWithClearInputAfterSelectRoute,
   ComponentsSelectSelectFieldRoute: ComponentsSelectSelectFieldRoute,
   ComponentsSelectSizesRoute: ComponentsSelectSizesRoute,
   ComponentsSelectStateRoute: ComponentsSelectStateRoute,
   ComponentsSelectStatusRoute: ComponentsSelectStatusRoute,
   ComponentsSelectUncontrolledSubmitSearchRoute:
     ComponentsSelectUncontrolledSubmitSearchRoute,
+  ComponentsSelectVirtualScrollRoute: ComponentsSelectVirtualScrollRoute,
   ComponentsSliderCustomRoute: ComponentsSliderCustomRoute,
   ComponentsSliderOptionsRoute: ComponentsSliderOptionsRoute,
   ComponentsSliderRangeRoute: ComponentsSliderRangeRoute,
@@ -7082,6 +7170,7 @@ export interface FileRoutesByFullPath {
   '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
+  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute
   '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute
   '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute
   '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute
@@ -7090,13 +7179,17 @@ export interface FileRoutesByFullPath {
   '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute
   '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
   '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute
+  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
   '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute
   '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
   '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute
   '/components/select/sizes': typeof ComponentsSelectSizesRoute
   '/components/select/state': typeof ComponentsSelectStateRoute
   '/components/select/status': typeof ComponentsSelectStatusRoute
   '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -7488,6 +7581,7 @@ export interface FileRoutesByTo {
   '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
+  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute
   '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute
   '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute
   '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute
@@ -7496,13 +7590,17 @@ export interface FileRoutesByTo {
   '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute
   '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
   '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute
+  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
   '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute
   '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
   '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute
   '/components/select/sizes': typeof ComponentsSelectSizesRoute
   '/components/select/state': typeof ComponentsSelectStateRoute
   '/components/select/status': typeof ComponentsSelectStatusRoute
   '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -7895,6 +7993,7 @@ export interface FileRoutesById {
   '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
   '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
   '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
+  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute
   '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute
   '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute
   '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute
@@ -7903,13 +8002,17 @@ export interface FileRoutesById {
   '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute
   '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
   '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute
+  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
   '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute
   '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
   '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute
   '/components/select/sizes': typeof ComponentsSelectSizesRoute
   '/components/select/state': typeof ComponentsSelectStateRoute
   '/components/select/status': typeof ComponentsSelectStatusRoute
   '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute
   '/components/slider/custom': typeof ComponentsSliderCustomRoute
   '/components/slider/options': typeof ComponentsSliderOptionsRoute
   '/components/slider/range': typeof ComponentsSliderRangeRoute
@@ -8303,6 +8406,7 @@ export interface FileRouteTypes {
     | '/components/select/customOptionsByRenderProps'
     | '/components/select/customOptionsWithCustomFilter'
     | '/components/select/customValues'
+    | '/components/select/externalFilter'
     | '/components/select/forceHideOverflowTooltip'
     | '/components/select/groupOfOptions'
     | '/components/select/multiCustomDeleteChip'
@@ -8311,13 +8415,17 @@ export interface FileRouteTypes {
     | '/components/select/multiSelectApplyButton'
     | '/components/select/multiSelectChooseAll'
     | '/components/select/multiSelectExpandedHeight'
+    | '/components/select/multiSelectOnChange'
+    | '/components/select/multiSelectWithSelectedOnTop'
     | '/components/select/panelWithAddButton'
     | '/components/select/progressiveRenderOptionsScroll'
+    | '/components/select/searchWithClearInputAfterSelect'
     | '/components/select/selectField'
     | '/components/select/sizes'
     | '/components/select/state'
     | '/components/select/status'
     | '/components/select/uncontrolledSubmitSearch'
+    | '/components/select/virtualScroll'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -8708,6 +8816,7 @@ export interface FileRouteTypes {
     | '/components/select/customOptionsByRenderProps'
     | '/components/select/customOptionsWithCustomFilter'
     | '/components/select/customValues'
+    | '/components/select/externalFilter'
     | '/components/select/forceHideOverflowTooltip'
     | '/components/select/groupOfOptions'
     | '/components/select/multiCustomDeleteChip'
@@ -8716,13 +8825,17 @@ export interface FileRouteTypes {
     | '/components/select/multiSelectApplyButton'
     | '/components/select/multiSelectChooseAll'
     | '/components/select/multiSelectExpandedHeight'
+    | '/components/select/multiSelectOnChange'
+    | '/components/select/multiSelectWithSelectedOnTop'
     | '/components/select/panelWithAddButton'
     | '/components/select/progressiveRenderOptionsScroll'
+    | '/components/select/searchWithClearInputAfterSelect'
     | '/components/select/selectField'
     | '/components/select/sizes'
     | '/components/select/state'
     | '/components/select/status'
     | '/components/select/uncontrolledSubmitSearch'
+    | '/components/select/virtualScroll'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -9113,6 +9226,7 @@ export interface FileRouteTypes {
     | '/components/select/customOptionsByRenderProps'
     | '/components/select/customOptionsWithCustomFilter'
     | '/components/select/customValues'
+    | '/components/select/externalFilter'
     | '/components/select/forceHideOverflowTooltip'
     | '/components/select/groupOfOptions'
     | '/components/select/multiCustomDeleteChip'
@@ -9121,13 +9235,17 @@ export interface FileRouteTypes {
     | '/components/select/multiSelectApplyButton'
     | '/components/select/multiSelectChooseAll'
     | '/components/select/multiSelectExpandedHeight'
+    | '/components/select/multiSelectOnChange'
+    | '/components/select/multiSelectWithSelectedOnTop'
     | '/components/select/panelWithAddButton'
     | '/components/select/progressiveRenderOptionsScroll'
+    | '/components/select/searchWithClearInputAfterSelect'
     | '/components/select/selectField'
     | '/components/select/sizes'
     | '/components/select/state'
     | '/components/select/status'
     | '/components/select/uncontrolledSubmitSearch'
+    | '/components/select/virtualScroll'
     | '/components/slider/custom'
     | '/components/slider/options'
     | '/components/slider/range'
@@ -9545,6 +9663,7 @@ export const routeTree = rootRoute
         "/components/select/customOptionsByRenderProps",
         "/components/select/customOptionsWithCustomFilter",
         "/components/select/customValues",
+        "/components/select/externalFilter",
         "/components/select/forceHideOverflowTooltip",
         "/components/select/groupOfOptions",
         "/components/select/multiCustomDeleteChip",
@@ -9553,13 +9672,17 @@ export const routeTree = rootRoute
         "/components/select/multiSelectApplyButton",
         "/components/select/multiSelectChooseAll",
         "/components/select/multiSelectExpandedHeight",
+        "/components/select/multiSelectOnChange",
+        "/components/select/multiSelectWithSelectedOnTop",
         "/components/select/panelWithAddButton",
         "/components/select/progressiveRenderOptionsScroll",
+        "/components/select/searchWithClearInputAfterSelect",
         "/components/select/selectField",
         "/components/select/sizes",
         "/components/select/state",
         "/components/select/status",
         "/components/select/uncontrolledSubmitSearch",
+        "/components/select/virtualScroll",
         "/components/slider/custom",
         "/components/slider/options",
         "/components/slider/range",
@@ -10673,6 +10796,10 @@ export const routeTree = rootRoute
       "filePath": "components/select/customValues.tsx",
       "parent": "/components"
     },
+    "/components/select/externalFilter": {
+      "filePath": "components/select/externalFilter.tsx",
+      "parent": "/components"
+    },
     "/components/select/forceHideOverflowTooltip": {
       "filePath": "components/select/forceHideOverflowTooltip.tsx",
       "parent": "/components"
@@ -10705,12 +10832,24 @@ export const routeTree = rootRoute
       "filePath": "components/select/multiSelectExpandedHeight.tsx",
       "parent": "/components"
     },
+    "/components/select/multiSelectOnChange": {
+      "filePath": "components/select/multiSelectOnChange.tsx",
+      "parent": "/components"
+    },
+    "/components/select/multiSelectWithSelectedOnTop": {
+      "filePath": "components/select/multiSelectWithSelectedOnTop.tsx",
+      "parent": "/components"
+    },
     "/components/select/panelWithAddButton": {
       "filePath": "components/select/panelWithAddButton.tsx",
       "parent": "/components"
     },
     "/components/select/progressiveRenderOptionsScroll": {
       "filePath": "components/select/progressiveRenderOptionsScroll.tsx",
+      "parent": "/components"
+    },
+    "/components/select/searchWithClearInputAfterSelect": {
+      "filePath": "components/select/searchWithClearInputAfterSelect.tsx",
       "parent": "/components"
     },
     "/components/select/selectField": {
@@ -10731,6 +10870,10 @@ export const routeTree = rootRoute
     },
     "/components/select/uncontrolledSubmitSearch": {
       "filePath": "components/select/uncontrolledSubmitSearch.tsx",
+      "parent": "/components"
+    },
+    "/components/select/virtualScroll": {
+      "filePath": "components/select/virtualScroll.tsx",
       "parent": "/components"
     },
     "/components/slider/custom": {

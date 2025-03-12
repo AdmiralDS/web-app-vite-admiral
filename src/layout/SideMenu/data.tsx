@@ -669,6 +669,17 @@ const data = [
         name: 'Multiple с кастомным удалением чипса',
         path: '/components/select/multiCustomDeleteChip',
       },
+      { name: 'Multiple с обработчиком события onChange', path: '/components/select/multiSelectOnChange' },
+      {
+        name: 'Multiple с поднятием выбранных опций вверх списка',
+        path: '/components/select/multiSelectWithSelectedOnTop',
+      },
+      {
+        name: 'Multiple с опцией очистки введенного значения после выбора',
+        path: '/components/select/searchWithClearInputAfterSelect',
+      },
+      { name: 'Внешняя фильтрация', path: '/components/select/externalFilter' },
+      { name: 'VirtualScroll', path: '/components/select/virtualScroll' },
       { name: 'SelectField. Базовый пример', path: '/components/select/selectField' },
     ],
   },

@@ -27,7 +27,7 @@ export const Template = ({
 
   return (
     <>
-      <ExampleSection text="SelectField">
+      <ExampleSection text='Компоненту можно прокидывать дата аттрибуты вида [data-container-...]. Этот аттрибут попадет только на контейнер самого компонента. Например: data-container-id="fieldIdOne" - контейнер компонента получит аттрибут data-container-id="fieldIdOne", на нативный input этот аттрибут прокинут не будет.'>
         <SelectField
           data-container-id="selectFieldIdOne"
           {...props}
