@@ -381,6 +381,7 @@ const data = [
       { name: 'Базовый пример', path: '/components/toast' },
       { name: 'Расположение уведомлений', path: '/components/toast/position' },
       { name: 'Опция Countdown', path: '/components/toast/withProgressBar' },
+      { name: 'Задержка при наведении', path: '/components/toast/withProgressBarStopOnHover' },
       { name: 'Line Notification', path: '/components/toast/lineNotification' },
     ],
   },
