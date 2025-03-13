@@ -6,11 +6,12 @@ function RouteComponent() {
   const matches = useChildMatches();
   return (
     <>
-      {matches.map(({ id, staticData }) => {
+      {matches.map(({ id, staticData, pathname }) => {
         return (
           <Wrapper key={id}>
             {staticData.title && <Title>{staticData.title}</Title>}
             {staticData.description && <Description $grey>{staticData.description}</Description>}
+            <Description>Исходный код: {pathname.replace('/components', 'src/examples') + '.tsx'}</Description>
             <Preview>
               <Outlet />
             </Preview>

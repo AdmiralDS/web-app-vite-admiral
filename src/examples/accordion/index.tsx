@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { Accordion, AccordionItem, FieldSet, Option, RadioButton, SelectField as Select } from '@admiral-ds/react-ui';
-import { ExampleSection } from '../../routes/-helpers/examples';
+import { ExampleSection } from '#routes/-helpers/examples';
 
 const SelectField = styled(Select)`
   margin-top: 24px;

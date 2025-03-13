@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { AccordionBasic } from '../../../examples/accordion';
+import { AccordionBasic } from '#examples/accordion';
 
 export const Route = createFileRoute('/components/accordion/')({
   component: () => <AccordionBasic />,

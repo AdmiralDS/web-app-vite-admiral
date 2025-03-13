@@ -1,7 +1,7 @@
 import { ScrollContainer } from '@admiral-ds/react-ui';
 import { MenuItem, ExpandedMenuItem } from './MenuItem';
 import { MenuTitle } from './MenuTitle';
-import { components } from '#examples/examples.json';
+import { components as data } from '#examples/examples.json';
 import styled from 'styled-components';
 import { version } from '@admiral-ds/react-ui/package.json';
 
@@ -24,6 +24,8 @@ const MenuContent = styled(ScrollContainer)`
   display: flex;
   flex-direction: column;
 `;
+
+const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
 
 export const SideMenu = () => {
   return (

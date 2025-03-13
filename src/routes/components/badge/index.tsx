@@ -1,14 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Badge } from '@admiral-ds/react-ui';
-import { ExampleSection } from '../../-helpers/examples';
-
-export const BadgeBasic = () => {
-  return (
-    <ExampleSection>
-      <Badge>4</Badge>
-    </ExampleSection>
-  );
-};
+import { BadgeBasic } from '#examples/badge';
 
 export const Route = createFileRoute('/components/badge/')({
   component: () => <BadgeBasic />,
