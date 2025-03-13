@@ -391,6 +391,7 @@
         { "name": "Базовый пример", "path": "/components/toast" },
         { "name": "Расположение уведомлений", "path": "/components/toast/position" },
         { "name": "Опция Countdown", "path": "/components/toast/withProgressBar" },
+        { "name": "Задержка при наведении", "path": "/components/toast/withProgressBarStopOnHover" },
         { "name": "Line Notification", "path": "/components/toast/lineNotification" }
       ]
     },
@@ -693,7 +694,10 @@
           "path": "/components/select/multiSelectExpandedHeight"
         },
         { "name": "Multiple с кастомными опциями", "path": "/components/select/multiCustomOptionsByRenderChip" },
-        { "name": "Multiple с кастомным удалением чипса", "path": "/components/select/multiCustomDeleteChip" },
+        {
+          "name": "Multiple с кастомным удалением чипса",
+          "path": "/components/select/multiCustomDeleteChip"
+        },
         { "name": "Multiple с обработчиком события onChange", "path": "/components/select/multiSelectOnChange" },
         {
           "name": "Multiple с поднятием выбранных опций вверх списка",
@@ -754,8 +758,14 @@
           "name": "Пример с открытием экрана выбора месяца после выбора года",
           "path": "/components/calendar/viewDateAfterChoose"
         },
-        { "name": "Пример с выбором только месяца/года", "path": "/components/calendar/viewDateMonthsYears" },
-        { "name": "Выделение определённых дат", "path": "/components/calendar/specialDates" }
+        {
+          "name": "Пример с выбором только месяца/года",
+          "path": "/components/calendar/viewDateMonthsYears"
+        },
+        {
+          "name": "Выделение определённых дат",
+          "path": "/components/calendar/specialDates"
+        }
       ]
     },
     {

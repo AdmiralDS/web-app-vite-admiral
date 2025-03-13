@@ -108,6 +108,7 @@ import { Route as ComponentsToggleSizesImport } from './routes/components/toggle
 import { Route as ComponentsToggleMobileImport } from './routes/components/toggle/mobile'
 import { Route as ComponentsToggleLabelPositionImport } from './routes/components/toggle/labelPosition'
 import { Route as ComponentsToggleExtraTextImport } from './routes/components/toggle/extraText'
+import { Route as ComponentsToastWithProgressBarStopOnHoverImport } from './routes/components/toast/withProgressBarStopOnHover'
 import { Route as ComponentsToastWithProgressBarImport } from './routes/components/toast/withProgressBar'
 import { Route as ComponentsToastPositionImport } from './routes/components/toast/position'
 import { Route as ComponentsToastLineNotificationImport } from './routes/components/toast/lineNotification'
@@ -1043,6 +1044,13 @@ const ComponentsToggleExtraTextRoute = ComponentsToggleExtraTextImport.update({
   path: '/toggle/extraText',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsToastWithProgressBarStopOnHoverRoute =
+  ComponentsToastWithProgressBarStopOnHoverImport.update({
+    id: '/toast/withProgressBarStopOnHover',
+    path: '/toast/withProgressBarStopOnHover',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsToastWithProgressBarRoute =
   ComponentsToastWithProgressBarImport.update({
@@ -5384,6 +5392,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsToastWithProgressBarImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/toast/withProgressBarStopOnHover': {
+      id: '/components/toast/withProgressBarStopOnHover'
+      path: '/toast/withProgressBarStopOnHover'
+      fullPath: '/components/toast/withProgressBarStopOnHover'
+      preLoaderRoute: typeof ComponentsToastWithProgressBarStopOnHoverImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/extraText': {
       id: '/components/toggle/extraText'
       path: '/toggle/extraText'
@@ -6331,6 +6346,7 @@ interface ComponentsRouteChildren {
   ComponentsToastLineNotificationRoute: typeof ComponentsToastLineNotificationRoute
   ComponentsToastPositionRoute: typeof ComponentsToastPositionRoute
   ComponentsToastWithProgressBarRoute: typeof ComponentsToastWithProgressBarRoute
+  ComponentsToastWithProgressBarStopOnHoverRoute: typeof ComponentsToastWithProgressBarStopOnHoverRoute
   ComponentsToggleExtraTextRoute: typeof ComponentsToggleExtraTextRoute
   ComponentsToggleLabelPositionRoute: typeof ComponentsToggleLabelPositionRoute
   ComponentsToggleMobileRoute: typeof ComponentsToggleMobileRoute
@@ -6812,6 +6828,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsToastLineNotificationRoute: ComponentsToastLineNotificationRoute,
   ComponentsToastPositionRoute: ComponentsToastPositionRoute,
   ComponentsToastWithProgressBarRoute: ComponentsToastWithProgressBarRoute,
+  ComponentsToastWithProgressBarStopOnHoverRoute:
+    ComponentsToastWithProgressBarStopOnHoverRoute,
   ComponentsToggleExtraTextRoute: ComponentsToggleExtraTextRoute,
   ComponentsToggleLabelPositionRoute: ComponentsToggleLabelPositionRoute,
   ComponentsToggleMobileRoute: ComponentsToggleMobileRoute,
@@ -7246,6 +7264,7 @@ export interface FileRoutesByFullPath {
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
+  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -7657,6 +7676,7 @@ export interface FileRoutesByTo {
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
+  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -8069,6 +8089,7 @@ export interface FileRoutesById {
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
+  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute
   '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
   '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
   '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
@@ -8482,6 +8503,7 @@ export interface FileRouteTypes {
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
+    | '/components/toast/withProgressBarStopOnHover'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -8892,6 +8914,7 @@ export interface FileRouteTypes {
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
+    | '/components/toast/withProgressBarStopOnHover'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -9302,6 +9325,7 @@ export interface FileRouteTypes {
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
+    | '/components/toast/withProgressBarStopOnHover'
     | '/components/toggle/extraText'
     | '/components/toggle/labelPosition'
     | '/components/toggle/mobile'
@@ -9739,6 +9763,7 @@ export const routeTree = rootRoute
         "/components/toast/lineNotification",
         "/components/toast/position",
         "/components/toast/withProgressBar",
+        "/components/toast/withProgressBarStopOnHover",
         "/components/toggle/extraText",
         "/components/toggle/labelPosition",
         "/components/toggle/mobile",
@@ -11098,6 +11123,10 @@ export const routeTree = rootRoute
     },
     "/components/toast/withProgressBar": {
       "filePath": "components/toast/withProgressBar.tsx",
+      "parent": "/components"
+    },
+    "/components/toast/withProgressBarStopOnHover": {
+      "filePath": "components/toast/withProgressBarStopOnHover.tsx",
       "parent": "/components"
     },
     "/components/toggle/extraText": {
