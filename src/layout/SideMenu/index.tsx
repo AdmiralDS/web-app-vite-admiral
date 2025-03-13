@@ -1,7 +1,7 @@
 import { ScrollContainer } from '@admiral-ds/react-ui';
 import { MenuItem, ExpandedMenuItem } from './MenuItem';
 import { MenuTitle } from './MenuTitle';
-import { components } from './data';
+import { components } from '#examples/examples.json';
 import styled from 'styled-components';
 import { version } from '@admiral-ds/react-ui/package.json';
 

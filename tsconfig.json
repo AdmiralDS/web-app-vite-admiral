@@ -21,7 +21,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+
+    "paths": {
+      "#examples/*": ["./src/examples/*"]
+    }
   },
   "include": ["src/**/*", "jest.config.ts", "vite.config.ts", ".eslintrc.cjs"]
 }
