@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { T } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const TBasic = () => {
   return (
     <>
       <ExampleSection
@@ -54,10 +53,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/t/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'T. Базовый пример',
-  },
-});

@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { NumberInput } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const NumberInputSpaces = () => {
   return (
     <>
       <ExampleSection text="Пользователь может с помощью параметров hideSpaceAfterPrefix и hideSpaceBeforeSuffix управлять видимостью пробелов после префикса и перед суффиксом соответственно. По умолчанию после префикса перед значением инпута и перед суффиксом после значения инпута пробелы проставляются.">
@@ -32,10 +31,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/numberInput/spaces')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NumberInput. Пример скрытия пробелов',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import {
   DropMenu,
@@ -220,7 +219,7 @@ const PillMenu = forwardRef<HTMLDivElement, PillMenuProps>(({ options, ...props 
   );
 });
 
-export const Template = () => {
+export const PillsNested = () => {
   return (
     <ExampleSection text="Компонент позволяет объединять два элемента в один, у каждого из которых есть все функции одиночного компонента.">
       <Pills>
@@ -260,11 +259,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/pills/nested')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NestedPill. Двойные Pills',
-    description: '',
-  },
-});

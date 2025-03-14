@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { clearValue, NumberInputField, NumberInputFieldProps } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -7,7 +6,7 @@ function convertStrToNum(str: string, precision: number, decimal: string) {
   return Number(clearValue(str, precision, decimal).replace(decimal, '.'));
 }
 
-export const Template = () => {
+export const Field = () => {
   const [status, setStatus] = useState<NumberInputFieldProps['status'] | undefined>(undefined);
   const [extraText, setExtraText] = useState('extraText');
 
@@ -53,10 +52,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/numberInput/numberInputField')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NumberInputField. Базовый пример',
-  },
-});

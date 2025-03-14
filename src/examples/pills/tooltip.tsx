@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { checkOverflow, Pill, Tooltip, TooltipHoc } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
@@ -18,7 +17,7 @@ const LabelWrapper = styled.div`
   white-space: nowrap;
 `;
 
-export const Template = () => {
+export const PillsTooltip = () => {
   const pillLabel = 'Я три дня гналась за вами, чтобы сказать, как вы мне безразличны';
 
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -72,12 +71,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/pills/tooltip')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Pills. Тултип',
-    description:
-      'В случаях ограниченного пространства задавайте максимальную ширину компонента, подсвечивая полный текст при наведении.',
-  },
-});

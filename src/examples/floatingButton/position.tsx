@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { FloatingButton } from '@admiral-ds/react-ui';
@@ -11,7 +10,7 @@ const Container = styled.div<{ $reduceMargin?: boolean }>`
   transform: scale(1);
 `;
 
-export const Template = () => {
+export const FloatingButtonPosition = () => {
   return (
     <ExampleSection text="Кнопка FloatingButton постоянно видна на экране и не скроллится с контентом страницы. По умолчанию кнопка располагается в правом нижнем углу экрана, на расстоянии 28 px от краев экрана. Пользователь может задать свое расположение кнопки, переопределив её позиционирование через стили.">
       <Container>
@@ -25,11 +24,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/floatingButton/position')({
-  component: () => <Template />,
-  staticData: {
-    title: 'FloatingButton. Расположение',
-    description: '',
-  },
-});

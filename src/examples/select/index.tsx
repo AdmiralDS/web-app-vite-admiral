@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select } from '@admiral-ds/react-ui';
 
@@ -8,7 +7,7 @@ import type { SelectProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const SelectBasic = ({
   placeholder = 'Город',
   options = OPTIONS_CITIES,
   ...props
@@ -64,10 +63,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Select. Базовый пример',
-  },
-});

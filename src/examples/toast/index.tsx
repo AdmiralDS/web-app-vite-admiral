@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Toast, ToastProvider } from '@admiral-ds/react-ui';
 import { ToastNotificationEmitter } from '#routes/-helpers/toast';
 
-export const Template = () => {
+export const ToastBasic = () => {
   return (
     <ExampleSection
       text={
@@ -41,11 +40,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/toast/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Toast. Базовый пример',
-    description: 'Компонент служит для демонстрации всплывающих сообщений.',
-  },
-});

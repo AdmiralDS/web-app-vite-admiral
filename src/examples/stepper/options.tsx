@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Step, StepContent, Stepper } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -39,7 +38,7 @@ const initialSteps3 = [
   { content: 'Неактивный шаг, текст занимает максимум три строки', link: '#' },
 ];
 
-export const Template = () => {
+export const StepperOptions = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [steps, setSteps] = useState(initialSteps);
 
@@ -100,10 +99,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/stepper/options')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Stepper. Опции',
-  },
-});

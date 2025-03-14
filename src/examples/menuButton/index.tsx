@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { MenuButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
@@ -50,7 +49,7 @@ const items = [
   },
 ];
 
-const Base = () => {
+export const Base = () => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
 
   const model = useMemo(() => {
@@ -83,11 +82,3 @@ const Base = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/menuButton/')({
-  component: () => <Base />,
-  staticData: {
-    title: 'MenuButton. Базовый пример',
-    description: '',
-  },
-});

@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { useState } from 'react';
 import { Range } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SliderRangeSizes = () => {
   const [rangeValueS, setRangeValueS] = useState<[number, number]>([4, 5]);
   const [rangeValueM, setRangeValueM] = useState<[number, number]>([4, 5]);
 
@@ -34,11 +33,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/slider/rangeSizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SliderRange. Размеры',
-    description: 'Компонент существует в 2 размерах S и M',
-  },
-});

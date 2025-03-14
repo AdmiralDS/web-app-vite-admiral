@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
 import { Tag } from '@admiral-ds/react-ui';
 
 // eslint-disable-next-line no-console
 const clickHandler = () => console.log('click active tag');
 
-export const Template = () => {
+export const TagBasic = () => {
   return (
     <ExampleSection
       cssMixin={rowFlexMixin}
@@ -16,12 +15,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tag/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tag. Базовый пример',
-    description:
-      'Тэг — это метка, размечающая и каталогизирующая информацию для облегчения процесса поиска. При нажатии на тэг загружаются все элементы имеющие эту метку (опционально).',
-  },
-});

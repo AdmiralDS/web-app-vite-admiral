@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -20,7 +19,7 @@ const StyledButton = styled(Button)`
   padding: 4px;
 `;
 
-export const Template = () => {
+export const HintPosition = () => {
   const [visible1, setVisible1] = useState(false);
   const handleVisibilityChange1 = (visible: boolean) => setVisible1(visible);
 
@@ -118,11 +117,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/hint/position')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Hint. Позиционирование',
-    description: '',
-  },
-});

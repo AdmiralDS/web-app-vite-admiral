@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { ImageViewer } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -36,7 +34,7 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
   console.log(info);
 };
 
-const Template = () => {
+export const ImageViewerKeyboardCommands = () => {
   return (
     <ExampleSection
       text={
@@ -57,11 +55,3 @@ const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/imageViewer/keyboardCommands')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ImageViewer. Клавиатурные команды',
-    description: '',
-  },
-});

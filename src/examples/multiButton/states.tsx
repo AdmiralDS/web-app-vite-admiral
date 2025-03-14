@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { MultiButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
@@ -121,10 +120,3 @@ export const States = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/multiButton/states')({
-  component: () => <States />,
-  staticData: {
-    title: 'MultiButton. Состояния',
-  },
-});

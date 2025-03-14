@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { FloatingButton, FloatingButtonMenu } from '@admiral-ds/react-ui';
@@ -12,7 +11,7 @@ const Layout = styled.div`
   transform: scale(1);
 `;
 
-export const Template = () => {
+export const FloatingButtonWithMenu = () => {
   return (
     <ExampleSection text="Позволяет вызывать дополнительные действия нажатием на основную кнопку. Тип дополнительных кнопок всегда Secondary. Основная кнопка может быть как Primary, так и Secondary. Рекомендуется не более 5 дополнительных кнопок. Повторное нажатие на основную кнопку закрывает меню дополнительных кнопок. Так же, меню закрывается при клике вне группы кнопок. В закрытом состоянии кнопка может содержать любую иконку, при открытии иконка меняется на иконку «Close».">
       <Layout>
@@ -32,11 +31,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/floatingButton/withMenu')({
-  component: () => <Template />,
-  staticData: {
-    title: 'FloatingButtonMenu.',
-    description: '',
-  },
-});

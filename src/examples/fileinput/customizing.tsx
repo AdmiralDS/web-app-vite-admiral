@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import type { css } from 'styled-components';
@@ -140,17 +139,10 @@ const FileInputTemplate = () => {
   );
 };
 
-export const FileInputCastomizing = () => {
+export const FileInputCustomizing = () => {
   return (
     <>
       <FileInputTemplate />
     </>
   );
 };
-
-export const Route = createFileRoute('/components/fileinput/customizing')({
-  component: () => <FileInputCastomizing />,
-  staticData: {
-    title: 'File input. Базовый пример',
-  },
-});

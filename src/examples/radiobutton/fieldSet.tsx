@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 
 import { FieldSet, RadioButton } from '@admiral-ds/react-ui';
@@ -96,11 +95,3 @@ export const FieldSetRadioButton = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/radiobutton/fieldSet')({
-  component: () => <FieldSetRadioButton />,
-  staticData: {
-    title: 'RadioButton. Группа',
-    description: '',
-  },
-});

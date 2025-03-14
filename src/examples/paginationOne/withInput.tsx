@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { PaginationOne } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const PaginationOneWithInput = () => {
   const [pageSize, setPageSize] = useState(8);
   const [page, setPage] = useState(1);
   const pageSizes = [10, 25, 50];
@@ -49,11 +48,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/paginationOne/withInput')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PaginationOne. Опция ввода номера страницы через Input',
-    description: '',
-  },
-});

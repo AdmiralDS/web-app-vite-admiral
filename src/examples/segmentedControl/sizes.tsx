@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { SegmentedControl, SegmentedControlItem } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SegmentedControlSizes = () => {
   return (
     <>
       <ExampleSection text="Размер XL">
@@ -75,11 +74,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/segmentedControl/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SegmentedControl. Размеры',
-    description: '',
-  },
-});

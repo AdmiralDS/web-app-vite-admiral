@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { MenuItem, RenderOptionProps, TagMenu, TagOptionProps } from '@admiral-ds/react-ui';
@@ -60,7 +59,7 @@ const itemsDemo: Array<TagOptionProps> = [
   },
 ];
 
-export const Template = () => {
+export const TagMenuExample = () => {
   const [selected, setSelected] = useState<TagOptionProps | undefined>(itemsDemo[0]);
 
   const model = useMemo(() => {
@@ -91,11 +90,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tag/menu')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TagMenu. С выпадающим меню',
-    description: 'Вариант тэгов, который нужен для принудительного выбора статуса из выпадающего меню.',
-  },
-});

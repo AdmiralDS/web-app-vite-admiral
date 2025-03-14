@@ -1,10 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Tooltip } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
-export const Template = () => {
+export const TooltipRef = () => {
   const tooltipRef = useRef(null);
   const btnRef = useRef<HTMLButtonElement>(null);
   const [visible, setVisible] = useState(false);
@@ -46,11 +45,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/ref')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tooltip. Пример с получением ref тултипа',
-    description: '',
-  },
-});

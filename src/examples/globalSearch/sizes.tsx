@@ -1,11 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { GlobalSearchWithLogic } from '#routes/-helpers/globalSearch';
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 
-const queryClient = new QueryClient();
-
-export const Template = () => {
+export const GlobalSearchDimension = () => {
   return (
     <>
       <ExampleSection text="Размер XL (56px)">
@@ -20,15 +16,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/globalSearch/sizes')({
-  component: () => (
-    <QueryClientProvider client={queryClient}>
-      <Template />
-    </QueryClientProvider>
-  ),
-  staticData: {
-    title: 'GlobalSearch. Размеры',
-    description: '',
-  },
-});

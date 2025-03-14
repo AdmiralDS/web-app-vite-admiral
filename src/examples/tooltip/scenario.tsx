@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Tooltip, TOOLTIP_DELAY } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 import { ButtonWithTooltip } from '#routes/-helpers/tooltip';
 
-export const Template = () => {
+export const TooltipScenario = () => {
   const btnRef = useRef<HTMLButtonElement>(null);
   const [visible, setVisible] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timeout>();
@@ -52,14 +51,6 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/scenario')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tooltip. Сценарии появления',
-    description: '',
-  },
-});
 
 /*
 Позиционируется по центру объекта, сверху, снизу, слева или справа с отступом 8px.

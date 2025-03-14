@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 
 import { Tree, TreeItemProps, TreeNode, TreeNodeRenderOptionProps } from '@admiral-ds/react-ui';
@@ -135,7 +134,7 @@ const demo1_TreeModel: Array<TreeItemProps> = [
   },
 ];
 
-export const Template = () => {
+export const TreeWithOnChangeHandler = () => {
   const handleCheckedChange = (ids: Array<string>) => {
     // eslint-disable-next-line no-console
     console.log('Выбранные элементы:', ids.toString());
@@ -157,10 +156,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tree/withOnChangeHandler')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tree. Обработка событий onExpandChange и onCheckedChange',
-  },
-});

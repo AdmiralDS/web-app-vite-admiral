@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { Spinner } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SpinnerBasic = () => {
   return (
     <>
       <ExampleSection
@@ -21,10 +20,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/spinner/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Spinner. Базовый пример',
-  },
-});

@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ProgressHeader } from '@admiral-ds/react-ui';
 import { PageTemplate } from '#routes/-helpers/propgressHeader';
 
-export const Template = () => {
+export const ProgressHeaderStyles = () => {
   return (
     <>
       <ExampleSection text="Primary">
@@ -19,11 +18,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/progressHeader/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ProgressHeader. Стили',
-    description: '',
-  },
-});

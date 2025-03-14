@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { Table, T } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
@@ -197,7 +196,7 @@ const columnList: Column[] = [
   },
 ];
 
-const TableBasic = () => {
+export const TableBasic = () => {
   const [cols, setCols] = useState(columnList);
 
   const handleResize = ({ name, width }: { name: string; width: string }) => {
@@ -207,11 +206,3 @@ const TableBasic = () => {
 
   return <Table rowList={rowList} columnList={cols} onColumnResize={handleResize} />;
 };
-
-export const Route = createFileRoute('/components/table/')({
-  component: () => <TableBasic />,
-  staticData: {
-    title: 'Table. Базовый пример',
-    description: `Небольшое описание функционала`,
-  },
-});

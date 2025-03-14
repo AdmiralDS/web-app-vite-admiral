@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { PaginationOne } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const PaginationOneBasic = () => {
   const [pageSize, setPageSize] = useState(8);
   const [page, setPage] = useState(1);
   const pageSizes = [8, 20, 50, 100, 200];
@@ -47,11 +46,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/paginationOne/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PaginationOne. Базовый пример',
-    description: 'Используется для навигации по длинным спискам, где информация разбивается на страницы.',
-  },
-});

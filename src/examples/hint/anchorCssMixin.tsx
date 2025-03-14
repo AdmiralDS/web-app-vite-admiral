@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { css } from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -13,7 +12,7 @@ const anchorCss = css`
   border: 2px dotted red;
 `;
 
-export const Template = () => {
+export const HintAnchorCssMixin = () => {
   const [visible, setVisible] = useState(false);
   const handleVisibilityChange = (visible: boolean) => setVisible(visible);
 
@@ -38,11 +37,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/hint/anchorCssMixin')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Hint. Стилизация внешнего контейнера (AnchorWrapper) с помощью anchorCssMixin',
-    description: '',
-  },
-});

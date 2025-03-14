@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
@@ -101,7 +100,7 @@ const StyledTree = styled(Tree)`
   gap: 8px;
 `;
 
-export const Template = () => {
+export const TreeCustom = () => {
   return (
     <>
       <ExampleSection text="Дерево без checkbox c заданной кастомной шириной в 500px и расстоянием между строками 8px">
@@ -110,10 +109,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tree/custom')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tree. Произвольный контент',
-  },
-});

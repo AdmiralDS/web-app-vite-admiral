@@ -1,14 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { GlobalSearchWithLogic } from '#routes/-helpers/globalSearch';
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { useState } from 'react';
-
-const queryClient = new QueryClient();
 
 const PREFIX_OPTIONS = ['prefix One', 'prefix Two', 'prefix Three'];
 
-export const Template = () => {
+export const GlobalSearchVarinats = () => {
   const [prefixValue, setPrefixValue] = useState<React.ReactNode>('prefix One');
 
   return (
@@ -37,15 +33,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/globalSearch/variants')({
-  component: () => (
-    <QueryClientProvider client={queryClient}>
-      <Template />
-    </QueryClientProvider>
-  ),
-  staticData: {
-    title: 'GlobalSearch. Варианты',
-    description: '',
-  },
-});

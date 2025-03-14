@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import {
   TabMenuHorizontal,
@@ -80,7 +79,7 @@ const getTabsMap = (tabs: TabContentProps[]) => {
   return tabs.map((tab) => tab.tabId || '');
 };
 
-export const Template = () => {
+export const AddTabExample = () => {
   const [tabs, setTabs] = useState(tabsBase);
   const [tabsMap, setTabsMap] = useState(getTabsMap(tabs));
   const [selectedTab, setSelectedTab] = useState<string | undefined>('1');
@@ -187,10 +186,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/addTab')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TabMenuHorizontal. Добавление и удаление вкладок',
-  },
-});

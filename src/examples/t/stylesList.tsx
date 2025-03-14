@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ColorName, DefaultFontColorName, LIGHT_THEME, T, TooltipHoc, typography } from '@admiral-ds/react-ui';
 import styled, { useTheme } from 'styled-components';
@@ -121,7 +120,7 @@ const CopyIcon = forwardRef<HTMLDivElement, { text: string }>(({ text }, ref) =>
 const CopyButton = TooltipHoc(CopyIcon);
 const InfoCircle = TooltipHoc(ColorCircle);
 
-export const Template = () => {
+export const TStylesList = () => {
   return NEW_FONTS.map((group, index: number) => (
     <ExampleSection style={{ overflowX: 'auto' }} header={<T font="Header/H3">{group.groupName}</T>} key={index}>
       <Table>
@@ -195,10 +194,3 @@ export const Template = () => {
     </ExampleSection>
   ));
 };
-
-export const Route = createFileRoute('/components/t/stylesList')({
-  component: () => <Template />,
-  staticData: {
-    title: 'T. Список стилей',
-  },
-});

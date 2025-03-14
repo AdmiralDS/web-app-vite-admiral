@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import {
   CardTab,
@@ -61,7 +60,7 @@ const CustomHorizontalCardTab = forwardRef<HTMLButtonElement, CustomHorizontalTa
   },
 );
 
-export const Template = () => {
+export const WithPaddingExample = () => {
   const [selectedTab, setSelectedTab] = useState<string | undefined>('1');
 
   const tabsMap = tabs.map((tab) => tab.tabId);
@@ -136,10 +135,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/withPadding')({
-  component: () => <Template />,
-  staticData: {
-    title: 'CardTabMenu. С отступами',
-  },
-});

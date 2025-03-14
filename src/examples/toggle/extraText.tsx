@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -9,7 +8,7 @@ const Separator = styled.div`
   width: 100%;
 `;
 
-const ExtraText = () => {
+export const ToggleExtraText = () => {
   return (
     <>
       <ExampleSection text="Текст справа">
@@ -31,11 +30,3 @@ const ExtraText = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/toggle/extraText')({
-  component: () => <ExtraText />,
-  staticData: {
-    title: 'Toggle. Дополнительный текст',
-    description: 'Варианты компонента с дополнительным текстом.',
-  },
-});

@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Flex, FLEX_CELL_MAX_SIZE, InputField, TextField } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const FlexBasic = () => {
   return (
     <ExampleSection>
       <Flex.Container rowGap={20} columnGap={10}>
@@ -30,11 +29,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/flex/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Flex. Базовый пример',
-    description: '',
-  },
-});

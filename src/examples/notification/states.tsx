@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import {
   NotificationItem,
@@ -12,7 +11,7 @@ const title = 'Заголовок оповещения';
 const body = 'Тут находится текст короткого оповещения';
 const linkText = 'Text Button';
 
-export const Template = () => {
+export const NotificationStates = () => {
   return (
     <>
       <ExampleSection text="Иконка статуса, иконка закрытия, заголовок, текст">
@@ -83,11 +82,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/notification/states')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Notification. Состояния',
-    description: '',
-  },
-});

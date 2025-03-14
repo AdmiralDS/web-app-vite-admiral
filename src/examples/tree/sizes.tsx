@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
@@ -230,7 +229,7 @@ const demo1_TreeModel: Array<TreeItemProps> = [
   },
 ];
 
-export const Template = () => {
+export const TreeSizes = () => {
   const [dataList, setDataList] = useState<TreeItemProps[]>(demo1_TreeModel);
 
   const handleChange = (dataList: TreeItemProps[]) => {
@@ -247,12 +246,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tree/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tree. Базовый пример',
-    description:
-      'Присутствует два размера — с высотой строк M 40px и S 32px. Отступ слева 40px для каждого следующего уровня в размере M и 36px в размере S.',
-  },
-});

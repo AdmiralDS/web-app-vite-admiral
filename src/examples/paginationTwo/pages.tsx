@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { useState } from 'react';
 import { PaginationTwo } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const PaginationTwoPages = () => {
   const [state, setState] = useState(1);
 
   return (
@@ -14,10 +13,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/paginationTwo/pages')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PaginationTwo. Количество страниц',
-  },
-});

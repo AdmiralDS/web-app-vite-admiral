@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import {
   HorizontalTab,
@@ -58,7 +57,7 @@ const CustomHorizontalTab = forwardRef<HTMLButtonElement, CustomHorizontalTabPro
   },
 );
 
-export const Template = () => {
+export const TabMenuBasic = () => {
   const [selectedTab, setSelectedTab] = useState<string | undefined>('1');
 
   const tabsMap = tabs.map((tab) => tab.tabId);
@@ -145,10 +144,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TabMenuHorizontal. Базовый пример',
-  },
-});

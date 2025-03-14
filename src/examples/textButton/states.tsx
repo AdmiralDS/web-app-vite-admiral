@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { TextButton } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const TextButtonStates = () => {
   return (
     <>
       <ExampleSection text="Loading">
@@ -18,10 +17,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/textButton/states')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TextButton. Состояния',
-  },
-});

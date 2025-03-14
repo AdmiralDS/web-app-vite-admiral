@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { ImageViewer } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -31,7 +29,7 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
   console.log(info);
 };
 
-const Template = () => {
+export const ImageViewerMiniature = () => {
   return (
     <>
       <ExampleSection text="Размер XL">
@@ -55,12 +53,3 @@ const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/imageViewer/imageMiniature')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ImageViewer. Отображение миниатюр',
-    description:
-      'Может использоваться как отдельно, так и в группе, если изображений несколько. Присутствует 6 размеров.',
-  },
-});

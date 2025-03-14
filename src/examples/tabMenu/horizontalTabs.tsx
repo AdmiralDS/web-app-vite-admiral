@@ -1,5 +1,4 @@
 import { forwardRef, useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router';
 import { HorizontalTab, HorizontalTabProps, HorizontalTabs, TabBadge, TabIcon, TabText } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 
@@ -56,7 +55,7 @@ const CustomHorizontalTab = forwardRef<HTMLButtonElement, CustomHorizontalTabPro
   },
 );
 
-export const Template = () => {
+export const HorizontalTabsExample = () => {
   const [selectedTab, setSelectedTab] = useState<string | undefined>('1');
 
   const tabsMap = tabs.map((tab) => tab.tabId);
@@ -107,10 +106,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/horizontalTabs')({
-  component: () => <Template />,
-  staticData: {
-    title: 'HorizontalTabs. Базовый пример',
-  },
-});

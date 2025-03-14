@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { PhoneNumberInput } from '@admiral-ds/react-ui';
 import { ChangeEvent, useState } from 'react';
 
-export const Template = () => {
+export const PhoneNumberInputWithPlaceholder = () => {
   const [localValue, setValue] = useState<string>('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,10 +24,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/phoneNumberInput/withPlaceholder')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PhoneNumberInput. Пример с placeholder',
-  },
-});

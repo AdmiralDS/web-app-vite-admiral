@@ -1,10 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { InputField, TooltipHoc } from '@admiral-ds/react-ui';
 
 const TooltipedInput = TooltipHoc(InputField);
 
-export const Template = () => {
+export const TooltipHocBase = () => {
   return (
     <ExampleSection>
       <TooltipedInput
@@ -14,11 +13,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/hocBase')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TooltipHoc. Базовый пример',
-    description: 'Компонент позволяет использовать тултип с преднастроенной базовой логикой',
-  },
-});

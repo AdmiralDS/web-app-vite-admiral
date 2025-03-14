@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router';
 
 import { ImageViewer } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
@@ -37,7 +36,7 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
   console.log(info);
 };
 
-const Template = () => {
+export const ImageViewerBasic = () => {
   const [activeImg, setActiveImg] = useState(0);
 
   const handleActiveChange = (index: number) => {
@@ -69,11 +68,3 @@ const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/imageViewer/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ImageViewer. Базовый пример',
-    description: 'Компонент для просмотра изображений',
-  },
-});

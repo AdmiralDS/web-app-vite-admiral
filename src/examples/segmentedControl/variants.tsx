@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
 import {
@@ -18,7 +17,7 @@ const TooltipedSegmentedControlItem = TooltipHoc(SegmentedControlItem);
 
 const appearanceMap: Array<SegmentedControlProps['appearance']> = ['outlined', 'filled'];
 
-export const Template = () => {
+export const SegmentedControlVariants = () => {
   return (
     <>
       <ExampleSectionColumn header="С включенной иконкой слева">
@@ -118,11 +117,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/segmentedControl/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SegmentedControl. Варианты',
-    description: '',
-  },
-});

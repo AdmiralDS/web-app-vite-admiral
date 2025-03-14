@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useTheme } from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { LIGHT_THEME, Tag, Tags } from '@admiral-ds/react-ui';
@@ -6,7 +5,7 @@ import { LIGHT_THEME, Tag, Tags } from '@admiral-ds/react-ui';
 // eslint-disable-next-line no-console
 const clickHandler = () => console.log('click active tag');
 
-export const Template = () => {
+export const TagStyles = () => {
   const theme = useTheme() || LIGHT_THEME;
   return (
     <>
@@ -158,11 +157,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tag/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tag. Стили и размеры',
-    description: 'Тэг имеет 2 размера (M, S) и может отображать статус с помощью фона или цветной статусной метки.',
-  },
-});

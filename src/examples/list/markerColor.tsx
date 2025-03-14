@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ListIcon, ListItem, UnorderedList } from '@admiral-ds/react-ui';
@@ -12,7 +11,7 @@ const ItemWithColoredMarker = styled(ListItem)<{ $color: string }>`
   }
 `;
 
-export const Template = () => {
+export const ListMarkerColor = () => {
   return (
     <ExampleSection>
       <UnorderedList>
@@ -46,12 +45,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/list/markerColor')({
-  component: () => <Template />,
-  staticData: {
-    title: 'List. Кастомный цвет маркера',
-    description:
-      'Пользователь может кастомизировать цвет маркеров и иконок самостоятельно, как это продемонстрировано в данном примере.',
-  },
-});

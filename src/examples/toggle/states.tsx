@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Toggle } from '@admiral-ds/react-ui';
 
-const States = () => {
+export const ToggleStates = () => {
   return (
     <>
       <ExampleSection text="Active">
@@ -38,11 +37,3 @@ const States = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/toggle/states')({
-  component: () => <States />,
-  staticData: {
-    title: 'Toggle. Состояния',
-    description: '',
-  },
-});

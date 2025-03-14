@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { IconPlacement } from '@admiral-ds/react-ui';
 import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react';
@@ -6,7 +5,7 @@ import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react
 // eslint-disable-next-line no-console
 const handleClick = () => console.log('IconPlacement clicked');
 
-export const Template = () => {
+export const IconPlacementStyles = () => {
   return (
     <>
       <ExampleSection text="Primary">
@@ -27,11 +26,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/iconPlacement/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'IconPlacement. Стили',
-    description: 'Два типа — Primary и Secondary. Можно окрашивать в произвольные цвета, например Error или Success.',
-  },
-});

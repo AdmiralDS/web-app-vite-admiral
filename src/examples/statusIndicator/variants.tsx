@@ -1,10 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { StatusIndicator } from '@admiral-ds/react-ui';
 import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react';
 import { ExampleSection } from '#routes/-helpers/examples';
 
-const Template = () => {
+export const StatusIndicatorVariants = () => {
   return (
     <>
       <ExampleSection text="С иконкой слева">
@@ -22,11 +20,3 @@ const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/statusIndicator/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'StatusIndicator. Варианты',
-    description: '',
-  },
-});

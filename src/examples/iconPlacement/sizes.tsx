@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { IconPlacement } from '@admiral-ds/react-ui';
 import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react';
@@ -6,7 +5,7 @@ import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react
 // eslint-disable-next-line no-console
 const handleClick = () => console.log('IconPlacement clicked');
 
-export const Template = () => {
+export const IconPlacementSizes = () => {
   return (
     <>
       <ExampleSection text="Размер L Small">
@@ -52,12 +51,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/iconPlacement/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'IconPlacement. Размеры',
-    description:
-      'У компонента есть три размера иконки: L 24, M 20 и S 16. Причем, у размеров L и M два размера Hover-круга для различных ситуаций, чтобы вписываться внутрь небольших компонентов. БОльшие размеры круга обозначены в названии вариантов компонента как Big, малые — Small.',
-  },
-});

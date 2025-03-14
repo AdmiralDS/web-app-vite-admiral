@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { MenuButton, MenuItem, MenuModelItemProps, RenderOptionProps } from '@admiral-ds/react-ui';
@@ -75,7 +74,7 @@ const items: Array<StoryItem> = [
   },
 ];
 
-const MultiLevelMenu = () => {
+export const MultiLevelMenu = () => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
 
   const convertStoryItem = (storyItem: StoryItem): MenuModelItemProps => {
@@ -121,11 +120,3 @@ const MultiLevelMenu = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/menuButton/multiLevelMenu')({
-  component: () => <MultiLevelMenu />,
-  staticData: {
-    title: 'MenuButton. С многоуровневым меню',
-    description: '',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { FloatingButton } from '@admiral-ds/react-ui';
@@ -11,7 +10,7 @@ const Container = styled.div<{ $reduceMargin?: boolean }>`
   transform: scale(1);
 `;
 
-export const Template = () => {
+export const FloatingButtonStyles = () => {
   return (
     <>
       <ExampleSection text="Компонент имеет два размера – M (40 px) и XL (56 px). Два типа – Primary и Secondary.">
@@ -132,11 +131,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/floatingButton/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'FloatingButton. Размеры и стили',
-    description: '',
-  },
-});

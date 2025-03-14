@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { typography, T } from '@admiral-ds/react-ui';
@@ -13,7 +12,7 @@ const CustomP = styled.p`
   ${typography['Subtitle/Subtitle 3']};
 `;
 
-export const Template = () => {
+export const TooltipVariants = () => {
   const renderTooltipContent = () => {
     return (
       <>
@@ -31,12 +30,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tooltip. Кастомное наполнение',
-    description:
-      'При необходимости в Tooltip можно отобразить контент отличающийся от стандартного, например большую толщину текста или размер шрифта.',
-  },
-});

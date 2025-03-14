@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { Component, forwardRef } from 'react';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -26,7 +25,7 @@ const TestForwardingRef = forwardRef<HTMLHeadingElement, Omit<TestType, 'innerRe
 ));
 const TooltipedTest = TooltipHoc(TestForwardingRef);
 
-export const Template = () => {
+export const TooltipHocClass = () => {
   return (
     <ExampleSection>
       <TooltipedTest
@@ -36,11 +35,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/hocClass')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TooltipHoc. Пример использования с классовым компонентом',
-    description: '',
-  },
-});

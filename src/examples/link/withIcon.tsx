@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
 import { Link } from '@admiral-ds/react-ui';
@@ -10,7 +9,7 @@ const Divider = styled.div`
   height: 12px;
 `;
 
-export const Template = () => {
+export const LinkWithIcon = () => {
   return (
     <ExampleSection cssMixin={rowFlexMixin}>
       <Link appearance="primary" href="" onClick={(e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault()}>
@@ -31,11 +30,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/link/withIcon')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Link. С иконками',
-    description: 'Может применяться отдельно или внутри текста, с иконкой или без.',
-  },
-});

@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Modal, ModalButtonPanel, ModalContent, ModalTitle } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ModalBasic = () => {
   const [opened, setOpened] = useState(false);
 
   return (
@@ -32,12 +31,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/modal/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Modal. Базовый пример',
-    description:
-      'Модальное окно используется для ситуаций, когда требуется акцентировать внимание пользователя на подтверждении какого-либо действия. Всплывает по центру страницы и блокирует содержимое страницы, которое расположено под модальным окном. Для затемнения страницы используется стиль Opacity/Modal, имеющий 60% прозрачности черного цвета.',
-  },
-});

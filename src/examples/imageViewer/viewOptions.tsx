@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { ImageViewer } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -35,7 +33,7 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
   // eslint-disable-next-line no-console
   console.log(info);
 };
-const Template = () => {
+export const ImageViewerViewOptions = () => {
   return (
     <ExampleSection
       text={
@@ -78,11 +76,3 @@ const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/imageViewer/viewOptions')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ImageViewer. Алгоритм отображения',
-    description: '',
-  },
-});

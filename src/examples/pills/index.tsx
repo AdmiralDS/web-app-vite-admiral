@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Pill, Pills } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
@@ -62,7 +61,7 @@ const StatusPill = styled(Pill).attrs<{ $status?: Status; 'data-status'?: Status
   }
 `;
 
-export const Template = () => {
+export const PillsBasic = () => {
   return (
     <ExampleSection
       text={
@@ -98,11 +97,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/pills/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Pills. Базовый пример',
-    description: '',
-  },
-});

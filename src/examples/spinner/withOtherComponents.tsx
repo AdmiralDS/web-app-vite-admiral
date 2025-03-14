@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Spinner } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
@@ -19,7 +18,7 @@ const StyledButton = styled(Button)`
   padding: 0 8px;
 `;
 
-export const Template = () => {
+export const SpinnerWithOtherComponents = () => {
   return (
     <ExampleSection text="В составе Button">
       <Layout>
@@ -33,10 +32,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/spinner/withOtherComponents')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Spinner. В составе других компонентов',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
@@ -50,7 +49,7 @@ const items = [
   },
 ];
 
-export const Template = () => {
+export const TextButtonMenuBasic = () => {
   const [selected1, setSelected1] = useState<string | undefined>(undefined);
   const [selected2, setSelected2] = useState<string | undefined>(undefined);
   const model1 = useMemo(() => {
@@ -108,11 +107,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/textButtonMenu/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TextButtonMenu. Базовый пример',
-    description: 'Может быть с иконкой в начале или только с текстом.',
-  },
-});

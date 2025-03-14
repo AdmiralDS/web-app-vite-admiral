@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -9,7 +8,7 @@ const Separator = styled.div`
   width: 100%;
 `;
 
-const Mobile = () => {
+export const ToggleMobile = () => {
   return (
     <>
       <ExampleSection text="Текст справа">
@@ -32,12 +31,3 @@ const Mobile = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/toggle/mobile')({
-  component: () => <Mobile />,
-  staticData: {
-    title: 'Toggle. Адаптив',
-    description:
-      'Размер вариации компонента с текстом слева изменяется вручную, может применяться как адаптив на мобильных устройствах. При создании отдельных макетов для мобильных устройств, рекомендуется использовать вариацию комопнента размера M с текстом слева, который можно вытянуть на всю ширину экрана.',
-  },
-});

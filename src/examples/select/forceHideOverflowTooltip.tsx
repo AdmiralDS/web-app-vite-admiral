@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, T } from '@admiral-ds/react-ui';
@@ -11,7 +10,7 @@ const Separator = styled.div<{ $height?: number }>`
   height: ${(p) => p.$height || 24}px;
 `;
 
-export const Template = ({
+export const SelectForceHideOverflowTooltip = ({
   placeholder = 'Города',
   options = OPTIONS_CITIES,
   ...props
@@ -54,10 +53,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/forceHideOverflowTooltip')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Select с принудительным скрытием Tooltip при переполнении Title',
-  },
-});

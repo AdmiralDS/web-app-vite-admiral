@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { css } from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -48,7 +47,7 @@ const itemsWithCheckbox: Array<ItemWithCheckbox> = [
   },
 ];
 
-const CheckboxAndBottomPanel = () => {
+export const CheckboxAndBottomPanel = () => {
   const [innerState, setInnerState] = useState<Array<ItemWithCheckbox>>(itemsWithCheckbox.map((item) => item));
   const [activeOption, setActiveOption] = useState<string | undefined>(innerState[0].id);
   const [selectedOption, setSelectedOption] = useState<string | undefined>();
@@ -116,11 +115,3 @@ const CheckboxAndBottomPanel = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/menuButton/checkboxAndBottomPanel')({
-  component: () => <CheckboxAndBottomPanel />,
-  staticData: {
-    title: 'MenuButton. С чекбоксами и нижней панелью в выпадающем меню',
-    description: '',
-  },
-});

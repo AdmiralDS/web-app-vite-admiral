@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, MenuItem } from '@admiral-ds/react-ui';
 import type { SelectProps, RenderOptionProps } from '@admiral-ds/react-ui';
@@ -45,7 +44,7 @@ const LastOption = ({ containerRef, onVisible, ...props }: LastOptionProps) => {
   return <InvisibleItem ref={ref} {...props} />;
 };
 
-export const Template = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
+export const SelectProgressiveRenderOptionsScroll = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
   const [selectValue, setSelectValue] = React.useState<string>('');
   const [count, setCount] = React.useState<number>(8);
 
@@ -91,10 +90,3 @@ export const Template = ({ placeholder = 'Серийный номер', ...props
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/progressiveRenderOptionsScroll')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Подгрузка данных при scroll',
-  },
-});

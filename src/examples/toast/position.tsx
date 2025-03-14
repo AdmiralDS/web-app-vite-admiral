@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Toast, ToastProvider } from '@admiral-ds/react-ui';
 import { ToastNotificationEmitter } from '#routes/-helpers/toast';
 
-export const Template = () => {
+export const ToastPosition = () => {
   return (
     <>
       <ExampleSection text="Расположение сверху справа">
@@ -27,25 +26,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/toast/position')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Toast. Расположение уведомлений',
-    description: (
-      <>
-        Быстрые уведомления всплывают сверху справа рабочей области сайта, в случае, когда оповещение пришло извне, либо
-        справа снизу, если сообщение показывает реакцию на действие пользователя, и остаются там несколько секунд
-        (настраиваемый параметр).
-        <br />
-        <br />
-        При поступлении нового оповещения, предыдущее опускается вниз (сценарий сверху) и поднимается вверх (сценарий
-        снизу). Расстояние между оповещениями 16px.
-        <br />
-        <br />
-        На мобильном устройстве оповещения появляются сверху, на расстоянии 16px от статус бара. Занимают всю ширину
-        экрана и используется без иконки статуса.
-      </>
-    ),
-  },
-});

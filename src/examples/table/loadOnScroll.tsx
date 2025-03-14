@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState, useRef, useMemo } from 'react';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
@@ -25,7 +24,7 @@ const columnList: Column[] = [
 
 const TOTAL_ROWS_AMOUNT = 100;
 
-const TableLoadOnScroll = () => {
+export const TableLoadOnScroll = () => {
   const [cols, setCols] = useState(columnList);
   const [rowsAmount, setRowsAmount] = useState(10);
   const tableRef = useRef<HTMLDivElement>(null);
@@ -69,11 +68,3 @@ const TableLoadOnScroll = () => {
     />
   );
 };
-
-export const Route = createFileRoute('/components/table/loadOnScroll')({
-  component: () => <TableLoadOnScroll />,
-  staticData: {
-    title: 'Table. Загрузка данных при скролле',
-    description: 'Небольшое описание функционала',
-  },
-});

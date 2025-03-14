@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { StatusIndicator } from '@admiral-ds/react-ui';
 import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -46,7 +44,7 @@ const Waiting = css`
   }
 `;
 
-const Template = () => {
+export const StatusIndicatorStates = () => {
   return (
     <>
       <ExampleSection text="Locked">
@@ -64,12 +62,3 @@ const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/statusIndicator/states')({
-  component: () => <Template />,
-  staticData: {
-    title: 'StatusIndicator. Состояния',
-    description:
-      'Представлен в единственном состоянии Default, есть возможность самостоятельно переключать статус при помощи палитры.',
-  },
-});

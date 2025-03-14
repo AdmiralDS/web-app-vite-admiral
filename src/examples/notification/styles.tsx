@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import {
   NotificationItem,
@@ -12,7 +11,7 @@ const title = 'Заголовок оповещения';
 const body = 'Тут находится текст короткого оповещения';
 const linkText = 'Text Button';
 
-export const Template = () => {
+export const NotificationStyles = () => {
   return (
     <>
       <ExampleSection text="Информационное сообщение">
@@ -54,11 +53,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/notification/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Notification. Стили',
-    description: 'В зависимости от статуса сообщения используются четыре вида цветовых схем данного компонента',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
 import { IconButton } from '@admiral-ds/react-ui';
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
@@ -37,11 +36,3 @@ export const Styles = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/iconButton/styles')({
-  component: () => <Styles />,
-  staticData: {
-    title: 'IconButton. Стили и размеры',
-    description: 'Кнопки представлены в двух стилях, размеры аналогичны Button.',
-  },
-});

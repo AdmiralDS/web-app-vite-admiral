@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Option, Select } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
@@ -64,7 +63,7 @@ const OPTIONS_SIMPLE = [
   'text 69',
 ];
 
-export const Template = (props: SelectProps) => {
+export const SelectUncontrolledSubmitSearch = (props: SelectProps) => {
   const [submitValues, setSubmitValues] = React.useState<null | Record<string, any>>(null);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -104,10 +103,3 @@ export const Template = (props: SelectProps) => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/select/uncontrolledSubmitSearch')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode = "searchSelect". Неконтролируемый сабмит',
-  },
-});

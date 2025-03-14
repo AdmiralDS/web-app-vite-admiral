@@ -1,10 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useRef, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Tooltip } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
-export const Template = () => {
+export const TooltipBasic = () => {
   const btnRef = useRef<HTMLButtonElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -43,12 +42,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tooltip. Базовый пример',
-    description:
-      'Компонент, отвечающий за подсказки, детализацию информации или пояснения. Tooltip можно «привязать» к любому компоненту, которому требуется подсказка, если это не конфликтует с уже существующими функциями компонента.',
-  },
-});

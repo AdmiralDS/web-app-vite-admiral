@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
@@ -75,7 +74,7 @@ const demo2_TreeModel: Array<TreeItemProps> = [
   },
 ];
 
-export const Template = () => {
+export const TreeUncontrolled = () => {
   return (
     <>
       <ExampleSection>
@@ -84,10 +83,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tree/uncontrolled')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tree. Неконтролируемое дерево',
-  },
-});

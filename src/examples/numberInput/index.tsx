@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { NumberInput } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const NumberInputBasic = () => {
   return (
     <>
       <ExampleSection
@@ -34,11 +33,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/numberInput/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NumberInput. Базовый пример',
-    description: 'Поле ввода с возможностью ввода числовых значений через нажатие с заданным шагом',
-  },
-});

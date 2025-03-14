@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import * as React from 'react';
 
 import { Button, Modal, ModalButtonPanel, ModalContent, ModalTitle, Option, Select } from '@admiral-ds/react-ui';
@@ -14,7 +13,7 @@ type CityProps = {
   value: string;
 };
 
-export const Template = ({
+export const SelectMultiCustomDeleteChip = ({
   placeholder = 'Город',
   options = OPTIONS_CITIES,
   ...props
@@ -95,10 +94,3 @@ export const Template = ({
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiCustomDeleteChip')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode="multiple" с кастомным обработчиком удаления чипса',
-  },
-});

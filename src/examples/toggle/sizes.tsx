@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Toggle } from '@admiral-ds/react-ui';
 
-const Sizes = () => {
+export const ToggleSizes = () => {
   return (
     <>
       <ExampleSection text="Размер M">
@@ -14,11 +13,3 @@ const Sizes = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/toggle/sizes')({
-  component: () => <Sizes />,
-  staticData: {
-    title: 'Toggle. Размеры',
-    description: '',
-  },
-});

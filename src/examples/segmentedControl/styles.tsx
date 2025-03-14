@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { SegmentedControl, SegmentedControlItem } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SegmentedControlStyles = () => {
   return (
     <>
       <ExampleSection text="Outlined">
@@ -41,11 +40,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/segmentedControl/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SegmentedControl. Стили',
-    description: 'Присутствуют два типа Segmented Control: Outlined и Filled',
-  },
-});

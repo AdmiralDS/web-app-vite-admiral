@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 
 import { T, Tree, TreeItemProps, TreeNode, TreeNodeRenderOptionProps } from '@admiral-ds/react-ui';
@@ -136,7 +135,7 @@ const demo1_TreeModel: Array<TreeItemProps> = [
   },
 ];
 
-export const Template = () => {
+export const TreeWithControlCheckCount = () => {
   const [dataList, setDataList] = useState<TreeItemProps[]>(demo1_TreeModel);
   const [countSelected, setCountSelected] = useState(0);
 
@@ -172,10 +171,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tree/withControlCheckCount')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tree. С счётчиком выбранных элементов',
-  },
-});

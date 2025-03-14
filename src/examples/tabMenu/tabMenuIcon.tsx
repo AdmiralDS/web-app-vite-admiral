@@ -1,5 +1,4 @@
 import { forwardRef, useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router';
 import { IconTab, IconTabProps, TabMenuIcon, TabText } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 
@@ -38,7 +37,7 @@ const CustomIconTab = forwardRef<HTMLButtonElement, TabContentProps>(
   },
 );
 
-export const Template = () => {
+export const TabMenuIconExample = () => {
   const [selectedTab, setSelectedTab] = useState<string | undefined>('1');
 
   const tabsMap = tabs.map((tab) => tab.tabId);
@@ -97,10 +96,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/tabMenuIcon')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TabMenuIcon. Базовый пример',
-  },
-});

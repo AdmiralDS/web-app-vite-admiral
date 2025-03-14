@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, CheckboxField, Modal, ModalButtonPanel, ModalContent, ModalTitle } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ModalScroll = () => {
   const [opened, setOpened] = useState(false);
 
   return (
@@ -61,12 +60,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/modal/scroll')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Modal. Скролл',
-    description:
-      'Если нужен вертикальный скролл, то он появляется у края модального окна. Область его прокрутки равна высоте контентной области.',
-  },
-});

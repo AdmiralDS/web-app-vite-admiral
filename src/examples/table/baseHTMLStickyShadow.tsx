@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 
@@ -64,7 +63,7 @@ const HtmlTable = styled.table`
   }
 `;
 
-const TableBaseHTMLStickyShadow = () => {
+export const TableBaseHTMLStickyShadow = () => {
   const [cell, setCell] = useState<HTMLTableCellElement | null>(null);
   const [table, setTable] = useState<HTMLTableElement | null>(null);
 
@@ -119,11 +118,3 @@ const TableBaseHTMLStickyShadow = () => {
     </HtmlTable>
   );
 };
-
-export const Route = createFileRoute('/components/table/baseHTMLStickyShadow')({
-  component: () => <TableBaseHTMLStickyShadow />,
-  staticData: {
-    title: 'Table. Базовый HTML table с фиксированными столбцами',
-    description: `Пример минимальной стилизации html table с фиксированной столбцами выделенными с помощью тени.`,
-  },
-});

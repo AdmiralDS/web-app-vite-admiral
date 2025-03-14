@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ListItem, OrderedList, UnorderedList } from '@admiral-ds/react-ui';
@@ -10,7 +9,7 @@ const Layout = styled.div`
   grid-template-rows: repeat(4, auto);
 `;
 
-export const Template = () => {
+export const ListNested = () => {
   return (
     <ExampleSection>
       <Layout>
@@ -62,12 +61,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/list/nested')({
-  component: () => <Template />,
-  staticData: {
-    title: 'List. Вложенные списки',
-    description:
-      'Списки могут быть вложенными, а разновидности могут смешиваться внутри вложенных группировок. Отступ слева равен расстоянию от текста до левого края компонента вышестоящего уровня. То есть выравнивание идет по краю текста вышестоящего уровня.',
-  },
-});

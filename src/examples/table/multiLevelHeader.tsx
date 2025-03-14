@@ -1,5 +1,4 @@
 import { Checkbox, GroupActionsPane, PaneMenuProps, PaneSeparator, T, TextButton } from '@admiral-ds/react-ui';
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import MoreHorizontalOutline from '@admiral-ds/icons/build/system/MoreHorizontalOutline.svg?react';
 import ArrowDownOutline from '@admiral-ds/icons/build/system/ArrowDownOutline.svg?react';
@@ -185,16 +184,8 @@ const TableBaseHTML = (props: React.ComponentProps<typeof TableWrapper>) => {
   );
 };
 
-const TableExample = styled(TableBaseHTML)`
+export const TableBaseHTMLMultiLevelHeader = styled(TableBaseHTML)`
   align-self: stretch;
   box-sizing: border-box;
   max-height: 600px;
 `;
-export const Route = createFileRoute('/components/table/multiLevelHeader')({
-  component: () => <TableExample />,
-  staticData: {
-    title: 'Table. Multi-Level Header',
-    description:
-      'В случаях сложной иерархии в заголовках таблицы, можно применять многоуровневую структуру Multi-Level Header.',
-  },
-});

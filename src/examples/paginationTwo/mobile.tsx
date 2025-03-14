@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, MobileBottomContainer } from '#routes/-helpers/examples';
 import { useState } from 'react';
 import { PaginationTwo } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const PaginationTwoMobile = () => {
   const [state, setState] = useState(1);
   const [state2, setState2] = useState(1);
 
@@ -35,10 +34,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/paginationTwo/mobile')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PaginationTwo. Мобильная версия',
-  },
-});

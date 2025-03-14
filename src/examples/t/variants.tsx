@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { MainPrimaryColorName, T } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
@@ -11,7 +10,7 @@ const OrangeColor = css`
   color: var(--admiral-color-Warning_Warning50Main, ${(p) => p.theme.color['Warning/Warning 50 Main']});
 `;
 
-export const Template = () => {
+export const TVariants = () => {
   return (
     <>
       <ExampleSection>
@@ -36,10 +35,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/t/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'T. Варианты использования',
-  },
-});

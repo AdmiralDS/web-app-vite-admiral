@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { PaginationOne } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const PaginationOneSizes = () => {
   const [pageSize1, setPageSize1] = useState(8);
   const [page1, setPage1] = useState(1);
   const [pageSize2, setPageSize2] = useState(8);
@@ -50,11 +49,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/paginationOne/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PaginationOne. Размеры',
-    description: '',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { Option, Select, T, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -6,7 +5,7 @@ import type { SelectProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const SelectMultiSelectWithSelectedOnTop = ({
   placeholder = 'Города',
   moveSelectedOnTop = true,
   options = OPTIONS_CITIES,
@@ -62,10 +61,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiSelectWithSelectedOnTop')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode="multiple" с поднятием выбранных опций вверх списка',
-  },
-});

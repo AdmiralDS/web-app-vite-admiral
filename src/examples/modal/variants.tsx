@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -78,7 +77,7 @@ const ModalForm = ({ onYesClick, onNoClick }: Props) => {
   );
 };
 
-export const Template = () => {
+export const ModalVariants = () => {
   const [opened1, setOpened1] = useState(false);
   const [opened2, setOpened2] = useState(false);
   const [opened3, setOpened3] = useState(false);
@@ -217,11 +216,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/modal/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Modal. Наполнение',
-    description: '',
-  },
-});

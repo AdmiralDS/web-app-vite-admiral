@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -72,11 +71,3 @@ export const RadioButtonInformer = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/radiobutton/informer')({
-  component: () => <RadioButtonInformer />,
-  staticData: {
-    title: 'RadioButton. Информер',
-    description: 'Состояния аналогичны стандартным радио кнопкам, подсказка появляется по Hover на иконке.',
-  },
-});

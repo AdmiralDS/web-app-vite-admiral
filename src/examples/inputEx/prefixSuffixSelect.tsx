@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { InputEx } from '@admiral-ds/react-ui';
 import { ReactNode, useState } from 'react';
@@ -6,7 +5,7 @@ import { ReactNode, useState } from 'react';
 const PREFIX_OPTIONS = ['prefix One', 'prefix Two', 'prefix Three'];
 const SUFFIX_OPTIONS = ['One', 'Two', 'Three'];
 
-export const Template = () => {
+export const InputExPrefixSuffixSelect = () => {
   const [localValue, setValue] = useState('Привет!');
   const [prefixValue, setPrefixValue] = useState<ReactNode>('prefix One');
   const [suffixValue, setSuffixValue] = useState<ReactNode>('One');
@@ -34,10 +33,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/inputEx/prefixSuffixSelect')({
-  component: () => <Template />,
-  staticData: {
-    title: 'InputEx. C выбором префикса и суффикса',
-  },
-});

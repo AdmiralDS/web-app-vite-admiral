@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Modal, ModalButtonPanel, ModalContent, ModalTitle } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ModalSizes = () => {
   const [opened1, setOpened1] = useState(false);
   const [opened2, setOpened2] = useState(false);
   const [opened3, setOpened3] = useState(false);
@@ -110,11 +109,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/modal/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Modal. Размеры',
-    description: '',
-  },
-});

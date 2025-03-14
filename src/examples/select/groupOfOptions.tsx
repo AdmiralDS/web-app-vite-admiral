@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import type { ChangeEvent } from 'react';
 import { Option, OptionGroup, Select, typography } from '@admiral-ds/react-ui';
@@ -21,7 +20,7 @@ export const StyledGroup = styled(OptionGroup)`
   ${typography['Header/H5']}
 `;
 
-export const Template = (props: SelectProps) => {
+export const SelectGroupOfOptions = (props: SelectProps) => {
   const [selectValue, setSelectValue] = React.useState<string>('Похо Торо Моронго');
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => setSelectValue(e.target.value);
 
@@ -49,10 +48,3 @@ export const Template = (props: SelectProps) => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/groupOfOptions')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Использование групп опций',
-  },
-});

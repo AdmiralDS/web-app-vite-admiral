@@ -1,10 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ProgressHeader } from '@admiral-ds/react-ui';
 import { PageTemplate } from '#routes/-helpers/propgressHeader';
 
-export const Template = () => {
+export const ProgressHeaderAnimation = () => {
   const [tik, setTick] = useState(0);
 
   useEffect(() => {
@@ -26,11 +25,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/progressHeader/animation')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ProgressHeader. Анимация',
-    description: '',
-  },
-});

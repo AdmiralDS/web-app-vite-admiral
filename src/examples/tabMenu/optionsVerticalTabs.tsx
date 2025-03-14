@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import {
   MenuItem,
@@ -90,7 +89,7 @@ const CustomVerticalTab = forwardRef<HTMLButtonElement, CustomVerticalTabProps>(
   },
 );
 
-export const Template = () => {
+export const OptionsVerticalTabsExample = () => {
   const [selectedTab, setSelectedTab] = useState<string | undefined>('1');
   const [selectedTab2, setSelectedTab2] = useState<string | undefined>('1');
   const [selectedTab3, setSelectedTab3] = useState<string | undefined>('1');
@@ -250,10 +249,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/optionsVerticalTabs')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TabMenuVertical. Опции',
-  },
-});

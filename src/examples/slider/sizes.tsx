@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { useState } from 'react';
 import { Slider } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SliderSizes = () => {
   const [rangeValueM, setRangeValueM] = useState(0);
   const [rangeValueXL, setRangeValueXL] = useState(0);
 
@@ -34,11 +33,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/slider/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Slider. Размеры',
-    description: 'Компонент Slider существует в 2 размерах M и XL',
-  },
-});

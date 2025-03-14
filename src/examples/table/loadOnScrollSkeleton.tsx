@@ -1,5 +1,4 @@
 import { useMemo, useRef, useState } from 'react';
-import { createFileRoute } from '@tanstack/react-router';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 
@@ -96,11 +95,3 @@ export const TableLoadOnScrollSkeleton = () => {
     />
   );
 };
-
-export const Route = createFileRoute('/components/table/loadOnScrollSkeleton')({
-  component: () => <TableLoadOnScrollSkeleton />,
-  staticData: {
-    title: 'Table. Подгрузка данных при скролле со скелетоном',
-    description: 'Небольшое описание функционала',
-  },
-});

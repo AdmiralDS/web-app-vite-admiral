@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { MenuButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
@@ -378,11 +377,3 @@ export const Styles = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/menuButton/styles')({
-  component: () => <Styles />,
-  staticData: {
-    title: 'MenuButton. Стили и размеры',
-    description: 'Кнопки представлены в пяти стилях, размеры аналогичны Button.',
-  },
-});

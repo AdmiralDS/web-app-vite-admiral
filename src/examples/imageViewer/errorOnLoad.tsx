@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { ImageViewer } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -36,7 +34,7 @@ const handleTransform = (info: { transform: TransformType; action: TransformActi
   console.log(info);
 };
 
-export const Template = () => {
+export const ImageViewerErrorOnLoad = () => {
   return (
     <ExampleSection
       text="Если изображение не загрузилось или присутствует какая-либо ошибка,
@@ -50,11 +48,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/imageViewer/errorOnLoad')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ImageViewer. Ошибки при загрузке',
-    description: '',
-  },
-});

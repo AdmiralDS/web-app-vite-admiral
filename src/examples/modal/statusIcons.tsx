@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import {
@@ -18,7 +17,7 @@ import ErrorOutline from '@admiral-ds/icons/build/service/ErrorOutline.svg?react
 
 const TooltipedButton = TooltipHoc(Button);
 
-export const Template = () => {
+export const StatusIcon = () => {
   const [opened, setOpened] = useState(false);
   const [iconStatus, setIconStatus] = useState<ModalStatusIconType>('information');
 
@@ -102,12 +101,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/modal/statusIcons')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Modal. Статусные иконки',
-    description:
-      'Используются в простых текстовых модальных окнах для оповещений пользователя о важных событиях. Статус модального окна может быть четырех типов: Success, Information, Danger, Warning.',
-  },
-});

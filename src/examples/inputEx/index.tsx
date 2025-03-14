@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { InputEx } from '@admiral-ds/react-ui';
 import { useState } from 'react';
 
-export const Template = () => {
+export const InputExBasic = () => {
   const [localValue, setValue] = useState('');
 
   return (
@@ -30,10 +29,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/inputEx/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'InputEx. Базовый пример',
-  },
-});

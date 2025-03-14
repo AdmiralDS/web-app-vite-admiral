@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select } from '@admiral-ds/react-ui';
 import Cuba from '@admiral-ds/icons/build/flags/Cuba.svg?react';
@@ -34,7 +33,7 @@ const RenderingValue = styled.div`
   box-sizing: border-box;
 `;
 
-export const Template = ({
+export const SelectCustomValues = ({
   placeholder = 'Города',
   options = OPTIONS_PEOPLE,
   ...props
@@ -102,10 +101,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/customValues')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Кастомное отображение значений',
-  },
-});

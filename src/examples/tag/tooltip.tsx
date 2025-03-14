@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
 import { Tag, Tags } from '@admiral-ds/react-ui';
 
 // eslint-disable-next-line no-console
 const clickHandler = () => console.log('click active tag');
 
-export const Template = () => {
+export const TagTooltip = () => {
   return (
     <ExampleSection cssMixin={rowFlexMixin}>
       <Tags>
@@ -17,11 +16,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tag/tooltip')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tag. Тултип',
-    description: 'В случае ограниченного пространства используется тултип.',
-  },
-});

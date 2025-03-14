@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, MobileBottomContainer, PStyled } from '#routes/-helpers/examples';
 import { Button, Step, StepContent, Stepper } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -12,7 +11,7 @@ const initialSteps = [
   { content: 'Текст занимает максимум три строки, далее идет сокращение' },
 ];
 
-export const Template = () => {
+export const StepperMobile = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [steps, setSteps] = useState(initialSteps);
 
@@ -72,10 +71,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/stepper/mobile')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Stepper. Мобильная версия',
-  },
-});

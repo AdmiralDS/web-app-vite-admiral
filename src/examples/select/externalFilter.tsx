@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { Option, Select } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
@@ -33,7 +32,7 @@ const OPTIONS = [
   },
 ] as Array<{ value: string; text: string; disabled?: boolean; extraText?: string }>;
 
-export const Template = (props: SelectProps) => {
+export const SelectExternalFilter = (props: SelectProps) => {
   const [singleSelectValue, setSingleSelectValue] = React.useState<string>('');
   const [singleSearchValue, setSingleSearchValue] = React.useState('');
   const [multipleSelectValue, setMultipleSelectValue] = React.useState<Array<string>>([]);
@@ -115,12 +114,3 @@ export const Template = (props: SelectProps) => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/externalFilter')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Внешняя фильтрация',
-    description:
-      'Т.к. компонент построен на нативном select, в выбранных значениях могут отображаться только те элементы, которые переданы в качестве списка option',
-  },
-});

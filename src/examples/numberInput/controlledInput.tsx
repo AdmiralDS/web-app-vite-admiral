@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { clearValue, NumberInput } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -18,7 +17,7 @@ function declOfNum(n: number, text_forms: Array<string>) {
   return text_forms[2];
 }
 
-export const Template = () => {
+export const NumberInputControlled = () => {
   const [value1, setValue1] = useState<string | undefined>('50,00');
   const [value2, setValue2] = useState<string | undefined>('1');
   const [suffix, setSuffix] = useState('минута');
@@ -74,10 +73,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/numberInput/controlledInput')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NumberInput. Примеры контролируемого инпута',
-  },
-});

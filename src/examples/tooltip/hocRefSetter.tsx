@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { forwardRef, useRef } from 'react';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -23,7 +22,7 @@ const Component = forwardRef<HTMLInputElement, InputFieldProps>((props, ref) => 
 });
 const TooltipedComponent = TooltipHoc(Component);
 
-export const Template = () => {
+export const TooltipHocRefSetter = () => {
   return (
     <ExampleSection>
       <TooltipedComponent
@@ -33,12 +32,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/hocRefSetter')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TooltipHoc. Утилита refSetter для мерджа рефов.',
-    description:
-      'Если в ваш компонент извне передан параметр ref и у вас есть внутренний ref в компоненте, для синхронной работы данных рефов и их мерджа вы можете воспользоваться утилитой refSetter.',
-  },
-});

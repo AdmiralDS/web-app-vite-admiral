@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { MenuItem, OverflowMenu, RenderOptionProps } from '@admiral-ds/react-ui';
@@ -54,7 +53,7 @@ const items: ItemProps[] = [
   },
 ];
 
-export const Template = () => {
+export const OverflowMenuBasic = () => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
   const model = useMemo(() => {
     return items.map((item) => ({
@@ -86,12 +85,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/overflowMenu/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'OverflowMenu. Базовый пример',
-    description:
-      'Компонент используется для открытия меню дополнительных опций, например, в случаях ограниченного пространства. В основном применяется в составе других комопнентов.',
-  },
-});

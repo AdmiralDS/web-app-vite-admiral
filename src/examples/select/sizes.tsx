@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select } from '@admiral-ds/react-ui';
 
@@ -8,7 +7,7 @@ import type { SelectProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const SelectSizes = ({
   placeholder = 'Город',
   options = OPTIONS_CITIES,
   ...props
@@ -74,12 +73,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Select. Размеры',
-    description:
-      'Для изменения размера выпадающего списка используется свойство dimension. Компонент существует в 3 размерах: 32px (s), 40px (m) и 56px (xl)',
-  },
-});

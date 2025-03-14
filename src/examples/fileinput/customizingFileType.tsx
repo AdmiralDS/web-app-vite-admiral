@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 
 import { FileInput, FileItem } from '@admiral-ds/react-ui';
-import type { FileAttributeProps, InputStatus } from '@admiral-ds/react-ui';
+import type { FileAttributeProps } from '@admiral-ds/react-ui';
 import PDFSolid from '@admiral-ds/icons/build/documents/PDFSolid.svg?react';
 import PPTSolid from '@admiral-ds/icons/build/documents/PPTSolid.svg?react';
 import FileWordSolid from '@admiral-ds/icons/build/documents/FileWordSolid.svg?react';
@@ -218,10 +217,3 @@ export const FileInputFileType = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/fileinput/customizingFileType')({
-  component: () => <FileInputFileType />,
-  staticData: {
-    title: 'File input. Кастомизация типов файлов',
-  },
-});

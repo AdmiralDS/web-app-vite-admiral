@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { IconButton, IconButtonGroup } from '@admiral-ds/react-ui';
 import PrintOutline from '@admiral-ds/icons/build/system/PrintOutline.svg?react';
@@ -76,11 +75,3 @@ export const Sizes = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/iconButtonGroup/sizes')({
-  component: () => <Sizes />,
-  staticData: {
-    title: 'IconButtonGroup. Размеры',
-    description: 'Есть 4 размера по аналогии с обычными кнопками: XL (56), L (48), M (40), S (32).',
-  },
-});

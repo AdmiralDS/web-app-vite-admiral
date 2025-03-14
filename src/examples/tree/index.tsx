@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
@@ -230,7 +229,7 @@ const demo1_TreeModel: Array<TreeItemProps> = [
   },
 ];
 
-export const Template = () => {
+export const TreeBasic = () => {
   const [dataList, setDataList] = useState<TreeItemProps[]>(demo1_TreeModel);
 
   const handleChange = (dataList: TreeItemProps[]) => {
@@ -258,10 +257,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tree/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tree. Базовый пример',
-  },
-});

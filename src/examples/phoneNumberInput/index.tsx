@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { PhoneNumberInput } from '@admiral-ds/react-ui';
 import { ChangeEvent, useState } from 'react';
 
-export const Template = () => {
+export const PhoneNumberInputBasic = () => {
   const [localValue, setValue] = useState<string>('+7 123 456 78 90');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,11 +24,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/phoneNumberInput/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PhoneNumberInput. Базовый пример',
-    description: 'Компонент для ввода номера телефона с выбором кода-страны.',
-  },
-});

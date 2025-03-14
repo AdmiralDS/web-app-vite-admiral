@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { FloatingButton } from '@admiral-ds/react-ui';
@@ -11,7 +10,7 @@ const Container = styled.div<{ $reduceMargin?: boolean }>`
   transform: scale(1);
 `;
 
-export const Template = () => {
+export const FloatingButtonBasic = () => {
   return (
     <ExampleSection>
       <Container>
@@ -22,12 +21,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/floatingButton/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'FloatingButton. Базовый пример',
-    description:
-      'Компонент FloatingButton используется для отображения наиболее частых или важных действий на экране. Не рекомендуется использовать более одной FloatingButton на экране.',
-  },
-});

@@ -1,10 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
 import React from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
 
-export const Template = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
+export const SelectMultiSelectExpandedHeight = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
   const [selectValue, setSelectValue] = React.useState<string[]>(
     Array.from({ length: 20 }).map((_, ind) => String(ind)),
   );
@@ -37,10 +36,3 @@ export const Template = ({ placeholder = 'Серийный номер', ...props
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiSelectExpandedHeight')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode="multiple" с увеличенной по умолчанию высотой',
-  },
-});

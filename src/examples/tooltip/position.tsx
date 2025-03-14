@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ButtonWithTooltip } from '#routes/-helpers/tooltip';
 
-export const Template = () => {
+export const TooltipPosition = () => {
   return (
     <>
       <ExampleSection text="Снизу">
@@ -20,14 +19,6 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/position')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tooltip. Позиционирование',
-    description: 'Приоритетным является расположение тултипа снизу объекта.',
-  },
-});
 
 /*
 Позиционируется по центру объекта, сверху, снизу, слева или справа с отступом 8px.

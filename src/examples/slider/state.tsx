@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { useState } from 'react';
 import { Slider } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SliderState = () => {
   const [rangeValue, setRangeValue] = useState(0);
 
   return (
@@ -32,10 +31,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/slider/state')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Slider. Состояния',
-  },
-});

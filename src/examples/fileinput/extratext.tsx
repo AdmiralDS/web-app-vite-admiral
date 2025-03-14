@@ -1,7 +1,6 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 
-import { FileInput, FileInputField, FileItem } from '@admiral-ds/react-ui';
+import { FileInputField, FileItem } from '@admiral-ds/react-ui';
 import type { FileAttributeProps, InputStatus } from '@admiral-ds/react-ui';
 import { ExampleSection, PStyled, uid } from '#routes/-helpers/examples';
 
@@ -135,10 +134,3 @@ export const FileInputExtraText = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/fileinput/extratext')({
-  component: () => <FileInputExtraText />,
-  staticData: {
-    title: 'File input. Дополнительный текст',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { DropMenu, MenuItem, Pill, refSetter, RenderOptionProps } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
@@ -164,7 +163,7 @@ const items: Array<PillOptionProps> = [
   },
 ];
 
-export const Template = () => {
+export const PillsMenu = () => {
   return (
     <ExampleSection
       text={
@@ -180,11 +179,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/pills/menu')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PillMenu. С выпадающим меню',
-    description: '',
-  },
-});

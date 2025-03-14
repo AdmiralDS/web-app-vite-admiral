@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { NumberInput } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const NumberInputSizes = () => {
   return (
     <>
       <ExampleSection text="Размер S">
@@ -44,11 +43,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/numberInput/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NumberInput. Размеры',
-    description: 'Компонент существует в 3 размерах s, m, xl. По умолчанию m',
-  },
-});

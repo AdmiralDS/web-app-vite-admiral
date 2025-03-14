@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { IconButton, IconButtonGroup } from '@admiral-ds/react-ui';
 import PrintOutline from '@admiral-ds/icons/build/system/PrintOutline.svg?react';
@@ -41,11 +40,3 @@ export const Base = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/iconButtonGroup/')({
-  component: () => <Base />,
-  staticData: {
-    title: 'IconButtonGroup. Базовый пример',
-    description: 'Группа кнопок-иконок со связанными по смыслу действиями или действиями, лежащими в одном контексте.',
-  },
-});

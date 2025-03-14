@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Spinner } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
@@ -15,7 +14,7 @@ const Layout = styled.div<{ $inverse?: boolean }>`
   }
 `;
 
-export const Template = () => {
+export const SpinnerVariants = () => {
   return (
     <>
       <ExampleSection>
@@ -39,11 +38,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/spinner/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Spinner. Варианты',
-    description: 'Spinner имеет 2 варианта отображения на темном и светлом фоне',
-  },
-});

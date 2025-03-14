@@ -12,7 +12,6 @@ import HeadsetOutline from '@admiral-ds/icons/build/communication/HeadsetOutline
 import SignalOutline from '@admiral-ds/icons/build/communication/SignalOutline.svg?react';
 import TelegrammOutline from '@admiral-ds/icons/build/communication/TelegrammOutline.svg?react';
 import { ExampleSection } from '#routes/-helpers/examples';
-import { createFileRoute } from '@tanstack/react-router';
 
 interface TabContentProps extends HorizontalTabProps {
   text: string;
@@ -85,7 +84,7 @@ const MenuItemWrapper = styled.div`
   align-items: center;
 `;
 
-export const Template = () => {
+export const CardTabMenuWithoutBorder = () => {
   const tabsMap = useMemo(() => {
     return tabs.map((tab) => tab.tabId);
   }, [tabs]);
@@ -149,10 +148,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/cardTabMenuWithoutBorder')({
-  component: () => <Template />,
-  staticData: {
-    title: 'CardTabMenu. Без обводки',
-  },
-});

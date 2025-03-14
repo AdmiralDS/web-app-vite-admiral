@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 
 import { FileInput, FileInputField, FileItem } from '@admiral-ds/react-ui';
@@ -258,10 +257,3 @@ export const FileInputBasic = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/fileinput/')({
-  component: () => <FileInputBasic />,
-  staticData: {
-    title: 'File input. Базовый пример',
-  },
-});

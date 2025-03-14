@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { MenuButton, MenuItem, RenderOptionProps, Tooltip } from '@admiral-ds/react-ui';
@@ -9,7 +8,7 @@ const menuItems = [
   { id: 3, label: 'item-3' },
 ];
 
-export const Template = () => {
+export const TooltipWithmenuButton = () => {
   const menuModel = useMemo(() => {
     return menuItems.map((item) => ({
       id: String(item.id),
@@ -72,11 +71,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/withMenuButton')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tooltip. Базовый пример с MenuButton',
-    description: '',
-  },
-});

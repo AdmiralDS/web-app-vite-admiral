@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { ScrollContainer, Toggle, typography } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -29,7 +28,7 @@ const Box = styled.div`
   height: 200px;
 `;
 
-export const Template = () => {
+export const ScrollContainerBasic = () => {
   const [checked, setChecked] = useState(false);
   return (
     <ExampleSection>
@@ -61,10 +60,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/scrollContainer/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ScrollContainer. Базовый пример',
-  },
-});

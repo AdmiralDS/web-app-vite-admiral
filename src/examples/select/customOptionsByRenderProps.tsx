@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, MenuItem, typography } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
@@ -74,7 +73,10 @@ const CustomOptionWrapper = styled(MenuItem)`
   white-space: pre-wrap;
 `;
 
-export const Template = ({ options = OPTIONS, ...props }: SelectProps & { options?: OptionsType[] }) => {
+export const SelectCustomOptionsByRenderProps = ({
+  options = OPTIONS,
+  ...props
+}: SelectProps & { options?: OptionsType[] }) => {
   const [selectValue, setSelectValue] = React.useState<string>(props.value ? String(props.value) : options[2].value);
 
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -120,10 +122,3 @@ export const Template = ({ options = OPTIONS, ...props }: SelectProps & { option
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/customOptionsByRenderProps')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Кастомные опции через renderProps',
-  },
-});

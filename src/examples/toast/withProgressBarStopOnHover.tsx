@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { ExampleSection, uid } from '#routes/-helpers/examples';
 import {
@@ -193,7 +192,7 @@ const MessageForm = () => {
   );
 };
 
-export const Template = () => {
+export const ToastWithProgressBarStopOnHover = () => {
   return (
     <ExampleSection>
       <ToastProvider autoDeleteTime={5000}>
@@ -203,12 +202,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/toast/withProgressBarStopOnHover')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Toast. С задержкой при наведении',
-    description:
-      'Шкала, графически показывающая время, через которое закроется уведомление. Не изменяет размер компонента, находится в нижней части. Время отсчета соответствует времени показа уведомления.',
-  },
-});

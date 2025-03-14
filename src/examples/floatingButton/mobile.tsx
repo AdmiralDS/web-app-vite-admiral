@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { FloatingButton } from '@admiral-ds/react-ui';
@@ -16,7 +15,7 @@ const MobileWrapper = styled.div`
   transform: scale(1);
 `;
 
-export const Template = () => {
+export const FloatingButtonMobile = () => {
   return (
     <ExampleSection text="На мобильных устройствах отступ по умолчанию равен 16px от краев экрана (вместо стандартных 28px).">
       <MobileWrapper>
@@ -27,11 +26,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/floatingButton/mobile')({
-  component: () => <Template />,
-  staticData: {
-    title: 'FloatingButton. Mobile',
-    description: '',
-  },
-});

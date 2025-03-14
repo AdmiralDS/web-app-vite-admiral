@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, typography } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
@@ -17,7 +16,7 @@ const ExtraText = styled.div`
   ${typography['Body/Body 2 Short']}
 `;
 
-export const Template = ({ placeholder = 'Серийные номера', ...props }: SelectProps) => {
+export const SelectMultiCustomOptionsByRenderChip = ({ placeholder = 'Серийные номера', ...props }: SelectProps) => {
   const [multiSelectValue, setMultiSelectValue] = React.useState<string[]>(
     Array.from({ length: 15 }).map((_, ind) => String(ind)),
   );
@@ -58,10 +57,3 @@ export const Template = ({ placeholder = 'Серийные номера', ...pro
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiCustomOptionsByRenderChip')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode="multiple" с кастомными опциями через Option children',
-  },
-});

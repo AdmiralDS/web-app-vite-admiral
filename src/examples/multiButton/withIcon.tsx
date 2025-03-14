@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { MultiButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
@@ -266,11 +265,3 @@ export const WithIcon = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/multiButton/withIcon')({
-  component: () => <WithIcon />,
-  staticData: {
-    title: 'MultiButton. С иконкой',
-    description: '',
-  },
-});

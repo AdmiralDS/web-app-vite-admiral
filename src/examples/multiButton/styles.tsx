@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import { MultiButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
@@ -253,11 +252,3 @@ export const Styles = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/multiButton/styles')({
-  component: () => <Styles />,
-  staticData: {
-    title: 'Button. Стили и размеры',
-    description: 'Кнопки представлены в трех стилях, размеры аналогичны Button.',
-  },
-});

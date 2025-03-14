@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef } from 'react';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -10,7 +9,7 @@ const Separator = styled.div<{ height?: number }>`
 
 const TooltipedInput = TooltipHoc(InputField);
 
-export const Template = () => {
+export const TooltipHocRef = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const handleBtnClick = () => {
     inputRef.current?.focus();
@@ -28,11 +27,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tooltip/hocRef')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TooltipHoc. Прокидывание ref на результат вызова TooltipHoc',
-    description: '',
-  },
-});

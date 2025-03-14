@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 
 import { FileInput, FileItem } from '@admiral-ds/react-ui';
@@ -180,10 +179,3 @@ export const FileInputFileStatuses = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/fileinput/filestatus')({
-  component: () => <FileInputFileStatuses />,
-  staticData: {
-    title: 'File input. Статусы загрузки файлов',
-  },
-});

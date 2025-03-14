@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { clearValue, NumberInput, NumberInputProps } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -7,7 +6,7 @@ function convertStrToNum(str: string, precision: number, decimal: string) {
   return Number(clearValue(str, precision, decimal).replace(decimal, '.'));
 }
 
-export const Template = () => {
+export const NumberInputMinMaxValue = () => {
   const [status, setStatus] = useState<NumberInputProps['status'] | undefined>(undefined);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,10 +56,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/numberInput/minMaxValue')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NumberInput. Пример с minValue, maxValue',
-  },
-});

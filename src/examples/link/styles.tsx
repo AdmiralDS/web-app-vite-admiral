@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Link } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const LinkStyles = () => {
   return (
     <>
       <ExampleSection text="Primary">
@@ -44,11 +43,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/link/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Link. Стили',
-    description: 'Ссылки бывают двух типов — Primary и Secondary, и двух размеров — M (24px) и S (20px).',
-  },
-});

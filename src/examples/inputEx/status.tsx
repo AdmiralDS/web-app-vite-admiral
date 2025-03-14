@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { InputEx } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -7,7 +6,7 @@ const widthCssMixin = {
   width: '400px',
 };
 
-export const Template = () => {
+export const InputExStatus = () => {
   const [localValue, setValue] = useState('');
   const [localValue2, setValue2] = useState('');
 
@@ -36,10 +35,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/inputEx/status')({
-  component: () => <Template />,
-  staticData: {
-    title: 'InputEx. Статусы',
-  },
-});

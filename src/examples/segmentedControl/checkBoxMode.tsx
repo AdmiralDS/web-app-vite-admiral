@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { SegmentedControl, SegmentedControlItem } from '@admiral-ds/react-ui';
 
 const values = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-export const Template = () => {
+export const SegmentedControlCheckboxMode = () => {
   const [selected, setSelected] = useState(
     new Map([
       [values[6], false],
@@ -91,19 +90,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/segmentedControl/checkBoxMode')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SegmentedControl. Режим checkbox',
-    description: (
-      <>
-        Особенности
-        <li>Активными могут быть как одна, так и все секции</li>
-        <li>Активные секции можно отключать повторным нажатием</li>
-        <li>Минимальное количество секций в компоненте — две</li>
-        <li>Не рекомендуется делать большое количество секций, для этого используйте компонент Tab Menu</li>
-      </>
-    ),
-  },
-});

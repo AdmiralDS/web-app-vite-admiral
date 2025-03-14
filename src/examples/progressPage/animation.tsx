@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ProgressPage } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ProgressPageAnimation = () => {
   const [tik, setTick] = useState(0);
 
   useEffect(() => {
@@ -33,11 +32,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/progressPage/animation')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ProgressPage. Анимация',
-    description: '',
-  },
-});

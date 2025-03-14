@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
@@ -49,7 +48,7 @@ const demo2_TreeModel: Array<TreeItemProps> = [
   },
 ];
 
-export const Template = () => {
+export const TreeVariants = () => {
   const [dataList, setDataList] = useState<TreeItemProps[]>(demo2_TreeModel);
 
   const handleChange = (dataList: TreeItemProps[]) => {
@@ -66,10 +65,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tree/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tree. Варианты',
-  },
-});

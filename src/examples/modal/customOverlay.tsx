@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Modal, ModalContent, ModalTitle } from '@admiral-ds/react-ui';
@@ -8,7 +7,7 @@ const overlayStyles = css`
   background-color: #ffdddd66;
 `;
 
-export const Template = () => {
+export const ModalCustomOverlay = () => {
   const [opened, setOpened] = useState(false);
 
   return (
@@ -32,12 +31,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/modal/customOverlay')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Modal. Кастомизация подложки модального окна',
-    description:
-      'У пользователя есть возможность кастомизировать внешний вид подложки модального окна. Для этого можно воспользоваться параметром overlayStyledCss, чтобы задать миксин со стилями для подложки. Либо можно воспользоваться параметрами overlayClassName, overlayStyle.',
-  },
-});

@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Tag, Tags } from '@admiral-ds/react-ui';
 
 // eslint-disable-next-line no-console
 const handleClickDangerTag = () => console.log('click danger tag');
 
-export const Template = () => {
+export const TagsExample = () => {
   return (
     <ExampleSection>
       <Tags
@@ -35,12 +34,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tag/tags')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tags. Группа тэгов',
-    description:
-      'Тэги можно использовать группами. Горизонтальные и вертикальные отступы между соседними тэгами равны 8px. Для каждого тэга можно отдельно задать width, kind и onClick, либо можно задать единые width, kind и onClick через Tags. Dimension задается единый для всех тэгов в группе.',
-  },
-});

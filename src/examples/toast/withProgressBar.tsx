@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection, uid } from '#routes/-helpers/examples';
 import {
@@ -114,7 +113,7 @@ const MessageForm = () => {
   );
 };
 
-export const Template = () => {
+export const ToastWithProgressBar = () => {
   return (
     <ExampleSection>
       <ToastProvider autoDeleteTime={5000}>
@@ -124,12 +123,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/toast/withProgressBar')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Toast. Опция Countdown',
-    description:
-      'Шкала, графически показывающая время, через которое закроется уведомление. Не изменяет размер компонента, находится в нижней части. Время отсчета соответствует времени показа уведомления.',
-  },
-});

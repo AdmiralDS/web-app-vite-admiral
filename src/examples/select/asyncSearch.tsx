@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, useDebounce } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
@@ -31,7 +30,7 @@ type PeopleResponseProps = {
   results: Array<PersonProps>;
 };
 
-export const Template = (props: SelectProps) => {
+export const SelectAsyncSearch = (props: SelectProps) => {
   const [selectValue, setSelectValue] = React.useState(props.value ? String(props.value) : '');
   const [options, setOptions] = React.useState<Array<{ value: string; text: string }>>([]);
   const [filter, setFilter] = React.useState('');
@@ -94,10 +93,3 @@ export const Template = (props: SelectProps) => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/select/asyncSearch')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode = "searchSelect". Асинхронный поиск',
-  },
-});

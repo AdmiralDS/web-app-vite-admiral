@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Button, Modal, ModalButtonPanel, ModalContent, ModalTitle } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ModalCloseIcon = () => {
   const [opened, setOpened] = useState(false);
 
   return (
@@ -36,12 +35,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/modal/closeIcon')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Modal. Иконка закрытия',
-    description:
-      'Во всех модальных окнах можно отключать иконку закрытия (крестик). Также есть возможность закрывать модальное окно при клике вне его и по нажатию Escape.',
-  },
-});

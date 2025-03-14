@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { SegmentedControl, SegmentedControlItem } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SegmentedControlBasic = () => {
   return (
     <ExampleSection text="Компонент состоит из обычных кнопок и имеет аналогичные настройки, опции и размеры.">
       <SegmentedControl
@@ -22,12 +21,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/segmentedControl/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SegmentedControl. Базовый пример',
-    description:
-      'Segmented Control — компонент для переключения контента, параметров или выбора свойств. Является самым низкоуровневым по отношению к Tab Menu, Content Switcher и Card Tabs. Аналог Сhoice Chips. Состоит из обычных кнопок',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { SelectField, Option } from '@admiral-ds/react-ui';
 
@@ -8,7 +7,7 @@ import { SearchSelectFieldProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const Field = ({
   placeholder = 'Город',
   label = 'Где находится компания?',
   options = OPTIONS_CITIES,
@@ -44,10 +43,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/selectField')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SelectField. Базовый пример',
-  },
-});

@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { RadioButton } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
 
@@ -17,11 +15,3 @@ export const RadioButtonSize = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/radiobutton/sizes')({
-  component: () => <RadioButtonSize />,
-  staticData: {
-    title: 'RadioButton. Размеры',
-    description: '',
-  },
-});

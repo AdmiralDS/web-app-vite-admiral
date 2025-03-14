@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import * as React from 'react';
 
 import { Option, Select } from '@admiral-ds/react-ui';
@@ -10,7 +9,7 @@ const createClearOptions = (length: number) => {
 };
 const OPTIONS = createClearOptions(20);
 
-export const Template = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
+export const SelectVirtualScroll = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
   const renderOptions = React.useMemo(() => {
     return OPTIONS.map((item, index) => (
       <Option value={item.value} key={`${index}`}>
@@ -27,10 +26,3 @@ export const Template = ({ placeholder = 'Серийный номер', ...props
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/select/virtualScroll')({
-  component: () => <Template />,
-  staticData: {
-    title: 'VirtualScroll',
-  },
-});

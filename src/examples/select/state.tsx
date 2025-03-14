@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, Field } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
@@ -6,7 +5,7 @@ import React, { ChangeEvent } from 'react';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const SelectState = ({
   placeholder = 'Город',
   options = OPTIONS_CITIES,
   ...props
@@ -105,10 +104,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/state')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Select. Состояния',
-  },
-});

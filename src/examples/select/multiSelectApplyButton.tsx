@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, Button, MenuActionsPanel } from '@admiral-ds/react-ui';
 import * as React from 'react';
@@ -15,7 +14,7 @@ const OPTIONS_CITIES = [
   'Сургут',
 ];
 
-export const Template = ({
+export const SelectMultiSelectApplyButton = ({
   placeholder = 'Города',
   options = OPTIONS_CITIES,
   ...props
@@ -70,10 +69,3 @@ export const Template = ({
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiSelectApplyButton')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode="multiple" с кнопкой "Применить"',
-  },
-});

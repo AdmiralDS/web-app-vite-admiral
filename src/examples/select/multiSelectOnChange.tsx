@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import type { IOnCloseProps } from '@admiral-ds/react-ui';
 import { Option, Select, T } from '@admiral-ds/react-ui';
@@ -13,7 +12,7 @@ const Separator = styled.div<{ $height?: number }>`
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const SelectMultiSelectOnChange = ({
   placeholder = 'Города',
   optionList = OPTIONS_CITIES,
   ...props
@@ -88,10 +87,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiSelectOnChange')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode="multiple" с обработчиком события onChange',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -15,7 +14,7 @@ const Layout = styled.div`
   transform: scale(1);
 `;
 
-export const Template = () => {
+export const FloatingButtonMenuModes = () => {
   const [open, setOpen] = useState(false);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,12 +61,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/floatingButton/withMenuModes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'FloatingButtonMenu. Режимы использования',
-    description:
-      'Компонент FloatingButtonMenu может использоваться как в контролируемом, так и в некотролируемом режиме. У компонента есть параметр isOpen, с помощью которого можно управлять видимостью меню. Также существует колбек onOpenChange, который срабатывает при каждом нажатии на основную кнопку и при клике вне группы кнопок. При закрытом меню основная кнопка может содержать любую иконку, при открытии меню иконка меняется на иконку «Close».',
-  },
-});

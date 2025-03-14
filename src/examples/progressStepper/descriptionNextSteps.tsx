@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ProgressStepper } from '@admiral-ds/react-ui';
 
@@ -11,7 +10,7 @@ const steps = [
   'Название шестого шага',
 ];
 
-export const Template = () => (
+export const ProgressStepperNextStep = () => (
   <>
     <ExampleSection text="Кастомная подпись о следующем шаге">
       <ProgressStepper
@@ -25,10 +24,3 @@ export const Template = () => (
     </ExampleSection>
   </>
 );
-
-export const Route = createFileRoute('/components/progressStepper/descriptionNextSteps')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ProgressStepper. Примеры настройки подписи о следующем шаге',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useRef, useState } from 'react';
 
 import { FileInput, FileItem, FileInputField } from '@admiral-ds/react-ui';
@@ -255,7 +254,7 @@ const FileInputMError = () => {
   );
 };
 
-export const FileInputstate = () => {
+export const FileInputState = () => {
   return (
     <>
       <FileInputXLDisabled />
@@ -267,10 +266,3 @@ export const FileInputstate = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/fileinput/state')({
-  component: () => <FileInputstate />,
-  staticData: {
-    title: 'File input. Состояния/статусы',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, TextButton, MenuActionsPanel } from '@admiral-ds/react-ui';
 import PlusOutline from '@admiral-ds/icons/build/service/PlusOutline.svg?react';
@@ -18,7 +17,7 @@ const OPTIONS_CITIES = [
   'Сургут',
 ];
 
-export const Template = ({ placeholder = 'Города', ...props }: SelectProps) => {
+export const SelectPanelWithAddButton = ({ placeholder = 'Города', ...props }: SelectProps) => {
   const [singleSelectValue, setSingleSelectValue] = React.useState<string>('');
   const [singleSearchValue, setSingleSearchValue] = React.useState<string>('');
 
@@ -145,10 +144,3 @@ export const Template = ({ placeholder = 'Города', ...props }: SelectProps
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/panelWithAddButton')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Нижняя панель с кнопкой "Добавить"',
-  },
-});

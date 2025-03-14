@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { Step, StepContent, Stepper } from '@admiral-ds/react-ui';
 
@@ -15,7 +14,7 @@ const steps = [
   { content: 'Неактивный шаг, текст занимает максимум три строки' },
 ];
 
-export const Template = () => {
+export const StepperVariants = () => {
   return (
     <>
       <ExampleSection
@@ -67,10 +66,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/stepper/variants')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Stepper. Варианты отображения строк',
-  },
-});

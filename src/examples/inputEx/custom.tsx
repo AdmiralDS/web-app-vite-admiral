@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { InputEx, MenuItem, MenuItemProps, RenderProps, RenderPropsType } from '@admiral-ds/react-ui';
 import { ReactNode, useState } from 'react';
@@ -27,7 +26,7 @@ const containerContrastBorder = css`
   border: dashed 2px var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
 `;
 
-export const Template = () => {
+export const InputExCustom = () => {
   const [localValue, setValue] = useState('Привет!');
   const [prefixValue, setPrefixValue] = useState<ReactNode>('prefix One');
   const [suffixValue, setSuffixValue] = useState<ReactNode>('One');
@@ -61,10 +60,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/inputEx/custom')({
-  component: () => <Template />,
-  staticData: {
-    title: 'InputEx. Custom',
-  },
-});

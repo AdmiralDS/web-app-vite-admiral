@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
 import { SegmentedControl, SegmentedControlItem, SegmentedControlProps } from '@admiral-ds/react-ui';
@@ -9,7 +8,7 @@ const ExampleSectionColumn = styled(ExampleSection)`
 
 const appearanceMap: Array<SegmentedControlProps['appearance']> = ['outlined', 'filled'];
 
-export const Template = () => {
+export const SegmentedControlStates = () => {
   return (
     <>
       <ExampleSectionColumn text="Disable (вторая внопка)">
@@ -53,11 +52,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/segmentedControl/states')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SegmentedControl. Состояния',
-    description: '',
-  },
-});

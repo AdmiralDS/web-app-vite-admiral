@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, Field, TextButton, MenuActionsPanel } from '@admiral-ds/react-ui';
 
@@ -8,7 +7,7 @@ import type { SelectProps, FieldProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const SelectMultiSelectChooseAll = ({
   placeholder = 'Города',
   label = 'Выберите города',
   options = OPTIONS_CITIES,
@@ -79,10 +78,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiSelectChooseAll')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SearchSelect multiple с кнопкой "Выбрать все"',
-  },
-});

@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ListMultiline = () => {
   return (
     <ExampleSection>
       <UnorderedList style={{ maxWidth: '500px' }}>
@@ -19,12 +18,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/list/multiline')({
-  component: () => <Template />,
-  staticData: {
-    title: 'List. Многострочность и регулировка ширины списка',
-    description:
-      'Пользователь может настроить необходимую ширину компонента самостоятельно, например, через атрибут style. По умолчанию компонент подстраивается под размеры родительского элемента.',
-  },
-});

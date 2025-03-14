@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { PhoneNumberInput } from '@admiral-ds/react-ui';
 import { useState } from 'react';
 
-export const Template = () => {
+export const PhoneNumberInputState = () => {
   const [localValue, setValue] = useState<string>('+7 123 456 78 90');
 
   return (
@@ -61,10 +60,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/phoneNumberInput/state')({
-  component: () => <Template />,
-  staticData: {
-    title: 'PhoneNumberInput. Состояния',
-  },
-});

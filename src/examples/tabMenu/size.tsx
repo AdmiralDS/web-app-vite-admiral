@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import {
   HorizontalTab,
@@ -114,7 +113,7 @@ export const TabMenuHorizontalComponent = ({ dimension = 'l' }: { dimension: 'l'
   );
 };
 
-export const Template = () => {
+export const SizeExample = () => {
   return (
     <>
       <ExampleSection text="Размер L">
@@ -126,11 +125,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/size')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TabMenuHorizontal. Размеры',
-    description: 'Компонент TabMenu существует в двух размерах - L 48 и M 40 px по высоте.',
-  },
-});

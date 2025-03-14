@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, MobileTopContainer } from '#routes/-helpers/examples';
 import { ProgressStepper } from '@admiral-ds/react-ui';
 
@@ -11,7 +10,7 @@ const steps = [
   'Название шестого шага',
 ];
 
-export const Template = () => (
+export const ProgressStepperMobile = () => (
   <>
     <ExampleSection text="Для корректного отображения адаптива элемента на устройстве с шириной экрана меньше 420px стоит вручную настроить минимальную ширину компонента">
       <MobileTopContainer>
@@ -20,10 +19,3 @@ export const Template = () => (
     </ExampleSection>
   </>
 );
-
-export const Route = createFileRoute('/components/progressStepper/mobile')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ProgressStepper. Адаптив (mobile)',
-  },
-});

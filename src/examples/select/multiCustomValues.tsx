@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, SelectValueWrapper } from '@admiral-ds/react-ui';
 import Cuba from '@admiral-ds/icons/build/flags/Cuba.svg?react';
@@ -43,7 +42,7 @@ const CustomSelect = styled(Select)<{ multiple?: boolean }>`
   ${(p) => p.multiple && MultipleMixin}
 `;
 
-export const Template = ({
+export const SelectMultiCustomValues = ({
   placeholder = 'Города',
   options = OPTIONS_PEOPLE,
   ...props
@@ -99,10 +98,3 @@ export const Template = ({
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/multiCustomValues')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Кастомное отображение значений с множественным выбором',
-  },
-});

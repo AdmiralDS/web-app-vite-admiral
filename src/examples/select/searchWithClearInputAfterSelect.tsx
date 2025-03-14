@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import * as React from 'react';
 import { Option, Select, T } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
@@ -22,7 +21,7 @@ const Wrapper = styled.div`
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const Template = ({
+export const SelectSearchWithClearInputAfterSelect = ({
   placeholder = 'Города',
   options = OPTIONS_CITIES,
   ...props
@@ -80,12 +79,3 @@ export const Template = ({
     </Container>
   );
 };
-
-export const Route = createFileRoute('/components/select/searchWithClearInputAfterSelect')({
-  component: () => <Template />,
-  staticData: {
-    title: 'mode="multiple" с опцией очистки введенного значения после выбора опции',
-    description:
-      'После выбора элемента значение, введенное для фильтрации очищается. Это поведение по умолчанию. Для того, чтобы изменить это поведение необходимо использовать свойтсво clearInputValueAfterSelect',
-  },
-});

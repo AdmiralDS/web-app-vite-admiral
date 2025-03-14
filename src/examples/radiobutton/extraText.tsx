@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { RadioButton } from '@admiral-ds/react-ui';
@@ -24,11 +23,3 @@ export const RadioButtonExtraText = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/radiobutton/extraText')({
-  component: () => <RadioButtonExtraText />,
-  staticData: {
-    title: 'RadioButton. Дополнительный текст',
-    description: 'Состояния аналогичны стандартным радио кнопкам',
-  },
-});

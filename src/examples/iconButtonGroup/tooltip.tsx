@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { IconButton, IconButtonGroup, TooltipHoc } from '@admiral-ds/react-ui';
 import PrintOutline from '@admiral-ds/icons/build/system/PrintOutline.svg?react';
@@ -28,11 +27,3 @@ export const Tooltip = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/iconButtonGroup/tooltip')({
-  component: () => <Tooltip />,
-  staticData: {
-    title: 'IconButtonGroup. Tooltip',
-    description: '',
-  },
-});

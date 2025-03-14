@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState, useRef, useMemo } from 'react';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
@@ -25,7 +24,7 @@ const columnList: Column[] = [
 
 const TOTAL_ROWS_AMOUNT = 100;
 
-const TableLoadOnScrollSpinner = () => {
+export const TableLoadOnScrollSpinner = () => {
   const [cols, setCols] = useState(columnList);
   const [rowsAmount, setRowsAmount] = useState(10);
   const [loading, setLoading] = useState(false);
@@ -87,11 +86,3 @@ const TableLoadOnScrollSpinner = () => {
     />
   );
 };
-
-export const Route = createFileRoute('/components/table/loadOnScrollSpinner')({
-  component: () => <TableLoadOnScrollSpinner />,
-  staticData: {
-    title: 'Table. Загрузка данных при скролле со спиннером',
-    description: 'Небольшое описание функционала',
-  },
-});

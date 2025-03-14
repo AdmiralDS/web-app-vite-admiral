@@ -1,6 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
-import { useQuery, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import styled from 'styled-components';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import {
@@ -15,8 +14,6 @@ import {
 import SearchOutline from '@admiral-ds/icons/build/system/SearchOutline.svg?react';
 import TimeOutline from '@admiral-ds/icons/build/system/TimeOutline.svg?react';
 import CloseOutlineSvg from '@admiral-ds/icons/build/service/CloseOutline.svg?react';
-
-const queryClient = new QueryClient();
 
 const Item = styled(MenuItem)`
   gap: 8px;
@@ -55,7 +52,7 @@ async function searchPeopleByName(name: string) {
 
 const PREFIX_OPTIONS = ['prefix One', 'prefix Two', 'prefix Three'];
 
-export const Template = () => {
+export const GlobalSearchBasic = () => {
   const [history, setHistory] = useState<Array<{ value: string; text: string }>>([]);
   const [searchValue, setSearchValue] = useState('');
 
@@ -198,16 +195,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/globalSearch/')({
-  component: () => (
-    <QueryClientProvider client={queryClient}>
-      <Template />
-    </QueryClientProvider>
-  ),
-  staticData: {
-    title: 'GlobalSearch. Базовый пример',
-    description:
-      'Компонент глобального поиска используется для поиска релевантных значений по введенному запросу. Используется, например,  для поиска по сайту. Как правило, располагается в верхней части страницы или шапке сайта, как один из главных элементов взаимодействия. Минимальная ширина 280px.',
-  },
-});

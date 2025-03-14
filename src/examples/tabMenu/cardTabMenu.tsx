@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import {
   CardTab,
@@ -83,7 +82,7 @@ const CustomHorizontalCardTab = forwardRef<HTMLButtonElement, CustomHorizontalTa
   },
 );
 
-export const Template = () => {
+export const CardTabMenu = () => {
   const [selectedTab, setSelectedTab] = useState<string | undefined>('1');
 
   const tabsMap = tabs.map((tab) => tab.tabId);
@@ -176,10 +175,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/tabMenu/cardTabMenu')({
-  component: () => <Template />,
-  staticData: {
-    title: 'CardTabMenu. Базовый пример',
-  },
-});

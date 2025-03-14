@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { useState } from 'react';
 import { Range } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SliderRangeOptions = () => {
   const [rangeValue, setRangeValue] = useState<[number, number]>([20, 35]);
 
   return (
@@ -23,10 +22,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/slider/rangeOptions')({
-  component: () => <Template />,
-  staticData: {
-    title: 'SliderRange. C настройками minValue, maxValue',
-  },
-});

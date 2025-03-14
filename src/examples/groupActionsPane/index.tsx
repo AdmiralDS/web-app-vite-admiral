@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -47,7 +46,7 @@ const columns: PaneColumn[] = [
   },
 ];
 
-export const Template = () => {
+export const GroupActionsPaneBasic = () => {
   const dimension = 'm';
   const [columnsVisibility, setColumnsVisibility] = useState(columns);
   const [searchValue, setSearchValue] = useState<string>('');
@@ -102,11 +101,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/groupActionsPane/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'GroupActionsPane. Базовый пример',
-    description: '',
-  },
-});

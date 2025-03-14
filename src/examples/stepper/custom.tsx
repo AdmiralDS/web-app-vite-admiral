@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Step, Stepper } from '@admiral-ds/react-ui';
 
@@ -12,7 +11,7 @@ const steps = [
   { content: 'Неактивный шаг, текст занимает максимум три строки' },
 ];
 
-export const Template = () => {
+export const StepperCustom = () => {
   return (
     <ExampleSection>
       <Stepper lineClamp={1} activeStep={2}>
@@ -27,10 +26,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/stepper/custom')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Stepper. Кастомный StepContent',
-  },
-});

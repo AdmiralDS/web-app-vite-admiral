@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
 import { ListIcon, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 import TasksOutline from '@admiral-ds/icons/build/documents/TasksOutline.svg?react';
 import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';
 import PeopleOutline from '@admiral-ds/icons/build/system/PeopleOutline.svg?react';
 
-export const Template = () => {
+export const ListUnordered = () => {
   return (
     <>
       <ExampleSection cssMixin={rowFlexMixin} text="Bullet">
@@ -65,12 +64,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/list/unorderedList')({
-  component: () => <Template />,
-  staticData: {
-    title: 'UnorderedList. Виды и размеры.',
-    description:
-      'UnorderedList – компонент для вертикальной группировки связанных по смыслу текстовых пунктов. UnorderedList следует использовать, если вам необходим неупорядоченный список, когда смысл списка не меняется в зависимости от порядка элементов. Компонент представлен в трех видах (Bullet, Virgule, Icon) и двух размерах (S и M).',
-  },
-});

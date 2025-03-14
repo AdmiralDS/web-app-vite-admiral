@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Spinner } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const SpinnerSizes = () => {
   return (
     <>
       <ExampleSection text="Размер S">
@@ -23,11 +22,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/spinner/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Spinner. Размеры',
-    description: 'Существует в пяти размерах - 16px (s), 20px (ms), 24px (m), 48px (l) и 64px (xl)',
-  },
-});

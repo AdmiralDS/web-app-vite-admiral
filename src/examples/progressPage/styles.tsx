@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ProgressPage } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ProgressPageStyles = () => {
   return (
     <>
       <ExampleSection text="Primary">
@@ -36,11 +35,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/progressPage/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'ProgressPage. Стили',
-    description: '',
-  },
-});

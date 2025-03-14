@@ -1,9 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Toast, ToastProvider } from '@admiral-ds/react-ui';
 import { ToastNotificationEmitter } from '#routes/-helpers/toast';
 
-export const Template = () => {
+export const ToastLineNotification = () => {
   return (
     <ExampleSection>
       <ToastProvider autoDeleteTime={5000}>
@@ -13,12 +12,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/toast/lineNotification')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Toast. Line Notification',
-    description:
-      'Быстрые уведомления всплывают сверху по всей ширине рабочей области сайта, и остаются там несколько секунд (настраиваемый параметр). Могут содержать ссылку или быть без нее.',
-  },
-});

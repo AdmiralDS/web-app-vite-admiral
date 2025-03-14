@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { NumberInput } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const NumberInputStatus = () => {
   return (
     <>
       <ExampleSection text="Success">
@@ -32,10 +31,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/numberInput/status')({
-  component: () => <Template />,
-  staticData: {
-    title: 'NumberInput. Статусы',
-  },
-});

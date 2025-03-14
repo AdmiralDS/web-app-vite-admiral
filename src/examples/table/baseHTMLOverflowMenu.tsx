@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled, { css } from 'styled-components';
 import { useRef, useEffect, useState, useMemo } from 'react';
 import { TooltipHoc, RowAction, OverflowMenu, MenuItem } from '@admiral-ds/react-ui';
@@ -69,7 +68,7 @@ const HtmlTable = styled.table`
   }
 `;
 
-const TableBaseHTMLOverflowMenu = () => {
+export const TableBaseHTMLOverflowMenu = () => {
   const [table, setTable] = useState<HTMLTableElement | null>(null);
   return (
     <HtmlTable ref={(node) => setTable(node)} style={{ maxHeight: 500, maxWidth: 980 }}>
@@ -229,11 +228,3 @@ const Menu = ({ onVisibilityChange }: { onVisibilityChange?: (isVisible: boolean
     />
   );
 };
-
-export const Route = createFileRoute('/components/table/baseHTMLOverflowMenu')({
-  component: () => <TableBaseHTMLOverflowMenu />,
-  staticData: {
-    title: 'Table. Базовый HTML table с Overflow Menu',
-    description: `Пример минимальной стилизации html table с Overflow Menu.`,
-  },
-});

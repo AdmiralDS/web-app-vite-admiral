@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
-export const Template = () => {
+export const ListBasic = () => {
   return (
     <>
       <ExampleSection text="Списки могут быть:">
@@ -51,12 +50,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/list/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'List. Базовый пример',
-    description:
-      'Компонент для вертикальной группировки связанных по смыслу текстовых пунктов. Представлен в двух вариантах OrderedList и UnorderedList.',
-  },
-});

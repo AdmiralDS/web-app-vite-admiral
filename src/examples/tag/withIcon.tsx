@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
 import { Tag, Tags } from '@admiral-ds/react-ui';
 import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react';
@@ -6,7 +5,7 @@ import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react
 // eslint-disable-next-line no-console
 const clickHandler = () => console.log('click active tag');
 
-export const Template = () => {
+export const TagWithIcon = () => {
   return (
     <ExampleSection cssMixin={rowFlexMixin}>
       <Tags>
@@ -46,12 +45,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/tag/withIcon')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Tag. С иконкой',
-    description:
-      'Тэги могут быть с иконками, но только в том случае, если статус отображается через цвет обводки и фона (параметр statusViaBackground установлен в true).',
-  },
-});

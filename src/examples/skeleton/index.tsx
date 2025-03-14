@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { skeletonAnimationMixin } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
@@ -9,7 +8,7 @@ const Skeleton = styled.div`
   ${skeletonAnimationMixin};
 `;
 
-export const Template = () => {
+export const SkeletonBasic = () => {
   return (
     <>
       <ExampleSection
@@ -47,10 +46,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/skeleton/')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Skeleton. Базовый пример',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
@@ -50,7 +49,7 @@ const items = [
   },
 ];
 
-export const Template = () => {
+export const TextButtonMenuStyles = () => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
   const model = useMemo(() => {
     return items.map((item) => ({
@@ -193,11 +192,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/textButtonMenu/styles')({
-  component: () => <Template />,
-  staticData: {
-    title: 'TextButtonMenu. Размеры и стили',
-    description: 'Существует в двух размерах (M, S) и стилях (primary, secondary).',
-  },
-});

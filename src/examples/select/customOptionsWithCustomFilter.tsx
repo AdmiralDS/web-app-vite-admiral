@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select, defaultFilterItem, typography } from '@admiral-ds/react-ui';
 import type { SelectProps, SearchFormat } from '@admiral-ds/react-ui';
@@ -69,7 +68,10 @@ const ExtraText = styled.div`
   ${typography['Body/Body 2 Short']}
 `;
 
-export const Template = ({ options = OPTIONS, ...props }: SelectProps & { options?: OptionsType[] }) => {
+export const SelectCustomOptionsWithCustomFilter = ({
+  options = OPTIONS,
+  ...props
+}: SelectProps & { options?: OptionsType[] }) => {
   const [selectValue, setSelectValue] = React.useState<string>(props.value ? String(props.value) : options[2].value);
   const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectValue(e.target.value);
@@ -131,10 +133,3 @@ export const Template = ({ options = OPTIONS, ...props }: SelectProps & { option
     </>
   );
 };
-
-export const Route = createFileRoute('/components/select/customOptionsWithCustomFilter')({
-  component: () => <Template />,
-  staticData: {
-    title: 'Кастомные опции с кастомной фильтрацией',
-  },
-});

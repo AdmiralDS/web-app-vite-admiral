@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { MenuButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
@@ -399,11 +398,3 @@ export const WithIcon = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/menuButton/withIcon')({
-  component: () => <WithIcon />,
-  staticData: {
-    title: 'MenuButton. С иконкой',
-    description: '',
-  },
-});
