@@ -1,10 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { DateInput } from '@admiral-ds/react-ui';
 import { useState } from 'react';
 import CalendarSolidSVG from '@admiral-ds/icons/build/system/CalendarSolid.svg?react';
 
-export const Template = () => {
+export const DateInputCustom = () => {
   const [localValue, setValue] = useState('');
 
   return (
@@ -20,10 +19,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dateInput/custom')({
-  component: () => <Template />,
-  staticData: {
-    title: 'DateInput. С альтернативной иконкой',
-  },
-});

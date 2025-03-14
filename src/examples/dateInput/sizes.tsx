@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { DateInput } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -8,7 +7,7 @@ const DateInputStyled = styled(DateInput)`
   max-width: 300px;
 `;
 
-export const Template = () => {
+export const DateInputSizes = () => {
   const [localValue, setValue] = useState('');
   const [localValue2, setValue2] = useState('');
   const [localValue3, setValue3] = useState('');
@@ -45,11 +44,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/dateInput/sizes')({
-  component: () => <Template />,
-  staticData: {
-    title: 'DateInput. Размеры',
-    description: 'Компонент существует в 3 размерах 32px (s), 40px (m) и 56px (xl)',
-  },
-});

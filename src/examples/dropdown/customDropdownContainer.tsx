@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -118,11 +117,3 @@ export const MenuContainer = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/customDropdownContainer')({
-  component: () => <MenuContainer />,
-  staticData: {
-    title: 'Контейнер с меню',
-    description: '',
-  },
-});

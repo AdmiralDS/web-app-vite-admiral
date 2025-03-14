@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { useMemo } from 'react';
 
@@ -181,7 +180,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const MenuMultiLevel = () => {
+export const MenuMultiLevel = () => {
   const convertStoryItem = (storyItem: StoryItem): MenuModelItemProps => {
     const item: MenuModelItemProps = {
       id: storyItem.id,
@@ -215,12 +214,3 @@ const MenuMultiLevel = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuMultiLevel')({
-  component: () => <MenuMultiLevel />,
-  staticData: {
-    title: 'Menu. Многоуровневое меню',
-    description:
-      'Многоуровневая структура меню задается в модели данных, через указание дочерних элементов в свойстве subItems. Ограничения по количеству уровней вложенности нет, но не следует забывать о комфорте пользователей.',
-  },
-});

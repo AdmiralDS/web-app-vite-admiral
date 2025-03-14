@@ -1,9 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import { Divider } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
 
-const DividerType = () => {
+export const DividerType = () => {
   return (
     <>
       <ExampleSection text={'Горизонтальный'}>
@@ -15,10 +13,3 @@ const DividerType = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/divider/type')({
-  component: () => <DividerType />,
-  staticData: {
-    title: 'Divider. Тип (orientation)',
-  },
-});

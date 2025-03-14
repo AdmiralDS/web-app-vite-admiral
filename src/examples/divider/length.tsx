@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { Divider } from '@admiral-ds/react-ui';
@@ -10,7 +9,7 @@ const WrapperVertical = styled.div`
   height: 100%;
 `;
 
-const DividerType = () => {
+export const DividerLength = () => {
   return (
     <>
       <ExampleSection text={'Длина линии, примеры в %'}>
@@ -28,10 +27,3 @@ const DividerType = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/divider/length')({
-  component: () => <DividerType />,
-  staticData: {
-    title: 'Divider. Длина линии (length)',
-  },
-});

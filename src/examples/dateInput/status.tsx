@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { DateInput } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -8,7 +7,7 @@ const DateInputStyled = styled(DateInput)`
   max-width: 300px;
 `;
 
-export const Template = () => {
+export const DateInputStatus = () => {
   const [localValue, setValue] = useState('');
   const [localValue2, setValue2] = useState('');
 
@@ -35,10 +34,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/dateInput/status')({
-  component: () => <Template />,
-  staticData: {
-    title: 'DateInput. Статусы',
-  },
-});

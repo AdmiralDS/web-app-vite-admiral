@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { useMemo } from 'react';
 
@@ -48,7 +47,7 @@ const MultiLineMenuItem = styled(MenuItem)`
   white-space: pre-wrap;
 `;
 
-const MenuMultiLine = () => {
+export const MenuMultiLine = () => {
   const model = useMemo(() => {
     return items.map((item) => {
       return {
@@ -70,11 +69,3 @@ const MenuMultiLine = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuMultiLine')({
-  component: () => <MenuMultiLine />,
-  staticData: {
-    title: 'Menu. Многострочные пункты',
-    description: '',
-  },
-});

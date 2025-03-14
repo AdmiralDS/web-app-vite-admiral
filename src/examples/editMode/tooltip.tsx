@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
@@ -27,18 +26,10 @@ const Example = () => {
   );
 };
 
-export const EditModeDisableCopying = () => {
+export const EditModeTooltip = () => {
   return (
     <ExampleSection>
       <Example />
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/editMode/tooltip')({
-  component: () => <EditModeDisableCopying />,
-  staticData: {
-    title: 'Edit mode. Тултип',
-    description: 'Отображение тултипа, по умолчанию true',
-  },
-});

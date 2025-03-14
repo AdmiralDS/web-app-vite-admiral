@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useTheme } from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -53,7 +52,7 @@ const items = [
   },
 ];
 
-const MenuActionSearch = () => {
+export const MenuActionSearch = () => {
   const initialButtonText = 'Добавить';
   const theme = useTheme() || LIGHT_THEME;
 
@@ -146,11 +145,3 @@ const MenuActionSearch = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuActionSearch')({
-  component: () => <MenuActionSearch />,
-  staticData: {
-    title: 'Menu. Пример с Actions и Search',
-    description: '',
-  },
-});

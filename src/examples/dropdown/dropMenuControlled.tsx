@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
@@ -141,11 +140,3 @@ export const DropMenuControlled = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/dropMenuControlled')({
-  component: () => <DropMenuControlled />,
-  staticData: {
-    title: 'DropMenu. Контроллируемое состояние видимости',
-    description: '',
-  },
-});

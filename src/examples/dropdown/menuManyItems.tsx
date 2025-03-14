@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo } from 'react';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -11,7 +10,7 @@ const createItems = (length: number) => {
 
 const items = createItems(200);
 
-const MenuManyItems = () => {
+export const MenuManyItems = () => {
   const model = useMemo(() => {
     return items.map((item) => ({
       id: item.id,
@@ -31,11 +30,3 @@ const MenuManyItems = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuManyItems')({
-  component: () => <MenuManyItems />,
-  staticData: {
-    title: 'Menu. Пример с большим количеством item',
-    description: 'Для проверки прокрутки меню при быстрой смене активного элемента.',
-  },
-});

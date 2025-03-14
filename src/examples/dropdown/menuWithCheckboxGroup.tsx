@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -64,7 +63,7 @@ const items: Array<CheckboxGroupItemProps> = [
   },
 ];
 
-const MenuWithCheckboxGroup = () => {
+export const MenuWithCheckboxGroup = () => {
   const dimension: 'l' | 'm' | 's' = 'l';
 
   const [internalModel, setInternalModel] = useState<Array<CheckboxGroupItemProps>>([...items]);
@@ -174,11 +173,3 @@ const MenuWithCheckboxGroup = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuWithCheckboxGroup')({
-  component: () => <MenuWithCheckboxGroup />,
-  staticData: {
-    title: 'Menu. С CheckboxGroup',
-    description: '',
-  },
-});

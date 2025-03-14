@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { Divider } from '@admiral-ds/react-ui';
@@ -9,7 +8,7 @@ const WrapperVertical = styled.div`
   margin-top: 16px;
 `;
 
-const DividerType = () => {
+export const DividerThikness = () => {
   return (
     <>
       <ExampleSection text={'Толщина линии s'}>
@@ -27,11 +26,3 @@ const DividerType = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/divider/thikness')({
-  component: () => <DividerType />,
-  staticData: {
-    title: 'Divider. Толщина линии (dimension)',
-    description: 'Размер компонента, определяет толщину разделителя "s","m"',
-  },
-});

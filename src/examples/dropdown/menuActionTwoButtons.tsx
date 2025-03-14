@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { css } from 'styled-components';
 import { useMemo } from 'react';
 
@@ -49,7 +48,7 @@ const ActionPanelFlex = css`
   gap: 8px;
 `;
 
-const MenuActionTwoButtons = () => {
+export const MenuActionTwoButtons = () => {
   const model = useMemo(() => {
     return items.map((item) => ({
       id: item.id,
@@ -97,11 +96,3 @@ const MenuActionTwoButtons = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuActionTwoButtons')({
-  component: () => <MenuActionTwoButtons />,
-  staticData: {
-    title: 'Menu. Пример с Actions с двумя кнопками',
-    description: '',
-  },
-});

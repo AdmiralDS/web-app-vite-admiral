@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 
 import { Divider } from '@admiral-ds/react-ui';
@@ -21,7 +20,7 @@ const ExampleSectionDark = styled(ExampleSection)`
   background-color: #181818;
 `;
 
-const DividerType = () => {
+export const DividerStyle = () => {
   return (
     <>
       <ExampleSection text={'Стиль default'}>
@@ -87,10 +86,3 @@ const DividerType = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/divider/style')({
-  component: () => <DividerType />,
-  staticData: {
-    title: 'Divider. Стиль (appearance)',
-  },
-});

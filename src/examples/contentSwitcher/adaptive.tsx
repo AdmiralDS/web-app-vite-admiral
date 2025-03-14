@@ -33,7 +33,7 @@ const SwitcherWrapper = styled.div`
   }
 `;
 
-export const ContentSwitcherStyles = () => {
+export const ContentSwitcherAdaptive = () => {
   return (
     <ExampleSection
       text={

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { DateInput } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -11,7 +10,7 @@ const weekendMixin = css<{ disabled?: boolean }>`
       : `var(--admiral-color-Error_Error60Main, ${p.theme.color['Error/Error 60 Main']})`};
 `;
 
-export const Template = () => {
+export const DateInputSpecialDates = () => {
   const [localValue, setValue] = useState('');
 
   const highlightWeekend = (date: Date) => {
@@ -34,10 +33,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dateInput/specialDates')({
-  component: () => <Template />,
-  staticData: {
-    title: 'DateInput. Выделение определённых дат',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
@@ -21,7 +20,7 @@ const Component = ({ dimension, bold }: { dimension: EditModeProps['dimension'];
   );
 };
 
-const Examples = () => {
+export const EditModeDimensions = () => {
   return (
     <>
       <ExampleSection text="Размер S">
@@ -41,16 +40,3 @@ const Examples = () => {
     </>
   );
 };
-
-export const EditModeDimensions = () => {
-  return <Examples />;
-};
-
-export const Route = createFileRoute('/components/editMode/dimensions')({
-  component: () => <EditModeDimensions />,
-  staticData: {
-    title: 'Edit mode. Размеры',
-    description:
-      'Присутствует в 4 размерах: S, M (имеют написание Regular и Bold) и XL, XXL (только Bold). Переключение между Regular и Bold не изменяют размеры компонента. В режиме редактирования может применяться с поясняющим текстом или без него.',
-  },
-});

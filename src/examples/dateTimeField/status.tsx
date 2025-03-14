@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import {
   DateTimeContainer,
   DateTimeDateInput,
@@ -77,10 +75,3 @@ const Example = () => {
 export const DateTimeFieldStatus = () => {
   return <Example />;
 };
-
-export const Route = createFileRoute('/components/dateTimeField/status')({
-  component: () => <DateTimeFieldStatus />,
-  staticData: {
-    title: 'DateTime Field. Состояние/статус',
-  },
-});

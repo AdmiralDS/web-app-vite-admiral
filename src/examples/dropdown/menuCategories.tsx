@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled from 'styled-components';
 import { useMemo, useState } from 'react';
 
@@ -81,7 +80,7 @@ const StyledAdditionalText = styled.div`
   pointer-events: none;
 `;
 
-const MenuCategories = () => {
+export const MenuCategories = () => {
   const dimension = 'l';
   const model = useMemo(() => {
     return items.reduce((acc: MenuModelItemProps[], item) => {
@@ -131,11 +130,3 @@ const MenuCategories = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuCategories')({
-  component: () => <MenuCategories />,
-  staticData: {
-    title: 'Menu. Категории',
-    description: 'Используются для визуального и логического разделения списка опций в выпадающем меню',
-  },
-});

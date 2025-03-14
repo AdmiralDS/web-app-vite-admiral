@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo } from 'react';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -45,7 +44,7 @@ const items = [
   },
 ];
 
-const MenuLockCycleScroll = () => {
+export const MenuLockCycleScroll = () => {
   const model = useMemo(() => {
     return items.map((item) => ({
       id: item.id,
@@ -71,12 +70,3 @@ const MenuLockCycleScroll = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuLockCycleScroll')({
-  component: () => <MenuLockCycleScroll />,
-  staticData: {
-    title: 'Menu. Пример без цикла обхода пунктов',
-    description:
-      'Для блокировки цикличного обхода пунктов меню можно использовать onForwardCycleApprove и onBackwardCycleApprove.',
-  },
-});

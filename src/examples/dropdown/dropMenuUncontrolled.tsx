@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 
 import { Button, DropMenu, MenuItem, RadioButton } from '@admiral-ds/react-ui';
@@ -123,11 +122,3 @@ export const DropMenuUncontrolled = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/dropMenuUncontrolled')({
-  component: () => <DropMenuUncontrolled />,
-  staticData: {
-    title: 'DropMenu. Неконтроллируемое состояние видимости',
-    description: '',
-  },
-});

@@ -1,11 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
 import { EditModeField } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
 
-const Example = () => {
+export const EditModeExtraText = () => {
   const value = 'Привет!';
   const placeholder = 'Placeholder';
   const [localValue, setValue] = useState<string>(String(value) ?? '');
@@ -39,14 +38,3 @@ const Example = () => {
     </>
   );
 };
-
-export const EditModeExtraText = () => {
-  return <Example />;
-};
-
-export const Route = createFileRoute('/components/editMode/extratext')({
-  component: () => <EditModeExtraText />,
-  staticData: {
-    title: 'Edit mode. Дополнительный текст и лэйбл',
-  },
-});

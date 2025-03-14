@@ -16,7 +16,7 @@ const listData = [
   { id: '3', label: 'Самара', disabled: false, selected: false },
 ];
 
-export const ChipsStyles = () => {
+export const ChipsSizes = () => {
   return (
     <>
       <ExampleSection text="Размер M">

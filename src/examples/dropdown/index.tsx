@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 
@@ -78,7 +77,7 @@ const handleVisibilityChangeUnControlledState = (isVisible: boolean) => {
   }
 };
 
-const DropdownDescription = () => {
+export const DropdownDescription = () => {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -155,12 +154,3 @@ const DropdownDescription = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/')({
-  component: () => <DropdownDescription />,
-  staticData: {
-    title: 'DropdownMenu',
-    description:
-      'Для оформления выпадающего меню можно использовать компонент DropMenu. Если необходима кастомизация, то есть возможность использовать только Menu или DropdownContainer',
-  },
-});

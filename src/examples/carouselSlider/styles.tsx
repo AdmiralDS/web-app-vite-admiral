@@ -21,7 +21,7 @@ const SliderWrapper = styled.div<{ $appearance?: 'white' | 'dark' }>`
     `border: 1px solid var(--admiral-color-Neutral_Neutral20, ${p.theme.color['Neutral/Neutral 20']})`}
 `;
 
-export const CarouselSliderBasic = (props: CarouselSliderProps) => {
+export const CarouselSliderStyles = (props: CarouselSliderProps) => {
   const [currentDefault, setCurrentDefault] = useState(0);
   const handleCurrentDefaultChange = (newValue: number) => {
     setCurrentDefault(newValue);

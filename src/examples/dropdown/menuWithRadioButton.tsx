@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo } from 'react';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -43,7 +42,7 @@ const radioButtonItems: Array<StoryItem> = [
   },
 ];
 
-const MenuWithRadioButton = () => {
+export const MenuWithRadioButton = () => {
   const dimension = 'l';
 
   const modelRadioButton = useMemo(() => {
@@ -67,11 +66,3 @@ const MenuWithRadioButton = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuWithRadioButton')({
-  component: () => <MenuWithRadioButton />,
-  staticData: {
-    title: 'Menu. С RadioButton',
-    description: '',
-  },
-});

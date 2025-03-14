@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo } from 'react';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -45,7 +44,7 @@ const items: Array<StoryItem> = [
 
 const MenuItemWithTooltip = TooltipHoc(MenuItem);
 
-const MenuWithTooltip = () => {
+export const MenuWithTooltip = () => {
   const dimension = 'l';
 
   const model = useMemo(() => {
@@ -76,11 +75,3 @@ const MenuWithTooltip = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuWithTooltip')({
-  component: () => <MenuWithTooltip />,
-  staticData: {
-    title: 'Menu. Длинный текст',
-    description: '',
-  },
-});

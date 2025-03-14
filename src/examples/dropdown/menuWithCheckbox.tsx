@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo, useState } from 'react';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -38,7 +37,7 @@ const checkboxItems: Array<StoryItem> = [
   },
 ];
 
-const MenuWithCheckbox = () => {
+export const MenuWithCheckbox = () => {
   const dimension: 'l' | 'm' | 's' = 'l';
 
   const [checkedOptions, setCheckedOptions] = useState<Record<string, boolean>>({});
@@ -80,11 +79,3 @@ const MenuWithCheckbox = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuWithCheckbox')({
-  component: () => <MenuWithCheckbox />,
-  staticData: {
-    title: 'Menu. С Checkbox',
-    description: '',
-  },
-});

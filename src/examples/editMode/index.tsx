@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
@@ -76,11 +75,3 @@ export const Example = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/editMode/')({
-  component: () => <Example />,
-  staticData: {
-    title: 'Edit mode. Базовый пример',
-    description: 'Компонент для редактирования текста. Может быть с лэйблом или без него.',
-  },
-});

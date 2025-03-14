@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
@@ -68,10 +67,3 @@ export const EditModeMultiline = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/editMode/multiline')({
-  component: () => <EditModeMultiline />,
-  staticData: {
-    title: 'Edit mode. Многострочное отображение',
-  },
-});

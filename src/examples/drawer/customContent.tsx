@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { Drawer, Button, CheckboxField, DrawerContent } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -108,12 +107,3 @@ export const DrawerCustomContent = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/drawer/customContent')({
-  component: () => <DrawerCustomContent />,
-  staticData: {
-    title: 'Drawer. Свободное (кастомизированное) наполнение',
-    description:
-      'Наполнение Drawer контентом полностью контролируется пользователем. Пользователь может разместить внутри Drawer любые свои компоненты, а также может воспользоваться вспомогательными компонентами DrawerTitle, DrawerContent, DrawerButtonPanel, экспортируемыми из библиотеки @admiral-ds/react-ui.',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection } from '#routes/-helpers/examples';
 import { ActionsPanel, DateInput, TextButton, changeInputData, refSetter } from '@admiral-ds/react-ui';
 import type { DateInputProps } from '@admiral-ds/react-ui';
@@ -39,7 +38,7 @@ const CustomDateInput = forwardRef<HTMLInputElement, DateInputProps>((props, ref
   );
 });
 
-export const Template = () => {
+export const DateInputWithButton = () => {
   const [localValue, setValue] = useState('');
   return (
     <ExampleSection>
@@ -56,8 +55,3 @@ export const Template = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dateInput/withButton')({
-  component: () => <Template />,
-  staticData: { title: 'DateInput. С кнопкой "Сегодня"' },
-});

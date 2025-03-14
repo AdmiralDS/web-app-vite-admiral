@@ -1,39 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-
-import {
-  DateTimeContainer,
-  DateTimeDateInput,
-  DateTimeSeparator,
-  DateTimeTimeInput,
-  Field,
-} from '@admiral-ds/react-ui';
-import { ExampleSection } from '../../-helpers/examples';
-
-const CompoundComponent = ({ extraText }: { extraText?: string }) => {
-  return (
-    <Field extraText={extraText}>
-      <DateTimeContainer>
-        <DateTimeDateInput />
-        <DateTimeSeparator />
-        <DateTimeTimeInput />
-      </DateTimeContainer>
-    </Field>
-  );
-};
-
-const Example = () => {
-  return (
-    <>
-      <ExampleSection>
-        <CompoundComponent extraText={'Дополнительный текст'} />
-      </ExampleSection>
-    </>
-  );
-};
-
-export const DateTimeFieldExtraText = () => {
-  return <Example />;
-};
+import { DateTimeFieldExtraText } from '#examples/dateTimeField/extraText';
 
 export const Route = createFileRoute('/components/dateTimeField/extraText')({
   component: () => <DateTimeFieldExtraText />,

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled, { css } from 'styled-components';
 import { useState } from 'react';
 
@@ -106,7 +105,7 @@ const IconAfter = styled.div`
   ${iconSize}
 `;
 
-const MenuWithAddTextAndIcons = () => {
+export const MenuWithAddTextAndIcons = () => {
   const modelBase = items.map((item) => ({
     id: item.id,
     render: (options: RenderOptionProps) => (
@@ -222,11 +221,3 @@ const MenuWithAddTextAndIcons = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuWithAddTextAndIcons')({
-  component: () => <MenuWithAddTextAndIcons />,
-  staticData: {
-    title: 'Menu. С дополнительным текстом и иконками',
-    description: 'Можно включить вариант с дополнительным текстом и иконкой',
-  },
-});

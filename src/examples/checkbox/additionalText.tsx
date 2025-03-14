@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export const CheckboxStates = () => {
+export const CheckboxAdditionalText = () => {
   return (
     <>
       <ExampleSection text="Дополнительный текст">

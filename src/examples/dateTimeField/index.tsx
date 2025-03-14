@@ -1,5 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
-
 import {
   DateTimeContainer,
   DateTimeDateInput,
@@ -49,12 +47,3 @@ export const DateTimeFieldBasic = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/dateTimeField/')({
-  component: () => <DateTimeFieldBasic />,
-  staticData: {
-    title: 'DateTime Field. Базовый пример',
-    description:
-      'Совмещенное поле ввода для выбора даты и времени, состоит из нескольких компонентов, ипортируемых отдельно',
-  },
-});

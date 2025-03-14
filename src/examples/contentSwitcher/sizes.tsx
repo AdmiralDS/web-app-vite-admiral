@@ -7,7 +7,7 @@ const list = [
   { title: 'Disabled button', content: '3', disabled: true },
 ];
 
-export const ContentSwitcherStyles = () => {
+export const ContentSwitcherSizes = () => {
   return (
     <>
       <ExampleSection text="Размер L">

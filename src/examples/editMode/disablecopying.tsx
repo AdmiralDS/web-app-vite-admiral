@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
@@ -25,11 +24,3 @@ export const EditModeDisableCopying = () => {
     </ExampleSection>
   );
 };
-
-export const Route = createFileRoute('/components/editMode/disablecopying')({
-  component: () => <EditModeDisableCopying />,
-  staticData: {
-    title: 'Edit mode. Невозможность копирования',
-    description: 'Наличие этого атрибута отключает возможность выделения и копирования значения поля',
-  },
-});

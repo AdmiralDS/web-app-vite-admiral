@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import styled, { css } from 'styled-components';
 import { useState } from 'react';
 
@@ -98,7 +97,7 @@ const StyledMenuItem = styled(MenuItem)`
   box-sizing: border-box;
 `;
 
-const MenuWithIcons = () => {
+export const MenuWithIcons = () => {
   const modelIconBefore = items.map((item) => ({
     id: item.id,
     render: (options: RenderOptionProps) => (
@@ -181,11 +180,3 @@ const MenuWithIcons = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuWithIcons')({
-  component: () => <MenuWithIcons />,
-  staticData: {
-    title: 'Menu. С иконками',
-    description: '',
-  },
-});

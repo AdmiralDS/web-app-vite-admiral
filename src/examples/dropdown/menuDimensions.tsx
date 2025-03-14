@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useMemo } from 'react';
 
 import { ExampleSection } from '#routes/-helpers/examples';
@@ -44,7 +43,7 @@ const STORY_ITEMS = [
   },
 ];
 
-const MenuDimensions = () => {
+export const MenuDimensions = () => {
   const model = useMemo(() => {
     return STORY_ITEMS.map((item) => ({
       id: item.id,
@@ -76,11 +75,3 @@ const MenuDimensions = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/dropdown/menuDimensions')({
-  component: () => <MenuDimensions />,
-  staticData: {
-    title: 'Menu. Размеры',
-    description: '',
-  },
-});

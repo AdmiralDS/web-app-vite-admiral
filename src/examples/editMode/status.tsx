@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
@@ -39,7 +38,7 @@ const Component = ({
   );
 };
 
-const Example = () => {
+export const EditModeStatus = () => {
   return (
     <>
       <ExampleSection text={'Состояние disabled'}>
@@ -60,14 +59,3 @@ const Example = () => {
     </>
   );
 };
-
-export const EditModeStatus = () => {
-  return <Example />;
-};
-
-export const Route = createFileRoute('/components/editMode/status')({
-  component: () => <EditModeStatus />,
-  staticData: {
-    title: 'Edit mode. Состояние/статус',
-  },
-});

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { ExampleSection, PStyled } from '#routes/-helpers/examples';
 import { DateField } from '@admiral-ds/react-ui';
 import { useState } from 'react';
@@ -7,7 +6,7 @@ import styled from 'styled-components';
 const DateFieldStyled = styled(DateField)`
   max-width: 300px;
 `;
-export const Template = () => {
+export const DateInputField = () => {
   const [localValue, setValue] = useState('');
   const [localValue2, setValue2] = useState('');
 
@@ -61,10 +60,3 @@ export const Template = () => {
     </>
   );
 };
-
-export const Route = createFileRoute('/components/dateInput/dateField')({
-  component: () => <Template />,
-  staticData: {
-    title: 'DateField. Базовый пример',
-  },
-});
