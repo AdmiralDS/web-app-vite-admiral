@@ -14,7 +14,7 @@ const OPTIONS_CITIES = [
   'Сургут',
 ];
 
-export const SelectMultiSelectApplyButton = ({
+export const MultiSelectApplyButton = ({
   placeholder = 'Города',
   options = OPTIONS_CITIES,
   ...props

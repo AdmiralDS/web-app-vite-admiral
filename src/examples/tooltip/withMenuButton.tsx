@@ -8,7 +8,7 @@ const menuItems = [
   { id: 3, label: 'item-3' },
 ];
 
-export const TooltipWithmenuButton = () => {
+export const TooltipWithMenuButton = () => {
   const menuModel = useMemo(() => {
     return menuItems.map((item) => ({
       id: String(item.id),

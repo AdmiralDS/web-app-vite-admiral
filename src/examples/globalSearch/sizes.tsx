@@ -1,7 +1,7 @@
 import { ExampleSection } from '#routes/-helpers/examples';
 import { GlobalSearchWithLogic } from '#routes/-helpers/globalSearch';
 
-export const GlobalSearchDimension = () => {
+export const GlobalSearchSizes = () => {
   return (
     <>
       <ExampleSection text="Размер XL (56px)">

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const PREFIX_OPTIONS = ['prefix One', 'prefix Two', 'prefix Three'];
 
-export const GlobalSearchVarinats = () => {
+export const GlobalSearchVariants = () => {
   const [prefixValue, setPrefixValue] = useState<React.ReactNode>('prefix One');
 
   return (

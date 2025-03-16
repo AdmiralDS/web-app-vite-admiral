@@ -1,27 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { ProgressPage } from '@admiral-ds/react-ui';
-
-export const Template = () => {
-  return (
-    <ExampleSection>
-      <ProgressPage
-        label={
-          <>
-            <div>{'Загрузка данных...'}</div>
-            <div> {50}%</div>
-          </>
-        }
-        percent={50}
-        role="alert"
-        aria-live="assertive"
-      />
-    </ExampleSection>
-  );
-};
+import { ProgressPageBasic } from '#examples/progressPage';
 
 export const Route = createFileRoute('/components/progressPage/')({
-  component: () => <Template />,
+  component: () => <ProgressPageBasic />,
   staticData: {
     title: 'ProgressPage. Базовый пример',
     description: (

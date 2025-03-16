@@ -7,7 +7,7 @@ import type { SelectProps, FieldProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const SelectMultiSelectChooseAll = ({
+export const MultiSelectChooseAll = ({
   placeholder = 'Города',
   label = 'Выберите города',
   options = OPTIONS_CITIES,

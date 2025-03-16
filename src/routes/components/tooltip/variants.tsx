@@ -1,39 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import styled from 'styled-components';
-import { ExampleSection } from '../../-helpers/examples';
-import { typography, T } from '@admiral-ds/react-ui';
-import VIPOutline from '@admiral-ds/icons/build/category/VIPOutline.svg?react';
-import { ButtonWithTooltip } from '../../-helpers/tooltip';
-
-const CustomP = styled.p`
-  padding: 0;
-  margin: 0;
-  font-weight: bold;
-  color: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-  ${typography['Subtitle/Subtitle 3']};
-`;
-
-export const Template = () => {
-  const renderTooltipContent = () => {
-    return (
-      <>
-        <CustomP>Фамилия Имя Отчество</CustomP>
-        <T font={'Body/Body 2 Short'} color="Neutral/Neutral 00">
-          Старший дизайнер
-        </T>
-      </>
-    );
-  };
-
-  return (
-    <ExampleSection>
-      <ButtonWithTooltip renderContent={renderTooltipContent} buttonIcon={<VIPOutline />} />
-    </ExampleSection>
-  );
-};
+import { TooltipVariants } from '#examples/tooltip/variants';
 
 export const Route = createFileRoute('/components/tooltip/variants')({
-  component: () => <Template />,
+  component: () => <TooltipVariants />,
   staticData: {
     title: 'Tooltip. Кастомное наполнение',
     description:

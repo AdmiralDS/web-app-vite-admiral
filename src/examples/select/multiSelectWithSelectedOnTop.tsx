@@ -5,7 +5,7 @@ import type { SelectProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const SelectMultiSelectWithSelectedOnTop = ({
+export const MultiSelectWithSelectedOnTop = ({
   placeholder = 'Города',
   moveSelectedOnTop = true,
   options = OPTIONS_CITIES,

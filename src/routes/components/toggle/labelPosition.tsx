@@ -1,25 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { Toggle } from '@admiral-ds/react-ui';
-
-const LabelPosition = () => {
-  return (
-    <>
-      <ExampleSection text="Без текста">
-        <Toggle />
-      </ExampleSection>
-      <ExampleSection text="Текст справа">
-        <Toggle>Text</Toggle>
-      </ExampleSection>
-      <ExampleSection text="Текст слева">
-        <Toggle labelPosition="left">Text</Toggle>
-      </ExampleSection>
-    </>
-  );
-};
+import { ToggleLabelPosition } from '#examples/toggle/labelPosition';
 
 export const Route = createFileRoute('/components/toggle/labelPosition')({
-  component: () => <LabelPosition />,
+  component: () => <ToggleLabelPosition />,
   staticData: {
     title: 'Toggle. Расположение подписи',
     description: 'Варианты компонента без подписи, с подписью слева и справа.',

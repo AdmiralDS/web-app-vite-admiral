@@ -1,26 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { CloseIconPlacementButton } from '@admiral-ds/react-ui';
-
-export const Template = () => {
-  return (
-    <ExampleSection
-      text={
-        <>
-          Примеры использования:
-          <li>иконка Close в компонентах Modal, Toast, Hint</li>
-          <li>иконка Chevrone в компоненте Select Tree, Calendar</li>
-          <li>компонент Overflow Menu построен по такой же схеме</li>
-        </>
-      }
-    >
-      <CloseIconPlacementButton />
-    </ExampleSection>
-  );
-};
+import { IconPlacementVariants } from '#examples/iconPlacement/variants';
 
 export const Route = createFileRoute('/components/iconPlacement/variants')({
-  component: () => <Template />,
+  component: () => <IconPlacementVariants />,
   staticData: {
     title: 'IconPlacement. Варианты использования',
     description:

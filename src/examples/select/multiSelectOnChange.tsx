@@ -12,7 +12,7 @@ const Separator = styled.div<{ $height?: number }>`
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 
-export const SelectMultiSelectOnChange = ({
+export const MultiSelectOnChange = ({
   placeholder = 'Города',
   optionList = OPTIONS_CITIES,
   ...props

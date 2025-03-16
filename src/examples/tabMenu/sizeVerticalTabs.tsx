@@ -116,7 +116,7 @@ export const TabMenuHorizontalComponent = ({ dimension = 'l' }: { dimension: 'l'
   );
 };
 
-export const SizeverticalTabsExample = () => {
+export const SizeVerticalTabsExample = () => {
   return (
     <>
       <ExampleSection text="Размер L">

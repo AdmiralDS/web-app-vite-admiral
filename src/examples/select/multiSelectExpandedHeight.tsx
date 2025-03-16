@@ -3,7 +3,7 @@ import { ExampleSection } from '#routes/-helpers/examples';
 import { Option, Select } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
 
-export const SelectMultiSelectExpandedHeight = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
+export const MultiSelectExpandedHeight = ({ placeholder = 'Серийный номер', ...props }: SelectProps) => {
   const [selectValue, setSelectValue] = React.useState<string[]>(
     Array.from({ length: 20 }).map((_, ind) => String(ind)),
   );
