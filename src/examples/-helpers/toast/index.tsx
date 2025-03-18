@@ -8,7 +8,7 @@ import {
   useToast,
 } from '@admiral-ds/react-ui';
 import { useState } from 'react';
-import { uid } from '../examples';
+import { uid } from '..';
 
 const random = (min: number, max: number) => min + Number(Math.round(Math.random() * (max - min)));
 
