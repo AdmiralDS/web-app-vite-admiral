@@ -11,7 +11,6 @@ function convertPathToSourceFile(path: string) {
 
 function RouteComponent() {
   const matches = useChildMatches();
-  // не продуман момент с index.tsx файлом
   return (
     <>
       {matches.map(({ id, staticData, pathname }) => {
