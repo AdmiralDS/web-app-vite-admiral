@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Calendar, weekendMixin } from '@admiral-ds/react-ui';
 import { css } from 'styled-components';
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { MenuItem, MultiButton, RenderOptionProps } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const handleVisibilityChange = (isVisible: boolean) => {
   if (isVisible) {

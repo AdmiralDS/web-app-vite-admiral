@@ -1,5 +1,5 @@
 import { useTheme } from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { LIGHT_THEME, Tag, Tags } from '@admiral-ds/react-ui';
 
 // eslint-disable-next-line no-console

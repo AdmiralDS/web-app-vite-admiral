@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Option, Select, TextButton, MenuActionsPanel } from '@admiral-ds/react-ui';
 import PlusOutline from '@admiral-ds/icons/build/service/PlusOutline.svg?react';
 

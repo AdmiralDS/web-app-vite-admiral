@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { checkOverflow, Pill, Tooltip, TooltipHoc } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { useLayoutEffect, useRef, useState } from 'react';

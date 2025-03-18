@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Button, ButtonBadge } from '@admiral-ds/react-ui';
 import type { ButtonAppearance } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const ButtonContainer = styled.div<{ $appearance?: ButtonAppearance }>`
   padding: 24px;

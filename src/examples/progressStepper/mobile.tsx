@@ -1,4 +1,4 @@
-import { ExampleSection, MobileTopContainer } from '#routes/-helpers/examples';
+import { ExampleSection, MobileTopContainer } from '#examples/-helpers';
 import { ProgressStepper } from '@admiral-ds/react-ui';
 
 const steps = [

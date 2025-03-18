@@ -1,6 +1,6 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Toast, ToastProvider } from '@admiral-ds/react-ui';
-import { ToastNotificationEmitter } from '#routes/-helpers/toast';
+import { ToastNotificationEmitter } from '#examples/-helpers/toast';
 
 export const ToastBasic = () => {
   return (

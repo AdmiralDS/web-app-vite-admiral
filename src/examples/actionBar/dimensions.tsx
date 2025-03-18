@@ -10,7 +10,7 @@ import PinOutline from '@admiral-ds/icons/build/category/PinOutline.svg?react';
 import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const items = [
   {

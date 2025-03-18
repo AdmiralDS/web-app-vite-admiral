@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { MenuButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 
 const DarkDiv = styled.div`
   background-color: var(

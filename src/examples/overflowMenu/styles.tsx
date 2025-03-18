@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 import { MenuItem, OverflowMenu, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 

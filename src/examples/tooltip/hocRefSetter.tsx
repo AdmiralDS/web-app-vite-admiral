@@ -1,6 +1,6 @@
 import { forwardRef, useRef } from 'react';
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Button, InputField, InputFieldProps, refSetter, TooltipHoc } from '@admiral-ds/react-ui';
 
 const Separator = styled.div<{ height?: number }>`

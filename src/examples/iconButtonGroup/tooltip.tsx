@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { IconButton, IconButtonGroup, TooltipHoc } from '@admiral-ds/react-ui';
 import PrintOutline from '@admiral-ds/icons/build/system/PrintOutline.svg?react';
 import ShareOutline from '@admiral-ds/icons/build/service/ShareOutline.svg?react';

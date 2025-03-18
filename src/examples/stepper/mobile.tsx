@@ -1,4 +1,4 @@
-import { ExampleSection, MobileBottomContainer, PStyled } from '#routes/-helpers/examples';
+import { ExampleSection, MobileBottomContainer, PStyled } from '#examples/-helpers';
 import { Button, Step, StepContent, Stepper } from '@admiral-ds/react-ui';
 import { useState } from 'react';
 

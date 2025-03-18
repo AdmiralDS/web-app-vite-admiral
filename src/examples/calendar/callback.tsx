@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExampleSection, PStyled } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { Calendar, ViewScreenType } from '@admiral-ds/react-ui';
 
 export const CalendarCallback = () => {

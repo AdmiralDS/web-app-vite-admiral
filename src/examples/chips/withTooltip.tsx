@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { Chips } from '@admiral-ds/react-ui';
 import type { ChipsProps } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const listDataIconTooltip = [
   { id: '1', label: 'Ограниченное пространство', disabled: false },

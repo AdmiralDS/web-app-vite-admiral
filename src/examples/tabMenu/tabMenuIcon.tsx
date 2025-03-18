@@ -2,7 +2,7 @@ import { forwardRef, useState } from 'react';
 import { IconTab, IconTabProps, TabMenuIcon, TabText } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 
-import { ExampleSection, PStyled } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 
 const tabs = [
   { text: 'Text01', tabId: '1', icon: <MinusCircleOutline /> },

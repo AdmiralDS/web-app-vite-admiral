@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { FieldSet, RadioButton } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
 

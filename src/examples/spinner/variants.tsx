@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Spinner } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 

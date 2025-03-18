@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Avatar } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Option, Select, T, UnorderedList, ListItem } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import type { SelectProps } from '@admiral-ds/react-ui';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];

@@ -1,7 +1,7 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { ColorName, DefaultFontColorName, LIGHT_THEME, T, TooltipHoc, typography } from '@admiral-ds/react-ui';
 import styled, { useTheme } from 'styled-components';
-import { NEW_FONTS } from '#routes/-helpers/t/storyDescriptions';
+import { NEW_FONTS } from '#examples/-helpers/t/storyDescriptions';
 import { forwardRef } from 'react';
 
 import CopyOutline from '@admiral-ds/icons/build/documents/CopyOutline.svg?react';

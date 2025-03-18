@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Toggle } from '@admiral-ds/react-ui';
 
 const Separator = styled.div`

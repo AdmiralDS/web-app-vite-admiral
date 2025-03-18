@@ -1,5 +1,5 @@
 import { Link as RouterLink, MemoryRouter as Router } from 'react-router-dom';
-import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '#examples/-helpers';
 import { Link } from '@admiral-ds/react-ui';
 
 export const LinkAsProp = () => {

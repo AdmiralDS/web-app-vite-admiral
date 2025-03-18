@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Button, RadioButton } from '@admiral-ds/react-ui';
 import type { RadioButtonProps } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 export const RadioButtonBasic = ({ checked: argChecked, ...props }: RadioButtonProps) => {
   const [checked, setChecked] = useState(argChecked || false);

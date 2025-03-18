@@ -1,4 +1,4 @@
-import { ExampleSection, PStyled } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { PhoneInputField } from '@admiral-ds/react-ui';
 import { ChangeEvent, useState } from 'react';
 

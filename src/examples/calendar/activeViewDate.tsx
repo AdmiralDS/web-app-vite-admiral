@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Button, Calendar, ViewScreenType } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 

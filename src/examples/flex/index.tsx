@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Flex, FLEX_CELL_MAX_SIZE, InputField, TextField } from '@admiral-ds/react-ui';
 
 export const FlexBasic = () => {

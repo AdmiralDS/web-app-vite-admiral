@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 import { Drawer, DrawerTitle, DrawerContent, DrawerButtonPanel, Button, InputField } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const Separator = styled.div`
   height: 20px;

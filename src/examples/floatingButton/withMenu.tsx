@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { FloatingButton, FloatingButtonMenu } from '@admiral-ds/react-ui';
 import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';

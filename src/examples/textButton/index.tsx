@@ -1,5 +1,5 @@
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 import { TextButton } from '@admiral-ds/react-ui';
 
 export const TextButtonBasic = () => {

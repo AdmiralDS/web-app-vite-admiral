@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Hint, RadioButton } from '@admiral-ds/react-ui';
 import InfoSolidSVG from '@admiral-ds/icons/build/service/InfoSolid.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 type Dimension = 'm' | 's';
 

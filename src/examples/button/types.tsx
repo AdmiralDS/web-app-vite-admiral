@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Button, ButtonAppearance } from '@admiral-ds/react-ui';
-import { ExampleSection, Text } from '#routes/-helpers/examples';
+import { ExampleSection, Text } from '#examples/-helpers';
 
 const GridContainer = styled.div`
   display: grid;

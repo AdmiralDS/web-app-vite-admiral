@@ -1,6 +1,6 @@
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 import { useMemo, useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { MenuItem, RenderOptionProps, TextButtonMenu } from '@admiral-ds/react-ui';
 
 const handleVisibilityChange = (isVisible: boolean) => {

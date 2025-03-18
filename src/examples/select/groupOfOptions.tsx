@@ -3,7 +3,7 @@ import type { ChangeEvent } from 'react';
 import { Option, OptionGroup, Select, typography } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const OPTIONS_PEOPLE = [
   'Саша Даль',

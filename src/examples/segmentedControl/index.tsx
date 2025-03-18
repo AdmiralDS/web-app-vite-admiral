@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { SegmentedControl, SegmentedControlItem } from '@admiral-ds/react-ui';
 
 export const SegmentedControlBasic = () => {

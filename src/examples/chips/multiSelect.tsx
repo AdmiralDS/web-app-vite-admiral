@@ -9,7 +9,7 @@ import AlertSolid from '@admiral-ds/icons/build/category/AlertSolid.svg?react';
 import DiamondSolid from '@admiral-ds/icons/build/category/DiamondSolid.svg?react';
 import TrophyIcon from '@admiral-ds/icons/build/category/TrophySolid.svg?react';
 import BurnIcon from '@admiral-ds/icons/build/category/BurnSolid.svg?react';
-import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '#examples/-helpers';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;

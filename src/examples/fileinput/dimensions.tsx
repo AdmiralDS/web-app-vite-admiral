@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { FileInput, FileItem } from '@admiral-ds/react-ui';
 import type { FileInputProps } from '@admiral-ds/react-ui';
 import type { FileAttributeProps, InputStatus } from '@admiral-ds/react-ui';
-import { ExampleSection, uid } from '#routes/-helpers/examples';
+import { ExampleSection, uid } from '#examples/-helpers';
 
 const filesAreEqual = (file1: File, file2: File) =>
   file1.name === file2.name &&

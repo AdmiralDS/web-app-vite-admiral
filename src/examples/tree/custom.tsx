@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
 import ErrorTriangleSolid from '@admiral-ds/icons/build/service/ErrorTriangleSolid.svg?react';

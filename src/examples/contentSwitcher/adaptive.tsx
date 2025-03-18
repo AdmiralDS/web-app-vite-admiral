@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const list = [
   { title: 'Active button', content: '1' },

@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { ProgressPage } from '@admiral-ds/react-ui';
 
 export const ProgressPageBasic = () => {

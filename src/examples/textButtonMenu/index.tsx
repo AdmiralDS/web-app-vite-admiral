@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 import { MenuItem, RenderOptionProps, TextButtonMenu } from '@admiral-ds/react-ui';
 
 const handleVisibilityChange = (isVisible: boolean) => {

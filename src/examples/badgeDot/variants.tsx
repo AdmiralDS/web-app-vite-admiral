@@ -1,6 +1,6 @@
 import { BadgeDot, typography } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const String = styled.div`
   margin-bottom: 10px;

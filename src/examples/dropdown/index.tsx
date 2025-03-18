@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import {
   Button,
   DropdownContainer,
@@ -12,7 +12,7 @@ import {
   typography,
 } from '@admiral-ds/react-ui';
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
-import { MenuWrapper } from '#routes/-helpers/menu';
+import { MenuWrapper } from '#examples/-helpers/menu';
 
 const parseShadow = (token: string) => token.replace('box-shadow: ', '').replace(';', '');
 

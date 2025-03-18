@@ -2,7 +2,7 @@ import { forwardRef, useState } from 'react';
 import { HorizontalTab, HorizontalTabProps, HorizontalTabs, TabBadge, TabIcon, TabText } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const tabs = [
   { text: 'Text1', tabId: '1', badge: 1 },

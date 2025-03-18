@@ -1,4 +1,4 @@
-import { ExampleSection, MobileBottomContainer } from '#routes/-helpers/examples';
+import { ExampleSection, MobileBottomContainer } from '#examples/-helpers';
 
 import FolderSolid from '@admiral-ds/icons/build/documents/FolderSolid.svg?react';
 import { Tree, TreeItemProps, TreeNode, TreeNodeRenderOptionProps } from '@admiral-ds/react-ui';

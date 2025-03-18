@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Drawer, Button, CheckboxField, DrawerContent } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 export const DrawerCustomContent = () => {
   const [opened, setOpened] = useState(false);

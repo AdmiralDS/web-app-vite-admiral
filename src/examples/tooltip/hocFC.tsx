@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { TooltipHoc, typography } from '@admiral-ds/react-ui';
 
 const StyledH2 = styled.h2`

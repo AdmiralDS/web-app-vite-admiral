@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { ActionsPanel, DateInput, TextButton, changeInputData, refSetter } from '@admiral-ds/react-ui';
 import type { DateInputProps } from '@admiral-ds/react-ui';
 import { useState, forwardRef, useRef } from 'react';

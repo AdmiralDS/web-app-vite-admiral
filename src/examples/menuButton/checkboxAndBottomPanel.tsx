@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { css } from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import {
   Button,
   ItemWithCheckbox,

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
 import { EditMode, EditModeField } from '@admiral-ds/react-ui';
-import { ExampleSection, PStyled } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 
 const Description = () => {
   return (

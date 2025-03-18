@@ -1,5 +1,5 @@
 import { Breadcrumbs } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const items1 = [
   { url: '#', text: 'page 1' },

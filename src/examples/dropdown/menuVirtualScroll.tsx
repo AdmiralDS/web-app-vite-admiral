@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Menu, MenuItem, MenuModelItemProps, type RenderOptionProps } from '@admiral-ds/react-ui';
-import { MenuWrapper } from '#routes/-helpers/menu';
+import { MenuWrapper } from '#examples/-helpers/menu';
 
 const createItems = (length: number, level: number = 1) => {
   const title = level > 1 ? 'SubItem' : 'Item';

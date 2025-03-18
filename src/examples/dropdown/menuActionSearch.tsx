@@ -1,7 +1,7 @@
 import { useTheme } from 'styled-components';
 import { useEffect, useMemo, useState } from 'react';
 
-import { ExampleSection, uid } from '#routes/-helpers/examples';
+import { ExampleSection, uid } from '#examples/-helpers';
 import {
   keyboardKey,
   getHighlightedFilteredOptions,
@@ -12,7 +12,7 @@ import {
   TextInput,
 } from '@admiral-ds/react-ui';
 import PlusOutline from '@admiral-ds/icons/build/service/PlusOutline.svg?react';
-import { MenuWrapper } from '#routes/-helpers/menu';
+import { MenuWrapper } from '#examples/-helpers/menu';
 
 const items = [
   {

@@ -1,6 +1,6 @@
 import { Breadcrumbs } from '@admiral-ds/react-ui';
 import { Link as RouterLink, MemoryRouter as Router } from 'react-router-dom';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const items = [
   { linkAs: RouterLink, text: 'page 1', linkProps: { to: '/page1' } },

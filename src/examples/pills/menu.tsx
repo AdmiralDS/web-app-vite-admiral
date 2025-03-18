@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { DropMenu, MenuItem, Pill, refSetter, RenderOptionProps } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 import HeartOutline from '@admiral-ds/icons/build/category/HeartOutline.svg?react';

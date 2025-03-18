@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { InputEx, MenuItem, MenuItemProps, RenderProps, RenderPropsType } from '@admiral-ds/react-ui';
 import { ReactNode, useState } from 'react';
 import styled, { css } from 'styled-components';

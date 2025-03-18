@@ -6,7 +6,7 @@ import { FileInput, Button, fullWidthPositionMixin } from '@admiral-ds/react-ui'
 import type { RenderFileInputProps } from '@admiral-ds/react-ui';
 import AttachFileOutline from '@admiral-ds/icons/build/system/AttachFileOutline.svg?react';
 import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react';
-import { ExampleSection, PStyled } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 
 interface MyFileItemProps extends React.HTMLAttributes<HTMLDivElement> {
   filesLayoutCssMixin?: ReturnType<typeof css>;

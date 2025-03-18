@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { InputField, TooltipHoc } from '@admiral-ds/react-ui';
 
 const TooltipedInput = TooltipHoc(InputField);

@@ -4,7 +4,7 @@ import { Drawer, DrawerTitle, DrawerContent, Button } from '@admiral-ds/react-ui
 import type { DrawerProps } from '@admiral-ds/react-ui';
 import ArrowLeftOutline from '@admiral-ds/icons/build/system/ArrowLeftOutline.svg?react';
 import ArrowRightOutline from '@admiral-ds/icons/build/system/ArrowRightOutline.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const ButtonWrapper = styled.div`
   display: flex;

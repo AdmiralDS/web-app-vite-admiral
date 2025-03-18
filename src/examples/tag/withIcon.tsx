@@ -1,4 +1,4 @@
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 import { Tag, Tags } from '@admiral-ds/react-ui';
 import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react';
 

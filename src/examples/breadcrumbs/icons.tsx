@@ -2,7 +2,7 @@ import { Breadcrumbs } from '@admiral-ds/react-ui';
 
 import HomeOutline from '@admiral-ds/icons/build/system/HomeOutline.svg?react';
 import JpgOutline from '@admiral-ds/icons/build/documents/JpgOutline.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const items = [
   { url: '#', text: 'page 1', iconStart: <HomeOutline /> },

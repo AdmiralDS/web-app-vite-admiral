@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CheckboxCompositeGroup, CheckboxField, CheckboxGroup } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 interface ItemValue {
   label: string;

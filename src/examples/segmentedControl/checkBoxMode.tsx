@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { SegmentedControl, SegmentedControlItem } from '@admiral-ds/react-ui';
 
 const values = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];

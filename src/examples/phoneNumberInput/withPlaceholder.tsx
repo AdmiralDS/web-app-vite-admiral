@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { PhoneNumberInput } from '@admiral-ds/react-ui';
 import { ChangeEvent, useState } from 'react';
 

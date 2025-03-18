@@ -1,5 +1,5 @@
-import { ExampleSection } from '#routes/-helpers/examples';
-import { GlobalSearchWithLogic } from '#routes/-helpers/globalSearch';
+import { ExampleSection } from '#examples/-helpers';
+import { GlobalSearchWithLogic } from '#examples/-helpers/globalSearch';
 
 export const GlobalSearchSizes = () => {
   return (

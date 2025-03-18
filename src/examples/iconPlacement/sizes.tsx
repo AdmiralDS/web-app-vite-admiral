@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { IconPlacement } from '@admiral-ds/react-ui';
 import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react';
 

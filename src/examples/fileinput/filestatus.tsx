@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { FileInput, FileItem } from '@admiral-ds/react-ui';
 import type { FileAttributeProps } from '@admiral-ds/react-ui';
-import { ExampleSection, PStyled, uid } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled, uid } from '#examples/-helpers';
 
 const file1 = new File(['foo'], 'example1.jpeg', {
   type: 'image/jpeg',

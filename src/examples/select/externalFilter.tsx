@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Option, Select } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const OPTIONS = [
   {

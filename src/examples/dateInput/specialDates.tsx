@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { DateInput } from '@admiral-ds/react-ui';
 import { useState } from 'react';
 import { css } from 'styled-components';

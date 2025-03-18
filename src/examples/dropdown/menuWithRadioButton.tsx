@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Menu, MenuItem, RadioButton, type RenderOptionProps } from '@admiral-ds/react-ui';
-import { MenuWrapper, StoryItem } from '#routes/-helpers/menu';
+import { MenuWrapper, StoryItem } from '#examples/-helpers/menu';
 
 const radioButtonItems: Array<StoryItem> = [
   {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Badge, Button } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const String = styled.div`
   display: flex;

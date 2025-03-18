@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { ChangeEvent } from 'react';
 
 import { EditMode } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import type { EditModeProps } from '@admiral-ds/react-ui';
 
 const Component = ({ dimension, bold }: { dimension: EditModeProps['dimension']; bold?: EditModeProps['bold'] }) => {

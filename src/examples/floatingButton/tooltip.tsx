@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { FloatingButton } from '@admiral-ds/react-ui';
 import ChatOutline from '@admiral-ds/icons/build/category/ChatOutline.svg?react';
 

@@ -11,7 +11,7 @@ import SIMCardOutline from '@admiral-ds/icons/build/communication/SIMCardOutline
 import HeadsetOutline from '@admiral-ds/icons/build/communication/HeadsetOutline.svg?react';
 import SignalOutline from '@admiral-ds/icons/build/communication/SignalOutline.svg?react';
 import TelegrammOutline from '@admiral-ds/icons/build/communication/TelegrammOutline.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 interface TabContentProps extends HorizontalTabProps {
   text: string;

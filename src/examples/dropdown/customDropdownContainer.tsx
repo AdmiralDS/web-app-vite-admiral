@@ -5,7 +5,7 @@ import { Button, DropdownContainer, Menu, MenuItem, typography } from '@admiral-
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const StyledAdditionalText = styled.div`
   ${typography['Body/Body 2 Long']}

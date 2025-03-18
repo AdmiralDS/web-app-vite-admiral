@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import type { CarouselSliderProps } from '@admiral-ds/react-ui';
 import { CarouselSlider, CarouselSliderItem } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 export const CarouselSliderAutoChange = (props: CarouselSliderProps) => {
   const [current, setCurrent] = useState(0);

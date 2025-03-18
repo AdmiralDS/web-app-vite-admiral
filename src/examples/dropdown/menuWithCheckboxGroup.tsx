@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import {
   CheckboxGroupItemProps,
   checkboxTreeToMap,
@@ -9,7 +9,7 @@ import {
   MenuModelItemProps,
   type RenderOptionProps,
 } from '@admiral-ds/react-ui';
-import { MenuWrapper } from '#routes/-helpers/menu';
+import { MenuWrapper } from '#examples/-helpers/menu';
 
 const items: Array<CheckboxGroupItemProps> = [
   {

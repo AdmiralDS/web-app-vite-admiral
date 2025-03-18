@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { MenuButton, MenuItem, RenderOptionProps, Tooltip } from '@admiral-ds/react-ui';
 
 const menuItems = [

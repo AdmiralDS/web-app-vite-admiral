@@ -1,5 +1,5 @@
-import { ExampleSection } from '#routes/-helpers/examples';
-import { GlobalSearchWithLogic } from '#routes/-helpers/globalSearch';
+import { ExampleSection } from '#examples/-helpers';
+import { GlobalSearchWithLogic } from '#examples/-helpers/globalSearch';
 import { useState } from 'react';
 
 const PREFIX_OPTIONS = ['prefix One', 'prefix Two', 'prefix Three'];

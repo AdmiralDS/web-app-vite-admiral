@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Option, Select, Field, TextButton, MenuActionsPanel } from '@admiral-ds/react-ui';
 
 import * as React from 'react';

@@ -8,7 +8,7 @@ import {
 } from '@admiral-ds/react-ui';
 import type { DateInputProps } from '@admiral-ds/react-ui';
 import type { TimeInputProps } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const CompoundComponent = ({
   disabled,

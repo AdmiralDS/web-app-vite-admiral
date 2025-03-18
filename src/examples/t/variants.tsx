@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { MainPrimaryColorName, T } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Divider } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const SeparatorHorizontal = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import type { CarouselSliderProps } from '@admiral-ds/react-ui';
 import { CarouselSlider, CarouselSliderItem } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;

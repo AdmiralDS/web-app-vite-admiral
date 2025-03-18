@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '#examples/-helpers';
 import { SegmentedControl, SegmentedControlItem, SegmentedControlProps } from '@admiral-ds/react-ui';
 
 const ExampleSectionColumn = styled(ExampleSection)`

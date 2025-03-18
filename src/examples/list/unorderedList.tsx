@@ -1,4 +1,4 @@
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 import { ListIcon, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 import TasksOutline from '@admiral-ds/icons/build/documents/TasksOutline.svg?react';
 import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';

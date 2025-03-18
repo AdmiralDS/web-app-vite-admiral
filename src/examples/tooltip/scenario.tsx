@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Button, Tooltip, TOOLTIP_DELAY } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
-import { ButtonWithTooltip } from '#routes/-helpers/tooltip';
+import { ButtonWithTooltip } from '#examples/-helpers/tooltip';
 
 export const TooltipScenario = () => {
   const btnRef = useRef<HTMLButtonElement>(null);

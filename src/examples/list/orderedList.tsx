@@ -1,4 +1,4 @@
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 import { ListItem, OrderedList } from '@admiral-ds/react-ui';
 
 export const ListOrdered = () => {

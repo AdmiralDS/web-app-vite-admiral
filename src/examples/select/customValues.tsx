@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Option, Select } from '@admiral-ds/react-ui';
 import Cuba from '@admiral-ds/icons/build/flags/Cuba.svg?react';
 import Belarus from '@admiral-ds/icons/build/flags/Belarus.svg?react';

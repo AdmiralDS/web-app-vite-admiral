@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Menu, MenuItem, type RenderOptionProps } from '@admiral-ds/react-ui';
-import { MenuWrapper } from '#routes/-helpers/menu';
+import { MenuWrapper } from '#examples/-helpers/menu';
 
 const createItems = (length: number) => {
   return Array.from({ length }).map((_option, index) => ({ label: `${index}0000`, id: String(index) }));

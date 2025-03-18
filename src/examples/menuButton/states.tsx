@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { MenuButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const handleVisibilityChange = (isVisible: boolean) => {
   if (isVisible) {

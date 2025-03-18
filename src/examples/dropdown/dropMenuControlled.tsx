@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 import { Button, DropMenu, MenuItem, TooltipHoc } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const STORY_ITEMS = [
   {

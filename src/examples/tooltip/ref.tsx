@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Button, Tooltip } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 

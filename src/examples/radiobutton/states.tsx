@@ -1,5 +1,5 @@
 import { RadioButton } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import styled from 'styled-components';
 
 const Container = styled.div`

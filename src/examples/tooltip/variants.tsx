@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { typography, T } from '@admiral-ds/react-ui';
 import VIPOutline from '@admiral-ds/icons/build/category/VIPOutline.svg?react';
-import { ButtonWithTooltip } from '#routes/-helpers/tooltip';
+import { ButtonWithTooltip } from '#examples/-helpers/tooltip';
 
 const CustomP = styled.p`
   padding: 0;

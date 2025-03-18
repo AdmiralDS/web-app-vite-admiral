@@ -13,7 +13,7 @@ import LinkOutline from '@admiral-ds/icons/build/system/LinkOutline.svg?react';
 import ExportOutline from '@admiral-ds/icons/build/system/ExportOutline.svg?react';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const items = [
   {

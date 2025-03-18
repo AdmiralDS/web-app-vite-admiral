@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { ComponentProps, forwardRef, ReactNode, useState } from 'react';
 import { clearValue, InputEx, InputExProps, refSetter } from '@admiral-ds/react-ui';
 import { useMaskito } from '@maskito/react';

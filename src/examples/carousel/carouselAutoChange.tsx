@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import type { CarouselProps } from '@admiral-ds/react-ui';
 import { Carousel } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const CarouselContainer = styled.div`
   width: 70%;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Badge, ContentSwitcher, ContentSwitcherItem } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const list = [
   {

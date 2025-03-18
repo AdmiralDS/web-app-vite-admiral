@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Option, Select, MenuItem, typography } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
 import React, { ChangeEvent } from 'react';

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { MenuButton, MenuItem, MenuModelItemProps, RenderOptionProps } from '@admiral-ds/react-ui';
 
 const handleVisibilityChange = (isVisible: boolean) => {

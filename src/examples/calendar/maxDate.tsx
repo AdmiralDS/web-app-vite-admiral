@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Calendar } from '@admiral-ds/react-ui';
 
 export const CalendarMaxDate = () => {

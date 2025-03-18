@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Button, Modal, ModalButtonPanel, ModalContent, ModalTitle, Option, Select } from '@admiral-ds/react-ui';
 import type { SelectProps } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const OPTIONS_CITIES = ['Москва', 'Санкт-Петербург', 'Ижевск', 'Тверь', 'Рязань'];
 

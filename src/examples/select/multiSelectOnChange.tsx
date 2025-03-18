@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { IOnCloseProps } from '@admiral-ds/react-ui';
 import { Option, Select, T } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import type { SelectProps } from '@admiral-ds/react-ui';
 
 import styled from 'styled-components';

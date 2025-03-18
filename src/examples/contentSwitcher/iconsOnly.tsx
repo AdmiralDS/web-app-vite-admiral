@@ -7,7 +7,7 @@ import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?reac
 import EmailOutline from '@admiral-ds/icons/build/system/EmailOutline.svg?react';
 import HomeOutline from '@admiral-ds/icons/build/system/HomeOutline.svg?react';
 import PrintOutline from '@admiral-ds/icons/build/system/PrintOutline.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const list = [
   {

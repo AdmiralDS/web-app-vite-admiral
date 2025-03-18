@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button, ButtonBadge, ButtonGroup } from '@admiral-ds/react-ui';
 import type { ButtonGroupProps } from '@admiral-ds/react-ui';
 import StarSolid from '@admiral-ds/icons/build/system/StarSolid.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const GroupWrapper = styled.div`
   margin-top: 20px;

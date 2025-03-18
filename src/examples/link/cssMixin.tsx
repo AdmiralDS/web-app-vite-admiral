@@ -1,6 +1,6 @@
 import { Link as RouterLink, MemoryRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
-import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '#examples/-helpers';
 import { LinkComponentCssMixin, LinkComponentProps } from '@admiral-ds/react-ui';
 
 const StyledRouterLink = styled(RouterLink)<LinkComponentProps>`

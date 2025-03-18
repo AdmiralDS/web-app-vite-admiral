@@ -3,7 +3,7 @@ import type { ChangeEvent } from 'react';
 
 import { EditModeArea, EditModeAreaField } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const Wrapper = styled.div`
   width: 250px;

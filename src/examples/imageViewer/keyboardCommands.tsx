@@ -1,6 +1,6 @@
 import { ImageViewer } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const handleError: React.ReactEventHandler<HTMLImageElement> = (e) => {
   // eslint-disable-next-line no-console

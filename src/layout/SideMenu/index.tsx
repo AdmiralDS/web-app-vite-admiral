@@ -1,7 +1,7 @@
 import { ScrollContainer } from '@admiral-ds/react-ui';
 import { MenuItem, ExpandedMenuItem } from './MenuItem';
 import { MenuTitle } from './MenuTitle';
-import { components as data } from '#examples/examples.json';
+import { components } from '#examples/examples.json';
 import styled from 'styled-components';
 import { version } from '@admiral-ds/react-ui/package.json';
 
@@ -25,7 +25,7 @@ const MenuContent = styled(ScrollContainer)`
   flex-direction: column;
 `;
 
-const components = data.sort((a, b) => (a.name > b.name ? 1 : -1));
+const sortedComponents = components.sort((a, b) => (a.name > b.name ? 1 : -1));
 
 export const SideMenu = () => {
   return (
@@ -41,7 +41,7 @@ export const SideMenu = () => {
         </ExpandedMenuItem>
 
         <ExpandedMenuItem title="Components" className="topLevel" to="/components">
-          {components.map(({ name, path, routes }) => (
+          {sortedComponents.map(({ name, path, routes }) => (
             <ExpandedMenuItem key={'secondLevel' + name} className="secondLevel" title={name} to={path}>
               {routes.map(({ name, path }) => (
                 <MenuItem key={'thirdLevel' + name} className="example thirdLevel" title={name} to={path} />

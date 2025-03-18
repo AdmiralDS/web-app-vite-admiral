@@ -1,5 +1,5 @@
-import { ExampleSection } from '#routes/-helpers/examples';
-import { ButtonWithTooltip } from '#routes/-helpers/tooltip';
+import { ExampleSection } from '#examples/-helpers';
+import { ButtonWithTooltip } from '#examples/-helpers/tooltip';
 
 export const TooltipPosition = () => {
   return (

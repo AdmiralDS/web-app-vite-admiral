@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import styled from 'styled-components';
 import { Anchor, AnchorLinkItemProps } from '@admiral-ds/react-ui';
 

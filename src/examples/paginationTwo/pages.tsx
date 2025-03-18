@@ -1,4 +1,4 @@
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { useState } from 'react';
 import { PaginationTwo } from '@admiral-ds/react-ui';
 

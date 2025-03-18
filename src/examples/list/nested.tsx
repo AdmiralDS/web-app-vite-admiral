@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { ListItem, OrderedList, UnorderedList } from '@admiral-ds/react-ui';
 
 const Layout = styled.div`

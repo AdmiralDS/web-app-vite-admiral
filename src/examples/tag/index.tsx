@@ -1,4 +1,4 @@
-import { ExampleSection, rowFlexMixin } from '#routes/-helpers/examples';
+import { ExampleSection, rowFlexMixin } from '#examples/-helpers';
 import { Tag } from '@admiral-ds/react-ui';
 
 // eslint-disable-next-line no-console

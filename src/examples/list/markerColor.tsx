@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { ListIcon, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 import TasksOutline from '@admiral-ds/icons/build/documents/TasksOutline.svg?react';
 import PeopleOutline from '@admiral-ds/icons/build/system/PeopleOutline.svg?react';

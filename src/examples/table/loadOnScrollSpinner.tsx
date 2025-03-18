@@ -2,7 +2,7 @@ import { useState, useRef, useMemo } from 'react';
 import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 
-import { LastRow } from '#routes/-helpers/table';
+import { LastRow } from '#examples/-helpers/table';
 
 const columnList: Column[] = [
   {

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { useState } from 'react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { getItemHeight, Menu, MenuItem, type RenderOptionProps, typography } from '@admiral-ds/react-ui';
 
 import VacationSolid from '@admiral-ds/icons/build/category/VacationSolid.svg?react';
@@ -17,7 +17,7 @@ import PostOutline from '@admiral-ds/icons/build/category/PostOutline.svg?react'
 import ShoppingBagOutline from '@admiral-ds/icons/build/category/ShoppingBagOutline.svg?react';
 import TrophyOutline from '@admiral-ds/icons/build/category/TrophyOutline.svg?react';
 import AgreedSolid from '@admiral-ds/icons/build/service/AgreedSolid.svg?react';
-import { MenuWrapper } from '#routes/-helpers/menu';
+import { MenuWrapper } from '#examples/-helpers/menu';
 
 const items = [
   {

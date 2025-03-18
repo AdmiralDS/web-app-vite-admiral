@@ -1,7 +1,7 @@
 import { AvatarActivityGroup, AvatarGroup } from '@admiral-ds/react-ui';
 import type { AvatarGroupProps, AvatarActivityGroupProps } from '@admiral-ds/react-ui';
 import PersonSolid from '@admiral-ds/icons/build/system/PersonSolid.svg?react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 const imageURL = 'https://avavatar.ru/images/full/3/Ya4mRgF2LYW9hNdk.jpg';
 

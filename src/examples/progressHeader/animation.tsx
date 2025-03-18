@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { ProgressHeader } from '@admiral-ds/react-ui';
-import { PageTemplate } from '#routes/-helpers/propgressHeader';
+import { PageTemplate } from '#examples/-helpers/progressHeader';
 
 export const ProgressHeaderAnimation = () => {
   const [tik, setTick] = useState(0);

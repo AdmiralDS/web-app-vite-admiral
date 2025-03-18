@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ExampleSection, uid } from '#routes/-helpers/examples';
+import { ExampleSection, uid } from '#examples/-helpers';
 import {
   Button,
   ID,

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Chips } from '@admiral-ds/react-ui';
 import type { ChipsProps } from '@admiral-ds/react-ui';
-import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '#examples/-helpers';
 
 const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
   display: flex;

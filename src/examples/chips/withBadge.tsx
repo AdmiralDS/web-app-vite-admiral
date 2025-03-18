@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Chips } from '@admiral-ds/react-ui';
 
-import { columnFlexMixin, ExampleSection } from '#routes/-helpers/examples';
+import { columnFlexMixin, ExampleSection } from '#examples/-helpers';
 
 const listData = (genID: () => string) =>
   [

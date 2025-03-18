@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useMemo, useState } from 'react';
 
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import {
   CategoryMenuItem,
   Menu,
@@ -11,7 +11,7 @@ import {
   typography,
 } from '@admiral-ds/react-ui';
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
-import { MenuWrapper } from '#routes/-helpers/menu';
+import { MenuWrapper } from '#examples/-helpers/menu';
 
 const items = [
   {

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { css } from 'styled-components';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Button, MenuActionsPanel, MenuButton, MenuItem, RenderOptionProps } from '@admiral-ds/react-ui';
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
 

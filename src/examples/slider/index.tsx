@@ -1,4 +1,4 @@
-import { ExampleSection, PStyled } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState } from 'react';
 import { Slider } from '@admiral-ds/react-ui';
 

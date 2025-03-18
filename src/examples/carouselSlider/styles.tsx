@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import type { CarouselSliderProps } from '@admiral-ds/react-ui';
 import { CarouselSlider, CarouselSliderItem } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import styled from 'styled-components';
 
 const SliderWrapper = styled.div<{ $appearance?: 'white' | 'dark' }>`

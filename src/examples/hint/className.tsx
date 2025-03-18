@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import { Button, Hint } from '@admiral-ds/react-ui';
 import HelpOutline from '@admiral-ds/icons/build/service/HelpOutline.svg?react';
 

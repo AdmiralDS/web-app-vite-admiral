@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Accordion, AccordionItem } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 
 export const AccordionModes = () => {
   const [expanded, setExpanded] = useState(false);

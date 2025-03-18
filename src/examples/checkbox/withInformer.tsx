@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { CheckboxField, Hint } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#routes/-helpers/examples';
+import { ExampleSection } from '#examples/-helpers';
 import type { CheckboxDimension } from '@admiral-ds/react-ui';
 import InfoSolidSVG from '@admiral-ds/icons/build/service/InfoSolid.svg?react';
 

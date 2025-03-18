@@ -11,7 +11,7 @@ import JpgSolid from '@admiral-ds/icons/build/documents/JpgSolid.svg?react';
 import ZIPSolid from '@admiral-ds/icons/build/documents/ZIPSolid.svg?react';
 import FileCSVSolid from '@admiral-ds/icons/build/documents/FileCSVSolid.svg?react';
 import EmailsOutline from '@admiral-ds/icons/build/category/EmailsOutline.svg?react';
-import { ExampleSection, PStyled, uid } from '#routes/-helpers/examples';
+import { ExampleSection, PStyled, uid } from '#examples/-helpers';
 
 const filesAreEqual = (file1: File, file2: File) =>
   file1.name === file2.name &&
