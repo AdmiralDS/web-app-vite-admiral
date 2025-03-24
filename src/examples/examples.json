@@ -542,7 +542,10 @@
         { "name": "TabMenuVertical. Опции", "path": "/components/tabMenu/optionsVerticalTabs" },
         { "name": "TabMenuVertical. Добавление и удаление вкладок", "path": "/components/tabMenu/addTabVertical" },
         { "name": "TabMenuIcon. Базовый пример", "path": "/components/tabMenu/tabMenuIcon" },
-        { "name": "HorizontalTabs. Базовый пример", "path": "/components/tabMenu/horizontalTabs" }
+        { "name": "HorizontalTabs. Базовый пример", "path": "/components/tabMenu/horizontalTabs" },
+        { "name": "FilterTabs. Базовый пример", "path": "/components/tabMenu/filterTabs" },
+        { "name": "FilterTabs. Размеры", "path": "/components/tabMenu/filterTabsSize" },
+        { "name": "FilterTabs. Мобильная версия", "path": "/components/tabMenu/filterTabsMobile" }
       ]
     },
     {
