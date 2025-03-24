@@ -14,13 +14,12 @@
     "prettier:fix": "prettier --write '**/**/*.{js,jsx,ts,tsx,css,scss}'"
   },
   "dependencies": {
-    "@admiral-ds/react-ui": "^8.38.0",
+    "@admiral-ds/react-ui": "^8.40.1",
     "@tanstack/react-router": "^1.90.0",
     "jest-environment-jsdom": "^29.7.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "styled-components": "^6.1.12",
-    "uuid": "^11.1.0"
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "@admiral-ds/icons": "^4.3.1",

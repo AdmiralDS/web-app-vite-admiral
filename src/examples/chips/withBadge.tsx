@@ -1,10 +1,13 @@
 import { useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { v4 as uuidv4 } from 'uuid';
 
 import { Chips } from '@admiral-ds/react-ui';
 
 import { columnFlexMixin, ExampleSection } from '#examples/-helpers';
+
+export function uid(): string {
+  return (performance.now().toString(36) + Math.random().toString(36)).replace(/\./g, '');
+}
 
 const listData = (genID: () => string) =>
   [
@@ -36,12 +39,12 @@ const WrapperChip = styled.div<{ $dimension?: 'm' | 's' }>`
 
 export const ChipsBadges = () => {
   const [listM, elemMbyId] = useMemo(() => {
-    const list = listData(uuidv4);
+    const list = listData(uid);
     return [getIdList(list), getElementMapById(list)];
   }, []);
 
   const [idListS, elemSbyId] = useMemo(() => {
-    const list = listData(uuidv4);
+    const list = listData(uid);
     return [getIdList(list), getElementMapById(list)];
   }, []);
 
