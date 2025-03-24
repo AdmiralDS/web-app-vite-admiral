@@ -1,20 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { ProgressHeader } from '@admiral-ds/react-ui';
-import { PageTemplate } from '../../-helpers/propgressHeader';
-
-export const Template = () => {
-  return (
-    <ExampleSection>
-      <PageTemplate>
-        <ProgressHeader appearance="primary" percent={50} role="alert" aria-live="assertive" />
-      </PageTemplate>
-    </ExampleSection>
-  );
-};
+import { ProgressHeaderBasic } from '#examples/progressHeader';
 
 export const Route = createFileRoute('/components/progressHeader/')({
-  component: () => <Template />,
+  component: () => <ProgressHeaderBasic />,
   staticData: {
     title: 'ProgressHeader. Базовый пример',
     description:

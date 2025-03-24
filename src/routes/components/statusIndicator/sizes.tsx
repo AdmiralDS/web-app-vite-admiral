@@ -1,24 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-
-import { StatusIndicator } from '@admiral-ds/react-ui';
-import CheckOutline from '@admiral-ds/icons/build/service/CheckOutline.svg?react';
-import { ExampleSection } from '../../-helpers/examples';
-
-const Template = () => {
-  return (
-    <>
-      <ExampleSection text="Размер M">
-        <StatusIndicator dimension="m" text="P 16px/24 book" icon={<CheckOutline />} />
-      </ExampleSection>
-      <ExampleSection text="Размер S">
-        <StatusIndicator dimension="s" text="P 14px/20 book" icon={<CheckOutline />} />
-      </ExampleSection>
-    </>
-  );
-};
+import { StatusIndicatorSizes } from '#examples/statusIndicator/sizes';
 
 export const Route = createFileRoute('/components/statusIndicator/sizes')({
-  component: () => <Template />,
+  component: () => <StatusIndicatorSizes />,
   staticData: {
     title: 'StatusIndicator. Размеры',
     description:

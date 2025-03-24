@@ -1,21 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { Toast, ToastProvider } from '@admiral-ds/react-ui';
-import { ToastNotificationEmitter } from '../../-helpers/toast';
-
-export const Template = () => {
-  return (
-    <ExampleSection>
-      <ToastProvider autoDeleteTime={5000}>
-        <ToastNotificationEmitter />
-        <Toast style={{ top: 16, left: 16, width: 'initial' }} />
-      </ToastProvider>
-    </ExampleSection>
-  );
-};
+import { ToastLineNotification } from '#examples/toast/lineNotification';
 
 export const Route = createFileRoute('/components/toast/lineNotification')({
-  component: () => <Template />,
+  component: () => <ToastLineNotification />,
   staticData: {
     title: 'Toast. Line Notification',
     description:

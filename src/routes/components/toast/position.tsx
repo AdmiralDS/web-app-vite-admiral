@@ -1,35 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { Toast, ToastProvider } from '@admiral-ds/react-ui';
-import { ToastNotificationEmitter } from '../../-helpers/toast';
-
-export const Template = () => {
-  return (
-    <>
-      <ExampleSection text="Расположение сверху справа">
-        <ToastProvider autoDeleteTime={5000}>
-          <ToastNotificationEmitter />
-          <Toast position="top-right" />
-        </ToastProvider>
-      </ExampleSection>
-      <ExampleSection text="Расположение снизу справа">
-        <ToastProvider autoDeleteTime={5000}>
-          <ToastNotificationEmitter />
-          <Toast position="bottom-right" />
-        </ToastProvider>
-      </ExampleSection>
-      <ExampleSection text="Настройка места всплытия через стили">
-        <ToastProvider autoDeleteTime={5000}>
-          <ToastNotificationEmitter />
-          <Toast style={{ top: 128, left: 64 }} />
-        </ToastProvider>
-      </ExampleSection>
-    </>
-  );
-};
+import { ToastPosition } from '#examples/toast/position';
 
 export const Route = createFileRoute('/components/toast/position')({
-  component: () => <Template />,
+  component: () => <ToastPosition />,
   staticData: {
     title: 'Toast. Расположение уведомлений',
     description: (

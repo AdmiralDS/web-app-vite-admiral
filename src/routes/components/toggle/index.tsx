@@ -1,14 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { Toggle } from '@admiral-ds/react-ui';
-
-const ToggleBase = () => {
-  return (
-    <ExampleSection>
-      <Toggle>Text</Toggle>
-    </ExampleSection>
-  );
-};
+import { ToggleBase } from '#examples/toggle';
 
 export const Route = createFileRoute('/components/toggle/')({
   component: () => <ToggleBase />,

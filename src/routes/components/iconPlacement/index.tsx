@@ -1,20 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { IconPlacement } from '@admiral-ds/react-ui';
-import CloseOutline from '@admiral-ds/icons/build/service/CloseOutline.svg?react';
-
-export const Template = () => {
-  return (
-    <ExampleSection>
-      <IconPlacement>
-        <CloseOutline />
-      </IconPlacement>
-    </ExampleSection>
-  );
-};
+import { IconPlacementBasic } from '#examples/iconPlacement';
 
 export const Route = createFileRoute('/components/iconPlacement/')({
-  component: () => <Template />,
+  component: () => <IconPlacementBasic />,
   staticData: {
     title: 'IconPlacement. Базовый пример',
     description:

@@ -1,28 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Link as RouterLink, MemoryRouter as Router } from 'react-router-dom';
-import { columnFlexMixin, ExampleSection } from '../../-helpers/examples';
-import { Link } from '@admiral-ds/react-ui';
-
-export const Template = () => {
-  return (
-    <ExampleSection cssMixin={columnFlexMixin}>
-      <Link as="button" type="button">
-        Render button instead of anchor
-      </Link>
-      <Link as="div" dimension="s">
-        Render div instead of anchor
-      </Link>
-      <Router>
-        <Link as={RouterLink} to="">
-          Render RouterLink instead of anchor
-        </Link>
-      </Router>
-    </ExampleSection>
-  );
-};
+import { LinkAsProp } from '#examples/link/asProp';
 
 export const Route = createFileRoute('/components/link/asProp')({
-  component: () => <Template />,
+  component: () => <LinkAsProp />,
   staticData: {
     title: 'Link. Link As Prop',
     description:

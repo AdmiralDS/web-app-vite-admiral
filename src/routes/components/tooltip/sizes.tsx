@@ -1,22 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { ExampleSection } from '../../-helpers/examples';
-import { ButtonWithTooltip } from '../../-helpers/tooltip';
-
-export const Template = () => {
-  return (
-    <>
-      <ExampleSection text="Размер M">
-        <ButtonWithTooltip dimension="m" />
-      </ExampleSection>
-      <ExampleSection text="Размер S">
-        <ButtonWithTooltip dimension="s" />
-      </ExampleSection>
-    </>
-  );
-};
+import { TooltipSizes } from '#examples/tooltip/sizes';
 
 export const Route = createFileRoute('/components/tooltip/sizes')({
-  component: () => <Template />,
+  component: () => <TooltipSizes />,
   staticData: {
     title: 'Tooltip. Размеры',
     description:
