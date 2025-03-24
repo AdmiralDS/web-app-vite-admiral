@@ -137,6 +137,9 @@ import { Route as ComponentsTabMenuSizeImport } from './routes/components/tabMen
 import { Route as ComponentsTabMenuOptionsVerticalTabsImport } from './routes/components/tabMenu/optionsVerticalTabs'
 import { Route as ComponentsTabMenuOptionsImport } from './routes/components/tabMenu/options'
 import { Route as ComponentsTabMenuHorizontalTabsImport } from './routes/components/tabMenu/horizontalTabs'
+import { Route as ComponentsTabMenuFilterTabsSizeImport } from './routes/components/tabMenu/filterTabsSize'
+import { Route as ComponentsTabMenuFilterTabsMobileImport } from './routes/components/tabMenu/filterTabsMobile'
+import { Route as ComponentsTabMenuFilterTabsImport } from './routes/components/tabMenu/filterTabs'
 import { Route as ComponentsTabMenuCardTabMenuWithoutBorderImport } from './routes/components/tabMenu/cardTabMenuWithoutBorder'
 import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components/tabMenu/cardTabMenu'
 import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
@@ -1238,6 +1241,27 @@ const ComponentsTabMenuHorizontalTabsRoute =
   ComponentsTabMenuHorizontalTabsImport.update({
     id: '/tabMenu/horizontalTabs',
     path: '/tabMenu/horizontalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuFilterTabsSizeRoute =
+  ComponentsTabMenuFilterTabsSizeImport.update({
+    id: '/tabMenu/filterTabsSize',
+    path: '/tabMenu/filterTabsSize',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuFilterTabsMobileRoute =
+  ComponentsTabMenuFilterTabsMobileImport.update({
+    id: '/tabMenu/filterTabsMobile',
+    path: '/tabMenu/filterTabsMobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTabMenuFilterTabsRoute =
+  ComponentsTabMenuFilterTabsImport.update({
+    id: '/tabMenu/filterTabs',
+    path: '/tabMenu/filterTabs',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -5196,6 +5220,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tabMenu/filterTabs': {
+      id: '/components/tabMenu/filterTabs'
+      path: '/tabMenu/filterTabs'
+      fullPath: '/components/tabMenu/filterTabs'
+      preLoaderRoute: typeof ComponentsTabMenuFilterTabsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/filterTabsMobile': {
+      id: '/components/tabMenu/filterTabsMobile'
+      path: '/tabMenu/filterTabsMobile'
+      fullPath: '/components/tabMenu/filterTabsMobile'
+      preLoaderRoute: typeof ComponentsTabMenuFilterTabsMobileImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tabMenu/filterTabsSize': {
+      id: '/components/tabMenu/filterTabsSize'
+      path: '/tabMenu/filterTabsSize'
+      fullPath: '/components/tabMenu/filterTabsSize'
+      preLoaderRoute: typeof ComponentsTabMenuFilterTabsSizeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/horizontalTabs': {
       id: '/components/tabMenu/horizontalTabs'
       path: '/tabMenu/horizontalTabs'
@@ -6318,6 +6363,9 @@ interface ComponentsRouteChildren {
   ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
   ComponentsTabMenuCardTabMenuRoute: typeof ComponentsTabMenuCardTabMenuRoute
   ComponentsTabMenuCardTabMenuWithoutBorderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  ComponentsTabMenuFilterTabsRoute: typeof ComponentsTabMenuFilterTabsRoute
+  ComponentsTabMenuFilterTabsMobileRoute: typeof ComponentsTabMenuFilterTabsMobileRoute
+  ComponentsTabMenuFilterTabsSizeRoute: typeof ComponentsTabMenuFilterTabsSizeRoute
   ComponentsTabMenuHorizontalTabsRoute: typeof ComponentsTabMenuHorizontalTabsRoute
   ComponentsTabMenuOptionsRoute: typeof ComponentsTabMenuOptionsRoute
   ComponentsTabMenuOptionsVerticalTabsRoute: typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -6793,6 +6841,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTabMenuCardTabMenuRoute: ComponentsTabMenuCardTabMenuRoute,
   ComponentsTabMenuCardTabMenuWithoutBorderRoute:
     ComponentsTabMenuCardTabMenuWithoutBorderRoute,
+  ComponentsTabMenuFilterTabsRoute: ComponentsTabMenuFilterTabsRoute,
+  ComponentsTabMenuFilterTabsMobileRoute:
+    ComponentsTabMenuFilterTabsMobileRoute,
+  ComponentsTabMenuFilterTabsSizeRoute: ComponentsTabMenuFilterTabsSizeRoute,
   ComponentsTabMenuHorizontalTabsRoute: ComponentsTabMenuHorizontalTabsRoute,
   ComponentsTabMenuOptionsRoute: ComponentsTabMenuOptionsRoute,
   ComponentsTabMenuOptionsVerticalTabsRoute:
@@ -7236,6 +7288,9 @@ export interface FileRoutesByFullPath {
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
   '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute
+  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute
+  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -7648,6 +7703,9 @@ export interface FileRoutesByTo {
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
   '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute
+  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute
+  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -8061,6 +8119,9 @@ export interface FileRoutesById {
   '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
   '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
   '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute
+  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute
+  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute
   '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
   '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
   '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
@@ -8475,6 +8536,9 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
     | '/components/tabMenu/cardTabMenuWithoutBorder'
+    | '/components/tabMenu/filterTabs'
+    | '/components/tabMenu/filterTabsMobile'
+    | '/components/tabMenu/filterTabsSize'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -8886,6 +8950,9 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
     | '/components/tabMenu/cardTabMenuWithoutBorder'
+    | '/components/tabMenu/filterTabs'
+    | '/components/tabMenu/filterTabsMobile'
+    | '/components/tabMenu/filterTabsSize'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -9297,6 +9364,9 @@ export interface FileRouteTypes {
     | '/components/tabMenu/addTabVertical'
     | '/components/tabMenu/cardTabMenu'
     | '/components/tabMenu/cardTabMenuWithoutBorder'
+    | '/components/tabMenu/filterTabs'
+    | '/components/tabMenu/filterTabsMobile'
+    | '/components/tabMenu/filterTabsSize'
     | '/components/tabMenu/horizontalTabs'
     | '/components/tabMenu/options'
     | '/components/tabMenu/optionsVerticalTabs'
@@ -9735,6 +9805,9 @@ export const routeTree = rootRoute
         "/components/tabMenu/addTabVertical",
         "/components/tabMenu/cardTabMenu",
         "/components/tabMenu/cardTabMenuWithoutBorder",
+        "/components/tabMenu/filterTabs",
+        "/components/tabMenu/filterTabsMobile",
+        "/components/tabMenu/filterTabsSize",
         "/components/tabMenu/horizontalTabs",
         "/components/tabMenu/options",
         "/components/tabMenu/optionsVerticalTabs",
@@ -11011,6 +11084,18 @@ export const routeTree = rootRoute
     },
     "/components/tabMenu/cardTabMenuWithoutBorder": {
       "filePath": "components/tabMenu/cardTabMenuWithoutBorder.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/filterTabs": {
+      "filePath": "components/tabMenu/filterTabs.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/filterTabsMobile": {
+      "filePath": "components/tabMenu/filterTabsMobile.tsx",
+      "parent": "/components"
+    },
+    "/components/tabMenu/filterTabsSize": {
+      "filePath": "components/tabMenu/filterTabsSize.tsx",
       "parent": "/components"
     },
     "/components/tabMenu/horizontalTabs": {
