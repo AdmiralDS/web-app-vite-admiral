@@ -848,6 +848,17 @@
         { "name": "С minValue, maxValue", "path": "/components/currencyInput/minMaxvalue" },
         { "name": "СurrencyInputField. Базовый пример", "path": "/components/currencyInput/currencyInputField" }
       ]
+    },
+    {
+      "name": "MultiInput",
+      "path": "/components/multiInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/multiInput" },
+        { "name": "Размеры", "path": "/components/multiInput/size" },
+        { "name": "Состояния", "path": "/components/multiInput/state" },
+        { "name": "Статусы", "path": "/components/multiInput/status" },
+        { "name": "С начальными опциями", "path": "/components/multiInput/withOptions" }
+      ]
     }
   ]
 }
