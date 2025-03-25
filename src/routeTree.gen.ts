@@ -47,6 +47,7 @@ import { Route as ComponentsPaginationOneIndexImport } from './routes/components
 import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
 import { Route as ComponentsNumberInputIndexImport } from './routes/components/numberInput/index'
 import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index'
+import { Route as ComponentsMultiInputIndexImport } from './routes/components/multiInput/index'
 import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
 import { Route as ComponentsModalIndexImport } from './routes/components/modal/index'
 import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
@@ -242,6 +243,10 @@ import { Route as ComponentsNumberInputCustomImport } from './routes/components/
 import { Route as ComponentsNumberInputControlledInputImport } from './routes/components/numberInput/controlledInput'
 import { Route as ComponentsNotificationStylesImport } from './routes/components/notification/styles'
 import { Route as ComponentsNotificationStatesImport } from './routes/components/notification/states'
+import { Route as ComponentsMultiInputWithOptionsImport } from './routes/components/multiInput/withOptions'
+import { Route as ComponentsMultiInputStatusImport } from './routes/components/multiInput/status'
+import { Route as ComponentsMultiInputStateImport } from './routes/components/multiInput/state'
+import { Route as ComponentsMultiInputSizeImport } from './routes/components/multiInput/size'
 import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
 import { Route as ComponentsMultiButtonStylesImport } from './routes/components/multiButton/styles'
 import { Route as ComponentsMultiButtonStatesImport } from './routes/components/multiButton/states'
@@ -657,6 +662,12 @@ const ComponentsNotificationIndexRoute =
     path: '/notification/',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsMultiInputIndexRoute = ComponentsMultiInputIndexImport.update({
+  id: '/multiInput/',
+  path: '/multiInput/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update(
   {
@@ -1960,6 +1971,33 @@ const ComponentsNotificationStatesRoute =
     path: '/notification/states',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsMultiInputWithOptionsRoute =
+  ComponentsMultiInputWithOptionsImport.update({
+    id: '/multiInput/withOptions',
+    path: '/multiInput/withOptions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsMultiInputStatusRoute = ComponentsMultiInputStatusImport.update(
+  {
+    id: '/multiInput/status',
+    path: '/multiInput/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsMultiInputStateRoute = ComponentsMultiInputStateImport.update({
+  id: '/multiInput/state',
+  path: '/multiInput/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsMultiInputSizeRoute = ComponentsMultiInputSizeImport.update({
+  id: '/multiInput/size',
+  path: '/multiInput/size',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsMultiButtonWithIconRoute =
   ComponentsMultiButtonWithIconImport.update({
@@ -4506,6 +4544,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMultiButtonWithIconImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/multiInput/size': {
+      id: '/components/multiInput/size'
+      path: '/multiInput/size'
+      fullPath: '/components/multiInput/size'
+      preLoaderRoute: typeof ComponentsMultiInputSizeImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/multiInput/state': {
+      id: '/components/multiInput/state'
+      path: '/multiInput/state'
+      fullPath: '/components/multiInput/state'
+      preLoaderRoute: typeof ComponentsMultiInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/multiInput/status': {
+      id: '/components/multiInput/status'
+      path: '/multiInput/status'
+      fullPath: '/components/multiInput/status'
+      preLoaderRoute: typeof ComponentsMultiInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/multiInput/withOptions': {
+      id: '/components/multiInput/withOptions'
+      path: '/multiInput/withOptions'
+      fullPath: '/components/multiInput/withOptions'
+      preLoaderRoute: typeof ComponentsMultiInputWithOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/notification/states': {
       id: '/components/notification/states'
       path: '/notification/states'
@@ -5871,6 +5937,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsMultiButtonIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/multiInput/': {
+      id: '/components/multiInput/'
+      path: '/multiInput'
+      fullPath: '/components/multiInput'
+      preLoaderRoute: typeof ComponentsMultiInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/notification/': {
       id: '/components/notification/'
       path: '/notification'
@@ -6261,6 +6334,10 @@ interface ComponentsRouteChildren {
   ComponentsMultiButtonStatesRoute: typeof ComponentsMultiButtonStatesRoute
   ComponentsMultiButtonStylesRoute: typeof ComponentsMultiButtonStylesRoute
   ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
+  ComponentsMultiInputSizeRoute: typeof ComponentsMultiInputSizeRoute
+  ComponentsMultiInputStateRoute: typeof ComponentsMultiInputStateRoute
+  ComponentsMultiInputStatusRoute: typeof ComponentsMultiInputStatusRoute
+  ComponentsMultiInputWithOptionsRoute: typeof ComponentsMultiInputWithOptionsRoute
   ComponentsNotificationStatesRoute: typeof ComponentsNotificationStatesRoute
   ComponentsNotificationStylesRoute: typeof ComponentsNotificationStylesRoute
   ComponentsNumberInputControlledInputRoute: typeof ComponentsNumberInputControlledInputRoute
@@ -6456,6 +6533,7 @@ interface ComponentsRouteChildren {
   ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
   ComponentsModalIndexRoute: typeof ComponentsModalIndexRoute
   ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
+  ComponentsMultiInputIndexRoute: typeof ComponentsMultiInputIndexRoute
   ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute
   ComponentsNumberInputIndexRoute: typeof ComponentsNumberInputIndexRoute
   ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
@@ -6708,6 +6786,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiButtonStatesRoute: ComponentsMultiButtonStatesRoute,
   ComponentsMultiButtonStylesRoute: ComponentsMultiButtonStylesRoute,
   ComponentsMultiButtonWithIconRoute: ComponentsMultiButtonWithIconRoute,
+  ComponentsMultiInputSizeRoute: ComponentsMultiInputSizeRoute,
+  ComponentsMultiInputStateRoute: ComponentsMultiInputStateRoute,
+  ComponentsMultiInputStatusRoute: ComponentsMultiInputStatusRoute,
+  ComponentsMultiInputWithOptionsRoute: ComponentsMultiInputWithOptionsRoute,
   ComponentsNotificationStatesRoute: ComponentsNotificationStatesRoute,
   ComponentsNotificationStylesRoute: ComponentsNotificationStylesRoute,
   ComponentsNumberInputControlledInputRoute:
@@ -6945,6 +7027,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMenuButtonIndexRoute: ComponentsMenuButtonIndexRoute,
   ComponentsModalIndexRoute: ComponentsModalIndexRoute,
   ComponentsMultiButtonIndexRoute: ComponentsMultiButtonIndexRoute,
+  ComponentsMultiInputIndexRoute: ComponentsMultiInputIndexRoute,
   ComponentsNotificationIndexRoute: ComponentsNotificationIndexRoute,
   ComponentsNumberInputIndexRoute: ComponentsNumberInputIndexRoute,
   ComponentsOverflowMenuIndexRoute: ComponentsOverflowMenuIndexRoute,
@@ -7186,6 +7269,10 @@ export interface FileRoutesByFullPath {
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute
+  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute
+  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute
+  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
   '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
@@ -7381,6 +7468,7 @@ export interface FileRoutesByFullPath {
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
+  '/components/multiInput': typeof ComponentsMultiInputIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
   '/components/numberInput': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
@@ -7601,6 +7689,10 @@ export interface FileRoutesByTo {
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute
+  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute
+  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute
+  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
   '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
@@ -7796,6 +7888,7 @@ export interface FileRoutesByTo {
   '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
   '/components/modal': typeof ComponentsModalIndexRoute
   '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
+  '/components/multiInput': typeof ComponentsMultiInputIndexRoute
   '/components/notification': typeof ComponentsNotificationIndexRoute
   '/components/numberInput': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
@@ -8017,6 +8110,10 @@ export interface FileRoutesById {
   '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
   '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
   '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute
+  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute
+  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute
+  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute
   '/components/notification/states': typeof ComponentsNotificationStatesRoute
   '/components/notification/styles': typeof ComponentsNotificationStylesRoute
   '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
@@ -8212,6 +8309,7 @@ export interface FileRoutesById {
   '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
   '/components/modal/': typeof ComponentsModalIndexRoute
   '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
+  '/components/multiInput/': typeof ComponentsMultiInputIndexRoute
   '/components/notification/': typeof ComponentsNotificationIndexRoute
   '/components/numberInput/': typeof ComponentsNumberInputIndexRoute
   '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
@@ -8434,6 +8532,10 @@ export interface FileRouteTypes {
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
+    | '/components/multiInput/size'
+    | '/components/multiInput/state'
+    | '/components/multiInput/status'
+    | '/components/multiInput/withOptions'
     | '/components/notification/states'
     | '/components/notification/styles'
     | '/components/numberInput/controlledInput'
@@ -8629,6 +8731,7 @@ export interface FileRouteTypes {
     | '/components/menuButton'
     | '/components/modal'
     | '/components/multiButton'
+    | '/components/multiInput'
     | '/components/notification'
     | '/components/numberInput'
     | '/components/overflowMenu'
@@ -8848,6 +8951,10 @@ export interface FileRouteTypes {
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
+    | '/components/multiInput/size'
+    | '/components/multiInput/state'
+    | '/components/multiInput/status'
+    | '/components/multiInput/withOptions'
     | '/components/notification/states'
     | '/components/notification/styles'
     | '/components/numberInput/controlledInput'
@@ -9043,6 +9150,7 @@ export interface FileRouteTypes {
     | '/components/menuButton'
     | '/components/modal'
     | '/components/multiButton'
+    | '/components/multiInput'
     | '/components/notification'
     | '/components/numberInput'
     | '/components/overflowMenu'
@@ -9262,6 +9370,10 @@ export interface FileRouteTypes {
     | '/components/multiButton/states'
     | '/components/multiButton/styles'
     | '/components/multiButton/withIcon'
+    | '/components/multiInput/size'
+    | '/components/multiInput/state'
+    | '/components/multiInput/status'
+    | '/components/multiInput/withOptions'
     | '/components/notification/states'
     | '/components/notification/styles'
     | '/components/numberInput/controlledInput'
@@ -9457,6 +9569,7 @@ export interface FileRouteTypes {
     | '/components/menuButton/'
     | '/components/modal/'
     | '/components/multiButton/'
+    | '/components/multiInput/'
     | '/components/notification/'
     | '/components/numberInput/'
     | '/components/overflowMenu/'
@@ -9703,6 +9816,10 @@ export const routeTree = rootRoute
         "/components/multiButton/states",
         "/components/multiButton/styles",
         "/components/multiButton/withIcon",
+        "/components/multiInput/size",
+        "/components/multiInput/state",
+        "/components/multiInput/status",
+        "/components/multiInput/withOptions",
         "/components/notification/states",
         "/components/notification/styles",
         "/components/numberInput/controlledInput",
@@ -9898,6 +10015,7 @@ export const routeTree = rootRoute
         "/components/menuButton/",
         "/components/modal/",
         "/components/multiButton/",
+        "/components/multiInput/",
         "/components/notification/",
         "/components/numberInput/",
         "/components/overflowMenu/",
@@ -10678,6 +10796,22 @@ export const routeTree = rootRoute
       "filePath": "components/multiButton/withIcon.tsx",
       "parent": "/components"
     },
+    "/components/multiInput/size": {
+      "filePath": "components/multiInput/size.tsx",
+      "parent": "/components"
+    },
+    "/components/multiInput/state": {
+      "filePath": "components/multiInput/state.tsx",
+      "parent": "/components"
+    },
+    "/components/multiInput/status": {
+      "filePath": "components/multiInput/status.tsx",
+      "parent": "/components"
+    },
+    "/components/multiInput/withOptions": {
+      "filePath": "components/multiInput/withOptions.tsx",
+      "parent": "/components"
+    },
     "/components/notification/states": {
       "filePath": "components/notification/states.tsx",
       "parent": "/components"
@@ -11456,6 +11590,10 @@ export const routeTree = rootRoute
     },
     "/components/multiButton/": {
       "filePath": "components/multiButton/index.tsx",
+      "parent": "/components"
+    },
+    "/components/multiInput/": {
+      "filePath": "components/multiInput/index.tsx",
       "parent": "/components"
     },
     "/components/notification/": {
