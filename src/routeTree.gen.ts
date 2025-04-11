@@ -122,10 +122,12 @@ import { Route as ComponentsTagTooltipImport } from './routes/components/tag/too
 import { Route as ComponentsTagTagsImport } from './routes/components/tag/tags'
 import { Route as ComponentsTagStylesImport } from './routes/components/tag/styles'
 import { Route as ComponentsTagMenuImport } from './routes/components/tag/menu'
+import { Route as ComponentsTableScrollPositionByRefImport } from './routes/components/table/scrollPositionByRef'
 import { Route as ComponentsTableMultiLevelHeaderImport } from './routes/components/table/multiLevelHeader'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsTableCheckboxImport } from './routes/components/table/checkbox'
 import { Route as ComponentsTableBaseHTMLStickyShadowImport } from './routes/components/table/baseHTMLStickyShadow'
 import { Route as ComponentsTableBaseHTMLOverflowMenuImport } from './routes/components/table/baseHTMLOverflowMenu'
 import { Route as ComponentsTableBaseHTMLImport } from './routes/components/table/baseHTML'
@@ -1146,6 +1148,13 @@ const ComponentsTagMenuRoute = ComponentsTagMenuImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsTableScrollPositionByRefRoute =
+  ComponentsTableScrollPositionByRefImport.update({
+    id: '/table/scrollPositionByRef',
+    path: '/table/scrollPositionByRef',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsTableMultiLevelHeaderRoute =
   ComponentsTableMultiLevelHeaderImport.update({
     id: '/table/multiLevelHeader',
@@ -1173,6 +1182,12 @@ const ComponentsTableLoadOnScrollRoute =
     path: '/table/loadOnScroll',
     getParentRoute: () => ComponentsRoute,
   } as any)
+
+const ComponentsTableCheckboxRoute = ComponentsTableCheckboxImport.update({
+  id: '/table/checkbox',
+  path: '/table/checkbox',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsTableBaseHTMLStickyShadowRoute =
   ComponentsTableBaseHTMLStickyShadowImport.update({
@@ -5391,6 +5406,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableBaseHTMLStickyShadowImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/table/checkbox': {
+      id: '/components/table/checkbox'
+      path: '/table/checkbox'
+      fullPath: '/components/table/checkbox'
+      preLoaderRoute: typeof ComponentsTableCheckboxImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScroll': {
       id: '/components/table/loadOnScroll'
       path: '/table/loadOnScroll'
@@ -5417,6 +5439,13 @@ declare module '@tanstack/react-router' {
       path: '/table/multiLevelHeader'
       fullPath: '/components/table/multiLevelHeader'
       preLoaderRoute: typeof ComponentsTableMultiLevelHeaderImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/table/scrollPositionByRef': {
+      id: '/components/table/scrollPositionByRef'
+      path: '/table/scrollPositionByRef'
+      fullPath: '/components/table/scrollPositionByRef'
+      preLoaderRoute: typeof ComponentsTableScrollPositionByRefImport
       parentRoute: typeof ComponentsImport
     }
     '/components/tag/menu': {
@@ -6455,10 +6484,12 @@ interface ComponentsRouteChildren {
   ComponentsTableBaseHTMLRoute: typeof ComponentsTableBaseHTMLRoute
   ComponentsTableBaseHTMLOverflowMenuRoute: typeof ComponentsTableBaseHTMLOverflowMenuRoute
   ComponentsTableBaseHTMLStickyShadowRoute: typeof ComponentsTableBaseHTMLStickyShadowRoute
+  ComponentsTableCheckboxRoute: typeof ComponentsTableCheckboxRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
   ComponentsTableMultiLevelHeaderRoute: typeof ComponentsTableMultiLevelHeaderRoute
+  ComponentsTableScrollPositionByRefRoute: typeof ComponentsTableScrollPositionByRefRoute
   ComponentsTagMenuRoute: typeof ComponentsTagMenuRoute
   ComponentsTagStylesRoute: typeof ComponentsTagStylesRoute
   ComponentsTagTagsRoute: typeof ComponentsTagTagsRoute
@@ -6944,12 +6975,15 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableBaseHTMLOverflowMenuRoute,
   ComponentsTableBaseHTMLStickyShadowRoute:
     ComponentsTableBaseHTMLStickyShadowRoute,
+  ComponentsTableCheckboxRoute: ComponentsTableCheckboxRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
   ComponentsTableLoadOnScrollSkeletonRoute:
     ComponentsTableLoadOnScrollSkeletonRoute,
   ComponentsTableLoadOnScrollSpinnerRoute:
     ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsTableMultiLevelHeaderRoute: ComponentsTableMultiLevelHeaderRoute,
+  ComponentsTableScrollPositionByRefRoute:
+    ComponentsTableScrollPositionByRefRoute,
   ComponentsTagMenuRoute: ComponentsTagMenuRoute,
   ComponentsTagStylesRoute: ComponentsTagStylesRoute,
   ComponentsTagTagsRoute: ComponentsTagTagsRoute,
@@ -7390,10 +7424,12 @@ export interface FileRoutesByFullPath {
   '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
+  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
+  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
   '/components/tag/menu': typeof ComponentsTagMenuRoute
   '/components/tag/styles': typeof ComponentsTagStylesRoute
   '/components/tag/tags': typeof ComponentsTagTagsRoute
@@ -7810,10 +7846,12 @@ export interface FileRoutesByTo {
   '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
+  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
+  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
   '/components/tag/menu': typeof ComponentsTagMenuRoute
   '/components/tag/styles': typeof ComponentsTagStylesRoute
   '/components/tag/tags': typeof ComponentsTagTagsRoute
@@ -8231,10 +8269,12 @@ export interface FileRoutesById {
   '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
+  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
+  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
   '/components/tag/menu': typeof ComponentsTagMenuRoute
   '/components/tag/styles': typeof ComponentsTagStylesRoute
   '/components/tag/tags': typeof ComponentsTagTagsRoute
@@ -8653,10 +8693,12 @@ export interface FileRouteTypes {
     | '/components/table/baseHTML'
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
+    | '/components/table/checkbox'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/table/multiLevelHeader'
+    | '/components/table/scrollPositionByRef'
     | '/components/tag/menu'
     | '/components/tag/styles'
     | '/components/tag/tags'
@@ -9072,10 +9114,12 @@ export interface FileRouteTypes {
     | '/components/table/baseHTML'
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
+    | '/components/table/checkbox'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/table/multiLevelHeader'
+    | '/components/table/scrollPositionByRef'
     | '/components/tag/menu'
     | '/components/tag/styles'
     | '/components/tag/tags'
@@ -9491,10 +9535,12 @@ export interface FileRouteTypes {
     | '/components/table/baseHTML'
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
+    | '/components/table/checkbox'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/table/multiLevelHeader'
+    | '/components/table/scrollPositionByRef'
     | '/components/tag/menu'
     | '/components/tag/styles'
     | '/components/tag/tags'
@@ -9937,10 +9983,12 @@ export const routeTree = rootRoute
         "/components/table/baseHTML",
         "/components/table/baseHTMLOverflowMenu",
         "/components/table/baseHTMLStickyShadow",
+        "/components/table/checkbox",
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
         "/components/table/multiLevelHeader",
+        "/components/table/scrollPositionByRef",
         "/components/tag/menu",
         "/components/tag/styles",
         "/components/tag/tags",
@@ -11280,6 +11328,10 @@ export const routeTree = rootRoute
       "filePath": "components/table/baseHTMLStickyShadow.tsx",
       "parent": "/components"
     },
+    "/components/table/checkbox": {
+      "filePath": "components/table/checkbox.tsx",
+      "parent": "/components"
+    },
     "/components/table/loadOnScroll": {
       "filePath": "components/table/loadOnScroll.tsx",
       "parent": "/components"
@@ -11294,6 +11346,10 @@ export const routeTree = rootRoute
     },
     "/components/table/multiLevelHeader": {
       "filePath": "components/table/multiLevelHeader.tsx",
+      "parent": "/components"
+    },
+    "/components/table/scrollPositionByRef": {
+      "filePath": "components/table/scrollPositionByRef.tsx",
       "parent": "/components"
     },
     "/components/tag/menu": {

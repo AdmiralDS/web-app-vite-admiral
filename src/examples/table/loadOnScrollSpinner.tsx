@@ -3,6 +3,7 @@ import { Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 
 import { LastRow } from '#examples/-helpers/table';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 
 const columnList: Column[] = [
   {
@@ -26,10 +27,13 @@ const TOTAL_ROWS_AMOUNT = 100;
 
 export const TableLoadOnScrollSpinner = () => {
   const [cols, setCols] = useState(columnList);
+  /** Текущее количество строк  */
   const [rowsAmount, setRowsAmount] = useState(10);
+  /** Индикация загрузки данных */
   const [loading, setLoading] = useState(false);
   const tableRef = useRef<HTMLDivElement>(null);
 
+  /** Формируем массив строк на основе текущего количества строк */
   const rows = useMemo(() => {
     const array = Array.from({ length: rowsAmount }, (_v, k) => {
       return `${k + 1}0000`;
@@ -47,6 +51,7 @@ export const TableLoadOnScrollSpinner = () => {
     setCols(newCols);
   };
 
+  /** Имитация загрузки данных через setTimeout */
   const uploadNewRows = () => {
     if (rowsAmount < TOTAL_ROWS_AMOUNT) {
       setLoading(true);
@@ -62,6 +67,7 @@ export const TableLoadOnScrollSpinner = () => {
     }
   };
 
+  /** Определение обертки вокруг строки */
   const renderRowWrapper = (row: TableRow, index: number, rowNode: React.ReactNode) =>
     index === rowsAmount - 1 ? (
       <LastRow
@@ -76,13 +82,31 @@ export const TableLoadOnScrollSpinner = () => {
     );
 
   return (
-    <Table
-      ref={tableRef}
-      rowList={rows}
-      columnList={cols}
-      onColumnResize={handleResize}
-      renderRowWrapper={renderRowWrapper}
-      style={{ height: '300px', width: '450px' }}
-    />
+    <ExampleSection
+      text={
+        <>
+          <PStyled>
+            Пользователь может реализовать подгрузку новых строк по мере скролла тела таблицы, отображая процесс
+            загрузки данных в виде спиннера. Это можно сделать, например, следующим образом:
+          </PStyled>
+          <PStyled>
+            С помощью функции renderRowWrapper можно создать элемент-обёртку над последней строкой в таблице, и через
+            IntersectionObserver отслеживать момент, когда элемент-обёртка станет видим в пределах тела таблицы (т.е.
+            момент доскролла до последней строки). Это событие будет являться триггером для загрузки новой порции строк.
+            При этом в течение загрузки новых данных в качестве контента последней строки можно отображать компонент
+            спиннера.
+          </PStyled>
+        </>
+      }
+    >
+      <Table
+        ref={tableRef}
+        rowList={rows}
+        columnList={cols}
+        onColumnResize={handleResize}
+        renderRowWrapper={renderRowWrapper}
+        style={{ height: '300px', width: '450px' }}
+      />
+    </ExampleSection>
   );
 };

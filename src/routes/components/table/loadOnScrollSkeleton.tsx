@@ -5,6 +5,5 @@ export const Route = createFileRoute('/components/table/loadOnScrollSkeleton')({
   component: () => <TableLoadOnScrollSkeleton />,
   staticData: {
     title: 'Table. Подгрузка данных при скролле со скелетоном',
-    description: 'Небольшое описание функционала',
   },
 });
