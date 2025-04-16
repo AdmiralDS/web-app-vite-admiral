@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { T } from '@admiral-ds/react-ui';
-import { Table } from '../../Table';
+import { T, Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ExampleSection, PStyled } from '#examples/-helpers';
