@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Table, T } from '@admiral-ds/react-ui';
+import { T } from '@admiral-ds/react-ui';
+import { Table } from '../../Table';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ExampleSection, PStyled } from '#examples/-helpers';
@@ -180,12 +181,12 @@ const columnList: Column[] = [
   {
     name: 'transfer_date',
     title: 'Дата сделки',
-    width: 150,
+    width: 550,
   },
   {
     name: 'transfer_amount',
     title: 'Сумма',
-    width: 170,
+    width: 770,
   },
   {
     name: 'currency',
