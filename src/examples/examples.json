@@ -357,6 +357,13 @@
         { "name": "Стилизация компонента", "path": "/components/table/style" },
         { "name": "Сортировка", "path": "/components/table/sort" },
         { "name": "Фильтрация", "path": "/components/table/filter" },
+        { "name": "Фиксирванные столбцы", "path": "/components/table/sticky" },
+        {
+          "name": "Пример строк с OverflowMenu и иконками одиночных действий",
+          "path": "/components/table/overflowMenu"
+        },
+        { "name": "Состояния и статусы строк", "path": "/components/table/rowState" },
+        { "name": "Группировка строк", "path": "/components/table/group" },
         { "name": "Управление позицией скролла через ref-атрибут", "path": "/components/table/scrollPositionByRef" },
         { "name": "Подгрузка данных при скролле", "path": "/components/table/loadOnScroll" },
         { "name": "Подгрузка данных при скролле со спиннером", "path": "/components/table/loadOnScrollSpinner" },
