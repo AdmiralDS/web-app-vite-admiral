@@ -353,7 +353,10 @@
       "path": "/components/table",
       "routes": [
         { "name": "Базовый пример", "path": "/components/table" },
-        // { "name": "Пример с чекбоксами", "path": "/components/table/checkbox" },
+        { "name": "Изменение ширины столбцов", "path": "/components/table/width" },
+        { "name": "Стилизация компонента", "path": "/components/table/style" },
+        { "name": "Сортировка", "path": "/components/table/sort" },
+        { "name": "Фильтрация", "path": "/components/table/filter" },
         { "name": "Управление позицией скролла через ref-атрибут", "path": "/components/table/scrollPositionByRef" },
         { "name": "Подгрузка данных при скролле", "path": "/components/table/loadOnScroll" },
         { "name": "Подгрузка данных при скролле со спиннером", "path": "/components/table/loadOnScrollSpinner" },
