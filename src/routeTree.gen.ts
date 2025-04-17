@@ -128,13 +128,17 @@ import { Route as ComponentsTableStickyImport } from './routes/components/table/
 import { Route as ComponentsTableSortImport } from './routes/components/table/sort'
 import { Route as ComponentsTableScrollPositionByRefImport } from './routes/components/table/scrollPositionByRef'
 import { Route as ComponentsTableRowStateImport } from './routes/components/table/rowState'
+import { Route as ComponentsTableRowDragDropImport } from './routes/components/table/rowDragDrop'
 import { Route as ComponentsTableOverflowMenuImport } from './routes/components/table/overflowMenu'
 import { Route as ComponentsTableMultiLevelHeaderImport } from './routes/components/table/multiLevelHeader'
 import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
 import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
 import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
 import { Route as ComponentsTableGroupImport } from './routes/components/table/group'
+import { Route as ComponentsTableFixedVirtualScrollImport } from './routes/components/table/fixedVirtualScroll'
 import { Route as ComponentsTableFilterImport } from './routes/components/table/filter'
+import { Route as ComponentsTableDynamicVirtualScrollImport } from './routes/components/table/dynamicVirtualScroll'
+import { Route as ComponentsTableColumnDragDropImport } from './routes/components/table/columnDragDrop'
 import { Route as ComponentsTableCheckboxImport } from './routes/components/table/checkbox'
 import { Route as ComponentsTableBaseHTMLStickyShadowImport } from './routes/components/table/baseHTMLStickyShadow'
 import { Route as ComponentsTableBaseHTMLOverflowMenuImport } from './routes/components/table/baseHTMLOverflowMenu'
@@ -1193,6 +1197,14 @@ const ComponentsTableRowStateRoute = ComponentsTableRowStateImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsTableRowDragDropRoute = ComponentsTableRowDragDropImport.update(
+  {
+    id: '/table/rowDragDrop',
+    path: '/table/rowDragDrop',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
 const ComponentsTableOverflowMenuRoute =
   ComponentsTableOverflowMenuImport.update({
     id: '/table/overflowMenu',
@@ -1234,11 +1246,32 @@ const ComponentsTableGroupRoute = ComponentsTableGroupImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsTableFixedVirtualScrollRoute =
+  ComponentsTableFixedVirtualScrollImport.update({
+    id: '/table/fixedVirtualScroll',
+    path: '/table/fixedVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsTableFilterRoute = ComponentsTableFilterImport.update({
   id: '/table/filter',
   path: '/table/filter',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsTableDynamicVirtualScrollRoute =
+  ComponentsTableDynamicVirtualScrollImport.update({
+    id: '/table/dynamicVirtualScroll',
+    path: '/table/dynamicVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTableColumnDragDropRoute =
+  ComponentsTableColumnDragDropImport.update({
+    id: '/table/columnDragDrop',
+    path: '/table/columnDragDrop',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableCheckboxRoute = ComponentsTableCheckboxImport.update({
   id: '/table/checkbox',
@@ -5470,11 +5503,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTableCheckboxImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/table/columnDragDrop': {
+      id: '/components/table/columnDragDrop'
+      path: '/table/columnDragDrop'
+      fullPath: '/components/table/columnDragDrop'
+      preLoaderRoute: typeof ComponentsTableColumnDragDropImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/table/dynamicVirtualScroll': {
+      id: '/components/table/dynamicVirtualScroll'
+      path: '/table/dynamicVirtualScroll'
+      fullPath: '/components/table/dynamicVirtualScroll'
+      preLoaderRoute: typeof ComponentsTableDynamicVirtualScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/filter': {
       id: '/components/table/filter'
       path: '/table/filter'
       fullPath: '/components/table/filter'
       preLoaderRoute: typeof ComponentsTableFilterImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/table/fixedVirtualScroll': {
+      id: '/components/table/fixedVirtualScroll'
+      path: '/table/fixedVirtualScroll'
+      fullPath: '/components/table/fixedVirtualScroll'
+      preLoaderRoute: typeof ComponentsTableFixedVirtualScrollImport
       parentRoute: typeof ComponentsImport
     }
     '/components/table/group': {
@@ -5517,6 +5571,13 @@ declare module '@tanstack/react-router' {
       path: '/table/overflowMenu'
       fullPath: '/components/table/overflowMenu'
       preLoaderRoute: typeof ComponentsTableOverflowMenuImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/table/rowDragDrop': {
+      id: '/components/table/rowDragDrop'
+      path: '/table/rowDragDrop'
+      fullPath: '/components/table/rowDragDrop'
+      preLoaderRoute: typeof ComponentsTableRowDragDropImport
       parentRoute: typeof ComponentsImport
     }
     '/components/table/rowState': {
@@ -6598,13 +6659,17 @@ interface ComponentsRouteChildren {
   ComponentsTableBaseHTMLOverflowMenuRoute: typeof ComponentsTableBaseHTMLOverflowMenuRoute
   ComponentsTableBaseHTMLStickyShadowRoute: typeof ComponentsTableBaseHTMLStickyShadowRoute
   ComponentsTableCheckboxRoute: typeof ComponentsTableCheckboxRoute
+  ComponentsTableColumnDragDropRoute: typeof ComponentsTableColumnDragDropRoute
+  ComponentsTableDynamicVirtualScrollRoute: typeof ComponentsTableDynamicVirtualScrollRoute
   ComponentsTableFilterRoute: typeof ComponentsTableFilterRoute
+  ComponentsTableFixedVirtualScrollRoute: typeof ComponentsTableFixedVirtualScrollRoute
   ComponentsTableGroupRoute: typeof ComponentsTableGroupRoute
   ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
   ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
   ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
   ComponentsTableMultiLevelHeaderRoute: typeof ComponentsTableMultiLevelHeaderRoute
   ComponentsTableOverflowMenuRoute: typeof ComponentsTableOverflowMenuRoute
+  ComponentsTableRowDragDropRoute: typeof ComponentsTableRowDragDropRoute
   ComponentsTableRowStateRoute: typeof ComponentsTableRowStateRoute
   ComponentsTableScrollPositionByRefRoute: typeof ComponentsTableScrollPositionByRefRoute
   ComponentsTableSortRoute: typeof ComponentsTableSortRoute
@@ -7097,7 +7162,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTableBaseHTMLStickyShadowRoute:
     ComponentsTableBaseHTMLStickyShadowRoute,
   ComponentsTableCheckboxRoute: ComponentsTableCheckboxRoute,
+  ComponentsTableColumnDragDropRoute: ComponentsTableColumnDragDropRoute,
+  ComponentsTableDynamicVirtualScrollRoute:
+    ComponentsTableDynamicVirtualScrollRoute,
   ComponentsTableFilterRoute: ComponentsTableFilterRoute,
+  ComponentsTableFixedVirtualScrollRoute:
+    ComponentsTableFixedVirtualScrollRoute,
   ComponentsTableGroupRoute: ComponentsTableGroupRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
   ComponentsTableLoadOnScrollSkeletonRoute:
@@ -7106,6 +7176,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsTableMultiLevelHeaderRoute: ComponentsTableMultiLevelHeaderRoute,
   ComponentsTableOverflowMenuRoute: ComponentsTableOverflowMenuRoute,
+  ComponentsTableRowDragDropRoute: ComponentsTableRowDragDropRoute,
   ComponentsTableRowStateRoute: ComponentsTableRowStateRoute,
   ComponentsTableScrollPositionByRefRoute:
     ComponentsTableScrollPositionByRefRoute,
@@ -7554,13 +7625,17 @@ export interface FileRoutesByFullPath {
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
   '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
+  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
+  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
   '/components/table/filter': typeof ComponentsTableFilterRoute
+  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
   '/components/table/group': typeof ComponentsTableGroupRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
   '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
+  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
   '/components/table/rowState': typeof ComponentsTableRowStateRoute
   '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
   '/components/table/sort': typeof ComponentsTableSortRoute
@@ -7984,13 +8059,17 @@ export interface FileRoutesByTo {
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
   '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
+  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
+  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
   '/components/table/filter': typeof ComponentsTableFilterRoute
+  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
   '/components/table/group': typeof ComponentsTableGroupRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
   '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
+  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
   '/components/table/rowState': typeof ComponentsTableRowStateRoute
   '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
   '/components/table/sort': typeof ComponentsTableSortRoute
@@ -8415,13 +8494,17 @@ export interface FileRoutesById {
   '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
   '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
   '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
+  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
+  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
   '/components/table/filter': typeof ComponentsTableFilterRoute
+  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
   '/components/table/group': typeof ComponentsTableGroupRoute
   '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
   '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
   '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
   '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
   '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
+  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
   '/components/table/rowState': typeof ComponentsTableRowStateRoute
   '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
   '/components/table/sort': typeof ComponentsTableSortRoute
@@ -8847,13 +8930,17 @@ export interface FileRouteTypes {
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
     | '/components/table/checkbox'
+    | '/components/table/columnDragDrop'
+    | '/components/table/dynamicVirtualScroll'
     | '/components/table/filter'
+    | '/components/table/fixedVirtualScroll'
     | '/components/table/group'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/table/multiLevelHeader'
     | '/components/table/overflowMenu'
+    | '/components/table/rowDragDrop'
     | '/components/table/rowState'
     | '/components/table/scrollPositionByRef'
     | '/components/table/sort'
@@ -9276,13 +9363,17 @@ export interface FileRouteTypes {
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
     | '/components/table/checkbox'
+    | '/components/table/columnDragDrop'
+    | '/components/table/dynamicVirtualScroll'
     | '/components/table/filter'
+    | '/components/table/fixedVirtualScroll'
     | '/components/table/group'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/table/multiLevelHeader'
     | '/components/table/overflowMenu'
+    | '/components/table/rowDragDrop'
     | '/components/table/rowState'
     | '/components/table/scrollPositionByRef'
     | '/components/table/sort'
@@ -9705,13 +9796,17 @@ export interface FileRouteTypes {
     | '/components/table/baseHTMLOverflowMenu'
     | '/components/table/baseHTMLStickyShadow'
     | '/components/table/checkbox'
+    | '/components/table/columnDragDrop'
+    | '/components/table/dynamicVirtualScroll'
     | '/components/table/filter'
+    | '/components/table/fixedVirtualScroll'
     | '/components/table/group'
     | '/components/table/loadOnScroll'
     | '/components/table/loadOnScrollSkeleton'
     | '/components/table/loadOnScrollSpinner'
     | '/components/table/multiLevelHeader'
     | '/components/table/overflowMenu'
+    | '/components/table/rowDragDrop'
     | '/components/table/rowState'
     | '/components/table/scrollPositionByRef'
     | '/components/table/sort'
@@ -10161,13 +10256,17 @@ export const routeTree = rootRoute
         "/components/table/baseHTMLOverflowMenu",
         "/components/table/baseHTMLStickyShadow",
         "/components/table/checkbox",
+        "/components/table/columnDragDrop",
+        "/components/table/dynamicVirtualScroll",
         "/components/table/filter",
+        "/components/table/fixedVirtualScroll",
         "/components/table/group",
         "/components/table/loadOnScroll",
         "/components/table/loadOnScrollSkeleton",
         "/components/table/loadOnScrollSpinner",
         "/components/table/multiLevelHeader",
         "/components/table/overflowMenu",
+        "/components/table/rowDragDrop",
         "/components/table/rowState",
         "/components/table/scrollPositionByRef",
         "/components/table/sort",
@@ -11517,8 +11616,20 @@ export const routeTree = rootRoute
       "filePath": "components/table/checkbox.tsx",
       "parent": "/components"
     },
+    "/components/table/columnDragDrop": {
+      "filePath": "components/table/columnDragDrop.tsx",
+      "parent": "/components"
+    },
+    "/components/table/dynamicVirtualScroll": {
+      "filePath": "components/table/dynamicVirtualScroll.tsx",
+      "parent": "/components"
+    },
     "/components/table/filter": {
       "filePath": "components/table/filter.tsx",
+      "parent": "/components"
+    },
+    "/components/table/fixedVirtualScroll": {
+      "filePath": "components/table/fixedVirtualScroll.tsx",
       "parent": "/components"
     },
     "/components/table/group": {
@@ -11543,6 +11654,10 @@ export const routeTree = rootRoute
     },
     "/components/table/overflowMenu": {
       "filePath": "components/table/overflowMenu.tsx",
+      "parent": "/components"
+    },
+    "/components/table/rowDragDrop": {
+      "filePath": "components/table/rowDragDrop.tsx",
       "parent": "/components"
     },
     "/components/table/rowState": {

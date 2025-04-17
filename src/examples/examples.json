@@ -364,6 +364,22 @@
         },
         { "name": "Состояния и статусы строк", "path": "/components/table/rowState" },
         { "name": "Группировка строк", "path": "/components/table/group" },
+        {
+          "name": "Виртуальный скролл для строк с фиксированной высотой",
+          "path": "/components/table/fixedVirtualScroll"
+        },
+        {
+          "name": "Виртуальный скролл для строк с динамической высотой",
+          "path": "/components/table/dynamicVirtualScroll"
+        },
+        {
+          "name": "Drag&Drop столбцов",
+          "path": "/components/table/columnDragDrop"
+        },
+        {
+          "name": "Drag&Drop строк",
+          "path": "/components/table/rowDragDrop"
+        },
         { "name": "Управление позицией скролла через ref-атрибут", "path": "/components/table/scrollPositionByRef" },
         { "name": "Подгрузка данных при скролле", "path": "/components/table/loadOnScroll" },
         { "name": "Подгрузка данных при скролле со спиннером", "path": "/components/table/loadOnScrollSpinner" },
