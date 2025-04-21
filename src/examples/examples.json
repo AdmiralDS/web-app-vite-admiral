@@ -354,7 +354,7 @@
       "routes": [
         { "name": "Базовый пример", "path": "/components/table" },
         { "name": "Изменение ширины столбцов", "path": "/components/table/width" },
-        { "name": "Стилизация компонента", "path": "/components/table/style" },
+        { "name": "Пример с чекбоксами", "path": "/components/table/checkbox" },
         { "name": "Сортировка", "path": "/components/table/sort" },
         { "name": "Фильтрация", "path": "/components/table/filter" },
         { "name": "Фиксирванные столбцы", "path": "/components/table/sticky" },
@@ -362,7 +362,7 @@
           "name": "Пример строк с OverflowMenu и иконками одиночных действий",
           "path": "/components/table/overflowMenu"
         },
-        { "name": "Состояния и статусы строк", "path": "/components/table/rowState" },
+        { "name": "Детализация строк", "path": "/components/table/expand" },
         { "name": "Группировка строк", "path": "/components/table/group" },
         {
           "name": "Виртуальный скролл для строк с фиксированной высотой",
@@ -380,6 +380,12 @@
           "name": "Drag&Drop строк",
           "path": "/components/table/rowDragDrop"
         },
+        { "name": "Стилизация компонента", "path": "/components/table/style" },
+        { "name": "Состояния и статусы строк", "path": "/components/table/rowState" },
+        { "name": "Зебра (окрашивание строк через одну)", "path": "/components/table/zebra" },
+        { "name": "Многострочность", "path": "/components/table/multiline" },
+        { "name": "Дополнительный текст в заголовке", "path": "/components/table/extraText" },
+        { "name": "Использование render-колбеков", "path": "/components/table/renderCallback" },
         { "name": "Управление позицией скролла через ref-атрибут", "path": "/components/table/scrollPositionByRef" },
         { "name": "Подгрузка данных при скролле", "path": "/components/table/loadOnScroll" },
         { "name": "Подгрузка данных при скролле со спиннером", "path": "/components/table/loadOnScrollSpinner" },
