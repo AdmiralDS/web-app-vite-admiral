@@ -2,6 +2,15 @@ import { useState, useRef, useMemo } from 'react';
 import { Table, PaginationTwo } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 import { ExampleSection, PStyled } from '#examples/-helpers';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  gap: 20px;
+`;
 
 /** Определяем массив колонок */
 const columnList: Column[] = [
@@ -72,14 +81,16 @@ export const TableScrollPositionByRef = () => {
         </>
       }
     >
-      <Table
-        ref={tableRef}
-        rowList={rows}
-        columnList={columnList}
-        disableColumnResize
-        style={{ height: '300px', width: '450px' }}
-      />
-      <PaginationTwo count={2} page={page} onChange={handlePageChange} dimension="s" />
+      <Wrapper>
+        <Table
+          ref={tableRef}
+          rowList={rows}
+          columnList={columnList}
+          disableColumnResize
+          style={{ height: '300px', width: '450px' }}
+        />
+        <PaginationTwo count={2} page={page} onChange={handlePageChange} dimension="s" />
+      </Wrapper>
     </ExampleSection>
   );
 };
