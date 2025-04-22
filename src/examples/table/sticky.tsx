@@ -4,11 +4,6 @@ import type { Column, TableRow } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
-const Separator = styled.span`
-  display: block;
-  height: 8px;
-`;
-
 const AmountCell = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
@@ -181,16 +176,19 @@ const columnList: Column[] = [
   {
     name: 'transfer_type',
     title: 'Тип сделки',
+    width: '20%',
+    sticky: true,
   },
   {
     name: 'transfer_date',
     title: 'Дата сделки',
     width: 150,
+    sticky: true,
   },
   {
     name: 'transfer_amount',
     title: 'Сумма',
-    width: 170,
+    width: 300,
   },
   {
     name: 'currency',
@@ -202,7 +200,7 @@ const columnList: Column[] = [
   },
 ];
 
-export const TableBasic = () => {
+export const TableStickyColumns = () => {
   const [cols, setCols] = useState(columnList);
 
   const handleResize = ({ name, width }: { name: string; width: string }) => {
@@ -211,42 +209,32 @@ export const TableBasic = () => {
   };
 
   return (
-    <>
-      <ExampleSection
-        header="Table API"
-        text={
-          <>
-            <PStyled>
-              <code>API</code> таблицы предполагает 2 обязательных параметра: <code>columnList</code> и
-              <code>rowList</code>
-              , где
-              <Separator />
-              <li>
-                <code>columnList</code> - массив данных с описанием столбцов, у каждого столбца должен быть задан
-                уникальный идентификатор <code>name</code>;
-              </li>
-              <Separator />
-              <li>
-                <code>rowList</code> - массив данных с описанием строк, у каждой строки должен быть задан уникальный
-                идентификатор <code>id</code>.
-              </li>
-            </PStyled>
-            <PStyled>
-              Между столбцами и строками таблицы существует четкий МАППИНГ для задания контента ячеек:
-              <Separator />
-              <li>
-                название свойства строки ⇔ <code>name</code> столбца
-              </li>
-              <li>значение свойства строки ⇔ контент ячейки строки в данном столбце</li>
-              <Separator />
-              ВАЖНО: таблица не поддерживает сложные составные имена столбцов с использованием точки (н-р,
-              <code>'test.name'</code>), имя столбца не должно быть составной структурой.
-            </PStyled>
-          </>
-        }
-      >
-        <Table rowList={rowList} columnList={cols} onColumnResize={handleResize} />
-      </ExampleSection>
-    </>
+    <ExampleSection
+      text={
+        <>
+          <PStyled>
+            При необходимости можно “закреплять” столбцы таблицы. Фиксированные столбцы располагаются по левому краю
+            таблицы и идут друг за другом (то есть фиксированные столбцы должны быть заданы в начале{' '}
+            <code>columnList</code> друг за другом и никак иначе).
+          </PStyled>
+          <PStyled>
+            Чтобы сделать столбец фиксированным, необходимо задать для него параметр <code>sticky:true</code>.
+          </PStyled>
+          <PStyled>
+            Столбцы с чекбоксами, стрелками, <code>OverflowMenu</code> и иконками одиночных действий (если задан
+            параметр <code>showRowsActions=true</code>) являются фиксированными по умолчанию. Столбец с{' '}
+            <code>OverflowMenu</code> и иконками одиночных действий является единственным столбцом, который
+            позиционируется по правому краю таблицы.
+          </PStyled>
+        </>
+      }
+    >
+      <Table
+        rowList={rowList}
+        columnList={cols}
+        style={{ maxHeight: '300px', maxWidth: '700px' }}
+        onColumnResize={handleResize}
+      />
+    </ExampleSection>
   );
 };

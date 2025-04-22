@@ -2,9 +2,13 @@ import { useState, useRef, useEffect } from 'react';
 import { SpinnerComponent } from './SpinnerComponent';
 
 type LastRowProps = {
+  /** Ссылка на родительский элемент (элемент таблицы) */
   containerRef: React.RefObject<HTMLElement>;
+  /** Колбек, срабатывающий при появлении строки в области видимости таблицы */
   onVisible: () => void;
+  /** Содержимое строки */
   rowNode: React.ReactNode;
+  /** Индикатор отображения компонента Spinner */
   loading?: boolean;
 };
 

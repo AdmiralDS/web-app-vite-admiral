@@ -1,13 +1,8 @@
-import { useState } from 'react';
-import { Table, T } from '@admiral-ds/react-ui';
+import * as React from 'react';
+import { T, Table } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ExampleSection, PStyled } from '#examples/-helpers';
-
-const Separator = styled.span`
-  display: block;
-  height: 8px;
-`;
 
 const AmountCell = styled.div`
   text-overflow: ellipsis;
@@ -185,12 +180,12 @@ const columnList: Column[] = [
   {
     name: 'transfer_date',
     title: 'Дата сделки',
-    width: 150,
+    width: 550,
   },
   {
     name: 'transfer_amount',
     title: 'Сумма',
-    width: 170,
+    width: 770,
   },
   {
     name: 'currency',
@@ -202,8 +197,14 @@ const columnList: Column[] = [
   },
 ];
 
-export const TableBasic = () => {
-  const [cols, setCols] = useState(columnList);
+export const TableCheckbox = () => {
+  const [rows, setRows] = React.useState(rowList);
+  const [cols, setCols] = React.useState(columnList);
+
+  const handleSelectionChange = (ids: Record<string, boolean>): void => {
+    const updRows = rows.map((row) => ({ ...row, selected: ids[row.id] }));
+    setRows(updRows);
+  };
 
   const handleResize = ({ name, width }: { name: string; width: string }) => {
     const newCols = cols.map((col) => (col.name === name ? { ...col, width } : col));
@@ -211,42 +212,33 @@ export const TableBasic = () => {
   };
 
   return (
-    <>
-      <ExampleSection
-        header="Table API"
-        text={
-          <>
-            <PStyled>
-              <code>API</code> таблицы предполагает 2 обязательных параметра: <code>columnList</code> и
-              <code>rowList</code>
-              , где
-              <Separator />
-              <li>
-                <code>columnList</code> - массив данных с описанием столбцов, у каждого столбца должен быть задан
-                уникальный идентификатор <code>name</code>;
-              </li>
-              <Separator />
-              <li>
-                <code>rowList</code> - массив данных с описанием строк, у каждой строки должен быть задан уникальный
-                идентификатор <code>id</code>.
-              </li>
-            </PStyled>
-            <PStyled>
-              Между столбцами и строками таблицы существует четкий МАППИНГ для задания контента ячеек:
-              <Separator />
-              <li>
-                название свойства строки ⇔ <code>name</code> столбца
-              </li>
-              <li>значение свойства строки ⇔ контент ячейки строки в данном столбце</li>
-              <Separator />
-              ВАЖНО: таблица не поддерживает сложные составные имена столбцов с использованием точки (н-р,
-              <code>'test.name'</code>), имя столбца не должно быть составной структурой.
-            </PStyled>
-          </>
-        }
-      >
-        <Table rowList={rowList} columnList={cols} onColumnResize={handleResize} />
-      </ExampleSection>
-    </>
+    <ExampleSection
+      text={
+        <>
+          <PStyled>
+            Отображение столбца с чекбоксами регулируется параметром <code>displayRowSelectionColumn</code>. Чекбокс в
+            шапке таблицы позволяет выбрать все строки (если не выбрано ни одной строки), либо отменить выбранные до
+            этого строки. По нажатию на любой из чекбоксов срабатывает колбек <code>onRowSelectionChange</code>.
+          </PStyled>
+          <PStyled>
+            Также с помощью параметров <code>headerCheckboxChecked</code>, <code>headerCheckboxIndeterminate</code>{' '}
+            можно контролировать состояние чекбокса в шапке таблицы. А с помощью колбека{' '}
+            <code>onHeaderSelectionChange</code> отслеживать нажатие на данный чекбокс.
+          </PStyled>
+          <PStyled>
+            Если необходимо задизейблить чекбокс отдельной строки, для данной строки нужно задать параметр{' '}
+            <code>checkboxDisabled</code>.
+          </PStyled>
+        </>
+      }
+    >
+      <Table
+        rowList={rows}
+        columnList={cols}
+        displayRowSelectionColumn
+        onRowSelectionChange={handleSelectionChange}
+        onColumnResize={handleResize}
+      />
+    </ExampleSection>
   );
 };

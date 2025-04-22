@@ -4,7 +4,6 @@ import { TableLoadOnScrollSpinner } from '#examples/table/loadOnScrollSpinner';
 export const Route = createFileRoute('/components/table/loadOnScrollSpinner')({
   component: () => <TableLoadOnScrollSpinner />,
   staticData: {
-    title: 'Table. Загрузка данных при скролле со спиннером',
-    description: 'Небольшое описание функционала',
+    title: 'Table. Подгрузка данных при скролле со спиннером',
   },
 });

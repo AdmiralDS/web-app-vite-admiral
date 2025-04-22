@@ -5,6 +5,6 @@ export const Route = createFileRoute('/components/table/baseHTMLStickyShadow')({
   component: () => <TableBaseHTMLStickyShadow />,
   staticData: {
     title: 'Table. Базовый HTML table с фиксированными столбцами',
-    description: `Пример минимальной стилизации html table с фиксированной столбцами выделенными с помощью тени.`,
+    description: `Пример минимальной стилизации html table с фиксированными столбцами выделенными с помощью тени.`,
   },
 });

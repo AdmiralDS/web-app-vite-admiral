@@ -4,11 +4,6 @@ import type { Column, TableRow } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
-const Separator = styled.span`
-  display: block;
-  height: 8px;
-`;
-
 const AmountCell = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
@@ -202,7 +197,7 @@ const columnList: Column[] = [
   },
 ];
 
-export const TableBasic = () => {
+export const TableZebra = () => {
   const [cols, setCols] = useState(columnList);
 
   const handleResize = ({ name, width }: { name: string; width: string }) => {
@@ -211,42 +206,24 @@ export const TableBasic = () => {
   };
 
   return (
-    <>
-      <ExampleSection
-        header="Table API"
-        text={
-          <>
-            <PStyled>
-              <code>API</code> таблицы предполагает 2 обязательных параметра: <code>columnList</code> и
-              <code>rowList</code>
-              , где
-              <Separator />
-              <li>
-                <code>columnList</code> - массив данных с описанием столбцов, у каждого столбца должен быть задан
-                уникальный идентификатор <code>name</code>;
-              </li>
-              <Separator />
-              <li>
-                <code>rowList</code> - массив данных с описанием строк, у каждой строки должен быть задан уникальный
-                идентификатор <code>id</code>.
-              </li>
-            </PStyled>
-            <PStyled>
-              Между столбцами и строками таблицы существует четкий МАППИНГ для задания контента ячеек:
-              <Separator />
-              <li>
-                название свойства строки ⇔ <code>name</code> столбца
-              </li>
-              <li>значение свойства строки ⇔ контент ячейки строки в данном столбце</li>
-              <Separator />
-              ВАЖНО: таблица не поддерживает сложные составные имена столбцов с использованием точки (н-р,
-              <code>'test.name'</code>), имя столбца не должно быть составной структурой.
-            </PStyled>
-          </>
-        }
-      >
-        <Table rowList={rowList} columnList={cols} onColumnResize={handleResize} />
-      </ExampleSection>
-    </>
+    <ExampleSection
+      text={
+        <>
+          <PStyled>
+            Опционально, для лучшей визуальной сепарации строк, их можно окрашивать через одну в цвет вторичного фона (
+            <code>Neutral 05</code>). Используйте для этого параметр <code>greyZebraRows</code>. Окраска начинается со
+            второй строки, считая от заголовка таблицы или группы. При группировке строк, строка с названием группы не
+            окрашивается. При перетаскивании строк, поиске или сортировке, они окрашиваются в соответствии с описанным
+            выше алгоритмом.
+          </PStyled>
+          <PStyled>
+            Для консистентности рекомендуется заголовок таблицы тоже окрашивать в серый цвет (параметр{' '}
+            <code>greyHeader</code>).
+          </PStyled>
+        </>
+      }
+    >
+      <Table rowList={rowList} columnList={cols} greyHeader greyZebraRows onColumnResize={handleResize} />
+    </ExampleSection>
   );
 };
