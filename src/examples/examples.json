@@ -434,7 +434,8 @@
       "path": "/components/overflowMenu",
       "routes": [
         { "name": "Базовый пример", "path": "/components/overflowMenu" },
-        { "name": "Размеры и ориентация", "path": "/components/overflowMenu/styles" }
+        { "name": "Размеры и ориентация", "path": "/components/overflowMenu/styles" },
+        { "name": "Пример многоуровневого меню", "path": "/components/overflowMenu/multiLevel" }
       ]
     },
     {
