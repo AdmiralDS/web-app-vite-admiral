@@ -894,6 +894,18 @@
         { "name": "Статусы", "path": "/components/multiInput/status" },
         { "name": "С начальными опциями", "path": "/components/multiInput/withOptions" }
       ]
+    },
+    {
+      "name": "SliderInput",
+      "path": "/components/sliderInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/sliderInput" },
+        { "name": "Размеры", "path": "/components/sliderInput/sizes" },
+        { "name": "Состояния", "path": "/components/sliderInput/states" },
+        { "name": "Варианты использования", "path": "/components/sliderInput/variants" },
+        { "name": "Кастомизация", "path": "/components/sliderInput/custom" },
+        { "name": "Контроллируемый инпут", "path": "/components/sliderInput/controlled" }
+      ]
     }
   ]
 }
