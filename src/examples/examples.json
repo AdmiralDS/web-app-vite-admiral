@@ -906,6 +906,16 @@
         { "name": "Кастомизация", "path": "/components/sliderInput/custom" },
         { "name": "Контроллируемый инпут", "path": "/components/sliderInput/controlled" }
       ]
+    },
+    {
+      "name": "TextArea",
+      "path": "/components/textArea",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/textArea" },
+        { "name": "Размеры", "path": "/components/textArea/sizes" },
+        { "name": "Состояния", "path": "/components/textArea/states" },
+        { "name": "Варианты использования", "path": "/components/textArea/variants" }
+      ]
     }
   ]
 }

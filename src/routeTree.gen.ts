@@ -24,6 +24,7 @@ import { Route as ComponentsToggleIndexImport } from './routes/components/toggle
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
+import { Route as ComponentsTextAreaIndexImport } from './routes/components/textArea/index'
 import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
@@ -118,6 +119,9 @@ import { Route as ComponentsTextButtonMenuStylesImport } from './routes/componen
 import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
 import { Route as ComponentsTextButtonStatesImport } from './routes/components/textButton/states'
+import { Route as ComponentsTextAreaVariantsImport } from './routes/components/textArea/variants'
+import { Route as ComponentsTextAreaStatesImport } from './routes/components/textArea/states'
+import { Route as ComponentsTextAreaSizesImport } from './routes/components/textArea/sizes'
 import { Route as ComponentsTagWithIconImport } from './routes/components/tag/withIcon'
 import { Route as ComponentsTagTooltipImport } from './routes/components/tag/tooltip'
 import { Route as ComponentsTagTagsImport } from './routes/components/tag/tags'
@@ -533,6 +537,12 @@ const ComponentsTextButtonMenuIndexRoute =
 const ComponentsTextButtonIndexRoute = ComponentsTextButtonIndexImport.update({
   id: '/textButton/',
   path: '/textButton/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextAreaIndexRoute = ComponentsTextAreaIndexImport.update({
+  id: '/textArea/',
+  path: '/textArea/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1149,6 +1159,26 @@ const ComponentsTextButtonStatesRoute = ComponentsTextButtonStatesImport.update(
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
+
+const ComponentsTextAreaVariantsRoute = ComponentsTextAreaVariantsImport.update(
+  {
+    id: '/textArea/variants',
+    path: '/textArea/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsTextAreaStatesRoute = ComponentsTextAreaStatesImport.update({
+  id: '/textArea/states',
+  path: '/textArea/states',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextAreaSizesRoute = ComponentsTextAreaSizesImport.update({
+  id: '/textArea/sizes',
+  path: '/textArea/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
 
 const ComponentsTagWithIconRoute = ComponentsTagWithIconImport.update({
   id: '/tag/withIcon',
@@ -5828,6 +5858,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTagWithIconImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textArea/sizes': {
+      id: '/components/textArea/sizes'
+      path: '/textArea/sizes'
+      fullPath: '/components/textArea/sizes'
+      preLoaderRoute: typeof ComponentsTextAreaSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textArea/states': {
+      id: '/components/textArea/states'
+      path: '/textArea/states'
+      fullPath: '/components/textArea/states'
+      preLoaderRoute: typeof ComponentsTextAreaStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textArea/variants': {
+      id: '/components/textArea/variants'
+      path: '/textArea/variants'
+      fullPath: '/components/textArea/variants'
+      preLoaderRoute: typeof ComponentsTextAreaVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButton/states': {
       id: '/components/textButton/states'
       path: '/textButton/states'
@@ -6486,6 +6537,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTagIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textArea/': {
+      id: '/components/textArea/'
+      path: '/textArea'
+      fullPath: '/components/textArea'
+      preLoaderRoute: typeof ComponentsTextAreaIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButton/': {
       id: '/components/textButton/'
       path: '/textButton'
@@ -6870,6 +6928,9 @@ interface ComponentsRouteChildren {
   ComponentsTagTagsRoute: typeof ComponentsTagTagsRoute
   ComponentsTagTooltipRoute: typeof ComponentsTagTooltipRoute
   ComponentsTagWithIconRoute: typeof ComponentsTagWithIconRoute
+  ComponentsTextAreaSizesRoute: typeof ComponentsTextAreaSizesRoute
+  ComponentsTextAreaStatesRoute: typeof ComponentsTextAreaStatesRoute
+  ComponentsTextAreaVariantsRoute: typeof ComponentsTextAreaVariantsRoute
   ComponentsTextButtonStatesRoute: typeof ComponentsTextButtonStatesRoute
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
   ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
@@ -6964,6 +7025,7 @@ interface ComponentsRouteChildren {
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
+  ComponentsTextAreaIndexRoute: typeof ComponentsTextAreaIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
   ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
@@ -7390,6 +7452,9 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTagTagsRoute: ComponentsTagTagsRoute,
   ComponentsTagTooltipRoute: ComponentsTagTooltipRoute,
   ComponentsTagWithIconRoute: ComponentsTagWithIconRoute,
+  ComponentsTextAreaSizesRoute: ComponentsTextAreaSizesRoute,
+  ComponentsTextAreaStatesRoute: ComponentsTextAreaStatesRoute,
+  ComponentsTextAreaVariantsRoute: ComponentsTextAreaVariantsRoute,
   ComponentsTextButtonStatesRoute: ComponentsTextButtonStatesRoute,
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
@@ -7487,6 +7552,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
+  ComponentsTextAreaIndexRoute: ComponentsTextAreaIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
   ComponentsToastIndexRoute: ComponentsToastIndexRoute,
@@ -7860,6 +7926,9 @@ export interface FileRoutesByFullPath {
   '/components/tag/tags': typeof ComponentsTagTagsRoute
   '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
+  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
@@ -7954,6 +8023,7 @@ export interface FileRoutesByFullPath {
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
+  '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
@@ -8306,6 +8376,9 @@ export interface FileRoutesByTo {
   '/components/tag/tags': typeof ComponentsTagTagsRoute
   '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
+  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
@@ -8400,6 +8473,7 @@ export interface FileRoutesByTo {
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
+  '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
@@ -8753,6 +8827,9 @@ export interface FileRoutesById {
   '/components/tag/tags': typeof ComponentsTagTagsRoute
   '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
+  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
@@ -8847,6 +8924,7 @@ export interface FileRoutesById {
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
+  '/components/textArea/': typeof ComponentsTextAreaIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
   '/components/toast/': typeof ComponentsToastIndexRoute
@@ -9201,6 +9279,9 @@ export interface FileRouteTypes {
     | '/components/tag/tags'
     | '/components/tag/tooltip'
     | '/components/tag/withIcon'
+    | '/components/textArea/sizes'
+    | '/components/textArea/states'
+    | '/components/textArea/variants'
     | '/components/textButton/states'
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
@@ -9295,6 +9376,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
+    | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
     | '/components/toast'
@@ -9646,6 +9728,9 @@ export interface FileRouteTypes {
     | '/components/tag/tags'
     | '/components/tag/tooltip'
     | '/components/tag/withIcon'
+    | '/components/textArea/sizes'
+    | '/components/textArea/states'
+    | '/components/textArea/variants'
     | '/components/textButton/states'
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
@@ -9740,6 +9825,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
+    | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
     | '/components/toast'
@@ -10091,6 +10177,9 @@ export interface FileRouteTypes {
     | '/components/tag/tags'
     | '/components/tag/tooltip'
     | '/components/tag/withIcon'
+    | '/components/textArea/sizes'
+    | '/components/textArea/states'
+    | '/components/textArea/variants'
     | '/components/textButton/states'
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
@@ -10185,6 +10274,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/'
     | '/components/table/'
     | '/components/tag/'
+    | '/components/textArea/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
     | '/components/toast/'
@@ -10563,6 +10653,9 @@ export const routeTree = rootRoute
         "/components/tag/tags",
         "/components/tag/tooltip",
         "/components/tag/withIcon",
+        "/components/textArea/sizes",
+        "/components/textArea/states",
+        "/components/textArea/variants",
         "/components/textButton/states",
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
@@ -10657,6 +10750,7 @@ export const routeTree = rootRoute
         "/components/tabMenu/",
         "/components/table/",
         "/components/tag/",
+        "/components/textArea/",
         "/components/textButton/",
         "/components/textButtonMenu/",
         "/components/toast/",
@@ -12034,6 +12128,18 @@ export const routeTree = rootRoute
       "filePath": "components/tag/withIcon.tsx",
       "parent": "/components"
     },
+    "/components/textArea/sizes": {
+      "filePath": "components/textArea/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/textArea/states": {
+      "filePath": "components/textArea/states.tsx",
+      "parent": "/components"
+    },
+    "/components/textArea/variants": {
+      "filePath": "components/textArea/variants.tsx",
+      "parent": "/components"
+    },
     "/components/textButton/states": {
       "filePath": "components/textButton/states.tsx",
       "parent": "/components"
@@ -12408,6 +12514,10 @@ export const routeTree = rootRoute
     },
     "/components/tag/": {
       "filePath": "components/tag/index.tsx",
+      "parent": "/components"
+    },
+    "/components/textArea/": {
+      "filePath": "components/textArea/index.tsx",
       "parent": "/components"
     },
     "/components/textButton/": {
