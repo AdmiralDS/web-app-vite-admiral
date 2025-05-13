@@ -15,7 +15,7 @@ export const TextAreaVariants = () => {
         </div>
       </ExampleSection>
       <ExampleSection
-        text="Counter. Можно задавать при каком значении от максимума знаков появляется счетчик, по дефолту стоит 80% (пропсы 'characterCounterVisibilityThreshold' и 'maxLength')."
+        text="Counter. Можно задавать при каком значении от максимума знаков появляется счетчик, по дефолту стоит 80% (пропсы 'displayCharacterCounter', 'characterCounterVisibilityThreshold' и 'maxLength')."
       >
         <div style={{ width: '70%' }}>
           <TextField defaultValue="test" label="Лэйбл" extraText="Дополнительный текст" displayCharacterCounter characterCounterVisibilityThreshold={0} maxLength={500} />

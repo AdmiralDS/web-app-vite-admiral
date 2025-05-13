@@ -120,6 +120,7 @@ import { Route as ComponentsTextButtonMenuStatesImport } from './routes/componen
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
 import { Route as ComponentsTextButtonStatesImport } from './routes/components/textButton/states'
 import { Route as ComponentsTextAreaVariantsImport } from './routes/components/textArea/variants'
+import { Route as ComponentsTextAreaStatusesImport } from './routes/components/textArea/statuses'
 import { Route as ComponentsTextAreaStatesImport } from './routes/components/textArea/states'
 import { Route as ComponentsTextAreaSizesImport } from './routes/components/textArea/sizes'
 import { Route as ComponentsTagWithIconImport } from './routes/components/tag/withIcon'
@@ -1164,6 +1165,14 @@ const ComponentsTextAreaVariantsRoute = ComponentsTextAreaVariantsImport.update(
   {
     id: '/textArea/variants',
     path: '/textArea/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsTextAreaStatusesRoute = ComponentsTextAreaStatusesImport.update(
+  {
+    id: '/textArea/statuses',
+    path: '/textArea/statuses',
     getParentRoute: () => ComponentsRoute,
   } as any,
 )
@@ -5872,6 +5881,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextAreaStatesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textArea/statuses': {
+      id: '/components/textArea/statuses'
+      path: '/textArea/statuses'
+      fullPath: '/components/textArea/statuses'
+      preLoaderRoute: typeof ComponentsTextAreaStatusesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textArea/variants': {
       id: '/components/textArea/variants'
       path: '/textArea/variants'
@@ -6930,6 +6946,7 @@ interface ComponentsRouteChildren {
   ComponentsTagWithIconRoute: typeof ComponentsTagWithIconRoute
   ComponentsTextAreaSizesRoute: typeof ComponentsTextAreaSizesRoute
   ComponentsTextAreaStatesRoute: typeof ComponentsTextAreaStatesRoute
+  ComponentsTextAreaStatusesRoute: typeof ComponentsTextAreaStatusesRoute
   ComponentsTextAreaVariantsRoute: typeof ComponentsTextAreaVariantsRoute
   ComponentsTextButtonStatesRoute: typeof ComponentsTextButtonStatesRoute
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
@@ -7454,6 +7471,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTagWithIconRoute: ComponentsTagWithIconRoute,
   ComponentsTextAreaSizesRoute: ComponentsTextAreaSizesRoute,
   ComponentsTextAreaStatesRoute: ComponentsTextAreaStatesRoute,
+  ComponentsTextAreaStatusesRoute: ComponentsTextAreaStatusesRoute,
   ComponentsTextAreaVariantsRoute: ComponentsTextAreaVariantsRoute,
   ComponentsTextButtonStatesRoute: ComponentsTextButtonStatesRoute,
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
@@ -7928,6 +7946,7 @@ export interface FileRoutesByFullPath {
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
   '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
   '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
   '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
@@ -8378,6 +8397,7 @@ export interface FileRoutesByTo {
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
   '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
   '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
   '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
@@ -8829,6 +8849,7 @@ export interface FileRoutesById {
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
   '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
   '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
   '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
   '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
@@ -9281,6 +9302,7 @@ export interface FileRouteTypes {
     | '/components/tag/withIcon'
     | '/components/textArea/sizes'
     | '/components/textArea/states'
+    | '/components/textArea/statuses'
     | '/components/textArea/variants'
     | '/components/textButton/states'
     | '/components/textButton/styles'
@@ -9730,6 +9752,7 @@ export interface FileRouteTypes {
     | '/components/tag/withIcon'
     | '/components/textArea/sizes'
     | '/components/textArea/states'
+    | '/components/textArea/statuses'
     | '/components/textArea/variants'
     | '/components/textButton/states'
     | '/components/textButton/styles'
@@ -10179,6 +10202,7 @@ export interface FileRouteTypes {
     | '/components/tag/withIcon'
     | '/components/textArea/sizes'
     | '/components/textArea/states'
+    | '/components/textArea/statuses'
     | '/components/textArea/variants'
     | '/components/textButton/states'
     | '/components/textButton/styles'
@@ -10655,6 +10679,7 @@ export const routeTree = rootRoute
         "/components/tag/withIcon",
         "/components/textArea/sizes",
         "/components/textArea/states",
+        "/components/textArea/statuses",
         "/components/textArea/variants",
         "/components/textButton/states",
         "/components/textButton/styles",
@@ -12134,6 +12159,10 @@ export const routeTree = rootRoute
     },
     "/components/textArea/states": {
       "filePath": "components/textArea/states.tsx",
+      "parent": "/components"
+    },
+    "/components/textArea/statuses": {
+      "filePath": "components/textArea/statuses.tsx",
       "parent": "/components"
     },
     "/components/textArea/variants": {

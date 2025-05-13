@@ -14,6 +14,16 @@ export const TextAreaState = () => {
           <TextArea defaultValue="test" readOnly />
         </div>
       </ExampleSection>
+      <ExampleSection text="Skeleton">
+        <div style={{ width: '70%' }}>
+          <TextArea defaultValue="test" skeleton />
+        </div>
+      </ExampleSection>
+      <ExampleSection text="Disable copying">
+        <div style={{ width: '70%' }}>
+          <TextArea defaultValue="test" disableCopying />
+        </div>
+      </ExampleSection>
     </>
   );
 };
