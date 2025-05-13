@@ -20,6 +20,22 @@ export const SliderInputState = () => {
           readOnly
         />
       </ExampleSection>
+      <ExampleSection text="Skeleton">
+        <SliderInput
+          defaultValue="5"
+          // eslint-disable-next-line no-console
+          onChange={(full, short, event) => console.log({ full, short, event })}
+          skeleton
+        />
+      </ExampleSection>
+      <ExampleSection text="Disable copying">
+        <SliderInput
+          defaultValue="5"
+          // eslint-disable-next-line no-console
+          onChange={(full, short, event) => console.log({ full, short, event })}
+          disableCopying
+        />
+      </ExampleSection>
     </>
   );
 };
