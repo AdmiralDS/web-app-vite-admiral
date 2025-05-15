@@ -917,6 +917,18 @@
         { "name": "Статусы", "path": "/components/textArea/statuses" },
         { "name": "Варианты использования", "path": "/components/textArea/variants" }
       ]
+    },
+    {
+      "name": "SliderRangeInput",
+      "path": "/components/sliderRangeInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/sliderRangeInput" },
+        { "name": "Размеры", "path": "/components/sliderRangeInput/sizes" },
+        { "name": "Состояния", "path": "/components/sliderRangeInput/states" },
+        { "name": "Варианты использования", "path": "/components/sliderRangeInput/variants" },
+        { "name": "Кастомизация", "path": "/components/sliderRangeInput/custom" },
+        { "name": "Контроллируемый инпут", "path": "/components/sliderRangeInput/controlled" }
+      ]
     }
   ]
 }
