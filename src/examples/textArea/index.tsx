@@ -35,9 +35,7 @@ export const TextAreaBasic = () => {
       <ExampleSection
         text={
           <>
-            <PStyled>
-              Для того, чтобы добавть лэйбл или дополнительный текст, используйте компонент TextAreaField
-            </PStyled>
+            <PStyled>Для того, чтобы добавить лэйбл или дополнительный текст, используйте компонент TextField</PStyled>
           </>
         }
       >

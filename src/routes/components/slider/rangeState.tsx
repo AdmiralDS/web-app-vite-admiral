@@ -4,6 +4,6 @@ import { SliderRangeState } from '#examples/slider/rangeState';
 export const Route = createFileRoute('/components/slider/rangeState')({
   component: () => <SliderRangeState />,
   staticData: {
-    title: 'SliderRange. Состояния',
+    title: 'Range. Состояния',
   },
 });
