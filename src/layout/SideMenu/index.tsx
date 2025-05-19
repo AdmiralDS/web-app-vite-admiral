@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { ScrollContainer } from '@admiral-ds/react-ui';
 import { MenuItem, ExpandedMenuItem } from './MenuItem';
 import { MenuTitle } from './MenuTitle';
@@ -28,8 +29,17 @@ const MenuContent = styled(ScrollContainer)`
 const sortedComponents = components.sort((a, b) => (a.name > b.name ? 1 : -1));
 
 export const SideMenu = () => {
+  const menuRef = useRef<HTMLDivElement>(null);
+  /** При mount меню должно быть проскроллено до активного пункта  */
+  useEffect(() => {
+    const menu = menuRef.current;
+    if (menu) {
+      const activeItem = menu.querySelector("[data-selected='true']");
+      activeItem?.scrollIntoView({ block: 'center', inline: 'nearest' });
+    }
+  }, []);
   return (
-    <MenuWrapper>
+    <MenuWrapper ref={menuRef}>
       <MenuTitle title="Admiral" version={version} />
 
       <MenuContent>
