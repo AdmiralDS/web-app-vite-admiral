@@ -23,6 +23,7 @@ import { Route as ComponentsTooltipIndexImport } from './routes/components/toolt
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
 import { Route as ComponentsTimeInputIndexImport } from './routes/components/timeInput/index'
+import { Route as ComponentsTextInputIndexImport } from './routes/components/textInput/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
 import { Route as ComponentsTextAreaIndexImport } from './routes/components/textArea/index'
@@ -122,6 +123,12 @@ import { Route as ComponentsTimeInputStatusImport } from './routes/components/ti
 import { Route as ComponentsTimeInputStateImport } from './routes/components/timeInput/state'
 import { Route as ComponentsTimeInputSizesImport } from './routes/components/timeInput/sizes'
 import { Route as ComponentsTimeInputCustomImport } from './routes/components/timeInput/custom'
+import { Route as ComponentsTextInputWithIconImport } from './routes/components/textInput/withIcon'
+import { Route as ComponentsTextInputVariantsImport } from './routes/components/textInput/variants'
+import { Route as ComponentsTextInputStatusesImport } from './routes/components/textInput/statuses'
+import { Route as ComponentsTextInputStatesImport } from './routes/components/textInput/states'
+import { Route as ComponentsTextInputSizesImport } from './routes/components/textInput/sizes'
+import { Route as ComponentsTextInputControlledImport } from './routes/components/textInput/controlled'
 import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles'
 import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
@@ -548,6 +555,12 @@ const ComponentsToastIndexRoute = ComponentsToastIndexImport.update({
 const ComponentsTimeInputIndexRoute = ComponentsTimeInputIndexImport.update({
   id: '/timeInput/',
   path: '/timeInput/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextInputIndexRoute = ComponentsTextInputIndexImport.update({
+  id: '/textInput/',
+  path: '/textInput/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1191,6 +1204,46 @@ const ComponentsTimeInputCustomRoute = ComponentsTimeInputCustomImport.update({
   path: '/timeInput/custom',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsTextInputWithIconRoute =
+  ComponentsTextInputWithIconImport.update({
+    id: '/textInput/withIcon',
+    path: '/textInput/withIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextInputVariantsRoute =
+  ComponentsTextInputVariantsImport.update({
+    id: '/textInput/variants',
+    path: '/textInput/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextInputStatusesRoute =
+  ComponentsTextInputStatusesImport.update({
+    id: '/textInput/statuses',
+    path: '/textInput/statuses',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextInputStatesRoute = ComponentsTextInputStatesImport.update({
+  id: '/textInput/states',
+  path: '/textInput/states',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextInputSizesRoute = ComponentsTextInputSizesImport.update({
+  id: '/textInput/sizes',
+  path: '/textInput/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextInputControlledRoute =
+  ComponentsTextInputControlledImport.update({
+    id: '/textInput/controlled',
+    path: '/textInput/controlled',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTextButtonMenuStylesRoute =
   ComponentsTextButtonMenuStylesImport.update({
@@ -6125,6 +6178,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textInput/controlled': {
+      id: '/components/textInput/controlled'
+      path: '/textInput/controlled'
+      fullPath: '/components/textInput/controlled'
+      preLoaderRoute: typeof ComponentsTextInputControlledImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/sizes': {
+      id: '/components/textInput/sizes'
+      path: '/textInput/sizes'
+      fullPath: '/components/textInput/sizes'
+      preLoaderRoute: typeof ComponentsTextInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/states': {
+      id: '/components/textInput/states'
+      path: '/textInput/states'
+      fullPath: '/components/textInput/states'
+      preLoaderRoute: typeof ComponentsTextInputStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/statuses': {
+      id: '/components/textInput/statuses'
+      path: '/textInput/statuses'
+      fullPath: '/components/textInput/statuses'
+      preLoaderRoute: typeof ComponentsTextInputStatusesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/variants': {
+      id: '/components/textInput/variants'
+      path: '/textInput/variants'
+      fullPath: '/components/textInput/variants'
+      preLoaderRoute: typeof ComponentsTextInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/withIcon': {
+      id: '/components/textInput/withIcon'
+      path: '/textInput/withIcon'
+      fullPath: '/components/textInput/withIcon'
+      preLoaderRoute: typeof ComponentsTextInputWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/timeInput/custom': {
       id: '/components/timeInput/custom'
       path: '/timeInput/custom'
@@ -6818,6 +6913,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonMenuIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textInput/': {
+      id: '/components/textInput/'
+      path: '/textInput'
+      fullPath: '/components/textInput'
+      preLoaderRoute: typeof ComponentsTextInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/timeInput/': {
       id: '/components/timeInput/'
       path: '/timeInput'
@@ -7213,6 +7315,12 @@ interface ComponentsRouteChildren {
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
   ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
   ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute
+  ComponentsTextInputControlledRoute: typeof ComponentsTextInputControlledRoute
+  ComponentsTextInputSizesRoute: typeof ComponentsTextInputSizesRoute
+  ComponentsTextInputStatesRoute: typeof ComponentsTextInputStatesRoute
+  ComponentsTextInputStatusesRoute: typeof ComponentsTextInputStatusesRoute
+  ComponentsTextInputVariantsRoute: typeof ComponentsTextInputVariantsRoute
+  ComponentsTextInputWithIconRoute: typeof ComponentsTextInputWithIconRoute
   ComponentsTimeInputCustomRoute: typeof ComponentsTimeInputCustomRoute
   ComponentsTimeInputSizesRoute: typeof ComponentsTimeInputSizesRoute
   ComponentsTimeInputStateRoute: typeof ComponentsTimeInputStateRoute
@@ -7312,6 +7420,7 @@ interface ComponentsRouteChildren {
   ComponentsTextAreaIndexRoute: typeof ComponentsTextAreaIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
+  ComponentsTextInputIndexRoute: typeof ComponentsTextInputIndexRoute
   ComponentsTimeInputIndexRoute: typeof ComponentsTimeInputIndexRoute
   ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
@@ -7758,6 +7867,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
   ComponentsTextButtonMenuStylesRoute: ComponentsTextButtonMenuStylesRoute,
+  ComponentsTextInputControlledRoute: ComponentsTextInputControlledRoute,
+  ComponentsTextInputSizesRoute: ComponentsTextInputSizesRoute,
+  ComponentsTextInputStatesRoute: ComponentsTextInputStatesRoute,
+  ComponentsTextInputStatusesRoute: ComponentsTextInputStatusesRoute,
+  ComponentsTextInputVariantsRoute: ComponentsTextInputVariantsRoute,
+  ComponentsTextInputWithIconRoute: ComponentsTextInputWithIconRoute,
   ComponentsTimeInputCustomRoute: ComponentsTimeInputCustomRoute,
   ComponentsTimeInputSizesRoute: ComponentsTimeInputSizesRoute,
   ComponentsTimeInputStateRoute: ComponentsTimeInputStateRoute,
@@ -7860,6 +7975,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextAreaIndexRoute: ComponentsTextAreaIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
+  ComponentsTextInputIndexRoute: ComponentsTextInputIndexRoute,
   ComponentsTimeInputIndexRoute: ComponentsTimeInputIndexRoute,
   ComponentsToastIndexRoute: ComponentsToastIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
@@ -8250,6 +8366,12 @@ export interface FileRoutesByFullPath {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/textInput/controlled': typeof ComponentsTextInputControlledRoute
+  '/components/textInput/sizes': typeof ComponentsTextInputSizesRoute
+  '/components/textInput/states': typeof ComponentsTextInputStatesRoute
+  '/components/textInput/statuses': typeof ComponentsTextInputStatusesRoute
+  '/components/textInput/variants': typeof ComponentsTextInputVariantsRoute
+  '/components/textInput/withIcon': typeof ComponentsTextInputWithIconRoute
   '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
   '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
   '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
@@ -8349,6 +8471,7 @@ export interface FileRoutesByFullPath {
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/textInput': typeof ComponentsTextInputIndexRoute
   '/components/timeInput': typeof ComponentsTimeInputIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
@@ -8718,6 +8841,12 @@ export interface FileRoutesByTo {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/textInput/controlled': typeof ComponentsTextInputControlledRoute
+  '/components/textInput/sizes': typeof ComponentsTextInputSizesRoute
+  '/components/textInput/states': typeof ComponentsTextInputStatesRoute
+  '/components/textInput/statuses': typeof ComponentsTextInputStatusesRoute
+  '/components/textInput/variants': typeof ComponentsTextInputVariantsRoute
+  '/components/textInput/withIcon': typeof ComponentsTextInputWithIconRoute
   '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
   '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
   '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
@@ -8817,6 +8946,7 @@ export interface FileRoutesByTo {
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/textInput': typeof ComponentsTextInputIndexRoute
   '/components/timeInput': typeof ComponentsTimeInputIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
@@ -9187,6 +9317,12 @@ export interface FileRoutesById {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/textInput/controlled': typeof ComponentsTextInputControlledRoute
+  '/components/textInput/sizes': typeof ComponentsTextInputSizesRoute
+  '/components/textInput/states': typeof ComponentsTextInputStatesRoute
+  '/components/textInput/statuses': typeof ComponentsTextInputStatusesRoute
+  '/components/textInput/variants': typeof ComponentsTextInputVariantsRoute
+  '/components/textInput/withIcon': typeof ComponentsTextInputWithIconRoute
   '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
   '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
   '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
@@ -9286,6 +9422,7 @@ export interface FileRoutesById {
   '/components/textArea/': typeof ComponentsTextAreaIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/textInput/': typeof ComponentsTextInputIndexRoute
   '/components/timeInput/': typeof ComponentsTimeInputIndexRoute
   '/components/toast/': typeof ComponentsToastIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
@@ -9657,6 +9794,12 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/textInput/controlled'
+    | '/components/textInput/sizes'
+    | '/components/textInput/states'
+    | '/components/textInput/statuses'
+    | '/components/textInput/variants'
+    | '/components/textInput/withIcon'
     | '/components/timeInput/custom'
     | '/components/timeInput/sizes'
     | '/components/timeInput/state'
@@ -9756,6 +9899,7 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/textInput'
     | '/components/timeInput'
     | '/components/toast'
     | '/components/toggle'
@@ -10124,6 +10268,12 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/textInput/controlled'
+    | '/components/textInput/sizes'
+    | '/components/textInput/states'
+    | '/components/textInput/statuses'
+    | '/components/textInput/variants'
+    | '/components/textInput/withIcon'
     | '/components/timeInput/custom'
     | '/components/timeInput/sizes'
     | '/components/timeInput/state'
@@ -10223,6 +10373,7 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/textInput'
     | '/components/timeInput'
     | '/components/toast'
     | '/components/toggle'
@@ -10591,6 +10742,12 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/textInput/controlled'
+    | '/components/textInput/sizes'
+    | '/components/textInput/states'
+    | '/components/textInput/statuses'
+    | '/components/textInput/variants'
+    | '/components/textInput/withIcon'
     | '/components/timeInput/custom'
     | '/components/timeInput/sizes'
     | '/components/timeInput/state'
@@ -10690,6 +10847,7 @@ export interface FileRouteTypes {
     | '/components/textArea/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
+    | '/components/textInput/'
     | '/components/timeInput/'
     | '/components/toast/'
     | '/components/toggle/'
@@ -11085,6 +11243,12 @@ export const routeTree = rootRoute
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
         "/components/textButtonMenu/styles",
+        "/components/textInput/controlled",
+        "/components/textInput/sizes",
+        "/components/textInput/states",
+        "/components/textInput/statuses",
+        "/components/textInput/variants",
+        "/components/textInput/withIcon",
         "/components/timeInput/custom",
         "/components/timeInput/sizes",
         "/components/timeInput/state",
@@ -11184,6 +11348,7 @@ export const routeTree = rootRoute
         "/components/textArea/",
         "/components/textButton/",
         "/components/textButtonMenu/",
+        "/components/textInput/",
         "/components/timeInput/",
         "/components/toast/",
         "/components/toggle/",
@@ -12632,6 +12797,30 @@ export const routeTree = rootRoute
       "filePath": "components/textButtonMenu/styles.tsx",
       "parent": "/components"
     },
+    "/components/textInput/controlled": {
+      "filePath": "components/textInput/controlled.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/sizes": {
+      "filePath": "components/textInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/states": {
+      "filePath": "components/textInput/states.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/statuses": {
+      "filePath": "components/textInput/statuses.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/variants": {
+      "filePath": "components/textInput/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/withIcon": {
+      "filePath": "components/textInput/withIcon.tsx",
+      "parent": "/components"
+    },
     "/components/timeInput/custom": {
       "filePath": "components/timeInput/custom.tsx",
       "parent": "/components"
@@ -13026,6 +13215,10 @@ export const routeTree = rootRoute
     },
     "/components/textButtonMenu/": {
       "filePath": "components/textButtonMenu/index.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/": {
+      "filePath": "components/textInput/index.tsx",
       "parent": "/components"
     },
     "/components/timeInput/": {

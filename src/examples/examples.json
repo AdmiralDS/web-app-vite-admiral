@@ -942,6 +942,19 @@
       ]
     },
     {
+       "name": "TextInput",
+      "path": "/components/textInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/textInput" },
+        { "name": "Размеры", "path": "/components/textInput/sizes" },
+        { "name": "Состояния", "path": "/components/textInput/states" },
+        { "name": "Статусы", "path": "/components/textInput/statuses" },
+        { "name": "Варианты использования", "path": "/components/textInput/variants" },
+        { "name": "С иконками", "path": "/components/textInput/withIcon" },
+        { "name": "Контроллируемый инпут", "path": "/components/textInput/controlled" }
+      ]
+    },
+    {
       "name": "SliderRangeInput",
       "path": "/components/sliderRangeInput",
       "routes": [

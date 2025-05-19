@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react';
 import { Link } from '@admiral-ds/react-ui';
 
 import { CodeTabMenu, CodeBlock } from '../-helpers/general';
-import { SectionDescription } from '../-helpers/examples';
+import { SectionDescription } from '../../examples/-helpers';
 
 const Separator = styled.div<{ height: number }>`
   height: ${(p) => p.height}px;
