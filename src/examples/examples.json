@@ -917,6 +917,42 @@
         { "name": "Статусы", "path": "/components/textArea/statuses" },
         { "name": "Варианты использования", "path": "/components/textArea/variants" }
       ]
+    },
+    {
+      "name": "SuggestInput",
+      "path": "/components/suggestInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/suggestInput" },
+        { "name": "Пример с фильтрацией", "path": "/components/suggestInput/filter" },
+        { "name": "Неконтролируемый режим", "path": "/components/suggestInput/uncontrolled" },
+        { "name": "Размеры", "path": "/components/suggestInput/sizes" },
+        { "name": "Альтернативная иконка", "path": "/components/suggestInput/icon" },
+        { "name": "SuggestField. Базовый пример", "path": "/components/suggestInput/field" }
+      ]
+    },
+    {
+      "name": "TimeInput",
+      "path": "/components/timeInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/timeInput" },
+        { "name": "Размеры", "path": "/components/timeInput/sizes" },
+        { "name": "Состояния", "path": "/components/timeInput/state" },
+        { "name": "Статусы", "path": "/components/timeInput/status" },
+        { "name": "Кастомизация", "path": "/components/timeInput/custom" }
+      ]
+    },
+    {
+       "name": "TextInput",
+      "path": "/components/textInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/textInput" },
+        { "name": "Размеры", "path": "/components/textInput/sizes" },
+        { "name": "Состояния", "path": "/components/textInput/states" },
+        { "name": "Статусы", "path": "/components/textInput/statuses" },
+        { "name": "Варианты использования", "path": "/components/textInput/variants" },
+        { "name": "С иконками", "path": "/components/textInput/withIcon" },
+        { "name": "Контроллируемый инпут", "path": "/components/textInput/controlled" }
+      ]
     }
   ]
 }
