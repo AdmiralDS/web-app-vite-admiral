@@ -10,461 +10,460 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root';
-import { Route as GeneralImport } from './routes/general';
-import { Route as ComponentsImport } from './routes/components';
-import { Route as IndexImport } from './routes/index';
-import { Route as GeneralUsageImport } from './routes/general/usage';
-import { Route as GeneralResourcesImport } from './routes/general/resources';
-import { Route as GeneralInstallationImport } from './routes/general/installation';
-import { Route as GeneralFaqsImport } from './routes/general/faqs';
-import { Route as ComponentsTreeIndexImport } from './routes/components/tree/index';
-import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index';
-import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index';
-import { Route as ComponentsToastIndexImport } from './routes/components/toast/index';
-import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index';
-import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index';
-import { Route as ComponentsTextAreaIndexImport } from './routes/components/textArea/index';
-import { Route as ComponentsTagIndexImport } from './routes/components/tag/index';
-import { Route as ComponentsTableIndexImport } from './routes/components/table/index';
-import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index';
-import { Route as ComponentsTIndexImport } from './routes/components/t/index';
-import { Route as ComponentsSuggestInputIndexImport } from './routes/components/suggestInput/index';
-import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index';
-import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index';
-import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index';
-import { Route as ComponentsSliderInputIndexImport } from './routes/components/sliderInput/index';
-import { Route as ComponentsSliderIndexImport } from './routes/components/slider/index';
-import { Route as ComponentsSkeletonIndexImport } from './routes/components/skeleton/index';
-import { Route as ComponentsSelectIndexImport } from './routes/components/select/index';
-import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index';
-import { Route as ComponentsScrollContainerIndexImport } from './routes/components/scrollContainer/index';
-import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index';
-import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index';
-import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index';
-import { Route as ComponentsProgressHeaderIndexImport } from './routes/components/progressHeader/index';
-import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index';
-import { Route as ComponentsPhoneNumberInputIndexImport } from './routes/components/phoneNumberInput/index';
-import { Route as ComponentsPaginationTwoIndexImport } from './routes/components/paginationTwo/index';
-import { Route as ComponentsPaginationOneIndexImport } from './routes/components/paginationOne/index';
-import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index';
-import { Route as ComponentsNumberInputIndexImport } from './routes/components/numberInput/index';
-import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index';
-import { Route as ComponentsMultiInputIndexImport } from './routes/components/multiInput/index';
-import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index';
-import { Route as ComponentsModalIndexImport } from './routes/components/modal/index';
-import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index';
-import { Route as ComponentsListIndexImport } from './routes/components/list/index';
-import { Route as ComponentsLinkIndexImport } from './routes/components/link/index';
-import { Route as ComponentsInputExIndexImport } from './routes/components/inputEx/index';
-import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index';
-import { Route as ComponentsIconPlacementIndexImport } from './routes/components/iconPlacement/index';
-import { Route as ComponentsIconButtonGroupIndexImport } from './routes/components/iconButtonGroup/index';
-import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index';
-import { Route as ComponentsHintIndexImport } from './routes/components/hint/index';
-import { Route as ComponentsGroupActionsPaneIndexImport } from './routes/components/groupActionsPane/index';
-import { Route as ComponentsGlobalSearchIndexImport } from './routes/components/globalSearch/index';
-import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index';
-import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index';
-import { Route as ComponentsFileinputIndexImport } from './routes/components/fileinput/index';
-import { Route as ComponentsEditModeIndexImport } from './routes/components/editMode/index';
-import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index';
-import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index';
-import { Route as ComponentsDividerIndexImport } from './routes/components/divider/index';
-import { Route as ComponentsDateTimeFieldIndexImport } from './routes/components/dateTimeField/index';
-import { Route as ComponentsDateInputIndexImport } from './routes/components/dateInput/index';
-import { Route as ComponentsCurrencyInputIndexImport } from './routes/components/currencyInput/index';
-import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index';
-import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index';
-import { Route as ComponentsCheckboxIndexImport } from './routes/components/checkbox/index';
-import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index';
-import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index';
-import { Route as ComponentsCalendarIndexImport } from './routes/components/calendar/index';
-import { Route as ComponentsButtonGroupIndexImport } from './routes/components/buttonGroup/index';
-import { Route as ComponentsButtonIndexImport } from './routes/components/button/index';
-import { Route as ComponentsBreadcrumbsIndexImport } from './routes/components/breadcrumbs/index';
-import { Route as ComponentsBadgeDotIndexImport } from './routes/components/badgeDot/index';
-import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index';
-import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index';
-import { Route as ComponentsAnchorIndexImport } from './routes/components/anchor/index';
-import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index';
-import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index';
-import { Route as ComponentsTreeWithOnChangeHandlerImport } from './routes/components/tree/withOnChangeHandler';
-import { Route as ComponentsTreeWithControlCheckCountImport } from './routes/components/tree/withControlCheckCount';
-import { Route as ComponentsTreeVariantsImport } from './routes/components/tree/variants';
-import { Route as ComponentsTreeUncontrolledImport } from './routes/components/tree/uncontrolled';
-import { Route as ComponentsTreeSizesImport } from './routes/components/tree/sizes';
-import { Route as ComponentsTreeMobileImport } from './routes/components/tree/mobile';
-import { Route as ComponentsTreeCustomImport } from './routes/components/tree/custom';
-import { Route as ComponentsTooltipWithMenuButtonImport } from './routes/components/tooltip/withMenuButton';
-import { Route as ComponentsTooltipVariantsImport } from './routes/components/tooltip/variants';
-import { Route as ComponentsTooltipSizesImport } from './routes/components/tooltip/sizes';
-import { Route as ComponentsTooltipScenarioImport } from './routes/components/tooltip/scenario';
-import { Route as ComponentsTooltipRefImport } from './routes/components/tooltip/ref';
-import { Route as ComponentsTooltipPositionImport } from './routes/components/tooltip/position';
-import { Route as ComponentsTooltipHocRefSetterImport } from './routes/components/tooltip/hocRefSetter';
-import { Route as ComponentsTooltipHocRefImport } from './routes/components/tooltip/hocRef';
-import { Route as ComponentsTooltipHocFCImport } from './routes/components/tooltip/hocFC';
-import { Route as ComponentsTooltipHocClassImport } from './routes/components/tooltip/hocClass';
-import { Route as ComponentsTooltipHocBaseImport } from './routes/components/tooltip/hocBase';
-import { Route as ComponentsToggleStatesImport } from './routes/components/toggle/states';
-import { Route as ComponentsToggleSizesImport } from './routes/components/toggle/sizes';
-import { Route as ComponentsToggleMobileImport } from './routes/components/toggle/mobile';
-import { Route as ComponentsToggleLabelPositionImport } from './routes/components/toggle/labelPosition';
-import { Route as ComponentsToggleExtraTextImport } from './routes/components/toggle/extraText';
-import { Route as ComponentsToastWithProgressBarStopOnHoverImport } from './routes/components/toast/withProgressBarStopOnHover';
-import { Route as ComponentsToastWithProgressBarImport } from './routes/components/toast/withProgressBar';
-import { Route as ComponentsToastPositionImport } from './routes/components/toast/position';
-import { Route as ComponentsToastLineNotificationImport } from './routes/components/toast/lineNotification';
-import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles';
-import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states';
-import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles';
-import { Route as ComponentsTextButtonStatesImport } from './routes/components/textButton/states';
-import { Route as ComponentsTextAreaVariantsImport } from './routes/components/textArea/variants';
-import { Route as ComponentsTextAreaStatusesImport } from './routes/components/textArea/statuses';
-import { Route as ComponentsTextAreaStatesImport } from './routes/components/textArea/states';
-import { Route as ComponentsTextAreaSizesImport } from './routes/components/textArea/sizes';
-import { Route as ComponentsTagWithIconImport } from './routes/components/tag/withIcon';
-import { Route as ComponentsTagTooltipImport } from './routes/components/tag/tooltip';
-import { Route as ComponentsTagTagsImport } from './routes/components/tag/tags';
-import { Route as ComponentsTagStylesImport } from './routes/components/tag/styles';
-import { Route as ComponentsTagMenuImport } from './routes/components/tag/menu';
-import { Route as ComponentsTableZebraImport } from './routes/components/table/zebra';
-import { Route as ComponentsTableWidthImport } from './routes/components/table/width';
-import { Route as ComponentsTableStyleImport } from './routes/components/table/style';
-import { Route as ComponentsTableStickyImport } from './routes/components/table/sticky';
-import { Route as ComponentsTableSortImport } from './routes/components/table/sort';
-import { Route as ComponentsTableScrollPositionByRefImport } from './routes/components/table/scrollPositionByRef';
-import { Route as ComponentsTableRowStateImport } from './routes/components/table/rowState';
-import { Route as ComponentsTableRowDragDropImport } from './routes/components/table/rowDragDrop';
-import { Route as ComponentsTableRenderCallbackImport } from './routes/components/table/renderCallback';
-import { Route as ComponentsTableOverflowMenuImport } from './routes/components/table/overflowMenu';
-import { Route as ComponentsTableMultilineImport } from './routes/components/table/multiline';
-import { Route as ComponentsTableMultiLevelHeaderImport } from './routes/components/table/multiLevelHeader';
-import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner';
-import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton';
-import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll';
-import { Route as ComponentsTableGroupImport } from './routes/components/table/group';
-import { Route as ComponentsTableFixedVirtualScrollImport } from './routes/components/table/fixedVirtualScroll';
-import { Route as ComponentsTableFilterImport } from './routes/components/table/filter';
-import { Route as ComponentsTableExtraTextImport } from './routes/components/table/extraText';
-import { Route as ComponentsTableExpandImport } from './routes/components/table/expand';
-import { Route as ComponentsTableDynamicVirtualScrollImport } from './routes/components/table/dynamicVirtualScroll';
-import { Route as ComponentsTableColumnDragDropImport } from './routes/components/table/columnDragDrop';
-import { Route as ComponentsTableCheckboxImport } from './routes/components/table/checkbox';
-import { Route as ComponentsTableBaseHTMLStickyShadowImport } from './routes/components/table/baseHTMLStickyShadow';
-import { Route as ComponentsTableBaseHTMLOverflowMenuImport } from './routes/components/table/baseHTMLOverflowMenu';
-import { Route as ComponentsTableBaseHTMLImport } from './routes/components/table/baseHTML';
-import { Route as ComponentsTabMenuWithPaddingImport } from './routes/components/tabMenu/withPadding';
-import { Route as ComponentsTabMenuWithOverflowMenuImport } from './routes/components/tabMenu/withOverflowMenu';
-import { Route as ComponentsTabMenuTabMenuVerticalImport } from './routes/components/tabMenu/tabMenuVertical';
-import { Route as ComponentsTabMenuTabMenuIconImport } from './routes/components/tabMenu/tabMenuIcon';
-import { Route as ComponentsTabMenuSizeVerticalTabsImport } from './routes/components/tabMenu/sizeVerticalTabs';
-import { Route as ComponentsTabMenuSizeImport } from './routes/components/tabMenu/size';
-import { Route as ComponentsTabMenuOptionsVerticalTabsImport } from './routes/components/tabMenu/optionsVerticalTabs';
-import { Route as ComponentsTabMenuOptionsImport } from './routes/components/tabMenu/options';
-import { Route as ComponentsTabMenuHorizontalTabsImport } from './routes/components/tabMenu/horizontalTabs';
-import { Route as ComponentsTabMenuFilterTabsSizeImport } from './routes/components/tabMenu/filterTabsSize';
-import { Route as ComponentsTabMenuFilterTabsMobileImport } from './routes/components/tabMenu/filterTabsMobile';
-import { Route as ComponentsTabMenuFilterTabsImport } from './routes/components/tabMenu/filterTabs';
-import { Route as ComponentsTabMenuCardTabMenuWithoutBorderImport } from './routes/components/tabMenu/cardTabMenuWithoutBorder';
-import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components/tabMenu/cardTabMenu';
-import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical';
-import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab';
-import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab';
-import { Route as ComponentsTVariantsImport } from './routes/components/t/variants';
-import { Route as ComponentsTStylesListImport } from './routes/components/t/stylesList';
-import { Route as ComponentsSuggestInputUncontrolledImport } from './routes/components/suggestInput/uncontrolled';
-import { Route as ComponentsSuggestInputSizesImport } from './routes/components/suggestInput/sizes';
-import { Route as ComponentsSuggestInputIconImport } from './routes/components/suggestInput/icon';
-import { Route as ComponentsSuggestInputFilterImport } from './routes/components/suggestInput/filter';
-import { Route as ComponentsSuggestInputFieldImport } from './routes/components/suggestInput/field';
-import { Route as ComponentsStepperVerticalImport } from './routes/components/stepper/vertical';
-import { Route as ComponentsStepperVariantsImport } from './routes/components/stepper/variants';
-import { Route as ComponentsStepperStateImport } from './routes/components/stepper/state';
-import { Route as ComponentsStepperOptionsImport } from './routes/components/stepper/options';
-import { Route as ComponentsStepperMobileImport } from './routes/components/stepper/mobile';
-import { Route as ComponentsStepperCustomImport } from './routes/components/stepper/custom';
-import { Route as ComponentsStepperAdaptiveImport } from './routes/components/stepper/adaptive';
-import { Route as ComponentsStatusIndicatorVariantsImport } from './routes/components/statusIndicator/variants';
-import { Route as ComponentsStatusIndicatorStatesImport } from './routes/components/statusIndicator/states';
-import { Route as ComponentsStatusIndicatorSizesImport } from './routes/components/statusIndicator/sizes';
-import { Route as ComponentsSpinnerWithOtherComponentsImport } from './routes/components/spinner/withOtherComponents';
-import { Route as ComponentsSpinnerVariantsImport } from './routes/components/spinner/variants';
-import { Route as ComponentsSpinnerSizesImport } from './routes/components/spinner/sizes';
-import { Route as ComponentsSliderInputVariantsImport } from './routes/components/sliderInput/variants';
-import { Route as ComponentsSliderInputStatesImport } from './routes/components/sliderInput/states';
-import { Route as ComponentsSliderInputSizesImport } from './routes/components/sliderInput/sizes';
-import { Route as ComponentsSliderInputCustomImport } from './routes/components/sliderInput/custom';
-import { Route as ComponentsSliderInputControlledImport } from './routes/components/sliderInput/controlled';
-import { Route as ComponentsSliderStateImport } from './routes/components/slider/state';
-import { Route as ComponentsSliderSizesImport } from './routes/components/slider/sizes';
-import { Route as ComponentsSliderRangeStateImport } from './routes/components/slider/rangeState';
-import { Route as ComponentsSliderRangeSizesImport } from './routes/components/slider/rangeSizes';
-import { Route as ComponentsSliderRangeOptionsImport } from './routes/components/slider/rangeOptions';
-import { Route as ComponentsSliderRangeImport } from './routes/components/slider/range';
-import { Route as ComponentsSliderOptionsImport } from './routes/components/slider/options';
-import { Route as ComponentsSliderCustomImport } from './routes/components/slider/custom';
-import { Route as ComponentsSelectVirtualScrollImport } from './routes/components/select/virtualScroll';
-import { Route as ComponentsSelectUncontrolledSubmitSearchImport } from './routes/components/select/uncontrolledSubmitSearch';
-import { Route as ComponentsSelectStatusImport } from './routes/components/select/status';
-import { Route as ComponentsSelectStateImport } from './routes/components/select/state';
-import { Route as ComponentsSelectSizesImport } from './routes/components/select/sizes';
-import { Route as ComponentsSelectSelectFieldImport } from './routes/components/select/selectField';
-import { Route as ComponentsSelectSearchWithClearInputAfterSelectImport } from './routes/components/select/searchWithClearInputAfterSelect';
-import { Route as ComponentsSelectProgressiveRenderOptionsScrollImport } from './routes/components/select/progressiveRenderOptionsScroll';
-import { Route as ComponentsSelectPanelWithAddButtonImport } from './routes/components/select/panelWithAddButton';
-import { Route as ComponentsSelectMultiSelectWithSelectedOnTopImport } from './routes/components/select/multiSelectWithSelectedOnTop';
-import { Route as ComponentsSelectMultiSelectOnChangeImport } from './routes/components/select/multiSelectOnChange';
-import { Route as ComponentsSelectMultiSelectExpandedHeightImport } from './routes/components/select/multiSelectExpandedHeight';
-import { Route as ComponentsSelectMultiSelectChooseAllImport } from './routes/components/select/multiSelectChooseAll';
-import { Route as ComponentsSelectMultiSelectApplyButtonImport } from './routes/components/select/multiSelectApplyButton';
-import { Route as ComponentsSelectMultiCustomValuesImport } from './routes/components/select/multiCustomValues';
-import { Route as ComponentsSelectMultiCustomOptionsByRenderChipImport } from './routes/components/select/multiCustomOptionsByRenderChip';
-import { Route as ComponentsSelectMultiCustomDeleteChipImport } from './routes/components/select/multiCustomDeleteChip';
-import { Route as ComponentsSelectGroupOfOptionsImport } from './routes/components/select/groupOfOptions';
-import { Route as ComponentsSelectForceHideOverflowTooltipImport } from './routes/components/select/forceHideOverflowTooltip';
-import { Route as ComponentsSelectExternalFilterImport } from './routes/components/select/externalFilter';
-import { Route as ComponentsSelectCustomValuesImport } from './routes/components/select/customValues';
-import { Route as ComponentsSelectCustomOptionsWithCustomFilterImport } from './routes/components/select/customOptionsWithCustomFilter';
-import { Route as ComponentsSelectCustomOptionsByRenderPropsImport } from './routes/components/select/customOptionsByRenderProps';
-import { Route as ComponentsSelectAsyncSearchImport } from './routes/components/select/asyncSearch';
-import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants';
-import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles';
-import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states';
-import { Route as ComponentsSegmentedControlSizesImport } from './routes/components/segmentedControl/sizes';
-import { Route as ComponentsSegmentedControlRadioButtonModeImport } from './routes/components/segmentedControl/radioButtonMode';
-import { Route as ComponentsSegmentedControlCheckBoxModeImport } from './routes/components/segmentedControl/checkBoxMode';
-import { Route as ComponentsScrollContainerStateImport } from './routes/components/scrollContainer/state';
-import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states';
-import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes';
-import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer';
-import { Route as ComponentsRadiobuttonFieldSetImport } from './routes/components/radiobutton/fieldSet';
-import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/components/radiobutton/extraText';
-import { Route as ComponentsProgressStepperStepsNamingImport } from './routes/components/progressStepper/stepsNaming';
-import { Route as ComponentsProgressStepperScenarioImport } from './routes/components/progressStepper/scenario';
-import { Route as ComponentsProgressStepperMobileImport } from './routes/components/progressStepper/mobile';
-import { Route as ComponentsProgressStepperDescriptionNextStepsImport } from './routes/components/progressStepper/descriptionNextSteps';
-import { Route as ComponentsProgressPageStylesImport } from './routes/components/progressPage/styles';
-import { Route as ComponentsProgressPageAnimationImport } from './routes/components/progressPage/animation';
-import { Route as ComponentsProgressHeaderStylesImport } from './routes/components/progressHeader/styles';
-import { Route as ComponentsProgressHeaderAnimationImport } from './routes/components/progressHeader/animation';
-import { Route as ComponentsPillsTooltipImport } from './routes/components/pills/tooltip';
-import { Route as ComponentsPillsNestedImport } from './routes/components/pills/nested';
-import { Route as ComponentsPillsMenuImport } from './routes/components/pills/menu';
-import { Route as ComponentsPhoneNumberInputWithPlaceholderImport } from './routes/components/phoneNumberInput/withPlaceholder';
-import { Route as ComponentsPhoneNumberInputWithFilterImport } from './routes/components/phoneNumberInput/withFilter';
-import { Route as ComponentsPhoneNumberInputStatusImport } from './routes/components/phoneNumberInput/status';
-import { Route as ComponentsPhoneNumberInputStateImport } from './routes/components/phoneNumberInput/state';
-import { Route as ComponentsPhoneNumberInputSizesImport } from './routes/components/phoneNumberInput/sizes';
-import { Route as ComponentsPhoneNumberInputSelectedCountryImport } from './routes/components/phoneNumberInput/selectedCountry';
-import { Route as ComponentsPhoneNumberInputPhoneNumberInputFieldImport } from './routes/components/phoneNumberInput/phoneNumberInputField';
-import { Route as ComponentsPaginationTwoWithInputImport } from './routes/components/paginationTwo/withInput';
-import { Route as ComponentsPaginationTwoStateImport } from './routes/components/paginationTwo/state';
-import { Route as ComponentsPaginationTwoPagesImport } from './routes/components/paginationTwo/pages';
-import { Route as ComponentsPaginationTwoMobileImport } from './routes/components/paginationTwo/mobile';
-import { Route as ComponentsPaginationTwoEntriesImport } from './routes/components/paginationTwo/entries';
-import { Route as ComponentsPaginationOneWithInputImport } from './routes/components/paginationOne/withInput';
-import { Route as ComponentsPaginationOneTypesImport } from './routes/components/paginationOne/types';
-import { Route as ComponentsPaginationOneStatesImport } from './routes/components/paginationOne/states';
-import { Route as ComponentsPaginationOneSizesImport } from './routes/components/paginationOne/sizes';
-import { Route as ComponentsOverflowMenuStylesImport } from './routes/components/overflowMenu/styles';
-import { Route as ComponentsOverflowMenuMultiLevelImport } from './routes/components/overflowMenu/multiLevel';
-import { Route as ComponentsNumberInputStatusImport } from './routes/components/numberInput/status';
-import { Route as ComponentsNumberInputStateImport } from './routes/components/numberInput/state';
-import { Route as ComponentsNumberInputSpacesImport } from './routes/components/numberInput/spaces';
-import { Route as ComponentsNumberInputSizesImport } from './routes/components/numberInput/sizes';
-import { Route as ComponentsNumberInputNumberInputFieldImport } from './routes/components/numberInput/numberInputField';
-import { Route as ComponentsNumberInputMinMaxValueImport } from './routes/components/numberInput/minMaxValue';
-import { Route as ComponentsNumberInputCustomImport } from './routes/components/numberInput/custom';
-import { Route as ComponentsNumberInputControlledInputImport } from './routes/components/numberInput/controlledInput';
-import { Route as ComponentsNotificationStylesImport } from './routes/components/notification/styles';
-import { Route as ComponentsNotificationStatesImport } from './routes/components/notification/states';
-import { Route as ComponentsMultiInputWithOptionsImport } from './routes/components/multiInput/withOptions';
-import { Route as ComponentsMultiInputStatusImport } from './routes/components/multiInput/status';
-import { Route as ComponentsMultiInputStateImport } from './routes/components/multiInput/state';
-import { Route as ComponentsMultiInputSizeImport } from './routes/components/multiInput/size';
-import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon';
-import { Route as ComponentsMultiButtonStylesImport } from './routes/components/multiButton/styles';
-import { Route as ComponentsMultiButtonStatesImport } from './routes/components/multiButton/states';
-import { Route as ComponentsModalVariantsImport } from './routes/components/modal/variants';
-import { Route as ComponentsModalStatusIconsImport } from './routes/components/modal/statusIcons';
-import { Route as ComponentsModalSizesImport } from './routes/components/modal/sizes';
-import { Route as ComponentsModalScrollImport } from './routes/components/modal/scroll';
-import { Route as ComponentsModalCustomOverlayImport } from './routes/components/modal/customOverlay';
-import { Route as ComponentsModalCloseIconImport } from './routes/components/modal/closeIcon';
-import { Route as ComponentsMenuButtonWithIconImport } from './routes/components/menuButton/withIcon';
-import { Route as ComponentsMenuButtonStylesImport } from './routes/components/menuButton/styles';
-import { Route as ComponentsMenuButtonStatesImport } from './routes/components/menuButton/states';
-import { Route as ComponentsMenuButtonMultiLevelMenuImport } from './routes/components/menuButton/multiLevelMenu';
-import { Route as ComponentsMenuButtonCheckboxAndTopPanelImport } from './routes/components/menuButton/checkboxAndTopPanel';
-import { Route as ComponentsMenuButtonCheckboxAndBottomPanelImport } from './routes/components/menuButton/checkboxAndBottomPanel';
-import { Route as ComponentsMenuButtonActionsImport } from './routes/components/menuButton/actions';
-import { Route as ComponentsListUnorderedListImport } from './routes/components/list/unorderedList';
-import { Route as ComponentsListOrderedListImport } from './routes/components/list/orderedList';
-import { Route as ComponentsListNestedImport } from './routes/components/list/nested';
-import { Route as ComponentsListMultilineImport } from './routes/components/list/multiline';
-import { Route as ComponentsListMarkerColorImport } from './routes/components/list/markerColor';
-import { Route as ComponentsListCustomMarkerImport } from './routes/components/list/customMarker';
-import { Route as ComponentsLinkWithIconImport } from './routes/components/link/withIcon';
-import { Route as ComponentsLinkStylesImport } from './routes/components/link/styles';
-import { Route as ComponentsLinkCssMixinImport } from './routes/components/link/cssMixin';
-import { Route as ComponentsLinkAsPropImport } from './routes/components/link/asProp';
-import { Route as ComponentsInputExStatusImport } from './routes/components/inputEx/status';
-import { Route as ComponentsInputExStateImport } from './routes/components/inputEx/state';
-import { Route as ComponentsInputExSizesImport } from './routes/components/inputEx/sizes';
-import { Route as ComponentsInputExPrefixSuffixSelectImport } from './routes/components/inputEx/prefixSuffixSelect';
-import { Route as ComponentsInputExInputExFieldImport } from './routes/components/inputEx/inputExField';
-import { Route as ComponentsInputExCustomImport } from './routes/components/inputEx/custom';
-import { Route as ComponentsImageViewerViewOptionsImport } from './routes/components/imageViewer/viewOptions';
-import { Route as ComponentsImageViewerKeyboardCommandsImport } from './routes/components/imageViewer/keyboardCommands';
-import { Route as ComponentsImageViewerImageMiniatureImport } from './routes/components/imageViewer/imageMiniature';
-import { Route as ComponentsImageViewerErrorOnLoadImport } from './routes/components/imageViewer/errorOnLoad';
-import { Route as ComponentsIconPlacementVariantsImport } from './routes/components/iconPlacement/variants';
-import { Route as ComponentsIconPlacementStylesImport } from './routes/components/iconPlacement/styles';
-import { Route as ComponentsIconPlacementSizesImport } from './routes/components/iconPlacement/sizes';
-import { Route as ComponentsIconButtonGroupTooltipImport } from './routes/components/iconButtonGroup/tooltip';
-import { Route as ComponentsIconButtonGroupStatesImport } from './routes/components/iconButtonGroup/states';
-import { Route as ComponentsIconButtonGroupSizesImport } from './routes/components/iconButtonGroup/sizes';
-import { Route as ComponentsIconButtonStylesImport } from './routes/components/iconButton/styles';
-import { Route as ComponentsIconButtonStatesImport } from './routes/components/iconButton/states';
-import { Route as ComponentsHintVariantsImport } from './routes/components/hint/variants';
-import { Route as ComponentsHintSizesImport } from './routes/components/hint/sizes';
-import { Route as ComponentsHintScenarioImport } from './routes/components/hint/scenario';
-import { Route as ComponentsHintPositionImport } from './routes/components/hint/position';
-import { Route as ComponentsHintClassNameImport } from './routes/components/hint/className';
-import { Route as ComponentsHintAnchorCssMixinImport } from './routes/components/hint/anchorCssMixin';
-import { Route as ComponentsGlobalSearchVariantsImport } from './routes/components/globalSearch/variants';
-import { Route as ComponentsGlobalSearchSizesImport } from './routes/components/globalSearch/sizes';
-import { Route as ComponentsFloatingButtonWithMenuModesImport } from './routes/components/floatingButton/withMenuModes';
-import { Route as ComponentsFloatingButtonWithMenuImport } from './routes/components/floatingButton/withMenu';
-import { Route as ComponentsFloatingButtonTooltipImport } from './routes/components/floatingButton/tooltip';
-import { Route as ComponentsFloatingButtonStylesImport } from './routes/components/floatingButton/styles';
-import { Route as ComponentsFloatingButtonPositionImport } from './routes/components/floatingButton/position';
-import { Route as ComponentsFloatingButtonMobileImport } from './routes/components/floatingButton/mobile';
-import { Route as ComponentsFileinputStateImport } from './routes/components/fileinput/state';
-import { Route as ComponentsFileinputFilestatusImport } from './routes/components/fileinput/filestatus';
-import { Route as ComponentsFileinputExtratextImport } from './routes/components/fileinput/extratext';
-import { Route as ComponentsFileinputDimensionsImport } from './routes/components/fileinput/dimensions';
-import { Route as ComponentsFileinputCustomizingFileTypeImport } from './routes/components/fileinput/customizingFileType';
-import { Route as ComponentsFileinputCustomizingImport } from './routes/components/fileinput/customizing';
-import { Route as ComponentsEditModeTooltipImport } from './routes/components/editMode/tooltip';
-import { Route as ComponentsEditModeStatusImport } from './routes/components/editMode/status';
-import { Route as ComponentsEditModeMultilineImport } from './routes/components/editMode/multiline';
-import { Route as ComponentsEditModeExtratextImport } from './routes/components/editMode/extratext';
-import { Route as ComponentsEditModeDisablecopyingImport } from './routes/components/editMode/disablecopying';
-import { Route as ComponentsEditModeDimensionsImport } from './routes/components/editMode/dimensions';
-import { Route as ComponentsDropdownMenuWithTooltipImport } from './routes/components/dropdown/menuWithTooltip';
-import { Route as ComponentsDropdownMenuWithRadioButtonImport } from './routes/components/dropdown/menuWithRadioButton';
-import { Route as ComponentsDropdownMenuWithIconsImport } from './routes/components/dropdown/menuWithIcons';
-import { Route as ComponentsDropdownMenuWithCheckboxGroupImport } from './routes/components/dropdown/menuWithCheckboxGroup';
-import { Route as ComponentsDropdownMenuWithCheckboxImport } from './routes/components/dropdown/menuWithCheckbox';
-import { Route as ComponentsDropdownMenuWithAddTextAndIconsImport } from './routes/components/dropdown/menuWithAddTextAndIcons';
-import { Route as ComponentsDropdownMenuVirtualScrollImport } from './routes/components/dropdown/menuVirtualScroll';
-import { Route as ComponentsDropdownMenuPreselectImport } from './routes/components/dropdown/menuPreselect';
-import { Route as ComponentsDropdownMenuMultiLineImport } from './routes/components/dropdown/menuMultiLine';
-import { Route as ComponentsDropdownMenuMultiLevelImport } from './routes/components/dropdown/menuMultiLevel';
-import { Route as ComponentsDropdownMenuManyItemsImport } from './routes/components/dropdown/menuManyItems';
-import { Route as ComponentsDropdownMenuLockCycleScrollImport } from './routes/components/dropdown/menuLockCycleScroll';
-import { Route as ComponentsDropdownMenuDimensionsImport } from './routes/components/dropdown/menuDimensions';
-import { Route as ComponentsDropdownMenuCustomItemsImport } from './routes/components/dropdown/menuCustomItems';
-import { Route as ComponentsDropdownMenuCategoriesImport } from './routes/components/dropdown/menuCategories';
-import { Route as ComponentsDropdownMenuActionTwoButtonsImport } from './routes/components/dropdown/menuActionTwoButtons';
-import { Route as ComponentsDropdownMenuActionSearchImport } from './routes/components/dropdown/menuActionSearch';
-import { Route as ComponentsDropdownDropMenuUncontrolledImport } from './routes/components/dropdown/dropMenuUncontrolled';
-import { Route as ComponentsDropdownDropMenuControlledImport } from './routes/components/dropdown/dropMenuControlled';
-import { Route as ComponentsDropdownCustomDropdownContainerImport } from './routes/components/dropdown/customDropdownContainer';
-import { Route as ComponentsDrawerWithoutBackdropImport } from './routes/components/drawer/withoutBackdrop';
-import { Route as ComponentsDrawerWithBackdropImport } from './routes/components/drawer/withBackdrop';
-import { Route as ComponentsDrawerWidthImport } from './routes/components/drawer/width';
-import { Route as ComponentsDrawerPositionImport } from './routes/components/drawer/position';
-import { Route as ComponentsDrawerNonClosableImport } from './routes/components/drawer/nonClosable';
-import { Route as ComponentsDrawerMobileImport } from './routes/components/drawer/mobile';
-import { Route as ComponentsDrawerCustomContentImport } from './routes/components/drawer/customContent';
-import { Route as ComponentsDividerTypeImport } from './routes/components/divider/type';
-import { Route as ComponentsDividerThiknessImport } from './routes/components/divider/thikness';
-import { Route as ComponentsDividerStyleImport } from './routes/components/divider/style';
-import { Route as ComponentsDividerLengthImport } from './routes/components/divider/length';
-import { Route as ComponentsDateTimeFieldStatusImport } from './routes/components/dateTimeField/status';
-import { Route as ComponentsDateTimeFieldExtraTextImport } from './routes/components/dateTimeField/extraText';
-import { Route as ComponentsDateTimeFieldDisplayInlineImport } from './routes/components/dateTimeField/displayInline';
-import { Route as ComponentsDateTimeFieldDimensionImport } from './routes/components/dateTimeField/dimension';
-import { Route as ComponentsDateInputWithButtonImport } from './routes/components/dateInput/withButton';
-import { Route as ComponentsDateInputVariantsImport } from './routes/components/dateInput/variants';
-import { Route as ComponentsDateInputStatusImport } from './routes/components/dateInput/status';
-import { Route as ComponentsDateInputStateImport } from './routes/components/dateInput/state';
-import { Route as ComponentsDateInputSpecialDatesImport } from './routes/components/dateInput/specialDates';
-import { Route as ComponentsDateInputSizesImport } from './routes/components/dateInput/sizes';
-import { Route as ComponentsDateInputRangeImport } from './routes/components/dateInput/range';
-import { Route as ComponentsDateInputDateFieldStateImport } from './routes/components/dateInput/dateFieldState';
-import { Route as ComponentsDateInputDateFieldImport } from './routes/components/dateInput/dateField';
-import { Route as ComponentsDateInputCustomImport } from './routes/components/dateInput/custom';
-import { Route as ComponentsCurrencyInputWithPrefixImport } from './routes/components/currencyInput/withPrefix';
-import { Route as ComponentsCurrencyInputMinMaxvalueImport } from './routes/components/currencyInput/minMaxvalue';
-import { Route as ComponentsCurrencyInputCurrencyInputFieldImport } from './routes/components/currencyInput/currencyInputField';
-import { Route as ComponentsContentSwitcherWithIconsImport } from './routes/components/contentSwitcher/withIcons';
-import { Route as ComponentsContentSwitcherWithBadgeImport } from './routes/components/contentSwitcher/withBadge';
-import { Route as ComponentsContentSwitcherStylesImport } from './routes/components/contentSwitcher/styles';
-import { Route as ComponentsContentSwitcherSizesImport } from './routes/components/contentSwitcher/sizes';
-import { Route as ComponentsContentSwitcherIconsOnlyImport } from './routes/components/contentSwitcher/iconsOnly';
-import { Route as ComponentsContentSwitcherAdaptiveImport } from './routes/components/contentSwitcher/adaptive';
-import { Route as ComponentsChipsWithTooltipImport } from './routes/components/chips/withTooltip';
-import { Route as ComponentsChipsWithIconImport } from './routes/components/chips/withIcon';
-import { Route as ComponentsChipsWithBadgeImport } from './routes/components/chips/withBadge';
-import { Route as ComponentsChipsStylesImport } from './routes/components/chips/styles';
-import { Route as ComponentsChipsSizesImport } from './routes/components/chips/sizes';
-import { Route as ComponentsChipsSelectImport } from './routes/components/chips/select';
-import { Route as ComponentsChipsMultiSelectImport } from './routes/components/chips/multiSelect';
-import { Route as ComponentsChipsChipsCloseImport } from './routes/components/chips/chipsClose';
-import { Route as ComponentsCheckboxWithInformerImport } from './routes/components/checkbox/withInformer';
-import { Route as ComponentsCheckboxStatesImport } from './routes/components/checkbox/states';
-import { Route as ComponentsCheckboxFieldSetImport } from './routes/components/checkbox/fieldSet';
-import { Route as ComponentsCheckboxCompositeGroupImport } from './routes/components/checkbox/compositeGroup';
-import { Route as ComponentsCheckboxAdditionalTextImport } from './routes/components/checkbox/additionalText';
-import { Route as ComponentsCarouselSliderStylesImport } from './routes/components/carouselSlider/styles';
-import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from './routes/components/carouselSlider/carouselSliderAutoChange';
-import { Route as ComponentsCarouselSliderPositionImport } from './routes/components/carousel/sliderPosition';
-import { Route as ComponentsCarouselCarouselAutoChangeImport } from './routes/components/carousel/carouselAutoChange';
-import { Route as ComponentsCarouselArrowsImport } from './routes/components/carousel/arrows';
-import { Route as ComponentsCalendarViewDateMonthsYearsImport } from './routes/components/calendar/viewDateMonthsYears';
-import { Route as ComponentsCalendarViewDateAfterChooseImport } from './routes/components/calendar/viewDateAfterChoose';
-import { Route as ComponentsCalendarSpecialDatesImport } from './routes/components/calendar/specialDates';
-import { Route as ComponentsCalendarRangeImport } from './routes/components/calendar/range';
-import { Route as ComponentsCalendarMaxDateImport } from './routes/components/calendar/maxDate';
-import { Route as ComponentsCalendarFilterDateImport } from './routes/components/calendar/filterDate';
-import { Route as ComponentsCalendarCallbackImport } from './routes/components/calendar/callback';
-import { Route as ComponentsCalendarActiveViewDateImport } from './routes/components/calendar/activeViewDate';
-import { Route as ComponentsButtonGroupVariantsImport } from './routes/components/buttonGroup/variants';
-import { Route as ComponentsButtonGroupStylesImport } from './routes/components/buttonGroup/styles';
-import { Route as ComponentsButtonGroupStatesImport } from './routes/components/buttonGroup/states';
-import { Route as ComponentsButtonGroupSizesImport } from './routes/components/buttonGroup/sizes';
-import { Route as ComponentsButtonTypesImport } from './routes/components/button/types';
-import { Route as ComponentsButtonStateImport } from './routes/components/button/state';
-import { Route as ComponentsButtonDimensionImport } from './routes/components/button/dimension';
-import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon';
-import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge';
-import { Route as ComponentsButtonAdaptiveImport } from './routes/components/button/adaptive';
-import { Route as ComponentsBreadcrumbsSizesImport } from './routes/components/breadcrumbs/sizes';
-import { Route as ComponentsBreadcrumbsMobileImport } from './routes/components/breadcrumbs/mobile';
-import { Route as ComponentsBreadcrumbsLinkImport } from './routes/components/breadcrumbs/link';
-import { Route as ComponentsBreadcrumbsIconsImport } from './routes/components/breadcrumbs/icons';
-import { Route as ComponentsBreadcrumbsActiveCrumbImport } from './routes/components/breadcrumbs/activeCrumb';
-import { Route as ComponentsBadgeDotVariantsImport } from './routes/components/badgeDot/variants';
-import { Route as ComponentsBadgeBadgeVariantsImport } from './routes/components/badge/badgeVariants';
-import { Route as ComponentsBadgeBadgeAccessibilityImport } from './routes/components/badge/badgeAccessibility';
-import { Route as ComponentsAvatarStylesImport } from './routes/components/avatar/styles';
-import { Route as ComponentsAvatarSizeXXSImport } from './routes/components/avatar/sizeXXS';
-import { Route as ComponentsAvatarAvatarGroupLimitedWidthImport } from './routes/components/avatar/avatarGroupLimitedWidth';
-import { Route as ComponentsAvatarAvatarGroupImport } from './routes/components/avatar/avatarGroup';
-import { Route as ComponentsAnchorTreeImport } from './routes/components/anchor/tree';
-import { Route as ComponentsAnchorStateImport } from './routes/components/anchor/state';
-import { Route as ComponentsAnchorSizesImport } from './routes/components/anchor/sizes';
-import { Route as ComponentsActionBarDimensionsImport } from './routes/components/actionBar/dimensions';
-import { Route as ComponentsActionBarAdaptiveImport } from './routes/components/actionBar/adaptive';
-import { Route as ComponentsAccordionAccordionModesImport } from './routes/components/accordion/accordionModes';
-import { Route as ComponentsAccordionAccordionIconImport } from './routes/components/accordion/accordionIcon';
-import { Route as ComponentsAccordionAccordionDividerImport } from './routes/components/accordion/accordionDivider';
-import { Route as ComponentsAccordionAccordionDimensionImport } from './routes/components/accordion/accordionDimension';
+import { Route as rootRoute } from './routes/__root'
+import { Route as GeneralImport } from './routes/general'
+import { Route as ComponentsImport } from './routes/components'
+import { Route as IndexImport } from './routes/index'
+import { Route as GeneralUsageImport } from './routes/general/usage'
+import { Route as GeneralResourcesImport } from './routes/general/resources'
+import { Route as GeneralInstallationImport } from './routes/general/installation'
+import { Route as GeneralFaqsImport } from './routes/general/faqs'
+import { Route as ComponentsTreeIndexImport } from './routes/components/tree/index'
+import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index'
+import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
+import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
+import { Route as ComponentsTimeInputIndexImport } from './routes/components/timeInput/index'
+import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
+import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
+import { Route as ComponentsTextAreaIndexImport } from './routes/components/textArea/index'
+import { Route as ComponentsTagIndexImport } from './routes/components/tag/index'
+import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
+import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
+import { Route as ComponentsTIndexImport } from './routes/components/t/index'
+import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
+import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
+import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
+import { Route as ComponentsSliderInputIndexImport } from './routes/components/sliderInput/index'
+import { Route as ComponentsSliderIndexImport } from './routes/components/slider/index'
+import { Route as ComponentsSkeletonIndexImport } from './routes/components/skeleton/index'
+import { Route as ComponentsSelectIndexImport } from './routes/components/select/index'
+import { Route as ComponentsSegmentedControlIndexImport } from './routes/components/segmentedControl/index'
+import { Route as ComponentsScrollContainerIndexImport } from './routes/components/scrollContainer/index'
+import { Route as ComponentsRadiobuttonIndexImport } from './routes/components/radiobutton/index'
+import { Route as ComponentsProgressStepperIndexImport } from './routes/components/progressStepper/index'
+import { Route as ComponentsProgressPageIndexImport } from './routes/components/progressPage/index'
+import { Route as ComponentsProgressHeaderIndexImport } from './routes/components/progressHeader/index'
+import { Route as ComponentsPillsIndexImport } from './routes/components/pills/index'
+import { Route as ComponentsPhoneNumberInputIndexImport } from './routes/components/phoneNumberInput/index'
+import { Route as ComponentsPaginationTwoIndexImport } from './routes/components/paginationTwo/index'
+import { Route as ComponentsPaginationOneIndexImport } from './routes/components/paginationOne/index'
+import { Route as ComponentsOverflowMenuIndexImport } from './routes/components/overflowMenu/index'
+import { Route as ComponentsNumberInputIndexImport } from './routes/components/numberInput/index'
+import { Route as ComponentsNotificationIndexImport } from './routes/components/notification/index'
+import { Route as ComponentsMultiInputIndexImport } from './routes/components/multiInput/index'
+import { Route as ComponentsMultiButtonIndexImport } from './routes/components/multiButton/index'
+import { Route as ComponentsModalIndexImport } from './routes/components/modal/index'
+import { Route as ComponentsMenuButtonIndexImport } from './routes/components/menuButton/index'
+import { Route as ComponentsListIndexImport } from './routes/components/list/index'
+import { Route as ComponentsLinkIndexImport } from './routes/components/link/index'
+import { Route as ComponentsInputExIndexImport } from './routes/components/inputEx/index'
+import { Route as ComponentsImageViewerIndexImport } from './routes/components/imageViewer/index'
+import { Route as ComponentsIconPlacementIndexImport } from './routes/components/iconPlacement/index'
+import { Route as ComponentsIconButtonGroupIndexImport } from './routes/components/iconButtonGroup/index'
+import { Route as ComponentsIconButtonIndexImport } from './routes/components/iconButton/index'
+import { Route as ComponentsHintIndexImport } from './routes/components/hint/index'
+import { Route as ComponentsGroupActionsPaneIndexImport } from './routes/components/groupActionsPane/index'
+import { Route as ComponentsGlobalSearchIndexImport } from './routes/components/globalSearch/index'
+import { Route as ComponentsFloatingButtonIndexImport } from './routes/components/floatingButton/index'
+import { Route as ComponentsFlexIndexImport } from './routes/components/flex/index'
+import { Route as ComponentsFileinputIndexImport } from './routes/components/fileinput/index'
+import { Route as ComponentsEditModeIndexImport } from './routes/components/editMode/index'
+import { Route as ComponentsDropdownIndexImport } from './routes/components/dropdown/index'
+import { Route as ComponentsDrawerIndexImport } from './routes/components/drawer/index'
+import { Route as ComponentsDividerIndexImport } from './routes/components/divider/index'
+import { Route as ComponentsDateTimeFieldIndexImport } from './routes/components/dateTimeField/index'
+import { Route as ComponentsDateInputIndexImport } from './routes/components/dateInput/index'
+import { Route as ComponentsCurrencyInputIndexImport } from './routes/components/currencyInput/index'
+import { Route as ComponentsContentSwitcherIndexImport } from './routes/components/contentSwitcher/index'
+import { Route as ComponentsChipsIndexImport } from './routes/components/chips/index'
+import { Route as ComponentsCheckboxIndexImport } from './routes/components/checkbox/index'
+import { Route as ComponentsCarouselSliderIndexImport } from './routes/components/carouselSlider/index'
+import { Route as ComponentsCarouselIndexImport } from './routes/components/carousel/index'
+import { Route as ComponentsCalendarIndexImport } from './routes/components/calendar/index'
+import { Route as ComponentsButtonGroupIndexImport } from './routes/components/buttonGroup/index'
+import { Route as ComponentsButtonIndexImport } from './routes/components/button/index'
+import { Route as ComponentsBreadcrumbsIndexImport } from './routes/components/breadcrumbs/index'
+import { Route as ComponentsBadgeDotIndexImport } from './routes/components/badgeDot/index'
+import { Route as ComponentsBadgeIndexImport } from './routes/components/badge/index'
+import { Route as ComponentsAvatarIndexImport } from './routes/components/avatar/index'
+import { Route as ComponentsAnchorIndexImport } from './routes/components/anchor/index'
+import { Route as ComponentsActionBarIndexImport } from './routes/components/actionBar/index'
+import { Route as ComponentsAccordionIndexImport } from './routes/components/accordion/index'
+import { Route as ComponentsTreeWithOnChangeHandlerImport } from './routes/components/tree/withOnChangeHandler'
+import { Route as ComponentsTreeWithControlCheckCountImport } from './routes/components/tree/withControlCheckCount'
+import { Route as ComponentsTreeVariantsImport } from './routes/components/tree/variants'
+import { Route as ComponentsTreeUncontrolledImport } from './routes/components/tree/uncontrolled'
+import { Route as ComponentsTreeSizesImport } from './routes/components/tree/sizes'
+import { Route as ComponentsTreeMobileImport } from './routes/components/tree/mobile'
+import { Route as ComponentsTreeCustomImport } from './routes/components/tree/custom'
+import { Route as ComponentsTooltipWithMenuButtonImport } from './routes/components/tooltip/withMenuButton'
+import { Route as ComponentsTooltipVariantsImport } from './routes/components/tooltip/variants'
+import { Route as ComponentsTooltipSizesImport } from './routes/components/tooltip/sizes'
+import { Route as ComponentsTooltipScenarioImport } from './routes/components/tooltip/scenario'
+import { Route as ComponentsTooltipRefImport } from './routes/components/tooltip/ref'
+import { Route as ComponentsTooltipPositionImport } from './routes/components/tooltip/position'
+import { Route as ComponentsTooltipHocRefSetterImport } from './routes/components/tooltip/hocRefSetter'
+import { Route as ComponentsTooltipHocRefImport } from './routes/components/tooltip/hocRef'
+import { Route as ComponentsTooltipHocFCImport } from './routes/components/tooltip/hocFC'
+import { Route as ComponentsTooltipHocClassImport } from './routes/components/tooltip/hocClass'
+import { Route as ComponentsTooltipHocBaseImport } from './routes/components/tooltip/hocBase'
+import { Route as ComponentsToggleStatesImport } from './routes/components/toggle/states'
+import { Route as ComponentsToggleSizesImport } from './routes/components/toggle/sizes'
+import { Route as ComponentsToggleMobileImport } from './routes/components/toggle/mobile'
+import { Route as ComponentsToggleLabelPositionImport } from './routes/components/toggle/labelPosition'
+import { Route as ComponentsToggleExtraTextImport } from './routes/components/toggle/extraText'
+import { Route as ComponentsToastWithProgressBarStopOnHoverImport } from './routes/components/toast/withProgressBarStopOnHover'
+import { Route as ComponentsToastWithProgressBarImport } from './routes/components/toast/withProgressBar'
+import { Route as ComponentsToastPositionImport } from './routes/components/toast/position'
+import { Route as ComponentsToastLineNotificationImport } from './routes/components/toast/lineNotification'
+import { Route as ComponentsTimeInputStatusImport } from './routes/components/timeInput/status'
+import { Route as ComponentsTimeInputStateImport } from './routes/components/timeInput/state'
+import { Route as ComponentsTimeInputSizesImport } from './routes/components/timeInput/sizes'
+import { Route as ComponentsTimeInputCustomImport } from './routes/components/timeInput/custom'
+import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles'
+import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
+import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
+import { Route as ComponentsTextButtonStatesImport } from './routes/components/textButton/states'
+import { Route as ComponentsTextAreaVariantsImport } from './routes/components/textArea/variants'
+import { Route as ComponentsTextAreaStatusesImport } from './routes/components/textArea/statuses'
+import { Route as ComponentsTextAreaStatesImport } from './routes/components/textArea/states'
+import { Route as ComponentsTextAreaSizesImport } from './routes/components/textArea/sizes'
+import { Route as ComponentsTagWithIconImport } from './routes/components/tag/withIcon'
+import { Route as ComponentsTagTooltipImport } from './routes/components/tag/tooltip'
+import { Route as ComponentsTagTagsImport } from './routes/components/tag/tags'
+import { Route as ComponentsTagStylesImport } from './routes/components/tag/styles'
+import { Route as ComponentsTagMenuImport } from './routes/components/tag/menu'
+import { Route as ComponentsTableZebraImport } from './routes/components/table/zebra'
+import { Route as ComponentsTableWidthImport } from './routes/components/table/width'
+import { Route as ComponentsTableStyleImport } from './routes/components/table/style'
+import { Route as ComponentsTableStickyImport } from './routes/components/table/sticky'
+import { Route as ComponentsTableSortImport } from './routes/components/table/sort'
+import { Route as ComponentsTableScrollPositionByRefImport } from './routes/components/table/scrollPositionByRef'
+import { Route as ComponentsTableRowStateImport } from './routes/components/table/rowState'
+import { Route as ComponentsTableRowDragDropImport } from './routes/components/table/rowDragDrop'
+import { Route as ComponentsTableRenderCallbackImport } from './routes/components/table/renderCallback'
+import { Route as ComponentsTableOverflowMenuImport } from './routes/components/table/overflowMenu'
+import { Route as ComponentsTableMultilineImport } from './routes/components/table/multiline'
+import { Route as ComponentsTableMultiLevelHeaderImport } from './routes/components/table/multiLevelHeader'
+import { Route as ComponentsTableLoadOnScrollSpinnerImport } from './routes/components/table/loadOnScrollSpinner'
+import { Route as ComponentsTableLoadOnScrollSkeletonImport } from './routes/components/table/loadOnScrollSkeleton'
+import { Route as ComponentsTableLoadOnScrollImport } from './routes/components/table/loadOnScroll'
+import { Route as ComponentsTableGroupImport } from './routes/components/table/group'
+import { Route as ComponentsTableFixedVirtualScrollImport } from './routes/components/table/fixedVirtualScroll'
+import { Route as ComponentsTableFilterImport } from './routes/components/table/filter'
+import { Route as ComponentsTableExtraTextImport } from './routes/components/table/extraText'
+import { Route as ComponentsTableExpandImport } from './routes/components/table/expand'
+import { Route as ComponentsTableDynamicVirtualScrollImport } from './routes/components/table/dynamicVirtualScroll'
+import { Route as ComponentsTableColumnDragDropImport } from './routes/components/table/columnDragDrop'
+import { Route as ComponentsTableCheckboxImport } from './routes/components/table/checkbox'
+import { Route as ComponentsTableBaseHTMLStickyShadowImport } from './routes/components/table/baseHTMLStickyShadow'
+import { Route as ComponentsTableBaseHTMLOverflowMenuImport } from './routes/components/table/baseHTMLOverflowMenu'
+import { Route as ComponentsTableBaseHTMLImport } from './routes/components/table/baseHTML'
+import { Route as ComponentsTabMenuWithPaddingImport } from './routes/components/tabMenu/withPadding'
+import { Route as ComponentsTabMenuWithOverflowMenuImport } from './routes/components/tabMenu/withOverflowMenu'
+import { Route as ComponentsTabMenuTabMenuVerticalImport } from './routes/components/tabMenu/tabMenuVertical'
+import { Route as ComponentsTabMenuTabMenuIconImport } from './routes/components/tabMenu/tabMenuIcon'
+import { Route as ComponentsTabMenuSizeVerticalTabsImport } from './routes/components/tabMenu/sizeVerticalTabs'
+import { Route as ComponentsTabMenuSizeImport } from './routes/components/tabMenu/size'
+import { Route as ComponentsTabMenuOptionsVerticalTabsImport } from './routes/components/tabMenu/optionsVerticalTabs'
+import { Route as ComponentsTabMenuOptionsImport } from './routes/components/tabMenu/options'
+import { Route as ComponentsTabMenuHorizontalTabsImport } from './routes/components/tabMenu/horizontalTabs'
+import { Route as ComponentsTabMenuFilterTabsSizeImport } from './routes/components/tabMenu/filterTabsSize'
+import { Route as ComponentsTabMenuFilterTabsMobileImport } from './routes/components/tabMenu/filterTabsMobile'
+import { Route as ComponentsTabMenuFilterTabsImport } from './routes/components/tabMenu/filterTabs'
+import { Route as ComponentsTabMenuCardTabMenuWithoutBorderImport } from './routes/components/tabMenu/cardTabMenuWithoutBorder'
+import { Route as ComponentsTabMenuCardTabMenuImport } from './routes/components/tabMenu/cardTabMenu'
+import { Route as ComponentsTabMenuAddTabVerticalImport } from './routes/components/tabMenu/addTabVertical'
+import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabMenu/addTab'
+import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
+import { Route as ComponentsTVariantsImport } from './routes/components/t/variants'
+import { Route as ComponentsTStylesListImport } from './routes/components/t/stylesList'
+import { Route as ComponentsStepperVerticalImport } from './routes/components/stepper/vertical'
+import { Route as ComponentsStepperVariantsImport } from './routes/components/stepper/variants'
+import { Route as ComponentsStepperStateImport } from './routes/components/stepper/state'
+import { Route as ComponentsStepperOptionsImport } from './routes/components/stepper/options'
+import { Route as ComponentsStepperMobileImport } from './routes/components/stepper/mobile'
+import { Route as ComponentsStepperCustomImport } from './routes/components/stepper/custom'
+import { Route as ComponentsStepperAdaptiveImport } from './routes/components/stepper/adaptive'
+import { Route as ComponentsStatusIndicatorVariantsImport } from './routes/components/statusIndicator/variants'
+import { Route as ComponentsStatusIndicatorStatesImport } from './routes/components/statusIndicator/states'
+import { Route as ComponentsStatusIndicatorSizesImport } from './routes/components/statusIndicator/sizes'
+import { Route as ComponentsSpinnerWithOtherComponentsImport } from './routes/components/spinner/withOtherComponents'
+import { Route as ComponentsSpinnerVariantsImport } from './routes/components/spinner/variants'
+import { Route as ComponentsSpinnerSizesImport } from './routes/components/spinner/sizes'
+import { Route as ComponentsSliderInputVariantsImport } from './routes/components/sliderInput/variants'
+import { Route as ComponentsSliderInputStatesImport } from './routes/components/sliderInput/states'
+import { Route as ComponentsSliderInputSizesImport } from './routes/components/sliderInput/sizes'
+import { Route as ComponentsSliderInputCustomImport } from './routes/components/sliderInput/custom'
+import { Route as ComponentsSliderInputControlledImport } from './routes/components/sliderInput/controlled'
+import { Route as ComponentsSliderStateImport } from './routes/components/slider/state'
+import { Route as ComponentsSliderSizesImport } from './routes/components/slider/sizes'
+import { Route as ComponentsSliderRangeStateImport } from './routes/components/slider/rangeState'
+import { Route as ComponentsSliderRangeSizesImport } from './routes/components/slider/rangeSizes'
+import { Route as ComponentsSliderRangeOptionsImport } from './routes/components/slider/rangeOptions'
+import { Route as ComponentsSliderRangeImport } from './routes/components/slider/range'
+import { Route as ComponentsSliderOptionsImport } from './routes/components/slider/options'
+import { Route as ComponentsSliderCustomImport } from './routes/components/slider/custom'
+import { Route as ComponentsSelectVirtualScrollImport } from './routes/components/select/virtualScroll'
+import { Route as ComponentsSelectUncontrolledSubmitSearchImport } from './routes/components/select/uncontrolledSubmitSearch'
+import { Route as ComponentsSelectStatusImport } from './routes/components/select/status'
+import { Route as ComponentsSelectStateImport } from './routes/components/select/state'
+import { Route as ComponentsSelectSizesImport } from './routes/components/select/sizes'
+import { Route as ComponentsSelectSelectFieldImport } from './routes/components/select/selectField'
+import { Route as ComponentsSelectSearchWithClearInputAfterSelectImport } from './routes/components/select/searchWithClearInputAfterSelect'
+import { Route as ComponentsSelectProgressiveRenderOptionsScrollImport } from './routes/components/select/progressiveRenderOptionsScroll'
+import { Route as ComponentsSelectPanelWithAddButtonImport } from './routes/components/select/panelWithAddButton'
+import { Route as ComponentsSelectMultiSelectWithSelectedOnTopImport } from './routes/components/select/multiSelectWithSelectedOnTop'
+import { Route as ComponentsSelectMultiSelectOnChangeImport } from './routes/components/select/multiSelectOnChange'
+import { Route as ComponentsSelectMultiSelectExpandedHeightImport } from './routes/components/select/multiSelectExpandedHeight'
+import { Route as ComponentsSelectMultiSelectChooseAllImport } from './routes/components/select/multiSelectChooseAll'
+import { Route as ComponentsSelectMultiSelectApplyButtonImport } from './routes/components/select/multiSelectApplyButton'
+import { Route as ComponentsSelectMultiCustomValuesImport } from './routes/components/select/multiCustomValues'
+import { Route as ComponentsSelectMultiCustomOptionsByRenderChipImport } from './routes/components/select/multiCustomOptionsByRenderChip'
+import { Route as ComponentsSelectMultiCustomDeleteChipImport } from './routes/components/select/multiCustomDeleteChip'
+import { Route as ComponentsSelectGroupOfOptionsImport } from './routes/components/select/groupOfOptions'
+import { Route as ComponentsSelectForceHideOverflowTooltipImport } from './routes/components/select/forceHideOverflowTooltip'
+import { Route as ComponentsSelectExternalFilterImport } from './routes/components/select/externalFilter'
+import { Route as ComponentsSelectCustomValuesImport } from './routes/components/select/customValues'
+import { Route as ComponentsSelectCustomOptionsWithCustomFilterImport } from './routes/components/select/customOptionsWithCustomFilter'
+import { Route as ComponentsSelectCustomOptionsByRenderPropsImport } from './routes/components/select/customOptionsByRenderProps'
+import { Route as ComponentsSelectAsyncSearchImport } from './routes/components/select/asyncSearch'
+import { Route as ComponentsSegmentedControlVariantsImport } from './routes/components/segmentedControl/variants'
+import { Route as ComponentsSegmentedControlStylesImport } from './routes/components/segmentedControl/styles'
+import { Route as ComponentsSegmentedControlStatesImport } from './routes/components/segmentedControl/states'
+import { Route as ComponentsSegmentedControlSizesImport } from './routes/components/segmentedControl/sizes'
+import { Route as ComponentsSegmentedControlRadioButtonModeImport } from './routes/components/segmentedControl/radioButtonMode'
+import { Route as ComponentsSegmentedControlCheckBoxModeImport } from './routes/components/segmentedControl/checkBoxMode'
+import { Route as ComponentsScrollContainerStateImport } from './routes/components/scrollContainer/state'
+import { Route as ComponentsRadiobuttonStatesImport } from './routes/components/radiobutton/states'
+import { Route as ComponentsRadiobuttonSizesImport } from './routes/components/radiobutton/sizes'
+import { Route as ComponentsRadiobuttonInformerImport } from './routes/components/radiobutton/informer'
+import { Route as ComponentsRadiobuttonFieldSetImport } from './routes/components/radiobutton/fieldSet'
+import { Route as ComponentsRadiobuttonExtraTextImport } from './routes/components/radiobutton/extraText'
+import { Route as ComponentsProgressStepperStepsNamingImport } from './routes/components/progressStepper/stepsNaming'
+import { Route as ComponentsProgressStepperScenarioImport } from './routes/components/progressStepper/scenario'
+import { Route as ComponentsProgressStepperMobileImport } from './routes/components/progressStepper/mobile'
+import { Route as ComponentsProgressStepperDescriptionNextStepsImport } from './routes/components/progressStepper/descriptionNextSteps'
+import { Route as ComponentsProgressPageStylesImport } from './routes/components/progressPage/styles'
+import { Route as ComponentsProgressPageAnimationImport } from './routes/components/progressPage/animation'
+import { Route as ComponentsProgressHeaderStylesImport } from './routes/components/progressHeader/styles'
+import { Route as ComponentsProgressHeaderAnimationImport } from './routes/components/progressHeader/animation'
+import { Route as ComponentsPillsTooltipImport } from './routes/components/pills/tooltip'
+import { Route as ComponentsPillsNestedImport } from './routes/components/pills/nested'
+import { Route as ComponentsPillsMenuImport } from './routes/components/pills/menu'
+import { Route as ComponentsPhoneNumberInputWithPlaceholderImport } from './routes/components/phoneNumberInput/withPlaceholder'
+import { Route as ComponentsPhoneNumberInputWithFilterImport } from './routes/components/phoneNumberInput/withFilter'
+import { Route as ComponentsPhoneNumberInputStatusImport } from './routes/components/phoneNumberInput/status'
+import { Route as ComponentsPhoneNumberInputStateImport } from './routes/components/phoneNumberInput/state'
+import { Route as ComponentsPhoneNumberInputSizesImport } from './routes/components/phoneNumberInput/sizes'
+import { Route as ComponentsPhoneNumberInputSelectedCountryImport } from './routes/components/phoneNumberInput/selectedCountry'
+import { Route as ComponentsPhoneNumberInputPhoneNumberInputFieldImport } from './routes/components/phoneNumberInput/phoneNumberInputField'
+import { Route as ComponentsPaginationTwoWithInputImport } from './routes/components/paginationTwo/withInput'
+import { Route as ComponentsPaginationTwoStateImport } from './routes/components/paginationTwo/state'
+import { Route as ComponentsPaginationTwoPagesImport } from './routes/components/paginationTwo/pages'
+import { Route as ComponentsPaginationTwoMobileImport } from './routes/components/paginationTwo/mobile'
+import { Route as ComponentsPaginationTwoEntriesImport } from './routes/components/paginationTwo/entries'
+import { Route as ComponentsPaginationOneWithInputImport } from './routes/components/paginationOne/withInput'
+import { Route as ComponentsPaginationOneTypesImport } from './routes/components/paginationOne/types'
+import { Route as ComponentsPaginationOneStatesImport } from './routes/components/paginationOne/states'
+import { Route as ComponentsPaginationOneSizesImport } from './routes/components/paginationOne/sizes'
+import { Route as ComponentsOverflowMenuStylesImport } from './routes/components/overflowMenu/styles'
+import { Route as ComponentsOverflowMenuMultiLevelImport } from './routes/components/overflowMenu/multiLevel'
+import { Route as ComponentsNumberInputStatusImport } from './routes/components/numberInput/status'
+import { Route as ComponentsNumberInputStateImport } from './routes/components/numberInput/state'
+import { Route as ComponentsNumberInputSpacesImport } from './routes/components/numberInput/spaces'
+import { Route as ComponentsNumberInputSizesImport } from './routes/components/numberInput/sizes'
+import { Route as ComponentsNumberInputNumberInputFieldImport } from './routes/components/numberInput/numberInputField'
+import { Route as ComponentsNumberInputMinMaxValueImport } from './routes/components/numberInput/minMaxValue'
+import { Route as ComponentsNumberInputCustomImport } from './routes/components/numberInput/custom'
+import { Route as ComponentsNumberInputControlledInputImport } from './routes/components/numberInput/controlledInput'
+import { Route as ComponentsNotificationStylesImport } from './routes/components/notification/styles'
+import { Route as ComponentsNotificationStatesImport } from './routes/components/notification/states'
+import { Route as ComponentsMultiInputWithOptionsImport } from './routes/components/multiInput/withOptions'
+import { Route as ComponentsMultiInputStatusImport } from './routes/components/multiInput/status'
+import { Route as ComponentsMultiInputStateImport } from './routes/components/multiInput/state'
+import { Route as ComponentsMultiInputSizeImport } from './routes/components/multiInput/size'
+import { Route as ComponentsMultiButtonWithIconImport } from './routes/components/multiButton/withIcon'
+import { Route as ComponentsMultiButtonStylesImport } from './routes/components/multiButton/styles'
+import { Route as ComponentsMultiButtonStatesImport } from './routes/components/multiButton/states'
+import { Route as ComponentsModalVariantsImport } from './routes/components/modal/variants'
+import { Route as ComponentsModalStatusIconsImport } from './routes/components/modal/statusIcons'
+import { Route as ComponentsModalSizesImport } from './routes/components/modal/sizes'
+import { Route as ComponentsModalScrollImport } from './routes/components/modal/scroll'
+import { Route as ComponentsModalCustomOverlayImport } from './routes/components/modal/customOverlay'
+import { Route as ComponentsModalCloseIconImport } from './routes/components/modal/closeIcon'
+import { Route as ComponentsMenuButtonWithIconImport } from './routes/components/menuButton/withIcon'
+import { Route as ComponentsMenuButtonStylesImport } from './routes/components/menuButton/styles'
+import { Route as ComponentsMenuButtonStatesImport } from './routes/components/menuButton/states'
+import { Route as ComponentsMenuButtonMultiLevelMenuImport } from './routes/components/menuButton/multiLevelMenu'
+import { Route as ComponentsMenuButtonCheckboxAndTopPanelImport } from './routes/components/menuButton/checkboxAndTopPanel'
+import { Route as ComponentsMenuButtonCheckboxAndBottomPanelImport } from './routes/components/menuButton/checkboxAndBottomPanel'
+import { Route as ComponentsMenuButtonActionsImport } from './routes/components/menuButton/actions'
+import { Route as ComponentsListUnorderedListImport } from './routes/components/list/unorderedList'
+import { Route as ComponentsListOrderedListImport } from './routes/components/list/orderedList'
+import { Route as ComponentsListNestedImport } from './routes/components/list/nested'
+import { Route as ComponentsListMultilineImport } from './routes/components/list/multiline'
+import { Route as ComponentsListMarkerColorImport } from './routes/components/list/markerColor'
+import { Route as ComponentsListCustomMarkerImport } from './routes/components/list/customMarker'
+import { Route as ComponentsLinkWithIconImport } from './routes/components/link/withIcon'
+import { Route as ComponentsLinkStylesImport } from './routes/components/link/styles'
+import { Route as ComponentsLinkCssMixinImport } from './routes/components/link/cssMixin'
+import { Route as ComponentsLinkAsPropImport } from './routes/components/link/asProp'
+import { Route as ComponentsInputExStatusImport } from './routes/components/inputEx/status'
+import { Route as ComponentsInputExStateImport } from './routes/components/inputEx/state'
+import { Route as ComponentsInputExSizesImport } from './routes/components/inputEx/sizes'
+import { Route as ComponentsInputExPrefixSuffixSelectImport } from './routes/components/inputEx/prefixSuffixSelect'
+import { Route as ComponentsInputExInputExFieldImport } from './routes/components/inputEx/inputExField'
+import { Route as ComponentsInputExCustomImport } from './routes/components/inputEx/custom'
+import { Route as ComponentsImageViewerViewOptionsImport } from './routes/components/imageViewer/viewOptions'
+import { Route as ComponentsImageViewerKeyboardCommandsImport } from './routes/components/imageViewer/keyboardCommands'
+import { Route as ComponentsImageViewerImageMiniatureImport } from './routes/components/imageViewer/imageMiniature'
+import { Route as ComponentsImageViewerErrorOnLoadImport } from './routes/components/imageViewer/errorOnLoad'
+import { Route as ComponentsIconPlacementVariantsImport } from './routes/components/iconPlacement/variants'
+import { Route as ComponentsIconPlacementStylesImport } from './routes/components/iconPlacement/styles'
+import { Route as ComponentsIconPlacementSizesImport } from './routes/components/iconPlacement/sizes'
+import { Route as ComponentsIconButtonGroupTooltipImport } from './routes/components/iconButtonGroup/tooltip'
+import { Route as ComponentsIconButtonGroupStatesImport } from './routes/components/iconButtonGroup/states'
+import { Route as ComponentsIconButtonGroupSizesImport } from './routes/components/iconButtonGroup/sizes'
+import { Route as ComponentsIconButtonStylesImport } from './routes/components/iconButton/styles'
+import { Route as ComponentsIconButtonStatesImport } from './routes/components/iconButton/states'
+import { Route as ComponentsHintVariantsImport } from './routes/components/hint/variants'
+import { Route as ComponentsHintSizesImport } from './routes/components/hint/sizes'
+import { Route as ComponentsHintScenarioImport } from './routes/components/hint/scenario'
+import { Route as ComponentsHintPositionImport } from './routes/components/hint/position'
+import { Route as ComponentsHintClassNameImport } from './routes/components/hint/className'
+import { Route as ComponentsHintAnchorCssMixinImport } from './routes/components/hint/anchorCssMixin'
+import { Route as ComponentsGlobalSearchVariantsImport } from './routes/components/globalSearch/variants'
+import { Route as ComponentsGlobalSearchSizesImport } from './routes/components/globalSearch/sizes'
+import { Route as ComponentsFloatingButtonWithMenuModesImport } from './routes/components/floatingButton/withMenuModes'
+import { Route as ComponentsFloatingButtonWithMenuImport } from './routes/components/floatingButton/withMenu'
+import { Route as ComponentsFloatingButtonTooltipImport } from './routes/components/floatingButton/tooltip'
+import { Route as ComponentsFloatingButtonStylesImport } from './routes/components/floatingButton/styles'
+import { Route as ComponentsFloatingButtonPositionImport } from './routes/components/floatingButton/position'
+import { Route as ComponentsFloatingButtonMobileImport } from './routes/components/floatingButton/mobile'
+import { Route as ComponentsFileinputStateImport } from './routes/components/fileinput/state'
+import { Route as ComponentsFileinputFilestatusImport } from './routes/components/fileinput/filestatus'
+import { Route as ComponentsFileinputExtratextImport } from './routes/components/fileinput/extratext'
+import { Route as ComponentsFileinputDimensionsImport } from './routes/components/fileinput/dimensions'
+import { Route as ComponentsFileinputCustomizingFileTypeImport } from './routes/components/fileinput/customizingFileType'
+import { Route as ComponentsFileinputCustomizingImport } from './routes/components/fileinput/customizing'
+import { Route as ComponentsEditModeTooltipImport } from './routes/components/editMode/tooltip'
+import { Route as ComponentsEditModeStatusImport } from './routes/components/editMode/status'
+import { Route as ComponentsEditModeMultilineImport } from './routes/components/editMode/multiline'
+import { Route as ComponentsEditModeExtratextImport } from './routes/components/editMode/extratext'
+import { Route as ComponentsEditModeDisablecopyingImport } from './routes/components/editMode/disablecopying'
+import { Route as ComponentsEditModeDimensionsImport } from './routes/components/editMode/dimensions'
+import { Route as ComponentsDropdownMenuWithTooltipImport } from './routes/components/dropdown/menuWithTooltip'
+import { Route as ComponentsDropdownMenuWithRadioButtonImport } from './routes/components/dropdown/menuWithRadioButton'
+import { Route as ComponentsDropdownMenuWithIconsImport } from './routes/components/dropdown/menuWithIcons'
+import { Route as ComponentsDropdownMenuWithCheckboxGroupImport } from './routes/components/dropdown/menuWithCheckboxGroup'
+import { Route as ComponentsDropdownMenuWithCheckboxImport } from './routes/components/dropdown/menuWithCheckbox'
+import { Route as ComponentsDropdownMenuWithAddTextAndIconsImport } from './routes/components/dropdown/menuWithAddTextAndIcons'
+import { Route as ComponentsDropdownMenuVirtualScrollImport } from './routes/components/dropdown/menuVirtualScroll'
+import { Route as ComponentsDropdownMenuPreselectImport } from './routes/components/dropdown/menuPreselect'
+import { Route as ComponentsDropdownMenuMultiLineImport } from './routes/components/dropdown/menuMultiLine'
+import { Route as ComponentsDropdownMenuMultiLevelImport } from './routes/components/dropdown/menuMultiLevel'
+import { Route as ComponentsDropdownMenuManyItemsImport } from './routes/components/dropdown/menuManyItems'
+import { Route as ComponentsDropdownMenuLockCycleScrollImport } from './routes/components/dropdown/menuLockCycleScroll'
+import { Route as ComponentsDropdownMenuDimensionsImport } from './routes/components/dropdown/menuDimensions'
+import { Route as ComponentsDropdownMenuCustomItemsImport } from './routes/components/dropdown/menuCustomItems'
+import { Route as ComponentsDropdownMenuCategoriesImport } from './routes/components/dropdown/menuCategories'
+import { Route as ComponentsDropdownMenuActionTwoButtonsImport } from './routes/components/dropdown/menuActionTwoButtons'
+import { Route as ComponentsDropdownMenuActionSearchImport } from './routes/components/dropdown/menuActionSearch'
+import { Route as ComponentsDropdownDropMenuUncontrolledImport } from './routes/components/dropdown/dropMenuUncontrolled'
+import { Route as ComponentsDropdownDropMenuControlledImport } from './routes/components/dropdown/dropMenuControlled'
+import { Route as ComponentsDropdownCustomDropdownContainerImport } from './routes/components/dropdown/customDropdownContainer'
+import { Route as ComponentsDrawerWithoutBackdropImport } from './routes/components/drawer/withoutBackdrop'
+import { Route as ComponentsDrawerWithBackdropImport } from './routes/components/drawer/withBackdrop'
+import { Route as ComponentsDrawerWidthImport } from './routes/components/drawer/width'
+import { Route as ComponentsDrawerPositionImport } from './routes/components/drawer/position'
+import { Route as ComponentsDrawerNonClosableImport } from './routes/components/drawer/nonClosable'
+import { Route as ComponentsDrawerMobileImport } from './routes/components/drawer/mobile'
+import { Route as ComponentsDrawerCustomContentImport } from './routes/components/drawer/customContent'
+import { Route as ComponentsDividerTypeImport } from './routes/components/divider/type'
+import { Route as ComponentsDividerThiknessImport } from './routes/components/divider/thikness'
+import { Route as ComponentsDividerStyleImport } from './routes/components/divider/style'
+import { Route as ComponentsDividerLengthImport } from './routes/components/divider/length'
+import { Route as ComponentsDateTimeFieldStatusImport } from './routes/components/dateTimeField/status'
+import { Route as ComponentsDateTimeFieldExtraTextImport } from './routes/components/dateTimeField/extraText'
+import { Route as ComponentsDateTimeFieldDisplayInlineImport } from './routes/components/dateTimeField/displayInline'
+import { Route as ComponentsDateTimeFieldDimensionImport } from './routes/components/dateTimeField/dimension'
+import { Route as ComponentsDateInputWithButtonImport } from './routes/components/dateInput/withButton'
+import { Route as ComponentsDateInputVariantsImport } from './routes/components/dateInput/variants'
+import { Route as ComponentsDateInputStatusImport } from './routes/components/dateInput/status'
+import { Route as ComponentsDateInputStateImport } from './routes/components/dateInput/state'
+import { Route as ComponentsDateInputSpecialDatesImport } from './routes/components/dateInput/specialDates'
+import { Route as ComponentsDateInputSizesImport } from './routes/components/dateInput/sizes'
+import { Route as ComponentsDateInputRangeImport } from './routes/components/dateInput/range'
+import { Route as ComponentsDateInputDateFieldStateImport } from './routes/components/dateInput/dateFieldState'
+import { Route as ComponentsDateInputDateFieldImport } from './routes/components/dateInput/dateField'
+import { Route as ComponentsDateInputCustomImport } from './routes/components/dateInput/custom'
+import { Route as ComponentsCurrencyInputWithPrefixImport } from './routes/components/currencyInput/withPrefix'
+import { Route as ComponentsCurrencyInputMinMaxvalueImport } from './routes/components/currencyInput/minMaxvalue'
+import { Route as ComponentsCurrencyInputCurrencyInputFieldImport } from './routes/components/currencyInput/currencyInputField'
+import { Route as ComponentsContentSwitcherWithIconsImport } from './routes/components/contentSwitcher/withIcons'
+import { Route as ComponentsContentSwitcherWithBadgeImport } from './routes/components/contentSwitcher/withBadge'
+import { Route as ComponentsContentSwitcherStylesImport } from './routes/components/contentSwitcher/styles'
+import { Route as ComponentsContentSwitcherSizesImport } from './routes/components/contentSwitcher/sizes'
+import { Route as ComponentsContentSwitcherIconsOnlyImport } from './routes/components/contentSwitcher/iconsOnly'
+import { Route as ComponentsContentSwitcherAdaptiveImport } from './routes/components/contentSwitcher/adaptive'
+import { Route as ComponentsChipsWithTooltipImport } from './routes/components/chips/withTooltip'
+import { Route as ComponentsChipsWithIconImport } from './routes/components/chips/withIcon'
+import { Route as ComponentsChipsWithBadgeImport } from './routes/components/chips/withBadge'
+import { Route as ComponentsChipsStylesImport } from './routes/components/chips/styles'
+import { Route as ComponentsChipsSizesImport } from './routes/components/chips/sizes'
+import { Route as ComponentsChipsSelectImport } from './routes/components/chips/select'
+import { Route as ComponentsChipsMultiSelectImport } from './routes/components/chips/multiSelect'
+import { Route as ComponentsChipsChipsCloseImport } from './routes/components/chips/chipsClose'
+import { Route as ComponentsCheckboxWithInformerImport } from './routes/components/checkbox/withInformer'
+import { Route as ComponentsCheckboxStatesImport } from './routes/components/checkbox/states'
+import { Route as ComponentsCheckboxFieldSetImport } from './routes/components/checkbox/fieldSet'
+import { Route as ComponentsCheckboxCompositeGroupImport } from './routes/components/checkbox/compositeGroup'
+import { Route as ComponentsCheckboxAdditionalTextImport } from './routes/components/checkbox/additionalText'
+import { Route as ComponentsCarouselSliderStylesImport } from './routes/components/carouselSlider/styles'
+import { Route as ComponentsCarouselSliderCarouselSliderAutoChangeImport } from './routes/components/carouselSlider/carouselSliderAutoChange'
+import { Route as ComponentsCarouselSliderPositionImport } from './routes/components/carousel/sliderPosition'
+import { Route as ComponentsCarouselCarouselAutoChangeImport } from './routes/components/carousel/carouselAutoChange'
+import { Route as ComponentsCarouselArrowsImport } from './routes/components/carousel/arrows'
+import { Route as ComponentsCalendarViewDateMonthsYearsImport } from './routes/components/calendar/viewDateMonthsYears'
+import { Route as ComponentsCalendarViewDateAfterChooseImport } from './routes/components/calendar/viewDateAfterChoose'
+import { Route as ComponentsCalendarSpecialDatesImport } from './routes/components/calendar/specialDates'
+import { Route as ComponentsCalendarRangeImport } from './routes/components/calendar/range'
+import { Route as ComponentsCalendarMaxDateImport } from './routes/components/calendar/maxDate'
+import { Route as ComponentsCalendarFilterDateImport } from './routes/components/calendar/filterDate'
+import { Route as ComponentsCalendarCallbackImport } from './routes/components/calendar/callback'
+import { Route as ComponentsCalendarActiveViewDateImport } from './routes/components/calendar/activeViewDate'
+import { Route as ComponentsButtonGroupVariantsImport } from './routes/components/buttonGroup/variants'
+import { Route as ComponentsButtonGroupStylesImport } from './routes/components/buttonGroup/styles'
+import { Route as ComponentsButtonGroupStatesImport } from './routes/components/buttonGroup/states'
+import { Route as ComponentsButtonGroupSizesImport } from './routes/components/buttonGroup/sizes'
+import { Route as ComponentsButtonTypesImport } from './routes/components/button/types'
+import { Route as ComponentsButtonStateImport } from './routes/components/button/state'
+import { Route as ComponentsButtonDimensionImport } from './routes/components/button/dimension'
+import { Route as ComponentsButtonButtonWithIconImport } from './routes/components/button/buttonWithIcon'
+import { Route as ComponentsButtonButtonWithBadgeImport } from './routes/components/button/buttonWithBadge'
+import { Route as ComponentsButtonAdaptiveImport } from './routes/components/button/adaptive'
+import { Route as ComponentsBreadcrumbsSizesImport } from './routes/components/breadcrumbs/sizes'
+import { Route as ComponentsBreadcrumbsMobileImport } from './routes/components/breadcrumbs/mobile'
+import { Route as ComponentsBreadcrumbsLinkImport } from './routes/components/breadcrumbs/link'
+import { Route as ComponentsBreadcrumbsIconsImport } from './routes/components/breadcrumbs/icons'
+import { Route as ComponentsBreadcrumbsActiveCrumbImport } from './routes/components/breadcrumbs/activeCrumb'
+import { Route as ComponentsBadgeDotVariantsImport } from './routes/components/badgeDot/variants'
+import { Route as ComponentsBadgeBadgeVariantsImport } from './routes/components/badge/badgeVariants'
+import { Route as ComponentsBadgeBadgeAccessibilityImport } from './routes/components/badge/badgeAccessibility'
+import { Route as ComponentsAvatarStylesImport } from './routes/components/avatar/styles'
+import { Route as ComponentsAvatarSizeXXSImport } from './routes/components/avatar/sizeXXS'
+import { Route as ComponentsAvatarAvatarGroupLimitedWidthImport } from './routes/components/avatar/avatarGroupLimitedWidth'
+import { Route as ComponentsAvatarAvatarGroupImport } from './routes/components/avatar/avatarGroup'
+import { Route as ComponentsAnchorTreeImport } from './routes/components/anchor/tree'
+import { Route as ComponentsAnchorStateImport } from './routes/components/anchor/state'
+import { Route as ComponentsAnchorSizesImport } from './routes/components/anchor/sizes'
+import { Route as ComponentsActionBarDimensionsImport } from './routes/components/actionBar/dimensions'
+import { Route as ComponentsActionBarAdaptiveImport } from './routes/components/actionBar/adaptive'
+import { Route as ComponentsAccordionAccordionModesImport } from './routes/components/accordion/accordionModes'
+import { Route as ComponentsAccordionAccordionIconImport } from './routes/components/accordion/accordionIcon'
+import { Route as ComponentsAccordionAccordionDividerImport } from './routes/components/accordion/accordionDivider'
+import { Route as ComponentsAccordionAccordionDimensionImport } from './routes/components/accordion/accordionDimension'
 
 // Create/Update Routes
 
@@ -472,6385 +471,6681 @@ const GeneralRoute = GeneralImport.update({
   id: '/general',
   path: '/general',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const ComponentsRoute = ComponentsImport.update({
   id: '/components',
   path: '/components',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any);
+} as any)
 
 const GeneralUsageRoute = GeneralUsageImport.update({
   id: '/usage',
   path: '/usage',
   getParentRoute: () => GeneralRoute,
-} as any);
+} as any)
 
 const GeneralResourcesRoute = GeneralResourcesImport.update({
   id: '/resources',
   path: '/resources',
   getParentRoute: () => GeneralRoute,
-} as any);
+} as any)
 
 const GeneralInstallationRoute = GeneralInstallationImport.update({
   id: '/installation',
   path: '/installation',
   getParentRoute: () => GeneralRoute,
-} as any);
+} as any)
 
 const GeneralFaqsRoute = GeneralFaqsImport.update({
   id: '/faqs',
   path: '/faqs',
   getParentRoute: () => GeneralRoute,
-} as any);
+} as any)
 
 const ComponentsTreeIndexRoute = ComponentsTreeIndexImport.update({
   id: '/tree/',
   path: '/tree/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipIndexRoute = ComponentsTooltipIndexImport.update({
   id: '/tooltip/',
   path: '/tooltip/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsToggleIndexRoute = ComponentsToggleIndexImport.update({
   id: '/toggle/',
   path: '/toggle/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsToastIndexRoute = ComponentsToastIndexImport.update({
   id: '/toast/',
   path: '/toast/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTextButtonMenuIndexRoute = ComponentsTextButtonMenuIndexImport.update({
-  id: '/textButtonMenu/',
-  path: '/textButtonMenu/',
+const ComponentsTimeInputIndexRoute = ComponentsTimeInputIndexImport.update({
+  id: '/timeInput/',
+  path: '/timeInput/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
+
+const ComponentsTextButtonMenuIndexRoute =
+  ComponentsTextButtonMenuIndexImport.update({
+    id: '/textButtonMenu/',
+    path: '/textButtonMenu/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTextButtonIndexRoute = ComponentsTextButtonIndexImport.update({
   id: '/textButton/',
   path: '/textButton/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTextAreaIndexRoute = ComponentsTextAreaIndexImport.update({
   id: '/textArea/',
   path: '/textArea/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTagIndexRoute = ComponentsTagIndexImport.update({
   id: '/tag/',
   path: '/tag/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableIndexRoute = ComponentsTableIndexImport.update({
   id: '/table/',
   path: '/table/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTabMenuIndexRoute = ComponentsTabMenuIndexImport.update({
   id: '/tabMenu/',
   path: '/tabMenu/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTIndexRoute = ComponentsTIndexImport.update({
   id: '/t/',
   path: '/t/',
   getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSuggestInputIndexRoute = ComponentsSuggestInputIndexImport.update({
-  id: '/suggestInput/',
-  path: '/suggestInput/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperIndexRoute = ComponentsStepperIndexImport.update({
   id: '/stepper/',
   path: '/stepper/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsStatusIndicatorIndexRoute = ComponentsStatusIndicatorIndexImport.update({
-  id: '/statusIndicator/',
-  path: '/statusIndicator/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsStatusIndicatorIndexRoute =
+  ComponentsStatusIndicatorIndexImport.update({
+    id: '/statusIndicator/',
+    path: '/statusIndicator/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSpinnerIndexRoute = ComponentsSpinnerIndexImport.update({
   id: '/spinner/',
   path: '/spinner/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsSliderInputIndexRoute = ComponentsSliderInputIndexImport.update({
-  id: '/sliderInput/',
-  path: '/sliderInput/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderInputIndexRoute = ComponentsSliderInputIndexImport.update(
+  {
+    id: '/sliderInput/',
+    path: '/sliderInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsSliderIndexRoute = ComponentsSliderIndexImport.update({
   id: '/slider/',
   path: '/slider/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSkeletonIndexRoute = ComponentsSkeletonIndexImport.update({
   id: '/skeleton/',
   path: '/skeleton/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSelectIndexRoute = ComponentsSelectIndexImport.update({
   id: '/select/',
   path: '/select/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsSegmentedControlIndexRoute = ComponentsSegmentedControlIndexImport.update({
-  id: '/segmentedControl/',
-  path: '/segmentedControl/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSegmentedControlIndexRoute =
+  ComponentsSegmentedControlIndexImport.update({
+    id: '/segmentedControl/',
+    path: '/segmentedControl/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsScrollContainerIndexRoute = ComponentsScrollContainerIndexImport.update({
-  id: '/scrollContainer/',
-  path: '/scrollContainer/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsScrollContainerIndexRoute =
+  ComponentsScrollContainerIndexImport.update({
+    id: '/scrollContainer/',
+    path: '/scrollContainer/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update({
-  id: '/radiobutton/',
-  path: '/radiobutton/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsRadiobuttonIndexRoute = ComponentsRadiobuttonIndexImport.update(
+  {
+    id: '/radiobutton/',
+    path: '/radiobutton/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsProgressStepperIndexRoute = ComponentsProgressStepperIndexImport.update({
-  id: '/progressStepper/',
-  path: '/progressStepper/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressStepperIndexRoute =
+  ComponentsProgressStepperIndexImport.update({
+    id: '/progressStepper/',
+    path: '/progressStepper/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsProgressPageIndexRoute = ComponentsProgressPageIndexImport.update({
-  id: '/progressPage/',
-  path: '/progressPage/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressPageIndexRoute =
+  ComponentsProgressPageIndexImport.update({
+    id: '/progressPage/',
+    path: '/progressPage/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsProgressHeaderIndexRoute = ComponentsProgressHeaderIndexImport.update({
-  id: '/progressHeader/',
-  path: '/progressHeader/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressHeaderIndexRoute =
+  ComponentsProgressHeaderIndexImport.update({
+    id: '/progressHeader/',
+    path: '/progressHeader/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsPillsIndexRoute = ComponentsPillsIndexImport.update({
   id: '/pills/',
   path: '/pills/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsPhoneNumberInputIndexRoute = ComponentsPhoneNumberInputIndexImport.update({
-  id: '/phoneNumberInput/',
-  path: '/phoneNumberInput/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPhoneNumberInputIndexRoute =
+  ComponentsPhoneNumberInputIndexImport.update({
+    id: '/phoneNumberInput/',
+    path: '/phoneNumberInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationTwoIndexRoute = ComponentsPaginationTwoIndexImport.update({
-  id: '/paginationTwo/',
-  path: '/paginationTwo/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationTwoIndexRoute =
+  ComponentsPaginationTwoIndexImport.update({
+    id: '/paginationTwo/',
+    path: '/paginationTwo/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationOneIndexRoute = ComponentsPaginationOneIndexImport.update({
-  id: '/paginationOne/',
-  path: '/paginationOne/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationOneIndexRoute =
+  ComponentsPaginationOneIndexImport.update({
+    id: '/paginationOne/',
+    path: '/paginationOne/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsOverflowMenuIndexRoute = ComponentsOverflowMenuIndexImport.update({
-  id: '/overflowMenu/',
-  path: '/overflowMenu/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsOverflowMenuIndexRoute =
+  ComponentsOverflowMenuIndexImport.update({
+    id: '/overflowMenu/',
+    path: '/overflowMenu/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNumberInputIndexRoute = ComponentsNumberInputIndexImport.update({
-  id: '/numberInput/',
-  path: '/numberInput/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputIndexRoute = ComponentsNumberInputIndexImport.update(
+  {
+    id: '/numberInput/',
+    path: '/numberInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsNotificationIndexRoute = ComponentsNotificationIndexImport.update({
-  id: '/notification/',
-  path: '/notification/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNotificationIndexRoute =
+  ComponentsNotificationIndexImport.update({
+    id: '/notification/',
+    path: '/notification/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsMultiInputIndexRoute = ComponentsMultiInputIndexImport.update({
   id: '/multiInput/',
   path: '/multiInput/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update({
-  id: '/multiButton/',
-  path: '/multiButton/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMultiButtonIndexRoute = ComponentsMultiButtonIndexImport.update(
+  {
+    id: '/multiButton/',
+    path: '/multiButton/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsModalIndexRoute = ComponentsModalIndexImport.update({
   id: '/modal/',
   path: '/modal/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsMenuButtonIndexRoute = ComponentsMenuButtonIndexImport.update({
   id: '/menuButton/',
   path: '/menuButton/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsListIndexRoute = ComponentsListIndexImport.update({
   id: '/list/',
   path: '/list/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsLinkIndexRoute = ComponentsLinkIndexImport.update({
   id: '/link/',
   path: '/link/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsInputExIndexRoute = ComponentsInputExIndexImport.update({
   id: '/inputEx/',
   path: '/inputEx/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update({
-  id: '/imageViewer/',
-  path: '/imageViewer/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsImageViewerIndexRoute = ComponentsImageViewerIndexImport.update(
+  {
+    id: '/imageViewer/',
+    path: '/imageViewer/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsIconPlacementIndexRoute = ComponentsIconPlacementIndexImport.update({
-  id: '/iconPlacement/',
-  path: '/iconPlacement/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconPlacementIndexRoute =
+  ComponentsIconPlacementIndexImport.update({
+    id: '/iconPlacement/',
+    path: '/iconPlacement/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconButtonGroupIndexRoute = ComponentsIconButtonGroupIndexImport.update({
-  id: '/iconButtonGroup/',
-  path: '/iconButtonGroup/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconButtonGroupIndexRoute =
+  ComponentsIconButtonGroupIndexImport.update({
+    id: '/iconButtonGroup/',
+    path: '/iconButtonGroup/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsIconButtonIndexRoute = ComponentsIconButtonIndexImport.update({
   id: '/iconButton/',
   path: '/iconButton/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsHintIndexRoute = ComponentsHintIndexImport.update({
   id: '/hint/',
   path: '/hint/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsGroupActionsPaneIndexRoute = ComponentsGroupActionsPaneIndexImport.update({
-  id: '/groupActionsPane/',
-  path: '/groupActionsPane/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsGroupActionsPaneIndexRoute =
+  ComponentsGroupActionsPaneIndexImport.update({
+    id: '/groupActionsPane/',
+    path: '/groupActionsPane/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsGlobalSearchIndexRoute = ComponentsGlobalSearchIndexImport.update({
-  id: '/globalSearch/',
-  path: '/globalSearch/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsGlobalSearchIndexRoute =
+  ComponentsGlobalSearchIndexImport.update({
+    id: '/globalSearch/',
+    path: '/globalSearch/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFloatingButtonIndexRoute = ComponentsFloatingButtonIndexImport.update({
-  id: '/floatingButton/',
-  path: '/floatingButton/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFloatingButtonIndexRoute =
+  ComponentsFloatingButtonIndexImport.update({
+    id: '/floatingButton/',
+    path: '/floatingButton/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsFlexIndexRoute = ComponentsFlexIndexImport.update({
   id: '/flex/',
   path: '/flex/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsFileinputIndexRoute = ComponentsFileinputIndexImport.update({
   id: '/fileinput/',
   path: '/fileinput/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsEditModeIndexRoute = ComponentsEditModeIndexImport.update({
   id: '/editMode/',
   path: '/editMode/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDropdownIndexRoute = ComponentsDropdownIndexImport.update({
   id: '/dropdown/',
   path: '/dropdown/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDrawerIndexRoute = ComponentsDrawerIndexImport.update({
   id: '/drawer/',
   path: '/drawer/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDividerIndexRoute = ComponentsDividerIndexImport.update({
   id: '/divider/',
   path: '/divider/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsDateTimeFieldIndexRoute = ComponentsDateTimeFieldIndexImport.update({
-  id: '/dateTimeField/',
-  path: '/dateTimeField/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateTimeFieldIndexRoute =
+  ComponentsDateTimeFieldIndexImport.update({
+    id: '/dateTimeField/',
+    path: '/dateTimeField/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDateInputIndexRoute = ComponentsDateInputIndexImport.update({
   id: '/dateInput/',
   path: '/dateInput/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsCurrencyInputIndexRoute = ComponentsCurrencyInputIndexImport.update({
-  id: '/currencyInput/',
-  path: '/currencyInput/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCurrencyInputIndexRoute =
+  ComponentsCurrencyInputIndexImport.update({
+    id: '/currencyInput/',
+    path: '/currencyInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsContentSwitcherIndexRoute = ComponentsContentSwitcherIndexImport.update({
-  id: '/contentSwitcher/',
-  path: '/contentSwitcher/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsContentSwitcherIndexRoute =
+  ComponentsContentSwitcherIndexImport.update({
+    id: '/contentSwitcher/',
+    path: '/contentSwitcher/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsChipsIndexRoute = ComponentsChipsIndexImport.update({
   id: '/chips/',
   path: '/chips/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsCheckboxIndexRoute = ComponentsCheckboxIndexImport.update({
   id: '/checkbox/',
   path: '/checkbox/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsCarouselSliderIndexRoute = ComponentsCarouselSliderIndexImport.update({
-  id: '/carouselSlider/',
-  path: '/carouselSlider/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCarouselSliderIndexRoute =
+  ComponentsCarouselSliderIndexImport.update({
+    id: '/carouselSlider/',
+    path: '/carouselSlider/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsCarouselIndexRoute = ComponentsCarouselIndexImport.update({
   id: '/carousel/',
   path: '/carousel/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsCalendarIndexRoute = ComponentsCalendarIndexImport.update({
   id: '/calendar/',
   path: '/calendar/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsButtonGroupIndexRoute = ComponentsButtonGroupIndexImport.update({
-  id: '/buttonGroup/',
-  path: '/buttonGroup/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsButtonGroupIndexRoute = ComponentsButtonGroupIndexImport.update(
+  {
+    id: '/buttonGroup/',
+    path: '/buttonGroup/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsButtonIndexRoute = ComponentsButtonIndexImport.update({
   id: '/button/',
   path: '/button/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsBreadcrumbsIndexRoute = ComponentsBreadcrumbsIndexImport.update({
-  id: '/breadcrumbs/',
-  path: '/breadcrumbs/',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBreadcrumbsIndexRoute = ComponentsBreadcrumbsIndexImport.update(
+  {
+    id: '/breadcrumbs/',
+    path: '/breadcrumbs/',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsBadgeDotIndexRoute = ComponentsBadgeDotIndexImport.update({
   id: '/badgeDot/',
   path: '/badgeDot/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsBadgeIndexRoute = ComponentsBadgeIndexImport.update({
   id: '/badge/',
   path: '/badge/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsAvatarIndexRoute = ComponentsAvatarIndexImport.update({
   id: '/avatar/',
   path: '/avatar/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsAnchorIndexRoute = ComponentsAnchorIndexImport.update({
   id: '/anchor/',
   path: '/anchor/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsActionBarIndexRoute = ComponentsActionBarIndexImport.update({
   id: '/actionBar/',
   path: '/actionBar/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsAccordionIndexRoute = ComponentsAccordionIndexImport.update({
   id: '/accordion/',
   path: '/accordion/',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTreeWithOnChangeHandlerRoute = ComponentsTreeWithOnChangeHandlerImport.update({
-  id: '/tree/withOnChangeHandler',
-  path: '/tree/withOnChangeHandler',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTreeWithOnChangeHandlerRoute =
+  ComponentsTreeWithOnChangeHandlerImport.update({
+    id: '/tree/withOnChangeHandler',
+    path: '/tree/withOnChangeHandler',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTreeWithControlCheckCountRoute = ComponentsTreeWithControlCheckCountImport.update({
-  id: '/tree/withControlCheckCount',
-  path: '/tree/withControlCheckCount',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTreeWithControlCheckCountRoute =
+  ComponentsTreeWithControlCheckCountImport.update({
+    id: '/tree/withControlCheckCount',
+    path: '/tree/withControlCheckCount',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTreeVariantsRoute = ComponentsTreeVariantsImport.update({
   id: '/tree/variants',
   path: '/tree/variants',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTreeUncontrolledRoute = ComponentsTreeUncontrolledImport.update({
-  id: '/tree/uncontrolled',
-  path: '/tree/uncontrolled',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTreeUncontrolledRoute = ComponentsTreeUncontrolledImport.update(
+  {
+    id: '/tree/uncontrolled',
+    path: '/tree/uncontrolled',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsTreeSizesRoute = ComponentsTreeSizesImport.update({
   id: '/tree/sizes',
   path: '/tree/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTreeMobileRoute = ComponentsTreeMobileImport.update({
   id: '/tree/mobile',
   path: '/tree/mobile',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTreeCustomRoute = ComponentsTreeCustomImport.update({
   id: '/tree/custom',
   path: '/tree/custom',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTooltipWithMenuButtonRoute = ComponentsTooltipWithMenuButtonImport.update({
-  id: '/tooltip/withMenuButton',
-  path: '/tooltip/withMenuButton',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTooltipWithMenuButtonRoute =
+  ComponentsTooltipWithMenuButtonImport.update({
+    id: '/tooltip/withMenuButton',
+    path: '/tooltip/withMenuButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTooltipVariantsRoute = ComponentsTooltipVariantsImport.update({
   id: '/tooltip/variants',
   path: '/tooltip/variants',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipSizesRoute = ComponentsTooltipSizesImport.update({
   id: '/tooltip/sizes',
   path: '/tooltip/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipScenarioRoute = ComponentsTooltipScenarioImport.update({
   id: '/tooltip/scenario',
   path: '/tooltip/scenario',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipRefRoute = ComponentsTooltipRefImport.update({
   id: '/tooltip/ref',
   path: '/tooltip/ref',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipPositionRoute = ComponentsTooltipPositionImport.update({
   id: '/tooltip/position',
   path: '/tooltip/position',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTooltipHocRefSetterRoute = ComponentsTooltipHocRefSetterImport.update({
-  id: '/tooltip/hocRefSetter',
-  path: '/tooltip/hocRefSetter',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTooltipHocRefSetterRoute =
+  ComponentsTooltipHocRefSetterImport.update({
+    id: '/tooltip/hocRefSetter',
+    path: '/tooltip/hocRefSetter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTooltipHocRefRoute = ComponentsTooltipHocRefImport.update({
   id: '/tooltip/hocRef',
   path: '/tooltip/hocRef',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipHocFCRoute = ComponentsTooltipHocFCImport.update({
   id: '/tooltip/hocFC',
   path: '/tooltip/hocFC',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipHocClassRoute = ComponentsTooltipHocClassImport.update({
   id: '/tooltip/hocClass',
   path: '/tooltip/hocClass',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTooltipHocBaseRoute = ComponentsTooltipHocBaseImport.update({
   id: '/tooltip/hocBase',
   path: '/tooltip/hocBase',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsToggleStatesRoute = ComponentsToggleStatesImport.update({
   id: '/toggle/states',
   path: '/toggle/states',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsToggleSizesRoute = ComponentsToggleSizesImport.update({
   id: '/toggle/sizes',
   path: '/toggle/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsToggleMobileRoute = ComponentsToggleMobileImport.update({
   id: '/toggle/mobile',
   path: '/toggle/mobile',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsToggleLabelPositionRoute = ComponentsToggleLabelPositionImport.update({
-  id: '/toggle/labelPosition',
-  path: '/toggle/labelPosition',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsToggleLabelPositionRoute =
+  ComponentsToggleLabelPositionImport.update({
+    id: '/toggle/labelPosition',
+    path: '/toggle/labelPosition',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsToggleExtraTextRoute = ComponentsToggleExtraTextImport.update({
   id: '/toggle/extraText',
   path: '/toggle/extraText',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsToastWithProgressBarStopOnHoverRoute = ComponentsToastWithProgressBarStopOnHoverImport.update({
-  id: '/toast/withProgressBarStopOnHover',
-  path: '/toast/withProgressBarStopOnHover',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsToastWithProgressBarStopOnHoverRoute =
+  ComponentsToastWithProgressBarStopOnHoverImport.update({
+    id: '/toast/withProgressBarStopOnHover',
+    path: '/toast/withProgressBarStopOnHover',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsToastWithProgressBarRoute = ComponentsToastWithProgressBarImport.update({
-  id: '/toast/withProgressBar',
-  path: '/toast/withProgressBar',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsToastWithProgressBarRoute =
+  ComponentsToastWithProgressBarImport.update({
+    id: '/toast/withProgressBar',
+    path: '/toast/withProgressBar',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsToastPositionRoute = ComponentsToastPositionImport.update({
   id: '/toast/position',
   path: '/toast/position',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsToastLineNotificationRoute = ComponentsToastLineNotificationImport.update({
-  id: '/toast/lineNotification',
-  path: '/toast/lineNotification',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsToastLineNotificationRoute =
+  ComponentsToastLineNotificationImport.update({
+    id: '/toast/lineNotification',
+    path: '/toast/lineNotification',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTextButtonMenuStylesRoute = ComponentsTextButtonMenuStylesImport.update({
-  id: '/textButtonMenu/styles',
-  path: '/textButtonMenu/styles',
+const ComponentsTimeInputStatusRoute = ComponentsTimeInputStatusImport.update({
+  id: '/timeInput/status',
+  path: '/timeInput/status',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTextButtonMenuStatesRoute = ComponentsTextButtonMenuStatesImport.update({
-  id: '/textButtonMenu/states',
-  path: '/textButtonMenu/states',
+const ComponentsTimeInputStateRoute = ComponentsTimeInputStateImport.update({
+  id: '/timeInput/state',
+  path: '/timeInput/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTextButtonStylesRoute = ComponentsTextButtonStylesImport.update({
-  id: '/textButton/styles',
-  path: '/textButton/styles',
+const ComponentsTimeInputSizesRoute = ComponentsTimeInputSizesImport.update({
+  id: '/timeInput/sizes',
+  path: '/timeInput/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTextButtonStatesRoute = ComponentsTextButtonStatesImport.update({
-  id: '/textButton/states',
-  path: '/textButton/states',
+const ComponentsTimeInputCustomRoute = ComponentsTimeInputCustomImport.update({
+  id: '/timeInput/custom',
+  path: '/timeInput/custom',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTextAreaVariantsRoute = ComponentsTextAreaVariantsImport.update({
-  id: '/textArea/variants',
-  path: '/textArea/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTextButtonMenuStylesRoute =
+  ComponentsTextButtonMenuStylesImport.update({
+    id: '/textButtonMenu/styles',
+    path: '/textButtonMenu/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTextAreaStatusesRoute = ComponentsTextAreaStatusesImport.update({
-  id: '/textArea/statuses',
-  path: '/textArea/statuses',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTextButtonMenuStatesRoute =
+  ComponentsTextButtonMenuStatesImport.update({
+    id: '/textButtonMenu/states',
+    path: '/textButtonMenu/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextButtonStylesRoute = ComponentsTextButtonStylesImport.update(
+  {
+    id: '/textButton/styles',
+    path: '/textButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsTextButtonStatesRoute = ComponentsTextButtonStatesImport.update(
+  {
+    id: '/textButton/states',
+    path: '/textButton/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsTextAreaVariantsRoute = ComponentsTextAreaVariantsImport.update(
+  {
+    id: '/textArea/variants',
+    path: '/textArea/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsTextAreaStatusesRoute = ComponentsTextAreaStatusesImport.update(
+  {
+    id: '/textArea/statuses',
+    path: '/textArea/statuses',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsTextAreaStatesRoute = ComponentsTextAreaStatesImport.update({
   id: '/textArea/states',
   path: '/textArea/states',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTextAreaSizesRoute = ComponentsTextAreaSizesImport.update({
   id: '/textArea/sizes',
   path: '/textArea/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTagWithIconRoute = ComponentsTagWithIconImport.update({
   id: '/tag/withIcon',
   path: '/tag/withIcon',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTagTooltipRoute = ComponentsTagTooltipImport.update({
   id: '/tag/tooltip',
   path: '/tag/tooltip',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTagTagsRoute = ComponentsTagTagsImport.update({
   id: '/tag/tags',
   path: '/tag/tags',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTagStylesRoute = ComponentsTagStylesImport.update({
   id: '/tag/styles',
   path: '/tag/styles',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTagMenuRoute = ComponentsTagMenuImport.update({
   id: '/tag/menu',
   path: '/tag/menu',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableZebraRoute = ComponentsTableZebraImport.update({
   id: '/table/zebra',
   path: '/table/zebra',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableWidthRoute = ComponentsTableWidthImport.update({
   id: '/table/width',
   path: '/table/width',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableStyleRoute = ComponentsTableStyleImport.update({
   id: '/table/style',
   path: '/table/style',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableStickyRoute = ComponentsTableStickyImport.update({
   id: '/table/sticky',
   path: '/table/sticky',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableSortRoute = ComponentsTableSortImport.update({
   id: '/table/sort',
   path: '/table/sort',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTableScrollPositionByRefRoute = ComponentsTableScrollPositionByRefImport.update({
-  id: '/table/scrollPositionByRef',
-  path: '/table/scrollPositionByRef',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableScrollPositionByRefRoute =
+  ComponentsTableScrollPositionByRefImport.update({
+    id: '/table/scrollPositionByRef',
+    path: '/table/scrollPositionByRef',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableRowStateRoute = ComponentsTableRowStateImport.update({
   id: '/table/rowState',
   path: '/table/rowState',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTableRowDragDropRoute = ComponentsTableRowDragDropImport.update({
-  id: '/table/rowDragDrop',
-  path: '/table/rowDragDrop',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableRowDragDropRoute = ComponentsTableRowDragDropImport.update(
+  {
+    id: '/table/rowDragDrop',
+    path: '/table/rowDragDrop',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsTableRenderCallbackRoute = ComponentsTableRenderCallbackImport.update({
-  id: '/table/renderCallback',
-  path: '/table/renderCallback',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableRenderCallbackRoute =
+  ComponentsTableRenderCallbackImport.update({
+    id: '/table/renderCallback',
+    path: '/table/renderCallback',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTableOverflowMenuRoute = ComponentsTableOverflowMenuImport.update({
-  id: '/table/overflowMenu',
-  path: '/table/overflowMenu',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableOverflowMenuRoute =
+  ComponentsTableOverflowMenuImport.update({
+    id: '/table/overflowMenu',
+    path: '/table/overflowMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableMultilineRoute = ComponentsTableMultilineImport.update({
   id: '/table/multiline',
   path: '/table/multiline',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTableMultiLevelHeaderRoute = ComponentsTableMultiLevelHeaderImport.update({
-  id: '/table/multiLevelHeader',
-  path: '/table/multiLevelHeader',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableMultiLevelHeaderRoute =
+  ComponentsTableMultiLevelHeaderImport.update({
+    id: '/table/multiLevelHeader',
+    path: '/table/multiLevelHeader',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTableLoadOnScrollSpinnerRoute = ComponentsTableLoadOnScrollSpinnerImport.update({
-  id: '/table/loadOnScrollSpinner',
-  path: '/table/loadOnScrollSpinner',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableLoadOnScrollSpinnerRoute =
+  ComponentsTableLoadOnScrollSpinnerImport.update({
+    id: '/table/loadOnScrollSpinner',
+    path: '/table/loadOnScrollSpinner',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTableLoadOnScrollSkeletonRoute = ComponentsTableLoadOnScrollSkeletonImport.update({
-  id: '/table/loadOnScrollSkeleton',
-  path: '/table/loadOnScrollSkeleton',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableLoadOnScrollSkeletonRoute =
+  ComponentsTableLoadOnScrollSkeletonImport.update({
+    id: '/table/loadOnScrollSkeleton',
+    path: '/table/loadOnScrollSkeleton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTableLoadOnScrollRoute = ComponentsTableLoadOnScrollImport.update({
-  id: '/table/loadOnScroll',
-  path: '/table/loadOnScroll',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableLoadOnScrollRoute =
+  ComponentsTableLoadOnScrollImport.update({
+    id: '/table/loadOnScroll',
+    path: '/table/loadOnScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableGroupRoute = ComponentsTableGroupImport.update({
   id: '/table/group',
   path: '/table/group',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTableFixedVirtualScrollRoute = ComponentsTableFixedVirtualScrollImport.update({
-  id: '/table/fixedVirtualScroll',
-  path: '/table/fixedVirtualScroll',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableFixedVirtualScrollRoute =
+  ComponentsTableFixedVirtualScrollImport.update({
+    id: '/table/fixedVirtualScroll',
+    path: '/table/fixedVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableFilterRoute = ComponentsTableFilterImport.update({
   id: '/table/filter',
   path: '/table/filter',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableExtraTextRoute = ComponentsTableExtraTextImport.update({
   id: '/table/extraText',
   path: '/table/extraText',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTableExpandRoute = ComponentsTableExpandImport.update({
   id: '/table/expand',
   path: '/table/expand',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTableDynamicVirtualScrollRoute = ComponentsTableDynamicVirtualScrollImport.update({
-  id: '/table/dynamicVirtualScroll',
-  path: '/table/dynamicVirtualScroll',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableDynamicVirtualScrollRoute =
+  ComponentsTableDynamicVirtualScrollImport.update({
+    id: '/table/dynamicVirtualScroll',
+    path: '/table/dynamicVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTableColumnDragDropRoute = ComponentsTableColumnDragDropImport.update({
-  id: '/table/columnDragDrop',
-  path: '/table/columnDragDrop',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableColumnDragDropRoute =
+  ComponentsTableColumnDragDropImport.update({
+    id: '/table/columnDragDrop',
+    path: '/table/columnDragDrop',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableCheckboxRoute = ComponentsTableCheckboxImport.update({
   id: '/table/checkbox',
   path: '/table/checkbox',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTableBaseHTMLStickyShadowRoute = ComponentsTableBaseHTMLStickyShadowImport.update({
-  id: '/table/baseHTMLStickyShadow',
-  path: '/table/baseHTMLStickyShadow',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableBaseHTMLStickyShadowRoute =
+  ComponentsTableBaseHTMLStickyShadowImport.update({
+    id: '/table/baseHTMLStickyShadow',
+    path: '/table/baseHTMLStickyShadow',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTableBaseHTMLOverflowMenuRoute = ComponentsTableBaseHTMLOverflowMenuImport.update({
-  id: '/table/baseHTMLOverflowMenu',
-  path: '/table/baseHTMLOverflowMenu',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTableBaseHTMLOverflowMenuRoute =
+  ComponentsTableBaseHTMLOverflowMenuImport.update({
+    id: '/table/baseHTMLOverflowMenu',
+    path: '/table/baseHTMLOverflowMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTableBaseHTMLRoute = ComponentsTableBaseHTMLImport.update({
   id: '/table/baseHTML',
   path: '/table/baseHTML',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTabMenuWithPaddingRoute = ComponentsTabMenuWithPaddingImport.update({
-  id: '/tabMenu/withPadding',
-  path: '/tabMenu/withPadding',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuWithPaddingRoute =
+  ComponentsTabMenuWithPaddingImport.update({
+    id: '/tabMenu/withPadding',
+    path: '/tabMenu/withPadding',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuWithOverflowMenuRoute = ComponentsTabMenuWithOverflowMenuImport.update({
-  id: '/tabMenu/withOverflowMenu',
-  path: '/tabMenu/withOverflowMenu',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuWithOverflowMenuRoute =
+  ComponentsTabMenuWithOverflowMenuImport.update({
+    id: '/tabMenu/withOverflowMenu',
+    path: '/tabMenu/withOverflowMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuTabMenuVerticalRoute = ComponentsTabMenuTabMenuVerticalImport.update({
-  id: '/tabMenu/tabMenuVertical',
-  path: '/tabMenu/tabMenuVertical',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuTabMenuVerticalRoute =
+  ComponentsTabMenuTabMenuVerticalImport.update({
+    id: '/tabMenu/tabMenuVertical',
+    path: '/tabMenu/tabMenuVertical',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuTabMenuIconRoute = ComponentsTabMenuTabMenuIconImport.update({
-  id: '/tabMenu/tabMenuIcon',
-  path: '/tabMenu/tabMenuIcon',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuTabMenuIconRoute =
+  ComponentsTabMenuTabMenuIconImport.update({
+    id: '/tabMenu/tabMenuIcon',
+    path: '/tabMenu/tabMenuIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuSizeVerticalTabsRoute = ComponentsTabMenuSizeVerticalTabsImport.update({
-  id: '/tabMenu/sizeVerticalTabs',
-  path: '/tabMenu/sizeVerticalTabs',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuSizeVerticalTabsRoute =
+  ComponentsTabMenuSizeVerticalTabsImport.update({
+    id: '/tabMenu/sizeVerticalTabs',
+    path: '/tabMenu/sizeVerticalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTabMenuSizeRoute = ComponentsTabMenuSizeImport.update({
   id: '/tabMenu/size',
   path: '/tabMenu/size',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTabMenuOptionsVerticalTabsRoute = ComponentsTabMenuOptionsVerticalTabsImport.update({
-  id: '/tabMenu/optionsVerticalTabs',
-  path: '/tabMenu/optionsVerticalTabs',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuOptionsVerticalTabsRoute =
+  ComponentsTabMenuOptionsVerticalTabsImport.update({
+    id: '/tabMenu/optionsVerticalTabs',
+    path: '/tabMenu/optionsVerticalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTabMenuOptionsRoute = ComponentsTabMenuOptionsImport.update({
   id: '/tabMenu/options',
   path: '/tabMenu/options',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTabMenuHorizontalTabsRoute = ComponentsTabMenuHorizontalTabsImport.update({
-  id: '/tabMenu/horizontalTabs',
-  path: '/tabMenu/horizontalTabs',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuHorizontalTabsRoute =
+  ComponentsTabMenuHorizontalTabsImport.update({
+    id: '/tabMenu/horizontalTabs',
+    path: '/tabMenu/horizontalTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuFilterTabsSizeRoute = ComponentsTabMenuFilterTabsSizeImport.update({
-  id: '/tabMenu/filterTabsSize',
-  path: '/tabMenu/filterTabsSize',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuFilterTabsSizeRoute =
+  ComponentsTabMenuFilterTabsSizeImport.update({
+    id: '/tabMenu/filterTabsSize',
+    path: '/tabMenu/filterTabsSize',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuFilterTabsMobileRoute = ComponentsTabMenuFilterTabsMobileImport.update({
-  id: '/tabMenu/filterTabsMobile',
-  path: '/tabMenu/filterTabsMobile',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuFilterTabsMobileRoute =
+  ComponentsTabMenuFilterTabsMobileImport.update({
+    id: '/tabMenu/filterTabsMobile',
+    path: '/tabMenu/filterTabsMobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuFilterTabsRoute = ComponentsTabMenuFilterTabsImport.update({
-  id: '/tabMenu/filterTabs',
-  path: '/tabMenu/filterTabs',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuFilterTabsRoute =
+  ComponentsTabMenuFilterTabsImport.update({
+    id: '/tabMenu/filterTabs',
+    path: '/tabMenu/filterTabs',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuCardTabMenuWithoutBorderRoute = ComponentsTabMenuCardTabMenuWithoutBorderImport.update({
-  id: '/tabMenu/cardTabMenuWithoutBorder',
-  path: '/tabMenu/cardTabMenuWithoutBorder',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuCardTabMenuWithoutBorderRoute =
+  ComponentsTabMenuCardTabMenuWithoutBorderImport.update({
+    id: '/tabMenu/cardTabMenuWithoutBorder',
+    path: '/tabMenu/cardTabMenuWithoutBorder',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuCardTabMenuRoute = ComponentsTabMenuCardTabMenuImport.update({
-  id: '/tabMenu/cardTabMenu',
-  path: '/tabMenu/cardTabMenu',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuCardTabMenuRoute =
+  ComponentsTabMenuCardTabMenuImport.update({
+    id: '/tabMenu/cardTabMenu',
+    path: '/tabMenu/cardTabMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsTabMenuAddTabVerticalRoute = ComponentsTabMenuAddTabVerticalImport.update({
-  id: '/tabMenu/addTabVertical',
-  path: '/tabMenu/addTabVertical',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuAddTabVerticalRoute =
+  ComponentsTabMenuAddTabVerticalImport.update({
+    id: '/tabMenu/addTabVertical',
+    path: '/tabMenu/addTabVertical',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTabMenuAddTabRoute = ComponentsTabMenuAddTabImport.update({
   id: '/tabMenu/addTab',
   path: '/tabMenu/addTab',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsTabMenuAddCardTabRoute = ComponentsTabMenuAddCardTabImport.update({
-  id: '/tabMenu/addCardTab',
-  path: '/tabMenu/addCardTab',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsTabMenuAddCardTabRoute =
+  ComponentsTabMenuAddCardTabImport.update({
+    id: '/tabMenu/addCardTab',
+    path: '/tabMenu/addCardTab',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsTVariantsRoute = ComponentsTVariantsImport.update({
   id: '/t/variants',
   path: '/t/variants',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsTStylesListRoute = ComponentsTStylesListImport.update({
   id: '/t/stylesList',
   path: '/t/stylesList',
   getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSuggestInputUncontrolledRoute = ComponentsSuggestInputUncontrolledImport.update({
-  id: '/suggestInput/uncontrolled',
-  path: '/suggestInput/uncontrolled',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSuggestInputSizesRoute = ComponentsSuggestInputSizesImport.update({
-  id: '/suggestInput/sizes',
-  path: '/suggestInput/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSuggestInputIconRoute = ComponentsSuggestInputIconImport.update({
-  id: '/suggestInput/icon',
-  path: '/suggestInput/icon',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSuggestInputFilterRoute = ComponentsSuggestInputFilterImport.update({
-  id: '/suggestInput/filter',
-  path: '/suggestInput/filter',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSuggestInputFieldRoute = ComponentsSuggestInputFieldImport.update({
-  id: '/suggestInput/field',
-  path: '/suggestInput/field',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperVerticalRoute = ComponentsStepperVerticalImport.update({
   id: '/stepper/vertical',
   path: '/stepper/vertical',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperVariantsRoute = ComponentsStepperVariantsImport.update({
   id: '/stepper/variants',
   path: '/stepper/variants',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperStateRoute = ComponentsStepperStateImport.update({
   id: '/stepper/state',
   path: '/stepper/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperOptionsRoute = ComponentsStepperOptionsImport.update({
   id: '/stepper/options',
   path: '/stepper/options',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperMobileRoute = ComponentsStepperMobileImport.update({
   id: '/stepper/mobile',
   path: '/stepper/mobile',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperCustomRoute = ComponentsStepperCustomImport.update({
   id: '/stepper/custom',
   path: '/stepper/custom',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsStepperAdaptiveRoute = ComponentsStepperAdaptiveImport.update({
   id: '/stepper/adaptive',
   path: '/stepper/adaptive',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsStatusIndicatorVariantsRoute = ComponentsStatusIndicatorVariantsImport.update({
-  id: '/statusIndicator/variants',
-  path: '/statusIndicator/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsStatusIndicatorVariantsRoute =
+  ComponentsStatusIndicatorVariantsImport.update({
+    id: '/statusIndicator/variants',
+    path: '/statusIndicator/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsStatusIndicatorStatesRoute = ComponentsStatusIndicatorStatesImport.update({
-  id: '/statusIndicator/states',
-  path: '/statusIndicator/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsStatusIndicatorStatesRoute =
+  ComponentsStatusIndicatorStatesImport.update({
+    id: '/statusIndicator/states',
+    path: '/statusIndicator/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsStatusIndicatorSizesRoute = ComponentsStatusIndicatorSizesImport.update({
-  id: '/statusIndicator/sizes',
-  path: '/statusIndicator/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsStatusIndicatorSizesRoute =
+  ComponentsStatusIndicatorSizesImport.update({
+    id: '/statusIndicator/sizes',
+    path: '/statusIndicator/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSpinnerWithOtherComponentsRoute = ComponentsSpinnerWithOtherComponentsImport.update({
-  id: '/spinner/withOtherComponents',
-  path: '/spinner/withOtherComponents',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSpinnerWithOtherComponentsRoute =
+  ComponentsSpinnerWithOtherComponentsImport.update({
+    id: '/spinner/withOtherComponents',
+    path: '/spinner/withOtherComponents',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSpinnerVariantsRoute = ComponentsSpinnerVariantsImport.update({
   id: '/spinner/variants',
   path: '/spinner/variants',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSpinnerSizesRoute = ComponentsSpinnerSizesImport.update({
   id: '/spinner/sizes',
   path: '/spinner/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsSliderInputVariantsRoute = ComponentsSliderInputVariantsImport.update({
-  id: '/sliderInput/variants',
-  path: '/sliderInput/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderInputVariantsRoute =
+  ComponentsSliderInputVariantsImport.update({
+    id: '/sliderInput/variants',
+    path: '/sliderInput/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSliderInputStatesRoute = ComponentsSliderInputStatesImport.update({
-  id: '/sliderInput/states',
-  path: '/sliderInput/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderInputStatesRoute =
+  ComponentsSliderInputStatesImport.update({
+    id: '/sliderInput/states',
+    path: '/sliderInput/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSliderInputSizesRoute = ComponentsSliderInputSizesImport.update({
-  id: '/sliderInput/sizes',
-  path: '/sliderInput/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderInputSizesRoute = ComponentsSliderInputSizesImport.update(
+  {
+    id: '/sliderInput/sizes',
+    path: '/sliderInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsSliderInputCustomRoute = ComponentsSliderInputCustomImport.update({
-  id: '/sliderInput/custom',
-  path: '/sliderInput/custom',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderInputCustomRoute =
+  ComponentsSliderInputCustomImport.update({
+    id: '/sliderInput/custom',
+    path: '/sliderInput/custom',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSliderInputControlledRoute = ComponentsSliderInputControlledImport.update({
-  id: '/sliderInput/controlled',
-  path: '/sliderInput/controlled',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderInputControlledRoute =
+  ComponentsSliderInputControlledImport.update({
+    id: '/sliderInput/controlled',
+    path: '/sliderInput/controlled',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSliderStateRoute = ComponentsSliderStateImport.update({
   id: '/slider/state',
   path: '/slider/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSliderSizesRoute = ComponentsSliderSizesImport.update({
   id: '/slider/sizes',
   path: '/slider/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsSliderRangeStateRoute = ComponentsSliderRangeStateImport.update({
-  id: '/slider/rangeState',
-  path: '/slider/rangeState',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderRangeStateRoute = ComponentsSliderRangeStateImport.update(
+  {
+    id: '/slider/rangeState',
+    path: '/slider/rangeState',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsSliderRangeSizesRoute = ComponentsSliderRangeSizesImport.update({
-  id: '/slider/rangeSizes',
-  path: '/slider/rangeSizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderRangeSizesRoute = ComponentsSliderRangeSizesImport.update(
+  {
+    id: '/slider/rangeSizes',
+    path: '/slider/rangeSizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsSliderRangeOptionsRoute = ComponentsSliderRangeOptionsImport.update({
-  id: '/slider/rangeOptions',
-  path: '/slider/rangeOptions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSliderRangeOptionsRoute =
+  ComponentsSliderRangeOptionsImport.update({
+    id: '/slider/rangeOptions',
+    path: '/slider/rangeOptions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSliderRangeRoute = ComponentsSliderRangeImport.update({
   id: '/slider/range',
   path: '/slider/range',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSliderOptionsRoute = ComponentsSliderOptionsImport.update({
   id: '/slider/options',
   path: '/slider/options',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSliderCustomRoute = ComponentsSliderCustomImport.update({
   id: '/slider/custom',
   path: '/slider/custom',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsSelectVirtualScrollRoute = ComponentsSelectVirtualScrollImport.update({
-  id: '/select/virtualScroll',
-  path: '/select/virtualScroll',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectVirtualScrollRoute =
+  ComponentsSelectVirtualScrollImport.update({
+    id: '/select/virtualScroll',
+    path: '/select/virtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectUncontrolledSubmitSearchRoute = ComponentsSelectUncontrolledSubmitSearchImport.update({
-  id: '/select/uncontrolledSubmitSearch',
-  path: '/select/uncontrolledSubmitSearch',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectUncontrolledSubmitSearchRoute =
+  ComponentsSelectUncontrolledSubmitSearchImport.update({
+    id: '/select/uncontrolledSubmitSearch',
+    path: '/select/uncontrolledSubmitSearch',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSelectStatusRoute = ComponentsSelectStatusImport.update({
   id: '/select/status',
   path: '/select/status',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSelectStateRoute = ComponentsSelectStateImport.update({
   id: '/select/state',
   path: '/select/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsSelectSizesRoute = ComponentsSelectSizesImport.update({
   id: '/select/sizes',
   path: '/select/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsSelectSelectFieldRoute = ComponentsSelectSelectFieldImport.update({
-  id: '/select/selectField',
-  path: '/select/selectField',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectSelectFieldRoute =
+  ComponentsSelectSelectFieldImport.update({
+    id: '/select/selectField',
+    path: '/select/selectField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSelectSearchWithClearInputAfterSelectRoute =
   ComponentsSelectSearchWithClearInputAfterSelectImport.update({
     id: '/select/searchWithClearInputAfterSelect',
     path: '/select/searchWithClearInputAfterSelect',
     getParentRoute: () => ComponentsRoute,
-  } as any);
+  } as any)
 
-const ComponentsSelectProgressiveRenderOptionsScrollRoute = ComponentsSelectProgressiveRenderOptionsScrollImport.update(
-  {
+const ComponentsSelectProgressiveRenderOptionsScrollRoute =
+  ComponentsSelectProgressiveRenderOptionsScrollImport.update({
     id: '/select/progressiveRenderOptionsScroll',
     path: '/select/progressiveRenderOptionsScroll',
     getParentRoute: () => ComponentsRoute,
-  } as any,
-);
+  } as any)
 
-const ComponentsSelectPanelWithAddButtonRoute = ComponentsSelectPanelWithAddButtonImport.update({
-  id: '/select/panelWithAddButton',
-  path: '/select/panelWithAddButton',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectPanelWithAddButtonRoute =
+  ComponentsSelectPanelWithAddButtonImport.update({
+    id: '/select/panelWithAddButton',
+    path: '/select/panelWithAddButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectMultiSelectWithSelectedOnTopRoute = ComponentsSelectMultiSelectWithSelectedOnTopImport.update({
-  id: '/select/multiSelectWithSelectedOnTop',
-  path: '/select/multiSelectWithSelectedOnTop',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectMultiSelectWithSelectedOnTopRoute =
+  ComponentsSelectMultiSelectWithSelectedOnTopImport.update({
+    id: '/select/multiSelectWithSelectedOnTop',
+    path: '/select/multiSelectWithSelectedOnTop',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectMultiSelectOnChangeRoute = ComponentsSelectMultiSelectOnChangeImport.update({
-  id: '/select/multiSelectOnChange',
-  path: '/select/multiSelectOnChange',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectMultiSelectOnChangeRoute =
+  ComponentsSelectMultiSelectOnChangeImport.update({
+    id: '/select/multiSelectOnChange',
+    path: '/select/multiSelectOnChange',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectMultiSelectExpandedHeightRoute = ComponentsSelectMultiSelectExpandedHeightImport.update({
-  id: '/select/multiSelectExpandedHeight',
-  path: '/select/multiSelectExpandedHeight',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectMultiSelectExpandedHeightRoute =
+  ComponentsSelectMultiSelectExpandedHeightImport.update({
+    id: '/select/multiSelectExpandedHeight',
+    path: '/select/multiSelectExpandedHeight',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectMultiSelectChooseAllRoute = ComponentsSelectMultiSelectChooseAllImport.update({
-  id: '/select/multiSelectChooseAll',
-  path: '/select/multiSelectChooseAll',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectMultiSelectChooseAllRoute =
+  ComponentsSelectMultiSelectChooseAllImport.update({
+    id: '/select/multiSelectChooseAll',
+    path: '/select/multiSelectChooseAll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectMultiSelectApplyButtonRoute = ComponentsSelectMultiSelectApplyButtonImport.update({
-  id: '/select/multiSelectApplyButton',
-  path: '/select/multiSelectApplyButton',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectMultiSelectApplyButtonRoute =
+  ComponentsSelectMultiSelectApplyButtonImport.update({
+    id: '/select/multiSelectApplyButton',
+    path: '/select/multiSelectApplyButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectMultiCustomValuesRoute = ComponentsSelectMultiCustomValuesImport.update({
-  id: '/select/multiCustomValues',
-  path: '/select/multiCustomValues',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsSelectMultiCustomValuesRoute =
+  ComponentsSelectMultiCustomValuesImport.update({
+    id: '/select/multiCustomValues',
+    path: '/select/multiCustomValues',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectMultiCustomOptionsByRenderChipRoute = ComponentsSelectMultiCustomOptionsByRenderChipImport.update(
-  {
+const ComponentsSelectMultiCustomOptionsByRenderChipRoute =
+  ComponentsSelectMultiCustomOptionsByRenderChipImport.update({
     id: '/select/multiCustomOptionsByRenderChip',
     path: '/select/multiCustomOptionsByRenderChip',
     getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectMultiCustomDeleteChipRoute =
+  ComponentsSelectMultiCustomDeleteChipImport.update({
+    id: '/select/multiCustomDeleteChip',
+    path: '/select/multiCustomDeleteChip',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectGroupOfOptionsRoute =
+  ComponentsSelectGroupOfOptionsImport.update({
+    id: '/select/groupOfOptions',
+    path: '/select/groupOfOptions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectForceHideOverflowTooltipRoute =
+  ComponentsSelectForceHideOverflowTooltipImport.update({
+    id: '/select/forceHideOverflowTooltip',
+    path: '/select/forceHideOverflowTooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectExternalFilterRoute =
+  ComponentsSelectExternalFilterImport.update({
+    id: '/select/externalFilter',
+    path: '/select/externalFilter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectCustomValuesRoute =
+  ComponentsSelectCustomValuesImport.update({
+    id: '/select/customValues',
+    path: '/select/customValues',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectCustomOptionsWithCustomFilterRoute =
+  ComponentsSelectCustomOptionsWithCustomFilterImport.update({
+    id: '/select/customOptionsWithCustomFilter',
+    path: '/select/customOptionsWithCustomFilter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectCustomOptionsByRenderPropsRoute =
+  ComponentsSelectCustomOptionsByRenderPropsImport.update({
+    id: '/select/customOptionsByRenderProps',
+    path: '/select/customOptionsByRenderProps',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSelectAsyncSearchRoute =
+  ComponentsSelectAsyncSearchImport.update({
+    id: '/select/asyncSearch',
+    path: '/select/asyncSearch',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlVariantsRoute =
+  ComponentsSegmentedControlVariantsImport.update({
+    id: '/segmentedControl/variants',
+    path: '/segmentedControl/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlStylesRoute =
+  ComponentsSegmentedControlStylesImport.update({
+    id: '/segmentedControl/styles',
+    path: '/segmentedControl/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlStatesRoute =
+  ComponentsSegmentedControlStatesImport.update({
+    id: '/segmentedControl/states',
+    path: '/segmentedControl/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlSizesRoute =
+  ComponentsSegmentedControlSizesImport.update({
+    id: '/segmentedControl/sizes',
+    path: '/segmentedControl/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlRadioButtonModeRoute =
+  ComponentsSegmentedControlRadioButtonModeImport.update({
+    id: '/segmentedControl/radioButtonMode',
+    path: '/segmentedControl/radioButtonMode',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSegmentedControlCheckBoxModeRoute =
+  ComponentsSegmentedControlCheckBoxModeImport.update({
+    id: '/segmentedControl/checkBoxMode',
+    path: '/segmentedControl/checkBoxMode',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsScrollContainerStateRoute =
+  ComponentsScrollContainerStateImport.update({
+    id: '/scrollContainer/state',
+    path: '/scrollContainer/state',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsRadiobuttonStatesRoute =
+  ComponentsRadiobuttonStatesImport.update({
+    id: '/radiobutton/states',
+    path: '/radiobutton/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsRadiobuttonSizesRoute = ComponentsRadiobuttonSizesImport.update(
+  {
+    id: '/radiobutton/sizes',
+    path: '/radiobutton/sizes',
+    getParentRoute: () => ComponentsRoute,
   } as any,
-);
+)
 
-const ComponentsSelectMultiCustomDeleteChipRoute = ComponentsSelectMultiCustomDeleteChipImport.update({
-  id: '/select/multiCustomDeleteChip',
-  path: '/select/multiCustomDeleteChip',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsRadiobuttonInformerRoute =
+  ComponentsRadiobuttonInformerImport.update({
+    id: '/radiobutton/informer',
+    path: '/radiobutton/informer',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectGroupOfOptionsRoute = ComponentsSelectGroupOfOptionsImport.update({
-  id: '/select/groupOfOptions',
-  path: '/select/groupOfOptions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsRadiobuttonFieldSetRoute =
+  ComponentsRadiobuttonFieldSetImport.update({
+    id: '/radiobutton/fieldSet',
+    path: '/radiobutton/fieldSet',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectForceHideOverflowTooltipRoute = ComponentsSelectForceHideOverflowTooltipImport.update({
-  id: '/select/forceHideOverflowTooltip',
-  path: '/select/forceHideOverflowTooltip',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsRadiobuttonExtraTextRoute =
+  ComponentsRadiobuttonExtraTextImport.update({
+    id: '/radiobutton/extraText',
+    path: '/radiobutton/extraText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectExternalFilterRoute = ComponentsSelectExternalFilterImport.update({
-  id: '/select/externalFilter',
-  path: '/select/externalFilter',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressStepperStepsNamingRoute =
+  ComponentsProgressStepperStepsNamingImport.update({
+    id: '/progressStepper/stepsNaming',
+    path: '/progressStepper/stepsNaming',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectCustomValuesRoute = ComponentsSelectCustomValuesImport.update({
-  id: '/select/customValues',
-  path: '/select/customValues',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressStepperScenarioRoute =
+  ComponentsProgressStepperScenarioImport.update({
+    id: '/progressStepper/scenario',
+    path: '/progressStepper/scenario',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectCustomOptionsWithCustomFilterRoute = ComponentsSelectCustomOptionsWithCustomFilterImport.update({
-  id: '/select/customOptionsWithCustomFilter',
-  path: '/select/customOptionsWithCustomFilter',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressStepperMobileRoute =
+  ComponentsProgressStepperMobileImport.update({
+    id: '/progressStepper/mobile',
+    path: '/progressStepper/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectCustomOptionsByRenderPropsRoute = ComponentsSelectCustomOptionsByRenderPropsImport.update({
-  id: '/select/customOptionsByRenderProps',
-  path: '/select/customOptionsByRenderProps',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressStepperDescriptionNextStepsRoute =
+  ComponentsProgressStepperDescriptionNextStepsImport.update({
+    id: '/progressStepper/descriptionNextSteps',
+    path: '/progressStepper/descriptionNextSteps',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSelectAsyncSearchRoute = ComponentsSelectAsyncSearchImport.update({
-  id: '/select/asyncSearch',
-  path: '/select/asyncSearch',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressPageStylesRoute =
+  ComponentsProgressPageStylesImport.update({
+    id: '/progressPage/styles',
+    path: '/progressPage/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSegmentedControlVariantsRoute = ComponentsSegmentedControlVariantsImport.update({
-  id: '/segmentedControl/variants',
-  path: '/segmentedControl/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressPageAnimationRoute =
+  ComponentsProgressPageAnimationImport.update({
+    id: '/progressPage/animation',
+    path: '/progressPage/animation',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSegmentedControlStylesRoute = ComponentsSegmentedControlStylesImport.update({
-  id: '/segmentedControl/styles',
-  path: '/segmentedControl/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressHeaderStylesRoute =
+  ComponentsProgressHeaderStylesImport.update({
+    id: '/progressHeader/styles',
+    path: '/progressHeader/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsSegmentedControlStatesRoute = ComponentsSegmentedControlStatesImport.update({
-  id: '/segmentedControl/states',
-  path: '/segmentedControl/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSegmentedControlSizesRoute = ComponentsSegmentedControlSizesImport.update({
-  id: '/segmentedControl/sizes',
-  path: '/segmentedControl/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSegmentedControlRadioButtonModeRoute = ComponentsSegmentedControlRadioButtonModeImport.update({
-  id: '/segmentedControl/radioButtonMode',
-  path: '/segmentedControl/radioButtonMode',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsSegmentedControlCheckBoxModeRoute = ComponentsSegmentedControlCheckBoxModeImport.update({
-  id: '/segmentedControl/checkBoxMode',
-  path: '/segmentedControl/checkBoxMode',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsScrollContainerStateRoute = ComponentsScrollContainerStateImport.update({
-  id: '/scrollContainer/state',
-  path: '/scrollContainer/state',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsRadiobuttonStatesRoute = ComponentsRadiobuttonStatesImport.update({
-  id: '/radiobutton/states',
-  path: '/radiobutton/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsRadiobuttonSizesRoute = ComponentsRadiobuttonSizesImport.update({
-  id: '/radiobutton/sizes',
-  path: '/radiobutton/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsRadiobuttonInformerRoute = ComponentsRadiobuttonInformerImport.update({
-  id: '/radiobutton/informer',
-  path: '/radiobutton/informer',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsRadiobuttonFieldSetRoute = ComponentsRadiobuttonFieldSetImport.update({
-  id: '/radiobutton/fieldSet',
-  path: '/radiobutton/fieldSet',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsRadiobuttonExtraTextRoute = ComponentsRadiobuttonExtraTextImport.update({
-  id: '/radiobutton/extraText',
-  path: '/radiobutton/extraText',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressStepperStepsNamingRoute = ComponentsProgressStepperStepsNamingImport.update({
-  id: '/progressStepper/stepsNaming',
-  path: '/progressStepper/stepsNaming',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressStepperScenarioRoute = ComponentsProgressStepperScenarioImport.update({
-  id: '/progressStepper/scenario',
-  path: '/progressStepper/scenario',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressStepperMobileRoute = ComponentsProgressStepperMobileImport.update({
-  id: '/progressStepper/mobile',
-  path: '/progressStepper/mobile',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressStepperDescriptionNextStepsRoute = ComponentsProgressStepperDescriptionNextStepsImport.update({
-  id: '/progressStepper/descriptionNextSteps',
-  path: '/progressStepper/descriptionNextSteps',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressPageStylesRoute = ComponentsProgressPageStylesImport.update({
-  id: '/progressPage/styles',
-  path: '/progressPage/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressPageAnimationRoute = ComponentsProgressPageAnimationImport.update({
-  id: '/progressPage/animation',
-  path: '/progressPage/animation',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressHeaderStylesRoute = ComponentsProgressHeaderStylesImport.update({
-  id: '/progressHeader/styles',
-  path: '/progressHeader/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
-
-const ComponentsProgressHeaderAnimationRoute = ComponentsProgressHeaderAnimationImport.update({
-  id: '/progressHeader/animation',
-  path: '/progressHeader/animation',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsProgressHeaderAnimationRoute =
+  ComponentsProgressHeaderAnimationImport.update({
+    id: '/progressHeader/animation',
+    path: '/progressHeader/animation',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsPillsTooltipRoute = ComponentsPillsTooltipImport.update({
   id: '/pills/tooltip',
   path: '/pills/tooltip',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsPillsNestedRoute = ComponentsPillsNestedImport.update({
   id: '/pills/nested',
   path: '/pills/nested',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsPillsMenuRoute = ComponentsPillsMenuImport.update({
   id: '/pills/menu',
   path: '/pills/menu',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsPhoneNumberInputWithPlaceholderRoute = ComponentsPhoneNumberInputWithPlaceholderImport.update({
-  id: '/phoneNumberInput/withPlaceholder',
-  path: '/phoneNumberInput/withPlaceholder',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPhoneNumberInputWithPlaceholderRoute =
+  ComponentsPhoneNumberInputWithPlaceholderImport.update({
+    id: '/phoneNumberInput/withPlaceholder',
+    path: '/phoneNumberInput/withPlaceholder',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPhoneNumberInputWithFilterRoute = ComponentsPhoneNumberInputWithFilterImport.update({
-  id: '/phoneNumberInput/withFilter',
-  path: '/phoneNumberInput/withFilter',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPhoneNumberInputWithFilterRoute =
+  ComponentsPhoneNumberInputWithFilterImport.update({
+    id: '/phoneNumberInput/withFilter',
+    path: '/phoneNumberInput/withFilter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPhoneNumberInputStatusRoute = ComponentsPhoneNumberInputStatusImport.update({
-  id: '/phoneNumberInput/status',
-  path: '/phoneNumberInput/status',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPhoneNumberInputStatusRoute =
+  ComponentsPhoneNumberInputStatusImport.update({
+    id: '/phoneNumberInput/status',
+    path: '/phoneNumberInput/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPhoneNumberInputStateRoute = ComponentsPhoneNumberInputStateImport.update({
-  id: '/phoneNumberInput/state',
-  path: '/phoneNumberInput/state',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPhoneNumberInputStateRoute =
+  ComponentsPhoneNumberInputStateImport.update({
+    id: '/phoneNumberInput/state',
+    path: '/phoneNumberInput/state',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPhoneNumberInputSizesRoute = ComponentsPhoneNumberInputSizesImport.update({
-  id: '/phoneNumberInput/sizes',
-  path: '/phoneNumberInput/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPhoneNumberInputSizesRoute =
+  ComponentsPhoneNumberInputSizesImport.update({
+    id: '/phoneNumberInput/sizes',
+    path: '/phoneNumberInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPhoneNumberInputSelectedCountryRoute = ComponentsPhoneNumberInputSelectedCountryImport.update({
-  id: '/phoneNumberInput/selectedCountry',
-  path: '/phoneNumberInput/selectedCountry',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPhoneNumberInputSelectedCountryRoute =
+  ComponentsPhoneNumberInputSelectedCountryImport.update({
+    id: '/phoneNumberInput/selectedCountry',
+    path: '/phoneNumberInput/selectedCountry',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsPhoneNumberInputPhoneNumberInputFieldRoute =
   ComponentsPhoneNumberInputPhoneNumberInputFieldImport.update({
     id: '/phoneNumberInput/phoneNumberInputField',
     path: '/phoneNumberInput/phoneNumberInputField',
     getParentRoute: () => ComponentsRoute,
-  } as any);
+  } as any)
 
-const ComponentsPaginationTwoWithInputRoute = ComponentsPaginationTwoWithInputImport.update({
-  id: '/paginationTwo/withInput',
-  path: '/paginationTwo/withInput',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationTwoWithInputRoute =
+  ComponentsPaginationTwoWithInputImport.update({
+    id: '/paginationTwo/withInput',
+    path: '/paginationTwo/withInput',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationTwoStateRoute = ComponentsPaginationTwoStateImport.update({
-  id: '/paginationTwo/state',
-  path: '/paginationTwo/state',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationTwoStateRoute =
+  ComponentsPaginationTwoStateImport.update({
+    id: '/paginationTwo/state',
+    path: '/paginationTwo/state',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationTwoPagesRoute = ComponentsPaginationTwoPagesImport.update({
-  id: '/paginationTwo/pages',
-  path: '/paginationTwo/pages',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationTwoPagesRoute =
+  ComponentsPaginationTwoPagesImport.update({
+    id: '/paginationTwo/pages',
+    path: '/paginationTwo/pages',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationTwoMobileRoute = ComponentsPaginationTwoMobileImport.update({
-  id: '/paginationTwo/mobile',
-  path: '/paginationTwo/mobile',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationTwoMobileRoute =
+  ComponentsPaginationTwoMobileImport.update({
+    id: '/paginationTwo/mobile',
+    path: '/paginationTwo/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationTwoEntriesRoute = ComponentsPaginationTwoEntriesImport.update({
-  id: '/paginationTwo/entries',
-  path: '/paginationTwo/entries',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationTwoEntriesRoute =
+  ComponentsPaginationTwoEntriesImport.update({
+    id: '/paginationTwo/entries',
+    path: '/paginationTwo/entries',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationOneWithInputRoute = ComponentsPaginationOneWithInputImport.update({
-  id: '/paginationOne/withInput',
-  path: '/paginationOne/withInput',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationOneWithInputRoute =
+  ComponentsPaginationOneWithInputImport.update({
+    id: '/paginationOne/withInput',
+    path: '/paginationOne/withInput',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationOneTypesRoute = ComponentsPaginationOneTypesImport.update({
-  id: '/paginationOne/types',
-  path: '/paginationOne/types',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationOneTypesRoute =
+  ComponentsPaginationOneTypesImport.update({
+    id: '/paginationOne/types',
+    path: '/paginationOne/types',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationOneStatesRoute = ComponentsPaginationOneStatesImport.update({
-  id: '/paginationOne/states',
-  path: '/paginationOne/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationOneStatesRoute =
+  ComponentsPaginationOneStatesImport.update({
+    id: '/paginationOne/states',
+    path: '/paginationOne/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsPaginationOneSizesRoute = ComponentsPaginationOneSizesImport.update({
-  id: '/paginationOne/sizes',
-  path: '/paginationOne/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsPaginationOneSizesRoute =
+  ComponentsPaginationOneSizesImport.update({
+    id: '/paginationOne/sizes',
+    path: '/paginationOne/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsOverflowMenuStylesRoute = ComponentsOverflowMenuStylesImport.update({
-  id: '/overflowMenu/styles',
-  path: '/overflowMenu/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsOverflowMenuStylesRoute =
+  ComponentsOverflowMenuStylesImport.update({
+    id: '/overflowMenu/styles',
+    path: '/overflowMenu/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsOverflowMenuMultiLevelRoute = ComponentsOverflowMenuMultiLevelImport.update({
-  id: '/overflowMenu/multiLevel',
-  path: '/overflowMenu/multiLevel',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsOverflowMenuMultiLevelRoute =
+  ComponentsOverflowMenuMultiLevelImport.update({
+    id: '/overflowMenu/multiLevel',
+    path: '/overflowMenu/multiLevel',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNumberInputStatusRoute = ComponentsNumberInputStatusImport.update({
-  id: '/numberInput/status',
-  path: '/numberInput/status',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputStatusRoute =
+  ComponentsNumberInputStatusImport.update({
+    id: '/numberInput/status',
+    path: '/numberInput/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNumberInputStateRoute = ComponentsNumberInputStateImport.update({
-  id: '/numberInput/state',
-  path: '/numberInput/state',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputStateRoute = ComponentsNumberInputStateImport.update(
+  {
+    id: '/numberInput/state',
+    path: '/numberInput/state',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsNumberInputSpacesRoute = ComponentsNumberInputSpacesImport.update({
-  id: '/numberInput/spaces',
-  path: '/numberInput/spaces',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputSpacesRoute =
+  ComponentsNumberInputSpacesImport.update({
+    id: '/numberInput/spaces',
+    path: '/numberInput/spaces',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNumberInputSizesRoute = ComponentsNumberInputSizesImport.update({
-  id: '/numberInput/sizes',
-  path: '/numberInput/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputSizesRoute = ComponentsNumberInputSizesImport.update(
+  {
+    id: '/numberInput/sizes',
+    path: '/numberInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsNumberInputNumberInputFieldRoute = ComponentsNumberInputNumberInputFieldImport.update({
-  id: '/numberInput/numberInputField',
-  path: '/numberInput/numberInputField',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputNumberInputFieldRoute =
+  ComponentsNumberInputNumberInputFieldImport.update({
+    id: '/numberInput/numberInputField',
+    path: '/numberInput/numberInputField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNumberInputMinMaxValueRoute = ComponentsNumberInputMinMaxValueImport.update({
-  id: '/numberInput/minMaxValue',
-  path: '/numberInput/minMaxValue',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputMinMaxValueRoute =
+  ComponentsNumberInputMinMaxValueImport.update({
+    id: '/numberInput/minMaxValue',
+    path: '/numberInput/minMaxValue',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNumberInputCustomRoute = ComponentsNumberInputCustomImport.update({
-  id: '/numberInput/custom',
-  path: '/numberInput/custom',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputCustomRoute =
+  ComponentsNumberInputCustomImport.update({
+    id: '/numberInput/custom',
+    path: '/numberInput/custom',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNumberInputControlledInputRoute = ComponentsNumberInputControlledInputImport.update({
-  id: '/numberInput/controlledInput',
-  path: '/numberInput/controlledInput',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNumberInputControlledInputRoute =
+  ComponentsNumberInputControlledInputImport.update({
+    id: '/numberInput/controlledInput',
+    path: '/numberInput/controlledInput',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNotificationStylesRoute = ComponentsNotificationStylesImport.update({
-  id: '/notification/styles',
-  path: '/notification/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNotificationStylesRoute =
+  ComponentsNotificationStylesImport.update({
+    id: '/notification/styles',
+    path: '/notification/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsNotificationStatesRoute = ComponentsNotificationStatesImport.update({
-  id: '/notification/states',
-  path: '/notification/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsNotificationStatesRoute =
+  ComponentsNotificationStatesImport.update({
+    id: '/notification/states',
+    path: '/notification/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMultiInputWithOptionsRoute = ComponentsMultiInputWithOptionsImport.update({
-  id: '/multiInput/withOptions',
-  path: '/multiInput/withOptions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMultiInputWithOptionsRoute =
+  ComponentsMultiInputWithOptionsImport.update({
+    id: '/multiInput/withOptions',
+    path: '/multiInput/withOptions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMultiInputStatusRoute = ComponentsMultiInputStatusImport.update({
-  id: '/multiInput/status',
-  path: '/multiInput/status',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMultiInputStatusRoute = ComponentsMultiInputStatusImport.update(
+  {
+    id: '/multiInput/status',
+    path: '/multiInput/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsMultiInputStateRoute = ComponentsMultiInputStateImport.update({
   id: '/multiInput/state',
   path: '/multiInput/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsMultiInputSizeRoute = ComponentsMultiInputSizeImport.update({
   id: '/multiInput/size',
   path: '/multiInput/size',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsMultiButtonWithIconRoute = ComponentsMultiButtonWithIconImport.update({
-  id: '/multiButton/withIcon',
-  path: '/multiButton/withIcon',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMultiButtonWithIconRoute =
+  ComponentsMultiButtonWithIconImport.update({
+    id: '/multiButton/withIcon',
+    path: '/multiButton/withIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMultiButtonStylesRoute = ComponentsMultiButtonStylesImport.update({
-  id: '/multiButton/styles',
-  path: '/multiButton/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMultiButtonStylesRoute =
+  ComponentsMultiButtonStylesImport.update({
+    id: '/multiButton/styles',
+    path: '/multiButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMultiButtonStatesRoute = ComponentsMultiButtonStatesImport.update({
-  id: '/multiButton/states',
-  path: '/multiButton/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMultiButtonStatesRoute =
+  ComponentsMultiButtonStatesImport.update({
+    id: '/multiButton/states',
+    path: '/multiButton/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsModalVariantsRoute = ComponentsModalVariantsImport.update({
   id: '/modal/variants',
   path: '/modal/variants',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsModalStatusIconsRoute = ComponentsModalStatusIconsImport.update({
-  id: '/modal/statusIcons',
-  path: '/modal/statusIcons',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsModalStatusIconsRoute = ComponentsModalStatusIconsImport.update(
+  {
+    id: '/modal/statusIcons',
+    path: '/modal/statusIcons',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsModalSizesRoute = ComponentsModalSizesImport.update({
   id: '/modal/sizes',
   path: '/modal/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsModalScrollRoute = ComponentsModalScrollImport.update({
   id: '/modal/scroll',
   path: '/modal/scroll',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsModalCustomOverlayRoute = ComponentsModalCustomOverlayImport.update({
-  id: '/modal/customOverlay',
-  path: '/modal/customOverlay',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsModalCustomOverlayRoute =
+  ComponentsModalCustomOverlayImport.update({
+    id: '/modal/customOverlay',
+    path: '/modal/customOverlay',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsModalCloseIconRoute = ComponentsModalCloseIconImport.update({
   id: '/modal/closeIcon',
   path: '/modal/closeIcon',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsMenuButtonWithIconRoute = ComponentsMenuButtonWithIconImport.update({
-  id: '/menuButton/withIcon',
-  path: '/menuButton/withIcon',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMenuButtonWithIconRoute =
+  ComponentsMenuButtonWithIconImport.update({
+    id: '/menuButton/withIcon',
+    path: '/menuButton/withIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMenuButtonStylesRoute = ComponentsMenuButtonStylesImport.update({
-  id: '/menuButton/styles',
-  path: '/menuButton/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMenuButtonStylesRoute = ComponentsMenuButtonStylesImport.update(
+  {
+    id: '/menuButton/styles',
+    path: '/menuButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsMenuButtonStatesRoute = ComponentsMenuButtonStatesImport.update({
-  id: '/menuButton/states',
-  path: '/menuButton/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMenuButtonStatesRoute = ComponentsMenuButtonStatesImport.update(
+  {
+    id: '/menuButton/states',
+    path: '/menuButton/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsMenuButtonMultiLevelMenuRoute = ComponentsMenuButtonMultiLevelMenuImport.update({
-  id: '/menuButton/multiLevelMenu',
-  path: '/menuButton/multiLevelMenu',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMenuButtonMultiLevelMenuRoute =
+  ComponentsMenuButtonMultiLevelMenuImport.update({
+    id: '/menuButton/multiLevelMenu',
+    path: '/menuButton/multiLevelMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMenuButtonCheckboxAndTopPanelRoute = ComponentsMenuButtonCheckboxAndTopPanelImport.update({
-  id: '/menuButton/checkboxAndTopPanel',
-  path: '/menuButton/checkboxAndTopPanel',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMenuButtonCheckboxAndTopPanelRoute =
+  ComponentsMenuButtonCheckboxAndTopPanelImport.update({
+    id: '/menuButton/checkboxAndTopPanel',
+    path: '/menuButton/checkboxAndTopPanel',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMenuButtonCheckboxAndBottomPanelRoute = ComponentsMenuButtonCheckboxAndBottomPanelImport.update({
-  id: '/menuButton/checkboxAndBottomPanel',
-  path: '/menuButton/checkboxAndBottomPanel',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMenuButtonCheckboxAndBottomPanelRoute =
+  ComponentsMenuButtonCheckboxAndBottomPanelImport.update({
+    id: '/menuButton/checkboxAndBottomPanel',
+    path: '/menuButton/checkboxAndBottomPanel',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsMenuButtonActionsRoute = ComponentsMenuButtonActionsImport.update({
-  id: '/menuButton/actions',
-  path: '/menuButton/actions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsMenuButtonActionsRoute =
+  ComponentsMenuButtonActionsImport.update({
+    id: '/menuButton/actions',
+    path: '/menuButton/actions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsListUnorderedListRoute = ComponentsListUnorderedListImport.update({
-  id: '/list/unorderedList',
-  path: '/list/unorderedList',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsListUnorderedListRoute =
+  ComponentsListUnorderedListImport.update({
+    id: '/list/unorderedList',
+    path: '/list/unorderedList',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsListOrderedListRoute = ComponentsListOrderedListImport.update({
   id: '/list/orderedList',
   path: '/list/orderedList',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsListNestedRoute = ComponentsListNestedImport.update({
   id: '/list/nested',
   path: '/list/nested',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsListMultilineRoute = ComponentsListMultilineImport.update({
   id: '/list/multiline',
   path: '/list/multiline',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsListMarkerColorRoute = ComponentsListMarkerColorImport.update({
   id: '/list/markerColor',
   path: '/list/markerColor',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsListCustomMarkerRoute = ComponentsListCustomMarkerImport.update({
-  id: '/list/customMarker',
-  path: '/list/customMarker',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsListCustomMarkerRoute = ComponentsListCustomMarkerImport.update(
+  {
+    id: '/list/customMarker',
+    path: '/list/customMarker',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsLinkWithIconRoute = ComponentsLinkWithIconImport.update({
   id: '/link/withIcon',
   path: '/link/withIcon',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsLinkStylesRoute = ComponentsLinkStylesImport.update({
   id: '/link/styles',
   path: '/link/styles',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsLinkCssMixinRoute = ComponentsLinkCssMixinImport.update({
   id: '/link/cssMixin',
   path: '/link/cssMixin',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsLinkAsPropRoute = ComponentsLinkAsPropImport.update({
   id: '/link/asProp',
   path: '/link/asProp',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsInputExStatusRoute = ComponentsInputExStatusImport.update({
   id: '/inputEx/status',
   path: '/inputEx/status',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsInputExStateRoute = ComponentsInputExStateImport.update({
   id: '/inputEx/state',
   path: '/inputEx/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsInputExSizesRoute = ComponentsInputExSizesImport.update({
   id: '/inputEx/sizes',
   path: '/inputEx/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsInputExPrefixSuffixSelectRoute = ComponentsInputExPrefixSuffixSelectImport.update({
-  id: '/inputEx/prefixSuffixSelect',
-  path: '/inputEx/prefixSuffixSelect',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsInputExPrefixSuffixSelectRoute =
+  ComponentsInputExPrefixSuffixSelectImport.update({
+    id: '/inputEx/prefixSuffixSelect',
+    path: '/inputEx/prefixSuffixSelect',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsInputExInputExFieldRoute = ComponentsInputExInputExFieldImport.update({
-  id: '/inputEx/inputExField',
-  path: '/inputEx/inputExField',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsInputExInputExFieldRoute =
+  ComponentsInputExInputExFieldImport.update({
+    id: '/inputEx/inputExField',
+    path: '/inputEx/inputExField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsInputExCustomRoute = ComponentsInputExCustomImport.update({
   id: '/inputEx/custom',
   path: '/inputEx/custom',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsImageViewerViewOptionsRoute = ComponentsImageViewerViewOptionsImport.update({
-  id: '/imageViewer/viewOptions',
-  path: '/imageViewer/viewOptions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsImageViewerViewOptionsRoute =
+  ComponentsImageViewerViewOptionsImport.update({
+    id: '/imageViewer/viewOptions',
+    path: '/imageViewer/viewOptions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsImageViewerKeyboardCommandsRoute = ComponentsImageViewerKeyboardCommandsImport.update({
-  id: '/imageViewer/keyboardCommands',
-  path: '/imageViewer/keyboardCommands',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsImageViewerKeyboardCommandsRoute =
+  ComponentsImageViewerKeyboardCommandsImport.update({
+    id: '/imageViewer/keyboardCommands',
+    path: '/imageViewer/keyboardCommands',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsImageViewerImageMiniatureRoute = ComponentsImageViewerImageMiniatureImport.update({
-  id: '/imageViewer/imageMiniature',
-  path: '/imageViewer/imageMiniature',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsImageViewerImageMiniatureRoute =
+  ComponentsImageViewerImageMiniatureImport.update({
+    id: '/imageViewer/imageMiniature',
+    path: '/imageViewer/imageMiniature',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsImageViewerErrorOnLoadRoute = ComponentsImageViewerErrorOnLoadImport.update({
-  id: '/imageViewer/errorOnLoad',
-  path: '/imageViewer/errorOnLoad',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsImageViewerErrorOnLoadRoute =
+  ComponentsImageViewerErrorOnLoadImport.update({
+    id: '/imageViewer/errorOnLoad',
+    path: '/imageViewer/errorOnLoad',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconPlacementVariantsRoute = ComponentsIconPlacementVariantsImport.update({
-  id: '/iconPlacement/variants',
-  path: '/iconPlacement/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconPlacementVariantsRoute =
+  ComponentsIconPlacementVariantsImport.update({
+    id: '/iconPlacement/variants',
+    path: '/iconPlacement/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconPlacementStylesRoute = ComponentsIconPlacementStylesImport.update({
-  id: '/iconPlacement/styles',
-  path: '/iconPlacement/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconPlacementStylesRoute =
+  ComponentsIconPlacementStylesImport.update({
+    id: '/iconPlacement/styles',
+    path: '/iconPlacement/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconPlacementSizesRoute = ComponentsIconPlacementSizesImport.update({
-  id: '/iconPlacement/sizes',
-  path: '/iconPlacement/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconPlacementSizesRoute =
+  ComponentsIconPlacementSizesImport.update({
+    id: '/iconPlacement/sizes',
+    path: '/iconPlacement/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconButtonGroupTooltipRoute = ComponentsIconButtonGroupTooltipImport.update({
-  id: '/iconButtonGroup/tooltip',
-  path: '/iconButtonGroup/tooltip',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconButtonGroupTooltipRoute =
+  ComponentsIconButtonGroupTooltipImport.update({
+    id: '/iconButtonGroup/tooltip',
+    path: '/iconButtonGroup/tooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconButtonGroupStatesRoute = ComponentsIconButtonGroupStatesImport.update({
-  id: '/iconButtonGroup/states',
-  path: '/iconButtonGroup/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconButtonGroupStatesRoute =
+  ComponentsIconButtonGroupStatesImport.update({
+    id: '/iconButtonGroup/states',
+    path: '/iconButtonGroup/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconButtonGroupSizesRoute = ComponentsIconButtonGroupSizesImport.update({
-  id: '/iconButtonGroup/sizes',
-  path: '/iconButtonGroup/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconButtonGroupSizesRoute =
+  ComponentsIconButtonGroupSizesImport.update({
+    id: '/iconButtonGroup/sizes',
+    path: '/iconButtonGroup/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsIconButtonStylesRoute = ComponentsIconButtonStylesImport.update({
-  id: '/iconButton/styles',
-  path: '/iconButton/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconButtonStylesRoute = ComponentsIconButtonStylesImport.update(
+  {
+    id: '/iconButton/styles',
+    path: '/iconButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsIconButtonStatesRoute = ComponentsIconButtonStatesImport.update({
-  id: '/iconButton/states',
-  path: '/iconButton/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsIconButtonStatesRoute = ComponentsIconButtonStatesImport.update(
+  {
+    id: '/iconButton/states',
+    path: '/iconButton/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsHintVariantsRoute = ComponentsHintVariantsImport.update({
   id: '/hint/variants',
   path: '/hint/variants',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsHintSizesRoute = ComponentsHintSizesImport.update({
   id: '/hint/sizes',
   path: '/hint/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsHintScenarioRoute = ComponentsHintScenarioImport.update({
   id: '/hint/scenario',
   path: '/hint/scenario',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsHintPositionRoute = ComponentsHintPositionImport.update({
   id: '/hint/position',
   path: '/hint/position',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsHintClassNameRoute = ComponentsHintClassNameImport.update({
   id: '/hint/className',
   path: '/hint/className',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsHintAnchorCssMixinRoute = ComponentsHintAnchorCssMixinImport.update({
-  id: '/hint/anchorCssMixin',
-  path: '/hint/anchorCssMixin',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsHintAnchorCssMixinRoute =
+  ComponentsHintAnchorCssMixinImport.update({
+    id: '/hint/anchorCssMixin',
+    path: '/hint/anchorCssMixin',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsGlobalSearchVariantsRoute = ComponentsGlobalSearchVariantsImport.update({
-  id: '/globalSearch/variants',
-  path: '/globalSearch/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsGlobalSearchVariantsRoute =
+  ComponentsGlobalSearchVariantsImport.update({
+    id: '/globalSearch/variants',
+    path: '/globalSearch/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsGlobalSearchSizesRoute = ComponentsGlobalSearchSizesImport.update({
-  id: '/globalSearch/sizes',
-  path: '/globalSearch/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsGlobalSearchSizesRoute =
+  ComponentsGlobalSearchSizesImport.update({
+    id: '/globalSearch/sizes',
+    path: '/globalSearch/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFloatingButtonWithMenuModesRoute = ComponentsFloatingButtonWithMenuModesImport.update({
-  id: '/floatingButton/withMenuModes',
-  path: '/floatingButton/withMenuModes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFloatingButtonWithMenuModesRoute =
+  ComponentsFloatingButtonWithMenuModesImport.update({
+    id: '/floatingButton/withMenuModes',
+    path: '/floatingButton/withMenuModes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFloatingButtonWithMenuRoute = ComponentsFloatingButtonWithMenuImport.update({
-  id: '/floatingButton/withMenu',
-  path: '/floatingButton/withMenu',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFloatingButtonWithMenuRoute =
+  ComponentsFloatingButtonWithMenuImport.update({
+    id: '/floatingButton/withMenu',
+    path: '/floatingButton/withMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFloatingButtonTooltipRoute = ComponentsFloatingButtonTooltipImport.update({
-  id: '/floatingButton/tooltip',
-  path: '/floatingButton/tooltip',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFloatingButtonTooltipRoute =
+  ComponentsFloatingButtonTooltipImport.update({
+    id: '/floatingButton/tooltip',
+    path: '/floatingButton/tooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFloatingButtonStylesRoute = ComponentsFloatingButtonStylesImport.update({
-  id: '/floatingButton/styles',
-  path: '/floatingButton/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFloatingButtonStylesRoute =
+  ComponentsFloatingButtonStylesImport.update({
+    id: '/floatingButton/styles',
+    path: '/floatingButton/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFloatingButtonPositionRoute = ComponentsFloatingButtonPositionImport.update({
-  id: '/floatingButton/position',
-  path: '/floatingButton/position',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFloatingButtonPositionRoute =
+  ComponentsFloatingButtonPositionImport.update({
+    id: '/floatingButton/position',
+    path: '/floatingButton/position',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFloatingButtonMobileRoute = ComponentsFloatingButtonMobileImport.update({
-  id: '/floatingButton/mobile',
-  path: '/floatingButton/mobile',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFloatingButtonMobileRoute =
+  ComponentsFloatingButtonMobileImport.update({
+    id: '/floatingButton/mobile',
+    path: '/floatingButton/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsFileinputStateRoute = ComponentsFileinputStateImport.update({
   id: '/fileinput/state',
   path: '/fileinput/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsFileinputFilestatusRoute = ComponentsFileinputFilestatusImport.update({
-  id: '/fileinput/filestatus',
-  path: '/fileinput/filestatus',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFileinputFilestatusRoute =
+  ComponentsFileinputFilestatusImport.update({
+    id: '/fileinput/filestatus',
+    path: '/fileinput/filestatus',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFileinputExtratextRoute = ComponentsFileinputExtratextImport.update({
-  id: '/fileinput/extratext',
-  path: '/fileinput/extratext',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFileinputExtratextRoute =
+  ComponentsFileinputExtratextImport.update({
+    id: '/fileinput/extratext',
+    path: '/fileinput/extratext',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFileinputDimensionsRoute = ComponentsFileinputDimensionsImport.update({
-  id: '/fileinput/dimensions',
-  path: '/fileinput/dimensions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFileinputDimensionsRoute =
+  ComponentsFileinputDimensionsImport.update({
+    id: '/fileinput/dimensions',
+    path: '/fileinput/dimensions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFileinputCustomizingFileTypeRoute = ComponentsFileinputCustomizingFileTypeImport.update({
-  id: '/fileinput/customizingFileType',
-  path: '/fileinput/customizingFileType',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFileinputCustomizingFileTypeRoute =
+  ComponentsFileinputCustomizingFileTypeImport.update({
+    id: '/fileinput/customizingFileType',
+    path: '/fileinput/customizingFileType',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsFileinputCustomizingRoute = ComponentsFileinputCustomizingImport.update({
-  id: '/fileinput/customizing',
-  path: '/fileinput/customizing',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsFileinputCustomizingRoute =
+  ComponentsFileinputCustomizingImport.update({
+    id: '/fileinput/customizing',
+    path: '/fileinput/customizing',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsEditModeTooltipRoute = ComponentsEditModeTooltipImport.update({
   id: '/editMode/tooltip',
   path: '/editMode/tooltip',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsEditModeStatusRoute = ComponentsEditModeStatusImport.update({
   id: '/editMode/status',
   path: '/editMode/status',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsEditModeMultilineRoute = ComponentsEditModeMultilineImport.update({
-  id: '/editMode/multiline',
-  path: '/editMode/multiline',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsEditModeMultilineRoute =
+  ComponentsEditModeMultilineImport.update({
+    id: '/editMode/multiline',
+    path: '/editMode/multiline',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsEditModeExtratextRoute = ComponentsEditModeExtratextImport.update({
-  id: '/editMode/extratext',
-  path: '/editMode/extratext',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsEditModeExtratextRoute =
+  ComponentsEditModeExtratextImport.update({
+    id: '/editMode/extratext',
+    path: '/editMode/extratext',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsEditModeDisablecopyingRoute = ComponentsEditModeDisablecopyingImport.update({
-  id: '/editMode/disablecopying',
-  path: '/editMode/disablecopying',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsEditModeDisablecopyingRoute =
+  ComponentsEditModeDisablecopyingImport.update({
+    id: '/editMode/disablecopying',
+    path: '/editMode/disablecopying',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsEditModeDimensionsRoute = ComponentsEditModeDimensionsImport.update({
-  id: '/editMode/dimensions',
-  path: '/editMode/dimensions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsEditModeDimensionsRoute =
+  ComponentsEditModeDimensionsImport.update({
+    id: '/editMode/dimensions',
+    path: '/editMode/dimensions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuWithTooltipRoute = ComponentsDropdownMenuWithTooltipImport.update({
-  id: '/dropdown/menuWithTooltip',
-  path: '/dropdown/menuWithTooltip',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuWithTooltipRoute =
+  ComponentsDropdownMenuWithTooltipImport.update({
+    id: '/dropdown/menuWithTooltip',
+    path: '/dropdown/menuWithTooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuWithRadioButtonRoute = ComponentsDropdownMenuWithRadioButtonImport.update({
-  id: '/dropdown/menuWithRadioButton',
-  path: '/dropdown/menuWithRadioButton',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuWithRadioButtonRoute =
+  ComponentsDropdownMenuWithRadioButtonImport.update({
+    id: '/dropdown/menuWithRadioButton',
+    path: '/dropdown/menuWithRadioButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuWithIconsRoute = ComponentsDropdownMenuWithIconsImport.update({
-  id: '/dropdown/menuWithIcons',
-  path: '/dropdown/menuWithIcons',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuWithIconsRoute =
+  ComponentsDropdownMenuWithIconsImport.update({
+    id: '/dropdown/menuWithIcons',
+    path: '/dropdown/menuWithIcons',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuWithCheckboxGroupRoute = ComponentsDropdownMenuWithCheckboxGroupImport.update({
-  id: '/dropdown/menuWithCheckboxGroup',
-  path: '/dropdown/menuWithCheckboxGroup',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuWithCheckboxGroupRoute =
+  ComponentsDropdownMenuWithCheckboxGroupImport.update({
+    id: '/dropdown/menuWithCheckboxGroup',
+    path: '/dropdown/menuWithCheckboxGroup',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuWithCheckboxRoute = ComponentsDropdownMenuWithCheckboxImport.update({
-  id: '/dropdown/menuWithCheckbox',
-  path: '/dropdown/menuWithCheckbox',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuWithCheckboxRoute =
+  ComponentsDropdownMenuWithCheckboxImport.update({
+    id: '/dropdown/menuWithCheckbox',
+    path: '/dropdown/menuWithCheckbox',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuWithAddTextAndIconsRoute = ComponentsDropdownMenuWithAddTextAndIconsImport.update({
-  id: '/dropdown/menuWithAddTextAndIcons',
-  path: '/dropdown/menuWithAddTextAndIcons',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuWithAddTextAndIconsRoute =
+  ComponentsDropdownMenuWithAddTextAndIconsImport.update({
+    id: '/dropdown/menuWithAddTextAndIcons',
+    path: '/dropdown/menuWithAddTextAndIcons',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuVirtualScrollRoute = ComponentsDropdownMenuVirtualScrollImport.update({
-  id: '/dropdown/menuVirtualScroll',
-  path: '/dropdown/menuVirtualScroll',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuVirtualScrollRoute =
+  ComponentsDropdownMenuVirtualScrollImport.update({
+    id: '/dropdown/menuVirtualScroll',
+    path: '/dropdown/menuVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuPreselectRoute = ComponentsDropdownMenuPreselectImport.update({
-  id: '/dropdown/menuPreselect',
-  path: '/dropdown/menuPreselect',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuPreselectRoute =
+  ComponentsDropdownMenuPreselectImport.update({
+    id: '/dropdown/menuPreselect',
+    path: '/dropdown/menuPreselect',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuMultiLineRoute = ComponentsDropdownMenuMultiLineImport.update({
-  id: '/dropdown/menuMultiLine',
-  path: '/dropdown/menuMultiLine',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuMultiLineRoute =
+  ComponentsDropdownMenuMultiLineImport.update({
+    id: '/dropdown/menuMultiLine',
+    path: '/dropdown/menuMultiLine',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuMultiLevelRoute = ComponentsDropdownMenuMultiLevelImport.update({
-  id: '/dropdown/menuMultiLevel',
-  path: '/dropdown/menuMultiLevel',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuMultiLevelRoute =
+  ComponentsDropdownMenuMultiLevelImport.update({
+    id: '/dropdown/menuMultiLevel',
+    path: '/dropdown/menuMultiLevel',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuManyItemsRoute = ComponentsDropdownMenuManyItemsImport.update({
-  id: '/dropdown/menuManyItems',
-  path: '/dropdown/menuManyItems',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuManyItemsRoute =
+  ComponentsDropdownMenuManyItemsImport.update({
+    id: '/dropdown/menuManyItems',
+    path: '/dropdown/menuManyItems',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuLockCycleScrollRoute = ComponentsDropdownMenuLockCycleScrollImport.update({
-  id: '/dropdown/menuLockCycleScroll',
-  path: '/dropdown/menuLockCycleScroll',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuLockCycleScrollRoute =
+  ComponentsDropdownMenuLockCycleScrollImport.update({
+    id: '/dropdown/menuLockCycleScroll',
+    path: '/dropdown/menuLockCycleScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuDimensionsRoute = ComponentsDropdownMenuDimensionsImport.update({
-  id: '/dropdown/menuDimensions',
-  path: '/dropdown/menuDimensions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuDimensionsRoute =
+  ComponentsDropdownMenuDimensionsImport.update({
+    id: '/dropdown/menuDimensions',
+    path: '/dropdown/menuDimensions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuCustomItemsRoute = ComponentsDropdownMenuCustomItemsImport.update({
-  id: '/dropdown/menuCustomItems',
-  path: '/dropdown/menuCustomItems',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuCustomItemsRoute =
+  ComponentsDropdownMenuCustomItemsImport.update({
+    id: '/dropdown/menuCustomItems',
+    path: '/dropdown/menuCustomItems',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuCategoriesRoute = ComponentsDropdownMenuCategoriesImport.update({
-  id: '/dropdown/menuCategories',
-  path: '/dropdown/menuCategories',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuCategoriesRoute =
+  ComponentsDropdownMenuCategoriesImport.update({
+    id: '/dropdown/menuCategories',
+    path: '/dropdown/menuCategories',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuActionTwoButtonsRoute = ComponentsDropdownMenuActionTwoButtonsImport.update({
-  id: '/dropdown/menuActionTwoButtons',
-  path: '/dropdown/menuActionTwoButtons',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuActionTwoButtonsRoute =
+  ComponentsDropdownMenuActionTwoButtonsImport.update({
+    id: '/dropdown/menuActionTwoButtons',
+    path: '/dropdown/menuActionTwoButtons',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownMenuActionSearchRoute = ComponentsDropdownMenuActionSearchImport.update({
-  id: '/dropdown/menuActionSearch',
-  path: '/dropdown/menuActionSearch',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownMenuActionSearchRoute =
+  ComponentsDropdownMenuActionSearchImport.update({
+    id: '/dropdown/menuActionSearch',
+    path: '/dropdown/menuActionSearch',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownDropMenuUncontrolledRoute = ComponentsDropdownDropMenuUncontrolledImport.update({
-  id: '/dropdown/dropMenuUncontrolled',
-  path: '/dropdown/dropMenuUncontrolled',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownDropMenuUncontrolledRoute =
+  ComponentsDropdownDropMenuUncontrolledImport.update({
+    id: '/dropdown/dropMenuUncontrolled',
+    path: '/dropdown/dropMenuUncontrolled',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownDropMenuControlledRoute = ComponentsDropdownDropMenuControlledImport.update({
-  id: '/dropdown/dropMenuControlled',
-  path: '/dropdown/dropMenuControlled',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownDropMenuControlledRoute =
+  ComponentsDropdownDropMenuControlledImport.update({
+    id: '/dropdown/dropMenuControlled',
+    path: '/dropdown/dropMenuControlled',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDropdownCustomDropdownContainerRoute = ComponentsDropdownCustomDropdownContainerImport.update({
-  id: '/dropdown/customDropdownContainer',
-  path: '/dropdown/customDropdownContainer',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDropdownCustomDropdownContainerRoute =
+  ComponentsDropdownCustomDropdownContainerImport.update({
+    id: '/dropdown/customDropdownContainer',
+    path: '/dropdown/customDropdownContainer',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDrawerWithoutBackdropRoute = ComponentsDrawerWithoutBackdropImport.update({
-  id: '/drawer/withoutBackdrop',
-  path: '/drawer/withoutBackdrop',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDrawerWithoutBackdropRoute =
+  ComponentsDrawerWithoutBackdropImport.update({
+    id: '/drawer/withoutBackdrop',
+    path: '/drawer/withoutBackdrop',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDrawerWithBackdropRoute = ComponentsDrawerWithBackdropImport.update({
-  id: '/drawer/withBackdrop',
-  path: '/drawer/withBackdrop',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDrawerWithBackdropRoute =
+  ComponentsDrawerWithBackdropImport.update({
+    id: '/drawer/withBackdrop',
+    path: '/drawer/withBackdrop',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDrawerWidthRoute = ComponentsDrawerWidthImport.update({
   id: '/drawer/width',
   path: '/drawer/width',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDrawerPositionRoute = ComponentsDrawerPositionImport.update({
   id: '/drawer/position',
   path: '/drawer/position',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsDrawerNonClosableRoute = ComponentsDrawerNonClosableImport.update({
-  id: '/drawer/nonClosable',
-  path: '/drawer/nonClosable',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDrawerNonClosableRoute =
+  ComponentsDrawerNonClosableImport.update({
+    id: '/drawer/nonClosable',
+    path: '/drawer/nonClosable',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDrawerMobileRoute = ComponentsDrawerMobileImport.update({
   id: '/drawer/mobile',
   path: '/drawer/mobile',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsDrawerCustomContentRoute = ComponentsDrawerCustomContentImport.update({
-  id: '/drawer/customContent',
-  path: '/drawer/customContent',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDrawerCustomContentRoute =
+  ComponentsDrawerCustomContentImport.update({
+    id: '/drawer/customContent',
+    path: '/drawer/customContent',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDividerTypeRoute = ComponentsDividerTypeImport.update({
   id: '/divider/type',
   path: '/divider/type',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDividerThiknessRoute = ComponentsDividerThiknessImport.update({
   id: '/divider/thikness',
   path: '/divider/thikness',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDividerStyleRoute = ComponentsDividerStyleImport.update({
   id: '/divider/style',
   path: '/divider/style',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDividerLengthRoute = ComponentsDividerLengthImport.update({
   id: '/divider/length',
   path: '/divider/length',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsDateTimeFieldStatusRoute = ComponentsDateTimeFieldStatusImport.update({
-  id: '/dateTimeField/status',
-  path: '/dateTimeField/status',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateTimeFieldStatusRoute =
+  ComponentsDateTimeFieldStatusImport.update({
+    id: '/dateTimeField/status',
+    path: '/dateTimeField/status',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDateTimeFieldExtraTextRoute = ComponentsDateTimeFieldExtraTextImport.update({
-  id: '/dateTimeField/extraText',
-  path: '/dateTimeField/extraText',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateTimeFieldExtraTextRoute =
+  ComponentsDateTimeFieldExtraTextImport.update({
+    id: '/dateTimeField/extraText',
+    path: '/dateTimeField/extraText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDateTimeFieldDisplayInlineRoute = ComponentsDateTimeFieldDisplayInlineImport.update({
-  id: '/dateTimeField/displayInline',
-  path: '/dateTimeField/displayInline',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateTimeFieldDisplayInlineRoute =
+  ComponentsDateTimeFieldDisplayInlineImport.update({
+    id: '/dateTimeField/displayInline',
+    path: '/dateTimeField/displayInline',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDateTimeFieldDimensionRoute = ComponentsDateTimeFieldDimensionImport.update({
-  id: '/dateTimeField/dimension',
-  path: '/dateTimeField/dimension',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateTimeFieldDimensionRoute =
+  ComponentsDateTimeFieldDimensionImport.update({
+    id: '/dateTimeField/dimension',
+    path: '/dateTimeField/dimension',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDateInputWithButtonRoute = ComponentsDateInputWithButtonImport.update({
-  id: '/dateInput/withButton',
-  path: '/dateInput/withButton',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateInputWithButtonRoute =
+  ComponentsDateInputWithButtonImport.update({
+    id: '/dateInput/withButton',
+    path: '/dateInput/withButton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDateInputVariantsRoute = ComponentsDateInputVariantsImport.update({
-  id: '/dateInput/variants',
-  path: '/dateInput/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateInputVariantsRoute =
+  ComponentsDateInputVariantsImport.update({
+    id: '/dateInput/variants',
+    path: '/dateInput/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDateInputStatusRoute = ComponentsDateInputStatusImport.update({
   id: '/dateInput/status',
   path: '/dateInput/status',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDateInputStateRoute = ComponentsDateInputStateImport.update({
   id: '/dateInput/state',
   path: '/dateInput/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsDateInputSpecialDatesRoute = ComponentsDateInputSpecialDatesImport.update({
-  id: '/dateInput/specialDates',
-  path: '/dateInput/specialDates',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateInputSpecialDatesRoute =
+  ComponentsDateInputSpecialDatesImport.update({
+    id: '/dateInput/specialDates',
+    path: '/dateInput/specialDates',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDateInputSizesRoute = ComponentsDateInputSizesImport.update({
   id: '/dateInput/sizes',
   path: '/dateInput/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsDateInputRangeRoute = ComponentsDateInputRangeImport.update({
   id: '/dateInput/range',
   path: '/dateInput/range',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsDateInputDateFieldStateRoute = ComponentsDateInputDateFieldStateImport.update({
-  id: '/dateInput/dateFieldState',
-  path: '/dateInput/dateFieldState',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateInputDateFieldStateRoute =
+  ComponentsDateInputDateFieldStateImport.update({
+    id: '/dateInput/dateFieldState',
+    path: '/dateInput/dateFieldState',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsDateInputDateFieldRoute = ComponentsDateInputDateFieldImport.update({
-  id: '/dateInput/dateField',
-  path: '/dateInput/dateField',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsDateInputDateFieldRoute =
+  ComponentsDateInputDateFieldImport.update({
+    id: '/dateInput/dateField',
+    path: '/dateInput/dateField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsDateInputCustomRoute = ComponentsDateInputCustomImport.update({
   id: '/dateInput/custom',
   path: '/dateInput/custom',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsCurrencyInputWithPrefixRoute = ComponentsCurrencyInputWithPrefixImport.update({
-  id: '/currencyInput/withPrefix',
-  path: '/currencyInput/withPrefix',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCurrencyInputWithPrefixRoute =
+  ComponentsCurrencyInputWithPrefixImport.update({
+    id: '/currencyInput/withPrefix',
+    path: '/currencyInput/withPrefix',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCurrencyInputMinMaxvalueRoute = ComponentsCurrencyInputMinMaxvalueImport.update({
-  id: '/currencyInput/minMaxvalue',
-  path: '/currencyInput/minMaxvalue',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCurrencyInputMinMaxvalueRoute =
+  ComponentsCurrencyInputMinMaxvalueImport.update({
+    id: '/currencyInput/minMaxvalue',
+    path: '/currencyInput/minMaxvalue',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCurrencyInputCurrencyInputFieldRoute = ComponentsCurrencyInputCurrencyInputFieldImport.update({
-  id: '/currencyInput/currencyInputField',
-  path: '/currencyInput/currencyInputField',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCurrencyInputCurrencyInputFieldRoute =
+  ComponentsCurrencyInputCurrencyInputFieldImport.update({
+    id: '/currencyInput/currencyInputField',
+    path: '/currencyInput/currencyInputField',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsContentSwitcherWithIconsRoute = ComponentsContentSwitcherWithIconsImport.update({
-  id: '/contentSwitcher/withIcons',
-  path: '/contentSwitcher/withIcons',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsContentSwitcherWithIconsRoute =
+  ComponentsContentSwitcherWithIconsImport.update({
+    id: '/contentSwitcher/withIcons',
+    path: '/contentSwitcher/withIcons',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsContentSwitcherWithBadgeRoute = ComponentsContentSwitcherWithBadgeImport.update({
-  id: '/contentSwitcher/withBadge',
-  path: '/contentSwitcher/withBadge',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsContentSwitcherWithBadgeRoute =
+  ComponentsContentSwitcherWithBadgeImport.update({
+    id: '/contentSwitcher/withBadge',
+    path: '/contentSwitcher/withBadge',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsContentSwitcherStylesRoute = ComponentsContentSwitcherStylesImport.update({
-  id: '/contentSwitcher/styles',
-  path: '/contentSwitcher/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsContentSwitcherStylesRoute =
+  ComponentsContentSwitcherStylesImport.update({
+    id: '/contentSwitcher/styles',
+    path: '/contentSwitcher/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsContentSwitcherSizesRoute = ComponentsContentSwitcherSizesImport.update({
-  id: '/contentSwitcher/sizes',
-  path: '/contentSwitcher/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsContentSwitcherSizesRoute =
+  ComponentsContentSwitcherSizesImport.update({
+    id: '/contentSwitcher/sizes',
+    path: '/contentSwitcher/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsContentSwitcherIconsOnlyRoute = ComponentsContentSwitcherIconsOnlyImport.update({
-  id: '/contentSwitcher/iconsOnly',
-  path: '/contentSwitcher/iconsOnly',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsContentSwitcherIconsOnlyRoute =
+  ComponentsContentSwitcherIconsOnlyImport.update({
+    id: '/contentSwitcher/iconsOnly',
+    path: '/contentSwitcher/iconsOnly',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsContentSwitcherAdaptiveRoute = ComponentsContentSwitcherAdaptiveImport.update({
-  id: '/contentSwitcher/adaptive',
-  path: '/contentSwitcher/adaptive',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsContentSwitcherAdaptiveRoute =
+  ComponentsContentSwitcherAdaptiveImport.update({
+    id: '/contentSwitcher/adaptive',
+    path: '/contentSwitcher/adaptive',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsChipsWithTooltipRoute = ComponentsChipsWithTooltipImport.update({
-  id: '/chips/withTooltip',
-  path: '/chips/withTooltip',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsChipsWithTooltipRoute = ComponentsChipsWithTooltipImport.update(
+  {
+    id: '/chips/withTooltip',
+    path: '/chips/withTooltip',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsChipsWithIconRoute = ComponentsChipsWithIconImport.update({
   id: '/chips/withIcon',
   path: '/chips/withIcon',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsChipsWithBadgeRoute = ComponentsChipsWithBadgeImport.update({
   id: '/chips/withBadge',
   path: '/chips/withBadge',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsChipsStylesRoute = ComponentsChipsStylesImport.update({
   id: '/chips/styles',
   path: '/chips/styles',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsChipsSizesRoute = ComponentsChipsSizesImport.update({
   id: '/chips/sizes',
   path: '/chips/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsChipsSelectRoute = ComponentsChipsSelectImport.update({
   id: '/chips/select',
   path: '/chips/select',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsChipsMultiSelectRoute = ComponentsChipsMultiSelectImport.update({
-  id: '/chips/multiSelect',
-  path: '/chips/multiSelect',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsChipsMultiSelectRoute = ComponentsChipsMultiSelectImport.update(
+  {
+    id: '/chips/multiSelect',
+    path: '/chips/multiSelect',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsChipsChipsCloseRoute = ComponentsChipsChipsCloseImport.update({
   id: '/chips/chipsClose',
   path: '/chips/chipsClose',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsCheckboxWithInformerRoute = ComponentsCheckboxWithInformerImport.update({
-  id: '/checkbox/withInformer',
-  path: '/checkbox/withInformer',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCheckboxWithInformerRoute =
+  ComponentsCheckboxWithInformerImport.update({
+    id: '/checkbox/withInformer',
+    path: '/checkbox/withInformer',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsCheckboxStatesRoute = ComponentsCheckboxStatesImport.update({
   id: '/checkbox/states',
   path: '/checkbox/states',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsCheckboxFieldSetRoute = ComponentsCheckboxFieldSetImport.update({
-  id: '/checkbox/fieldSet',
-  path: '/checkbox/fieldSet',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCheckboxFieldSetRoute = ComponentsCheckboxFieldSetImport.update(
+  {
+    id: '/checkbox/fieldSet',
+    path: '/checkbox/fieldSet',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsCheckboxCompositeGroupRoute = ComponentsCheckboxCompositeGroupImport.update({
-  id: '/checkbox/compositeGroup',
-  path: '/checkbox/compositeGroup',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCheckboxCompositeGroupRoute =
+  ComponentsCheckboxCompositeGroupImport.update({
+    id: '/checkbox/compositeGroup',
+    path: '/checkbox/compositeGroup',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCheckboxAdditionalTextRoute = ComponentsCheckboxAdditionalTextImport.update({
-  id: '/checkbox/additionalText',
-  path: '/checkbox/additionalText',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCheckboxAdditionalTextRoute =
+  ComponentsCheckboxAdditionalTextImport.update({
+    id: '/checkbox/additionalText',
+    path: '/checkbox/additionalText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCarouselSliderStylesRoute = ComponentsCarouselSliderStylesImport.update({
-  id: '/carouselSlider/styles',
-  path: '/carouselSlider/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCarouselSliderStylesRoute =
+  ComponentsCarouselSliderStylesImport.update({
+    id: '/carouselSlider/styles',
+    path: '/carouselSlider/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsCarouselSliderCarouselSliderAutoChangeRoute =
   ComponentsCarouselSliderCarouselSliderAutoChangeImport.update({
     id: '/carouselSlider/carouselSliderAutoChange',
     path: '/carouselSlider/carouselSliderAutoChange',
     getParentRoute: () => ComponentsRoute,
-  } as any);
+  } as any)
 
-const ComponentsCarouselSliderPositionRoute = ComponentsCarouselSliderPositionImport.update({
-  id: '/carousel/sliderPosition',
-  path: '/carousel/sliderPosition',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCarouselSliderPositionRoute =
+  ComponentsCarouselSliderPositionImport.update({
+    id: '/carousel/sliderPosition',
+    path: '/carousel/sliderPosition',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCarouselCarouselAutoChangeRoute = ComponentsCarouselCarouselAutoChangeImport.update({
-  id: '/carousel/carouselAutoChange',
-  path: '/carousel/carouselAutoChange',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCarouselCarouselAutoChangeRoute =
+  ComponentsCarouselCarouselAutoChangeImport.update({
+    id: '/carousel/carouselAutoChange',
+    path: '/carousel/carouselAutoChange',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsCarouselArrowsRoute = ComponentsCarouselArrowsImport.update({
   id: '/carousel/arrows',
   path: '/carousel/arrows',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsCalendarViewDateMonthsYearsRoute = ComponentsCalendarViewDateMonthsYearsImport.update({
-  id: '/calendar/viewDateMonthsYears',
-  path: '/calendar/viewDateMonthsYears',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCalendarViewDateMonthsYearsRoute =
+  ComponentsCalendarViewDateMonthsYearsImport.update({
+    id: '/calendar/viewDateMonthsYears',
+    path: '/calendar/viewDateMonthsYears',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCalendarViewDateAfterChooseRoute = ComponentsCalendarViewDateAfterChooseImport.update({
-  id: '/calendar/viewDateAfterChoose',
-  path: '/calendar/viewDateAfterChoose',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCalendarViewDateAfterChooseRoute =
+  ComponentsCalendarViewDateAfterChooseImport.update({
+    id: '/calendar/viewDateAfterChoose',
+    path: '/calendar/viewDateAfterChoose',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCalendarSpecialDatesRoute = ComponentsCalendarSpecialDatesImport.update({
-  id: '/calendar/specialDates',
-  path: '/calendar/specialDates',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCalendarSpecialDatesRoute =
+  ComponentsCalendarSpecialDatesImport.update({
+    id: '/calendar/specialDates',
+    path: '/calendar/specialDates',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsCalendarRangeRoute = ComponentsCalendarRangeImport.update({
   id: '/calendar/range',
   path: '/calendar/range',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsCalendarMaxDateRoute = ComponentsCalendarMaxDateImport.update({
   id: '/calendar/maxDate',
   path: '/calendar/maxDate',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsCalendarFilterDateRoute = ComponentsCalendarFilterDateImport.update({
-  id: '/calendar/filterDate',
-  path: '/calendar/filterDate',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCalendarFilterDateRoute =
+  ComponentsCalendarFilterDateImport.update({
+    id: '/calendar/filterDate',
+    path: '/calendar/filterDate',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsCalendarCallbackRoute = ComponentsCalendarCallbackImport.update({
-  id: '/calendar/callback',
-  path: '/calendar/callback',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCalendarCallbackRoute = ComponentsCalendarCallbackImport.update(
+  {
+    id: '/calendar/callback',
+    path: '/calendar/callback',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsCalendarActiveViewDateRoute = ComponentsCalendarActiveViewDateImport.update({
-  id: '/calendar/activeViewDate',
-  path: '/calendar/activeViewDate',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsCalendarActiveViewDateRoute =
+  ComponentsCalendarActiveViewDateImport.update({
+    id: '/calendar/activeViewDate',
+    path: '/calendar/activeViewDate',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsButtonGroupVariantsRoute = ComponentsButtonGroupVariantsImport.update({
-  id: '/buttonGroup/variants',
-  path: '/buttonGroup/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsButtonGroupVariantsRoute =
+  ComponentsButtonGroupVariantsImport.update({
+    id: '/buttonGroup/variants',
+    path: '/buttonGroup/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsButtonGroupStylesRoute = ComponentsButtonGroupStylesImport.update({
-  id: '/buttonGroup/styles',
-  path: '/buttonGroup/styles',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsButtonGroupStylesRoute =
+  ComponentsButtonGroupStylesImport.update({
+    id: '/buttonGroup/styles',
+    path: '/buttonGroup/styles',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsButtonGroupStatesRoute = ComponentsButtonGroupStatesImport.update({
-  id: '/buttonGroup/states',
-  path: '/buttonGroup/states',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsButtonGroupStatesRoute =
+  ComponentsButtonGroupStatesImport.update({
+    id: '/buttonGroup/states',
+    path: '/buttonGroup/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsButtonGroupSizesRoute = ComponentsButtonGroupSizesImport.update({
-  id: '/buttonGroup/sizes',
-  path: '/buttonGroup/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsButtonGroupSizesRoute = ComponentsButtonGroupSizesImport.update(
+  {
+    id: '/buttonGroup/sizes',
+    path: '/buttonGroup/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
 const ComponentsButtonTypesRoute = ComponentsButtonTypesImport.update({
   id: '/button/types',
   path: '/button/types',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsButtonStateRoute = ComponentsButtonStateImport.update({
   id: '/button/state',
   path: '/button/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsButtonDimensionRoute = ComponentsButtonDimensionImport.update({
   id: '/button/dimension',
   path: '/button/dimension',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsButtonButtonWithIconRoute = ComponentsButtonButtonWithIconImport.update({
-  id: '/button/buttonWithIcon',
-  path: '/button/buttonWithIcon',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsButtonButtonWithIconRoute =
+  ComponentsButtonButtonWithIconImport.update({
+    id: '/button/buttonWithIcon',
+    path: '/button/buttonWithIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsButtonButtonWithBadgeRoute = ComponentsButtonButtonWithBadgeImport.update({
-  id: '/button/buttonWithBadge',
-  path: '/button/buttonWithBadge',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsButtonButtonWithBadgeRoute =
+  ComponentsButtonButtonWithBadgeImport.update({
+    id: '/button/buttonWithBadge',
+    path: '/button/buttonWithBadge',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsButtonAdaptiveRoute = ComponentsButtonAdaptiveImport.update({
   id: '/button/adaptive',
   path: '/button/adaptive',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsBreadcrumbsSizesRoute = ComponentsBreadcrumbsSizesImport.update({
-  id: '/breadcrumbs/sizes',
-  path: '/breadcrumbs/sizes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBreadcrumbsSizesRoute = ComponentsBreadcrumbsSizesImport.update(
+  {
+    id: '/breadcrumbs/sizes',
+    path: '/breadcrumbs/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsBreadcrumbsMobileRoute = ComponentsBreadcrumbsMobileImport.update({
-  id: '/breadcrumbs/mobile',
-  path: '/breadcrumbs/mobile',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBreadcrumbsMobileRoute =
+  ComponentsBreadcrumbsMobileImport.update({
+    id: '/breadcrumbs/mobile',
+    path: '/breadcrumbs/mobile',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsBreadcrumbsLinkRoute = ComponentsBreadcrumbsLinkImport.update({
   id: '/breadcrumbs/link',
   path: '/breadcrumbs/link',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsBreadcrumbsIconsRoute = ComponentsBreadcrumbsIconsImport.update({
-  id: '/breadcrumbs/icons',
-  path: '/breadcrumbs/icons',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBreadcrumbsIconsRoute = ComponentsBreadcrumbsIconsImport.update(
+  {
+    id: '/breadcrumbs/icons',
+    path: '/breadcrumbs/icons',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsBreadcrumbsActiveCrumbRoute = ComponentsBreadcrumbsActiveCrumbImport.update({
-  id: '/breadcrumbs/activeCrumb',
-  path: '/breadcrumbs/activeCrumb',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBreadcrumbsActiveCrumbRoute =
+  ComponentsBreadcrumbsActiveCrumbImport.update({
+    id: '/breadcrumbs/activeCrumb',
+    path: '/breadcrumbs/activeCrumb',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsBadgeDotVariantsRoute = ComponentsBadgeDotVariantsImport.update({
-  id: '/badgeDot/variants',
-  path: '/badgeDot/variants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBadgeDotVariantsRoute = ComponentsBadgeDotVariantsImport.update(
+  {
+    id: '/badgeDot/variants',
+    path: '/badgeDot/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
 
-const ComponentsBadgeBadgeVariantsRoute = ComponentsBadgeBadgeVariantsImport.update({
-  id: '/badge/badgeVariants',
-  path: '/badge/badgeVariants',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBadgeBadgeVariantsRoute =
+  ComponentsBadgeBadgeVariantsImport.update({
+    id: '/badge/badgeVariants',
+    path: '/badge/badgeVariants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsBadgeBadgeAccessibilityRoute = ComponentsBadgeBadgeAccessibilityImport.update({
-  id: '/badge/badgeAccessibility',
-  path: '/badge/badgeAccessibility',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsBadgeBadgeAccessibilityRoute =
+  ComponentsBadgeBadgeAccessibilityImport.update({
+    id: '/badge/badgeAccessibility',
+    path: '/badge/badgeAccessibility',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsAvatarStylesRoute = ComponentsAvatarStylesImport.update({
   id: '/avatar/styles',
   path: '/avatar/styles',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsAvatarSizeXXSRoute = ComponentsAvatarSizeXXSImport.update({
   id: '/avatar/sizeXXS',
   path: '/avatar/sizeXXS',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsAvatarAvatarGroupLimitedWidthRoute = ComponentsAvatarAvatarGroupLimitedWidthImport.update({
-  id: '/avatar/avatarGroupLimitedWidth',
-  path: '/avatar/avatarGroupLimitedWidth',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsAvatarAvatarGroupLimitedWidthRoute =
+  ComponentsAvatarAvatarGroupLimitedWidthImport.update({
+    id: '/avatar/avatarGroupLimitedWidth',
+    path: '/avatar/avatarGroupLimitedWidth',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsAvatarAvatarGroupRoute = ComponentsAvatarAvatarGroupImport.update({
-  id: '/avatar/avatarGroup',
-  path: '/avatar/avatarGroup',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsAvatarAvatarGroupRoute =
+  ComponentsAvatarAvatarGroupImport.update({
+    id: '/avatar/avatarGroup',
+    path: '/avatar/avatarGroup',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsAnchorTreeRoute = ComponentsAnchorTreeImport.update({
   id: '/anchor/tree',
   path: '/anchor/tree',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsAnchorStateRoute = ComponentsAnchorStateImport.update({
   id: '/anchor/state',
   path: '/anchor/state',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
 const ComponentsAnchorSizesRoute = ComponentsAnchorSizesImport.update({
   id: '/anchor/sizes',
   path: '/anchor/sizes',
   getParentRoute: () => ComponentsRoute,
-} as any);
+} as any)
 
-const ComponentsActionBarDimensionsRoute = ComponentsActionBarDimensionsImport.update({
-  id: '/actionBar/dimensions',
-  path: '/actionBar/dimensions',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsActionBarDimensionsRoute =
+  ComponentsActionBarDimensionsImport.update({
+    id: '/actionBar/dimensions',
+    path: '/actionBar/dimensions',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsActionBarAdaptiveRoute = ComponentsActionBarAdaptiveImport.update({
-  id: '/actionBar/adaptive',
-  path: '/actionBar/adaptive',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsActionBarAdaptiveRoute =
+  ComponentsActionBarAdaptiveImport.update({
+    id: '/actionBar/adaptive',
+    path: '/actionBar/adaptive',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsAccordionAccordionModesRoute = ComponentsAccordionAccordionModesImport.update({
-  id: '/accordion/accordionModes',
-  path: '/accordion/accordionModes',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsAccordionAccordionModesRoute =
+  ComponentsAccordionAccordionModesImport.update({
+    id: '/accordion/accordionModes',
+    path: '/accordion/accordionModes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsAccordionAccordionIconRoute = ComponentsAccordionAccordionIconImport.update({
-  id: '/accordion/accordionIcon',
-  path: '/accordion/accordionIcon',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsAccordionAccordionIconRoute =
+  ComponentsAccordionAccordionIconImport.update({
+    id: '/accordion/accordionIcon',
+    path: '/accordion/accordionIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsAccordionAccordionDividerRoute = ComponentsAccordionAccordionDividerImport.update({
-  id: '/accordion/accordionDivider',
-  path: '/accordion/accordionDivider',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsAccordionAccordionDividerRoute =
+  ComponentsAccordionAccordionDividerImport.update({
+    id: '/accordion/accordionDivider',
+    path: '/accordion/accordionDivider',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
-const ComponentsAccordionAccordionDimensionRoute = ComponentsAccordionAccordionDimensionImport.update({
-  id: '/accordion/accordionDimension',
-  path: '/accordion/accordionDimension',
-  getParentRoute: () => ComponentsRoute,
-} as any);
+const ComponentsAccordionAccordionDimensionRoute =
+  ComponentsAccordionAccordionDimensionImport.update({
+    id: '/accordion/accordionDimension',
+    path: '/accordion/accordionDimension',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/';
-      path: '/';
-      fullPath: '/';
-      preLoaderRoute: typeof IndexImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
     '/components': {
-      id: '/components';
-      path: '/components';
-      fullPath: '/components';
-      preLoaderRoute: typeof ComponentsImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/components'
+      path: '/components'
+      fullPath: '/components'
+      preLoaderRoute: typeof ComponentsImport
+      parentRoute: typeof rootRoute
+    }
     '/general': {
-      id: '/general';
-      path: '/general';
-      fullPath: '/general';
-      preLoaderRoute: typeof GeneralImport;
-      parentRoute: typeof rootRoute;
-    };
+      id: '/general'
+      path: '/general'
+      fullPath: '/general'
+      preLoaderRoute: typeof GeneralImport
+      parentRoute: typeof rootRoute
+    }
     '/general/faqs': {
-      id: '/general/faqs';
-      path: '/faqs';
-      fullPath: '/general/faqs';
-      preLoaderRoute: typeof GeneralFaqsImport;
-      parentRoute: typeof GeneralImport;
-    };
+      id: '/general/faqs'
+      path: '/faqs'
+      fullPath: '/general/faqs'
+      preLoaderRoute: typeof GeneralFaqsImport
+      parentRoute: typeof GeneralImport
+    }
     '/general/installation': {
-      id: '/general/installation';
-      path: '/installation';
-      fullPath: '/general/installation';
-      preLoaderRoute: typeof GeneralInstallationImport;
-      parentRoute: typeof GeneralImport;
-    };
+      id: '/general/installation'
+      path: '/installation'
+      fullPath: '/general/installation'
+      preLoaderRoute: typeof GeneralInstallationImport
+      parentRoute: typeof GeneralImport
+    }
     '/general/resources': {
-      id: '/general/resources';
-      path: '/resources';
-      fullPath: '/general/resources';
-      preLoaderRoute: typeof GeneralResourcesImport;
-      parentRoute: typeof GeneralImport;
-    };
+      id: '/general/resources'
+      path: '/resources'
+      fullPath: '/general/resources'
+      preLoaderRoute: typeof GeneralResourcesImport
+      parentRoute: typeof GeneralImport
+    }
     '/general/usage': {
-      id: '/general/usage';
-      path: '/usage';
-      fullPath: '/general/usage';
-      preLoaderRoute: typeof GeneralUsageImport;
-      parentRoute: typeof GeneralImport;
-    };
+      id: '/general/usage'
+      path: '/usage'
+      fullPath: '/general/usage'
+      preLoaderRoute: typeof GeneralUsageImport
+      parentRoute: typeof GeneralImport
+    }
     '/components/accordion/accordionDimension': {
-      id: '/components/accordion/accordionDimension';
-      path: '/accordion/accordionDimension';
-      fullPath: '/components/accordion/accordionDimension';
-      preLoaderRoute: typeof ComponentsAccordionAccordionDimensionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/accordion/accordionDimension'
+      path: '/accordion/accordionDimension'
+      fullPath: '/components/accordion/accordionDimension'
+      preLoaderRoute: typeof ComponentsAccordionAccordionDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/accordion/accordionDivider': {
-      id: '/components/accordion/accordionDivider';
-      path: '/accordion/accordionDivider';
-      fullPath: '/components/accordion/accordionDivider';
-      preLoaderRoute: typeof ComponentsAccordionAccordionDividerImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/accordion/accordionDivider'
+      path: '/accordion/accordionDivider'
+      fullPath: '/components/accordion/accordionDivider'
+      preLoaderRoute: typeof ComponentsAccordionAccordionDividerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/accordion/accordionIcon': {
-      id: '/components/accordion/accordionIcon';
-      path: '/accordion/accordionIcon';
-      fullPath: '/components/accordion/accordionIcon';
-      preLoaderRoute: typeof ComponentsAccordionAccordionIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/accordion/accordionIcon'
+      path: '/accordion/accordionIcon'
+      fullPath: '/components/accordion/accordionIcon'
+      preLoaderRoute: typeof ComponentsAccordionAccordionIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/accordion/accordionModes': {
-      id: '/components/accordion/accordionModes';
-      path: '/accordion/accordionModes';
-      fullPath: '/components/accordion/accordionModes';
-      preLoaderRoute: typeof ComponentsAccordionAccordionModesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/accordion/accordionModes'
+      path: '/accordion/accordionModes'
+      fullPath: '/components/accordion/accordionModes'
+      preLoaderRoute: typeof ComponentsAccordionAccordionModesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/actionBar/adaptive': {
-      id: '/components/actionBar/adaptive';
-      path: '/actionBar/adaptive';
-      fullPath: '/components/actionBar/adaptive';
-      preLoaderRoute: typeof ComponentsActionBarAdaptiveImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/actionBar/adaptive'
+      path: '/actionBar/adaptive'
+      fullPath: '/components/actionBar/adaptive'
+      preLoaderRoute: typeof ComponentsActionBarAdaptiveImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/actionBar/dimensions': {
-      id: '/components/actionBar/dimensions';
-      path: '/actionBar/dimensions';
-      fullPath: '/components/actionBar/dimensions';
-      preLoaderRoute: typeof ComponentsActionBarDimensionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/actionBar/dimensions'
+      path: '/actionBar/dimensions'
+      fullPath: '/components/actionBar/dimensions'
+      preLoaderRoute: typeof ComponentsActionBarDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/anchor/sizes': {
-      id: '/components/anchor/sizes';
-      path: '/anchor/sizes';
-      fullPath: '/components/anchor/sizes';
-      preLoaderRoute: typeof ComponentsAnchorSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/anchor/sizes'
+      path: '/anchor/sizes'
+      fullPath: '/components/anchor/sizes'
+      preLoaderRoute: typeof ComponentsAnchorSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/anchor/state': {
-      id: '/components/anchor/state';
-      path: '/anchor/state';
-      fullPath: '/components/anchor/state';
-      preLoaderRoute: typeof ComponentsAnchorStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/anchor/state'
+      path: '/anchor/state'
+      fullPath: '/components/anchor/state'
+      preLoaderRoute: typeof ComponentsAnchorStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/anchor/tree': {
-      id: '/components/anchor/tree';
-      path: '/anchor/tree';
-      fullPath: '/components/anchor/tree';
-      preLoaderRoute: typeof ComponentsAnchorTreeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/anchor/tree'
+      path: '/anchor/tree'
+      fullPath: '/components/anchor/tree'
+      preLoaderRoute: typeof ComponentsAnchorTreeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/avatar/avatarGroup': {
-      id: '/components/avatar/avatarGroup';
-      path: '/avatar/avatarGroup';
-      fullPath: '/components/avatar/avatarGroup';
-      preLoaderRoute: typeof ComponentsAvatarAvatarGroupImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/avatar/avatarGroup'
+      path: '/avatar/avatarGroup'
+      fullPath: '/components/avatar/avatarGroup'
+      preLoaderRoute: typeof ComponentsAvatarAvatarGroupImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/avatar/avatarGroupLimitedWidth': {
-      id: '/components/avatar/avatarGroupLimitedWidth';
-      path: '/avatar/avatarGroupLimitedWidth';
-      fullPath: '/components/avatar/avatarGroupLimitedWidth';
-      preLoaderRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/avatar/avatarGroupLimitedWidth'
+      path: '/avatar/avatarGroupLimitedWidth'
+      fullPath: '/components/avatar/avatarGroupLimitedWidth'
+      preLoaderRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/avatar/sizeXXS': {
-      id: '/components/avatar/sizeXXS';
-      path: '/avatar/sizeXXS';
-      fullPath: '/components/avatar/sizeXXS';
-      preLoaderRoute: typeof ComponentsAvatarSizeXXSImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/avatar/sizeXXS'
+      path: '/avatar/sizeXXS'
+      fullPath: '/components/avatar/sizeXXS'
+      preLoaderRoute: typeof ComponentsAvatarSizeXXSImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/avatar/styles': {
-      id: '/components/avatar/styles';
-      path: '/avatar/styles';
-      fullPath: '/components/avatar/styles';
-      preLoaderRoute: typeof ComponentsAvatarStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/avatar/styles'
+      path: '/avatar/styles'
+      fullPath: '/components/avatar/styles'
+      preLoaderRoute: typeof ComponentsAvatarStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/badge/badgeAccessibility': {
-      id: '/components/badge/badgeAccessibility';
-      path: '/badge/badgeAccessibility';
-      fullPath: '/components/badge/badgeAccessibility';
-      preLoaderRoute: typeof ComponentsBadgeBadgeAccessibilityImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/badge/badgeAccessibility'
+      path: '/badge/badgeAccessibility'
+      fullPath: '/components/badge/badgeAccessibility'
+      preLoaderRoute: typeof ComponentsBadgeBadgeAccessibilityImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/badge/badgeVariants': {
-      id: '/components/badge/badgeVariants';
-      path: '/badge/badgeVariants';
-      fullPath: '/components/badge/badgeVariants';
-      preLoaderRoute: typeof ComponentsBadgeBadgeVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/badge/badgeVariants'
+      path: '/badge/badgeVariants'
+      fullPath: '/components/badge/badgeVariants'
+      preLoaderRoute: typeof ComponentsBadgeBadgeVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/badgeDot/variants': {
-      id: '/components/badgeDot/variants';
-      path: '/badgeDot/variants';
-      fullPath: '/components/badgeDot/variants';
-      preLoaderRoute: typeof ComponentsBadgeDotVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/badgeDot/variants'
+      path: '/badgeDot/variants'
+      fullPath: '/components/badgeDot/variants'
+      preLoaderRoute: typeof ComponentsBadgeDotVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/breadcrumbs/activeCrumb': {
-      id: '/components/breadcrumbs/activeCrumb';
-      path: '/breadcrumbs/activeCrumb';
-      fullPath: '/components/breadcrumbs/activeCrumb';
-      preLoaderRoute: typeof ComponentsBreadcrumbsActiveCrumbImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/breadcrumbs/activeCrumb'
+      path: '/breadcrumbs/activeCrumb'
+      fullPath: '/components/breadcrumbs/activeCrumb'
+      preLoaderRoute: typeof ComponentsBreadcrumbsActiveCrumbImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/breadcrumbs/icons': {
-      id: '/components/breadcrumbs/icons';
-      path: '/breadcrumbs/icons';
-      fullPath: '/components/breadcrumbs/icons';
-      preLoaderRoute: typeof ComponentsBreadcrumbsIconsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/breadcrumbs/icons'
+      path: '/breadcrumbs/icons'
+      fullPath: '/components/breadcrumbs/icons'
+      preLoaderRoute: typeof ComponentsBreadcrumbsIconsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/breadcrumbs/link': {
-      id: '/components/breadcrumbs/link';
-      path: '/breadcrumbs/link';
-      fullPath: '/components/breadcrumbs/link';
-      preLoaderRoute: typeof ComponentsBreadcrumbsLinkImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/breadcrumbs/link'
+      path: '/breadcrumbs/link'
+      fullPath: '/components/breadcrumbs/link'
+      preLoaderRoute: typeof ComponentsBreadcrumbsLinkImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/breadcrumbs/mobile': {
-      id: '/components/breadcrumbs/mobile';
-      path: '/breadcrumbs/mobile';
-      fullPath: '/components/breadcrumbs/mobile';
-      preLoaderRoute: typeof ComponentsBreadcrumbsMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/breadcrumbs/mobile'
+      path: '/breadcrumbs/mobile'
+      fullPath: '/components/breadcrumbs/mobile'
+      preLoaderRoute: typeof ComponentsBreadcrumbsMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/breadcrumbs/sizes': {
-      id: '/components/breadcrumbs/sizes';
-      path: '/breadcrumbs/sizes';
-      fullPath: '/components/breadcrumbs/sizes';
-      preLoaderRoute: typeof ComponentsBreadcrumbsSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/breadcrumbs/sizes'
+      path: '/breadcrumbs/sizes'
+      fullPath: '/components/breadcrumbs/sizes'
+      preLoaderRoute: typeof ComponentsBreadcrumbsSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/adaptive': {
-      id: '/components/button/adaptive';
-      path: '/button/adaptive';
-      fullPath: '/components/button/adaptive';
-      preLoaderRoute: typeof ComponentsButtonAdaptiveImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/button/adaptive'
+      path: '/button/adaptive'
+      fullPath: '/components/button/adaptive'
+      preLoaderRoute: typeof ComponentsButtonAdaptiveImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/buttonWithBadge': {
-      id: '/components/button/buttonWithBadge';
-      path: '/button/buttonWithBadge';
-      fullPath: '/components/button/buttonWithBadge';
-      preLoaderRoute: typeof ComponentsButtonButtonWithBadgeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/button/buttonWithBadge'
+      path: '/button/buttonWithBadge'
+      fullPath: '/components/button/buttonWithBadge'
+      preLoaderRoute: typeof ComponentsButtonButtonWithBadgeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/buttonWithIcon': {
-      id: '/components/button/buttonWithIcon';
-      path: '/button/buttonWithIcon';
-      fullPath: '/components/button/buttonWithIcon';
-      preLoaderRoute: typeof ComponentsButtonButtonWithIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/button/buttonWithIcon'
+      path: '/button/buttonWithIcon'
+      fullPath: '/components/button/buttonWithIcon'
+      preLoaderRoute: typeof ComponentsButtonButtonWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/dimension': {
-      id: '/components/button/dimension';
-      path: '/button/dimension';
-      fullPath: '/components/button/dimension';
-      preLoaderRoute: typeof ComponentsButtonDimensionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/button/dimension'
+      path: '/button/dimension'
+      fullPath: '/components/button/dimension'
+      preLoaderRoute: typeof ComponentsButtonDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/state': {
-      id: '/components/button/state';
-      path: '/button/state';
-      fullPath: '/components/button/state';
-      preLoaderRoute: typeof ComponentsButtonStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/button/state'
+      path: '/button/state'
+      fullPath: '/components/button/state'
+      preLoaderRoute: typeof ComponentsButtonStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/types': {
-      id: '/components/button/types';
-      path: '/button/types';
-      fullPath: '/components/button/types';
-      preLoaderRoute: typeof ComponentsButtonTypesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/button/types'
+      path: '/button/types'
+      fullPath: '/components/button/types'
+      preLoaderRoute: typeof ComponentsButtonTypesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/buttonGroup/sizes': {
-      id: '/components/buttonGroup/sizes';
-      path: '/buttonGroup/sizes';
-      fullPath: '/components/buttonGroup/sizes';
-      preLoaderRoute: typeof ComponentsButtonGroupSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/buttonGroup/sizes'
+      path: '/buttonGroup/sizes'
+      fullPath: '/components/buttonGroup/sizes'
+      preLoaderRoute: typeof ComponentsButtonGroupSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/buttonGroup/states': {
-      id: '/components/buttonGroup/states';
-      path: '/buttonGroup/states';
-      fullPath: '/components/buttonGroup/states';
-      preLoaderRoute: typeof ComponentsButtonGroupStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/buttonGroup/states'
+      path: '/buttonGroup/states'
+      fullPath: '/components/buttonGroup/states'
+      preLoaderRoute: typeof ComponentsButtonGroupStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/buttonGroup/styles': {
-      id: '/components/buttonGroup/styles';
-      path: '/buttonGroup/styles';
-      fullPath: '/components/buttonGroup/styles';
-      preLoaderRoute: typeof ComponentsButtonGroupStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/buttonGroup/styles'
+      path: '/buttonGroup/styles'
+      fullPath: '/components/buttonGroup/styles'
+      preLoaderRoute: typeof ComponentsButtonGroupStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/buttonGroup/variants': {
-      id: '/components/buttonGroup/variants';
-      path: '/buttonGroup/variants';
-      fullPath: '/components/buttonGroup/variants';
-      preLoaderRoute: typeof ComponentsButtonGroupVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/buttonGroup/variants'
+      path: '/buttonGroup/variants'
+      fullPath: '/components/buttonGroup/variants'
+      preLoaderRoute: typeof ComponentsButtonGroupVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/activeViewDate': {
-      id: '/components/calendar/activeViewDate';
-      path: '/calendar/activeViewDate';
-      fullPath: '/components/calendar/activeViewDate';
-      preLoaderRoute: typeof ComponentsCalendarActiveViewDateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/activeViewDate'
+      path: '/calendar/activeViewDate'
+      fullPath: '/components/calendar/activeViewDate'
+      preLoaderRoute: typeof ComponentsCalendarActiveViewDateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/callback': {
-      id: '/components/calendar/callback';
-      path: '/calendar/callback';
-      fullPath: '/components/calendar/callback';
-      preLoaderRoute: typeof ComponentsCalendarCallbackImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/callback'
+      path: '/calendar/callback'
+      fullPath: '/components/calendar/callback'
+      preLoaderRoute: typeof ComponentsCalendarCallbackImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/filterDate': {
-      id: '/components/calendar/filterDate';
-      path: '/calendar/filterDate';
-      fullPath: '/components/calendar/filterDate';
-      preLoaderRoute: typeof ComponentsCalendarFilterDateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/filterDate'
+      path: '/calendar/filterDate'
+      fullPath: '/components/calendar/filterDate'
+      preLoaderRoute: typeof ComponentsCalendarFilterDateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/maxDate': {
-      id: '/components/calendar/maxDate';
-      path: '/calendar/maxDate';
-      fullPath: '/components/calendar/maxDate';
-      preLoaderRoute: typeof ComponentsCalendarMaxDateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/maxDate'
+      path: '/calendar/maxDate'
+      fullPath: '/components/calendar/maxDate'
+      preLoaderRoute: typeof ComponentsCalendarMaxDateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/range': {
-      id: '/components/calendar/range';
-      path: '/calendar/range';
-      fullPath: '/components/calendar/range';
-      preLoaderRoute: typeof ComponentsCalendarRangeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/range'
+      path: '/calendar/range'
+      fullPath: '/components/calendar/range'
+      preLoaderRoute: typeof ComponentsCalendarRangeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/specialDates': {
-      id: '/components/calendar/specialDates';
-      path: '/calendar/specialDates';
-      fullPath: '/components/calendar/specialDates';
-      preLoaderRoute: typeof ComponentsCalendarSpecialDatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/specialDates'
+      path: '/calendar/specialDates'
+      fullPath: '/components/calendar/specialDates'
+      preLoaderRoute: typeof ComponentsCalendarSpecialDatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/viewDateAfterChoose': {
-      id: '/components/calendar/viewDateAfterChoose';
-      path: '/calendar/viewDateAfterChoose';
-      fullPath: '/components/calendar/viewDateAfterChoose';
-      preLoaderRoute: typeof ComponentsCalendarViewDateAfterChooseImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/viewDateAfterChoose'
+      path: '/calendar/viewDateAfterChoose'
+      fullPath: '/components/calendar/viewDateAfterChoose'
+      preLoaderRoute: typeof ComponentsCalendarViewDateAfterChooseImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/viewDateMonthsYears': {
-      id: '/components/calendar/viewDateMonthsYears';
-      path: '/calendar/viewDateMonthsYears';
-      fullPath: '/components/calendar/viewDateMonthsYears';
-      preLoaderRoute: typeof ComponentsCalendarViewDateMonthsYearsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/viewDateMonthsYears'
+      path: '/calendar/viewDateMonthsYears'
+      fullPath: '/components/calendar/viewDateMonthsYears'
+      preLoaderRoute: typeof ComponentsCalendarViewDateMonthsYearsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/arrows': {
-      id: '/components/carousel/arrows';
-      path: '/carousel/arrows';
-      fullPath: '/components/carousel/arrows';
-      preLoaderRoute: typeof ComponentsCarouselArrowsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/carousel/arrows'
+      path: '/carousel/arrows'
+      fullPath: '/components/carousel/arrows'
+      preLoaderRoute: typeof ComponentsCarouselArrowsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/carouselAutoChange': {
-      id: '/components/carousel/carouselAutoChange';
-      path: '/carousel/carouselAutoChange';
-      fullPath: '/components/carousel/carouselAutoChange';
-      preLoaderRoute: typeof ComponentsCarouselCarouselAutoChangeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/carousel/carouselAutoChange'
+      path: '/carousel/carouselAutoChange'
+      fullPath: '/components/carousel/carouselAutoChange'
+      preLoaderRoute: typeof ComponentsCarouselCarouselAutoChangeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/sliderPosition': {
-      id: '/components/carousel/sliderPosition';
-      path: '/carousel/sliderPosition';
-      fullPath: '/components/carousel/sliderPosition';
-      preLoaderRoute: typeof ComponentsCarouselSliderPositionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/carousel/sliderPosition'
+      path: '/carousel/sliderPosition'
+      fullPath: '/components/carousel/sliderPosition'
+      preLoaderRoute: typeof ComponentsCarouselSliderPositionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carouselSlider/carouselSliderAutoChange': {
-      id: '/components/carouselSlider/carouselSliderAutoChange';
-      path: '/carouselSlider/carouselSliderAutoChange';
-      fullPath: '/components/carouselSlider/carouselSliderAutoChange';
-      preLoaderRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/carouselSlider/carouselSliderAutoChange'
+      path: '/carouselSlider/carouselSliderAutoChange'
+      fullPath: '/components/carouselSlider/carouselSliderAutoChange'
+      preLoaderRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carouselSlider/styles': {
-      id: '/components/carouselSlider/styles';
-      path: '/carouselSlider/styles';
-      fullPath: '/components/carouselSlider/styles';
-      preLoaderRoute: typeof ComponentsCarouselSliderStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/carouselSlider/styles'
+      path: '/carouselSlider/styles'
+      fullPath: '/components/carouselSlider/styles'
+      preLoaderRoute: typeof ComponentsCarouselSliderStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/additionalText': {
-      id: '/components/checkbox/additionalText';
-      path: '/checkbox/additionalText';
-      fullPath: '/components/checkbox/additionalText';
-      preLoaderRoute: typeof ComponentsCheckboxAdditionalTextImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/checkbox/additionalText'
+      path: '/checkbox/additionalText'
+      fullPath: '/components/checkbox/additionalText'
+      preLoaderRoute: typeof ComponentsCheckboxAdditionalTextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/compositeGroup': {
-      id: '/components/checkbox/compositeGroup';
-      path: '/checkbox/compositeGroup';
-      fullPath: '/components/checkbox/compositeGroup';
-      preLoaderRoute: typeof ComponentsCheckboxCompositeGroupImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/checkbox/compositeGroup'
+      path: '/checkbox/compositeGroup'
+      fullPath: '/components/checkbox/compositeGroup'
+      preLoaderRoute: typeof ComponentsCheckboxCompositeGroupImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/fieldSet': {
-      id: '/components/checkbox/fieldSet';
-      path: '/checkbox/fieldSet';
-      fullPath: '/components/checkbox/fieldSet';
-      preLoaderRoute: typeof ComponentsCheckboxFieldSetImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/checkbox/fieldSet'
+      path: '/checkbox/fieldSet'
+      fullPath: '/components/checkbox/fieldSet'
+      preLoaderRoute: typeof ComponentsCheckboxFieldSetImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/states': {
-      id: '/components/checkbox/states';
-      path: '/checkbox/states';
-      fullPath: '/components/checkbox/states';
-      preLoaderRoute: typeof ComponentsCheckboxStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/checkbox/states'
+      path: '/checkbox/states'
+      fullPath: '/components/checkbox/states'
+      preLoaderRoute: typeof ComponentsCheckboxStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/withInformer': {
-      id: '/components/checkbox/withInformer';
-      path: '/checkbox/withInformer';
-      fullPath: '/components/checkbox/withInformer';
-      preLoaderRoute: typeof ComponentsCheckboxWithInformerImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/checkbox/withInformer'
+      path: '/checkbox/withInformer'
+      fullPath: '/components/checkbox/withInformer'
+      preLoaderRoute: typeof ComponentsCheckboxWithInformerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/chipsClose': {
-      id: '/components/chips/chipsClose';
-      path: '/chips/chipsClose';
-      fullPath: '/components/chips/chipsClose';
-      preLoaderRoute: typeof ComponentsChipsChipsCloseImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/chipsClose'
+      path: '/chips/chipsClose'
+      fullPath: '/components/chips/chipsClose'
+      preLoaderRoute: typeof ComponentsChipsChipsCloseImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/multiSelect': {
-      id: '/components/chips/multiSelect';
-      path: '/chips/multiSelect';
-      fullPath: '/components/chips/multiSelect';
-      preLoaderRoute: typeof ComponentsChipsMultiSelectImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/multiSelect'
+      path: '/chips/multiSelect'
+      fullPath: '/components/chips/multiSelect'
+      preLoaderRoute: typeof ComponentsChipsMultiSelectImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/select': {
-      id: '/components/chips/select';
-      path: '/chips/select';
-      fullPath: '/components/chips/select';
-      preLoaderRoute: typeof ComponentsChipsSelectImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/select'
+      path: '/chips/select'
+      fullPath: '/components/chips/select'
+      preLoaderRoute: typeof ComponentsChipsSelectImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/sizes': {
-      id: '/components/chips/sizes';
-      path: '/chips/sizes';
-      fullPath: '/components/chips/sizes';
-      preLoaderRoute: typeof ComponentsChipsSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/sizes'
+      path: '/chips/sizes'
+      fullPath: '/components/chips/sizes'
+      preLoaderRoute: typeof ComponentsChipsSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/styles': {
-      id: '/components/chips/styles';
-      path: '/chips/styles';
-      fullPath: '/components/chips/styles';
-      preLoaderRoute: typeof ComponentsChipsStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/styles'
+      path: '/chips/styles'
+      fullPath: '/components/chips/styles'
+      preLoaderRoute: typeof ComponentsChipsStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/withBadge': {
-      id: '/components/chips/withBadge';
-      path: '/chips/withBadge';
-      fullPath: '/components/chips/withBadge';
-      preLoaderRoute: typeof ComponentsChipsWithBadgeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/withBadge'
+      path: '/chips/withBadge'
+      fullPath: '/components/chips/withBadge'
+      preLoaderRoute: typeof ComponentsChipsWithBadgeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/withIcon': {
-      id: '/components/chips/withIcon';
-      path: '/chips/withIcon';
-      fullPath: '/components/chips/withIcon';
-      preLoaderRoute: typeof ComponentsChipsWithIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/withIcon'
+      path: '/chips/withIcon'
+      fullPath: '/components/chips/withIcon'
+      preLoaderRoute: typeof ComponentsChipsWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/withTooltip': {
-      id: '/components/chips/withTooltip';
-      path: '/chips/withTooltip';
-      fullPath: '/components/chips/withTooltip';
-      preLoaderRoute: typeof ComponentsChipsWithTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/withTooltip'
+      path: '/chips/withTooltip'
+      fullPath: '/components/chips/withTooltip'
+      preLoaderRoute: typeof ComponentsChipsWithTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/adaptive': {
-      id: '/components/contentSwitcher/adaptive';
-      path: '/contentSwitcher/adaptive';
-      fullPath: '/components/contentSwitcher/adaptive';
-      preLoaderRoute: typeof ComponentsContentSwitcherAdaptiveImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/contentSwitcher/adaptive'
+      path: '/contentSwitcher/adaptive'
+      fullPath: '/components/contentSwitcher/adaptive'
+      preLoaderRoute: typeof ComponentsContentSwitcherAdaptiveImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/iconsOnly': {
-      id: '/components/contentSwitcher/iconsOnly';
-      path: '/contentSwitcher/iconsOnly';
-      fullPath: '/components/contentSwitcher/iconsOnly';
-      preLoaderRoute: typeof ComponentsContentSwitcherIconsOnlyImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/contentSwitcher/iconsOnly'
+      path: '/contentSwitcher/iconsOnly'
+      fullPath: '/components/contentSwitcher/iconsOnly'
+      preLoaderRoute: typeof ComponentsContentSwitcherIconsOnlyImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/sizes': {
-      id: '/components/contentSwitcher/sizes';
-      path: '/contentSwitcher/sizes';
-      fullPath: '/components/contentSwitcher/sizes';
-      preLoaderRoute: typeof ComponentsContentSwitcherSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/contentSwitcher/sizes'
+      path: '/contentSwitcher/sizes'
+      fullPath: '/components/contentSwitcher/sizes'
+      preLoaderRoute: typeof ComponentsContentSwitcherSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/styles': {
-      id: '/components/contentSwitcher/styles';
-      path: '/contentSwitcher/styles';
-      fullPath: '/components/contentSwitcher/styles';
-      preLoaderRoute: typeof ComponentsContentSwitcherStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/contentSwitcher/styles'
+      path: '/contentSwitcher/styles'
+      fullPath: '/components/contentSwitcher/styles'
+      preLoaderRoute: typeof ComponentsContentSwitcherStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/withBadge': {
-      id: '/components/contentSwitcher/withBadge';
-      path: '/contentSwitcher/withBadge';
-      fullPath: '/components/contentSwitcher/withBadge';
-      preLoaderRoute: typeof ComponentsContentSwitcherWithBadgeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/contentSwitcher/withBadge'
+      path: '/contentSwitcher/withBadge'
+      fullPath: '/components/contentSwitcher/withBadge'
+      preLoaderRoute: typeof ComponentsContentSwitcherWithBadgeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/withIcons': {
-      id: '/components/contentSwitcher/withIcons';
-      path: '/contentSwitcher/withIcons';
-      fullPath: '/components/contentSwitcher/withIcons';
-      preLoaderRoute: typeof ComponentsContentSwitcherWithIconsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/contentSwitcher/withIcons'
+      path: '/contentSwitcher/withIcons'
+      fullPath: '/components/contentSwitcher/withIcons'
+      preLoaderRoute: typeof ComponentsContentSwitcherWithIconsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/currencyInput/currencyInputField': {
-      id: '/components/currencyInput/currencyInputField';
-      path: '/currencyInput/currencyInputField';
-      fullPath: '/components/currencyInput/currencyInputField';
-      preLoaderRoute: typeof ComponentsCurrencyInputCurrencyInputFieldImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/currencyInput/currencyInputField'
+      path: '/currencyInput/currencyInputField'
+      fullPath: '/components/currencyInput/currencyInputField'
+      preLoaderRoute: typeof ComponentsCurrencyInputCurrencyInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/currencyInput/minMaxvalue': {
-      id: '/components/currencyInput/minMaxvalue';
-      path: '/currencyInput/minMaxvalue';
-      fullPath: '/components/currencyInput/minMaxvalue';
-      preLoaderRoute: typeof ComponentsCurrencyInputMinMaxvalueImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/currencyInput/minMaxvalue'
+      path: '/currencyInput/minMaxvalue'
+      fullPath: '/components/currencyInput/minMaxvalue'
+      preLoaderRoute: typeof ComponentsCurrencyInputMinMaxvalueImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/currencyInput/withPrefix': {
-      id: '/components/currencyInput/withPrefix';
-      path: '/currencyInput/withPrefix';
-      fullPath: '/components/currencyInput/withPrefix';
-      preLoaderRoute: typeof ComponentsCurrencyInputWithPrefixImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/currencyInput/withPrefix'
+      path: '/currencyInput/withPrefix'
+      fullPath: '/components/currencyInput/withPrefix'
+      preLoaderRoute: typeof ComponentsCurrencyInputWithPrefixImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/custom': {
-      id: '/components/dateInput/custom';
-      path: '/dateInput/custom';
-      fullPath: '/components/dateInput/custom';
-      preLoaderRoute: typeof ComponentsDateInputCustomImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/custom'
+      path: '/dateInput/custom'
+      fullPath: '/components/dateInput/custom'
+      preLoaderRoute: typeof ComponentsDateInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/dateField': {
-      id: '/components/dateInput/dateField';
-      path: '/dateInput/dateField';
-      fullPath: '/components/dateInput/dateField';
-      preLoaderRoute: typeof ComponentsDateInputDateFieldImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/dateField'
+      path: '/dateInput/dateField'
+      fullPath: '/components/dateInput/dateField'
+      preLoaderRoute: typeof ComponentsDateInputDateFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/dateFieldState': {
-      id: '/components/dateInput/dateFieldState';
-      path: '/dateInput/dateFieldState';
-      fullPath: '/components/dateInput/dateFieldState';
-      preLoaderRoute: typeof ComponentsDateInputDateFieldStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/dateFieldState'
+      path: '/dateInput/dateFieldState'
+      fullPath: '/components/dateInput/dateFieldState'
+      preLoaderRoute: typeof ComponentsDateInputDateFieldStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/range': {
-      id: '/components/dateInput/range';
-      path: '/dateInput/range';
-      fullPath: '/components/dateInput/range';
-      preLoaderRoute: typeof ComponentsDateInputRangeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/range'
+      path: '/dateInput/range'
+      fullPath: '/components/dateInput/range'
+      preLoaderRoute: typeof ComponentsDateInputRangeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/sizes': {
-      id: '/components/dateInput/sizes';
-      path: '/dateInput/sizes';
-      fullPath: '/components/dateInput/sizes';
-      preLoaderRoute: typeof ComponentsDateInputSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/sizes'
+      path: '/dateInput/sizes'
+      fullPath: '/components/dateInput/sizes'
+      preLoaderRoute: typeof ComponentsDateInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/specialDates': {
-      id: '/components/dateInput/specialDates';
-      path: '/dateInput/specialDates';
-      fullPath: '/components/dateInput/specialDates';
-      preLoaderRoute: typeof ComponentsDateInputSpecialDatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/specialDates'
+      path: '/dateInput/specialDates'
+      fullPath: '/components/dateInput/specialDates'
+      preLoaderRoute: typeof ComponentsDateInputSpecialDatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/state': {
-      id: '/components/dateInput/state';
-      path: '/dateInput/state';
-      fullPath: '/components/dateInput/state';
-      preLoaderRoute: typeof ComponentsDateInputStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/state'
+      path: '/dateInput/state'
+      fullPath: '/components/dateInput/state'
+      preLoaderRoute: typeof ComponentsDateInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/status': {
-      id: '/components/dateInput/status';
-      path: '/dateInput/status';
-      fullPath: '/components/dateInput/status';
-      preLoaderRoute: typeof ComponentsDateInputStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/status'
+      path: '/dateInput/status'
+      fullPath: '/components/dateInput/status'
+      preLoaderRoute: typeof ComponentsDateInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/variants': {
-      id: '/components/dateInput/variants';
-      path: '/dateInput/variants';
-      fullPath: '/components/dateInput/variants';
-      preLoaderRoute: typeof ComponentsDateInputVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/variants'
+      path: '/dateInput/variants'
+      fullPath: '/components/dateInput/variants'
+      preLoaderRoute: typeof ComponentsDateInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/withButton': {
-      id: '/components/dateInput/withButton';
-      path: '/dateInput/withButton';
-      fullPath: '/components/dateInput/withButton';
-      preLoaderRoute: typeof ComponentsDateInputWithButtonImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/withButton'
+      path: '/dateInput/withButton'
+      fullPath: '/components/dateInput/withButton'
+      preLoaderRoute: typeof ComponentsDateInputWithButtonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateTimeField/dimension': {
-      id: '/components/dateTimeField/dimension';
-      path: '/dateTimeField/dimension';
-      fullPath: '/components/dateTimeField/dimension';
-      preLoaderRoute: typeof ComponentsDateTimeFieldDimensionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateTimeField/dimension'
+      path: '/dateTimeField/dimension'
+      fullPath: '/components/dateTimeField/dimension'
+      preLoaderRoute: typeof ComponentsDateTimeFieldDimensionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateTimeField/displayInline': {
-      id: '/components/dateTimeField/displayInline';
-      path: '/dateTimeField/displayInline';
-      fullPath: '/components/dateTimeField/displayInline';
-      preLoaderRoute: typeof ComponentsDateTimeFieldDisplayInlineImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateTimeField/displayInline'
+      path: '/dateTimeField/displayInline'
+      fullPath: '/components/dateTimeField/displayInline'
+      preLoaderRoute: typeof ComponentsDateTimeFieldDisplayInlineImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateTimeField/extraText': {
-      id: '/components/dateTimeField/extraText';
-      path: '/dateTimeField/extraText';
-      fullPath: '/components/dateTimeField/extraText';
-      preLoaderRoute: typeof ComponentsDateTimeFieldExtraTextImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateTimeField/extraText'
+      path: '/dateTimeField/extraText'
+      fullPath: '/components/dateTimeField/extraText'
+      preLoaderRoute: typeof ComponentsDateTimeFieldExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateTimeField/status': {
-      id: '/components/dateTimeField/status';
-      path: '/dateTimeField/status';
-      fullPath: '/components/dateTimeField/status';
-      preLoaderRoute: typeof ComponentsDateTimeFieldStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateTimeField/status'
+      path: '/dateTimeField/status'
+      fullPath: '/components/dateTimeField/status'
+      preLoaderRoute: typeof ComponentsDateTimeFieldStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/length': {
-      id: '/components/divider/length';
-      path: '/divider/length';
-      fullPath: '/components/divider/length';
-      preLoaderRoute: typeof ComponentsDividerLengthImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/divider/length'
+      path: '/divider/length'
+      fullPath: '/components/divider/length'
+      preLoaderRoute: typeof ComponentsDividerLengthImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/style': {
-      id: '/components/divider/style';
-      path: '/divider/style';
-      fullPath: '/components/divider/style';
-      preLoaderRoute: typeof ComponentsDividerStyleImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/divider/style'
+      path: '/divider/style'
+      fullPath: '/components/divider/style'
+      preLoaderRoute: typeof ComponentsDividerStyleImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/thikness': {
-      id: '/components/divider/thikness';
-      path: '/divider/thikness';
-      fullPath: '/components/divider/thikness';
-      preLoaderRoute: typeof ComponentsDividerThiknessImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/divider/thikness'
+      path: '/divider/thikness'
+      fullPath: '/components/divider/thikness'
+      preLoaderRoute: typeof ComponentsDividerThiknessImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/type': {
-      id: '/components/divider/type';
-      path: '/divider/type';
-      fullPath: '/components/divider/type';
-      preLoaderRoute: typeof ComponentsDividerTypeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/divider/type'
+      path: '/divider/type'
+      fullPath: '/components/divider/type'
+      preLoaderRoute: typeof ComponentsDividerTypeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/customContent': {
-      id: '/components/drawer/customContent';
-      path: '/drawer/customContent';
-      fullPath: '/components/drawer/customContent';
-      preLoaderRoute: typeof ComponentsDrawerCustomContentImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/customContent'
+      path: '/drawer/customContent'
+      fullPath: '/components/drawer/customContent'
+      preLoaderRoute: typeof ComponentsDrawerCustomContentImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/mobile': {
-      id: '/components/drawer/mobile';
-      path: '/drawer/mobile';
-      fullPath: '/components/drawer/mobile';
-      preLoaderRoute: typeof ComponentsDrawerMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/mobile'
+      path: '/drawer/mobile'
+      fullPath: '/components/drawer/mobile'
+      preLoaderRoute: typeof ComponentsDrawerMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/nonClosable': {
-      id: '/components/drawer/nonClosable';
-      path: '/drawer/nonClosable';
-      fullPath: '/components/drawer/nonClosable';
-      preLoaderRoute: typeof ComponentsDrawerNonClosableImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/nonClosable'
+      path: '/drawer/nonClosable'
+      fullPath: '/components/drawer/nonClosable'
+      preLoaderRoute: typeof ComponentsDrawerNonClosableImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/position': {
-      id: '/components/drawer/position';
-      path: '/drawer/position';
-      fullPath: '/components/drawer/position';
-      preLoaderRoute: typeof ComponentsDrawerPositionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/position'
+      path: '/drawer/position'
+      fullPath: '/components/drawer/position'
+      preLoaderRoute: typeof ComponentsDrawerPositionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/width': {
-      id: '/components/drawer/width';
-      path: '/drawer/width';
-      fullPath: '/components/drawer/width';
-      preLoaderRoute: typeof ComponentsDrawerWidthImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/width'
+      path: '/drawer/width'
+      fullPath: '/components/drawer/width'
+      preLoaderRoute: typeof ComponentsDrawerWidthImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/withBackdrop': {
-      id: '/components/drawer/withBackdrop';
-      path: '/drawer/withBackdrop';
-      fullPath: '/components/drawer/withBackdrop';
-      preLoaderRoute: typeof ComponentsDrawerWithBackdropImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/withBackdrop'
+      path: '/drawer/withBackdrop'
+      fullPath: '/components/drawer/withBackdrop'
+      preLoaderRoute: typeof ComponentsDrawerWithBackdropImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/withoutBackdrop': {
-      id: '/components/drawer/withoutBackdrop';
-      path: '/drawer/withoutBackdrop';
-      fullPath: '/components/drawer/withoutBackdrop';
-      preLoaderRoute: typeof ComponentsDrawerWithoutBackdropImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/withoutBackdrop'
+      path: '/drawer/withoutBackdrop'
+      fullPath: '/components/drawer/withoutBackdrop'
+      preLoaderRoute: typeof ComponentsDrawerWithoutBackdropImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/customDropdownContainer': {
-      id: '/components/dropdown/customDropdownContainer';
-      path: '/dropdown/customDropdownContainer';
-      fullPath: '/components/dropdown/customDropdownContainer';
-      preLoaderRoute: typeof ComponentsDropdownCustomDropdownContainerImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/customDropdownContainer'
+      path: '/dropdown/customDropdownContainer'
+      fullPath: '/components/dropdown/customDropdownContainer'
+      preLoaderRoute: typeof ComponentsDropdownCustomDropdownContainerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/dropMenuControlled': {
-      id: '/components/dropdown/dropMenuControlled';
-      path: '/dropdown/dropMenuControlled';
-      fullPath: '/components/dropdown/dropMenuControlled';
-      preLoaderRoute: typeof ComponentsDropdownDropMenuControlledImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/dropMenuControlled'
+      path: '/dropdown/dropMenuControlled'
+      fullPath: '/components/dropdown/dropMenuControlled'
+      preLoaderRoute: typeof ComponentsDropdownDropMenuControlledImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/dropMenuUncontrolled': {
-      id: '/components/dropdown/dropMenuUncontrolled';
-      path: '/dropdown/dropMenuUncontrolled';
-      fullPath: '/components/dropdown/dropMenuUncontrolled';
-      preLoaderRoute: typeof ComponentsDropdownDropMenuUncontrolledImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/dropMenuUncontrolled'
+      path: '/dropdown/dropMenuUncontrolled'
+      fullPath: '/components/dropdown/dropMenuUncontrolled'
+      preLoaderRoute: typeof ComponentsDropdownDropMenuUncontrolledImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuActionSearch': {
-      id: '/components/dropdown/menuActionSearch';
-      path: '/dropdown/menuActionSearch';
-      fullPath: '/components/dropdown/menuActionSearch';
-      preLoaderRoute: typeof ComponentsDropdownMenuActionSearchImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuActionSearch'
+      path: '/dropdown/menuActionSearch'
+      fullPath: '/components/dropdown/menuActionSearch'
+      preLoaderRoute: typeof ComponentsDropdownMenuActionSearchImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuActionTwoButtons': {
-      id: '/components/dropdown/menuActionTwoButtons';
-      path: '/dropdown/menuActionTwoButtons';
-      fullPath: '/components/dropdown/menuActionTwoButtons';
-      preLoaderRoute: typeof ComponentsDropdownMenuActionTwoButtonsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuActionTwoButtons'
+      path: '/dropdown/menuActionTwoButtons'
+      fullPath: '/components/dropdown/menuActionTwoButtons'
+      preLoaderRoute: typeof ComponentsDropdownMenuActionTwoButtonsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuCategories': {
-      id: '/components/dropdown/menuCategories';
-      path: '/dropdown/menuCategories';
-      fullPath: '/components/dropdown/menuCategories';
-      preLoaderRoute: typeof ComponentsDropdownMenuCategoriesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuCategories'
+      path: '/dropdown/menuCategories'
+      fullPath: '/components/dropdown/menuCategories'
+      preLoaderRoute: typeof ComponentsDropdownMenuCategoriesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuCustomItems': {
-      id: '/components/dropdown/menuCustomItems';
-      path: '/dropdown/menuCustomItems';
-      fullPath: '/components/dropdown/menuCustomItems';
-      preLoaderRoute: typeof ComponentsDropdownMenuCustomItemsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuCustomItems'
+      path: '/dropdown/menuCustomItems'
+      fullPath: '/components/dropdown/menuCustomItems'
+      preLoaderRoute: typeof ComponentsDropdownMenuCustomItemsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuDimensions': {
-      id: '/components/dropdown/menuDimensions';
-      path: '/dropdown/menuDimensions';
-      fullPath: '/components/dropdown/menuDimensions';
-      preLoaderRoute: typeof ComponentsDropdownMenuDimensionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuDimensions'
+      path: '/dropdown/menuDimensions'
+      fullPath: '/components/dropdown/menuDimensions'
+      preLoaderRoute: typeof ComponentsDropdownMenuDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuLockCycleScroll': {
-      id: '/components/dropdown/menuLockCycleScroll';
-      path: '/dropdown/menuLockCycleScroll';
-      fullPath: '/components/dropdown/menuLockCycleScroll';
-      preLoaderRoute: typeof ComponentsDropdownMenuLockCycleScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuLockCycleScroll'
+      path: '/dropdown/menuLockCycleScroll'
+      fullPath: '/components/dropdown/menuLockCycleScroll'
+      preLoaderRoute: typeof ComponentsDropdownMenuLockCycleScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuManyItems': {
-      id: '/components/dropdown/menuManyItems';
-      path: '/dropdown/menuManyItems';
-      fullPath: '/components/dropdown/menuManyItems';
-      preLoaderRoute: typeof ComponentsDropdownMenuManyItemsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuManyItems'
+      path: '/dropdown/menuManyItems'
+      fullPath: '/components/dropdown/menuManyItems'
+      preLoaderRoute: typeof ComponentsDropdownMenuManyItemsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuMultiLevel': {
-      id: '/components/dropdown/menuMultiLevel';
-      path: '/dropdown/menuMultiLevel';
-      fullPath: '/components/dropdown/menuMultiLevel';
-      preLoaderRoute: typeof ComponentsDropdownMenuMultiLevelImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuMultiLevel'
+      path: '/dropdown/menuMultiLevel'
+      fullPath: '/components/dropdown/menuMultiLevel'
+      preLoaderRoute: typeof ComponentsDropdownMenuMultiLevelImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuMultiLine': {
-      id: '/components/dropdown/menuMultiLine';
-      path: '/dropdown/menuMultiLine';
-      fullPath: '/components/dropdown/menuMultiLine';
-      preLoaderRoute: typeof ComponentsDropdownMenuMultiLineImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuMultiLine'
+      path: '/dropdown/menuMultiLine'
+      fullPath: '/components/dropdown/menuMultiLine'
+      preLoaderRoute: typeof ComponentsDropdownMenuMultiLineImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuPreselect': {
-      id: '/components/dropdown/menuPreselect';
-      path: '/dropdown/menuPreselect';
-      fullPath: '/components/dropdown/menuPreselect';
-      preLoaderRoute: typeof ComponentsDropdownMenuPreselectImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuPreselect'
+      path: '/dropdown/menuPreselect'
+      fullPath: '/components/dropdown/menuPreselect'
+      preLoaderRoute: typeof ComponentsDropdownMenuPreselectImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuVirtualScroll': {
-      id: '/components/dropdown/menuVirtualScroll';
-      path: '/dropdown/menuVirtualScroll';
-      fullPath: '/components/dropdown/menuVirtualScroll';
-      preLoaderRoute: typeof ComponentsDropdownMenuVirtualScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuVirtualScroll'
+      path: '/dropdown/menuVirtualScroll'
+      fullPath: '/components/dropdown/menuVirtualScroll'
+      preLoaderRoute: typeof ComponentsDropdownMenuVirtualScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuWithAddTextAndIcons': {
-      id: '/components/dropdown/menuWithAddTextAndIcons';
-      path: '/dropdown/menuWithAddTextAndIcons';
-      fullPath: '/components/dropdown/menuWithAddTextAndIcons';
-      preLoaderRoute: typeof ComponentsDropdownMenuWithAddTextAndIconsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuWithAddTextAndIcons'
+      path: '/dropdown/menuWithAddTextAndIcons'
+      fullPath: '/components/dropdown/menuWithAddTextAndIcons'
+      preLoaderRoute: typeof ComponentsDropdownMenuWithAddTextAndIconsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuWithCheckbox': {
-      id: '/components/dropdown/menuWithCheckbox';
-      path: '/dropdown/menuWithCheckbox';
-      fullPath: '/components/dropdown/menuWithCheckbox';
-      preLoaderRoute: typeof ComponentsDropdownMenuWithCheckboxImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuWithCheckbox'
+      path: '/dropdown/menuWithCheckbox'
+      fullPath: '/components/dropdown/menuWithCheckbox'
+      preLoaderRoute: typeof ComponentsDropdownMenuWithCheckboxImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuWithCheckboxGroup': {
-      id: '/components/dropdown/menuWithCheckboxGroup';
-      path: '/dropdown/menuWithCheckboxGroup';
-      fullPath: '/components/dropdown/menuWithCheckboxGroup';
-      preLoaderRoute: typeof ComponentsDropdownMenuWithCheckboxGroupImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuWithCheckboxGroup'
+      path: '/dropdown/menuWithCheckboxGroup'
+      fullPath: '/components/dropdown/menuWithCheckboxGroup'
+      preLoaderRoute: typeof ComponentsDropdownMenuWithCheckboxGroupImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuWithIcons': {
-      id: '/components/dropdown/menuWithIcons';
-      path: '/dropdown/menuWithIcons';
-      fullPath: '/components/dropdown/menuWithIcons';
-      preLoaderRoute: typeof ComponentsDropdownMenuWithIconsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuWithIcons'
+      path: '/dropdown/menuWithIcons'
+      fullPath: '/components/dropdown/menuWithIcons'
+      preLoaderRoute: typeof ComponentsDropdownMenuWithIconsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuWithRadioButton': {
-      id: '/components/dropdown/menuWithRadioButton';
-      path: '/dropdown/menuWithRadioButton';
-      fullPath: '/components/dropdown/menuWithRadioButton';
-      preLoaderRoute: typeof ComponentsDropdownMenuWithRadioButtonImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuWithRadioButton'
+      path: '/dropdown/menuWithRadioButton'
+      fullPath: '/components/dropdown/menuWithRadioButton'
+      preLoaderRoute: typeof ComponentsDropdownMenuWithRadioButtonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/menuWithTooltip': {
-      id: '/components/dropdown/menuWithTooltip';
-      path: '/dropdown/menuWithTooltip';
-      fullPath: '/components/dropdown/menuWithTooltip';
-      preLoaderRoute: typeof ComponentsDropdownMenuWithTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/menuWithTooltip'
+      path: '/dropdown/menuWithTooltip'
+      fullPath: '/components/dropdown/menuWithTooltip'
+      preLoaderRoute: typeof ComponentsDropdownMenuWithTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/editMode/dimensions': {
-      id: '/components/editMode/dimensions';
-      path: '/editMode/dimensions';
-      fullPath: '/components/editMode/dimensions';
-      preLoaderRoute: typeof ComponentsEditModeDimensionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/editMode/dimensions'
+      path: '/editMode/dimensions'
+      fullPath: '/components/editMode/dimensions'
+      preLoaderRoute: typeof ComponentsEditModeDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/editMode/disablecopying': {
-      id: '/components/editMode/disablecopying';
-      path: '/editMode/disablecopying';
-      fullPath: '/components/editMode/disablecopying';
-      preLoaderRoute: typeof ComponentsEditModeDisablecopyingImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/editMode/disablecopying'
+      path: '/editMode/disablecopying'
+      fullPath: '/components/editMode/disablecopying'
+      preLoaderRoute: typeof ComponentsEditModeDisablecopyingImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/editMode/extratext': {
-      id: '/components/editMode/extratext';
-      path: '/editMode/extratext';
-      fullPath: '/components/editMode/extratext';
-      preLoaderRoute: typeof ComponentsEditModeExtratextImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/editMode/extratext'
+      path: '/editMode/extratext'
+      fullPath: '/components/editMode/extratext'
+      preLoaderRoute: typeof ComponentsEditModeExtratextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/editMode/multiline': {
-      id: '/components/editMode/multiline';
-      path: '/editMode/multiline';
-      fullPath: '/components/editMode/multiline';
-      preLoaderRoute: typeof ComponentsEditModeMultilineImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/editMode/multiline'
+      path: '/editMode/multiline'
+      fullPath: '/components/editMode/multiline'
+      preLoaderRoute: typeof ComponentsEditModeMultilineImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/editMode/status': {
-      id: '/components/editMode/status';
-      path: '/editMode/status';
-      fullPath: '/components/editMode/status';
-      preLoaderRoute: typeof ComponentsEditModeStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/editMode/status'
+      path: '/editMode/status'
+      fullPath: '/components/editMode/status'
+      preLoaderRoute: typeof ComponentsEditModeStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/editMode/tooltip': {
-      id: '/components/editMode/tooltip';
-      path: '/editMode/tooltip';
-      fullPath: '/components/editMode/tooltip';
-      preLoaderRoute: typeof ComponentsEditModeTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/editMode/tooltip'
+      path: '/editMode/tooltip'
+      fullPath: '/components/editMode/tooltip'
+      preLoaderRoute: typeof ComponentsEditModeTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/fileinput/customizing': {
-      id: '/components/fileinput/customizing';
-      path: '/fileinput/customizing';
-      fullPath: '/components/fileinput/customizing';
-      preLoaderRoute: typeof ComponentsFileinputCustomizingImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/fileinput/customizing'
+      path: '/fileinput/customizing'
+      fullPath: '/components/fileinput/customizing'
+      preLoaderRoute: typeof ComponentsFileinputCustomizingImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/fileinput/customizingFileType': {
-      id: '/components/fileinput/customizingFileType';
-      path: '/fileinput/customizingFileType';
-      fullPath: '/components/fileinput/customizingFileType';
-      preLoaderRoute: typeof ComponentsFileinputCustomizingFileTypeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/fileinput/customizingFileType'
+      path: '/fileinput/customizingFileType'
+      fullPath: '/components/fileinput/customizingFileType'
+      preLoaderRoute: typeof ComponentsFileinputCustomizingFileTypeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/fileinput/dimensions': {
-      id: '/components/fileinput/dimensions';
-      path: '/fileinput/dimensions';
-      fullPath: '/components/fileinput/dimensions';
-      preLoaderRoute: typeof ComponentsFileinputDimensionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/fileinput/dimensions'
+      path: '/fileinput/dimensions'
+      fullPath: '/components/fileinput/dimensions'
+      preLoaderRoute: typeof ComponentsFileinputDimensionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/fileinput/extratext': {
-      id: '/components/fileinput/extratext';
-      path: '/fileinput/extratext';
-      fullPath: '/components/fileinput/extratext';
-      preLoaderRoute: typeof ComponentsFileinputExtratextImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/fileinput/extratext'
+      path: '/fileinput/extratext'
+      fullPath: '/components/fileinput/extratext'
+      preLoaderRoute: typeof ComponentsFileinputExtratextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/fileinput/filestatus': {
-      id: '/components/fileinput/filestatus';
-      path: '/fileinput/filestatus';
-      fullPath: '/components/fileinput/filestatus';
-      preLoaderRoute: typeof ComponentsFileinputFilestatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/fileinput/filestatus'
+      path: '/fileinput/filestatus'
+      fullPath: '/components/fileinput/filestatus'
+      preLoaderRoute: typeof ComponentsFileinputFilestatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/fileinput/state': {
-      id: '/components/fileinput/state';
-      path: '/fileinput/state';
-      fullPath: '/components/fileinput/state';
-      preLoaderRoute: typeof ComponentsFileinputStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/fileinput/state'
+      path: '/fileinput/state'
+      fullPath: '/components/fileinput/state'
+      preLoaderRoute: typeof ComponentsFileinputStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/mobile': {
-      id: '/components/floatingButton/mobile';
-      path: '/floatingButton/mobile';
-      fullPath: '/components/floatingButton/mobile';
-      preLoaderRoute: typeof ComponentsFloatingButtonMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/floatingButton/mobile'
+      path: '/floatingButton/mobile'
+      fullPath: '/components/floatingButton/mobile'
+      preLoaderRoute: typeof ComponentsFloatingButtonMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/position': {
-      id: '/components/floatingButton/position';
-      path: '/floatingButton/position';
-      fullPath: '/components/floatingButton/position';
-      preLoaderRoute: typeof ComponentsFloatingButtonPositionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/floatingButton/position'
+      path: '/floatingButton/position'
+      fullPath: '/components/floatingButton/position'
+      preLoaderRoute: typeof ComponentsFloatingButtonPositionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/styles': {
-      id: '/components/floatingButton/styles';
-      path: '/floatingButton/styles';
-      fullPath: '/components/floatingButton/styles';
-      preLoaderRoute: typeof ComponentsFloatingButtonStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/floatingButton/styles'
+      path: '/floatingButton/styles'
+      fullPath: '/components/floatingButton/styles'
+      preLoaderRoute: typeof ComponentsFloatingButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/tooltip': {
-      id: '/components/floatingButton/tooltip';
-      path: '/floatingButton/tooltip';
-      fullPath: '/components/floatingButton/tooltip';
-      preLoaderRoute: typeof ComponentsFloatingButtonTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/floatingButton/tooltip'
+      path: '/floatingButton/tooltip'
+      fullPath: '/components/floatingButton/tooltip'
+      preLoaderRoute: typeof ComponentsFloatingButtonTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/withMenu': {
-      id: '/components/floatingButton/withMenu';
-      path: '/floatingButton/withMenu';
-      fullPath: '/components/floatingButton/withMenu';
-      preLoaderRoute: typeof ComponentsFloatingButtonWithMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/floatingButton/withMenu'
+      path: '/floatingButton/withMenu'
+      fullPath: '/components/floatingButton/withMenu'
+      preLoaderRoute: typeof ComponentsFloatingButtonWithMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/withMenuModes': {
-      id: '/components/floatingButton/withMenuModes';
-      path: '/floatingButton/withMenuModes';
-      fullPath: '/components/floatingButton/withMenuModes';
-      preLoaderRoute: typeof ComponentsFloatingButtonWithMenuModesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/floatingButton/withMenuModes'
+      path: '/floatingButton/withMenuModes'
+      fullPath: '/components/floatingButton/withMenuModes'
+      preLoaderRoute: typeof ComponentsFloatingButtonWithMenuModesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/globalSearch/sizes': {
-      id: '/components/globalSearch/sizes';
-      path: '/globalSearch/sizes';
-      fullPath: '/components/globalSearch/sizes';
-      preLoaderRoute: typeof ComponentsGlobalSearchSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/globalSearch/sizes'
+      path: '/globalSearch/sizes'
+      fullPath: '/components/globalSearch/sizes'
+      preLoaderRoute: typeof ComponentsGlobalSearchSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/globalSearch/variants': {
-      id: '/components/globalSearch/variants';
-      path: '/globalSearch/variants';
-      fullPath: '/components/globalSearch/variants';
-      preLoaderRoute: typeof ComponentsGlobalSearchVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/globalSearch/variants'
+      path: '/globalSearch/variants'
+      fullPath: '/components/globalSearch/variants'
+      preLoaderRoute: typeof ComponentsGlobalSearchVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/anchorCssMixin': {
-      id: '/components/hint/anchorCssMixin';
-      path: '/hint/anchorCssMixin';
-      fullPath: '/components/hint/anchorCssMixin';
-      preLoaderRoute: typeof ComponentsHintAnchorCssMixinImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/hint/anchorCssMixin'
+      path: '/hint/anchorCssMixin'
+      fullPath: '/components/hint/anchorCssMixin'
+      preLoaderRoute: typeof ComponentsHintAnchorCssMixinImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/className': {
-      id: '/components/hint/className';
-      path: '/hint/className';
-      fullPath: '/components/hint/className';
-      preLoaderRoute: typeof ComponentsHintClassNameImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/hint/className'
+      path: '/hint/className'
+      fullPath: '/components/hint/className'
+      preLoaderRoute: typeof ComponentsHintClassNameImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/position': {
-      id: '/components/hint/position';
-      path: '/hint/position';
-      fullPath: '/components/hint/position';
-      preLoaderRoute: typeof ComponentsHintPositionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/hint/position'
+      path: '/hint/position'
+      fullPath: '/components/hint/position'
+      preLoaderRoute: typeof ComponentsHintPositionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/scenario': {
-      id: '/components/hint/scenario';
-      path: '/hint/scenario';
-      fullPath: '/components/hint/scenario';
-      preLoaderRoute: typeof ComponentsHintScenarioImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/hint/scenario'
+      path: '/hint/scenario'
+      fullPath: '/components/hint/scenario'
+      preLoaderRoute: typeof ComponentsHintScenarioImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/sizes': {
-      id: '/components/hint/sizes';
-      path: '/hint/sizes';
-      fullPath: '/components/hint/sizes';
-      preLoaderRoute: typeof ComponentsHintSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/hint/sizes'
+      path: '/hint/sizes'
+      fullPath: '/components/hint/sizes'
+      preLoaderRoute: typeof ComponentsHintSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/variants': {
-      id: '/components/hint/variants';
-      path: '/hint/variants';
-      fullPath: '/components/hint/variants';
-      preLoaderRoute: typeof ComponentsHintVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/hint/variants'
+      path: '/hint/variants'
+      fullPath: '/components/hint/variants'
+      preLoaderRoute: typeof ComponentsHintVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButton/states': {
-      id: '/components/iconButton/states';
-      path: '/iconButton/states';
-      fullPath: '/components/iconButton/states';
-      preLoaderRoute: typeof ComponentsIconButtonStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconButton/states'
+      path: '/iconButton/states'
+      fullPath: '/components/iconButton/states'
+      preLoaderRoute: typeof ComponentsIconButtonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButton/styles': {
-      id: '/components/iconButton/styles';
-      path: '/iconButton/styles';
-      fullPath: '/components/iconButton/styles';
-      preLoaderRoute: typeof ComponentsIconButtonStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconButton/styles'
+      path: '/iconButton/styles'
+      fullPath: '/components/iconButton/styles'
+      preLoaderRoute: typeof ComponentsIconButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButtonGroup/sizes': {
-      id: '/components/iconButtonGroup/sizes';
-      path: '/iconButtonGroup/sizes';
-      fullPath: '/components/iconButtonGroup/sizes';
-      preLoaderRoute: typeof ComponentsIconButtonGroupSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconButtonGroup/sizes'
+      path: '/iconButtonGroup/sizes'
+      fullPath: '/components/iconButtonGroup/sizes'
+      preLoaderRoute: typeof ComponentsIconButtonGroupSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButtonGroup/states': {
-      id: '/components/iconButtonGroup/states';
-      path: '/iconButtonGroup/states';
-      fullPath: '/components/iconButtonGroup/states';
-      preLoaderRoute: typeof ComponentsIconButtonGroupStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconButtonGroup/states'
+      path: '/iconButtonGroup/states'
+      fullPath: '/components/iconButtonGroup/states'
+      preLoaderRoute: typeof ComponentsIconButtonGroupStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButtonGroup/tooltip': {
-      id: '/components/iconButtonGroup/tooltip';
-      path: '/iconButtonGroup/tooltip';
-      fullPath: '/components/iconButtonGroup/tooltip';
-      preLoaderRoute: typeof ComponentsIconButtonGroupTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconButtonGroup/tooltip'
+      path: '/iconButtonGroup/tooltip'
+      fullPath: '/components/iconButtonGroup/tooltip'
+      preLoaderRoute: typeof ComponentsIconButtonGroupTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconPlacement/sizes': {
-      id: '/components/iconPlacement/sizes';
-      path: '/iconPlacement/sizes';
-      fullPath: '/components/iconPlacement/sizes';
-      preLoaderRoute: typeof ComponentsIconPlacementSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconPlacement/sizes'
+      path: '/iconPlacement/sizes'
+      fullPath: '/components/iconPlacement/sizes'
+      preLoaderRoute: typeof ComponentsIconPlacementSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconPlacement/styles': {
-      id: '/components/iconPlacement/styles';
-      path: '/iconPlacement/styles';
-      fullPath: '/components/iconPlacement/styles';
-      preLoaderRoute: typeof ComponentsIconPlacementStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconPlacement/styles'
+      path: '/iconPlacement/styles'
+      fullPath: '/components/iconPlacement/styles'
+      preLoaderRoute: typeof ComponentsIconPlacementStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconPlacement/variants': {
-      id: '/components/iconPlacement/variants';
-      path: '/iconPlacement/variants';
-      fullPath: '/components/iconPlacement/variants';
-      preLoaderRoute: typeof ComponentsIconPlacementVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconPlacement/variants'
+      path: '/iconPlacement/variants'
+      fullPath: '/components/iconPlacement/variants'
+      preLoaderRoute: typeof ComponentsIconPlacementVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/errorOnLoad': {
-      id: '/components/imageViewer/errorOnLoad';
-      path: '/imageViewer/errorOnLoad';
-      fullPath: '/components/imageViewer/errorOnLoad';
-      preLoaderRoute: typeof ComponentsImageViewerErrorOnLoadImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/imageViewer/errorOnLoad'
+      path: '/imageViewer/errorOnLoad'
+      fullPath: '/components/imageViewer/errorOnLoad'
+      preLoaderRoute: typeof ComponentsImageViewerErrorOnLoadImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/imageMiniature': {
-      id: '/components/imageViewer/imageMiniature';
-      path: '/imageViewer/imageMiniature';
-      fullPath: '/components/imageViewer/imageMiniature';
-      preLoaderRoute: typeof ComponentsImageViewerImageMiniatureImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/imageViewer/imageMiniature'
+      path: '/imageViewer/imageMiniature'
+      fullPath: '/components/imageViewer/imageMiniature'
+      preLoaderRoute: typeof ComponentsImageViewerImageMiniatureImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/keyboardCommands': {
-      id: '/components/imageViewer/keyboardCommands';
-      path: '/imageViewer/keyboardCommands';
-      fullPath: '/components/imageViewer/keyboardCommands';
-      preLoaderRoute: typeof ComponentsImageViewerKeyboardCommandsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/imageViewer/keyboardCommands'
+      path: '/imageViewer/keyboardCommands'
+      fullPath: '/components/imageViewer/keyboardCommands'
+      preLoaderRoute: typeof ComponentsImageViewerKeyboardCommandsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/viewOptions': {
-      id: '/components/imageViewer/viewOptions';
-      path: '/imageViewer/viewOptions';
-      fullPath: '/components/imageViewer/viewOptions';
-      preLoaderRoute: typeof ComponentsImageViewerViewOptionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/imageViewer/viewOptions'
+      path: '/imageViewer/viewOptions'
+      fullPath: '/components/imageViewer/viewOptions'
+      preLoaderRoute: typeof ComponentsImageViewerViewOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/custom': {
-      id: '/components/inputEx/custom';
-      path: '/inputEx/custom';
-      fullPath: '/components/inputEx/custom';
-      preLoaderRoute: typeof ComponentsInputExCustomImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/inputEx/custom'
+      path: '/inputEx/custom'
+      fullPath: '/components/inputEx/custom'
+      preLoaderRoute: typeof ComponentsInputExCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/inputExField': {
-      id: '/components/inputEx/inputExField';
-      path: '/inputEx/inputExField';
-      fullPath: '/components/inputEx/inputExField';
-      preLoaderRoute: typeof ComponentsInputExInputExFieldImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/inputEx/inputExField'
+      path: '/inputEx/inputExField'
+      fullPath: '/components/inputEx/inputExField'
+      preLoaderRoute: typeof ComponentsInputExInputExFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/prefixSuffixSelect': {
-      id: '/components/inputEx/prefixSuffixSelect';
-      path: '/inputEx/prefixSuffixSelect';
-      fullPath: '/components/inputEx/prefixSuffixSelect';
-      preLoaderRoute: typeof ComponentsInputExPrefixSuffixSelectImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/inputEx/prefixSuffixSelect'
+      path: '/inputEx/prefixSuffixSelect'
+      fullPath: '/components/inputEx/prefixSuffixSelect'
+      preLoaderRoute: typeof ComponentsInputExPrefixSuffixSelectImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/sizes': {
-      id: '/components/inputEx/sizes';
-      path: '/inputEx/sizes';
-      fullPath: '/components/inputEx/sizes';
-      preLoaderRoute: typeof ComponentsInputExSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/inputEx/sizes'
+      path: '/inputEx/sizes'
+      fullPath: '/components/inputEx/sizes'
+      preLoaderRoute: typeof ComponentsInputExSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/state': {
-      id: '/components/inputEx/state';
-      path: '/inputEx/state';
-      fullPath: '/components/inputEx/state';
-      preLoaderRoute: typeof ComponentsInputExStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/inputEx/state'
+      path: '/inputEx/state'
+      fullPath: '/components/inputEx/state'
+      preLoaderRoute: typeof ComponentsInputExStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/status': {
-      id: '/components/inputEx/status';
-      path: '/inputEx/status';
-      fullPath: '/components/inputEx/status';
-      preLoaderRoute: typeof ComponentsInputExStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/inputEx/status'
+      path: '/inputEx/status'
+      fullPath: '/components/inputEx/status'
+      preLoaderRoute: typeof ComponentsInputExStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/link/asProp': {
-      id: '/components/link/asProp';
-      path: '/link/asProp';
-      fullPath: '/components/link/asProp';
-      preLoaderRoute: typeof ComponentsLinkAsPropImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/link/asProp'
+      path: '/link/asProp'
+      fullPath: '/components/link/asProp'
+      preLoaderRoute: typeof ComponentsLinkAsPropImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/link/cssMixin': {
-      id: '/components/link/cssMixin';
-      path: '/link/cssMixin';
-      fullPath: '/components/link/cssMixin';
-      preLoaderRoute: typeof ComponentsLinkCssMixinImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/link/cssMixin'
+      path: '/link/cssMixin'
+      fullPath: '/components/link/cssMixin'
+      preLoaderRoute: typeof ComponentsLinkCssMixinImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/link/styles': {
-      id: '/components/link/styles';
-      path: '/link/styles';
-      fullPath: '/components/link/styles';
-      preLoaderRoute: typeof ComponentsLinkStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/link/styles'
+      path: '/link/styles'
+      fullPath: '/components/link/styles'
+      preLoaderRoute: typeof ComponentsLinkStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/link/withIcon': {
-      id: '/components/link/withIcon';
-      path: '/link/withIcon';
-      fullPath: '/components/link/withIcon';
-      preLoaderRoute: typeof ComponentsLinkWithIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/link/withIcon'
+      path: '/link/withIcon'
+      fullPath: '/components/link/withIcon'
+      preLoaderRoute: typeof ComponentsLinkWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/list/customMarker': {
-      id: '/components/list/customMarker';
-      path: '/list/customMarker';
-      fullPath: '/components/list/customMarker';
-      preLoaderRoute: typeof ComponentsListCustomMarkerImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/list/customMarker'
+      path: '/list/customMarker'
+      fullPath: '/components/list/customMarker'
+      preLoaderRoute: typeof ComponentsListCustomMarkerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/list/markerColor': {
-      id: '/components/list/markerColor';
-      path: '/list/markerColor';
-      fullPath: '/components/list/markerColor';
-      preLoaderRoute: typeof ComponentsListMarkerColorImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/list/markerColor'
+      path: '/list/markerColor'
+      fullPath: '/components/list/markerColor'
+      preLoaderRoute: typeof ComponentsListMarkerColorImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/list/multiline': {
-      id: '/components/list/multiline';
-      path: '/list/multiline';
-      fullPath: '/components/list/multiline';
-      preLoaderRoute: typeof ComponentsListMultilineImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/list/multiline'
+      path: '/list/multiline'
+      fullPath: '/components/list/multiline'
+      preLoaderRoute: typeof ComponentsListMultilineImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/list/nested': {
-      id: '/components/list/nested';
-      path: '/list/nested';
-      fullPath: '/components/list/nested';
-      preLoaderRoute: typeof ComponentsListNestedImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/list/nested'
+      path: '/list/nested'
+      fullPath: '/components/list/nested'
+      preLoaderRoute: typeof ComponentsListNestedImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/list/orderedList': {
-      id: '/components/list/orderedList';
-      path: '/list/orderedList';
-      fullPath: '/components/list/orderedList';
-      preLoaderRoute: typeof ComponentsListOrderedListImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/list/orderedList'
+      path: '/list/orderedList'
+      fullPath: '/components/list/orderedList'
+      preLoaderRoute: typeof ComponentsListOrderedListImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/list/unorderedList': {
-      id: '/components/list/unorderedList';
-      path: '/list/unorderedList';
-      fullPath: '/components/list/unorderedList';
-      preLoaderRoute: typeof ComponentsListUnorderedListImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/list/unorderedList'
+      path: '/list/unorderedList'
+      fullPath: '/components/list/unorderedList'
+      preLoaderRoute: typeof ComponentsListUnorderedListImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/actions': {
-      id: '/components/menuButton/actions';
-      path: '/menuButton/actions';
-      fullPath: '/components/menuButton/actions';
-      preLoaderRoute: typeof ComponentsMenuButtonActionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/actions'
+      path: '/menuButton/actions'
+      fullPath: '/components/menuButton/actions'
+      preLoaderRoute: typeof ComponentsMenuButtonActionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/checkboxAndBottomPanel': {
-      id: '/components/menuButton/checkboxAndBottomPanel';
-      path: '/menuButton/checkboxAndBottomPanel';
-      fullPath: '/components/menuButton/checkboxAndBottomPanel';
-      preLoaderRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/checkboxAndBottomPanel'
+      path: '/menuButton/checkboxAndBottomPanel'
+      fullPath: '/components/menuButton/checkboxAndBottomPanel'
+      preLoaderRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/checkboxAndTopPanel': {
-      id: '/components/menuButton/checkboxAndTopPanel';
-      path: '/menuButton/checkboxAndTopPanel';
-      fullPath: '/components/menuButton/checkboxAndTopPanel';
-      preLoaderRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/checkboxAndTopPanel'
+      path: '/menuButton/checkboxAndTopPanel'
+      fullPath: '/components/menuButton/checkboxAndTopPanel'
+      preLoaderRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/multiLevelMenu': {
-      id: '/components/menuButton/multiLevelMenu';
-      path: '/menuButton/multiLevelMenu';
-      fullPath: '/components/menuButton/multiLevelMenu';
-      preLoaderRoute: typeof ComponentsMenuButtonMultiLevelMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/multiLevelMenu'
+      path: '/menuButton/multiLevelMenu'
+      fullPath: '/components/menuButton/multiLevelMenu'
+      preLoaderRoute: typeof ComponentsMenuButtonMultiLevelMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/states': {
-      id: '/components/menuButton/states';
-      path: '/menuButton/states';
-      fullPath: '/components/menuButton/states';
-      preLoaderRoute: typeof ComponentsMenuButtonStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/states'
+      path: '/menuButton/states'
+      fullPath: '/components/menuButton/states'
+      preLoaderRoute: typeof ComponentsMenuButtonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/styles': {
-      id: '/components/menuButton/styles';
-      path: '/menuButton/styles';
-      fullPath: '/components/menuButton/styles';
-      preLoaderRoute: typeof ComponentsMenuButtonStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/styles'
+      path: '/menuButton/styles'
+      fullPath: '/components/menuButton/styles'
+      preLoaderRoute: typeof ComponentsMenuButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/withIcon': {
-      id: '/components/menuButton/withIcon';
-      path: '/menuButton/withIcon';
-      fullPath: '/components/menuButton/withIcon';
-      preLoaderRoute: typeof ComponentsMenuButtonWithIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/withIcon'
+      path: '/menuButton/withIcon'
+      fullPath: '/components/menuButton/withIcon'
+      preLoaderRoute: typeof ComponentsMenuButtonWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/modal/closeIcon': {
-      id: '/components/modal/closeIcon';
-      path: '/modal/closeIcon';
-      fullPath: '/components/modal/closeIcon';
-      preLoaderRoute: typeof ComponentsModalCloseIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/modal/closeIcon'
+      path: '/modal/closeIcon'
+      fullPath: '/components/modal/closeIcon'
+      preLoaderRoute: typeof ComponentsModalCloseIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/modal/customOverlay': {
-      id: '/components/modal/customOverlay';
-      path: '/modal/customOverlay';
-      fullPath: '/components/modal/customOverlay';
-      preLoaderRoute: typeof ComponentsModalCustomOverlayImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/modal/customOverlay'
+      path: '/modal/customOverlay'
+      fullPath: '/components/modal/customOverlay'
+      preLoaderRoute: typeof ComponentsModalCustomOverlayImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/modal/scroll': {
-      id: '/components/modal/scroll';
-      path: '/modal/scroll';
-      fullPath: '/components/modal/scroll';
-      preLoaderRoute: typeof ComponentsModalScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/modal/scroll'
+      path: '/modal/scroll'
+      fullPath: '/components/modal/scroll'
+      preLoaderRoute: typeof ComponentsModalScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/modal/sizes': {
-      id: '/components/modal/sizes';
-      path: '/modal/sizes';
-      fullPath: '/components/modal/sizes';
-      preLoaderRoute: typeof ComponentsModalSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/modal/sizes'
+      path: '/modal/sizes'
+      fullPath: '/components/modal/sizes'
+      preLoaderRoute: typeof ComponentsModalSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/modal/statusIcons': {
-      id: '/components/modal/statusIcons';
-      path: '/modal/statusIcons';
-      fullPath: '/components/modal/statusIcons';
-      preLoaderRoute: typeof ComponentsModalStatusIconsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/modal/statusIcons'
+      path: '/modal/statusIcons'
+      fullPath: '/components/modal/statusIcons'
+      preLoaderRoute: typeof ComponentsModalStatusIconsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/modal/variants': {
-      id: '/components/modal/variants';
-      path: '/modal/variants';
-      fullPath: '/components/modal/variants';
-      preLoaderRoute: typeof ComponentsModalVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/modal/variants'
+      path: '/modal/variants'
+      fullPath: '/components/modal/variants'
+      preLoaderRoute: typeof ComponentsModalVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiButton/states': {
-      id: '/components/multiButton/states';
-      path: '/multiButton/states';
-      fullPath: '/components/multiButton/states';
-      preLoaderRoute: typeof ComponentsMultiButtonStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiButton/states'
+      path: '/multiButton/states'
+      fullPath: '/components/multiButton/states'
+      preLoaderRoute: typeof ComponentsMultiButtonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiButton/styles': {
-      id: '/components/multiButton/styles';
-      path: '/multiButton/styles';
-      fullPath: '/components/multiButton/styles';
-      preLoaderRoute: typeof ComponentsMultiButtonStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiButton/styles'
+      path: '/multiButton/styles'
+      fullPath: '/components/multiButton/styles'
+      preLoaderRoute: typeof ComponentsMultiButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiButton/withIcon': {
-      id: '/components/multiButton/withIcon';
-      path: '/multiButton/withIcon';
-      fullPath: '/components/multiButton/withIcon';
-      preLoaderRoute: typeof ComponentsMultiButtonWithIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiButton/withIcon'
+      path: '/multiButton/withIcon'
+      fullPath: '/components/multiButton/withIcon'
+      preLoaderRoute: typeof ComponentsMultiButtonWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiInput/size': {
-      id: '/components/multiInput/size';
-      path: '/multiInput/size';
-      fullPath: '/components/multiInput/size';
-      preLoaderRoute: typeof ComponentsMultiInputSizeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiInput/size'
+      path: '/multiInput/size'
+      fullPath: '/components/multiInput/size'
+      preLoaderRoute: typeof ComponentsMultiInputSizeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiInput/state': {
-      id: '/components/multiInput/state';
-      path: '/multiInput/state';
-      fullPath: '/components/multiInput/state';
-      preLoaderRoute: typeof ComponentsMultiInputStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiInput/state'
+      path: '/multiInput/state'
+      fullPath: '/components/multiInput/state'
+      preLoaderRoute: typeof ComponentsMultiInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiInput/status': {
-      id: '/components/multiInput/status';
-      path: '/multiInput/status';
-      fullPath: '/components/multiInput/status';
-      preLoaderRoute: typeof ComponentsMultiInputStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiInput/status'
+      path: '/multiInput/status'
+      fullPath: '/components/multiInput/status'
+      preLoaderRoute: typeof ComponentsMultiInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiInput/withOptions': {
-      id: '/components/multiInput/withOptions';
-      path: '/multiInput/withOptions';
-      fullPath: '/components/multiInput/withOptions';
-      preLoaderRoute: typeof ComponentsMultiInputWithOptionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiInput/withOptions'
+      path: '/multiInput/withOptions'
+      fullPath: '/components/multiInput/withOptions'
+      preLoaderRoute: typeof ComponentsMultiInputWithOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/notification/states': {
-      id: '/components/notification/states';
-      path: '/notification/states';
-      fullPath: '/components/notification/states';
-      preLoaderRoute: typeof ComponentsNotificationStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/notification/states'
+      path: '/notification/states'
+      fullPath: '/components/notification/states'
+      preLoaderRoute: typeof ComponentsNotificationStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/notification/styles': {
-      id: '/components/notification/styles';
-      path: '/notification/styles';
-      fullPath: '/components/notification/styles';
-      preLoaderRoute: typeof ComponentsNotificationStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/notification/styles'
+      path: '/notification/styles'
+      fullPath: '/components/notification/styles'
+      preLoaderRoute: typeof ComponentsNotificationStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/controlledInput': {
-      id: '/components/numberInput/controlledInput';
-      path: '/numberInput/controlledInput';
-      fullPath: '/components/numberInput/controlledInput';
-      preLoaderRoute: typeof ComponentsNumberInputControlledInputImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/controlledInput'
+      path: '/numberInput/controlledInput'
+      fullPath: '/components/numberInput/controlledInput'
+      preLoaderRoute: typeof ComponentsNumberInputControlledInputImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/custom': {
-      id: '/components/numberInput/custom';
-      path: '/numberInput/custom';
-      fullPath: '/components/numberInput/custom';
-      preLoaderRoute: typeof ComponentsNumberInputCustomImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/custom'
+      path: '/numberInput/custom'
+      fullPath: '/components/numberInput/custom'
+      preLoaderRoute: typeof ComponentsNumberInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/minMaxValue': {
-      id: '/components/numberInput/minMaxValue';
-      path: '/numberInput/minMaxValue';
-      fullPath: '/components/numberInput/minMaxValue';
-      preLoaderRoute: typeof ComponentsNumberInputMinMaxValueImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/minMaxValue'
+      path: '/numberInput/minMaxValue'
+      fullPath: '/components/numberInput/minMaxValue'
+      preLoaderRoute: typeof ComponentsNumberInputMinMaxValueImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/numberInputField': {
-      id: '/components/numberInput/numberInputField';
-      path: '/numberInput/numberInputField';
-      fullPath: '/components/numberInput/numberInputField';
-      preLoaderRoute: typeof ComponentsNumberInputNumberInputFieldImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/numberInputField'
+      path: '/numberInput/numberInputField'
+      fullPath: '/components/numberInput/numberInputField'
+      preLoaderRoute: typeof ComponentsNumberInputNumberInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/sizes': {
-      id: '/components/numberInput/sizes';
-      path: '/numberInput/sizes';
-      fullPath: '/components/numberInput/sizes';
-      preLoaderRoute: typeof ComponentsNumberInputSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/sizes'
+      path: '/numberInput/sizes'
+      fullPath: '/components/numberInput/sizes'
+      preLoaderRoute: typeof ComponentsNumberInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/spaces': {
-      id: '/components/numberInput/spaces';
-      path: '/numberInput/spaces';
-      fullPath: '/components/numberInput/spaces';
-      preLoaderRoute: typeof ComponentsNumberInputSpacesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/spaces'
+      path: '/numberInput/spaces'
+      fullPath: '/components/numberInput/spaces'
+      preLoaderRoute: typeof ComponentsNumberInputSpacesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/state': {
-      id: '/components/numberInput/state';
-      path: '/numberInput/state';
-      fullPath: '/components/numberInput/state';
-      preLoaderRoute: typeof ComponentsNumberInputStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/state'
+      path: '/numberInput/state'
+      fullPath: '/components/numberInput/state'
+      preLoaderRoute: typeof ComponentsNumberInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/status': {
-      id: '/components/numberInput/status';
-      path: '/numberInput/status';
-      fullPath: '/components/numberInput/status';
-      preLoaderRoute: typeof ComponentsNumberInputStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/status'
+      path: '/numberInput/status'
+      fullPath: '/components/numberInput/status'
+      preLoaderRoute: typeof ComponentsNumberInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/overflowMenu/multiLevel': {
-      id: '/components/overflowMenu/multiLevel';
-      path: '/overflowMenu/multiLevel';
-      fullPath: '/components/overflowMenu/multiLevel';
-      preLoaderRoute: typeof ComponentsOverflowMenuMultiLevelImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/overflowMenu/multiLevel'
+      path: '/overflowMenu/multiLevel'
+      fullPath: '/components/overflowMenu/multiLevel'
+      preLoaderRoute: typeof ComponentsOverflowMenuMultiLevelImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/overflowMenu/styles': {
-      id: '/components/overflowMenu/styles';
-      path: '/overflowMenu/styles';
-      fullPath: '/components/overflowMenu/styles';
-      preLoaderRoute: typeof ComponentsOverflowMenuStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/overflowMenu/styles'
+      path: '/overflowMenu/styles'
+      fullPath: '/components/overflowMenu/styles'
+      preLoaderRoute: typeof ComponentsOverflowMenuStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationOne/sizes': {
-      id: '/components/paginationOne/sizes';
-      path: '/paginationOne/sizes';
-      fullPath: '/components/paginationOne/sizes';
-      preLoaderRoute: typeof ComponentsPaginationOneSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationOne/sizes'
+      path: '/paginationOne/sizes'
+      fullPath: '/components/paginationOne/sizes'
+      preLoaderRoute: typeof ComponentsPaginationOneSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationOne/states': {
-      id: '/components/paginationOne/states';
-      path: '/paginationOne/states';
-      fullPath: '/components/paginationOne/states';
-      preLoaderRoute: typeof ComponentsPaginationOneStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationOne/states'
+      path: '/paginationOne/states'
+      fullPath: '/components/paginationOne/states'
+      preLoaderRoute: typeof ComponentsPaginationOneStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationOne/types': {
-      id: '/components/paginationOne/types';
-      path: '/paginationOne/types';
-      fullPath: '/components/paginationOne/types';
-      preLoaderRoute: typeof ComponentsPaginationOneTypesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationOne/types'
+      path: '/paginationOne/types'
+      fullPath: '/components/paginationOne/types'
+      preLoaderRoute: typeof ComponentsPaginationOneTypesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationOne/withInput': {
-      id: '/components/paginationOne/withInput';
-      path: '/paginationOne/withInput';
-      fullPath: '/components/paginationOne/withInput';
-      preLoaderRoute: typeof ComponentsPaginationOneWithInputImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationOne/withInput'
+      path: '/paginationOne/withInput'
+      fullPath: '/components/paginationOne/withInput'
+      preLoaderRoute: typeof ComponentsPaginationOneWithInputImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationTwo/entries': {
-      id: '/components/paginationTwo/entries';
-      path: '/paginationTwo/entries';
-      fullPath: '/components/paginationTwo/entries';
-      preLoaderRoute: typeof ComponentsPaginationTwoEntriesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationTwo/entries'
+      path: '/paginationTwo/entries'
+      fullPath: '/components/paginationTwo/entries'
+      preLoaderRoute: typeof ComponentsPaginationTwoEntriesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationTwo/mobile': {
-      id: '/components/paginationTwo/mobile';
-      path: '/paginationTwo/mobile';
-      fullPath: '/components/paginationTwo/mobile';
-      preLoaderRoute: typeof ComponentsPaginationTwoMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationTwo/mobile'
+      path: '/paginationTwo/mobile'
+      fullPath: '/components/paginationTwo/mobile'
+      preLoaderRoute: typeof ComponentsPaginationTwoMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationTwo/pages': {
-      id: '/components/paginationTwo/pages';
-      path: '/paginationTwo/pages';
-      fullPath: '/components/paginationTwo/pages';
-      preLoaderRoute: typeof ComponentsPaginationTwoPagesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationTwo/pages'
+      path: '/paginationTwo/pages'
+      fullPath: '/components/paginationTwo/pages'
+      preLoaderRoute: typeof ComponentsPaginationTwoPagesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationTwo/state': {
-      id: '/components/paginationTwo/state';
-      path: '/paginationTwo/state';
-      fullPath: '/components/paginationTwo/state';
-      preLoaderRoute: typeof ComponentsPaginationTwoStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationTwo/state'
+      path: '/paginationTwo/state'
+      fullPath: '/components/paginationTwo/state'
+      preLoaderRoute: typeof ComponentsPaginationTwoStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationTwo/withInput': {
-      id: '/components/paginationTwo/withInput';
-      path: '/paginationTwo/withInput';
-      fullPath: '/components/paginationTwo/withInput';
-      preLoaderRoute: typeof ComponentsPaginationTwoWithInputImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationTwo/withInput'
+      path: '/paginationTwo/withInput'
+      fullPath: '/components/paginationTwo/withInput'
+      preLoaderRoute: typeof ComponentsPaginationTwoWithInputImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/phoneNumberInputField': {
-      id: '/components/phoneNumberInput/phoneNumberInputField';
-      path: '/phoneNumberInput/phoneNumberInputField';
-      fullPath: '/components/phoneNumberInput/phoneNumberInputField';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputPhoneNumberInputFieldImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/phoneNumberInputField'
+      path: '/phoneNumberInput/phoneNumberInputField'
+      fullPath: '/components/phoneNumberInput/phoneNumberInputField'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputPhoneNumberInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/selectedCountry': {
-      id: '/components/phoneNumberInput/selectedCountry';
-      path: '/phoneNumberInput/selectedCountry';
-      fullPath: '/components/phoneNumberInput/selectedCountry';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputSelectedCountryImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/selectedCountry'
+      path: '/phoneNumberInput/selectedCountry'
+      fullPath: '/components/phoneNumberInput/selectedCountry'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputSelectedCountryImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/sizes': {
-      id: '/components/phoneNumberInput/sizes';
-      path: '/phoneNumberInput/sizes';
-      fullPath: '/components/phoneNumberInput/sizes';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/sizes'
+      path: '/phoneNumberInput/sizes'
+      fullPath: '/components/phoneNumberInput/sizes'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/state': {
-      id: '/components/phoneNumberInput/state';
-      path: '/phoneNumberInput/state';
-      fullPath: '/components/phoneNumberInput/state';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/state'
+      path: '/phoneNumberInput/state'
+      fullPath: '/components/phoneNumberInput/state'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/status': {
-      id: '/components/phoneNumberInput/status';
-      path: '/phoneNumberInput/status';
-      fullPath: '/components/phoneNumberInput/status';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/status'
+      path: '/phoneNumberInput/status'
+      fullPath: '/components/phoneNumberInput/status'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/withFilter': {
-      id: '/components/phoneNumberInput/withFilter';
-      path: '/phoneNumberInput/withFilter';
-      fullPath: '/components/phoneNumberInput/withFilter';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputWithFilterImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/withFilter'
+      path: '/phoneNumberInput/withFilter'
+      fullPath: '/components/phoneNumberInput/withFilter'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputWithFilterImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/withPlaceholder': {
-      id: '/components/phoneNumberInput/withPlaceholder';
-      path: '/phoneNumberInput/withPlaceholder';
-      fullPath: '/components/phoneNumberInput/withPlaceholder';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputWithPlaceholderImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/withPlaceholder'
+      path: '/phoneNumberInput/withPlaceholder'
+      fullPath: '/components/phoneNumberInput/withPlaceholder'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputWithPlaceholderImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/menu': {
-      id: '/components/pills/menu';
-      path: '/pills/menu';
-      fullPath: '/components/pills/menu';
-      preLoaderRoute: typeof ComponentsPillsMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/pills/menu'
+      path: '/pills/menu'
+      fullPath: '/components/pills/menu'
+      preLoaderRoute: typeof ComponentsPillsMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/nested': {
-      id: '/components/pills/nested';
-      path: '/pills/nested';
-      fullPath: '/components/pills/nested';
-      preLoaderRoute: typeof ComponentsPillsNestedImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/pills/nested'
+      path: '/pills/nested'
+      fullPath: '/components/pills/nested'
+      preLoaderRoute: typeof ComponentsPillsNestedImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/tooltip': {
-      id: '/components/pills/tooltip';
-      path: '/pills/tooltip';
-      fullPath: '/components/pills/tooltip';
-      preLoaderRoute: typeof ComponentsPillsTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/pills/tooltip'
+      path: '/pills/tooltip'
+      fullPath: '/components/pills/tooltip'
+      preLoaderRoute: typeof ComponentsPillsTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressHeader/animation': {
-      id: '/components/progressHeader/animation';
-      path: '/progressHeader/animation';
-      fullPath: '/components/progressHeader/animation';
-      preLoaderRoute: typeof ComponentsProgressHeaderAnimationImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressHeader/animation'
+      path: '/progressHeader/animation'
+      fullPath: '/components/progressHeader/animation'
+      preLoaderRoute: typeof ComponentsProgressHeaderAnimationImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressHeader/styles': {
-      id: '/components/progressHeader/styles';
-      path: '/progressHeader/styles';
-      fullPath: '/components/progressHeader/styles';
-      preLoaderRoute: typeof ComponentsProgressHeaderStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressHeader/styles'
+      path: '/progressHeader/styles'
+      fullPath: '/components/progressHeader/styles'
+      preLoaderRoute: typeof ComponentsProgressHeaderStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressPage/animation': {
-      id: '/components/progressPage/animation';
-      path: '/progressPage/animation';
-      fullPath: '/components/progressPage/animation';
-      preLoaderRoute: typeof ComponentsProgressPageAnimationImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressPage/animation'
+      path: '/progressPage/animation'
+      fullPath: '/components/progressPage/animation'
+      preLoaderRoute: typeof ComponentsProgressPageAnimationImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressPage/styles': {
-      id: '/components/progressPage/styles';
-      path: '/progressPage/styles';
-      fullPath: '/components/progressPage/styles';
-      preLoaderRoute: typeof ComponentsProgressPageStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressPage/styles'
+      path: '/progressPage/styles'
+      fullPath: '/components/progressPage/styles'
+      preLoaderRoute: typeof ComponentsProgressPageStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressStepper/descriptionNextSteps': {
-      id: '/components/progressStepper/descriptionNextSteps';
-      path: '/progressStepper/descriptionNextSteps';
-      fullPath: '/components/progressStepper/descriptionNextSteps';
-      preLoaderRoute: typeof ComponentsProgressStepperDescriptionNextStepsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressStepper/descriptionNextSteps'
+      path: '/progressStepper/descriptionNextSteps'
+      fullPath: '/components/progressStepper/descriptionNextSteps'
+      preLoaderRoute: typeof ComponentsProgressStepperDescriptionNextStepsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressStepper/mobile': {
-      id: '/components/progressStepper/mobile';
-      path: '/progressStepper/mobile';
-      fullPath: '/components/progressStepper/mobile';
-      preLoaderRoute: typeof ComponentsProgressStepperMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressStepper/mobile'
+      path: '/progressStepper/mobile'
+      fullPath: '/components/progressStepper/mobile'
+      preLoaderRoute: typeof ComponentsProgressStepperMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressStepper/scenario': {
-      id: '/components/progressStepper/scenario';
-      path: '/progressStepper/scenario';
-      fullPath: '/components/progressStepper/scenario';
-      preLoaderRoute: typeof ComponentsProgressStepperScenarioImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressStepper/scenario'
+      path: '/progressStepper/scenario'
+      fullPath: '/components/progressStepper/scenario'
+      preLoaderRoute: typeof ComponentsProgressStepperScenarioImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressStepper/stepsNaming': {
-      id: '/components/progressStepper/stepsNaming';
-      path: '/progressStepper/stepsNaming';
-      fullPath: '/components/progressStepper/stepsNaming';
-      preLoaderRoute: typeof ComponentsProgressStepperStepsNamingImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressStepper/stepsNaming'
+      path: '/progressStepper/stepsNaming'
+      fullPath: '/components/progressStepper/stepsNaming'
+      preLoaderRoute: typeof ComponentsProgressStepperStepsNamingImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/extraText': {
-      id: '/components/radiobutton/extraText';
-      path: '/radiobutton/extraText';
-      fullPath: '/components/radiobutton/extraText';
-      preLoaderRoute: typeof ComponentsRadiobuttonExtraTextImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/radiobutton/extraText'
+      path: '/radiobutton/extraText'
+      fullPath: '/components/radiobutton/extraText'
+      preLoaderRoute: typeof ComponentsRadiobuttonExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/fieldSet': {
-      id: '/components/radiobutton/fieldSet';
-      path: '/radiobutton/fieldSet';
-      fullPath: '/components/radiobutton/fieldSet';
-      preLoaderRoute: typeof ComponentsRadiobuttonFieldSetImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/radiobutton/fieldSet'
+      path: '/radiobutton/fieldSet'
+      fullPath: '/components/radiobutton/fieldSet'
+      preLoaderRoute: typeof ComponentsRadiobuttonFieldSetImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/informer': {
-      id: '/components/radiobutton/informer';
-      path: '/radiobutton/informer';
-      fullPath: '/components/radiobutton/informer';
-      preLoaderRoute: typeof ComponentsRadiobuttonInformerImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/radiobutton/informer'
+      path: '/radiobutton/informer'
+      fullPath: '/components/radiobutton/informer'
+      preLoaderRoute: typeof ComponentsRadiobuttonInformerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/sizes': {
-      id: '/components/radiobutton/sizes';
-      path: '/radiobutton/sizes';
-      fullPath: '/components/radiobutton/sizes';
-      preLoaderRoute: typeof ComponentsRadiobuttonSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/radiobutton/sizes'
+      path: '/radiobutton/sizes'
+      fullPath: '/components/radiobutton/sizes'
+      preLoaderRoute: typeof ComponentsRadiobuttonSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/states': {
-      id: '/components/radiobutton/states';
-      path: '/radiobutton/states';
-      fullPath: '/components/radiobutton/states';
-      preLoaderRoute: typeof ComponentsRadiobuttonStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/radiobutton/states'
+      path: '/radiobutton/states'
+      fullPath: '/components/radiobutton/states'
+      preLoaderRoute: typeof ComponentsRadiobuttonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/scrollContainer/state': {
-      id: '/components/scrollContainer/state';
-      path: '/scrollContainer/state';
-      fullPath: '/components/scrollContainer/state';
-      preLoaderRoute: typeof ComponentsScrollContainerStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/scrollContainer/state'
+      path: '/scrollContainer/state'
+      fullPath: '/components/scrollContainer/state'
+      preLoaderRoute: typeof ComponentsScrollContainerStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/checkBoxMode': {
-      id: '/components/segmentedControl/checkBoxMode';
-      path: '/segmentedControl/checkBoxMode';
-      fullPath: '/components/segmentedControl/checkBoxMode';
-      preLoaderRoute: typeof ComponentsSegmentedControlCheckBoxModeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/segmentedControl/checkBoxMode'
+      path: '/segmentedControl/checkBoxMode'
+      fullPath: '/components/segmentedControl/checkBoxMode'
+      preLoaderRoute: typeof ComponentsSegmentedControlCheckBoxModeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/radioButtonMode': {
-      id: '/components/segmentedControl/radioButtonMode';
-      path: '/segmentedControl/radioButtonMode';
-      fullPath: '/components/segmentedControl/radioButtonMode';
-      preLoaderRoute: typeof ComponentsSegmentedControlRadioButtonModeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/segmentedControl/radioButtonMode'
+      path: '/segmentedControl/radioButtonMode'
+      fullPath: '/components/segmentedControl/radioButtonMode'
+      preLoaderRoute: typeof ComponentsSegmentedControlRadioButtonModeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/sizes': {
-      id: '/components/segmentedControl/sizes';
-      path: '/segmentedControl/sizes';
-      fullPath: '/components/segmentedControl/sizes';
-      preLoaderRoute: typeof ComponentsSegmentedControlSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/segmentedControl/sizes'
+      path: '/segmentedControl/sizes'
+      fullPath: '/components/segmentedControl/sizes'
+      preLoaderRoute: typeof ComponentsSegmentedControlSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/states': {
-      id: '/components/segmentedControl/states';
-      path: '/segmentedControl/states';
-      fullPath: '/components/segmentedControl/states';
-      preLoaderRoute: typeof ComponentsSegmentedControlStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/segmentedControl/states'
+      path: '/segmentedControl/states'
+      fullPath: '/components/segmentedControl/states'
+      preLoaderRoute: typeof ComponentsSegmentedControlStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/styles': {
-      id: '/components/segmentedControl/styles';
-      path: '/segmentedControl/styles';
-      fullPath: '/components/segmentedControl/styles';
-      preLoaderRoute: typeof ComponentsSegmentedControlStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/segmentedControl/styles'
+      path: '/segmentedControl/styles'
+      fullPath: '/components/segmentedControl/styles'
+      preLoaderRoute: typeof ComponentsSegmentedControlStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/variants': {
-      id: '/components/segmentedControl/variants';
-      path: '/segmentedControl/variants';
-      fullPath: '/components/segmentedControl/variants';
-      preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/segmentedControl/variants'
+      path: '/segmentedControl/variants'
+      fullPath: '/components/segmentedControl/variants'
+      preLoaderRoute: typeof ComponentsSegmentedControlVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/asyncSearch': {
-      id: '/components/select/asyncSearch';
-      path: '/select/asyncSearch';
-      fullPath: '/components/select/asyncSearch';
-      preLoaderRoute: typeof ComponentsSelectAsyncSearchImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/asyncSearch'
+      path: '/select/asyncSearch'
+      fullPath: '/components/select/asyncSearch'
+      preLoaderRoute: typeof ComponentsSelectAsyncSearchImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/customOptionsByRenderProps': {
-      id: '/components/select/customOptionsByRenderProps';
-      path: '/select/customOptionsByRenderProps';
-      fullPath: '/components/select/customOptionsByRenderProps';
-      preLoaderRoute: typeof ComponentsSelectCustomOptionsByRenderPropsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/customOptionsByRenderProps'
+      path: '/select/customOptionsByRenderProps'
+      fullPath: '/components/select/customOptionsByRenderProps'
+      preLoaderRoute: typeof ComponentsSelectCustomOptionsByRenderPropsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/customOptionsWithCustomFilter': {
-      id: '/components/select/customOptionsWithCustomFilter';
-      path: '/select/customOptionsWithCustomFilter';
-      fullPath: '/components/select/customOptionsWithCustomFilter';
-      preLoaderRoute: typeof ComponentsSelectCustomOptionsWithCustomFilterImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/customOptionsWithCustomFilter'
+      path: '/select/customOptionsWithCustomFilter'
+      fullPath: '/components/select/customOptionsWithCustomFilter'
+      preLoaderRoute: typeof ComponentsSelectCustomOptionsWithCustomFilterImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/customValues': {
-      id: '/components/select/customValues';
-      path: '/select/customValues';
-      fullPath: '/components/select/customValues';
-      preLoaderRoute: typeof ComponentsSelectCustomValuesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/customValues'
+      path: '/select/customValues'
+      fullPath: '/components/select/customValues'
+      preLoaderRoute: typeof ComponentsSelectCustomValuesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/externalFilter': {
-      id: '/components/select/externalFilter';
-      path: '/select/externalFilter';
-      fullPath: '/components/select/externalFilter';
-      preLoaderRoute: typeof ComponentsSelectExternalFilterImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/externalFilter'
+      path: '/select/externalFilter'
+      fullPath: '/components/select/externalFilter'
+      preLoaderRoute: typeof ComponentsSelectExternalFilterImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/forceHideOverflowTooltip': {
-      id: '/components/select/forceHideOverflowTooltip';
-      path: '/select/forceHideOverflowTooltip';
-      fullPath: '/components/select/forceHideOverflowTooltip';
-      preLoaderRoute: typeof ComponentsSelectForceHideOverflowTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/forceHideOverflowTooltip'
+      path: '/select/forceHideOverflowTooltip'
+      fullPath: '/components/select/forceHideOverflowTooltip'
+      preLoaderRoute: typeof ComponentsSelectForceHideOverflowTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/groupOfOptions': {
-      id: '/components/select/groupOfOptions';
-      path: '/select/groupOfOptions';
-      fullPath: '/components/select/groupOfOptions';
-      preLoaderRoute: typeof ComponentsSelectGroupOfOptionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/groupOfOptions'
+      path: '/select/groupOfOptions'
+      fullPath: '/components/select/groupOfOptions'
+      preLoaderRoute: typeof ComponentsSelectGroupOfOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiCustomDeleteChip': {
-      id: '/components/select/multiCustomDeleteChip';
-      path: '/select/multiCustomDeleteChip';
-      fullPath: '/components/select/multiCustomDeleteChip';
-      preLoaderRoute: typeof ComponentsSelectMultiCustomDeleteChipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiCustomDeleteChip'
+      path: '/select/multiCustomDeleteChip'
+      fullPath: '/components/select/multiCustomDeleteChip'
+      preLoaderRoute: typeof ComponentsSelectMultiCustomDeleteChipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiCustomOptionsByRenderChip': {
-      id: '/components/select/multiCustomOptionsByRenderChip';
-      path: '/select/multiCustomOptionsByRenderChip';
-      fullPath: '/components/select/multiCustomOptionsByRenderChip';
-      preLoaderRoute: typeof ComponentsSelectMultiCustomOptionsByRenderChipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiCustomOptionsByRenderChip'
+      path: '/select/multiCustomOptionsByRenderChip'
+      fullPath: '/components/select/multiCustomOptionsByRenderChip'
+      preLoaderRoute: typeof ComponentsSelectMultiCustomOptionsByRenderChipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiCustomValues': {
-      id: '/components/select/multiCustomValues';
-      path: '/select/multiCustomValues';
-      fullPath: '/components/select/multiCustomValues';
-      preLoaderRoute: typeof ComponentsSelectMultiCustomValuesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiCustomValues'
+      path: '/select/multiCustomValues'
+      fullPath: '/components/select/multiCustomValues'
+      preLoaderRoute: typeof ComponentsSelectMultiCustomValuesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiSelectApplyButton': {
-      id: '/components/select/multiSelectApplyButton';
-      path: '/select/multiSelectApplyButton';
-      fullPath: '/components/select/multiSelectApplyButton';
-      preLoaderRoute: typeof ComponentsSelectMultiSelectApplyButtonImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiSelectApplyButton'
+      path: '/select/multiSelectApplyButton'
+      fullPath: '/components/select/multiSelectApplyButton'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectApplyButtonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiSelectChooseAll': {
-      id: '/components/select/multiSelectChooseAll';
-      path: '/select/multiSelectChooseAll';
-      fullPath: '/components/select/multiSelectChooseAll';
-      preLoaderRoute: typeof ComponentsSelectMultiSelectChooseAllImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiSelectChooseAll'
+      path: '/select/multiSelectChooseAll'
+      fullPath: '/components/select/multiSelectChooseAll'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectChooseAllImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiSelectExpandedHeight': {
-      id: '/components/select/multiSelectExpandedHeight';
-      path: '/select/multiSelectExpandedHeight';
-      fullPath: '/components/select/multiSelectExpandedHeight';
-      preLoaderRoute: typeof ComponentsSelectMultiSelectExpandedHeightImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiSelectExpandedHeight'
+      path: '/select/multiSelectExpandedHeight'
+      fullPath: '/components/select/multiSelectExpandedHeight'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectExpandedHeightImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiSelectOnChange': {
-      id: '/components/select/multiSelectOnChange';
-      path: '/select/multiSelectOnChange';
-      fullPath: '/components/select/multiSelectOnChange';
-      preLoaderRoute: typeof ComponentsSelectMultiSelectOnChangeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiSelectOnChange'
+      path: '/select/multiSelectOnChange'
+      fullPath: '/components/select/multiSelectOnChange'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectOnChangeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/multiSelectWithSelectedOnTop': {
-      id: '/components/select/multiSelectWithSelectedOnTop';
-      path: '/select/multiSelectWithSelectedOnTop';
-      fullPath: '/components/select/multiSelectWithSelectedOnTop';
-      preLoaderRoute: typeof ComponentsSelectMultiSelectWithSelectedOnTopImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/multiSelectWithSelectedOnTop'
+      path: '/select/multiSelectWithSelectedOnTop'
+      fullPath: '/components/select/multiSelectWithSelectedOnTop'
+      preLoaderRoute: typeof ComponentsSelectMultiSelectWithSelectedOnTopImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/panelWithAddButton': {
-      id: '/components/select/panelWithAddButton';
-      path: '/select/panelWithAddButton';
-      fullPath: '/components/select/panelWithAddButton';
-      preLoaderRoute: typeof ComponentsSelectPanelWithAddButtonImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/panelWithAddButton'
+      path: '/select/panelWithAddButton'
+      fullPath: '/components/select/panelWithAddButton'
+      preLoaderRoute: typeof ComponentsSelectPanelWithAddButtonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/progressiveRenderOptionsScroll': {
-      id: '/components/select/progressiveRenderOptionsScroll';
-      path: '/select/progressiveRenderOptionsScroll';
-      fullPath: '/components/select/progressiveRenderOptionsScroll';
-      preLoaderRoute: typeof ComponentsSelectProgressiveRenderOptionsScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/progressiveRenderOptionsScroll'
+      path: '/select/progressiveRenderOptionsScroll'
+      fullPath: '/components/select/progressiveRenderOptionsScroll'
+      preLoaderRoute: typeof ComponentsSelectProgressiveRenderOptionsScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/searchWithClearInputAfterSelect': {
-      id: '/components/select/searchWithClearInputAfterSelect';
-      path: '/select/searchWithClearInputAfterSelect';
-      fullPath: '/components/select/searchWithClearInputAfterSelect';
-      preLoaderRoute: typeof ComponentsSelectSearchWithClearInputAfterSelectImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/searchWithClearInputAfterSelect'
+      path: '/select/searchWithClearInputAfterSelect'
+      fullPath: '/components/select/searchWithClearInputAfterSelect'
+      preLoaderRoute: typeof ComponentsSelectSearchWithClearInputAfterSelectImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/selectField': {
-      id: '/components/select/selectField';
-      path: '/select/selectField';
-      fullPath: '/components/select/selectField';
-      preLoaderRoute: typeof ComponentsSelectSelectFieldImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/selectField'
+      path: '/select/selectField'
+      fullPath: '/components/select/selectField'
+      preLoaderRoute: typeof ComponentsSelectSelectFieldImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/sizes': {
-      id: '/components/select/sizes';
-      path: '/select/sizes';
-      fullPath: '/components/select/sizes';
-      preLoaderRoute: typeof ComponentsSelectSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/sizes'
+      path: '/select/sizes'
+      fullPath: '/components/select/sizes'
+      preLoaderRoute: typeof ComponentsSelectSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/state': {
-      id: '/components/select/state';
-      path: '/select/state';
-      fullPath: '/components/select/state';
-      preLoaderRoute: typeof ComponentsSelectStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/state'
+      path: '/select/state'
+      fullPath: '/components/select/state'
+      preLoaderRoute: typeof ComponentsSelectStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/status': {
-      id: '/components/select/status';
-      path: '/select/status';
-      fullPath: '/components/select/status';
-      preLoaderRoute: typeof ComponentsSelectStatusImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/status'
+      path: '/select/status'
+      fullPath: '/components/select/status'
+      preLoaderRoute: typeof ComponentsSelectStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/uncontrolledSubmitSearch': {
-      id: '/components/select/uncontrolledSubmitSearch';
-      path: '/select/uncontrolledSubmitSearch';
-      fullPath: '/components/select/uncontrolledSubmitSearch';
-      preLoaderRoute: typeof ComponentsSelectUncontrolledSubmitSearchImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/uncontrolledSubmitSearch'
+      path: '/select/uncontrolledSubmitSearch'
+      fullPath: '/components/select/uncontrolledSubmitSearch'
+      preLoaderRoute: typeof ComponentsSelectUncontrolledSubmitSearchImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/virtualScroll': {
-      id: '/components/select/virtualScroll';
-      path: '/select/virtualScroll';
-      fullPath: '/components/select/virtualScroll';
-      preLoaderRoute: typeof ComponentsSelectVirtualScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/virtualScroll'
+      path: '/select/virtualScroll'
+      fullPath: '/components/select/virtualScroll'
+      preLoaderRoute: typeof ComponentsSelectVirtualScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/custom': {
-      id: '/components/slider/custom';
-      path: '/slider/custom';
-      fullPath: '/components/slider/custom';
-      preLoaderRoute: typeof ComponentsSliderCustomImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/custom'
+      path: '/slider/custom'
+      fullPath: '/components/slider/custom'
+      preLoaderRoute: typeof ComponentsSliderCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/options': {
-      id: '/components/slider/options';
-      path: '/slider/options';
-      fullPath: '/components/slider/options';
-      preLoaderRoute: typeof ComponentsSliderOptionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/options'
+      path: '/slider/options'
+      fullPath: '/components/slider/options'
+      preLoaderRoute: typeof ComponentsSliderOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/range': {
-      id: '/components/slider/range';
-      path: '/slider/range';
-      fullPath: '/components/slider/range';
-      preLoaderRoute: typeof ComponentsSliderRangeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/range'
+      path: '/slider/range'
+      fullPath: '/components/slider/range'
+      preLoaderRoute: typeof ComponentsSliderRangeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/rangeOptions': {
-      id: '/components/slider/rangeOptions';
-      path: '/slider/rangeOptions';
-      fullPath: '/components/slider/rangeOptions';
-      preLoaderRoute: typeof ComponentsSliderRangeOptionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/rangeOptions'
+      path: '/slider/rangeOptions'
+      fullPath: '/components/slider/rangeOptions'
+      preLoaderRoute: typeof ComponentsSliderRangeOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/rangeSizes': {
-      id: '/components/slider/rangeSizes';
-      path: '/slider/rangeSizes';
-      fullPath: '/components/slider/rangeSizes';
-      preLoaderRoute: typeof ComponentsSliderRangeSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/rangeSizes'
+      path: '/slider/rangeSizes'
+      fullPath: '/components/slider/rangeSizes'
+      preLoaderRoute: typeof ComponentsSliderRangeSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/rangeState': {
-      id: '/components/slider/rangeState';
-      path: '/slider/rangeState';
-      fullPath: '/components/slider/rangeState';
-      preLoaderRoute: typeof ComponentsSliderRangeStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/rangeState'
+      path: '/slider/rangeState'
+      fullPath: '/components/slider/rangeState'
+      preLoaderRoute: typeof ComponentsSliderRangeStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/sizes': {
-      id: '/components/slider/sizes';
-      path: '/slider/sizes';
-      fullPath: '/components/slider/sizes';
-      preLoaderRoute: typeof ComponentsSliderSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/sizes'
+      path: '/slider/sizes'
+      fullPath: '/components/slider/sizes'
+      preLoaderRoute: typeof ComponentsSliderSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/state': {
-      id: '/components/slider/state';
-      path: '/slider/state';
-      fullPath: '/components/slider/state';
-      preLoaderRoute: typeof ComponentsSliderStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/state'
+      path: '/slider/state'
+      fullPath: '/components/slider/state'
+      preLoaderRoute: typeof ComponentsSliderStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/sliderInput/controlled': {
-      id: '/components/sliderInput/controlled';
-      path: '/sliderInput/controlled';
-      fullPath: '/components/sliderInput/controlled';
-      preLoaderRoute: typeof ComponentsSliderInputControlledImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/sliderInput/controlled'
+      path: '/sliderInput/controlled'
+      fullPath: '/components/sliderInput/controlled'
+      preLoaderRoute: typeof ComponentsSliderInputControlledImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/sliderInput/custom': {
-      id: '/components/sliderInput/custom';
-      path: '/sliderInput/custom';
-      fullPath: '/components/sliderInput/custom';
-      preLoaderRoute: typeof ComponentsSliderInputCustomImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/sliderInput/custom'
+      path: '/sliderInput/custom'
+      fullPath: '/components/sliderInput/custom'
+      preLoaderRoute: typeof ComponentsSliderInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/sliderInput/sizes': {
-      id: '/components/sliderInput/sizes';
-      path: '/sliderInput/sizes';
-      fullPath: '/components/sliderInput/sizes';
-      preLoaderRoute: typeof ComponentsSliderInputSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/sliderInput/sizes'
+      path: '/sliderInput/sizes'
+      fullPath: '/components/sliderInput/sizes'
+      preLoaderRoute: typeof ComponentsSliderInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/sliderInput/states': {
-      id: '/components/sliderInput/states';
-      path: '/sliderInput/states';
-      fullPath: '/components/sliderInput/states';
-      preLoaderRoute: typeof ComponentsSliderInputStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/sliderInput/states'
+      path: '/sliderInput/states'
+      fullPath: '/components/sliderInput/states'
+      preLoaderRoute: typeof ComponentsSliderInputStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/sliderInput/variants': {
-      id: '/components/sliderInput/variants';
-      path: '/sliderInput/variants';
-      fullPath: '/components/sliderInput/variants';
-      preLoaderRoute: typeof ComponentsSliderInputVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/sliderInput/variants'
+      path: '/sliderInput/variants'
+      fullPath: '/components/sliderInput/variants'
+      preLoaderRoute: typeof ComponentsSliderInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/sizes': {
-      id: '/components/spinner/sizes';
-      path: '/spinner/sizes';
-      fullPath: '/components/spinner/sizes';
-      preLoaderRoute: typeof ComponentsSpinnerSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/spinner/sizes'
+      path: '/spinner/sizes'
+      fullPath: '/components/spinner/sizes'
+      preLoaderRoute: typeof ComponentsSpinnerSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/variants': {
-      id: '/components/spinner/variants';
-      path: '/spinner/variants';
-      fullPath: '/components/spinner/variants';
-      preLoaderRoute: typeof ComponentsSpinnerVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/spinner/variants'
+      path: '/spinner/variants'
+      fullPath: '/components/spinner/variants'
+      preLoaderRoute: typeof ComponentsSpinnerVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/withOtherComponents': {
-      id: '/components/spinner/withOtherComponents';
-      path: '/spinner/withOtherComponents';
-      fullPath: '/components/spinner/withOtherComponents';
-      preLoaderRoute: typeof ComponentsSpinnerWithOtherComponentsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/spinner/withOtherComponents'
+      path: '/spinner/withOtherComponents'
+      fullPath: '/components/spinner/withOtherComponents'
+      preLoaderRoute: typeof ComponentsSpinnerWithOtherComponentsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/sizes': {
-      id: '/components/statusIndicator/sizes';
-      path: '/statusIndicator/sizes';
-      fullPath: '/components/statusIndicator/sizes';
-      preLoaderRoute: typeof ComponentsStatusIndicatorSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/statusIndicator/sizes'
+      path: '/statusIndicator/sizes'
+      fullPath: '/components/statusIndicator/sizes'
+      preLoaderRoute: typeof ComponentsStatusIndicatorSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/states': {
-      id: '/components/statusIndicator/states';
-      path: '/statusIndicator/states';
-      fullPath: '/components/statusIndicator/states';
-      preLoaderRoute: typeof ComponentsStatusIndicatorStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/statusIndicator/states'
+      path: '/statusIndicator/states'
+      fullPath: '/components/statusIndicator/states'
+      preLoaderRoute: typeof ComponentsStatusIndicatorStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/variants': {
-      id: '/components/statusIndicator/variants';
-      path: '/statusIndicator/variants';
-      fullPath: '/components/statusIndicator/variants';
-      preLoaderRoute: typeof ComponentsStatusIndicatorVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/statusIndicator/variants'
+      path: '/statusIndicator/variants'
+      fullPath: '/components/statusIndicator/variants'
+      preLoaderRoute: typeof ComponentsStatusIndicatorVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/adaptive': {
-      id: '/components/stepper/adaptive';
-      path: '/stepper/adaptive';
-      fullPath: '/components/stepper/adaptive';
-      preLoaderRoute: typeof ComponentsStepperAdaptiveImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/adaptive'
+      path: '/stepper/adaptive'
+      fullPath: '/components/stepper/adaptive'
+      preLoaderRoute: typeof ComponentsStepperAdaptiveImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/custom': {
-      id: '/components/stepper/custom';
-      path: '/stepper/custom';
-      fullPath: '/components/stepper/custom';
-      preLoaderRoute: typeof ComponentsStepperCustomImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/custom'
+      path: '/stepper/custom'
+      fullPath: '/components/stepper/custom'
+      preLoaderRoute: typeof ComponentsStepperCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/mobile': {
-      id: '/components/stepper/mobile';
-      path: '/stepper/mobile';
-      fullPath: '/components/stepper/mobile';
-      preLoaderRoute: typeof ComponentsStepperMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/mobile'
+      path: '/stepper/mobile'
+      fullPath: '/components/stepper/mobile'
+      preLoaderRoute: typeof ComponentsStepperMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/options': {
-      id: '/components/stepper/options';
-      path: '/stepper/options';
-      fullPath: '/components/stepper/options';
-      preLoaderRoute: typeof ComponentsStepperOptionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/options'
+      path: '/stepper/options'
+      fullPath: '/components/stepper/options'
+      preLoaderRoute: typeof ComponentsStepperOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/state': {
-      id: '/components/stepper/state';
-      path: '/stepper/state';
-      fullPath: '/components/stepper/state';
-      preLoaderRoute: typeof ComponentsStepperStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/state'
+      path: '/stepper/state'
+      fullPath: '/components/stepper/state'
+      preLoaderRoute: typeof ComponentsStepperStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/variants': {
-      id: '/components/stepper/variants';
-      path: '/stepper/variants';
-      fullPath: '/components/stepper/variants';
-      preLoaderRoute: typeof ComponentsStepperVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/variants'
+      path: '/stepper/variants'
+      fullPath: '/components/stepper/variants'
+      preLoaderRoute: typeof ComponentsStepperVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/vertical': {
-      id: '/components/stepper/vertical';
-      path: '/stepper/vertical';
-      fullPath: '/components/stepper/vertical';
-      preLoaderRoute: typeof ComponentsStepperVerticalImport;
-      parentRoute: typeof ComponentsImport;
-    };
-    '/components/suggestInput/field': {
-      id: '/components/suggestInput/field';
-      path: '/suggestInput/field';
-      fullPath: '/components/suggestInput/field';
-      preLoaderRoute: typeof ComponentsSuggestInputFieldImport;
-      parentRoute: typeof ComponentsImport;
-    };
-    '/components/suggestInput/filter': {
-      id: '/components/suggestInput/filter';
-      path: '/suggestInput/filter';
-      fullPath: '/components/suggestInput/filter';
-      preLoaderRoute: typeof ComponentsSuggestInputFilterImport;
-      parentRoute: typeof ComponentsImport;
-    };
-    '/components/suggestInput/icon': {
-      id: '/components/suggestInput/icon';
-      path: '/suggestInput/icon';
-      fullPath: '/components/suggestInput/icon';
-      preLoaderRoute: typeof ComponentsSuggestInputIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
-    '/components/suggestInput/sizes': {
-      id: '/components/suggestInput/sizes';
-      path: '/suggestInput/sizes';
-      fullPath: '/components/suggestInput/sizes';
-      preLoaderRoute: typeof ComponentsSuggestInputSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
-    '/components/suggestInput/uncontrolled': {
-      id: '/components/suggestInput/uncontrolled';
-      path: '/suggestInput/uncontrolled';
-      fullPath: '/components/suggestInput/uncontrolled';
-      preLoaderRoute: typeof ComponentsSuggestInputUncontrolledImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/vertical'
+      path: '/stepper/vertical'
+      fullPath: '/components/stepper/vertical'
+      preLoaderRoute: typeof ComponentsStepperVerticalImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/t/stylesList': {
-      id: '/components/t/stylesList';
-      path: '/t/stylesList';
-      fullPath: '/components/t/stylesList';
-      preLoaderRoute: typeof ComponentsTStylesListImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/t/stylesList'
+      path: '/t/stylesList'
+      fullPath: '/components/t/stylesList'
+      preLoaderRoute: typeof ComponentsTStylesListImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/t/variants': {
-      id: '/components/t/variants';
-      path: '/t/variants';
-      fullPath: '/components/t/variants';
-      preLoaderRoute: typeof ComponentsTVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/t/variants'
+      path: '/t/variants'
+      fullPath: '/components/t/variants'
+      preLoaderRoute: typeof ComponentsTVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/addCardTab': {
-      id: '/components/tabMenu/addCardTab';
-      path: '/tabMenu/addCardTab';
-      fullPath: '/components/tabMenu/addCardTab';
-      preLoaderRoute: typeof ComponentsTabMenuAddCardTabImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/addCardTab'
+      path: '/tabMenu/addCardTab'
+      fullPath: '/components/tabMenu/addCardTab'
+      preLoaderRoute: typeof ComponentsTabMenuAddCardTabImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/addTab': {
-      id: '/components/tabMenu/addTab';
-      path: '/tabMenu/addTab';
-      fullPath: '/components/tabMenu/addTab';
-      preLoaderRoute: typeof ComponentsTabMenuAddTabImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/addTab'
+      path: '/tabMenu/addTab'
+      fullPath: '/components/tabMenu/addTab'
+      preLoaderRoute: typeof ComponentsTabMenuAddTabImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/addTabVertical': {
-      id: '/components/tabMenu/addTabVertical';
-      path: '/tabMenu/addTabVertical';
-      fullPath: '/components/tabMenu/addTabVertical';
-      preLoaderRoute: typeof ComponentsTabMenuAddTabVerticalImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/addTabVertical'
+      path: '/tabMenu/addTabVertical'
+      fullPath: '/components/tabMenu/addTabVertical'
+      preLoaderRoute: typeof ComponentsTabMenuAddTabVerticalImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/cardTabMenu': {
-      id: '/components/tabMenu/cardTabMenu';
-      path: '/tabMenu/cardTabMenu';
-      fullPath: '/components/tabMenu/cardTabMenu';
-      preLoaderRoute: typeof ComponentsTabMenuCardTabMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/cardTabMenu'
+      path: '/tabMenu/cardTabMenu'
+      fullPath: '/components/tabMenu/cardTabMenu'
+      preLoaderRoute: typeof ComponentsTabMenuCardTabMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/cardTabMenuWithoutBorder': {
-      id: '/components/tabMenu/cardTabMenuWithoutBorder';
-      path: '/tabMenu/cardTabMenuWithoutBorder';
-      fullPath: '/components/tabMenu/cardTabMenuWithoutBorder';
-      preLoaderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/cardTabMenuWithoutBorder'
+      path: '/tabMenu/cardTabMenuWithoutBorder'
+      fullPath: '/components/tabMenu/cardTabMenuWithoutBorder'
+      preLoaderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/filterTabs': {
-      id: '/components/tabMenu/filterTabs';
-      path: '/tabMenu/filterTabs';
-      fullPath: '/components/tabMenu/filterTabs';
-      preLoaderRoute: typeof ComponentsTabMenuFilterTabsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/filterTabs'
+      path: '/tabMenu/filterTabs'
+      fullPath: '/components/tabMenu/filterTabs'
+      preLoaderRoute: typeof ComponentsTabMenuFilterTabsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/filterTabsMobile': {
-      id: '/components/tabMenu/filterTabsMobile';
-      path: '/tabMenu/filterTabsMobile';
-      fullPath: '/components/tabMenu/filterTabsMobile';
-      preLoaderRoute: typeof ComponentsTabMenuFilterTabsMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/filterTabsMobile'
+      path: '/tabMenu/filterTabsMobile'
+      fullPath: '/components/tabMenu/filterTabsMobile'
+      preLoaderRoute: typeof ComponentsTabMenuFilterTabsMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/filterTabsSize': {
-      id: '/components/tabMenu/filterTabsSize';
-      path: '/tabMenu/filterTabsSize';
-      fullPath: '/components/tabMenu/filterTabsSize';
-      preLoaderRoute: typeof ComponentsTabMenuFilterTabsSizeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/filterTabsSize'
+      path: '/tabMenu/filterTabsSize'
+      fullPath: '/components/tabMenu/filterTabsSize'
+      preLoaderRoute: typeof ComponentsTabMenuFilterTabsSizeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/horizontalTabs': {
-      id: '/components/tabMenu/horizontalTabs';
-      path: '/tabMenu/horizontalTabs';
-      fullPath: '/components/tabMenu/horizontalTabs';
-      preLoaderRoute: typeof ComponentsTabMenuHorizontalTabsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/horizontalTabs'
+      path: '/tabMenu/horizontalTabs'
+      fullPath: '/components/tabMenu/horizontalTabs'
+      preLoaderRoute: typeof ComponentsTabMenuHorizontalTabsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/options': {
-      id: '/components/tabMenu/options';
-      path: '/tabMenu/options';
-      fullPath: '/components/tabMenu/options';
-      preLoaderRoute: typeof ComponentsTabMenuOptionsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/options'
+      path: '/tabMenu/options'
+      fullPath: '/components/tabMenu/options'
+      preLoaderRoute: typeof ComponentsTabMenuOptionsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/optionsVerticalTabs': {
-      id: '/components/tabMenu/optionsVerticalTabs';
-      path: '/tabMenu/optionsVerticalTabs';
-      fullPath: '/components/tabMenu/optionsVerticalTabs';
-      preLoaderRoute: typeof ComponentsTabMenuOptionsVerticalTabsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/optionsVerticalTabs'
+      path: '/tabMenu/optionsVerticalTabs'
+      fullPath: '/components/tabMenu/optionsVerticalTabs'
+      preLoaderRoute: typeof ComponentsTabMenuOptionsVerticalTabsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/size': {
-      id: '/components/tabMenu/size';
-      path: '/tabMenu/size';
-      fullPath: '/components/tabMenu/size';
-      preLoaderRoute: typeof ComponentsTabMenuSizeImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/size'
+      path: '/tabMenu/size'
+      fullPath: '/components/tabMenu/size'
+      preLoaderRoute: typeof ComponentsTabMenuSizeImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/sizeVerticalTabs': {
-      id: '/components/tabMenu/sizeVerticalTabs';
-      path: '/tabMenu/sizeVerticalTabs';
-      fullPath: '/components/tabMenu/sizeVerticalTabs';
-      preLoaderRoute: typeof ComponentsTabMenuSizeVerticalTabsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/sizeVerticalTabs'
+      path: '/tabMenu/sizeVerticalTabs'
+      fullPath: '/components/tabMenu/sizeVerticalTabs'
+      preLoaderRoute: typeof ComponentsTabMenuSizeVerticalTabsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/tabMenuIcon': {
-      id: '/components/tabMenu/tabMenuIcon';
-      path: '/tabMenu/tabMenuIcon';
-      fullPath: '/components/tabMenu/tabMenuIcon';
-      preLoaderRoute: typeof ComponentsTabMenuTabMenuIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/tabMenuIcon'
+      path: '/tabMenu/tabMenuIcon'
+      fullPath: '/components/tabMenu/tabMenuIcon'
+      preLoaderRoute: typeof ComponentsTabMenuTabMenuIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/tabMenuVertical': {
-      id: '/components/tabMenu/tabMenuVertical';
-      path: '/tabMenu/tabMenuVertical';
-      fullPath: '/components/tabMenu/tabMenuVertical';
-      preLoaderRoute: typeof ComponentsTabMenuTabMenuVerticalImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/tabMenuVertical'
+      path: '/tabMenu/tabMenuVertical'
+      fullPath: '/components/tabMenu/tabMenuVertical'
+      preLoaderRoute: typeof ComponentsTabMenuTabMenuVerticalImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/withOverflowMenu': {
-      id: '/components/tabMenu/withOverflowMenu';
-      path: '/tabMenu/withOverflowMenu';
-      fullPath: '/components/tabMenu/withOverflowMenu';
-      preLoaderRoute: typeof ComponentsTabMenuWithOverflowMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/withOverflowMenu'
+      path: '/tabMenu/withOverflowMenu'
+      fullPath: '/components/tabMenu/withOverflowMenu'
+      preLoaderRoute: typeof ComponentsTabMenuWithOverflowMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/withPadding': {
-      id: '/components/tabMenu/withPadding';
-      path: '/tabMenu/withPadding';
-      fullPath: '/components/tabMenu/withPadding';
-      preLoaderRoute: typeof ComponentsTabMenuWithPaddingImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/withPadding'
+      path: '/tabMenu/withPadding'
+      fullPath: '/components/tabMenu/withPadding'
+      preLoaderRoute: typeof ComponentsTabMenuWithPaddingImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/baseHTML': {
-      id: '/components/table/baseHTML';
-      path: '/table/baseHTML';
-      fullPath: '/components/table/baseHTML';
-      preLoaderRoute: typeof ComponentsTableBaseHTMLImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/baseHTML'
+      path: '/table/baseHTML'
+      fullPath: '/components/table/baseHTML'
+      preLoaderRoute: typeof ComponentsTableBaseHTMLImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/baseHTMLOverflowMenu': {
-      id: '/components/table/baseHTMLOverflowMenu';
-      path: '/table/baseHTMLOverflowMenu';
-      fullPath: '/components/table/baseHTMLOverflowMenu';
-      preLoaderRoute: typeof ComponentsTableBaseHTMLOverflowMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/baseHTMLOverflowMenu'
+      path: '/table/baseHTMLOverflowMenu'
+      fullPath: '/components/table/baseHTMLOverflowMenu'
+      preLoaderRoute: typeof ComponentsTableBaseHTMLOverflowMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/baseHTMLStickyShadow': {
-      id: '/components/table/baseHTMLStickyShadow';
-      path: '/table/baseHTMLStickyShadow';
-      fullPath: '/components/table/baseHTMLStickyShadow';
-      preLoaderRoute: typeof ComponentsTableBaseHTMLStickyShadowImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/baseHTMLStickyShadow'
+      path: '/table/baseHTMLStickyShadow'
+      fullPath: '/components/table/baseHTMLStickyShadow'
+      preLoaderRoute: typeof ComponentsTableBaseHTMLStickyShadowImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/checkbox': {
-      id: '/components/table/checkbox';
-      path: '/table/checkbox';
-      fullPath: '/components/table/checkbox';
-      preLoaderRoute: typeof ComponentsTableCheckboxImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/checkbox'
+      path: '/table/checkbox'
+      fullPath: '/components/table/checkbox'
+      preLoaderRoute: typeof ComponentsTableCheckboxImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/columnDragDrop': {
-      id: '/components/table/columnDragDrop';
-      path: '/table/columnDragDrop';
-      fullPath: '/components/table/columnDragDrop';
-      preLoaderRoute: typeof ComponentsTableColumnDragDropImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/columnDragDrop'
+      path: '/table/columnDragDrop'
+      fullPath: '/components/table/columnDragDrop'
+      preLoaderRoute: typeof ComponentsTableColumnDragDropImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/dynamicVirtualScroll': {
-      id: '/components/table/dynamicVirtualScroll';
-      path: '/table/dynamicVirtualScroll';
-      fullPath: '/components/table/dynamicVirtualScroll';
-      preLoaderRoute: typeof ComponentsTableDynamicVirtualScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/dynamicVirtualScroll'
+      path: '/table/dynamicVirtualScroll'
+      fullPath: '/components/table/dynamicVirtualScroll'
+      preLoaderRoute: typeof ComponentsTableDynamicVirtualScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/expand': {
-      id: '/components/table/expand';
-      path: '/table/expand';
-      fullPath: '/components/table/expand';
-      preLoaderRoute: typeof ComponentsTableExpandImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/expand'
+      path: '/table/expand'
+      fullPath: '/components/table/expand'
+      preLoaderRoute: typeof ComponentsTableExpandImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/extraText': {
-      id: '/components/table/extraText';
-      path: '/table/extraText';
-      fullPath: '/components/table/extraText';
-      preLoaderRoute: typeof ComponentsTableExtraTextImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/extraText'
+      path: '/table/extraText'
+      fullPath: '/components/table/extraText'
+      preLoaderRoute: typeof ComponentsTableExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/filter': {
-      id: '/components/table/filter';
-      path: '/table/filter';
-      fullPath: '/components/table/filter';
-      preLoaderRoute: typeof ComponentsTableFilterImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/filter'
+      path: '/table/filter'
+      fullPath: '/components/table/filter'
+      preLoaderRoute: typeof ComponentsTableFilterImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/fixedVirtualScroll': {
-      id: '/components/table/fixedVirtualScroll';
-      path: '/table/fixedVirtualScroll';
-      fullPath: '/components/table/fixedVirtualScroll';
-      preLoaderRoute: typeof ComponentsTableFixedVirtualScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/fixedVirtualScroll'
+      path: '/table/fixedVirtualScroll'
+      fullPath: '/components/table/fixedVirtualScroll'
+      preLoaderRoute: typeof ComponentsTableFixedVirtualScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/group': {
-      id: '/components/table/group';
-      path: '/table/group';
-      fullPath: '/components/table/group';
-      preLoaderRoute: typeof ComponentsTableGroupImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/group'
+      path: '/table/group'
+      fullPath: '/components/table/group'
+      preLoaderRoute: typeof ComponentsTableGroupImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScroll': {
-      id: '/components/table/loadOnScroll';
-      path: '/table/loadOnScroll';
-      fullPath: '/components/table/loadOnScroll';
-      preLoaderRoute: typeof ComponentsTableLoadOnScrollImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/loadOnScroll'
+      path: '/table/loadOnScroll'
+      fullPath: '/components/table/loadOnScroll'
+      preLoaderRoute: typeof ComponentsTableLoadOnScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScrollSkeleton': {
-      id: '/components/table/loadOnScrollSkeleton';
-      path: '/table/loadOnScrollSkeleton';
-      fullPath: '/components/table/loadOnScrollSkeleton';
-      preLoaderRoute: typeof ComponentsTableLoadOnScrollSkeletonImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/loadOnScrollSkeleton'
+      path: '/table/loadOnScrollSkeleton'
+      fullPath: '/components/table/loadOnScrollSkeleton'
+      preLoaderRoute: typeof ComponentsTableLoadOnScrollSkeletonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/loadOnScrollSpinner': {
-      id: '/components/table/loadOnScrollSpinner';
-      path: '/table/loadOnScrollSpinner';
-      fullPath: '/components/table/loadOnScrollSpinner';
-      preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/loadOnScrollSpinner'
+      path: '/table/loadOnScrollSpinner'
+      fullPath: '/components/table/loadOnScrollSpinner'
+      preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/multiLevelHeader': {
-      id: '/components/table/multiLevelHeader';
-      path: '/table/multiLevelHeader';
-      fullPath: '/components/table/multiLevelHeader';
-      preLoaderRoute: typeof ComponentsTableMultiLevelHeaderImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/multiLevelHeader'
+      path: '/table/multiLevelHeader'
+      fullPath: '/components/table/multiLevelHeader'
+      preLoaderRoute: typeof ComponentsTableMultiLevelHeaderImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/multiline': {
-      id: '/components/table/multiline';
-      path: '/table/multiline';
-      fullPath: '/components/table/multiline';
-      preLoaderRoute: typeof ComponentsTableMultilineImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/multiline'
+      path: '/table/multiline'
+      fullPath: '/components/table/multiline'
+      preLoaderRoute: typeof ComponentsTableMultilineImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/overflowMenu': {
-      id: '/components/table/overflowMenu';
-      path: '/table/overflowMenu';
-      fullPath: '/components/table/overflowMenu';
-      preLoaderRoute: typeof ComponentsTableOverflowMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/overflowMenu'
+      path: '/table/overflowMenu'
+      fullPath: '/components/table/overflowMenu'
+      preLoaderRoute: typeof ComponentsTableOverflowMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/renderCallback': {
-      id: '/components/table/renderCallback';
-      path: '/table/renderCallback';
-      fullPath: '/components/table/renderCallback';
-      preLoaderRoute: typeof ComponentsTableRenderCallbackImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/renderCallback'
+      path: '/table/renderCallback'
+      fullPath: '/components/table/renderCallback'
+      preLoaderRoute: typeof ComponentsTableRenderCallbackImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/rowDragDrop': {
-      id: '/components/table/rowDragDrop';
-      path: '/table/rowDragDrop';
-      fullPath: '/components/table/rowDragDrop';
-      preLoaderRoute: typeof ComponentsTableRowDragDropImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/rowDragDrop'
+      path: '/table/rowDragDrop'
+      fullPath: '/components/table/rowDragDrop'
+      preLoaderRoute: typeof ComponentsTableRowDragDropImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/rowState': {
-      id: '/components/table/rowState';
-      path: '/table/rowState';
-      fullPath: '/components/table/rowState';
-      preLoaderRoute: typeof ComponentsTableRowStateImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/rowState'
+      path: '/table/rowState'
+      fullPath: '/components/table/rowState'
+      preLoaderRoute: typeof ComponentsTableRowStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/scrollPositionByRef': {
-      id: '/components/table/scrollPositionByRef';
-      path: '/table/scrollPositionByRef';
-      fullPath: '/components/table/scrollPositionByRef';
-      preLoaderRoute: typeof ComponentsTableScrollPositionByRefImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/scrollPositionByRef'
+      path: '/table/scrollPositionByRef'
+      fullPath: '/components/table/scrollPositionByRef'
+      preLoaderRoute: typeof ComponentsTableScrollPositionByRefImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/sort': {
-      id: '/components/table/sort';
-      path: '/table/sort';
-      fullPath: '/components/table/sort';
-      preLoaderRoute: typeof ComponentsTableSortImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/sort'
+      path: '/table/sort'
+      fullPath: '/components/table/sort'
+      preLoaderRoute: typeof ComponentsTableSortImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/sticky': {
-      id: '/components/table/sticky';
-      path: '/table/sticky';
-      fullPath: '/components/table/sticky';
-      preLoaderRoute: typeof ComponentsTableStickyImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/sticky'
+      path: '/table/sticky'
+      fullPath: '/components/table/sticky'
+      preLoaderRoute: typeof ComponentsTableStickyImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/style': {
-      id: '/components/table/style';
-      path: '/table/style';
-      fullPath: '/components/table/style';
-      preLoaderRoute: typeof ComponentsTableStyleImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/style'
+      path: '/table/style'
+      fullPath: '/components/table/style'
+      preLoaderRoute: typeof ComponentsTableStyleImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/width': {
-      id: '/components/table/width';
-      path: '/table/width';
-      fullPath: '/components/table/width';
-      preLoaderRoute: typeof ComponentsTableWidthImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/width'
+      path: '/table/width'
+      fullPath: '/components/table/width'
+      preLoaderRoute: typeof ComponentsTableWidthImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/zebra': {
-      id: '/components/table/zebra';
-      path: '/table/zebra';
-      fullPath: '/components/table/zebra';
-      preLoaderRoute: typeof ComponentsTableZebraImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/zebra'
+      path: '/table/zebra'
+      fullPath: '/components/table/zebra'
+      preLoaderRoute: typeof ComponentsTableZebraImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tag/menu': {
-      id: '/components/tag/menu';
-      path: '/tag/menu';
-      fullPath: '/components/tag/menu';
-      preLoaderRoute: typeof ComponentsTagMenuImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tag/menu'
+      path: '/tag/menu'
+      fullPath: '/components/tag/menu'
+      preLoaderRoute: typeof ComponentsTagMenuImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tag/styles': {
-      id: '/components/tag/styles';
-      path: '/tag/styles';
-      fullPath: '/components/tag/styles';
-      preLoaderRoute: typeof ComponentsTagStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tag/styles'
+      path: '/tag/styles'
+      fullPath: '/components/tag/styles'
+      preLoaderRoute: typeof ComponentsTagStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tag/tags': {
-      id: '/components/tag/tags';
-      path: '/tag/tags';
-      fullPath: '/components/tag/tags';
-      preLoaderRoute: typeof ComponentsTagTagsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tag/tags'
+      path: '/tag/tags'
+      fullPath: '/components/tag/tags'
+      preLoaderRoute: typeof ComponentsTagTagsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tag/tooltip': {
-      id: '/components/tag/tooltip';
-      path: '/tag/tooltip';
-      fullPath: '/components/tag/tooltip';
-      preLoaderRoute: typeof ComponentsTagTooltipImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tag/tooltip'
+      path: '/tag/tooltip'
+      fullPath: '/components/tag/tooltip'
+      preLoaderRoute: typeof ComponentsTagTooltipImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tag/withIcon': {
-      id: '/components/tag/withIcon';
-      path: '/tag/withIcon';
-      fullPath: '/components/tag/withIcon';
-      preLoaderRoute: typeof ComponentsTagWithIconImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tag/withIcon'
+      path: '/tag/withIcon'
+      fullPath: '/components/tag/withIcon'
+      preLoaderRoute: typeof ComponentsTagWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textArea/sizes': {
-      id: '/components/textArea/sizes';
-      path: '/textArea/sizes';
-      fullPath: '/components/textArea/sizes';
-      preLoaderRoute: typeof ComponentsTextAreaSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textArea/sizes'
+      path: '/textArea/sizes'
+      fullPath: '/components/textArea/sizes'
+      preLoaderRoute: typeof ComponentsTextAreaSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textArea/states': {
-      id: '/components/textArea/states';
-      path: '/textArea/states';
-      fullPath: '/components/textArea/states';
-      preLoaderRoute: typeof ComponentsTextAreaStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textArea/states'
+      path: '/textArea/states'
+      fullPath: '/components/textArea/states'
+      preLoaderRoute: typeof ComponentsTextAreaStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textArea/statuses': {
-      id: '/components/textArea/statuses';
-      path: '/textArea/statuses';
-      fullPath: '/components/textArea/statuses';
-      preLoaderRoute: typeof ComponentsTextAreaStatusesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textArea/statuses'
+      path: '/textArea/statuses'
+      fullPath: '/components/textArea/statuses'
+      preLoaderRoute: typeof ComponentsTextAreaStatusesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textArea/variants': {
-      id: '/components/textArea/variants';
-      path: '/textArea/variants';
-      fullPath: '/components/textArea/variants';
-      preLoaderRoute: typeof ComponentsTextAreaVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textArea/variants'
+      path: '/textArea/variants'
+      fullPath: '/components/textArea/variants'
+      preLoaderRoute: typeof ComponentsTextAreaVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButton/states': {
-      id: '/components/textButton/states';
-      path: '/textButton/states';
-      fullPath: '/components/textButton/states';
-      preLoaderRoute: typeof ComponentsTextButtonStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textButton/states'
+      path: '/textButton/states'
+      fullPath: '/components/textButton/states'
+      preLoaderRoute: typeof ComponentsTextButtonStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButton/styles': {
-      id: '/components/textButton/styles';
-      path: '/textButton/styles';
-      fullPath: '/components/textButton/styles';
-      preLoaderRoute: typeof ComponentsTextButtonStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textButton/styles'
+      path: '/textButton/styles'
+      fullPath: '/components/textButton/styles'
+      preLoaderRoute: typeof ComponentsTextButtonStylesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButtonMenu/states': {
-      id: '/components/textButtonMenu/states';
-      path: '/textButtonMenu/states';
-      fullPath: '/components/textButtonMenu/states';
-      preLoaderRoute: typeof ComponentsTextButtonMenuStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textButtonMenu/states'
+      path: '/textButtonMenu/states'
+      fullPath: '/components/textButtonMenu/states'
+      preLoaderRoute: typeof ComponentsTextButtonMenuStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButtonMenu/styles': {
-      id: '/components/textButtonMenu/styles';
-      path: '/textButtonMenu/styles';
-      fullPath: '/components/textButtonMenu/styles';
-      preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textButtonMenu/styles'
+      path: '/textButtonMenu/styles'
+      fullPath: '/components/textButtonMenu/styles'
+      preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/custom': {
+      id: '/components/timeInput/custom'
+      path: '/timeInput/custom'
+      fullPath: '/components/timeInput/custom'
+      preLoaderRoute: typeof ComponentsTimeInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/sizes': {
+      id: '/components/timeInput/sizes'
+      path: '/timeInput/sizes'
+      fullPath: '/components/timeInput/sizes'
+      preLoaderRoute: typeof ComponentsTimeInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/state': {
+      id: '/components/timeInput/state'
+      path: '/timeInput/state'
+      fullPath: '/components/timeInput/state'
+      preLoaderRoute: typeof ComponentsTimeInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/status': {
+      id: '/components/timeInput/status'
+      path: '/timeInput/status'
+      fullPath: '/components/timeInput/status'
+      preLoaderRoute: typeof ComponentsTimeInputStatusImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toast/lineNotification': {
-      id: '/components/toast/lineNotification';
-      path: '/toast/lineNotification';
-      fullPath: '/components/toast/lineNotification';
-      preLoaderRoute: typeof ComponentsToastLineNotificationImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toast/lineNotification'
+      path: '/toast/lineNotification'
+      fullPath: '/components/toast/lineNotification'
+      preLoaderRoute: typeof ComponentsToastLineNotificationImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toast/position': {
-      id: '/components/toast/position';
-      path: '/toast/position';
-      fullPath: '/components/toast/position';
-      preLoaderRoute: typeof ComponentsToastPositionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toast/position'
+      path: '/toast/position'
+      fullPath: '/components/toast/position'
+      preLoaderRoute: typeof ComponentsToastPositionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toast/withProgressBar': {
-      id: '/components/toast/withProgressBar';
-      path: '/toast/withProgressBar';
-      fullPath: '/components/toast/withProgressBar';
-      preLoaderRoute: typeof ComponentsToastWithProgressBarImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toast/withProgressBar'
+      path: '/toast/withProgressBar'
+      fullPath: '/components/toast/withProgressBar'
+      preLoaderRoute: typeof ComponentsToastWithProgressBarImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toast/withProgressBarStopOnHover': {
-      id: '/components/toast/withProgressBarStopOnHover';
-      path: '/toast/withProgressBarStopOnHover';
-      fullPath: '/components/toast/withProgressBarStopOnHover';
-      preLoaderRoute: typeof ComponentsToastWithProgressBarStopOnHoverImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toast/withProgressBarStopOnHover'
+      path: '/toast/withProgressBarStopOnHover'
+      fullPath: '/components/toast/withProgressBarStopOnHover'
+      preLoaderRoute: typeof ComponentsToastWithProgressBarStopOnHoverImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/extraText': {
-      id: '/components/toggle/extraText';
-      path: '/toggle/extraText';
-      fullPath: '/components/toggle/extraText';
-      preLoaderRoute: typeof ComponentsToggleExtraTextImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toggle/extraText'
+      path: '/toggle/extraText'
+      fullPath: '/components/toggle/extraText'
+      preLoaderRoute: typeof ComponentsToggleExtraTextImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/labelPosition': {
-      id: '/components/toggle/labelPosition';
-      path: '/toggle/labelPosition';
-      fullPath: '/components/toggle/labelPosition';
-      preLoaderRoute: typeof ComponentsToggleLabelPositionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toggle/labelPosition'
+      path: '/toggle/labelPosition'
+      fullPath: '/components/toggle/labelPosition'
+      preLoaderRoute: typeof ComponentsToggleLabelPositionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/mobile': {
-      id: '/components/toggle/mobile';
-      path: '/toggle/mobile';
-      fullPath: '/components/toggle/mobile';
-      preLoaderRoute: typeof ComponentsToggleMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toggle/mobile'
+      path: '/toggle/mobile'
+      fullPath: '/components/toggle/mobile'
+      preLoaderRoute: typeof ComponentsToggleMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/sizes': {
-      id: '/components/toggle/sizes';
-      path: '/toggle/sizes';
-      fullPath: '/components/toggle/sizes';
-      preLoaderRoute: typeof ComponentsToggleSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toggle/sizes'
+      path: '/toggle/sizes'
+      fullPath: '/components/toggle/sizes'
+      preLoaderRoute: typeof ComponentsToggleSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/states': {
-      id: '/components/toggle/states';
-      path: '/toggle/states';
-      fullPath: '/components/toggle/states';
-      preLoaderRoute: typeof ComponentsToggleStatesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toggle/states'
+      path: '/toggle/states'
+      fullPath: '/components/toggle/states'
+      preLoaderRoute: typeof ComponentsToggleStatesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/hocBase': {
-      id: '/components/tooltip/hocBase';
-      path: '/tooltip/hocBase';
-      fullPath: '/components/tooltip/hocBase';
-      preLoaderRoute: typeof ComponentsTooltipHocBaseImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/hocBase'
+      path: '/tooltip/hocBase'
+      fullPath: '/components/tooltip/hocBase'
+      preLoaderRoute: typeof ComponentsTooltipHocBaseImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/hocClass': {
-      id: '/components/tooltip/hocClass';
-      path: '/tooltip/hocClass';
-      fullPath: '/components/tooltip/hocClass';
-      preLoaderRoute: typeof ComponentsTooltipHocClassImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/hocClass'
+      path: '/tooltip/hocClass'
+      fullPath: '/components/tooltip/hocClass'
+      preLoaderRoute: typeof ComponentsTooltipHocClassImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/hocFC': {
-      id: '/components/tooltip/hocFC';
-      path: '/tooltip/hocFC';
-      fullPath: '/components/tooltip/hocFC';
-      preLoaderRoute: typeof ComponentsTooltipHocFCImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/hocFC'
+      path: '/tooltip/hocFC'
+      fullPath: '/components/tooltip/hocFC'
+      preLoaderRoute: typeof ComponentsTooltipHocFCImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/hocRef': {
-      id: '/components/tooltip/hocRef';
-      path: '/tooltip/hocRef';
-      fullPath: '/components/tooltip/hocRef';
-      preLoaderRoute: typeof ComponentsTooltipHocRefImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/hocRef'
+      path: '/tooltip/hocRef'
+      fullPath: '/components/tooltip/hocRef'
+      preLoaderRoute: typeof ComponentsTooltipHocRefImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/hocRefSetter': {
-      id: '/components/tooltip/hocRefSetter';
-      path: '/tooltip/hocRefSetter';
-      fullPath: '/components/tooltip/hocRefSetter';
-      preLoaderRoute: typeof ComponentsTooltipHocRefSetterImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/hocRefSetter'
+      path: '/tooltip/hocRefSetter'
+      fullPath: '/components/tooltip/hocRefSetter'
+      preLoaderRoute: typeof ComponentsTooltipHocRefSetterImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/position': {
-      id: '/components/tooltip/position';
-      path: '/tooltip/position';
-      fullPath: '/components/tooltip/position';
-      preLoaderRoute: typeof ComponentsTooltipPositionImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/position'
+      path: '/tooltip/position'
+      fullPath: '/components/tooltip/position'
+      preLoaderRoute: typeof ComponentsTooltipPositionImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/ref': {
-      id: '/components/tooltip/ref';
-      path: '/tooltip/ref';
-      fullPath: '/components/tooltip/ref';
-      preLoaderRoute: typeof ComponentsTooltipRefImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/ref'
+      path: '/tooltip/ref'
+      fullPath: '/components/tooltip/ref'
+      preLoaderRoute: typeof ComponentsTooltipRefImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/scenario': {
-      id: '/components/tooltip/scenario';
-      path: '/tooltip/scenario';
-      fullPath: '/components/tooltip/scenario';
-      preLoaderRoute: typeof ComponentsTooltipScenarioImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/scenario'
+      path: '/tooltip/scenario'
+      fullPath: '/components/tooltip/scenario'
+      preLoaderRoute: typeof ComponentsTooltipScenarioImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/sizes': {
-      id: '/components/tooltip/sizes';
-      path: '/tooltip/sizes';
-      fullPath: '/components/tooltip/sizes';
-      preLoaderRoute: typeof ComponentsTooltipSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/sizes'
+      path: '/tooltip/sizes'
+      fullPath: '/components/tooltip/sizes'
+      preLoaderRoute: typeof ComponentsTooltipSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/variants': {
-      id: '/components/tooltip/variants';
-      path: '/tooltip/variants';
-      fullPath: '/components/tooltip/variants';
-      preLoaderRoute: typeof ComponentsTooltipVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/variants'
+      path: '/tooltip/variants'
+      fullPath: '/components/tooltip/variants'
+      preLoaderRoute: typeof ComponentsTooltipVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/withMenuButton': {
-      id: '/components/tooltip/withMenuButton';
-      path: '/tooltip/withMenuButton';
-      fullPath: '/components/tooltip/withMenuButton';
-      preLoaderRoute: typeof ComponentsTooltipWithMenuButtonImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/withMenuButton'
+      path: '/tooltip/withMenuButton'
+      fullPath: '/components/tooltip/withMenuButton'
+      preLoaderRoute: typeof ComponentsTooltipWithMenuButtonImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/custom': {
-      id: '/components/tree/custom';
-      path: '/tree/custom';
-      fullPath: '/components/tree/custom';
-      preLoaderRoute: typeof ComponentsTreeCustomImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/custom'
+      path: '/tree/custom'
+      fullPath: '/components/tree/custom'
+      preLoaderRoute: typeof ComponentsTreeCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/mobile': {
-      id: '/components/tree/mobile';
-      path: '/tree/mobile';
-      fullPath: '/components/tree/mobile';
-      preLoaderRoute: typeof ComponentsTreeMobileImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/mobile'
+      path: '/tree/mobile'
+      fullPath: '/components/tree/mobile'
+      preLoaderRoute: typeof ComponentsTreeMobileImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/sizes': {
-      id: '/components/tree/sizes';
-      path: '/tree/sizes';
-      fullPath: '/components/tree/sizes';
-      preLoaderRoute: typeof ComponentsTreeSizesImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/sizes'
+      path: '/tree/sizes'
+      fullPath: '/components/tree/sizes'
+      preLoaderRoute: typeof ComponentsTreeSizesImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/uncontrolled': {
-      id: '/components/tree/uncontrolled';
-      path: '/tree/uncontrolled';
-      fullPath: '/components/tree/uncontrolled';
-      preLoaderRoute: typeof ComponentsTreeUncontrolledImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/uncontrolled'
+      path: '/tree/uncontrolled'
+      fullPath: '/components/tree/uncontrolled'
+      preLoaderRoute: typeof ComponentsTreeUncontrolledImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/variants': {
-      id: '/components/tree/variants';
-      path: '/tree/variants';
-      fullPath: '/components/tree/variants';
-      preLoaderRoute: typeof ComponentsTreeVariantsImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/variants'
+      path: '/tree/variants'
+      fullPath: '/components/tree/variants'
+      preLoaderRoute: typeof ComponentsTreeVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/withControlCheckCount': {
-      id: '/components/tree/withControlCheckCount';
-      path: '/tree/withControlCheckCount';
-      fullPath: '/components/tree/withControlCheckCount';
-      preLoaderRoute: typeof ComponentsTreeWithControlCheckCountImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/withControlCheckCount'
+      path: '/tree/withControlCheckCount'
+      fullPath: '/components/tree/withControlCheckCount'
+      preLoaderRoute: typeof ComponentsTreeWithControlCheckCountImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/withOnChangeHandler': {
-      id: '/components/tree/withOnChangeHandler';
-      path: '/tree/withOnChangeHandler';
-      fullPath: '/components/tree/withOnChangeHandler';
-      preLoaderRoute: typeof ComponentsTreeWithOnChangeHandlerImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/withOnChangeHandler'
+      path: '/tree/withOnChangeHandler'
+      fullPath: '/components/tree/withOnChangeHandler'
+      preLoaderRoute: typeof ComponentsTreeWithOnChangeHandlerImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/accordion/': {
-      id: '/components/accordion/';
-      path: '/accordion';
-      fullPath: '/components/accordion';
-      preLoaderRoute: typeof ComponentsAccordionIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/accordion/'
+      path: '/accordion'
+      fullPath: '/components/accordion'
+      preLoaderRoute: typeof ComponentsAccordionIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/actionBar/': {
-      id: '/components/actionBar/';
-      path: '/actionBar';
-      fullPath: '/components/actionBar';
-      preLoaderRoute: typeof ComponentsActionBarIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/actionBar/'
+      path: '/actionBar'
+      fullPath: '/components/actionBar'
+      preLoaderRoute: typeof ComponentsActionBarIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/anchor/': {
-      id: '/components/anchor/';
-      path: '/anchor';
-      fullPath: '/components/anchor';
-      preLoaderRoute: typeof ComponentsAnchorIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/anchor/'
+      path: '/anchor'
+      fullPath: '/components/anchor'
+      preLoaderRoute: typeof ComponentsAnchorIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/avatar/': {
-      id: '/components/avatar/';
-      path: '/avatar';
-      fullPath: '/components/avatar';
-      preLoaderRoute: typeof ComponentsAvatarIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/avatar/'
+      path: '/avatar'
+      fullPath: '/components/avatar'
+      preLoaderRoute: typeof ComponentsAvatarIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/badge/': {
-      id: '/components/badge/';
-      path: '/badge';
-      fullPath: '/components/badge';
-      preLoaderRoute: typeof ComponentsBadgeIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/badge/'
+      path: '/badge'
+      fullPath: '/components/badge'
+      preLoaderRoute: typeof ComponentsBadgeIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/badgeDot/': {
-      id: '/components/badgeDot/';
-      path: '/badgeDot';
-      fullPath: '/components/badgeDot';
-      preLoaderRoute: typeof ComponentsBadgeDotIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/badgeDot/'
+      path: '/badgeDot'
+      fullPath: '/components/badgeDot'
+      preLoaderRoute: typeof ComponentsBadgeDotIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/breadcrumbs/': {
-      id: '/components/breadcrumbs/';
-      path: '/breadcrumbs';
-      fullPath: '/components/breadcrumbs';
-      preLoaderRoute: typeof ComponentsBreadcrumbsIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/breadcrumbs/'
+      path: '/breadcrumbs'
+      fullPath: '/components/breadcrumbs'
+      preLoaderRoute: typeof ComponentsBreadcrumbsIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/button/': {
-      id: '/components/button/';
-      path: '/button';
-      fullPath: '/components/button';
-      preLoaderRoute: typeof ComponentsButtonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/button/'
+      path: '/button'
+      fullPath: '/components/button'
+      preLoaderRoute: typeof ComponentsButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/buttonGroup/': {
-      id: '/components/buttonGroup/';
-      path: '/buttonGroup';
-      fullPath: '/components/buttonGroup';
-      preLoaderRoute: typeof ComponentsButtonGroupIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/buttonGroup/'
+      path: '/buttonGroup'
+      fullPath: '/components/buttonGroup'
+      preLoaderRoute: typeof ComponentsButtonGroupIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/calendar/': {
-      id: '/components/calendar/';
-      path: '/calendar';
-      fullPath: '/components/calendar';
-      preLoaderRoute: typeof ComponentsCalendarIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/calendar/'
+      path: '/calendar'
+      fullPath: '/components/calendar'
+      preLoaderRoute: typeof ComponentsCalendarIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carousel/': {
-      id: '/components/carousel/';
-      path: '/carousel';
-      fullPath: '/components/carousel';
-      preLoaderRoute: typeof ComponentsCarouselIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/carousel/'
+      path: '/carousel'
+      fullPath: '/components/carousel'
+      preLoaderRoute: typeof ComponentsCarouselIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/carouselSlider/': {
-      id: '/components/carouselSlider/';
-      path: '/carouselSlider';
-      fullPath: '/components/carouselSlider';
-      preLoaderRoute: typeof ComponentsCarouselSliderIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/carouselSlider/'
+      path: '/carouselSlider'
+      fullPath: '/components/carouselSlider'
+      preLoaderRoute: typeof ComponentsCarouselSliderIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/checkbox/': {
-      id: '/components/checkbox/';
-      path: '/checkbox';
-      fullPath: '/components/checkbox';
-      preLoaderRoute: typeof ComponentsCheckboxIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/checkbox/'
+      path: '/checkbox'
+      fullPath: '/components/checkbox'
+      preLoaderRoute: typeof ComponentsCheckboxIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/chips/': {
-      id: '/components/chips/';
-      path: '/chips';
-      fullPath: '/components/chips';
-      preLoaderRoute: typeof ComponentsChipsIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/chips/'
+      path: '/chips'
+      fullPath: '/components/chips'
+      preLoaderRoute: typeof ComponentsChipsIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/contentSwitcher/': {
-      id: '/components/contentSwitcher/';
-      path: '/contentSwitcher';
-      fullPath: '/components/contentSwitcher';
-      preLoaderRoute: typeof ComponentsContentSwitcherIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/contentSwitcher/'
+      path: '/contentSwitcher'
+      fullPath: '/components/contentSwitcher'
+      preLoaderRoute: typeof ComponentsContentSwitcherIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/currencyInput/': {
-      id: '/components/currencyInput/';
-      path: '/currencyInput';
-      fullPath: '/components/currencyInput';
-      preLoaderRoute: typeof ComponentsCurrencyInputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/currencyInput/'
+      path: '/currencyInput'
+      fullPath: '/components/currencyInput'
+      preLoaderRoute: typeof ComponentsCurrencyInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateInput/': {
-      id: '/components/dateInput/';
-      path: '/dateInput';
-      fullPath: '/components/dateInput';
-      preLoaderRoute: typeof ComponentsDateInputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateInput/'
+      path: '/dateInput'
+      fullPath: '/components/dateInput'
+      preLoaderRoute: typeof ComponentsDateInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dateTimeField/': {
-      id: '/components/dateTimeField/';
-      path: '/dateTimeField';
-      fullPath: '/components/dateTimeField';
-      preLoaderRoute: typeof ComponentsDateTimeFieldIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dateTimeField/'
+      path: '/dateTimeField'
+      fullPath: '/components/dateTimeField'
+      preLoaderRoute: typeof ComponentsDateTimeFieldIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/divider/': {
-      id: '/components/divider/';
-      path: '/divider';
-      fullPath: '/components/divider';
-      preLoaderRoute: typeof ComponentsDividerIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/divider/'
+      path: '/divider'
+      fullPath: '/components/divider'
+      preLoaderRoute: typeof ComponentsDividerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/drawer/': {
-      id: '/components/drawer/';
-      path: '/drawer';
-      fullPath: '/components/drawer';
-      preLoaderRoute: typeof ComponentsDrawerIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/drawer/'
+      path: '/drawer'
+      fullPath: '/components/drawer'
+      preLoaderRoute: typeof ComponentsDrawerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/dropdown/': {
-      id: '/components/dropdown/';
-      path: '/dropdown';
-      fullPath: '/components/dropdown';
-      preLoaderRoute: typeof ComponentsDropdownIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/dropdown/'
+      path: '/dropdown'
+      fullPath: '/components/dropdown'
+      preLoaderRoute: typeof ComponentsDropdownIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/editMode/': {
-      id: '/components/editMode/';
-      path: '/editMode';
-      fullPath: '/components/editMode';
-      preLoaderRoute: typeof ComponentsEditModeIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/editMode/'
+      path: '/editMode'
+      fullPath: '/components/editMode'
+      preLoaderRoute: typeof ComponentsEditModeIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/fileinput/': {
-      id: '/components/fileinput/';
-      path: '/fileinput';
-      fullPath: '/components/fileinput';
-      preLoaderRoute: typeof ComponentsFileinputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/fileinput/'
+      path: '/fileinput'
+      fullPath: '/components/fileinput'
+      preLoaderRoute: typeof ComponentsFileinputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/flex/': {
-      id: '/components/flex/';
-      path: '/flex';
-      fullPath: '/components/flex';
-      preLoaderRoute: typeof ComponentsFlexIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/flex/'
+      path: '/flex'
+      fullPath: '/components/flex'
+      preLoaderRoute: typeof ComponentsFlexIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/floatingButton/': {
-      id: '/components/floatingButton/';
-      path: '/floatingButton';
-      fullPath: '/components/floatingButton';
-      preLoaderRoute: typeof ComponentsFloatingButtonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/floatingButton/'
+      path: '/floatingButton'
+      fullPath: '/components/floatingButton'
+      preLoaderRoute: typeof ComponentsFloatingButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/globalSearch/': {
-      id: '/components/globalSearch/';
-      path: '/globalSearch';
-      fullPath: '/components/globalSearch';
-      preLoaderRoute: typeof ComponentsGlobalSearchIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/globalSearch/'
+      path: '/globalSearch'
+      fullPath: '/components/globalSearch'
+      preLoaderRoute: typeof ComponentsGlobalSearchIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/groupActionsPane/': {
-      id: '/components/groupActionsPane/';
-      path: '/groupActionsPane';
-      fullPath: '/components/groupActionsPane';
-      preLoaderRoute: typeof ComponentsGroupActionsPaneIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/groupActionsPane/'
+      path: '/groupActionsPane'
+      fullPath: '/components/groupActionsPane'
+      preLoaderRoute: typeof ComponentsGroupActionsPaneIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/hint/': {
-      id: '/components/hint/';
-      path: '/hint';
-      fullPath: '/components/hint';
-      preLoaderRoute: typeof ComponentsHintIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/hint/'
+      path: '/hint'
+      fullPath: '/components/hint'
+      preLoaderRoute: typeof ComponentsHintIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButton/': {
-      id: '/components/iconButton/';
-      path: '/iconButton';
-      fullPath: '/components/iconButton';
-      preLoaderRoute: typeof ComponentsIconButtonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconButton/'
+      path: '/iconButton'
+      fullPath: '/components/iconButton'
+      preLoaderRoute: typeof ComponentsIconButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconButtonGroup/': {
-      id: '/components/iconButtonGroup/';
-      path: '/iconButtonGroup';
-      fullPath: '/components/iconButtonGroup';
-      preLoaderRoute: typeof ComponentsIconButtonGroupIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconButtonGroup/'
+      path: '/iconButtonGroup'
+      fullPath: '/components/iconButtonGroup'
+      preLoaderRoute: typeof ComponentsIconButtonGroupIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/iconPlacement/': {
-      id: '/components/iconPlacement/';
-      path: '/iconPlacement';
-      fullPath: '/components/iconPlacement';
-      preLoaderRoute: typeof ComponentsIconPlacementIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/iconPlacement/'
+      path: '/iconPlacement'
+      fullPath: '/components/iconPlacement'
+      preLoaderRoute: typeof ComponentsIconPlacementIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/imageViewer/': {
-      id: '/components/imageViewer/';
-      path: '/imageViewer';
-      fullPath: '/components/imageViewer';
-      preLoaderRoute: typeof ComponentsImageViewerIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/imageViewer/'
+      path: '/imageViewer'
+      fullPath: '/components/imageViewer'
+      preLoaderRoute: typeof ComponentsImageViewerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/inputEx/': {
-      id: '/components/inputEx/';
-      path: '/inputEx';
-      fullPath: '/components/inputEx';
-      preLoaderRoute: typeof ComponentsInputExIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/inputEx/'
+      path: '/inputEx'
+      fullPath: '/components/inputEx'
+      preLoaderRoute: typeof ComponentsInputExIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/link/': {
-      id: '/components/link/';
-      path: '/link';
-      fullPath: '/components/link';
-      preLoaderRoute: typeof ComponentsLinkIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/link/'
+      path: '/link'
+      fullPath: '/components/link'
+      preLoaderRoute: typeof ComponentsLinkIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/list/': {
-      id: '/components/list/';
-      path: '/list';
-      fullPath: '/components/list';
-      preLoaderRoute: typeof ComponentsListIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/list/'
+      path: '/list'
+      fullPath: '/components/list'
+      preLoaderRoute: typeof ComponentsListIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/menuButton/': {
-      id: '/components/menuButton/';
-      path: '/menuButton';
-      fullPath: '/components/menuButton';
-      preLoaderRoute: typeof ComponentsMenuButtonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/menuButton/'
+      path: '/menuButton'
+      fullPath: '/components/menuButton'
+      preLoaderRoute: typeof ComponentsMenuButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/modal/': {
-      id: '/components/modal/';
-      path: '/modal';
-      fullPath: '/components/modal';
-      preLoaderRoute: typeof ComponentsModalIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/modal/'
+      path: '/modal'
+      fullPath: '/components/modal'
+      preLoaderRoute: typeof ComponentsModalIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiButton/': {
-      id: '/components/multiButton/';
-      path: '/multiButton';
-      fullPath: '/components/multiButton';
-      preLoaderRoute: typeof ComponentsMultiButtonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiButton/'
+      path: '/multiButton'
+      fullPath: '/components/multiButton'
+      preLoaderRoute: typeof ComponentsMultiButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/multiInput/': {
-      id: '/components/multiInput/';
-      path: '/multiInput';
-      fullPath: '/components/multiInput';
-      preLoaderRoute: typeof ComponentsMultiInputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/multiInput/'
+      path: '/multiInput'
+      fullPath: '/components/multiInput'
+      preLoaderRoute: typeof ComponentsMultiInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/notification/': {
-      id: '/components/notification/';
-      path: '/notification';
-      fullPath: '/components/notification';
-      preLoaderRoute: typeof ComponentsNotificationIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/notification/'
+      path: '/notification'
+      fullPath: '/components/notification'
+      preLoaderRoute: typeof ComponentsNotificationIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/numberInput/': {
-      id: '/components/numberInput/';
-      path: '/numberInput';
-      fullPath: '/components/numberInput';
-      preLoaderRoute: typeof ComponentsNumberInputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/numberInput/'
+      path: '/numberInput'
+      fullPath: '/components/numberInput'
+      preLoaderRoute: typeof ComponentsNumberInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/overflowMenu/': {
-      id: '/components/overflowMenu/';
-      path: '/overflowMenu';
-      fullPath: '/components/overflowMenu';
-      preLoaderRoute: typeof ComponentsOverflowMenuIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/overflowMenu/'
+      path: '/overflowMenu'
+      fullPath: '/components/overflowMenu'
+      preLoaderRoute: typeof ComponentsOverflowMenuIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationOne/': {
-      id: '/components/paginationOne/';
-      path: '/paginationOne';
-      fullPath: '/components/paginationOne';
-      preLoaderRoute: typeof ComponentsPaginationOneIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationOne/'
+      path: '/paginationOne'
+      fullPath: '/components/paginationOne'
+      preLoaderRoute: typeof ComponentsPaginationOneIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/paginationTwo/': {
-      id: '/components/paginationTwo/';
-      path: '/paginationTwo';
-      fullPath: '/components/paginationTwo';
-      preLoaderRoute: typeof ComponentsPaginationTwoIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/paginationTwo/'
+      path: '/paginationTwo'
+      fullPath: '/components/paginationTwo'
+      preLoaderRoute: typeof ComponentsPaginationTwoIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/phoneNumberInput/': {
-      id: '/components/phoneNumberInput/';
-      path: '/phoneNumberInput';
-      fullPath: '/components/phoneNumberInput';
-      preLoaderRoute: typeof ComponentsPhoneNumberInputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/phoneNumberInput/'
+      path: '/phoneNumberInput'
+      fullPath: '/components/phoneNumberInput'
+      preLoaderRoute: typeof ComponentsPhoneNumberInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/pills/': {
-      id: '/components/pills/';
-      path: '/pills';
-      fullPath: '/components/pills';
-      preLoaderRoute: typeof ComponentsPillsIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/pills/'
+      path: '/pills'
+      fullPath: '/components/pills'
+      preLoaderRoute: typeof ComponentsPillsIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressHeader/': {
-      id: '/components/progressHeader/';
-      path: '/progressHeader';
-      fullPath: '/components/progressHeader';
-      preLoaderRoute: typeof ComponentsProgressHeaderIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressHeader/'
+      path: '/progressHeader'
+      fullPath: '/components/progressHeader'
+      preLoaderRoute: typeof ComponentsProgressHeaderIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressPage/': {
-      id: '/components/progressPage/';
-      path: '/progressPage';
-      fullPath: '/components/progressPage';
-      preLoaderRoute: typeof ComponentsProgressPageIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressPage/'
+      path: '/progressPage'
+      fullPath: '/components/progressPage'
+      preLoaderRoute: typeof ComponentsProgressPageIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/progressStepper/': {
-      id: '/components/progressStepper/';
-      path: '/progressStepper';
-      fullPath: '/components/progressStepper';
-      preLoaderRoute: typeof ComponentsProgressStepperIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/progressStepper/'
+      path: '/progressStepper'
+      fullPath: '/components/progressStepper'
+      preLoaderRoute: typeof ComponentsProgressStepperIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/radiobutton/': {
-      id: '/components/radiobutton/';
-      path: '/radiobutton';
-      fullPath: '/components/radiobutton';
-      preLoaderRoute: typeof ComponentsRadiobuttonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/radiobutton/'
+      path: '/radiobutton'
+      fullPath: '/components/radiobutton'
+      preLoaderRoute: typeof ComponentsRadiobuttonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/scrollContainer/': {
-      id: '/components/scrollContainer/';
-      path: '/scrollContainer';
-      fullPath: '/components/scrollContainer';
-      preLoaderRoute: typeof ComponentsScrollContainerIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/scrollContainer/'
+      path: '/scrollContainer'
+      fullPath: '/components/scrollContainer'
+      preLoaderRoute: typeof ComponentsScrollContainerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/segmentedControl/': {
-      id: '/components/segmentedControl/';
-      path: '/segmentedControl';
-      fullPath: '/components/segmentedControl';
-      preLoaderRoute: typeof ComponentsSegmentedControlIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/segmentedControl/'
+      path: '/segmentedControl'
+      fullPath: '/components/segmentedControl'
+      preLoaderRoute: typeof ComponentsSegmentedControlIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/select/': {
-      id: '/components/select/';
-      path: '/select';
-      fullPath: '/components/select';
-      preLoaderRoute: typeof ComponentsSelectIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/select/'
+      path: '/select'
+      fullPath: '/components/select'
+      preLoaderRoute: typeof ComponentsSelectIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/skeleton/': {
-      id: '/components/skeleton/';
-      path: '/skeleton';
-      fullPath: '/components/skeleton';
-      preLoaderRoute: typeof ComponentsSkeletonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/skeleton/'
+      path: '/skeleton'
+      fullPath: '/components/skeleton'
+      preLoaderRoute: typeof ComponentsSkeletonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/slider/': {
-      id: '/components/slider/';
-      path: '/slider';
-      fullPath: '/components/slider';
-      preLoaderRoute: typeof ComponentsSliderIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/slider/'
+      path: '/slider'
+      fullPath: '/components/slider'
+      preLoaderRoute: typeof ComponentsSliderIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/sliderInput/': {
-      id: '/components/sliderInput/';
-      path: '/sliderInput';
-      fullPath: '/components/sliderInput';
-      preLoaderRoute: typeof ComponentsSliderInputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/sliderInput/'
+      path: '/sliderInput'
+      fullPath: '/components/sliderInput'
+      preLoaderRoute: typeof ComponentsSliderInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/': {
-      id: '/components/spinner/';
-      path: '/spinner';
-      fullPath: '/components/spinner';
-      preLoaderRoute: typeof ComponentsSpinnerIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/spinner/'
+      path: '/spinner'
+      fullPath: '/components/spinner'
+      preLoaderRoute: typeof ComponentsSpinnerIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/statusIndicator/': {
-      id: '/components/statusIndicator/';
-      path: '/statusIndicator';
-      fullPath: '/components/statusIndicator';
-      preLoaderRoute: typeof ComponentsStatusIndicatorIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/statusIndicator/'
+      path: '/statusIndicator'
+      fullPath: '/components/statusIndicator'
+      preLoaderRoute: typeof ComponentsStatusIndicatorIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/stepper/': {
-      id: '/components/stepper/';
-      path: '/stepper';
-      fullPath: '/components/stepper';
-      preLoaderRoute: typeof ComponentsStepperIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
-    '/components/suggestInput/': {
-      id: '/components/suggestInput/';
-      path: '/suggestInput';
-      fullPath: '/components/suggestInput';
-      preLoaderRoute: typeof ComponentsSuggestInputIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/stepper/'
+      path: '/stepper'
+      fullPath: '/components/stepper'
+      preLoaderRoute: typeof ComponentsStepperIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/t/': {
-      id: '/components/t/';
-      path: '/t';
-      fullPath: '/components/t';
-      preLoaderRoute: typeof ComponentsTIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/t/'
+      path: '/t'
+      fullPath: '/components/t'
+      preLoaderRoute: typeof ComponentsTIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tabMenu/': {
-      id: '/components/tabMenu/';
-      path: '/tabMenu';
-      fullPath: '/components/tabMenu';
-      preLoaderRoute: typeof ComponentsTabMenuIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tabMenu/'
+      path: '/tabMenu'
+      fullPath: '/components/tabMenu'
+      preLoaderRoute: typeof ComponentsTabMenuIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/table/': {
-      id: '/components/table/';
-      path: '/table';
-      fullPath: '/components/table';
-      preLoaderRoute: typeof ComponentsTableIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/table/'
+      path: '/table'
+      fullPath: '/components/table'
+      preLoaderRoute: typeof ComponentsTableIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tag/': {
-      id: '/components/tag/';
-      path: '/tag';
-      fullPath: '/components/tag';
-      preLoaderRoute: typeof ComponentsTagIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tag/'
+      path: '/tag'
+      fullPath: '/components/tag'
+      preLoaderRoute: typeof ComponentsTagIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textArea/': {
-      id: '/components/textArea/';
-      path: '/textArea';
-      fullPath: '/components/textArea';
-      preLoaderRoute: typeof ComponentsTextAreaIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textArea/'
+      path: '/textArea'
+      fullPath: '/components/textArea'
+      preLoaderRoute: typeof ComponentsTextAreaIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButton/': {
-      id: '/components/textButton/';
-      path: '/textButton';
-      fullPath: '/components/textButton';
-      preLoaderRoute: typeof ComponentsTextButtonIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textButton/'
+      path: '/textButton'
+      fullPath: '/components/textButton'
+      preLoaderRoute: typeof ComponentsTextButtonIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/textButtonMenu/': {
-      id: '/components/textButtonMenu/';
-      path: '/textButtonMenu';
-      fullPath: '/components/textButtonMenu';
-      preLoaderRoute: typeof ComponentsTextButtonMenuIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/textButtonMenu/'
+      path: '/textButtonMenu'
+      fullPath: '/components/textButtonMenu'
+      preLoaderRoute: typeof ComponentsTextButtonMenuIndexImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/': {
+      id: '/components/timeInput/'
+      path: '/timeInput'
+      fullPath: '/components/timeInput'
+      preLoaderRoute: typeof ComponentsTimeInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toast/': {
-      id: '/components/toast/';
-      path: '/toast';
-      fullPath: '/components/toast';
-      preLoaderRoute: typeof ComponentsToastIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toast/'
+      path: '/toast'
+      fullPath: '/components/toast'
+      preLoaderRoute: typeof ComponentsToastIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toggle/': {
-      id: '/components/toggle/';
-      path: '/toggle';
-      fullPath: '/components/toggle';
-      preLoaderRoute: typeof ComponentsToggleIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/toggle/'
+      path: '/toggle'
+      fullPath: '/components/toggle'
+      preLoaderRoute: typeof ComponentsToggleIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tooltip/': {
-      id: '/components/tooltip/';
-      path: '/tooltip';
-      fullPath: '/components/tooltip';
-      preLoaderRoute: typeof ComponentsTooltipIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tooltip/'
+      path: '/tooltip'
+      fullPath: '/components/tooltip'
+      preLoaderRoute: typeof ComponentsTooltipIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tree/': {
-      id: '/components/tree/';
-      path: '/tree';
-      fullPath: '/components/tree';
-      preLoaderRoute: typeof ComponentsTreeIndexImport;
-      parentRoute: typeof ComponentsImport;
-    };
+      id: '/components/tree/'
+      path: '/tree'
+      fullPath: '/components/tree'
+      preLoaderRoute: typeof ComponentsTreeIndexImport
+      parentRoute: typeof ComponentsImport
+    }
   }
 }
 
 // Create and export the route tree
 
 interface ComponentsRouteChildren {
-  ComponentsAccordionAccordionDimensionRoute: typeof ComponentsAccordionAccordionDimensionRoute;
-  ComponentsAccordionAccordionDividerRoute: typeof ComponentsAccordionAccordionDividerRoute;
-  ComponentsAccordionAccordionIconRoute: typeof ComponentsAccordionAccordionIconRoute;
-  ComponentsAccordionAccordionModesRoute: typeof ComponentsAccordionAccordionModesRoute;
-  ComponentsActionBarAdaptiveRoute: typeof ComponentsActionBarAdaptiveRoute;
-  ComponentsActionBarDimensionsRoute: typeof ComponentsActionBarDimensionsRoute;
-  ComponentsAnchorSizesRoute: typeof ComponentsAnchorSizesRoute;
-  ComponentsAnchorStateRoute: typeof ComponentsAnchorStateRoute;
-  ComponentsAnchorTreeRoute: typeof ComponentsAnchorTreeRoute;
-  ComponentsAvatarAvatarGroupRoute: typeof ComponentsAvatarAvatarGroupRoute;
-  ComponentsAvatarAvatarGroupLimitedWidthRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthRoute;
-  ComponentsAvatarSizeXXSRoute: typeof ComponentsAvatarSizeXXSRoute;
-  ComponentsAvatarStylesRoute: typeof ComponentsAvatarStylesRoute;
-  ComponentsBadgeBadgeAccessibilityRoute: typeof ComponentsBadgeBadgeAccessibilityRoute;
-  ComponentsBadgeBadgeVariantsRoute: typeof ComponentsBadgeBadgeVariantsRoute;
-  ComponentsBadgeDotVariantsRoute: typeof ComponentsBadgeDotVariantsRoute;
-  ComponentsBreadcrumbsActiveCrumbRoute: typeof ComponentsBreadcrumbsActiveCrumbRoute;
-  ComponentsBreadcrumbsIconsRoute: typeof ComponentsBreadcrumbsIconsRoute;
-  ComponentsBreadcrumbsLinkRoute: typeof ComponentsBreadcrumbsLinkRoute;
-  ComponentsBreadcrumbsMobileRoute: typeof ComponentsBreadcrumbsMobileRoute;
-  ComponentsBreadcrumbsSizesRoute: typeof ComponentsBreadcrumbsSizesRoute;
-  ComponentsButtonAdaptiveRoute: typeof ComponentsButtonAdaptiveRoute;
-  ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute;
-  ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute;
-  ComponentsButtonDimensionRoute: typeof ComponentsButtonDimensionRoute;
-  ComponentsButtonStateRoute: typeof ComponentsButtonStateRoute;
-  ComponentsButtonTypesRoute: typeof ComponentsButtonTypesRoute;
-  ComponentsButtonGroupSizesRoute: typeof ComponentsButtonGroupSizesRoute;
-  ComponentsButtonGroupStatesRoute: typeof ComponentsButtonGroupStatesRoute;
-  ComponentsButtonGroupStylesRoute: typeof ComponentsButtonGroupStylesRoute;
-  ComponentsButtonGroupVariantsRoute: typeof ComponentsButtonGroupVariantsRoute;
-  ComponentsCalendarActiveViewDateRoute: typeof ComponentsCalendarActiveViewDateRoute;
-  ComponentsCalendarCallbackRoute: typeof ComponentsCalendarCallbackRoute;
-  ComponentsCalendarFilterDateRoute: typeof ComponentsCalendarFilterDateRoute;
-  ComponentsCalendarMaxDateRoute: typeof ComponentsCalendarMaxDateRoute;
-  ComponentsCalendarRangeRoute: typeof ComponentsCalendarRangeRoute;
-  ComponentsCalendarSpecialDatesRoute: typeof ComponentsCalendarSpecialDatesRoute;
-  ComponentsCalendarViewDateAfterChooseRoute: typeof ComponentsCalendarViewDateAfterChooseRoute;
-  ComponentsCalendarViewDateMonthsYearsRoute: typeof ComponentsCalendarViewDateMonthsYearsRoute;
-  ComponentsCarouselArrowsRoute: typeof ComponentsCarouselArrowsRoute;
-  ComponentsCarouselCarouselAutoChangeRoute: typeof ComponentsCarouselCarouselAutoChangeRoute;
-  ComponentsCarouselSliderPositionRoute: typeof ComponentsCarouselSliderPositionRoute;
-  ComponentsCarouselSliderCarouselSliderAutoChangeRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute;
-  ComponentsCarouselSliderStylesRoute: typeof ComponentsCarouselSliderStylesRoute;
-  ComponentsCheckboxAdditionalTextRoute: typeof ComponentsCheckboxAdditionalTextRoute;
-  ComponentsCheckboxCompositeGroupRoute: typeof ComponentsCheckboxCompositeGroupRoute;
-  ComponentsCheckboxFieldSetRoute: typeof ComponentsCheckboxFieldSetRoute;
-  ComponentsCheckboxStatesRoute: typeof ComponentsCheckboxStatesRoute;
-  ComponentsCheckboxWithInformerRoute: typeof ComponentsCheckboxWithInformerRoute;
-  ComponentsChipsChipsCloseRoute: typeof ComponentsChipsChipsCloseRoute;
-  ComponentsChipsMultiSelectRoute: typeof ComponentsChipsMultiSelectRoute;
-  ComponentsChipsSelectRoute: typeof ComponentsChipsSelectRoute;
-  ComponentsChipsSizesRoute: typeof ComponentsChipsSizesRoute;
-  ComponentsChipsStylesRoute: typeof ComponentsChipsStylesRoute;
-  ComponentsChipsWithBadgeRoute: typeof ComponentsChipsWithBadgeRoute;
-  ComponentsChipsWithIconRoute: typeof ComponentsChipsWithIconRoute;
-  ComponentsChipsWithTooltipRoute: typeof ComponentsChipsWithTooltipRoute;
-  ComponentsContentSwitcherAdaptiveRoute: typeof ComponentsContentSwitcherAdaptiveRoute;
-  ComponentsContentSwitcherIconsOnlyRoute: typeof ComponentsContentSwitcherIconsOnlyRoute;
-  ComponentsContentSwitcherSizesRoute: typeof ComponentsContentSwitcherSizesRoute;
-  ComponentsContentSwitcherStylesRoute: typeof ComponentsContentSwitcherStylesRoute;
-  ComponentsContentSwitcherWithBadgeRoute: typeof ComponentsContentSwitcherWithBadgeRoute;
-  ComponentsContentSwitcherWithIconsRoute: typeof ComponentsContentSwitcherWithIconsRoute;
-  ComponentsCurrencyInputCurrencyInputFieldRoute: typeof ComponentsCurrencyInputCurrencyInputFieldRoute;
-  ComponentsCurrencyInputMinMaxvalueRoute: typeof ComponentsCurrencyInputMinMaxvalueRoute;
-  ComponentsCurrencyInputWithPrefixRoute: typeof ComponentsCurrencyInputWithPrefixRoute;
-  ComponentsDateInputCustomRoute: typeof ComponentsDateInputCustomRoute;
-  ComponentsDateInputDateFieldRoute: typeof ComponentsDateInputDateFieldRoute;
-  ComponentsDateInputDateFieldStateRoute: typeof ComponentsDateInputDateFieldStateRoute;
-  ComponentsDateInputRangeRoute: typeof ComponentsDateInputRangeRoute;
-  ComponentsDateInputSizesRoute: typeof ComponentsDateInputSizesRoute;
-  ComponentsDateInputSpecialDatesRoute: typeof ComponentsDateInputSpecialDatesRoute;
-  ComponentsDateInputStateRoute: typeof ComponentsDateInputStateRoute;
-  ComponentsDateInputStatusRoute: typeof ComponentsDateInputStatusRoute;
-  ComponentsDateInputVariantsRoute: typeof ComponentsDateInputVariantsRoute;
-  ComponentsDateInputWithButtonRoute: typeof ComponentsDateInputWithButtonRoute;
-  ComponentsDateTimeFieldDimensionRoute: typeof ComponentsDateTimeFieldDimensionRoute;
-  ComponentsDateTimeFieldDisplayInlineRoute: typeof ComponentsDateTimeFieldDisplayInlineRoute;
-  ComponentsDateTimeFieldExtraTextRoute: typeof ComponentsDateTimeFieldExtraTextRoute;
-  ComponentsDateTimeFieldStatusRoute: typeof ComponentsDateTimeFieldStatusRoute;
-  ComponentsDividerLengthRoute: typeof ComponentsDividerLengthRoute;
-  ComponentsDividerStyleRoute: typeof ComponentsDividerStyleRoute;
-  ComponentsDividerThiknessRoute: typeof ComponentsDividerThiknessRoute;
-  ComponentsDividerTypeRoute: typeof ComponentsDividerTypeRoute;
-  ComponentsDrawerCustomContentRoute: typeof ComponentsDrawerCustomContentRoute;
-  ComponentsDrawerMobileRoute: typeof ComponentsDrawerMobileRoute;
-  ComponentsDrawerNonClosableRoute: typeof ComponentsDrawerNonClosableRoute;
-  ComponentsDrawerPositionRoute: typeof ComponentsDrawerPositionRoute;
-  ComponentsDrawerWidthRoute: typeof ComponentsDrawerWidthRoute;
-  ComponentsDrawerWithBackdropRoute: typeof ComponentsDrawerWithBackdropRoute;
-  ComponentsDrawerWithoutBackdropRoute: typeof ComponentsDrawerWithoutBackdropRoute;
-  ComponentsDropdownCustomDropdownContainerRoute: typeof ComponentsDropdownCustomDropdownContainerRoute;
-  ComponentsDropdownDropMenuControlledRoute: typeof ComponentsDropdownDropMenuControlledRoute;
-  ComponentsDropdownDropMenuUncontrolledRoute: typeof ComponentsDropdownDropMenuUncontrolledRoute;
-  ComponentsDropdownMenuActionSearchRoute: typeof ComponentsDropdownMenuActionSearchRoute;
-  ComponentsDropdownMenuActionTwoButtonsRoute: typeof ComponentsDropdownMenuActionTwoButtonsRoute;
-  ComponentsDropdownMenuCategoriesRoute: typeof ComponentsDropdownMenuCategoriesRoute;
-  ComponentsDropdownMenuCustomItemsRoute: typeof ComponentsDropdownMenuCustomItemsRoute;
-  ComponentsDropdownMenuDimensionsRoute: typeof ComponentsDropdownMenuDimensionsRoute;
-  ComponentsDropdownMenuLockCycleScrollRoute: typeof ComponentsDropdownMenuLockCycleScrollRoute;
-  ComponentsDropdownMenuManyItemsRoute: typeof ComponentsDropdownMenuManyItemsRoute;
-  ComponentsDropdownMenuMultiLevelRoute: typeof ComponentsDropdownMenuMultiLevelRoute;
-  ComponentsDropdownMenuMultiLineRoute: typeof ComponentsDropdownMenuMultiLineRoute;
-  ComponentsDropdownMenuPreselectRoute: typeof ComponentsDropdownMenuPreselectRoute;
-  ComponentsDropdownMenuVirtualScrollRoute: typeof ComponentsDropdownMenuVirtualScrollRoute;
-  ComponentsDropdownMenuWithAddTextAndIconsRoute: typeof ComponentsDropdownMenuWithAddTextAndIconsRoute;
-  ComponentsDropdownMenuWithCheckboxRoute: typeof ComponentsDropdownMenuWithCheckboxRoute;
-  ComponentsDropdownMenuWithCheckboxGroupRoute: typeof ComponentsDropdownMenuWithCheckboxGroupRoute;
-  ComponentsDropdownMenuWithIconsRoute: typeof ComponentsDropdownMenuWithIconsRoute;
-  ComponentsDropdownMenuWithRadioButtonRoute: typeof ComponentsDropdownMenuWithRadioButtonRoute;
-  ComponentsDropdownMenuWithTooltipRoute: typeof ComponentsDropdownMenuWithTooltipRoute;
-  ComponentsEditModeDimensionsRoute: typeof ComponentsEditModeDimensionsRoute;
-  ComponentsEditModeDisablecopyingRoute: typeof ComponentsEditModeDisablecopyingRoute;
-  ComponentsEditModeExtratextRoute: typeof ComponentsEditModeExtratextRoute;
-  ComponentsEditModeMultilineRoute: typeof ComponentsEditModeMultilineRoute;
-  ComponentsEditModeStatusRoute: typeof ComponentsEditModeStatusRoute;
-  ComponentsEditModeTooltipRoute: typeof ComponentsEditModeTooltipRoute;
-  ComponentsFileinputCustomizingRoute: typeof ComponentsFileinputCustomizingRoute;
-  ComponentsFileinputCustomizingFileTypeRoute: typeof ComponentsFileinputCustomizingFileTypeRoute;
-  ComponentsFileinputDimensionsRoute: typeof ComponentsFileinputDimensionsRoute;
-  ComponentsFileinputExtratextRoute: typeof ComponentsFileinputExtratextRoute;
-  ComponentsFileinputFilestatusRoute: typeof ComponentsFileinputFilestatusRoute;
-  ComponentsFileinputStateRoute: typeof ComponentsFileinputStateRoute;
-  ComponentsFloatingButtonMobileRoute: typeof ComponentsFloatingButtonMobileRoute;
-  ComponentsFloatingButtonPositionRoute: typeof ComponentsFloatingButtonPositionRoute;
-  ComponentsFloatingButtonStylesRoute: typeof ComponentsFloatingButtonStylesRoute;
-  ComponentsFloatingButtonTooltipRoute: typeof ComponentsFloatingButtonTooltipRoute;
-  ComponentsFloatingButtonWithMenuRoute: typeof ComponentsFloatingButtonWithMenuRoute;
-  ComponentsFloatingButtonWithMenuModesRoute: typeof ComponentsFloatingButtonWithMenuModesRoute;
-  ComponentsGlobalSearchSizesRoute: typeof ComponentsGlobalSearchSizesRoute;
-  ComponentsGlobalSearchVariantsRoute: typeof ComponentsGlobalSearchVariantsRoute;
-  ComponentsHintAnchorCssMixinRoute: typeof ComponentsHintAnchorCssMixinRoute;
-  ComponentsHintClassNameRoute: typeof ComponentsHintClassNameRoute;
-  ComponentsHintPositionRoute: typeof ComponentsHintPositionRoute;
-  ComponentsHintScenarioRoute: typeof ComponentsHintScenarioRoute;
-  ComponentsHintSizesRoute: typeof ComponentsHintSizesRoute;
-  ComponentsHintVariantsRoute: typeof ComponentsHintVariantsRoute;
-  ComponentsIconButtonStatesRoute: typeof ComponentsIconButtonStatesRoute;
-  ComponentsIconButtonStylesRoute: typeof ComponentsIconButtonStylesRoute;
-  ComponentsIconButtonGroupSizesRoute: typeof ComponentsIconButtonGroupSizesRoute;
-  ComponentsIconButtonGroupStatesRoute: typeof ComponentsIconButtonGroupStatesRoute;
-  ComponentsIconButtonGroupTooltipRoute: typeof ComponentsIconButtonGroupTooltipRoute;
-  ComponentsIconPlacementSizesRoute: typeof ComponentsIconPlacementSizesRoute;
-  ComponentsIconPlacementStylesRoute: typeof ComponentsIconPlacementStylesRoute;
-  ComponentsIconPlacementVariantsRoute: typeof ComponentsIconPlacementVariantsRoute;
-  ComponentsImageViewerErrorOnLoadRoute: typeof ComponentsImageViewerErrorOnLoadRoute;
-  ComponentsImageViewerImageMiniatureRoute: typeof ComponentsImageViewerImageMiniatureRoute;
-  ComponentsImageViewerKeyboardCommandsRoute: typeof ComponentsImageViewerKeyboardCommandsRoute;
-  ComponentsImageViewerViewOptionsRoute: typeof ComponentsImageViewerViewOptionsRoute;
-  ComponentsInputExCustomRoute: typeof ComponentsInputExCustomRoute;
-  ComponentsInputExInputExFieldRoute: typeof ComponentsInputExInputExFieldRoute;
-  ComponentsInputExPrefixSuffixSelectRoute: typeof ComponentsInputExPrefixSuffixSelectRoute;
-  ComponentsInputExSizesRoute: typeof ComponentsInputExSizesRoute;
-  ComponentsInputExStateRoute: typeof ComponentsInputExStateRoute;
-  ComponentsInputExStatusRoute: typeof ComponentsInputExStatusRoute;
-  ComponentsLinkAsPropRoute: typeof ComponentsLinkAsPropRoute;
-  ComponentsLinkCssMixinRoute: typeof ComponentsLinkCssMixinRoute;
-  ComponentsLinkStylesRoute: typeof ComponentsLinkStylesRoute;
-  ComponentsLinkWithIconRoute: typeof ComponentsLinkWithIconRoute;
-  ComponentsListCustomMarkerRoute: typeof ComponentsListCustomMarkerRoute;
-  ComponentsListMarkerColorRoute: typeof ComponentsListMarkerColorRoute;
-  ComponentsListMultilineRoute: typeof ComponentsListMultilineRoute;
-  ComponentsListNestedRoute: typeof ComponentsListNestedRoute;
-  ComponentsListOrderedListRoute: typeof ComponentsListOrderedListRoute;
-  ComponentsListUnorderedListRoute: typeof ComponentsListUnorderedListRoute;
-  ComponentsMenuButtonActionsRoute: typeof ComponentsMenuButtonActionsRoute;
-  ComponentsMenuButtonCheckboxAndBottomPanelRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute;
-  ComponentsMenuButtonCheckboxAndTopPanelRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelRoute;
-  ComponentsMenuButtonMultiLevelMenuRoute: typeof ComponentsMenuButtonMultiLevelMenuRoute;
-  ComponentsMenuButtonStatesRoute: typeof ComponentsMenuButtonStatesRoute;
-  ComponentsMenuButtonStylesRoute: typeof ComponentsMenuButtonStylesRoute;
-  ComponentsMenuButtonWithIconRoute: typeof ComponentsMenuButtonWithIconRoute;
-  ComponentsModalCloseIconRoute: typeof ComponentsModalCloseIconRoute;
-  ComponentsModalCustomOverlayRoute: typeof ComponentsModalCustomOverlayRoute;
-  ComponentsModalScrollRoute: typeof ComponentsModalScrollRoute;
-  ComponentsModalSizesRoute: typeof ComponentsModalSizesRoute;
-  ComponentsModalStatusIconsRoute: typeof ComponentsModalStatusIconsRoute;
-  ComponentsModalVariantsRoute: typeof ComponentsModalVariantsRoute;
-  ComponentsMultiButtonStatesRoute: typeof ComponentsMultiButtonStatesRoute;
-  ComponentsMultiButtonStylesRoute: typeof ComponentsMultiButtonStylesRoute;
-  ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute;
-  ComponentsMultiInputSizeRoute: typeof ComponentsMultiInputSizeRoute;
-  ComponentsMultiInputStateRoute: typeof ComponentsMultiInputStateRoute;
-  ComponentsMultiInputStatusRoute: typeof ComponentsMultiInputStatusRoute;
-  ComponentsMultiInputWithOptionsRoute: typeof ComponentsMultiInputWithOptionsRoute;
-  ComponentsNotificationStatesRoute: typeof ComponentsNotificationStatesRoute;
-  ComponentsNotificationStylesRoute: typeof ComponentsNotificationStylesRoute;
-  ComponentsNumberInputControlledInputRoute: typeof ComponentsNumberInputControlledInputRoute;
-  ComponentsNumberInputCustomRoute: typeof ComponentsNumberInputCustomRoute;
-  ComponentsNumberInputMinMaxValueRoute: typeof ComponentsNumberInputMinMaxValueRoute;
-  ComponentsNumberInputNumberInputFieldRoute: typeof ComponentsNumberInputNumberInputFieldRoute;
-  ComponentsNumberInputSizesRoute: typeof ComponentsNumberInputSizesRoute;
-  ComponentsNumberInputSpacesRoute: typeof ComponentsNumberInputSpacesRoute;
-  ComponentsNumberInputStateRoute: typeof ComponentsNumberInputStateRoute;
-  ComponentsNumberInputStatusRoute: typeof ComponentsNumberInputStatusRoute;
-  ComponentsOverflowMenuMultiLevelRoute: typeof ComponentsOverflowMenuMultiLevelRoute;
-  ComponentsOverflowMenuStylesRoute: typeof ComponentsOverflowMenuStylesRoute;
-  ComponentsPaginationOneSizesRoute: typeof ComponentsPaginationOneSizesRoute;
-  ComponentsPaginationOneStatesRoute: typeof ComponentsPaginationOneStatesRoute;
-  ComponentsPaginationOneTypesRoute: typeof ComponentsPaginationOneTypesRoute;
-  ComponentsPaginationOneWithInputRoute: typeof ComponentsPaginationOneWithInputRoute;
-  ComponentsPaginationTwoEntriesRoute: typeof ComponentsPaginationTwoEntriesRoute;
-  ComponentsPaginationTwoMobileRoute: typeof ComponentsPaginationTwoMobileRoute;
-  ComponentsPaginationTwoPagesRoute: typeof ComponentsPaginationTwoPagesRoute;
-  ComponentsPaginationTwoStateRoute: typeof ComponentsPaginationTwoStateRoute;
-  ComponentsPaginationTwoWithInputRoute: typeof ComponentsPaginationTwoWithInputRoute;
-  ComponentsPhoneNumberInputPhoneNumberInputFieldRoute: typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute;
-  ComponentsPhoneNumberInputSelectedCountryRoute: typeof ComponentsPhoneNumberInputSelectedCountryRoute;
-  ComponentsPhoneNumberInputSizesRoute: typeof ComponentsPhoneNumberInputSizesRoute;
-  ComponentsPhoneNumberInputStateRoute: typeof ComponentsPhoneNumberInputStateRoute;
-  ComponentsPhoneNumberInputStatusRoute: typeof ComponentsPhoneNumberInputStatusRoute;
-  ComponentsPhoneNumberInputWithFilterRoute: typeof ComponentsPhoneNumberInputWithFilterRoute;
-  ComponentsPhoneNumberInputWithPlaceholderRoute: typeof ComponentsPhoneNumberInputWithPlaceholderRoute;
-  ComponentsPillsMenuRoute: typeof ComponentsPillsMenuRoute;
-  ComponentsPillsNestedRoute: typeof ComponentsPillsNestedRoute;
-  ComponentsPillsTooltipRoute: typeof ComponentsPillsTooltipRoute;
-  ComponentsProgressHeaderAnimationRoute: typeof ComponentsProgressHeaderAnimationRoute;
-  ComponentsProgressHeaderStylesRoute: typeof ComponentsProgressHeaderStylesRoute;
-  ComponentsProgressPageAnimationRoute: typeof ComponentsProgressPageAnimationRoute;
-  ComponentsProgressPageStylesRoute: typeof ComponentsProgressPageStylesRoute;
-  ComponentsProgressStepperDescriptionNextStepsRoute: typeof ComponentsProgressStepperDescriptionNextStepsRoute;
-  ComponentsProgressStepperMobileRoute: typeof ComponentsProgressStepperMobileRoute;
-  ComponentsProgressStepperScenarioRoute: typeof ComponentsProgressStepperScenarioRoute;
-  ComponentsProgressStepperStepsNamingRoute: typeof ComponentsProgressStepperStepsNamingRoute;
-  ComponentsRadiobuttonExtraTextRoute: typeof ComponentsRadiobuttonExtraTextRoute;
-  ComponentsRadiobuttonFieldSetRoute: typeof ComponentsRadiobuttonFieldSetRoute;
-  ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute;
-  ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute;
-  ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute;
-  ComponentsScrollContainerStateRoute: typeof ComponentsScrollContainerStateRoute;
-  ComponentsSegmentedControlCheckBoxModeRoute: typeof ComponentsSegmentedControlCheckBoxModeRoute;
-  ComponentsSegmentedControlRadioButtonModeRoute: typeof ComponentsSegmentedControlRadioButtonModeRoute;
-  ComponentsSegmentedControlSizesRoute: typeof ComponentsSegmentedControlSizesRoute;
-  ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute;
-  ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute;
-  ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute;
-  ComponentsSelectAsyncSearchRoute: typeof ComponentsSelectAsyncSearchRoute;
-  ComponentsSelectCustomOptionsByRenderPropsRoute: typeof ComponentsSelectCustomOptionsByRenderPropsRoute;
-  ComponentsSelectCustomOptionsWithCustomFilterRoute: typeof ComponentsSelectCustomOptionsWithCustomFilterRoute;
-  ComponentsSelectCustomValuesRoute: typeof ComponentsSelectCustomValuesRoute;
-  ComponentsSelectExternalFilterRoute: typeof ComponentsSelectExternalFilterRoute;
-  ComponentsSelectForceHideOverflowTooltipRoute: typeof ComponentsSelectForceHideOverflowTooltipRoute;
-  ComponentsSelectGroupOfOptionsRoute: typeof ComponentsSelectGroupOfOptionsRoute;
-  ComponentsSelectMultiCustomDeleteChipRoute: typeof ComponentsSelectMultiCustomDeleteChipRoute;
-  ComponentsSelectMultiCustomOptionsByRenderChipRoute: typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute;
-  ComponentsSelectMultiCustomValuesRoute: typeof ComponentsSelectMultiCustomValuesRoute;
-  ComponentsSelectMultiSelectApplyButtonRoute: typeof ComponentsSelectMultiSelectApplyButtonRoute;
-  ComponentsSelectMultiSelectChooseAllRoute: typeof ComponentsSelectMultiSelectChooseAllRoute;
-  ComponentsSelectMultiSelectExpandedHeightRoute: typeof ComponentsSelectMultiSelectExpandedHeightRoute;
-  ComponentsSelectMultiSelectOnChangeRoute: typeof ComponentsSelectMultiSelectOnChangeRoute;
-  ComponentsSelectMultiSelectWithSelectedOnTopRoute: typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute;
-  ComponentsSelectPanelWithAddButtonRoute: typeof ComponentsSelectPanelWithAddButtonRoute;
-  ComponentsSelectProgressiveRenderOptionsScrollRoute: typeof ComponentsSelectProgressiveRenderOptionsScrollRoute;
-  ComponentsSelectSearchWithClearInputAfterSelectRoute: typeof ComponentsSelectSearchWithClearInputAfterSelectRoute;
-  ComponentsSelectSelectFieldRoute: typeof ComponentsSelectSelectFieldRoute;
-  ComponentsSelectSizesRoute: typeof ComponentsSelectSizesRoute;
-  ComponentsSelectStateRoute: typeof ComponentsSelectStateRoute;
-  ComponentsSelectStatusRoute: typeof ComponentsSelectStatusRoute;
-  ComponentsSelectUncontrolledSubmitSearchRoute: typeof ComponentsSelectUncontrolledSubmitSearchRoute;
-  ComponentsSelectVirtualScrollRoute: typeof ComponentsSelectVirtualScrollRoute;
-  ComponentsSliderCustomRoute: typeof ComponentsSliderCustomRoute;
-  ComponentsSliderOptionsRoute: typeof ComponentsSliderOptionsRoute;
-  ComponentsSliderRangeRoute: typeof ComponentsSliderRangeRoute;
-  ComponentsSliderRangeOptionsRoute: typeof ComponentsSliderRangeOptionsRoute;
-  ComponentsSliderRangeSizesRoute: typeof ComponentsSliderRangeSizesRoute;
-  ComponentsSliderRangeStateRoute: typeof ComponentsSliderRangeStateRoute;
-  ComponentsSliderSizesRoute: typeof ComponentsSliderSizesRoute;
-  ComponentsSliderStateRoute: typeof ComponentsSliderStateRoute;
-  ComponentsSliderInputControlledRoute: typeof ComponentsSliderInputControlledRoute;
-  ComponentsSliderInputCustomRoute: typeof ComponentsSliderInputCustomRoute;
-  ComponentsSliderInputSizesRoute: typeof ComponentsSliderInputSizesRoute;
-  ComponentsSliderInputStatesRoute: typeof ComponentsSliderInputStatesRoute;
-  ComponentsSliderInputVariantsRoute: typeof ComponentsSliderInputVariantsRoute;
-  ComponentsSpinnerSizesRoute: typeof ComponentsSpinnerSizesRoute;
-  ComponentsSpinnerVariantsRoute: typeof ComponentsSpinnerVariantsRoute;
-  ComponentsSpinnerWithOtherComponentsRoute: typeof ComponentsSpinnerWithOtherComponentsRoute;
-  ComponentsStatusIndicatorSizesRoute: typeof ComponentsStatusIndicatorSizesRoute;
-  ComponentsStatusIndicatorStatesRoute: typeof ComponentsStatusIndicatorStatesRoute;
-  ComponentsStatusIndicatorVariantsRoute: typeof ComponentsStatusIndicatorVariantsRoute;
-  ComponentsStepperAdaptiveRoute: typeof ComponentsStepperAdaptiveRoute;
-  ComponentsStepperCustomRoute: typeof ComponentsStepperCustomRoute;
-  ComponentsStepperMobileRoute: typeof ComponentsStepperMobileRoute;
-  ComponentsStepperOptionsRoute: typeof ComponentsStepperOptionsRoute;
-  ComponentsStepperStateRoute: typeof ComponentsStepperStateRoute;
-  ComponentsStepperVariantsRoute: typeof ComponentsStepperVariantsRoute;
-  ComponentsStepperVerticalRoute: typeof ComponentsStepperVerticalRoute;
-  ComponentsSuggestInputFieldRoute: typeof ComponentsSuggestInputFieldRoute;
-  ComponentsSuggestInputFilterRoute: typeof ComponentsSuggestInputFilterRoute;
-  ComponentsSuggestInputIconRoute: typeof ComponentsSuggestInputIconRoute;
-  ComponentsSuggestInputSizesRoute: typeof ComponentsSuggestInputSizesRoute;
-  ComponentsSuggestInputUncontrolledRoute: typeof ComponentsSuggestInputUncontrolledRoute;
-  ComponentsTStylesListRoute: typeof ComponentsTStylesListRoute;
-  ComponentsTVariantsRoute: typeof ComponentsTVariantsRoute;
-  ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute;
-  ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute;
-  ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute;
-  ComponentsTabMenuCardTabMenuRoute: typeof ComponentsTabMenuCardTabMenuRoute;
-  ComponentsTabMenuCardTabMenuWithoutBorderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute;
-  ComponentsTabMenuFilterTabsRoute: typeof ComponentsTabMenuFilterTabsRoute;
-  ComponentsTabMenuFilterTabsMobileRoute: typeof ComponentsTabMenuFilterTabsMobileRoute;
-  ComponentsTabMenuFilterTabsSizeRoute: typeof ComponentsTabMenuFilterTabsSizeRoute;
-  ComponentsTabMenuHorizontalTabsRoute: typeof ComponentsTabMenuHorizontalTabsRoute;
-  ComponentsTabMenuOptionsRoute: typeof ComponentsTabMenuOptionsRoute;
-  ComponentsTabMenuOptionsVerticalTabsRoute: typeof ComponentsTabMenuOptionsVerticalTabsRoute;
-  ComponentsTabMenuSizeRoute: typeof ComponentsTabMenuSizeRoute;
-  ComponentsTabMenuSizeVerticalTabsRoute: typeof ComponentsTabMenuSizeVerticalTabsRoute;
-  ComponentsTabMenuTabMenuIconRoute: typeof ComponentsTabMenuTabMenuIconRoute;
-  ComponentsTabMenuTabMenuVerticalRoute: typeof ComponentsTabMenuTabMenuVerticalRoute;
-  ComponentsTabMenuWithOverflowMenuRoute: typeof ComponentsTabMenuWithOverflowMenuRoute;
-  ComponentsTabMenuWithPaddingRoute: typeof ComponentsTabMenuWithPaddingRoute;
-  ComponentsTableBaseHTMLRoute: typeof ComponentsTableBaseHTMLRoute;
-  ComponentsTableBaseHTMLOverflowMenuRoute: typeof ComponentsTableBaseHTMLOverflowMenuRoute;
-  ComponentsTableBaseHTMLStickyShadowRoute: typeof ComponentsTableBaseHTMLStickyShadowRoute;
-  ComponentsTableCheckboxRoute: typeof ComponentsTableCheckboxRoute;
-  ComponentsTableColumnDragDropRoute: typeof ComponentsTableColumnDragDropRoute;
-  ComponentsTableDynamicVirtualScrollRoute: typeof ComponentsTableDynamicVirtualScrollRoute;
-  ComponentsTableExpandRoute: typeof ComponentsTableExpandRoute;
-  ComponentsTableExtraTextRoute: typeof ComponentsTableExtraTextRoute;
-  ComponentsTableFilterRoute: typeof ComponentsTableFilterRoute;
-  ComponentsTableFixedVirtualScrollRoute: typeof ComponentsTableFixedVirtualScrollRoute;
-  ComponentsTableGroupRoute: typeof ComponentsTableGroupRoute;
-  ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute;
-  ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute;
-  ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute;
-  ComponentsTableMultiLevelHeaderRoute: typeof ComponentsTableMultiLevelHeaderRoute;
-  ComponentsTableMultilineRoute: typeof ComponentsTableMultilineRoute;
-  ComponentsTableOverflowMenuRoute: typeof ComponentsTableOverflowMenuRoute;
-  ComponentsTableRenderCallbackRoute: typeof ComponentsTableRenderCallbackRoute;
-  ComponentsTableRowDragDropRoute: typeof ComponentsTableRowDragDropRoute;
-  ComponentsTableRowStateRoute: typeof ComponentsTableRowStateRoute;
-  ComponentsTableScrollPositionByRefRoute: typeof ComponentsTableScrollPositionByRefRoute;
-  ComponentsTableSortRoute: typeof ComponentsTableSortRoute;
-  ComponentsTableStickyRoute: typeof ComponentsTableStickyRoute;
-  ComponentsTableStyleRoute: typeof ComponentsTableStyleRoute;
-  ComponentsTableWidthRoute: typeof ComponentsTableWidthRoute;
-  ComponentsTableZebraRoute: typeof ComponentsTableZebraRoute;
-  ComponentsTagMenuRoute: typeof ComponentsTagMenuRoute;
-  ComponentsTagStylesRoute: typeof ComponentsTagStylesRoute;
-  ComponentsTagTagsRoute: typeof ComponentsTagTagsRoute;
-  ComponentsTagTooltipRoute: typeof ComponentsTagTooltipRoute;
-  ComponentsTagWithIconRoute: typeof ComponentsTagWithIconRoute;
-  ComponentsTextAreaSizesRoute: typeof ComponentsTextAreaSizesRoute;
-  ComponentsTextAreaStatesRoute: typeof ComponentsTextAreaStatesRoute;
-  ComponentsTextAreaStatusesRoute: typeof ComponentsTextAreaStatusesRoute;
-  ComponentsTextAreaVariantsRoute: typeof ComponentsTextAreaVariantsRoute;
-  ComponentsTextButtonStatesRoute: typeof ComponentsTextButtonStatesRoute;
-  ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute;
-  ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute;
-  ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute;
-  ComponentsToastLineNotificationRoute: typeof ComponentsToastLineNotificationRoute;
-  ComponentsToastPositionRoute: typeof ComponentsToastPositionRoute;
-  ComponentsToastWithProgressBarRoute: typeof ComponentsToastWithProgressBarRoute;
-  ComponentsToastWithProgressBarStopOnHoverRoute: typeof ComponentsToastWithProgressBarStopOnHoverRoute;
-  ComponentsToggleExtraTextRoute: typeof ComponentsToggleExtraTextRoute;
-  ComponentsToggleLabelPositionRoute: typeof ComponentsToggleLabelPositionRoute;
-  ComponentsToggleMobileRoute: typeof ComponentsToggleMobileRoute;
-  ComponentsToggleSizesRoute: typeof ComponentsToggleSizesRoute;
-  ComponentsToggleStatesRoute: typeof ComponentsToggleStatesRoute;
-  ComponentsTooltipHocBaseRoute: typeof ComponentsTooltipHocBaseRoute;
-  ComponentsTooltipHocClassRoute: typeof ComponentsTooltipHocClassRoute;
-  ComponentsTooltipHocFCRoute: typeof ComponentsTooltipHocFCRoute;
-  ComponentsTooltipHocRefRoute: typeof ComponentsTooltipHocRefRoute;
-  ComponentsTooltipHocRefSetterRoute: typeof ComponentsTooltipHocRefSetterRoute;
-  ComponentsTooltipPositionRoute: typeof ComponentsTooltipPositionRoute;
-  ComponentsTooltipRefRoute: typeof ComponentsTooltipRefRoute;
-  ComponentsTooltipScenarioRoute: typeof ComponentsTooltipScenarioRoute;
-  ComponentsTooltipSizesRoute: typeof ComponentsTooltipSizesRoute;
-  ComponentsTooltipVariantsRoute: typeof ComponentsTooltipVariantsRoute;
-  ComponentsTooltipWithMenuButtonRoute: typeof ComponentsTooltipWithMenuButtonRoute;
-  ComponentsTreeCustomRoute: typeof ComponentsTreeCustomRoute;
-  ComponentsTreeMobileRoute: typeof ComponentsTreeMobileRoute;
-  ComponentsTreeSizesRoute: typeof ComponentsTreeSizesRoute;
-  ComponentsTreeUncontrolledRoute: typeof ComponentsTreeUncontrolledRoute;
-  ComponentsTreeVariantsRoute: typeof ComponentsTreeVariantsRoute;
-  ComponentsTreeWithControlCheckCountRoute: typeof ComponentsTreeWithControlCheckCountRoute;
-  ComponentsTreeWithOnChangeHandlerRoute: typeof ComponentsTreeWithOnChangeHandlerRoute;
-  ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute;
-  ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute;
-  ComponentsAnchorIndexRoute: typeof ComponentsAnchorIndexRoute;
-  ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute;
-  ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute;
-  ComponentsBadgeDotIndexRoute: typeof ComponentsBadgeDotIndexRoute;
-  ComponentsBreadcrumbsIndexRoute: typeof ComponentsBreadcrumbsIndexRoute;
-  ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute;
-  ComponentsButtonGroupIndexRoute: typeof ComponentsButtonGroupIndexRoute;
-  ComponentsCalendarIndexRoute: typeof ComponentsCalendarIndexRoute;
-  ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute;
-  ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute;
-  ComponentsCheckboxIndexRoute: typeof ComponentsCheckboxIndexRoute;
-  ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute;
-  ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute;
-  ComponentsCurrencyInputIndexRoute: typeof ComponentsCurrencyInputIndexRoute;
-  ComponentsDateInputIndexRoute: typeof ComponentsDateInputIndexRoute;
-  ComponentsDateTimeFieldIndexRoute: typeof ComponentsDateTimeFieldIndexRoute;
-  ComponentsDividerIndexRoute: typeof ComponentsDividerIndexRoute;
-  ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute;
-  ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute;
-  ComponentsEditModeIndexRoute: typeof ComponentsEditModeIndexRoute;
-  ComponentsFileinputIndexRoute: typeof ComponentsFileinputIndexRoute;
-  ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute;
-  ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute;
-  ComponentsGlobalSearchIndexRoute: typeof ComponentsGlobalSearchIndexRoute;
-  ComponentsGroupActionsPaneIndexRoute: typeof ComponentsGroupActionsPaneIndexRoute;
-  ComponentsHintIndexRoute: typeof ComponentsHintIndexRoute;
-  ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute;
-  ComponentsIconButtonGroupIndexRoute: typeof ComponentsIconButtonGroupIndexRoute;
-  ComponentsIconPlacementIndexRoute: typeof ComponentsIconPlacementIndexRoute;
-  ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute;
-  ComponentsInputExIndexRoute: typeof ComponentsInputExIndexRoute;
-  ComponentsLinkIndexRoute: typeof ComponentsLinkIndexRoute;
-  ComponentsListIndexRoute: typeof ComponentsListIndexRoute;
-  ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute;
-  ComponentsModalIndexRoute: typeof ComponentsModalIndexRoute;
-  ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute;
-  ComponentsMultiInputIndexRoute: typeof ComponentsMultiInputIndexRoute;
-  ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute;
-  ComponentsNumberInputIndexRoute: typeof ComponentsNumberInputIndexRoute;
-  ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute;
-  ComponentsPaginationOneIndexRoute: typeof ComponentsPaginationOneIndexRoute;
-  ComponentsPaginationTwoIndexRoute: typeof ComponentsPaginationTwoIndexRoute;
-  ComponentsPhoneNumberInputIndexRoute: typeof ComponentsPhoneNumberInputIndexRoute;
-  ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute;
-  ComponentsProgressHeaderIndexRoute: typeof ComponentsProgressHeaderIndexRoute;
-  ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute;
-  ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute;
-  ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute;
-  ComponentsScrollContainerIndexRoute: typeof ComponentsScrollContainerIndexRoute;
-  ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute;
-  ComponentsSelectIndexRoute: typeof ComponentsSelectIndexRoute;
-  ComponentsSkeletonIndexRoute: typeof ComponentsSkeletonIndexRoute;
-  ComponentsSliderIndexRoute: typeof ComponentsSliderIndexRoute;
-  ComponentsSliderInputIndexRoute: typeof ComponentsSliderInputIndexRoute;
-  ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute;
-  ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute;
-  ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute;
-  ComponentsSuggestInputIndexRoute: typeof ComponentsSuggestInputIndexRoute;
-  ComponentsTIndexRoute: typeof ComponentsTIndexRoute;
-  ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute;
-  ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute;
-  ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute;
-  ComponentsTextAreaIndexRoute: typeof ComponentsTextAreaIndexRoute;
-  ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute;
-  ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute;
-  ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute;
-  ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute;
-  ComponentsTooltipIndexRoute: typeof ComponentsTooltipIndexRoute;
-  ComponentsTreeIndexRoute: typeof ComponentsTreeIndexRoute;
+  ComponentsAccordionAccordionDimensionRoute: typeof ComponentsAccordionAccordionDimensionRoute
+  ComponentsAccordionAccordionDividerRoute: typeof ComponentsAccordionAccordionDividerRoute
+  ComponentsAccordionAccordionIconRoute: typeof ComponentsAccordionAccordionIconRoute
+  ComponentsAccordionAccordionModesRoute: typeof ComponentsAccordionAccordionModesRoute
+  ComponentsActionBarAdaptiveRoute: typeof ComponentsActionBarAdaptiveRoute
+  ComponentsActionBarDimensionsRoute: typeof ComponentsActionBarDimensionsRoute
+  ComponentsAnchorSizesRoute: typeof ComponentsAnchorSizesRoute
+  ComponentsAnchorStateRoute: typeof ComponentsAnchorStateRoute
+  ComponentsAnchorTreeRoute: typeof ComponentsAnchorTreeRoute
+  ComponentsAvatarAvatarGroupRoute: typeof ComponentsAvatarAvatarGroupRoute
+  ComponentsAvatarAvatarGroupLimitedWidthRoute: typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  ComponentsAvatarSizeXXSRoute: typeof ComponentsAvatarSizeXXSRoute
+  ComponentsAvatarStylesRoute: typeof ComponentsAvatarStylesRoute
+  ComponentsBadgeBadgeAccessibilityRoute: typeof ComponentsBadgeBadgeAccessibilityRoute
+  ComponentsBadgeBadgeVariantsRoute: typeof ComponentsBadgeBadgeVariantsRoute
+  ComponentsBadgeDotVariantsRoute: typeof ComponentsBadgeDotVariantsRoute
+  ComponentsBreadcrumbsActiveCrumbRoute: typeof ComponentsBreadcrumbsActiveCrumbRoute
+  ComponentsBreadcrumbsIconsRoute: typeof ComponentsBreadcrumbsIconsRoute
+  ComponentsBreadcrumbsLinkRoute: typeof ComponentsBreadcrumbsLinkRoute
+  ComponentsBreadcrumbsMobileRoute: typeof ComponentsBreadcrumbsMobileRoute
+  ComponentsBreadcrumbsSizesRoute: typeof ComponentsBreadcrumbsSizesRoute
+  ComponentsButtonAdaptiveRoute: typeof ComponentsButtonAdaptiveRoute
+  ComponentsButtonButtonWithBadgeRoute: typeof ComponentsButtonButtonWithBadgeRoute
+  ComponentsButtonButtonWithIconRoute: typeof ComponentsButtonButtonWithIconRoute
+  ComponentsButtonDimensionRoute: typeof ComponentsButtonDimensionRoute
+  ComponentsButtonStateRoute: typeof ComponentsButtonStateRoute
+  ComponentsButtonTypesRoute: typeof ComponentsButtonTypesRoute
+  ComponentsButtonGroupSizesRoute: typeof ComponentsButtonGroupSizesRoute
+  ComponentsButtonGroupStatesRoute: typeof ComponentsButtonGroupStatesRoute
+  ComponentsButtonGroupStylesRoute: typeof ComponentsButtonGroupStylesRoute
+  ComponentsButtonGroupVariantsRoute: typeof ComponentsButtonGroupVariantsRoute
+  ComponentsCalendarActiveViewDateRoute: typeof ComponentsCalendarActiveViewDateRoute
+  ComponentsCalendarCallbackRoute: typeof ComponentsCalendarCallbackRoute
+  ComponentsCalendarFilterDateRoute: typeof ComponentsCalendarFilterDateRoute
+  ComponentsCalendarMaxDateRoute: typeof ComponentsCalendarMaxDateRoute
+  ComponentsCalendarRangeRoute: typeof ComponentsCalendarRangeRoute
+  ComponentsCalendarSpecialDatesRoute: typeof ComponentsCalendarSpecialDatesRoute
+  ComponentsCalendarViewDateAfterChooseRoute: typeof ComponentsCalendarViewDateAfterChooseRoute
+  ComponentsCalendarViewDateMonthsYearsRoute: typeof ComponentsCalendarViewDateMonthsYearsRoute
+  ComponentsCarouselArrowsRoute: typeof ComponentsCarouselArrowsRoute
+  ComponentsCarouselCarouselAutoChangeRoute: typeof ComponentsCarouselCarouselAutoChangeRoute
+  ComponentsCarouselSliderPositionRoute: typeof ComponentsCarouselSliderPositionRoute
+  ComponentsCarouselSliderCarouselSliderAutoChangeRoute: typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  ComponentsCarouselSliderStylesRoute: typeof ComponentsCarouselSliderStylesRoute
+  ComponentsCheckboxAdditionalTextRoute: typeof ComponentsCheckboxAdditionalTextRoute
+  ComponentsCheckboxCompositeGroupRoute: typeof ComponentsCheckboxCompositeGroupRoute
+  ComponentsCheckboxFieldSetRoute: typeof ComponentsCheckboxFieldSetRoute
+  ComponentsCheckboxStatesRoute: typeof ComponentsCheckboxStatesRoute
+  ComponentsCheckboxWithInformerRoute: typeof ComponentsCheckboxWithInformerRoute
+  ComponentsChipsChipsCloseRoute: typeof ComponentsChipsChipsCloseRoute
+  ComponentsChipsMultiSelectRoute: typeof ComponentsChipsMultiSelectRoute
+  ComponentsChipsSelectRoute: typeof ComponentsChipsSelectRoute
+  ComponentsChipsSizesRoute: typeof ComponentsChipsSizesRoute
+  ComponentsChipsStylesRoute: typeof ComponentsChipsStylesRoute
+  ComponentsChipsWithBadgeRoute: typeof ComponentsChipsWithBadgeRoute
+  ComponentsChipsWithIconRoute: typeof ComponentsChipsWithIconRoute
+  ComponentsChipsWithTooltipRoute: typeof ComponentsChipsWithTooltipRoute
+  ComponentsContentSwitcherAdaptiveRoute: typeof ComponentsContentSwitcherAdaptiveRoute
+  ComponentsContentSwitcherIconsOnlyRoute: typeof ComponentsContentSwitcherIconsOnlyRoute
+  ComponentsContentSwitcherSizesRoute: typeof ComponentsContentSwitcherSizesRoute
+  ComponentsContentSwitcherStylesRoute: typeof ComponentsContentSwitcherStylesRoute
+  ComponentsContentSwitcherWithBadgeRoute: typeof ComponentsContentSwitcherWithBadgeRoute
+  ComponentsContentSwitcherWithIconsRoute: typeof ComponentsContentSwitcherWithIconsRoute
+  ComponentsCurrencyInputCurrencyInputFieldRoute: typeof ComponentsCurrencyInputCurrencyInputFieldRoute
+  ComponentsCurrencyInputMinMaxvalueRoute: typeof ComponentsCurrencyInputMinMaxvalueRoute
+  ComponentsCurrencyInputWithPrefixRoute: typeof ComponentsCurrencyInputWithPrefixRoute
+  ComponentsDateInputCustomRoute: typeof ComponentsDateInputCustomRoute
+  ComponentsDateInputDateFieldRoute: typeof ComponentsDateInputDateFieldRoute
+  ComponentsDateInputDateFieldStateRoute: typeof ComponentsDateInputDateFieldStateRoute
+  ComponentsDateInputRangeRoute: typeof ComponentsDateInputRangeRoute
+  ComponentsDateInputSizesRoute: typeof ComponentsDateInputSizesRoute
+  ComponentsDateInputSpecialDatesRoute: typeof ComponentsDateInputSpecialDatesRoute
+  ComponentsDateInputStateRoute: typeof ComponentsDateInputStateRoute
+  ComponentsDateInputStatusRoute: typeof ComponentsDateInputStatusRoute
+  ComponentsDateInputVariantsRoute: typeof ComponentsDateInputVariantsRoute
+  ComponentsDateInputWithButtonRoute: typeof ComponentsDateInputWithButtonRoute
+  ComponentsDateTimeFieldDimensionRoute: typeof ComponentsDateTimeFieldDimensionRoute
+  ComponentsDateTimeFieldDisplayInlineRoute: typeof ComponentsDateTimeFieldDisplayInlineRoute
+  ComponentsDateTimeFieldExtraTextRoute: typeof ComponentsDateTimeFieldExtraTextRoute
+  ComponentsDateTimeFieldStatusRoute: typeof ComponentsDateTimeFieldStatusRoute
+  ComponentsDividerLengthRoute: typeof ComponentsDividerLengthRoute
+  ComponentsDividerStyleRoute: typeof ComponentsDividerStyleRoute
+  ComponentsDividerThiknessRoute: typeof ComponentsDividerThiknessRoute
+  ComponentsDividerTypeRoute: typeof ComponentsDividerTypeRoute
+  ComponentsDrawerCustomContentRoute: typeof ComponentsDrawerCustomContentRoute
+  ComponentsDrawerMobileRoute: typeof ComponentsDrawerMobileRoute
+  ComponentsDrawerNonClosableRoute: typeof ComponentsDrawerNonClosableRoute
+  ComponentsDrawerPositionRoute: typeof ComponentsDrawerPositionRoute
+  ComponentsDrawerWidthRoute: typeof ComponentsDrawerWidthRoute
+  ComponentsDrawerWithBackdropRoute: typeof ComponentsDrawerWithBackdropRoute
+  ComponentsDrawerWithoutBackdropRoute: typeof ComponentsDrawerWithoutBackdropRoute
+  ComponentsDropdownCustomDropdownContainerRoute: typeof ComponentsDropdownCustomDropdownContainerRoute
+  ComponentsDropdownDropMenuControlledRoute: typeof ComponentsDropdownDropMenuControlledRoute
+  ComponentsDropdownDropMenuUncontrolledRoute: typeof ComponentsDropdownDropMenuUncontrolledRoute
+  ComponentsDropdownMenuActionSearchRoute: typeof ComponentsDropdownMenuActionSearchRoute
+  ComponentsDropdownMenuActionTwoButtonsRoute: typeof ComponentsDropdownMenuActionTwoButtonsRoute
+  ComponentsDropdownMenuCategoriesRoute: typeof ComponentsDropdownMenuCategoriesRoute
+  ComponentsDropdownMenuCustomItemsRoute: typeof ComponentsDropdownMenuCustomItemsRoute
+  ComponentsDropdownMenuDimensionsRoute: typeof ComponentsDropdownMenuDimensionsRoute
+  ComponentsDropdownMenuLockCycleScrollRoute: typeof ComponentsDropdownMenuLockCycleScrollRoute
+  ComponentsDropdownMenuManyItemsRoute: typeof ComponentsDropdownMenuManyItemsRoute
+  ComponentsDropdownMenuMultiLevelRoute: typeof ComponentsDropdownMenuMultiLevelRoute
+  ComponentsDropdownMenuMultiLineRoute: typeof ComponentsDropdownMenuMultiLineRoute
+  ComponentsDropdownMenuPreselectRoute: typeof ComponentsDropdownMenuPreselectRoute
+  ComponentsDropdownMenuVirtualScrollRoute: typeof ComponentsDropdownMenuVirtualScrollRoute
+  ComponentsDropdownMenuWithAddTextAndIconsRoute: typeof ComponentsDropdownMenuWithAddTextAndIconsRoute
+  ComponentsDropdownMenuWithCheckboxRoute: typeof ComponentsDropdownMenuWithCheckboxRoute
+  ComponentsDropdownMenuWithCheckboxGroupRoute: typeof ComponentsDropdownMenuWithCheckboxGroupRoute
+  ComponentsDropdownMenuWithIconsRoute: typeof ComponentsDropdownMenuWithIconsRoute
+  ComponentsDropdownMenuWithRadioButtonRoute: typeof ComponentsDropdownMenuWithRadioButtonRoute
+  ComponentsDropdownMenuWithTooltipRoute: typeof ComponentsDropdownMenuWithTooltipRoute
+  ComponentsEditModeDimensionsRoute: typeof ComponentsEditModeDimensionsRoute
+  ComponentsEditModeDisablecopyingRoute: typeof ComponentsEditModeDisablecopyingRoute
+  ComponentsEditModeExtratextRoute: typeof ComponentsEditModeExtratextRoute
+  ComponentsEditModeMultilineRoute: typeof ComponentsEditModeMultilineRoute
+  ComponentsEditModeStatusRoute: typeof ComponentsEditModeStatusRoute
+  ComponentsEditModeTooltipRoute: typeof ComponentsEditModeTooltipRoute
+  ComponentsFileinputCustomizingRoute: typeof ComponentsFileinputCustomizingRoute
+  ComponentsFileinputCustomizingFileTypeRoute: typeof ComponentsFileinputCustomizingFileTypeRoute
+  ComponentsFileinputDimensionsRoute: typeof ComponentsFileinputDimensionsRoute
+  ComponentsFileinputExtratextRoute: typeof ComponentsFileinputExtratextRoute
+  ComponentsFileinputFilestatusRoute: typeof ComponentsFileinputFilestatusRoute
+  ComponentsFileinputStateRoute: typeof ComponentsFileinputStateRoute
+  ComponentsFloatingButtonMobileRoute: typeof ComponentsFloatingButtonMobileRoute
+  ComponentsFloatingButtonPositionRoute: typeof ComponentsFloatingButtonPositionRoute
+  ComponentsFloatingButtonStylesRoute: typeof ComponentsFloatingButtonStylesRoute
+  ComponentsFloatingButtonTooltipRoute: typeof ComponentsFloatingButtonTooltipRoute
+  ComponentsFloatingButtonWithMenuRoute: typeof ComponentsFloatingButtonWithMenuRoute
+  ComponentsFloatingButtonWithMenuModesRoute: typeof ComponentsFloatingButtonWithMenuModesRoute
+  ComponentsGlobalSearchSizesRoute: typeof ComponentsGlobalSearchSizesRoute
+  ComponentsGlobalSearchVariantsRoute: typeof ComponentsGlobalSearchVariantsRoute
+  ComponentsHintAnchorCssMixinRoute: typeof ComponentsHintAnchorCssMixinRoute
+  ComponentsHintClassNameRoute: typeof ComponentsHintClassNameRoute
+  ComponentsHintPositionRoute: typeof ComponentsHintPositionRoute
+  ComponentsHintScenarioRoute: typeof ComponentsHintScenarioRoute
+  ComponentsHintSizesRoute: typeof ComponentsHintSizesRoute
+  ComponentsHintVariantsRoute: typeof ComponentsHintVariantsRoute
+  ComponentsIconButtonStatesRoute: typeof ComponentsIconButtonStatesRoute
+  ComponentsIconButtonStylesRoute: typeof ComponentsIconButtonStylesRoute
+  ComponentsIconButtonGroupSizesRoute: typeof ComponentsIconButtonGroupSizesRoute
+  ComponentsIconButtonGroupStatesRoute: typeof ComponentsIconButtonGroupStatesRoute
+  ComponentsIconButtonGroupTooltipRoute: typeof ComponentsIconButtonGroupTooltipRoute
+  ComponentsIconPlacementSizesRoute: typeof ComponentsIconPlacementSizesRoute
+  ComponentsIconPlacementStylesRoute: typeof ComponentsIconPlacementStylesRoute
+  ComponentsIconPlacementVariantsRoute: typeof ComponentsIconPlacementVariantsRoute
+  ComponentsImageViewerErrorOnLoadRoute: typeof ComponentsImageViewerErrorOnLoadRoute
+  ComponentsImageViewerImageMiniatureRoute: typeof ComponentsImageViewerImageMiniatureRoute
+  ComponentsImageViewerKeyboardCommandsRoute: typeof ComponentsImageViewerKeyboardCommandsRoute
+  ComponentsImageViewerViewOptionsRoute: typeof ComponentsImageViewerViewOptionsRoute
+  ComponentsInputExCustomRoute: typeof ComponentsInputExCustomRoute
+  ComponentsInputExInputExFieldRoute: typeof ComponentsInputExInputExFieldRoute
+  ComponentsInputExPrefixSuffixSelectRoute: typeof ComponentsInputExPrefixSuffixSelectRoute
+  ComponentsInputExSizesRoute: typeof ComponentsInputExSizesRoute
+  ComponentsInputExStateRoute: typeof ComponentsInputExStateRoute
+  ComponentsInputExStatusRoute: typeof ComponentsInputExStatusRoute
+  ComponentsLinkAsPropRoute: typeof ComponentsLinkAsPropRoute
+  ComponentsLinkCssMixinRoute: typeof ComponentsLinkCssMixinRoute
+  ComponentsLinkStylesRoute: typeof ComponentsLinkStylesRoute
+  ComponentsLinkWithIconRoute: typeof ComponentsLinkWithIconRoute
+  ComponentsListCustomMarkerRoute: typeof ComponentsListCustomMarkerRoute
+  ComponentsListMarkerColorRoute: typeof ComponentsListMarkerColorRoute
+  ComponentsListMultilineRoute: typeof ComponentsListMultilineRoute
+  ComponentsListNestedRoute: typeof ComponentsListNestedRoute
+  ComponentsListOrderedListRoute: typeof ComponentsListOrderedListRoute
+  ComponentsListUnorderedListRoute: typeof ComponentsListUnorderedListRoute
+  ComponentsMenuButtonActionsRoute: typeof ComponentsMenuButtonActionsRoute
+  ComponentsMenuButtonCheckboxAndBottomPanelRoute: typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
+  ComponentsMenuButtonCheckboxAndTopPanelRoute: typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
+  ComponentsMenuButtonMultiLevelMenuRoute: typeof ComponentsMenuButtonMultiLevelMenuRoute
+  ComponentsMenuButtonStatesRoute: typeof ComponentsMenuButtonStatesRoute
+  ComponentsMenuButtonStylesRoute: typeof ComponentsMenuButtonStylesRoute
+  ComponentsMenuButtonWithIconRoute: typeof ComponentsMenuButtonWithIconRoute
+  ComponentsModalCloseIconRoute: typeof ComponentsModalCloseIconRoute
+  ComponentsModalCustomOverlayRoute: typeof ComponentsModalCustomOverlayRoute
+  ComponentsModalScrollRoute: typeof ComponentsModalScrollRoute
+  ComponentsModalSizesRoute: typeof ComponentsModalSizesRoute
+  ComponentsModalStatusIconsRoute: typeof ComponentsModalStatusIconsRoute
+  ComponentsModalVariantsRoute: typeof ComponentsModalVariantsRoute
+  ComponentsMultiButtonStatesRoute: typeof ComponentsMultiButtonStatesRoute
+  ComponentsMultiButtonStylesRoute: typeof ComponentsMultiButtonStylesRoute
+  ComponentsMultiButtonWithIconRoute: typeof ComponentsMultiButtonWithIconRoute
+  ComponentsMultiInputSizeRoute: typeof ComponentsMultiInputSizeRoute
+  ComponentsMultiInputStateRoute: typeof ComponentsMultiInputStateRoute
+  ComponentsMultiInputStatusRoute: typeof ComponentsMultiInputStatusRoute
+  ComponentsMultiInputWithOptionsRoute: typeof ComponentsMultiInputWithOptionsRoute
+  ComponentsNotificationStatesRoute: typeof ComponentsNotificationStatesRoute
+  ComponentsNotificationStylesRoute: typeof ComponentsNotificationStylesRoute
+  ComponentsNumberInputControlledInputRoute: typeof ComponentsNumberInputControlledInputRoute
+  ComponentsNumberInputCustomRoute: typeof ComponentsNumberInputCustomRoute
+  ComponentsNumberInputMinMaxValueRoute: typeof ComponentsNumberInputMinMaxValueRoute
+  ComponentsNumberInputNumberInputFieldRoute: typeof ComponentsNumberInputNumberInputFieldRoute
+  ComponentsNumberInputSizesRoute: typeof ComponentsNumberInputSizesRoute
+  ComponentsNumberInputSpacesRoute: typeof ComponentsNumberInputSpacesRoute
+  ComponentsNumberInputStateRoute: typeof ComponentsNumberInputStateRoute
+  ComponentsNumberInputStatusRoute: typeof ComponentsNumberInputStatusRoute
+  ComponentsOverflowMenuMultiLevelRoute: typeof ComponentsOverflowMenuMultiLevelRoute
+  ComponentsOverflowMenuStylesRoute: typeof ComponentsOverflowMenuStylesRoute
+  ComponentsPaginationOneSizesRoute: typeof ComponentsPaginationOneSizesRoute
+  ComponentsPaginationOneStatesRoute: typeof ComponentsPaginationOneStatesRoute
+  ComponentsPaginationOneTypesRoute: typeof ComponentsPaginationOneTypesRoute
+  ComponentsPaginationOneWithInputRoute: typeof ComponentsPaginationOneWithInputRoute
+  ComponentsPaginationTwoEntriesRoute: typeof ComponentsPaginationTwoEntriesRoute
+  ComponentsPaginationTwoMobileRoute: typeof ComponentsPaginationTwoMobileRoute
+  ComponentsPaginationTwoPagesRoute: typeof ComponentsPaginationTwoPagesRoute
+  ComponentsPaginationTwoStateRoute: typeof ComponentsPaginationTwoStateRoute
+  ComponentsPaginationTwoWithInputRoute: typeof ComponentsPaginationTwoWithInputRoute
+  ComponentsPhoneNumberInputPhoneNumberInputFieldRoute: typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  ComponentsPhoneNumberInputSelectedCountryRoute: typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  ComponentsPhoneNumberInputSizesRoute: typeof ComponentsPhoneNumberInputSizesRoute
+  ComponentsPhoneNumberInputStateRoute: typeof ComponentsPhoneNumberInputStateRoute
+  ComponentsPhoneNumberInputStatusRoute: typeof ComponentsPhoneNumberInputStatusRoute
+  ComponentsPhoneNumberInputWithFilterRoute: typeof ComponentsPhoneNumberInputWithFilterRoute
+  ComponentsPhoneNumberInputWithPlaceholderRoute: typeof ComponentsPhoneNumberInputWithPlaceholderRoute
+  ComponentsPillsMenuRoute: typeof ComponentsPillsMenuRoute
+  ComponentsPillsNestedRoute: typeof ComponentsPillsNestedRoute
+  ComponentsPillsTooltipRoute: typeof ComponentsPillsTooltipRoute
+  ComponentsProgressHeaderAnimationRoute: typeof ComponentsProgressHeaderAnimationRoute
+  ComponentsProgressHeaderStylesRoute: typeof ComponentsProgressHeaderStylesRoute
+  ComponentsProgressPageAnimationRoute: typeof ComponentsProgressPageAnimationRoute
+  ComponentsProgressPageStylesRoute: typeof ComponentsProgressPageStylesRoute
+  ComponentsProgressStepperDescriptionNextStepsRoute: typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  ComponentsProgressStepperMobileRoute: typeof ComponentsProgressStepperMobileRoute
+  ComponentsProgressStepperScenarioRoute: typeof ComponentsProgressStepperScenarioRoute
+  ComponentsProgressStepperStepsNamingRoute: typeof ComponentsProgressStepperStepsNamingRoute
+  ComponentsRadiobuttonExtraTextRoute: typeof ComponentsRadiobuttonExtraTextRoute
+  ComponentsRadiobuttonFieldSetRoute: typeof ComponentsRadiobuttonFieldSetRoute
+  ComponentsRadiobuttonInformerRoute: typeof ComponentsRadiobuttonInformerRoute
+  ComponentsRadiobuttonSizesRoute: typeof ComponentsRadiobuttonSizesRoute
+  ComponentsRadiobuttonStatesRoute: typeof ComponentsRadiobuttonStatesRoute
+  ComponentsScrollContainerStateRoute: typeof ComponentsScrollContainerStateRoute
+  ComponentsSegmentedControlCheckBoxModeRoute: typeof ComponentsSegmentedControlCheckBoxModeRoute
+  ComponentsSegmentedControlRadioButtonModeRoute: typeof ComponentsSegmentedControlRadioButtonModeRoute
+  ComponentsSegmentedControlSizesRoute: typeof ComponentsSegmentedControlSizesRoute
+  ComponentsSegmentedControlStatesRoute: typeof ComponentsSegmentedControlStatesRoute
+  ComponentsSegmentedControlStylesRoute: typeof ComponentsSegmentedControlStylesRoute
+  ComponentsSegmentedControlVariantsRoute: typeof ComponentsSegmentedControlVariantsRoute
+  ComponentsSelectAsyncSearchRoute: typeof ComponentsSelectAsyncSearchRoute
+  ComponentsSelectCustomOptionsByRenderPropsRoute: typeof ComponentsSelectCustomOptionsByRenderPropsRoute
+  ComponentsSelectCustomOptionsWithCustomFilterRoute: typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
+  ComponentsSelectCustomValuesRoute: typeof ComponentsSelectCustomValuesRoute
+  ComponentsSelectExternalFilterRoute: typeof ComponentsSelectExternalFilterRoute
+  ComponentsSelectForceHideOverflowTooltipRoute: typeof ComponentsSelectForceHideOverflowTooltipRoute
+  ComponentsSelectGroupOfOptionsRoute: typeof ComponentsSelectGroupOfOptionsRoute
+  ComponentsSelectMultiCustomDeleteChipRoute: typeof ComponentsSelectMultiCustomDeleteChipRoute
+  ComponentsSelectMultiCustomOptionsByRenderChipRoute: typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute
+  ComponentsSelectMultiCustomValuesRoute: typeof ComponentsSelectMultiCustomValuesRoute
+  ComponentsSelectMultiSelectApplyButtonRoute: typeof ComponentsSelectMultiSelectApplyButtonRoute
+  ComponentsSelectMultiSelectChooseAllRoute: typeof ComponentsSelectMultiSelectChooseAllRoute
+  ComponentsSelectMultiSelectExpandedHeightRoute: typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  ComponentsSelectMultiSelectOnChangeRoute: typeof ComponentsSelectMultiSelectOnChangeRoute
+  ComponentsSelectMultiSelectWithSelectedOnTopRoute: typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
+  ComponentsSelectPanelWithAddButtonRoute: typeof ComponentsSelectPanelWithAddButtonRoute
+  ComponentsSelectProgressiveRenderOptionsScrollRoute: typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  ComponentsSelectSearchWithClearInputAfterSelectRoute: typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
+  ComponentsSelectSelectFieldRoute: typeof ComponentsSelectSelectFieldRoute
+  ComponentsSelectSizesRoute: typeof ComponentsSelectSizesRoute
+  ComponentsSelectStateRoute: typeof ComponentsSelectStateRoute
+  ComponentsSelectStatusRoute: typeof ComponentsSelectStatusRoute
+  ComponentsSelectUncontrolledSubmitSearchRoute: typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  ComponentsSelectVirtualScrollRoute: typeof ComponentsSelectVirtualScrollRoute
+  ComponentsSliderCustomRoute: typeof ComponentsSliderCustomRoute
+  ComponentsSliderOptionsRoute: typeof ComponentsSliderOptionsRoute
+  ComponentsSliderRangeRoute: typeof ComponentsSliderRangeRoute
+  ComponentsSliderRangeOptionsRoute: typeof ComponentsSliderRangeOptionsRoute
+  ComponentsSliderRangeSizesRoute: typeof ComponentsSliderRangeSizesRoute
+  ComponentsSliderRangeStateRoute: typeof ComponentsSliderRangeStateRoute
+  ComponentsSliderSizesRoute: typeof ComponentsSliderSizesRoute
+  ComponentsSliderStateRoute: typeof ComponentsSliderStateRoute
+  ComponentsSliderInputControlledRoute: typeof ComponentsSliderInputControlledRoute
+  ComponentsSliderInputCustomRoute: typeof ComponentsSliderInputCustomRoute
+  ComponentsSliderInputSizesRoute: typeof ComponentsSliderInputSizesRoute
+  ComponentsSliderInputStatesRoute: typeof ComponentsSliderInputStatesRoute
+  ComponentsSliderInputVariantsRoute: typeof ComponentsSliderInputVariantsRoute
+  ComponentsSpinnerSizesRoute: typeof ComponentsSpinnerSizesRoute
+  ComponentsSpinnerVariantsRoute: typeof ComponentsSpinnerVariantsRoute
+  ComponentsSpinnerWithOtherComponentsRoute: typeof ComponentsSpinnerWithOtherComponentsRoute
+  ComponentsStatusIndicatorSizesRoute: typeof ComponentsStatusIndicatorSizesRoute
+  ComponentsStatusIndicatorStatesRoute: typeof ComponentsStatusIndicatorStatesRoute
+  ComponentsStatusIndicatorVariantsRoute: typeof ComponentsStatusIndicatorVariantsRoute
+  ComponentsStepperAdaptiveRoute: typeof ComponentsStepperAdaptiveRoute
+  ComponentsStepperCustomRoute: typeof ComponentsStepperCustomRoute
+  ComponentsStepperMobileRoute: typeof ComponentsStepperMobileRoute
+  ComponentsStepperOptionsRoute: typeof ComponentsStepperOptionsRoute
+  ComponentsStepperStateRoute: typeof ComponentsStepperStateRoute
+  ComponentsStepperVariantsRoute: typeof ComponentsStepperVariantsRoute
+  ComponentsStepperVerticalRoute: typeof ComponentsStepperVerticalRoute
+  ComponentsTStylesListRoute: typeof ComponentsTStylesListRoute
+  ComponentsTVariantsRoute: typeof ComponentsTVariantsRoute
+  ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
+  ComponentsTabMenuAddTabRoute: typeof ComponentsTabMenuAddTabRoute
+  ComponentsTabMenuAddTabVerticalRoute: typeof ComponentsTabMenuAddTabVerticalRoute
+  ComponentsTabMenuCardTabMenuRoute: typeof ComponentsTabMenuCardTabMenuRoute
+  ComponentsTabMenuCardTabMenuWithoutBorderRoute: typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  ComponentsTabMenuFilterTabsRoute: typeof ComponentsTabMenuFilterTabsRoute
+  ComponentsTabMenuFilterTabsMobileRoute: typeof ComponentsTabMenuFilterTabsMobileRoute
+  ComponentsTabMenuFilterTabsSizeRoute: typeof ComponentsTabMenuFilterTabsSizeRoute
+  ComponentsTabMenuHorizontalTabsRoute: typeof ComponentsTabMenuHorizontalTabsRoute
+  ComponentsTabMenuOptionsRoute: typeof ComponentsTabMenuOptionsRoute
+  ComponentsTabMenuOptionsVerticalTabsRoute: typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  ComponentsTabMenuSizeRoute: typeof ComponentsTabMenuSizeRoute
+  ComponentsTabMenuSizeVerticalTabsRoute: typeof ComponentsTabMenuSizeVerticalTabsRoute
+  ComponentsTabMenuTabMenuIconRoute: typeof ComponentsTabMenuTabMenuIconRoute
+  ComponentsTabMenuTabMenuVerticalRoute: typeof ComponentsTabMenuTabMenuVerticalRoute
+  ComponentsTabMenuWithOverflowMenuRoute: typeof ComponentsTabMenuWithOverflowMenuRoute
+  ComponentsTabMenuWithPaddingRoute: typeof ComponentsTabMenuWithPaddingRoute
+  ComponentsTableBaseHTMLRoute: typeof ComponentsTableBaseHTMLRoute
+  ComponentsTableBaseHTMLOverflowMenuRoute: typeof ComponentsTableBaseHTMLOverflowMenuRoute
+  ComponentsTableBaseHTMLStickyShadowRoute: typeof ComponentsTableBaseHTMLStickyShadowRoute
+  ComponentsTableCheckboxRoute: typeof ComponentsTableCheckboxRoute
+  ComponentsTableColumnDragDropRoute: typeof ComponentsTableColumnDragDropRoute
+  ComponentsTableDynamicVirtualScrollRoute: typeof ComponentsTableDynamicVirtualScrollRoute
+  ComponentsTableExpandRoute: typeof ComponentsTableExpandRoute
+  ComponentsTableExtraTextRoute: typeof ComponentsTableExtraTextRoute
+  ComponentsTableFilterRoute: typeof ComponentsTableFilterRoute
+  ComponentsTableFixedVirtualScrollRoute: typeof ComponentsTableFixedVirtualScrollRoute
+  ComponentsTableGroupRoute: typeof ComponentsTableGroupRoute
+  ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
+  ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
+  ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
+  ComponentsTableMultiLevelHeaderRoute: typeof ComponentsTableMultiLevelHeaderRoute
+  ComponentsTableMultilineRoute: typeof ComponentsTableMultilineRoute
+  ComponentsTableOverflowMenuRoute: typeof ComponentsTableOverflowMenuRoute
+  ComponentsTableRenderCallbackRoute: typeof ComponentsTableRenderCallbackRoute
+  ComponentsTableRowDragDropRoute: typeof ComponentsTableRowDragDropRoute
+  ComponentsTableRowStateRoute: typeof ComponentsTableRowStateRoute
+  ComponentsTableScrollPositionByRefRoute: typeof ComponentsTableScrollPositionByRefRoute
+  ComponentsTableSortRoute: typeof ComponentsTableSortRoute
+  ComponentsTableStickyRoute: typeof ComponentsTableStickyRoute
+  ComponentsTableStyleRoute: typeof ComponentsTableStyleRoute
+  ComponentsTableWidthRoute: typeof ComponentsTableWidthRoute
+  ComponentsTableZebraRoute: typeof ComponentsTableZebraRoute
+  ComponentsTagMenuRoute: typeof ComponentsTagMenuRoute
+  ComponentsTagStylesRoute: typeof ComponentsTagStylesRoute
+  ComponentsTagTagsRoute: typeof ComponentsTagTagsRoute
+  ComponentsTagTooltipRoute: typeof ComponentsTagTooltipRoute
+  ComponentsTagWithIconRoute: typeof ComponentsTagWithIconRoute
+  ComponentsTextAreaSizesRoute: typeof ComponentsTextAreaSizesRoute
+  ComponentsTextAreaStatesRoute: typeof ComponentsTextAreaStatesRoute
+  ComponentsTextAreaStatusesRoute: typeof ComponentsTextAreaStatusesRoute
+  ComponentsTextAreaVariantsRoute: typeof ComponentsTextAreaVariantsRoute
+  ComponentsTextButtonStatesRoute: typeof ComponentsTextButtonStatesRoute
+  ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
+  ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
+  ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute
+  ComponentsTimeInputCustomRoute: typeof ComponentsTimeInputCustomRoute
+  ComponentsTimeInputSizesRoute: typeof ComponentsTimeInputSizesRoute
+  ComponentsTimeInputStateRoute: typeof ComponentsTimeInputStateRoute
+  ComponentsTimeInputStatusRoute: typeof ComponentsTimeInputStatusRoute
+  ComponentsToastLineNotificationRoute: typeof ComponentsToastLineNotificationRoute
+  ComponentsToastPositionRoute: typeof ComponentsToastPositionRoute
+  ComponentsToastWithProgressBarRoute: typeof ComponentsToastWithProgressBarRoute
+  ComponentsToastWithProgressBarStopOnHoverRoute: typeof ComponentsToastWithProgressBarStopOnHoverRoute
+  ComponentsToggleExtraTextRoute: typeof ComponentsToggleExtraTextRoute
+  ComponentsToggleLabelPositionRoute: typeof ComponentsToggleLabelPositionRoute
+  ComponentsToggleMobileRoute: typeof ComponentsToggleMobileRoute
+  ComponentsToggleSizesRoute: typeof ComponentsToggleSizesRoute
+  ComponentsToggleStatesRoute: typeof ComponentsToggleStatesRoute
+  ComponentsTooltipHocBaseRoute: typeof ComponentsTooltipHocBaseRoute
+  ComponentsTooltipHocClassRoute: typeof ComponentsTooltipHocClassRoute
+  ComponentsTooltipHocFCRoute: typeof ComponentsTooltipHocFCRoute
+  ComponentsTooltipHocRefRoute: typeof ComponentsTooltipHocRefRoute
+  ComponentsTooltipHocRefSetterRoute: typeof ComponentsTooltipHocRefSetterRoute
+  ComponentsTooltipPositionRoute: typeof ComponentsTooltipPositionRoute
+  ComponentsTooltipRefRoute: typeof ComponentsTooltipRefRoute
+  ComponentsTooltipScenarioRoute: typeof ComponentsTooltipScenarioRoute
+  ComponentsTooltipSizesRoute: typeof ComponentsTooltipSizesRoute
+  ComponentsTooltipVariantsRoute: typeof ComponentsTooltipVariantsRoute
+  ComponentsTooltipWithMenuButtonRoute: typeof ComponentsTooltipWithMenuButtonRoute
+  ComponentsTreeCustomRoute: typeof ComponentsTreeCustomRoute
+  ComponentsTreeMobileRoute: typeof ComponentsTreeMobileRoute
+  ComponentsTreeSizesRoute: typeof ComponentsTreeSizesRoute
+  ComponentsTreeUncontrolledRoute: typeof ComponentsTreeUncontrolledRoute
+  ComponentsTreeVariantsRoute: typeof ComponentsTreeVariantsRoute
+  ComponentsTreeWithControlCheckCountRoute: typeof ComponentsTreeWithControlCheckCountRoute
+  ComponentsTreeWithOnChangeHandlerRoute: typeof ComponentsTreeWithOnChangeHandlerRoute
+  ComponentsAccordionIndexRoute: typeof ComponentsAccordionIndexRoute
+  ComponentsActionBarIndexRoute: typeof ComponentsActionBarIndexRoute
+  ComponentsAnchorIndexRoute: typeof ComponentsAnchorIndexRoute
+  ComponentsAvatarIndexRoute: typeof ComponentsAvatarIndexRoute
+  ComponentsBadgeIndexRoute: typeof ComponentsBadgeIndexRoute
+  ComponentsBadgeDotIndexRoute: typeof ComponentsBadgeDotIndexRoute
+  ComponentsBreadcrumbsIndexRoute: typeof ComponentsBreadcrumbsIndexRoute
+  ComponentsButtonIndexRoute: typeof ComponentsButtonIndexRoute
+  ComponentsButtonGroupIndexRoute: typeof ComponentsButtonGroupIndexRoute
+  ComponentsCalendarIndexRoute: typeof ComponentsCalendarIndexRoute
+  ComponentsCarouselIndexRoute: typeof ComponentsCarouselIndexRoute
+  ComponentsCarouselSliderIndexRoute: typeof ComponentsCarouselSliderIndexRoute
+  ComponentsCheckboxIndexRoute: typeof ComponentsCheckboxIndexRoute
+  ComponentsChipsIndexRoute: typeof ComponentsChipsIndexRoute
+  ComponentsContentSwitcherIndexRoute: typeof ComponentsContentSwitcherIndexRoute
+  ComponentsCurrencyInputIndexRoute: typeof ComponentsCurrencyInputIndexRoute
+  ComponentsDateInputIndexRoute: typeof ComponentsDateInputIndexRoute
+  ComponentsDateTimeFieldIndexRoute: typeof ComponentsDateTimeFieldIndexRoute
+  ComponentsDividerIndexRoute: typeof ComponentsDividerIndexRoute
+  ComponentsDrawerIndexRoute: typeof ComponentsDrawerIndexRoute
+  ComponentsDropdownIndexRoute: typeof ComponentsDropdownIndexRoute
+  ComponentsEditModeIndexRoute: typeof ComponentsEditModeIndexRoute
+  ComponentsFileinputIndexRoute: typeof ComponentsFileinputIndexRoute
+  ComponentsFlexIndexRoute: typeof ComponentsFlexIndexRoute
+  ComponentsFloatingButtonIndexRoute: typeof ComponentsFloatingButtonIndexRoute
+  ComponentsGlobalSearchIndexRoute: typeof ComponentsGlobalSearchIndexRoute
+  ComponentsGroupActionsPaneIndexRoute: typeof ComponentsGroupActionsPaneIndexRoute
+  ComponentsHintIndexRoute: typeof ComponentsHintIndexRoute
+  ComponentsIconButtonIndexRoute: typeof ComponentsIconButtonIndexRoute
+  ComponentsIconButtonGroupIndexRoute: typeof ComponentsIconButtonGroupIndexRoute
+  ComponentsIconPlacementIndexRoute: typeof ComponentsIconPlacementIndexRoute
+  ComponentsImageViewerIndexRoute: typeof ComponentsImageViewerIndexRoute
+  ComponentsInputExIndexRoute: typeof ComponentsInputExIndexRoute
+  ComponentsLinkIndexRoute: typeof ComponentsLinkIndexRoute
+  ComponentsListIndexRoute: typeof ComponentsListIndexRoute
+  ComponentsMenuButtonIndexRoute: typeof ComponentsMenuButtonIndexRoute
+  ComponentsModalIndexRoute: typeof ComponentsModalIndexRoute
+  ComponentsMultiButtonIndexRoute: typeof ComponentsMultiButtonIndexRoute
+  ComponentsMultiInputIndexRoute: typeof ComponentsMultiInputIndexRoute
+  ComponentsNotificationIndexRoute: typeof ComponentsNotificationIndexRoute
+  ComponentsNumberInputIndexRoute: typeof ComponentsNumberInputIndexRoute
+  ComponentsOverflowMenuIndexRoute: typeof ComponentsOverflowMenuIndexRoute
+  ComponentsPaginationOneIndexRoute: typeof ComponentsPaginationOneIndexRoute
+  ComponentsPaginationTwoIndexRoute: typeof ComponentsPaginationTwoIndexRoute
+  ComponentsPhoneNumberInputIndexRoute: typeof ComponentsPhoneNumberInputIndexRoute
+  ComponentsPillsIndexRoute: typeof ComponentsPillsIndexRoute
+  ComponentsProgressHeaderIndexRoute: typeof ComponentsProgressHeaderIndexRoute
+  ComponentsProgressPageIndexRoute: typeof ComponentsProgressPageIndexRoute
+  ComponentsProgressStepperIndexRoute: typeof ComponentsProgressStepperIndexRoute
+  ComponentsRadiobuttonIndexRoute: typeof ComponentsRadiobuttonIndexRoute
+  ComponentsScrollContainerIndexRoute: typeof ComponentsScrollContainerIndexRoute
+  ComponentsSegmentedControlIndexRoute: typeof ComponentsSegmentedControlIndexRoute
+  ComponentsSelectIndexRoute: typeof ComponentsSelectIndexRoute
+  ComponentsSkeletonIndexRoute: typeof ComponentsSkeletonIndexRoute
+  ComponentsSliderIndexRoute: typeof ComponentsSliderIndexRoute
+  ComponentsSliderInputIndexRoute: typeof ComponentsSliderInputIndexRoute
+  ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
+  ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
+  ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
+  ComponentsTIndexRoute: typeof ComponentsTIndexRoute
+  ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
+  ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
+  ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
+  ComponentsTextAreaIndexRoute: typeof ComponentsTextAreaIndexRoute
+  ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
+  ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
+  ComponentsTimeInputIndexRoute: typeof ComponentsTimeInputIndexRoute
+  ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
+  ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
+  ComponentsTooltipIndexRoute: typeof ComponentsTooltipIndexRoute
+  ComponentsTreeIndexRoute: typeof ComponentsTreeIndexRoute
 }
 
 const ComponentsRouteChildren: ComponentsRouteChildren = {
-  ComponentsAccordionAccordionDimensionRoute: ComponentsAccordionAccordionDimensionRoute,
-  ComponentsAccordionAccordionDividerRoute: ComponentsAccordionAccordionDividerRoute,
+  ComponentsAccordionAccordionDimensionRoute:
+    ComponentsAccordionAccordionDimensionRoute,
+  ComponentsAccordionAccordionDividerRoute:
+    ComponentsAccordionAccordionDividerRoute,
   ComponentsAccordionAccordionIconRoute: ComponentsAccordionAccordionIconRoute,
-  ComponentsAccordionAccordionModesRoute: ComponentsAccordionAccordionModesRoute,
+  ComponentsAccordionAccordionModesRoute:
+    ComponentsAccordionAccordionModesRoute,
   ComponentsActionBarAdaptiveRoute: ComponentsActionBarAdaptiveRoute,
   ComponentsActionBarDimensionsRoute: ComponentsActionBarDimensionsRoute,
   ComponentsAnchorSizesRoute: ComponentsAnchorSizesRoute,
   ComponentsAnchorStateRoute: ComponentsAnchorStateRoute,
   ComponentsAnchorTreeRoute: ComponentsAnchorTreeRoute,
   ComponentsAvatarAvatarGroupRoute: ComponentsAvatarAvatarGroupRoute,
-  ComponentsAvatarAvatarGroupLimitedWidthRoute: ComponentsAvatarAvatarGroupLimitedWidthRoute,
+  ComponentsAvatarAvatarGroupLimitedWidthRoute:
+    ComponentsAvatarAvatarGroupLimitedWidthRoute,
   ComponentsAvatarSizeXXSRoute: ComponentsAvatarSizeXXSRoute,
   ComponentsAvatarStylesRoute: ComponentsAvatarStylesRoute,
-  ComponentsBadgeBadgeAccessibilityRoute: ComponentsBadgeBadgeAccessibilityRoute,
+  ComponentsBadgeBadgeAccessibilityRoute:
+    ComponentsBadgeBadgeAccessibilityRoute,
   ComponentsBadgeBadgeVariantsRoute: ComponentsBadgeBadgeVariantsRoute,
   ComponentsBadgeDotVariantsRoute: ComponentsBadgeDotVariantsRoute,
   ComponentsBreadcrumbsActiveCrumbRoute: ComponentsBreadcrumbsActiveCrumbRoute,
@@ -6874,12 +7169,16 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsCalendarMaxDateRoute: ComponentsCalendarMaxDateRoute,
   ComponentsCalendarRangeRoute: ComponentsCalendarRangeRoute,
   ComponentsCalendarSpecialDatesRoute: ComponentsCalendarSpecialDatesRoute,
-  ComponentsCalendarViewDateAfterChooseRoute: ComponentsCalendarViewDateAfterChooseRoute,
-  ComponentsCalendarViewDateMonthsYearsRoute: ComponentsCalendarViewDateMonthsYearsRoute,
+  ComponentsCalendarViewDateAfterChooseRoute:
+    ComponentsCalendarViewDateAfterChooseRoute,
+  ComponentsCalendarViewDateMonthsYearsRoute:
+    ComponentsCalendarViewDateMonthsYearsRoute,
   ComponentsCarouselArrowsRoute: ComponentsCarouselArrowsRoute,
-  ComponentsCarouselCarouselAutoChangeRoute: ComponentsCarouselCarouselAutoChangeRoute,
+  ComponentsCarouselCarouselAutoChangeRoute:
+    ComponentsCarouselCarouselAutoChangeRoute,
   ComponentsCarouselSliderPositionRoute: ComponentsCarouselSliderPositionRoute,
-  ComponentsCarouselSliderCarouselSliderAutoChangeRoute: ComponentsCarouselSliderCarouselSliderAutoChangeRoute,
+  ComponentsCarouselSliderCarouselSliderAutoChangeRoute:
+    ComponentsCarouselSliderCarouselSliderAutoChangeRoute,
   ComponentsCarouselSliderStylesRoute: ComponentsCarouselSliderStylesRoute,
   ComponentsCheckboxAdditionalTextRoute: ComponentsCheckboxAdditionalTextRoute,
   ComponentsCheckboxCompositeGroupRoute: ComponentsCheckboxCompositeGroupRoute,
@@ -6894,18 +7193,26 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsChipsWithBadgeRoute: ComponentsChipsWithBadgeRoute,
   ComponentsChipsWithIconRoute: ComponentsChipsWithIconRoute,
   ComponentsChipsWithTooltipRoute: ComponentsChipsWithTooltipRoute,
-  ComponentsContentSwitcherAdaptiveRoute: ComponentsContentSwitcherAdaptiveRoute,
-  ComponentsContentSwitcherIconsOnlyRoute: ComponentsContentSwitcherIconsOnlyRoute,
+  ComponentsContentSwitcherAdaptiveRoute:
+    ComponentsContentSwitcherAdaptiveRoute,
+  ComponentsContentSwitcherIconsOnlyRoute:
+    ComponentsContentSwitcherIconsOnlyRoute,
   ComponentsContentSwitcherSizesRoute: ComponentsContentSwitcherSizesRoute,
   ComponentsContentSwitcherStylesRoute: ComponentsContentSwitcherStylesRoute,
-  ComponentsContentSwitcherWithBadgeRoute: ComponentsContentSwitcherWithBadgeRoute,
-  ComponentsContentSwitcherWithIconsRoute: ComponentsContentSwitcherWithIconsRoute,
-  ComponentsCurrencyInputCurrencyInputFieldRoute: ComponentsCurrencyInputCurrencyInputFieldRoute,
-  ComponentsCurrencyInputMinMaxvalueRoute: ComponentsCurrencyInputMinMaxvalueRoute,
-  ComponentsCurrencyInputWithPrefixRoute: ComponentsCurrencyInputWithPrefixRoute,
+  ComponentsContentSwitcherWithBadgeRoute:
+    ComponentsContentSwitcherWithBadgeRoute,
+  ComponentsContentSwitcherWithIconsRoute:
+    ComponentsContentSwitcherWithIconsRoute,
+  ComponentsCurrencyInputCurrencyInputFieldRoute:
+    ComponentsCurrencyInputCurrencyInputFieldRoute,
+  ComponentsCurrencyInputMinMaxvalueRoute:
+    ComponentsCurrencyInputMinMaxvalueRoute,
+  ComponentsCurrencyInputWithPrefixRoute:
+    ComponentsCurrencyInputWithPrefixRoute,
   ComponentsDateInputCustomRoute: ComponentsDateInputCustomRoute,
   ComponentsDateInputDateFieldRoute: ComponentsDateInputDateFieldRoute,
-  ComponentsDateInputDateFieldStateRoute: ComponentsDateInputDateFieldStateRoute,
+  ComponentsDateInputDateFieldStateRoute:
+    ComponentsDateInputDateFieldStateRoute,
   ComponentsDateInputRangeRoute: ComponentsDateInputRangeRoute,
   ComponentsDateInputSizesRoute: ComponentsDateInputSizesRoute,
   ComponentsDateInputSpecialDatesRoute: ComponentsDateInputSpecialDatesRoute,
@@ -6914,7 +7221,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDateInputVariantsRoute: ComponentsDateInputVariantsRoute,
   ComponentsDateInputWithButtonRoute: ComponentsDateInputWithButtonRoute,
   ComponentsDateTimeFieldDimensionRoute: ComponentsDateTimeFieldDimensionRoute,
-  ComponentsDateTimeFieldDisplayInlineRoute: ComponentsDateTimeFieldDisplayInlineRoute,
+  ComponentsDateTimeFieldDisplayInlineRoute:
+    ComponentsDateTimeFieldDisplayInlineRoute,
   ComponentsDateTimeFieldExtraTextRoute: ComponentsDateTimeFieldExtraTextRoute,
   ComponentsDateTimeFieldStatusRoute: ComponentsDateTimeFieldStatusRoute,
   ComponentsDividerLengthRoute: ComponentsDividerLengthRoute,
@@ -6928,26 +7236,39 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsDrawerWidthRoute: ComponentsDrawerWidthRoute,
   ComponentsDrawerWithBackdropRoute: ComponentsDrawerWithBackdropRoute,
   ComponentsDrawerWithoutBackdropRoute: ComponentsDrawerWithoutBackdropRoute,
-  ComponentsDropdownCustomDropdownContainerRoute: ComponentsDropdownCustomDropdownContainerRoute,
-  ComponentsDropdownDropMenuControlledRoute: ComponentsDropdownDropMenuControlledRoute,
-  ComponentsDropdownDropMenuUncontrolledRoute: ComponentsDropdownDropMenuUncontrolledRoute,
-  ComponentsDropdownMenuActionSearchRoute: ComponentsDropdownMenuActionSearchRoute,
-  ComponentsDropdownMenuActionTwoButtonsRoute: ComponentsDropdownMenuActionTwoButtonsRoute,
+  ComponentsDropdownCustomDropdownContainerRoute:
+    ComponentsDropdownCustomDropdownContainerRoute,
+  ComponentsDropdownDropMenuControlledRoute:
+    ComponentsDropdownDropMenuControlledRoute,
+  ComponentsDropdownDropMenuUncontrolledRoute:
+    ComponentsDropdownDropMenuUncontrolledRoute,
+  ComponentsDropdownMenuActionSearchRoute:
+    ComponentsDropdownMenuActionSearchRoute,
+  ComponentsDropdownMenuActionTwoButtonsRoute:
+    ComponentsDropdownMenuActionTwoButtonsRoute,
   ComponentsDropdownMenuCategoriesRoute: ComponentsDropdownMenuCategoriesRoute,
-  ComponentsDropdownMenuCustomItemsRoute: ComponentsDropdownMenuCustomItemsRoute,
+  ComponentsDropdownMenuCustomItemsRoute:
+    ComponentsDropdownMenuCustomItemsRoute,
   ComponentsDropdownMenuDimensionsRoute: ComponentsDropdownMenuDimensionsRoute,
-  ComponentsDropdownMenuLockCycleScrollRoute: ComponentsDropdownMenuLockCycleScrollRoute,
+  ComponentsDropdownMenuLockCycleScrollRoute:
+    ComponentsDropdownMenuLockCycleScrollRoute,
   ComponentsDropdownMenuManyItemsRoute: ComponentsDropdownMenuManyItemsRoute,
   ComponentsDropdownMenuMultiLevelRoute: ComponentsDropdownMenuMultiLevelRoute,
   ComponentsDropdownMenuMultiLineRoute: ComponentsDropdownMenuMultiLineRoute,
   ComponentsDropdownMenuPreselectRoute: ComponentsDropdownMenuPreselectRoute,
-  ComponentsDropdownMenuVirtualScrollRoute: ComponentsDropdownMenuVirtualScrollRoute,
-  ComponentsDropdownMenuWithAddTextAndIconsRoute: ComponentsDropdownMenuWithAddTextAndIconsRoute,
-  ComponentsDropdownMenuWithCheckboxRoute: ComponentsDropdownMenuWithCheckboxRoute,
-  ComponentsDropdownMenuWithCheckboxGroupRoute: ComponentsDropdownMenuWithCheckboxGroupRoute,
+  ComponentsDropdownMenuVirtualScrollRoute:
+    ComponentsDropdownMenuVirtualScrollRoute,
+  ComponentsDropdownMenuWithAddTextAndIconsRoute:
+    ComponentsDropdownMenuWithAddTextAndIconsRoute,
+  ComponentsDropdownMenuWithCheckboxRoute:
+    ComponentsDropdownMenuWithCheckboxRoute,
+  ComponentsDropdownMenuWithCheckboxGroupRoute:
+    ComponentsDropdownMenuWithCheckboxGroupRoute,
   ComponentsDropdownMenuWithIconsRoute: ComponentsDropdownMenuWithIconsRoute,
-  ComponentsDropdownMenuWithRadioButtonRoute: ComponentsDropdownMenuWithRadioButtonRoute,
-  ComponentsDropdownMenuWithTooltipRoute: ComponentsDropdownMenuWithTooltipRoute,
+  ComponentsDropdownMenuWithRadioButtonRoute:
+    ComponentsDropdownMenuWithRadioButtonRoute,
+  ComponentsDropdownMenuWithTooltipRoute:
+    ComponentsDropdownMenuWithTooltipRoute,
   ComponentsEditModeDimensionsRoute: ComponentsEditModeDimensionsRoute,
   ComponentsEditModeDisablecopyingRoute: ComponentsEditModeDisablecopyingRoute,
   ComponentsEditModeExtratextRoute: ComponentsEditModeExtratextRoute,
@@ -6955,7 +7276,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsEditModeStatusRoute: ComponentsEditModeStatusRoute,
   ComponentsEditModeTooltipRoute: ComponentsEditModeTooltipRoute,
   ComponentsFileinputCustomizingRoute: ComponentsFileinputCustomizingRoute,
-  ComponentsFileinputCustomizingFileTypeRoute: ComponentsFileinputCustomizingFileTypeRoute,
+  ComponentsFileinputCustomizingFileTypeRoute:
+    ComponentsFileinputCustomizingFileTypeRoute,
   ComponentsFileinputDimensionsRoute: ComponentsFileinputDimensionsRoute,
   ComponentsFileinputExtratextRoute: ComponentsFileinputExtratextRoute,
   ComponentsFileinputFilestatusRoute: ComponentsFileinputFilestatusRoute,
@@ -6965,7 +7287,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsFloatingButtonStylesRoute: ComponentsFloatingButtonStylesRoute,
   ComponentsFloatingButtonTooltipRoute: ComponentsFloatingButtonTooltipRoute,
   ComponentsFloatingButtonWithMenuRoute: ComponentsFloatingButtonWithMenuRoute,
-  ComponentsFloatingButtonWithMenuModesRoute: ComponentsFloatingButtonWithMenuModesRoute,
+  ComponentsFloatingButtonWithMenuModesRoute:
+    ComponentsFloatingButtonWithMenuModesRoute,
   ComponentsGlobalSearchSizesRoute: ComponentsGlobalSearchSizesRoute,
   ComponentsGlobalSearchVariantsRoute: ComponentsGlobalSearchVariantsRoute,
   ComponentsHintAnchorCssMixinRoute: ComponentsHintAnchorCssMixinRoute,
@@ -6983,12 +7306,15 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsIconPlacementStylesRoute: ComponentsIconPlacementStylesRoute,
   ComponentsIconPlacementVariantsRoute: ComponentsIconPlacementVariantsRoute,
   ComponentsImageViewerErrorOnLoadRoute: ComponentsImageViewerErrorOnLoadRoute,
-  ComponentsImageViewerImageMiniatureRoute: ComponentsImageViewerImageMiniatureRoute,
-  ComponentsImageViewerKeyboardCommandsRoute: ComponentsImageViewerKeyboardCommandsRoute,
+  ComponentsImageViewerImageMiniatureRoute:
+    ComponentsImageViewerImageMiniatureRoute,
+  ComponentsImageViewerKeyboardCommandsRoute:
+    ComponentsImageViewerKeyboardCommandsRoute,
   ComponentsImageViewerViewOptionsRoute: ComponentsImageViewerViewOptionsRoute,
   ComponentsInputExCustomRoute: ComponentsInputExCustomRoute,
   ComponentsInputExInputExFieldRoute: ComponentsInputExInputExFieldRoute,
-  ComponentsInputExPrefixSuffixSelectRoute: ComponentsInputExPrefixSuffixSelectRoute,
+  ComponentsInputExPrefixSuffixSelectRoute:
+    ComponentsInputExPrefixSuffixSelectRoute,
   ComponentsInputExSizesRoute: ComponentsInputExSizesRoute,
   ComponentsInputExStateRoute: ComponentsInputExStateRoute,
   ComponentsInputExStatusRoute: ComponentsInputExStatusRoute,
@@ -7003,9 +7329,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsListOrderedListRoute: ComponentsListOrderedListRoute,
   ComponentsListUnorderedListRoute: ComponentsListUnorderedListRoute,
   ComponentsMenuButtonActionsRoute: ComponentsMenuButtonActionsRoute,
-  ComponentsMenuButtonCheckboxAndBottomPanelRoute: ComponentsMenuButtonCheckboxAndBottomPanelRoute,
-  ComponentsMenuButtonCheckboxAndTopPanelRoute: ComponentsMenuButtonCheckboxAndTopPanelRoute,
-  ComponentsMenuButtonMultiLevelMenuRoute: ComponentsMenuButtonMultiLevelMenuRoute,
+  ComponentsMenuButtonCheckboxAndBottomPanelRoute:
+    ComponentsMenuButtonCheckboxAndBottomPanelRoute,
+  ComponentsMenuButtonCheckboxAndTopPanelRoute:
+    ComponentsMenuButtonCheckboxAndTopPanelRoute,
+  ComponentsMenuButtonMultiLevelMenuRoute:
+    ComponentsMenuButtonMultiLevelMenuRoute,
   ComponentsMenuButtonStatesRoute: ComponentsMenuButtonStatesRoute,
   ComponentsMenuButtonStylesRoute: ComponentsMenuButtonStylesRoute,
   ComponentsMenuButtonWithIconRoute: ComponentsMenuButtonWithIconRoute,
@@ -7024,10 +7353,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsMultiInputWithOptionsRoute: ComponentsMultiInputWithOptionsRoute,
   ComponentsNotificationStatesRoute: ComponentsNotificationStatesRoute,
   ComponentsNotificationStylesRoute: ComponentsNotificationStylesRoute,
-  ComponentsNumberInputControlledInputRoute: ComponentsNumberInputControlledInputRoute,
+  ComponentsNumberInputControlledInputRoute:
+    ComponentsNumberInputControlledInputRoute,
   ComponentsNumberInputCustomRoute: ComponentsNumberInputCustomRoute,
   ComponentsNumberInputMinMaxValueRoute: ComponentsNumberInputMinMaxValueRoute,
-  ComponentsNumberInputNumberInputFieldRoute: ComponentsNumberInputNumberInputFieldRoute,
+  ComponentsNumberInputNumberInputFieldRoute:
+    ComponentsNumberInputNumberInputFieldRoute,
   ComponentsNumberInputSizesRoute: ComponentsNumberInputSizesRoute,
   ComponentsNumberInputSpacesRoute: ComponentsNumberInputSpacesRoute,
   ComponentsNumberInputStateRoute: ComponentsNumberInputStateRoute,
@@ -7043,59 +7374,85 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsPaginationTwoPagesRoute: ComponentsPaginationTwoPagesRoute,
   ComponentsPaginationTwoStateRoute: ComponentsPaginationTwoStateRoute,
   ComponentsPaginationTwoWithInputRoute: ComponentsPaginationTwoWithInputRoute,
-  ComponentsPhoneNumberInputPhoneNumberInputFieldRoute: ComponentsPhoneNumberInputPhoneNumberInputFieldRoute,
-  ComponentsPhoneNumberInputSelectedCountryRoute: ComponentsPhoneNumberInputSelectedCountryRoute,
+  ComponentsPhoneNumberInputPhoneNumberInputFieldRoute:
+    ComponentsPhoneNumberInputPhoneNumberInputFieldRoute,
+  ComponentsPhoneNumberInputSelectedCountryRoute:
+    ComponentsPhoneNumberInputSelectedCountryRoute,
   ComponentsPhoneNumberInputSizesRoute: ComponentsPhoneNumberInputSizesRoute,
   ComponentsPhoneNumberInputStateRoute: ComponentsPhoneNumberInputStateRoute,
   ComponentsPhoneNumberInputStatusRoute: ComponentsPhoneNumberInputStatusRoute,
-  ComponentsPhoneNumberInputWithFilterRoute: ComponentsPhoneNumberInputWithFilterRoute,
-  ComponentsPhoneNumberInputWithPlaceholderRoute: ComponentsPhoneNumberInputWithPlaceholderRoute,
+  ComponentsPhoneNumberInputWithFilterRoute:
+    ComponentsPhoneNumberInputWithFilterRoute,
+  ComponentsPhoneNumberInputWithPlaceholderRoute:
+    ComponentsPhoneNumberInputWithPlaceholderRoute,
   ComponentsPillsMenuRoute: ComponentsPillsMenuRoute,
   ComponentsPillsNestedRoute: ComponentsPillsNestedRoute,
   ComponentsPillsTooltipRoute: ComponentsPillsTooltipRoute,
-  ComponentsProgressHeaderAnimationRoute: ComponentsProgressHeaderAnimationRoute,
+  ComponentsProgressHeaderAnimationRoute:
+    ComponentsProgressHeaderAnimationRoute,
   ComponentsProgressHeaderStylesRoute: ComponentsProgressHeaderStylesRoute,
   ComponentsProgressPageAnimationRoute: ComponentsProgressPageAnimationRoute,
   ComponentsProgressPageStylesRoute: ComponentsProgressPageStylesRoute,
-  ComponentsProgressStepperDescriptionNextStepsRoute: ComponentsProgressStepperDescriptionNextStepsRoute,
+  ComponentsProgressStepperDescriptionNextStepsRoute:
+    ComponentsProgressStepperDescriptionNextStepsRoute,
   ComponentsProgressStepperMobileRoute: ComponentsProgressStepperMobileRoute,
-  ComponentsProgressStepperScenarioRoute: ComponentsProgressStepperScenarioRoute,
-  ComponentsProgressStepperStepsNamingRoute: ComponentsProgressStepperStepsNamingRoute,
+  ComponentsProgressStepperScenarioRoute:
+    ComponentsProgressStepperScenarioRoute,
+  ComponentsProgressStepperStepsNamingRoute:
+    ComponentsProgressStepperStepsNamingRoute,
   ComponentsRadiobuttonExtraTextRoute: ComponentsRadiobuttonExtraTextRoute,
   ComponentsRadiobuttonFieldSetRoute: ComponentsRadiobuttonFieldSetRoute,
   ComponentsRadiobuttonInformerRoute: ComponentsRadiobuttonInformerRoute,
   ComponentsRadiobuttonSizesRoute: ComponentsRadiobuttonSizesRoute,
   ComponentsRadiobuttonStatesRoute: ComponentsRadiobuttonStatesRoute,
   ComponentsScrollContainerStateRoute: ComponentsScrollContainerStateRoute,
-  ComponentsSegmentedControlCheckBoxModeRoute: ComponentsSegmentedControlCheckBoxModeRoute,
-  ComponentsSegmentedControlRadioButtonModeRoute: ComponentsSegmentedControlRadioButtonModeRoute,
+  ComponentsSegmentedControlCheckBoxModeRoute:
+    ComponentsSegmentedControlCheckBoxModeRoute,
+  ComponentsSegmentedControlRadioButtonModeRoute:
+    ComponentsSegmentedControlRadioButtonModeRoute,
   ComponentsSegmentedControlSizesRoute: ComponentsSegmentedControlSizesRoute,
   ComponentsSegmentedControlStatesRoute: ComponentsSegmentedControlStatesRoute,
   ComponentsSegmentedControlStylesRoute: ComponentsSegmentedControlStylesRoute,
-  ComponentsSegmentedControlVariantsRoute: ComponentsSegmentedControlVariantsRoute,
+  ComponentsSegmentedControlVariantsRoute:
+    ComponentsSegmentedControlVariantsRoute,
   ComponentsSelectAsyncSearchRoute: ComponentsSelectAsyncSearchRoute,
-  ComponentsSelectCustomOptionsByRenderPropsRoute: ComponentsSelectCustomOptionsByRenderPropsRoute,
-  ComponentsSelectCustomOptionsWithCustomFilterRoute: ComponentsSelectCustomOptionsWithCustomFilterRoute,
+  ComponentsSelectCustomOptionsByRenderPropsRoute:
+    ComponentsSelectCustomOptionsByRenderPropsRoute,
+  ComponentsSelectCustomOptionsWithCustomFilterRoute:
+    ComponentsSelectCustomOptionsWithCustomFilterRoute,
   ComponentsSelectCustomValuesRoute: ComponentsSelectCustomValuesRoute,
   ComponentsSelectExternalFilterRoute: ComponentsSelectExternalFilterRoute,
-  ComponentsSelectForceHideOverflowTooltipRoute: ComponentsSelectForceHideOverflowTooltipRoute,
+  ComponentsSelectForceHideOverflowTooltipRoute:
+    ComponentsSelectForceHideOverflowTooltipRoute,
   ComponentsSelectGroupOfOptionsRoute: ComponentsSelectGroupOfOptionsRoute,
-  ComponentsSelectMultiCustomDeleteChipRoute: ComponentsSelectMultiCustomDeleteChipRoute,
-  ComponentsSelectMultiCustomOptionsByRenderChipRoute: ComponentsSelectMultiCustomOptionsByRenderChipRoute,
-  ComponentsSelectMultiCustomValuesRoute: ComponentsSelectMultiCustomValuesRoute,
-  ComponentsSelectMultiSelectApplyButtonRoute: ComponentsSelectMultiSelectApplyButtonRoute,
-  ComponentsSelectMultiSelectChooseAllRoute: ComponentsSelectMultiSelectChooseAllRoute,
-  ComponentsSelectMultiSelectExpandedHeightRoute: ComponentsSelectMultiSelectExpandedHeightRoute,
-  ComponentsSelectMultiSelectOnChangeRoute: ComponentsSelectMultiSelectOnChangeRoute,
-  ComponentsSelectMultiSelectWithSelectedOnTopRoute: ComponentsSelectMultiSelectWithSelectedOnTopRoute,
-  ComponentsSelectPanelWithAddButtonRoute: ComponentsSelectPanelWithAddButtonRoute,
-  ComponentsSelectProgressiveRenderOptionsScrollRoute: ComponentsSelectProgressiveRenderOptionsScrollRoute,
-  ComponentsSelectSearchWithClearInputAfterSelectRoute: ComponentsSelectSearchWithClearInputAfterSelectRoute,
+  ComponentsSelectMultiCustomDeleteChipRoute:
+    ComponentsSelectMultiCustomDeleteChipRoute,
+  ComponentsSelectMultiCustomOptionsByRenderChipRoute:
+    ComponentsSelectMultiCustomOptionsByRenderChipRoute,
+  ComponentsSelectMultiCustomValuesRoute:
+    ComponentsSelectMultiCustomValuesRoute,
+  ComponentsSelectMultiSelectApplyButtonRoute:
+    ComponentsSelectMultiSelectApplyButtonRoute,
+  ComponentsSelectMultiSelectChooseAllRoute:
+    ComponentsSelectMultiSelectChooseAllRoute,
+  ComponentsSelectMultiSelectExpandedHeightRoute:
+    ComponentsSelectMultiSelectExpandedHeightRoute,
+  ComponentsSelectMultiSelectOnChangeRoute:
+    ComponentsSelectMultiSelectOnChangeRoute,
+  ComponentsSelectMultiSelectWithSelectedOnTopRoute:
+    ComponentsSelectMultiSelectWithSelectedOnTopRoute,
+  ComponentsSelectPanelWithAddButtonRoute:
+    ComponentsSelectPanelWithAddButtonRoute,
+  ComponentsSelectProgressiveRenderOptionsScrollRoute:
+    ComponentsSelectProgressiveRenderOptionsScrollRoute,
+  ComponentsSelectSearchWithClearInputAfterSelectRoute:
+    ComponentsSelectSearchWithClearInputAfterSelectRoute,
   ComponentsSelectSelectFieldRoute: ComponentsSelectSelectFieldRoute,
   ComponentsSelectSizesRoute: ComponentsSelectSizesRoute,
   ComponentsSelectStateRoute: ComponentsSelectStateRoute,
   ComponentsSelectStatusRoute: ComponentsSelectStatusRoute,
-  ComponentsSelectUncontrolledSubmitSearchRoute: ComponentsSelectUncontrolledSubmitSearchRoute,
+  ComponentsSelectUncontrolledSubmitSearchRoute:
+    ComponentsSelectUncontrolledSubmitSearchRoute,
   ComponentsSelectVirtualScrollRoute: ComponentsSelectVirtualScrollRoute,
   ComponentsSliderCustomRoute: ComponentsSliderCustomRoute,
   ComponentsSliderOptionsRoute: ComponentsSliderOptionsRoute,
@@ -7112,10 +7469,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSliderInputVariantsRoute: ComponentsSliderInputVariantsRoute,
   ComponentsSpinnerSizesRoute: ComponentsSpinnerSizesRoute,
   ComponentsSpinnerVariantsRoute: ComponentsSpinnerVariantsRoute,
-  ComponentsSpinnerWithOtherComponentsRoute: ComponentsSpinnerWithOtherComponentsRoute,
+  ComponentsSpinnerWithOtherComponentsRoute:
+    ComponentsSpinnerWithOtherComponentsRoute,
   ComponentsStatusIndicatorSizesRoute: ComponentsStatusIndicatorSizesRoute,
   ComponentsStatusIndicatorStatesRoute: ComponentsStatusIndicatorStatesRoute,
-  ComponentsStatusIndicatorVariantsRoute: ComponentsStatusIndicatorVariantsRoute,
+  ComponentsStatusIndicatorVariantsRoute:
+    ComponentsStatusIndicatorVariantsRoute,
   ComponentsStepperAdaptiveRoute: ComponentsStepperAdaptiveRoute,
   ComponentsStepperCustomRoute: ComponentsStepperCustomRoute,
   ComponentsStepperMobileRoute: ComponentsStepperMobileRoute,
@@ -7123,51 +7482,58 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsStepperStateRoute: ComponentsStepperStateRoute,
   ComponentsStepperVariantsRoute: ComponentsStepperVariantsRoute,
   ComponentsStepperVerticalRoute: ComponentsStepperVerticalRoute,
-  ComponentsSuggestInputFieldRoute: ComponentsSuggestInputFieldRoute,
-  ComponentsSuggestInputFilterRoute: ComponentsSuggestInputFilterRoute,
-  ComponentsSuggestInputIconRoute: ComponentsSuggestInputIconRoute,
-  ComponentsSuggestInputSizesRoute: ComponentsSuggestInputSizesRoute,
-  ComponentsSuggestInputUncontrolledRoute: ComponentsSuggestInputUncontrolledRoute,
   ComponentsTStylesListRoute: ComponentsTStylesListRoute,
   ComponentsTVariantsRoute: ComponentsTVariantsRoute,
   ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
   ComponentsTabMenuAddTabRoute: ComponentsTabMenuAddTabRoute,
   ComponentsTabMenuAddTabVerticalRoute: ComponentsTabMenuAddTabVerticalRoute,
   ComponentsTabMenuCardTabMenuRoute: ComponentsTabMenuCardTabMenuRoute,
-  ComponentsTabMenuCardTabMenuWithoutBorderRoute: ComponentsTabMenuCardTabMenuWithoutBorderRoute,
+  ComponentsTabMenuCardTabMenuWithoutBorderRoute:
+    ComponentsTabMenuCardTabMenuWithoutBorderRoute,
   ComponentsTabMenuFilterTabsRoute: ComponentsTabMenuFilterTabsRoute,
-  ComponentsTabMenuFilterTabsMobileRoute: ComponentsTabMenuFilterTabsMobileRoute,
+  ComponentsTabMenuFilterTabsMobileRoute:
+    ComponentsTabMenuFilterTabsMobileRoute,
   ComponentsTabMenuFilterTabsSizeRoute: ComponentsTabMenuFilterTabsSizeRoute,
   ComponentsTabMenuHorizontalTabsRoute: ComponentsTabMenuHorizontalTabsRoute,
   ComponentsTabMenuOptionsRoute: ComponentsTabMenuOptionsRoute,
-  ComponentsTabMenuOptionsVerticalTabsRoute: ComponentsTabMenuOptionsVerticalTabsRoute,
+  ComponentsTabMenuOptionsVerticalTabsRoute:
+    ComponentsTabMenuOptionsVerticalTabsRoute,
   ComponentsTabMenuSizeRoute: ComponentsTabMenuSizeRoute,
-  ComponentsTabMenuSizeVerticalTabsRoute: ComponentsTabMenuSizeVerticalTabsRoute,
+  ComponentsTabMenuSizeVerticalTabsRoute:
+    ComponentsTabMenuSizeVerticalTabsRoute,
   ComponentsTabMenuTabMenuIconRoute: ComponentsTabMenuTabMenuIconRoute,
   ComponentsTabMenuTabMenuVerticalRoute: ComponentsTabMenuTabMenuVerticalRoute,
-  ComponentsTabMenuWithOverflowMenuRoute: ComponentsTabMenuWithOverflowMenuRoute,
+  ComponentsTabMenuWithOverflowMenuRoute:
+    ComponentsTabMenuWithOverflowMenuRoute,
   ComponentsTabMenuWithPaddingRoute: ComponentsTabMenuWithPaddingRoute,
   ComponentsTableBaseHTMLRoute: ComponentsTableBaseHTMLRoute,
-  ComponentsTableBaseHTMLOverflowMenuRoute: ComponentsTableBaseHTMLOverflowMenuRoute,
-  ComponentsTableBaseHTMLStickyShadowRoute: ComponentsTableBaseHTMLStickyShadowRoute,
+  ComponentsTableBaseHTMLOverflowMenuRoute:
+    ComponentsTableBaseHTMLOverflowMenuRoute,
+  ComponentsTableBaseHTMLStickyShadowRoute:
+    ComponentsTableBaseHTMLStickyShadowRoute,
   ComponentsTableCheckboxRoute: ComponentsTableCheckboxRoute,
   ComponentsTableColumnDragDropRoute: ComponentsTableColumnDragDropRoute,
-  ComponentsTableDynamicVirtualScrollRoute: ComponentsTableDynamicVirtualScrollRoute,
+  ComponentsTableDynamicVirtualScrollRoute:
+    ComponentsTableDynamicVirtualScrollRoute,
   ComponentsTableExpandRoute: ComponentsTableExpandRoute,
   ComponentsTableExtraTextRoute: ComponentsTableExtraTextRoute,
   ComponentsTableFilterRoute: ComponentsTableFilterRoute,
-  ComponentsTableFixedVirtualScrollRoute: ComponentsTableFixedVirtualScrollRoute,
+  ComponentsTableFixedVirtualScrollRoute:
+    ComponentsTableFixedVirtualScrollRoute,
   ComponentsTableGroupRoute: ComponentsTableGroupRoute,
   ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
-  ComponentsTableLoadOnScrollSkeletonRoute: ComponentsTableLoadOnScrollSkeletonRoute,
-  ComponentsTableLoadOnScrollSpinnerRoute: ComponentsTableLoadOnScrollSpinnerRoute,
+  ComponentsTableLoadOnScrollSkeletonRoute:
+    ComponentsTableLoadOnScrollSkeletonRoute,
+  ComponentsTableLoadOnScrollSpinnerRoute:
+    ComponentsTableLoadOnScrollSpinnerRoute,
   ComponentsTableMultiLevelHeaderRoute: ComponentsTableMultiLevelHeaderRoute,
   ComponentsTableMultilineRoute: ComponentsTableMultilineRoute,
   ComponentsTableOverflowMenuRoute: ComponentsTableOverflowMenuRoute,
   ComponentsTableRenderCallbackRoute: ComponentsTableRenderCallbackRoute,
   ComponentsTableRowDragDropRoute: ComponentsTableRowDragDropRoute,
   ComponentsTableRowStateRoute: ComponentsTableRowStateRoute,
-  ComponentsTableScrollPositionByRefRoute: ComponentsTableScrollPositionByRefRoute,
+  ComponentsTableScrollPositionByRefRoute:
+    ComponentsTableScrollPositionByRefRoute,
   ComponentsTableSortRoute: ComponentsTableSortRoute,
   ComponentsTableStickyRoute: ComponentsTableStickyRoute,
   ComponentsTableStyleRoute: ComponentsTableStyleRoute,
@@ -7186,10 +7552,15 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
   ComponentsTextButtonMenuStylesRoute: ComponentsTextButtonMenuStylesRoute,
+  ComponentsTimeInputCustomRoute: ComponentsTimeInputCustomRoute,
+  ComponentsTimeInputSizesRoute: ComponentsTimeInputSizesRoute,
+  ComponentsTimeInputStateRoute: ComponentsTimeInputStateRoute,
+  ComponentsTimeInputStatusRoute: ComponentsTimeInputStatusRoute,
   ComponentsToastLineNotificationRoute: ComponentsToastLineNotificationRoute,
   ComponentsToastPositionRoute: ComponentsToastPositionRoute,
   ComponentsToastWithProgressBarRoute: ComponentsToastWithProgressBarRoute,
-  ComponentsToastWithProgressBarStopOnHoverRoute: ComponentsToastWithProgressBarStopOnHoverRoute,
+  ComponentsToastWithProgressBarStopOnHoverRoute:
+    ComponentsToastWithProgressBarStopOnHoverRoute,
   ComponentsToggleExtraTextRoute: ComponentsToggleExtraTextRoute,
   ComponentsToggleLabelPositionRoute: ComponentsToggleLabelPositionRoute,
   ComponentsToggleMobileRoute: ComponentsToggleMobileRoute,
@@ -7211,8 +7582,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTreeSizesRoute: ComponentsTreeSizesRoute,
   ComponentsTreeUncontrolledRoute: ComponentsTreeUncontrolledRoute,
   ComponentsTreeVariantsRoute: ComponentsTreeVariantsRoute,
-  ComponentsTreeWithControlCheckCountRoute: ComponentsTreeWithControlCheckCountRoute,
-  ComponentsTreeWithOnChangeHandlerRoute: ComponentsTreeWithOnChangeHandlerRoute,
+  ComponentsTreeWithControlCheckCountRoute:
+    ComponentsTreeWithControlCheckCountRoute,
+  ComponentsTreeWithOnChangeHandlerRoute:
+    ComponentsTreeWithOnChangeHandlerRoute,
   ComponentsAccordionIndexRoute: ComponentsAccordionIndexRoute,
   ComponentsActionBarIndexRoute: ComponentsActionBarIndexRoute,
   ComponentsAnchorIndexRoute: ComponentsAnchorIndexRoute,
@@ -7272,7 +7645,6 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
-  ComponentsSuggestInputIndexRoute: ComponentsSuggestInputIndexRoute,
   ComponentsTIndexRoute: ComponentsTIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
@@ -7280,19 +7652,22 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextAreaIndexRoute: ComponentsTextAreaIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
+  ComponentsTimeInputIndexRoute: ComponentsTimeInputIndexRoute,
   ComponentsToastIndexRoute: ComponentsToastIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
   ComponentsTooltipIndexRoute: ComponentsTooltipIndexRoute,
   ComponentsTreeIndexRoute: ComponentsTreeIndexRoute,
-};
+}
 
-const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(ComponentsRouteChildren);
+const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(
+  ComponentsRouteChildren,
+)
 
 interface GeneralRouteChildren {
-  GeneralFaqsRoute: typeof GeneralFaqsRoute;
-  GeneralInstallationRoute: typeof GeneralInstallationRoute;
-  GeneralResourcesRoute: typeof GeneralResourcesRoute;
-  GeneralUsageRoute: typeof GeneralUsageRoute;
+  GeneralFaqsRoute: typeof GeneralFaqsRoute
+  GeneralInstallationRoute: typeof GeneralInstallationRoute
+  GeneralResourcesRoute: typeof GeneralResourcesRoute
+  GeneralUsageRoute: typeof GeneralUsageRoute
 }
 
 const GeneralRouteChildren: GeneralRouteChildren = {
@@ -7300,1384 +7675,1382 @@ const GeneralRouteChildren: GeneralRouteChildren = {
   GeneralInstallationRoute: GeneralInstallationRoute,
   GeneralResourcesRoute: GeneralResourcesRoute,
   GeneralUsageRoute: GeneralUsageRoute,
-};
+}
 
-const GeneralRouteWithChildren = GeneralRoute._addFileChildren(GeneralRouteChildren);
+const GeneralRouteWithChildren =
+  GeneralRoute._addFileChildren(GeneralRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
-  '/components': typeof ComponentsRouteWithChildren;
-  '/general': typeof GeneralRouteWithChildren;
-  '/general/faqs': typeof GeneralFaqsRoute;
-  '/general/installation': typeof GeneralInstallationRoute;
-  '/general/resources': typeof GeneralResourcesRoute;
-  '/general/usage': typeof GeneralUsageRoute;
-  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute;
-  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute;
-  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute;
-  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute;
-  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute;
-  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute;
-  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute;
-  '/components/anchor/state': typeof ComponentsAnchorStateRoute;
-  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute;
-  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute;
-  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute;
-  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute;
-  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute;
-  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute;
-  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute;
-  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute;
-  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute;
-  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute;
-  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute;
-  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute;
-  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute;
-  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute;
-  '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute;
-  '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute;
-  '/components/button/dimension': typeof ComponentsButtonDimensionRoute;
-  '/components/button/state': typeof ComponentsButtonStateRoute;
-  '/components/button/types': typeof ComponentsButtonTypesRoute;
-  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute;
-  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute;
-  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute;
-  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute;
-  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute;
-  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute;
-  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute;
-  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute;
-  '/components/calendar/range': typeof ComponentsCalendarRangeRoute;
-  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute;
-  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute;
-  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute;
-  '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute;
-  '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute;
-  '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute;
-  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute;
-  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute;
-  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute;
-  '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute;
-  '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute;
-  '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute;
-  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute;
-  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute;
-  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute;
-  '/components/chips/select': typeof ComponentsChipsSelectRoute;
-  '/components/chips/sizes': typeof ComponentsChipsSizesRoute;
-  '/components/chips/styles': typeof ComponentsChipsStylesRoute;
-  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute;
-  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute;
-  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute;
-  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute;
-  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute;
-  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute;
-  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute;
-  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute;
-  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute;
-  '/components/currencyInput/currencyInputField': typeof ComponentsCurrencyInputCurrencyInputFieldRoute;
-  '/components/currencyInput/minMaxvalue': typeof ComponentsCurrencyInputMinMaxvalueRoute;
-  '/components/currencyInput/withPrefix': typeof ComponentsCurrencyInputWithPrefixRoute;
-  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute;
-  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute;
-  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute;
-  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute;
-  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute;
-  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute;
-  '/components/dateInput/state': typeof ComponentsDateInputStateRoute;
-  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute;
-  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute;
-  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute;
-  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute;
-  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute;
-  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute;
-  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute;
-  '/components/divider/length': typeof ComponentsDividerLengthRoute;
-  '/components/divider/style': typeof ComponentsDividerStyleRoute;
-  '/components/divider/thikness': typeof ComponentsDividerThiknessRoute;
-  '/components/divider/type': typeof ComponentsDividerTypeRoute;
-  '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute;
-  '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute;
-  '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute;
-  '/components/drawer/position': typeof ComponentsDrawerPositionRoute;
-  '/components/drawer/width': typeof ComponentsDrawerWidthRoute;
-  '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute;
-  '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute;
-  '/components/dropdown/customDropdownContainer': typeof ComponentsDropdownCustomDropdownContainerRoute;
-  '/components/dropdown/dropMenuControlled': typeof ComponentsDropdownDropMenuControlledRoute;
-  '/components/dropdown/dropMenuUncontrolled': typeof ComponentsDropdownDropMenuUncontrolledRoute;
-  '/components/dropdown/menuActionSearch': typeof ComponentsDropdownMenuActionSearchRoute;
-  '/components/dropdown/menuActionTwoButtons': typeof ComponentsDropdownMenuActionTwoButtonsRoute;
-  '/components/dropdown/menuCategories': typeof ComponentsDropdownMenuCategoriesRoute;
-  '/components/dropdown/menuCustomItems': typeof ComponentsDropdownMenuCustomItemsRoute;
-  '/components/dropdown/menuDimensions': typeof ComponentsDropdownMenuDimensionsRoute;
-  '/components/dropdown/menuLockCycleScroll': typeof ComponentsDropdownMenuLockCycleScrollRoute;
-  '/components/dropdown/menuManyItems': typeof ComponentsDropdownMenuManyItemsRoute;
-  '/components/dropdown/menuMultiLevel': typeof ComponentsDropdownMenuMultiLevelRoute;
-  '/components/dropdown/menuMultiLine': typeof ComponentsDropdownMenuMultiLineRoute;
-  '/components/dropdown/menuPreselect': typeof ComponentsDropdownMenuPreselectRoute;
-  '/components/dropdown/menuVirtualScroll': typeof ComponentsDropdownMenuVirtualScrollRoute;
-  '/components/dropdown/menuWithAddTextAndIcons': typeof ComponentsDropdownMenuWithAddTextAndIconsRoute;
-  '/components/dropdown/menuWithCheckbox': typeof ComponentsDropdownMenuWithCheckboxRoute;
-  '/components/dropdown/menuWithCheckboxGroup': typeof ComponentsDropdownMenuWithCheckboxGroupRoute;
-  '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute;
-  '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute;
-  '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute;
-  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute;
-  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute;
-  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute;
-  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute;
-  '/components/editMode/status': typeof ComponentsEditModeStatusRoute;
-  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute;
-  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute;
-  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute;
-  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute;
-  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute;
-  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute;
-  '/components/fileinput/state': typeof ComponentsFileinputStateRoute;
-  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute;
-  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute;
-  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute;
-  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute;
-  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute;
-  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute;
-  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute;
-  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute;
-  '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute;
-  '/components/hint/className': typeof ComponentsHintClassNameRoute;
-  '/components/hint/position': typeof ComponentsHintPositionRoute;
-  '/components/hint/scenario': typeof ComponentsHintScenarioRoute;
-  '/components/hint/sizes': typeof ComponentsHintSizesRoute;
-  '/components/hint/variants': typeof ComponentsHintVariantsRoute;
-  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute;
-  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute;
-  '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute;
-  '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute;
-  '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute;
-  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute;
-  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute;
-  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute;
-  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute;
-  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute;
-  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute;
-  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute;
-  '/components/inputEx/custom': typeof ComponentsInputExCustomRoute;
-  '/components/inputEx/inputExField': typeof ComponentsInputExInputExFieldRoute;
-  '/components/inputEx/prefixSuffixSelect': typeof ComponentsInputExPrefixSuffixSelectRoute;
-  '/components/inputEx/sizes': typeof ComponentsInputExSizesRoute;
-  '/components/inputEx/state': typeof ComponentsInputExStateRoute;
-  '/components/inputEx/status': typeof ComponentsInputExStatusRoute;
-  '/components/link/asProp': typeof ComponentsLinkAsPropRoute;
-  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute;
-  '/components/link/styles': typeof ComponentsLinkStylesRoute;
-  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute;
-  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute;
-  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute;
-  '/components/list/multiline': typeof ComponentsListMultilineRoute;
-  '/components/list/nested': typeof ComponentsListNestedRoute;
-  '/components/list/orderedList': typeof ComponentsListOrderedListRoute;
-  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute;
-  '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute;
-  '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute;
-  '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute;
-  '/components/menuButton/multiLevelMenu': typeof ComponentsMenuButtonMultiLevelMenuRoute;
-  '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute;
-  '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute;
-  '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute;
-  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute;
-  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute;
-  '/components/modal/scroll': typeof ComponentsModalScrollRoute;
-  '/components/modal/sizes': typeof ComponentsModalSizesRoute;
-  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute;
-  '/components/modal/variants': typeof ComponentsModalVariantsRoute;
-  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute;
-  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute;
-  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute;
-  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute;
-  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute;
-  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute;
-  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute;
-  '/components/notification/states': typeof ComponentsNotificationStatesRoute;
-  '/components/notification/styles': typeof ComponentsNotificationStylesRoute;
-  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute;
-  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute;
-  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute;
-  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute;
-  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute;
-  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute;
-  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute;
-  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute;
-  '/components/overflowMenu/multiLevel': typeof ComponentsOverflowMenuMultiLevelRoute;
-  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute;
-  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute;
-  '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute;
-  '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute;
-  '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute;
-  '/components/paginationTwo/entries': typeof ComponentsPaginationTwoEntriesRoute;
-  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute;
-  '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute;
-  '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute;
-  '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute;
-  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute;
-  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute;
-  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute;
-  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute;
-  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute;
-  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute;
-  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute;
-  '/components/pills/menu': typeof ComponentsPillsMenuRoute;
-  '/components/pills/nested': typeof ComponentsPillsNestedRoute;
-  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute;
-  '/components/progressHeader/animation': typeof ComponentsProgressHeaderAnimationRoute;
-  '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute;
-  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute;
-  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute;
-  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute;
-  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute;
-  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute;
-  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute;
-  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute;
-  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute;
-  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute;
-  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute;
-  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute;
-  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute;
-  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute;
-  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute;
-  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute;
-  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute;
-  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute;
-  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute;
-  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute;
-  '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute;
-  '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute;
-  '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute;
-  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute;
-  '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute;
-  '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute;
-  '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute;
-  '/components/select/multiCustomOptionsByRenderChip': typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute;
-  '/components/select/multiCustomValues': typeof ComponentsSelectMultiCustomValuesRoute;
-  '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute;
-  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute;
-  '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute;
-  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute;
-  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute;
-  '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute;
-  '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute;
-  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute;
-  '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute;
-  '/components/select/sizes': typeof ComponentsSelectSizesRoute;
-  '/components/select/state': typeof ComponentsSelectStateRoute;
-  '/components/select/status': typeof ComponentsSelectStatusRoute;
-  '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute;
-  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute;
-  '/components/slider/custom': typeof ComponentsSliderCustomRoute;
-  '/components/slider/options': typeof ComponentsSliderOptionsRoute;
-  '/components/slider/range': typeof ComponentsSliderRangeRoute;
-  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute;
-  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute;
-  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute;
-  '/components/slider/sizes': typeof ComponentsSliderSizesRoute;
-  '/components/slider/state': typeof ComponentsSliderStateRoute;
-  '/components/sliderInput/controlled': typeof ComponentsSliderInputControlledRoute;
-  '/components/sliderInput/custom': typeof ComponentsSliderInputCustomRoute;
-  '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute;
-  '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute;
-  '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute;
-  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute;
-  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute;
-  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute;
-  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute;
-  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute;
-  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute;
-  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute;
-  '/components/stepper/custom': typeof ComponentsStepperCustomRoute;
-  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute;
-  '/components/stepper/options': typeof ComponentsStepperOptionsRoute;
-  '/components/stepper/state': typeof ComponentsStepperStateRoute;
-  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute;
-  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute;
-  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute;
-  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute;
-  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute;
-  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute;
-  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute;
-  '/components/t/stylesList': typeof ComponentsTStylesListRoute;
-  '/components/t/variants': typeof ComponentsTVariantsRoute;
-  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute;
-  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute;
-  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute;
-  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute;
-  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute;
-  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute;
-  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute;
-  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute;
-  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute;
-  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute;
-  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute;
-  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute;
-  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute;
-  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute;
-  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute;
-  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute;
-  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute;
-  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute;
-  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute;
-  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute;
-  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute;
-  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute;
-  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute;
-  '/components/table/expand': typeof ComponentsTableExpandRoute;
-  '/components/table/extraText': typeof ComponentsTableExtraTextRoute;
-  '/components/table/filter': typeof ComponentsTableFilterRoute;
-  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute;
-  '/components/table/group': typeof ComponentsTableGroupRoute;
-  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute;
-  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute;
-  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute;
-  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute;
-  '/components/table/multiline': typeof ComponentsTableMultilineRoute;
-  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute;
-  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute;
-  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute;
-  '/components/table/rowState': typeof ComponentsTableRowStateRoute;
-  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute;
-  '/components/table/sort': typeof ComponentsTableSortRoute;
-  '/components/table/sticky': typeof ComponentsTableStickyRoute;
-  '/components/table/style': typeof ComponentsTableStyleRoute;
-  '/components/table/width': typeof ComponentsTableWidthRoute;
-  '/components/table/zebra': typeof ComponentsTableZebraRoute;
-  '/components/tag/menu': typeof ComponentsTagMenuRoute;
-  '/components/tag/styles': typeof ComponentsTagStylesRoute;
-  '/components/tag/tags': typeof ComponentsTagTagsRoute;
-  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute;
-  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute;
-  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute;
-  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute;
-  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute;
-  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute;
-  '/components/textButton/states': typeof ComponentsTextButtonStatesRoute;
-  '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute;
-  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute;
-  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute;
-  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute;
-  '/components/toast/position': typeof ComponentsToastPositionRoute;
-  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute;
-  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute;
-  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute;
-  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute;
-  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute;
-  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute;
-  '/components/toggle/states': typeof ComponentsToggleStatesRoute;
-  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute;
-  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute;
-  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute;
-  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute;
-  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute;
-  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute;
-  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute;
-  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute;
-  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute;
-  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute;
-  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute;
-  '/components/tree/custom': typeof ComponentsTreeCustomRoute;
-  '/components/tree/mobile': typeof ComponentsTreeMobileRoute;
-  '/components/tree/sizes': typeof ComponentsTreeSizesRoute;
-  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute;
-  '/components/tree/variants': typeof ComponentsTreeVariantsRoute;
-  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute;
-  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute;
-  '/components/accordion': typeof ComponentsAccordionIndexRoute;
-  '/components/actionBar': typeof ComponentsActionBarIndexRoute;
-  '/components/anchor': typeof ComponentsAnchorIndexRoute;
-  '/components/avatar': typeof ComponentsAvatarIndexRoute;
-  '/components/badge': typeof ComponentsBadgeIndexRoute;
-  '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute;
-  '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute;
-  '/components/button': typeof ComponentsButtonIndexRoute;
-  '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute;
-  '/components/calendar': typeof ComponentsCalendarIndexRoute;
-  '/components/carousel': typeof ComponentsCarouselIndexRoute;
-  '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute;
-  '/components/checkbox': typeof ComponentsCheckboxIndexRoute;
-  '/components/chips': typeof ComponentsChipsIndexRoute;
-  '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute;
-  '/components/currencyInput': typeof ComponentsCurrencyInputIndexRoute;
-  '/components/dateInput': typeof ComponentsDateInputIndexRoute;
-  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute;
-  '/components/divider': typeof ComponentsDividerIndexRoute;
-  '/components/drawer': typeof ComponentsDrawerIndexRoute;
-  '/components/dropdown': typeof ComponentsDropdownIndexRoute;
-  '/components/editMode': typeof ComponentsEditModeIndexRoute;
-  '/components/fileinput': typeof ComponentsFileinputIndexRoute;
-  '/components/flex': typeof ComponentsFlexIndexRoute;
-  '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute;
-  '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute;
-  '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute;
-  '/components/hint': typeof ComponentsHintIndexRoute;
-  '/components/iconButton': typeof ComponentsIconButtonIndexRoute;
-  '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute;
-  '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute;
-  '/components/imageViewer': typeof ComponentsImageViewerIndexRoute;
-  '/components/inputEx': typeof ComponentsInputExIndexRoute;
-  '/components/link': typeof ComponentsLinkIndexRoute;
-  '/components/list': typeof ComponentsListIndexRoute;
-  '/components/menuButton': typeof ComponentsMenuButtonIndexRoute;
-  '/components/modal': typeof ComponentsModalIndexRoute;
-  '/components/multiButton': typeof ComponentsMultiButtonIndexRoute;
-  '/components/multiInput': typeof ComponentsMultiInputIndexRoute;
-  '/components/notification': typeof ComponentsNotificationIndexRoute;
-  '/components/numberInput': typeof ComponentsNumberInputIndexRoute;
-  '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute;
-  '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute;
-  '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute;
-  '/components/phoneNumberInput': typeof ComponentsPhoneNumberInputIndexRoute;
-  '/components/pills': typeof ComponentsPillsIndexRoute;
-  '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute;
-  '/components/progressPage': typeof ComponentsProgressPageIndexRoute;
-  '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute;
-  '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute;
-  '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute;
-  '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute;
-  '/components/select': typeof ComponentsSelectIndexRoute;
-  '/components/skeleton': typeof ComponentsSkeletonIndexRoute;
-  '/components/slider': typeof ComponentsSliderIndexRoute;
-  '/components/sliderInput': typeof ComponentsSliderInputIndexRoute;
-  '/components/spinner': typeof ComponentsSpinnerIndexRoute;
-  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute;
-  '/components/stepper': typeof ComponentsStepperIndexRoute;
-  '/components/suggestInput': typeof ComponentsSuggestInputIndexRoute;
-  '/components/t': typeof ComponentsTIndexRoute;
-  '/components/tabMenu': typeof ComponentsTabMenuIndexRoute;
-  '/components/table': typeof ComponentsTableIndexRoute;
-  '/components/tag': typeof ComponentsTagIndexRoute;
-  '/components/textArea': typeof ComponentsTextAreaIndexRoute;
-  '/components/textButton': typeof ComponentsTextButtonIndexRoute;
-  '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute;
-  '/components/toast': typeof ComponentsToastIndexRoute;
-  '/components/toggle': typeof ComponentsToggleIndexRoute;
-  '/components/tooltip': typeof ComponentsTooltipIndexRoute;
-  '/components/tree': typeof ComponentsTreeIndexRoute;
+  '/': typeof IndexRoute
+  '/components': typeof ComponentsRouteWithChildren
+  '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
+  '/general/installation': typeof GeneralInstallationRoute
+  '/general/resources': typeof GeneralResourcesRoute
+  '/general/usage': typeof GeneralUsageRoute
+  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
+  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
+  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
+  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
+  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
+  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute
+  '/components/anchor/state': typeof ComponentsAnchorStateRoute
+  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute
+  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
+  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
+  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
+  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
+  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
+  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
+  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute
+  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute
+  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
+  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
+  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
+  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
+  '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
+  '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
+  '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/state': typeof ComponentsButtonStateRoute
+  '/components/button/types': typeof ComponentsButtonTypesRoute
+  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
+  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
+  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
+  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
+  '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
+  '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
+  '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
+  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
+  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute
+  '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
+  '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
+  '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute
+  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
+  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
+  '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/sizes': typeof ComponentsChipsSizesRoute
+  '/components/chips/styles': typeof ComponentsChipsStylesRoute
+  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
+  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
+  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute
+  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute
+  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
+  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
+  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
+  '/components/currencyInput/currencyInputField': typeof ComponentsCurrencyInputCurrencyInputFieldRoute
+  '/components/currencyInput/minMaxvalue': typeof ComponentsCurrencyInputMinMaxvalueRoute
+  '/components/currencyInput/withPrefix': typeof ComponentsCurrencyInputWithPrefixRoute
+  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute
+  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute
+  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute
+  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute
+  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute
+  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute
+  '/components/dateInput/state': typeof ComponentsDateInputStateRoute
+  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
+  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
+  '/components/divider/length': typeof ComponentsDividerLengthRoute
+  '/components/divider/style': typeof ComponentsDividerStyleRoute
+  '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
+  '/components/divider/type': typeof ComponentsDividerTypeRoute
+  '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute
+  '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute
+  '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute
+  '/components/drawer/position': typeof ComponentsDrawerPositionRoute
+  '/components/drawer/width': typeof ComponentsDrawerWidthRoute
+  '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute
+  '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute
+  '/components/dropdown/customDropdownContainer': typeof ComponentsDropdownCustomDropdownContainerRoute
+  '/components/dropdown/dropMenuControlled': typeof ComponentsDropdownDropMenuControlledRoute
+  '/components/dropdown/dropMenuUncontrolled': typeof ComponentsDropdownDropMenuUncontrolledRoute
+  '/components/dropdown/menuActionSearch': typeof ComponentsDropdownMenuActionSearchRoute
+  '/components/dropdown/menuActionTwoButtons': typeof ComponentsDropdownMenuActionTwoButtonsRoute
+  '/components/dropdown/menuCategories': typeof ComponentsDropdownMenuCategoriesRoute
+  '/components/dropdown/menuCustomItems': typeof ComponentsDropdownMenuCustomItemsRoute
+  '/components/dropdown/menuDimensions': typeof ComponentsDropdownMenuDimensionsRoute
+  '/components/dropdown/menuLockCycleScroll': typeof ComponentsDropdownMenuLockCycleScrollRoute
+  '/components/dropdown/menuManyItems': typeof ComponentsDropdownMenuManyItemsRoute
+  '/components/dropdown/menuMultiLevel': typeof ComponentsDropdownMenuMultiLevelRoute
+  '/components/dropdown/menuMultiLine': typeof ComponentsDropdownMenuMultiLineRoute
+  '/components/dropdown/menuPreselect': typeof ComponentsDropdownMenuPreselectRoute
+  '/components/dropdown/menuVirtualScroll': typeof ComponentsDropdownMenuVirtualScrollRoute
+  '/components/dropdown/menuWithAddTextAndIcons': typeof ComponentsDropdownMenuWithAddTextAndIconsRoute
+  '/components/dropdown/menuWithCheckbox': typeof ComponentsDropdownMenuWithCheckboxRoute
+  '/components/dropdown/menuWithCheckboxGroup': typeof ComponentsDropdownMenuWithCheckboxGroupRoute
+  '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
+  '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
+  '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute
+  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute
+  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute
+  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
+  '/components/editMode/status': typeof ComponentsEditModeStatusRoute
+  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute
+  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute
+  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute
+  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute
+  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute
+  '/components/fileinput/state': typeof ComponentsFileinputStateRoute
+  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
+  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
+  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
+  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
+  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
+  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
+  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute
+  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute
+  '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute
+  '/components/hint/className': typeof ComponentsHintClassNameRoute
+  '/components/hint/position': typeof ComponentsHintPositionRoute
+  '/components/hint/scenario': typeof ComponentsHintScenarioRoute
+  '/components/hint/sizes': typeof ComponentsHintSizesRoute
+  '/components/hint/variants': typeof ComponentsHintVariantsRoute
+  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
+  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
+  '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
+  '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute
+  '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute
+  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
+  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
+  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute
+  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute
+  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
+  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
+  '/components/inputEx/custom': typeof ComponentsInputExCustomRoute
+  '/components/inputEx/inputExField': typeof ComponentsInputExInputExFieldRoute
+  '/components/inputEx/prefixSuffixSelect': typeof ComponentsInputExPrefixSuffixSelectRoute
+  '/components/inputEx/sizes': typeof ComponentsInputExSizesRoute
+  '/components/inputEx/state': typeof ComponentsInputExStateRoute
+  '/components/inputEx/status': typeof ComponentsInputExStatusRoute
+  '/components/link/asProp': typeof ComponentsLinkAsPropRoute
+  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
+  '/components/link/styles': typeof ComponentsLinkStylesRoute
+  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
+  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute
+  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute
+  '/components/list/multiline': typeof ComponentsListMultilineRoute
+  '/components/list/nested': typeof ComponentsListNestedRoute
+  '/components/list/orderedList': typeof ComponentsListOrderedListRoute
+  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute
+  '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
+  '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
+  '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
+  '/components/menuButton/multiLevelMenu': typeof ComponentsMenuButtonMultiLevelMenuRoute
+  '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
+  '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
+  '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute
+  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute
+  '/components/modal/scroll': typeof ComponentsModalScrollRoute
+  '/components/modal/sizes': typeof ComponentsModalSizesRoute
+  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute
+  '/components/modal/variants': typeof ComponentsModalVariantsRoute
+  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
+  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
+  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute
+  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute
+  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute
+  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute
+  '/components/notification/states': typeof ComponentsNotificationStatesRoute
+  '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
+  '/components/overflowMenu/multiLevel': typeof ComponentsOverflowMenuMultiLevelRoute
+  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute
+  '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
+  '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
+  '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute
+  '/components/paginationTwo/entries': typeof ComponentsPaginationTwoEntriesRoute
+  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute
+  '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute
+  '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute
+  '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute
+  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute
+  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute
+  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute
+  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute
+  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute
+  '/components/pills/menu': typeof ComponentsPillsMenuRoute
+  '/components/pills/nested': typeof ComponentsPillsNestedRoute
+  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
+  '/components/progressHeader/animation': typeof ComponentsProgressHeaderAnimationRoute
+  '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute
+  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
+  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
+  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute
+  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute
+  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute
+  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
+  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
+  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
+  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
+  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute
+  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
+  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
+  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
+  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
+  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
+  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute
+  '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
+  '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
+  '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
+  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute
+  '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute
+  '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute
+  '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute
+  '/components/select/multiCustomOptionsByRenderChip': typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute
+  '/components/select/multiCustomValues': typeof ComponentsSelectMultiCustomValuesRoute
+  '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute
+  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
+  '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute
+  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
+  '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute
+  '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
+  '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute
+  '/components/select/sizes': typeof ComponentsSelectSizesRoute
+  '/components/select/state': typeof ComponentsSelectStateRoute
+  '/components/select/status': typeof ComponentsSelectStatusRoute
+  '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute
+  '/components/slider/custom': typeof ComponentsSliderCustomRoute
+  '/components/slider/options': typeof ComponentsSliderOptionsRoute
+  '/components/slider/range': typeof ComponentsSliderRangeRoute
+  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute
+  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute
+  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute
+  '/components/slider/sizes': typeof ComponentsSliderSizesRoute
+  '/components/slider/state': typeof ComponentsSliderStateRoute
+  '/components/sliderInput/controlled': typeof ComponentsSliderInputControlledRoute
+  '/components/sliderInput/custom': typeof ComponentsSliderInputCustomRoute
+  '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute
+  '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute
+  '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute
+  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
+  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
+  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
+  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
+  '/components/stepper/custom': typeof ComponentsStepperCustomRoute
+  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
+  '/components/stepper/options': typeof ComponentsStepperOptionsRoute
+  '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
+  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/t/stylesList': typeof ComponentsTStylesListRoute
+  '/components/t/variants': typeof ComponentsTVariantsRoute
+  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
+  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
+  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
+  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute
+  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute
+  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute
+  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
+  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
+  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute
+  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute
+  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute
+  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute
+  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute
+  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute
+  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
+  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
+  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
+  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
+  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
+  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
+  '/components/table/expand': typeof ComponentsTableExpandRoute
+  '/components/table/extraText': typeof ComponentsTableExtraTextRoute
+  '/components/table/filter': typeof ComponentsTableFilterRoute
+  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
+  '/components/table/group': typeof ComponentsTableGroupRoute
+  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
+  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
+  '/components/table/multiline': typeof ComponentsTableMultilineRoute
+  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
+  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute
+  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
+  '/components/table/rowState': typeof ComponentsTableRowStateRoute
+  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
+  '/components/table/sort': typeof ComponentsTableSortRoute
+  '/components/table/sticky': typeof ComponentsTableStickyRoute
+  '/components/table/style': typeof ComponentsTableStyleRoute
+  '/components/table/width': typeof ComponentsTableWidthRoute
+  '/components/table/zebra': typeof ComponentsTableZebraRoute
+  '/components/tag/menu': typeof ComponentsTagMenuRoute
+  '/components/tag/styles': typeof ComponentsTagStylesRoute
+  '/components/tag/tags': typeof ComponentsTagTagsRoute
+  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
+  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
+  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
+  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
+  '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
+  '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
+  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
+  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
+  '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
+  '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
+  '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
+  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
+  '/components/toast/position': typeof ComponentsToastPositionRoute
+  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
+  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute
+  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
+  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
+  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
+  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
+  '/components/toggle/states': typeof ComponentsToggleStatesRoute
+  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute
+  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute
+  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute
+  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute
+  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute
+  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute
+  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute
+  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute
+  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
+  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
+  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
+  '/components/tree/custom': typeof ComponentsTreeCustomRoute
+  '/components/tree/mobile': typeof ComponentsTreeMobileRoute
+  '/components/tree/sizes': typeof ComponentsTreeSizesRoute
+  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/variants': typeof ComponentsTreeVariantsRoute
+  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
+  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
+  '/components/accordion': typeof ComponentsAccordionIndexRoute
+  '/components/actionBar': typeof ComponentsActionBarIndexRoute
+  '/components/anchor': typeof ComponentsAnchorIndexRoute
+  '/components/avatar': typeof ComponentsAvatarIndexRoute
+  '/components/badge': typeof ComponentsBadgeIndexRoute
+  '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
+  '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
+  '/components/button': typeof ComponentsButtonIndexRoute
+  '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar': typeof ComponentsCalendarIndexRoute
+  '/components/carousel': typeof ComponentsCarouselIndexRoute
+  '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
+  '/components/checkbox': typeof ComponentsCheckboxIndexRoute
+  '/components/chips': typeof ComponentsChipsIndexRoute
+  '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
+  '/components/currencyInput': typeof ComponentsCurrencyInputIndexRoute
+  '/components/dateInput': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute
+  '/components/divider': typeof ComponentsDividerIndexRoute
+  '/components/drawer': typeof ComponentsDrawerIndexRoute
+  '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/editMode': typeof ComponentsEditModeIndexRoute
+  '/components/fileinput': typeof ComponentsFileinputIndexRoute
+  '/components/flex': typeof ComponentsFlexIndexRoute
+  '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
+  '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
+  '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute
+  '/components/hint': typeof ComponentsHintIndexRoute
+  '/components/iconButton': typeof ComponentsIconButtonIndexRoute
+  '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
+  '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
+  '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
+  '/components/inputEx': typeof ComponentsInputExIndexRoute
+  '/components/link': typeof ComponentsLinkIndexRoute
+  '/components/list': typeof ComponentsListIndexRoute
+  '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
+  '/components/modal': typeof ComponentsModalIndexRoute
+  '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
+  '/components/multiInput': typeof ComponentsMultiInputIndexRoute
+  '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput': typeof ComponentsNumberInputIndexRoute
+  '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
+  '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
+  '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
+  '/components/phoneNumberInput': typeof ComponentsPhoneNumberInputIndexRoute
+  '/components/pills': typeof ComponentsPillsIndexRoute
+  '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute
+  '/components/progressPage': typeof ComponentsProgressPageIndexRoute
+  '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
+  '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute
+  '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/select': typeof ComponentsSelectIndexRoute
+  '/components/skeleton': typeof ComponentsSkeletonIndexRoute
+  '/components/slider': typeof ComponentsSliderIndexRoute
+  '/components/sliderInput': typeof ComponentsSliderInputIndexRoute
+  '/components/spinner': typeof ComponentsSpinnerIndexRoute
+  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
+  '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/t': typeof ComponentsTIndexRoute
+  '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
+  '/components/table': typeof ComponentsTableIndexRoute
+  '/components/tag': typeof ComponentsTagIndexRoute
+  '/components/textArea': typeof ComponentsTextAreaIndexRoute
+  '/components/textButton': typeof ComponentsTextButtonIndexRoute
+  '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/timeInput': typeof ComponentsTimeInputIndexRoute
+  '/components/toast': typeof ComponentsToastIndexRoute
+  '/components/toggle': typeof ComponentsToggleIndexRoute
+  '/components/tooltip': typeof ComponentsTooltipIndexRoute
+  '/components/tree': typeof ComponentsTreeIndexRoute
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute;
-  '/components': typeof ComponentsRouteWithChildren;
-  '/general': typeof GeneralRouteWithChildren;
-  '/general/faqs': typeof GeneralFaqsRoute;
-  '/general/installation': typeof GeneralInstallationRoute;
-  '/general/resources': typeof GeneralResourcesRoute;
-  '/general/usage': typeof GeneralUsageRoute;
-  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute;
-  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute;
-  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute;
-  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute;
-  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute;
-  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute;
-  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute;
-  '/components/anchor/state': typeof ComponentsAnchorStateRoute;
-  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute;
-  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute;
-  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute;
-  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute;
-  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute;
-  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute;
-  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute;
-  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute;
-  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute;
-  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute;
-  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute;
-  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute;
-  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute;
-  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute;
-  '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute;
-  '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute;
-  '/components/button/dimension': typeof ComponentsButtonDimensionRoute;
-  '/components/button/state': typeof ComponentsButtonStateRoute;
-  '/components/button/types': typeof ComponentsButtonTypesRoute;
-  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute;
-  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute;
-  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute;
-  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute;
-  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute;
-  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute;
-  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute;
-  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute;
-  '/components/calendar/range': typeof ComponentsCalendarRangeRoute;
-  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute;
-  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute;
-  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute;
-  '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute;
-  '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute;
-  '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute;
-  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute;
-  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute;
-  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute;
-  '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute;
-  '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute;
-  '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute;
-  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute;
-  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute;
-  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute;
-  '/components/chips/select': typeof ComponentsChipsSelectRoute;
-  '/components/chips/sizes': typeof ComponentsChipsSizesRoute;
-  '/components/chips/styles': typeof ComponentsChipsStylesRoute;
-  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute;
-  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute;
-  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute;
-  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute;
-  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute;
-  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute;
-  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute;
-  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute;
-  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute;
-  '/components/currencyInput/currencyInputField': typeof ComponentsCurrencyInputCurrencyInputFieldRoute;
-  '/components/currencyInput/minMaxvalue': typeof ComponentsCurrencyInputMinMaxvalueRoute;
-  '/components/currencyInput/withPrefix': typeof ComponentsCurrencyInputWithPrefixRoute;
-  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute;
-  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute;
-  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute;
-  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute;
-  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute;
-  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute;
-  '/components/dateInput/state': typeof ComponentsDateInputStateRoute;
-  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute;
-  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute;
-  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute;
-  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute;
-  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute;
-  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute;
-  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute;
-  '/components/divider/length': typeof ComponentsDividerLengthRoute;
-  '/components/divider/style': typeof ComponentsDividerStyleRoute;
-  '/components/divider/thikness': typeof ComponentsDividerThiknessRoute;
-  '/components/divider/type': typeof ComponentsDividerTypeRoute;
-  '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute;
-  '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute;
-  '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute;
-  '/components/drawer/position': typeof ComponentsDrawerPositionRoute;
-  '/components/drawer/width': typeof ComponentsDrawerWidthRoute;
-  '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute;
-  '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute;
-  '/components/dropdown/customDropdownContainer': typeof ComponentsDropdownCustomDropdownContainerRoute;
-  '/components/dropdown/dropMenuControlled': typeof ComponentsDropdownDropMenuControlledRoute;
-  '/components/dropdown/dropMenuUncontrolled': typeof ComponentsDropdownDropMenuUncontrolledRoute;
-  '/components/dropdown/menuActionSearch': typeof ComponentsDropdownMenuActionSearchRoute;
-  '/components/dropdown/menuActionTwoButtons': typeof ComponentsDropdownMenuActionTwoButtonsRoute;
-  '/components/dropdown/menuCategories': typeof ComponentsDropdownMenuCategoriesRoute;
-  '/components/dropdown/menuCustomItems': typeof ComponentsDropdownMenuCustomItemsRoute;
-  '/components/dropdown/menuDimensions': typeof ComponentsDropdownMenuDimensionsRoute;
-  '/components/dropdown/menuLockCycleScroll': typeof ComponentsDropdownMenuLockCycleScrollRoute;
-  '/components/dropdown/menuManyItems': typeof ComponentsDropdownMenuManyItemsRoute;
-  '/components/dropdown/menuMultiLevel': typeof ComponentsDropdownMenuMultiLevelRoute;
-  '/components/dropdown/menuMultiLine': typeof ComponentsDropdownMenuMultiLineRoute;
-  '/components/dropdown/menuPreselect': typeof ComponentsDropdownMenuPreselectRoute;
-  '/components/dropdown/menuVirtualScroll': typeof ComponentsDropdownMenuVirtualScrollRoute;
-  '/components/dropdown/menuWithAddTextAndIcons': typeof ComponentsDropdownMenuWithAddTextAndIconsRoute;
-  '/components/dropdown/menuWithCheckbox': typeof ComponentsDropdownMenuWithCheckboxRoute;
-  '/components/dropdown/menuWithCheckboxGroup': typeof ComponentsDropdownMenuWithCheckboxGroupRoute;
-  '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute;
-  '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute;
-  '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute;
-  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute;
-  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute;
-  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute;
-  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute;
-  '/components/editMode/status': typeof ComponentsEditModeStatusRoute;
-  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute;
-  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute;
-  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute;
-  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute;
-  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute;
-  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute;
-  '/components/fileinput/state': typeof ComponentsFileinputStateRoute;
-  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute;
-  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute;
-  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute;
-  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute;
-  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute;
-  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute;
-  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute;
-  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute;
-  '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute;
-  '/components/hint/className': typeof ComponentsHintClassNameRoute;
-  '/components/hint/position': typeof ComponentsHintPositionRoute;
-  '/components/hint/scenario': typeof ComponentsHintScenarioRoute;
-  '/components/hint/sizes': typeof ComponentsHintSizesRoute;
-  '/components/hint/variants': typeof ComponentsHintVariantsRoute;
-  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute;
-  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute;
-  '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute;
-  '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute;
-  '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute;
-  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute;
-  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute;
-  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute;
-  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute;
-  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute;
-  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute;
-  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute;
-  '/components/inputEx/custom': typeof ComponentsInputExCustomRoute;
-  '/components/inputEx/inputExField': typeof ComponentsInputExInputExFieldRoute;
-  '/components/inputEx/prefixSuffixSelect': typeof ComponentsInputExPrefixSuffixSelectRoute;
-  '/components/inputEx/sizes': typeof ComponentsInputExSizesRoute;
-  '/components/inputEx/state': typeof ComponentsInputExStateRoute;
-  '/components/inputEx/status': typeof ComponentsInputExStatusRoute;
-  '/components/link/asProp': typeof ComponentsLinkAsPropRoute;
-  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute;
-  '/components/link/styles': typeof ComponentsLinkStylesRoute;
-  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute;
-  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute;
-  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute;
-  '/components/list/multiline': typeof ComponentsListMultilineRoute;
-  '/components/list/nested': typeof ComponentsListNestedRoute;
-  '/components/list/orderedList': typeof ComponentsListOrderedListRoute;
-  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute;
-  '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute;
-  '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute;
-  '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute;
-  '/components/menuButton/multiLevelMenu': typeof ComponentsMenuButtonMultiLevelMenuRoute;
-  '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute;
-  '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute;
-  '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute;
-  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute;
-  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute;
-  '/components/modal/scroll': typeof ComponentsModalScrollRoute;
-  '/components/modal/sizes': typeof ComponentsModalSizesRoute;
-  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute;
-  '/components/modal/variants': typeof ComponentsModalVariantsRoute;
-  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute;
-  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute;
-  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute;
-  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute;
-  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute;
-  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute;
-  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute;
-  '/components/notification/states': typeof ComponentsNotificationStatesRoute;
-  '/components/notification/styles': typeof ComponentsNotificationStylesRoute;
-  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute;
-  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute;
-  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute;
-  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute;
-  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute;
-  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute;
-  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute;
-  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute;
-  '/components/overflowMenu/multiLevel': typeof ComponentsOverflowMenuMultiLevelRoute;
-  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute;
-  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute;
-  '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute;
-  '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute;
-  '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute;
-  '/components/paginationTwo/entries': typeof ComponentsPaginationTwoEntriesRoute;
-  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute;
-  '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute;
-  '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute;
-  '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute;
-  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute;
-  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute;
-  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute;
-  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute;
-  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute;
-  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute;
-  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute;
-  '/components/pills/menu': typeof ComponentsPillsMenuRoute;
-  '/components/pills/nested': typeof ComponentsPillsNestedRoute;
-  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute;
-  '/components/progressHeader/animation': typeof ComponentsProgressHeaderAnimationRoute;
-  '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute;
-  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute;
-  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute;
-  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute;
-  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute;
-  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute;
-  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute;
-  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute;
-  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute;
-  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute;
-  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute;
-  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute;
-  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute;
-  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute;
-  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute;
-  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute;
-  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute;
-  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute;
-  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute;
-  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute;
-  '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute;
-  '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute;
-  '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute;
-  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute;
-  '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute;
-  '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute;
-  '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute;
-  '/components/select/multiCustomOptionsByRenderChip': typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute;
-  '/components/select/multiCustomValues': typeof ComponentsSelectMultiCustomValuesRoute;
-  '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute;
-  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute;
-  '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute;
-  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute;
-  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute;
-  '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute;
-  '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute;
-  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute;
-  '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute;
-  '/components/select/sizes': typeof ComponentsSelectSizesRoute;
-  '/components/select/state': typeof ComponentsSelectStateRoute;
-  '/components/select/status': typeof ComponentsSelectStatusRoute;
-  '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute;
-  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute;
-  '/components/slider/custom': typeof ComponentsSliderCustomRoute;
-  '/components/slider/options': typeof ComponentsSliderOptionsRoute;
-  '/components/slider/range': typeof ComponentsSliderRangeRoute;
-  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute;
-  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute;
-  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute;
-  '/components/slider/sizes': typeof ComponentsSliderSizesRoute;
-  '/components/slider/state': typeof ComponentsSliderStateRoute;
-  '/components/sliderInput/controlled': typeof ComponentsSliderInputControlledRoute;
-  '/components/sliderInput/custom': typeof ComponentsSliderInputCustomRoute;
-  '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute;
-  '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute;
-  '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute;
-  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute;
-  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute;
-  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute;
-  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute;
-  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute;
-  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute;
-  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute;
-  '/components/stepper/custom': typeof ComponentsStepperCustomRoute;
-  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute;
-  '/components/stepper/options': typeof ComponentsStepperOptionsRoute;
-  '/components/stepper/state': typeof ComponentsStepperStateRoute;
-  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute;
-  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute;
-  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute;
-  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute;
-  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute;
-  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute;
-  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute;
-  '/components/t/stylesList': typeof ComponentsTStylesListRoute;
-  '/components/t/variants': typeof ComponentsTVariantsRoute;
-  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute;
-  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute;
-  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute;
-  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute;
-  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute;
-  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute;
-  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute;
-  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute;
-  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute;
-  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute;
-  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute;
-  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute;
-  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute;
-  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute;
-  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute;
-  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute;
-  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute;
-  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute;
-  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute;
-  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute;
-  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute;
-  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute;
-  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute;
-  '/components/table/expand': typeof ComponentsTableExpandRoute;
-  '/components/table/extraText': typeof ComponentsTableExtraTextRoute;
-  '/components/table/filter': typeof ComponentsTableFilterRoute;
-  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute;
-  '/components/table/group': typeof ComponentsTableGroupRoute;
-  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute;
-  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute;
-  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute;
-  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute;
-  '/components/table/multiline': typeof ComponentsTableMultilineRoute;
-  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute;
-  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute;
-  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute;
-  '/components/table/rowState': typeof ComponentsTableRowStateRoute;
-  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute;
-  '/components/table/sort': typeof ComponentsTableSortRoute;
-  '/components/table/sticky': typeof ComponentsTableStickyRoute;
-  '/components/table/style': typeof ComponentsTableStyleRoute;
-  '/components/table/width': typeof ComponentsTableWidthRoute;
-  '/components/table/zebra': typeof ComponentsTableZebraRoute;
-  '/components/tag/menu': typeof ComponentsTagMenuRoute;
-  '/components/tag/styles': typeof ComponentsTagStylesRoute;
-  '/components/tag/tags': typeof ComponentsTagTagsRoute;
-  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute;
-  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute;
-  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute;
-  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute;
-  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute;
-  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute;
-  '/components/textButton/states': typeof ComponentsTextButtonStatesRoute;
-  '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute;
-  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute;
-  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute;
-  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute;
-  '/components/toast/position': typeof ComponentsToastPositionRoute;
-  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute;
-  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute;
-  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute;
-  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute;
-  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute;
-  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute;
-  '/components/toggle/states': typeof ComponentsToggleStatesRoute;
-  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute;
-  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute;
-  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute;
-  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute;
-  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute;
-  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute;
-  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute;
-  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute;
-  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute;
-  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute;
-  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute;
-  '/components/tree/custom': typeof ComponentsTreeCustomRoute;
-  '/components/tree/mobile': typeof ComponentsTreeMobileRoute;
-  '/components/tree/sizes': typeof ComponentsTreeSizesRoute;
-  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute;
-  '/components/tree/variants': typeof ComponentsTreeVariantsRoute;
-  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute;
-  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute;
-  '/components/accordion': typeof ComponentsAccordionIndexRoute;
-  '/components/actionBar': typeof ComponentsActionBarIndexRoute;
-  '/components/anchor': typeof ComponentsAnchorIndexRoute;
-  '/components/avatar': typeof ComponentsAvatarIndexRoute;
-  '/components/badge': typeof ComponentsBadgeIndexRoute;
-  '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute;
-  '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute;
-  '/components/button': typeof ComponentsButtonIndexRoute;
-  '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute;
-  '/components/calendar': typeof ComponentsCalendarIndexRoute;
-  '/components/carousel': typeof ComponentsCarouselIndexRoute;
-  '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute;
-  '/components/checkbox': typeof ComponentsCheckboxIndexRoute;
-  '/components/chips': typeof ComponentsChipsIndexRoute;
-  '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute;
-  '/components/currencyInput': typeof ComponentsCurrencyInputIndexRoute;
-  '/components/dateInput': typeof ComponentsDateInputIndexRoute;
-  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute;
-  '/components/divider': typeof ComponentsDividerIndexRoute;
-  '/components/drawer': typeof ComponentsDrawerIndexRoute;
-  '/components/dropdown': typeof ComponentsDropdownIndexRoute;
-  '/components/editMode': typeof ComponentsEditModeIndexRoute;
-  '/components/fileinput': typeof ComponentsFileinputIndexRoute;
-  '/components/flex': typeof ComponentsFlexIndexRoute;
-  '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute;
-  '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute;
-  '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute;
-  '/components/hint': typeof ComponentsHintIndexRoute;
-  '/components/iconButton': typeof ComponentsIconButtonIndexRoute;
-  '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute;
-  '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute;
-  '/components/imageViewer': typeof ComponentsImageViewerIndexRoute;
-  '/components/inputEx': typeof ComponentsInputExIndexRoute;
-  '/components/link': typeof ComponentsLinkIndexRoute;
-  '/components/list': typeof ComponentsListIndexRoute;
-  '/components/menuButton': typeof ComponentsMenuButtonIndexRoute;
-  '/components/modal': typeof ComponentsModalIndexRoute;
-  '/components/multiButton': typeof ComponentsMultiButtonIndexRoute;
-  '/components/multiInput': typeof ComponentsMultiInputIndexRoute;
-  '/components/notification': typeof ComponentsNotificationIndexRoute;
-  '/components/numberInput': typeof ComponentsNumberInputIndexRoute;
-  '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute;
-  '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute;
-  '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute;
-  '/components/phoneNumberInput': typeof ComponentsPhoneNumberInputIndexRoute;
-  '/components/pills': typeof ComponentsPillsIndexRoute;
-  '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute;
-  '/components/progressPage': typeof ComponentsProgressPageIndexRoute;
-  '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute;
-  '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute;
-  '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute;
-  '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute;
-  '/components/select': typeof ComponentsSelectIndexRoute;
-  '/components/skeleton': typeof ComponentsSkeletonIndexRoute;
-  '/components/slider': typeof ComponentsSliderIndexRoute;
-  '/components/sliderInput': typeof ComponentsSliderInputIndexRoute;
-  '/components/spinner': typeof ComponentsSpinnerIndexRoute;
-  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute;
-  '/components/stepper': typeof ComponentsStepperIndexRoute;
-  '/components/suggestInput': typeof ComponentsSuggestInputIndexRoute;
-  '/components/t': typeof ComponentsTIndexRoute;
-  '/components/tabMenu': typeof ComponentsTabMenuIndexRoute;
-  '/components/table': typeof ComponentsTableIndexRoute;
-  '/components/tag': typeof ComponentsTagIndexRoute;
-  '/components/textArea': typeof ComponentsTextAreaIndexRoute;
-  '/components/textButton': typeof ComponentsTextButtonIndexRoute;
-  '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute;
-  '/components/toast': typeof ComponentsToastIndexRoute;
-  '/components/toggle': typeof ComponentsToggleIndexRoute;
-  '/components/tooltip': typeof ComponentsTooltipIndexRoute;
-  '/components/tree': typeof ComponentsTreeIndexRoute;
+  '/': typeof IndexRoute
+  '/components': typeof ComponentsRouteWithChildren
+  '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
+  '/general/installation': typeof GeneralInstallationRoute
+  '/general/resources': typeof GeneralResourcesRoute
+  '/general/usage': typeof GeneralUsageRoute
+  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
+  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
+  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
+  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
+  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
+  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute
+  '/components/anchor/state': typeof ComponentsAnchorStateRoute
+  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute
+  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
+  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
+  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
+  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
+  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
+  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
+  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute
+  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute
+  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
+  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
+  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
+  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
+  '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
+  '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
+  '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/state': typeof ComponentsButtonStateRoute
+  '/components/button/types': typeof ComponentsButtonTypesRoute
+  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
+  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
+  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
+  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
+  '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
+  '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
+  '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
+  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
+  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute
+  '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
+  '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
+  '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute
+  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
+  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
+  '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/sizes': typeof ComponentsChipsSizesRoute
+  '/components/chips/styles': typeof ComponentsChipsStylesRoute
+  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
+  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
+  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute
+  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute
+  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
+  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
+  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
+  '/components/currencyInput/currencyInputField': typeof ComponentsCurrencyInputCurrencyInputFieldRoute
+  '/components/currencyInput/minMaxvalue': typeof ComponentsCurrencyInputMinMaxvalueRoute
+  '/components/currencyInput/withPrefix': typeof ComponentsCurrencyInputWithPrefixRoute
+  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute
+  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute
+  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute
+  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute
+  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute
+  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute
+  '/components/dateInput/state': typeof ComponentsDateInputStateRoute
+  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
+  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
+  '/components/divider/length': typeof ComponentsDividerLengthRoute
+  '/components/divider/style': typeof ComponentsDividerStyleRoute
+  '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
+  '/components/divider/type': typeof ComponentsDividerTypeRoute
+  '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute
+  '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute
+  '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute
+  '/components/drawer/position': typeof ComponentsDrawerPositionRoute
+  '/components/drawer/width': typeof ComponentsDrawerWidthRoute
+  '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute
+  '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute
+  '/components/dropdown/customDropdownContainer': typeof ComponentsDropdownCustomDropdownContainerRoute
+  '/components/dropdown/dropMenuControlled': typeof ComponentsDropdownDropMenuControlledRoute
+  '/components/dropdown/dropMenuUncontrolled': typeof ComponentsDropdownDropMenuUncontrolledRoute
+  '/components/dropdown/menuActionSearch': typeof ComponentsDropdownMenuActionSearchRoute
+  '/components/dropdown/menuActionTwoButtons': typeof ComponentsDropdownMenuActionTwoButtonsRoute
+  '/components/dropdown/menuCategories': typeof ComponentsDropdownMenuCategoriesRoute
+  '/components/dropdown/menuCustomItems': typeof ComponentsDropdownMenuCustomItemsRoute
+  '/components/dropdown/menuDimensions': typeof ComponentsDropdownMenuDimensionsRoute
+  '/components/dropdown/menuLockCycleScroll': typeof ComponentsDropdownMenuLockCycleScrollRoute
+  '/components/dropdown/menuManyItems': typeof ComponentsDropdownMenuManyItemsRoute
+  '/components/dropdown/menuMultiLevel': typeof ComponentsDropdownMenuMultiLevelRoute
+  '/components/dropdown/menuMultiLine': typeof ComponentsDropdownMenuMultiLineRoute
+  '/components/dropdown/menuPreselect': typeof ComponentsDropdownMenuPreselectRoute
+  '/components/dropdown/menuVirtualScroll': typeof ComponentsDropdownMenuVirtualScrollRoute
+  '/components/dropdown/menuWithAddTextAndIcons': typeof ComponentsDropdownMenuWithAddTextAndIconsRoute
+  '/components/dropdown/menuWithCheckbox': typeof ComponentsDropdownMenuWithCheckboxRoute
+  '/components/dropdown/menuWithCheckboxGroup': typeof ComponentsDropdownMenuWithCheckboxGroupRoute
+  '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
+  '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
+  '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute
+  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute
+  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute
+  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
+  '/components/editMode/status': typeof ComponentsEditModeStatusRoute
+  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute
+  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute
+  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute
+  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute
+  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute
+  '/components/fileinput/state': typeof ComponentsFileinputStateRoute
+  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
+  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
+  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
+  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
+  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
+  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
+  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute
+  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute
+  '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute
+  '/components/hint/className': typeof ComponentsHintClassNameRoute
+  '/components/hint/position': typeof ComponentsHintPositionRoute
+  '/components/hint/scenario': typeof ComponentsHintScenarioRoute
+  '/components/hint/sizes': typeof ComponentsHintSizesRoute
+  '/components/hint/variants': typeof ComponentsHintVariantsRoute
+  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
+  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
+  '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
+  '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute
+  '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute
+  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
+  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
+  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute
+  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute
+  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
+  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
+  '/components/inputEx/custom': typeof ComponentsInputExCustomRoute
+  '/components/inputEx/inputExField': typeof ComponentsInputExInputExFieldRoute
+  '/components/inputEx/prefixSuffixSelect': typeof ComponentsInputExPrefixSuffixSelectRoute
+  '/components/inputEx/sizes': typeof ComponentsInputExSizesRoute
+  '/components/inputEx/state': typeof ComponentsInputExStateRoute
+  '/components/inputEx/status': typeof ComponentsInputExStatusRoute
+  '/components/link/asProp': typeof ComponentsLinkAsPropRoute
+  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
+  '/components/link/styles': typeof ComponentsLinkStylesRoute
+  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
+  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute
+  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute
+  '/components/list/multiline': typeof ComponentsListMultilineRoute
+  '/components/list/nested': typeof ComponentsListNestedRoute
+  '/components/list/orderedList': typeof ComponentsListOrderedListRoute
+  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute
+  '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
+  '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
+  '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
+  '/components/menuButton/multiLevelMenu': typeof ComponentsMenuButtonMultiLevelMenuRoute
+  '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
+  '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
+  '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute
+  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute
+  '/components/modal/scroll': typeof ComponentsModalScrollRoute
+  '/components/modal/sizes': typeof ComponentsModalSizesRoute
+  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute
+  '/components/modal/variants': typeof ComponentsModalVariantsRoute
+  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
+  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
+  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute
+  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute
+  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute
+  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute
+  '/components/notification/states': typeof ComponentsNotificationStatesRoute
+  '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
+  '/components/overflowMenu/multiLevel': typeof ComponentsOverflowMenuMultiLevelRoute
+  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute
+  '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
+  '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
+  '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute
+  '/components/paginationTwo/entries': typeof ComponentsPaginationTwoEntriesRoute
+  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute
+  '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute
+  '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute
+  '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute
+  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute
+  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute
+  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute
+  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute
+  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute
+  '/components/pills/menu': typeof ComponentsPillsMenuRoute
+  '/components/pills/nested': typeof ComponentsPillsNestedRoute
+  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
+  '/components/progressHeader/animation': typeof ComponentsProgressHeaderAnimationRoute
+  '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute
+  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
+  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
+  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute
+  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute
+  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute
+  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
+  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
+  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
+  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
+  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute
+  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
+  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
+  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
+  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
+  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
+  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute
+  '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
+  '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
+  '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
+  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute
+  '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute
+  '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute
+  '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute
+  '/components/select/multiCustomOptionsByRenderChip': typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute
+  '/components/select/multiCustomValues': typeof ComponentsSelectMultiCustomValuesRoute
+  '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute
+  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
+  '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute
+  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
+  '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute
+  '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
+  '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute
+  '/components/select/sizes': typeof ComponentsSelectSizesRoute
+  '/components/select/state': typeof ComponentsSelectStateRoute
+  '/components/select/status': typeof ComponentsSelectStatusRoute
+  '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute
+  '/components/slider/custom': typeof ComponentsSliderCustomRoute
+  '/components/slider/options': typeof ComponentsSliderOptionsRoute
+  '/components/slider/range': typeof ComponentsSliderRangeRoute
+  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute
+  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute
+  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute
+  '/components/slider/sizes': typeof ComponentsSliderSizesRoute
+  '/components/slider/state': typeof ComponentsSliderStateRoute
+  '/components/sliderInput/controlled': typeof ComponentsSliderInputControlledRoute
+  '/components/sliderInput/custom': typeof ComponentsSliderInputCustomRoute
+  '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute
+  '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute
+  '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute
+  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
+  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
+  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
+  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
+  '/components/stepper/custom': typeof ComponentsStepperCustomRoute
+  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
+  '/components/stepper/options': typeof ComponentsStepperOptionsRoute
+  '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
+  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/t/stylesList': typeof ComponentsTStylesListRoute
+  '/components/t/variants': typeof ComponentsTVariantsRoute
+  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
+  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
+  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
+  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute
+  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute
+  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute
+  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
+  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
+  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute
+  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute
+  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute
+  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute
+  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute
+  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute
+  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
+  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
+  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
+  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
+  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
+  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
+  '/components/table/expand': typeof ComponentsTableExpandRoute
+  '/components/table/extraText': typeof ComponentsTableExtraTextRoute
+  '/components/table/filter': typeof ComponentsTableFilterRoute
+  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
+  '/components/table/group': typeof ComponentsTableGroupRoute
+  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
+  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
+  '/components/table/multiline': typeof ComponentsTableMultilineRoute
+  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
+  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute
+  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
+  '/components/table/rowState': typeof ComponentsTableRowStateRoute
+  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
+  '/components/table/sort': typeof ComponentsTableSortRoute
+  '/components/table/sticky': typeof ComponentsTableStickyRoute
+  '/components/table/style': typeof ComponentsTableStyleRoute
+  '/components/table/width': typeof ComponentsTableWidthRoute
+  '/components/table/zebra': typeof ComponentsTableZebraRoute
+  '/components/tag/menu': typeof ComponentsTagMenuRoute
+  '/components/tag/styles': typeof ComponentsTagStylesRoute
+  '/components/tag/tags': typeof ComponentsTagTagsRoute
+  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
+  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
+  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
+  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
+  '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
+  '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
+  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
+  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
+  '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
+  '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
+  '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
+  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
+  '/components/toast/position': typeof ComponentsToastPositionRoute
+  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
+  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute
+  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
+  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
+  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
+  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
+  '/components/toggle/states': typeof ComponentsToggleStatesRoute
+  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute
+  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute
+  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute
+  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute
+  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute
+  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute
+  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute
+  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute
+  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
+  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
+  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
+  '/components/tree/custom': typeof ComponentsTreeCustomRoute
+  '/components/tree/mobile': typeof ComponentsTreeMobileRoute
+  '/components/tree/sizes': typeof ComponentsTreeSizesRoute
+  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/variants': typeof ComponentsTreeVariantsRoute
+  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
+  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
+  '/components/accordion': typeof ComponentsAccordionIndexRoute
+  '/components/actionBar': typeof ComponentsActionBarIndexRoute
+  '/components/anchor': typeof ComponentsAnchorIndexRoute
+  '/components/avatar': typeof ComponentsAvatarIndexRoute
+  '/components/badge': typeof ComponentsBadgeIndexRoute
+  '/components/badgeDot': typeof ComponentsBadgeDotIndexRoute
+  '/components/breadcrumbs': typeof ComponentsBreadcrumbsIndexRoute
+  '/components/button': typeof ComponentsButtonIndexRoute
+  '/components/buttonGroup': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar': typeof ComponentsCalendarIndexRoute
+  '/components/carousel': typeof ComponentsCarouselIndexRoute
+  '/components/carouselSlider': typeof ComponentsCarouselSliderIndexRoute
+  '/components/checkbox': typeof ComponentsCheckboxIndexRoute
+  '/components/chips': typeof ComponentsChipsIndexRoute
+  '/components/contentSwitcher': typeof ComponentsContentSwitcherIndexRoute
+  '/components/currencyInput': typeof ComponentsCurrencyInputIndexRoute
+  '/components/dateInput': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField': typeof ComponentsDateTimeFieldIndexRoute
+  '/components/divider': typeof ComponentsDividerIndexRoute
+  '/components/drawer': typeof ComponentsDrawerIndexRoute
+  '/components/dropdown': typeof ComponentsDropdownIndexRoute
+  '/components/editMode': typeof ComponentsEditModeIndexRoute
+  '/components/fileinput': typeof ComponentsFileinputIndexRoute
+  '/components/flex': typeof ComponentsFlexIndexRoute
+  '/components/floatingButton': typeof ComponentsFloatingButtonIndexRoute
+  '/components/globalSearch': typeof ComponentsGlobalSearchIndexRoute
+  '/components/groupActionsPane': typeof ComponentsGroupActionsPaneIndexRoute
+  '/components/hint': typeof ComponentsHintIndexRoute
+  '/components/iconButton': typeof ComponentsIconButtonIndexRoute
+  '/components/iconButtonGroup': typeof ComponentsIconButtonGroupIndexRoute
+  '/components/iconPlacement': typeof ComponentsIconPlacementIndexRoute
+  '/components/imageViewer': typeof ComponentsImageViewerIndexRoute
+  '/components/inputEx': typeof ComponentsInputExIndexRoute
+  '/components/link': typeof ComponentsLinkIndexRoute
+  '/components/list': typeof ComponentsListIndexRoute
+  '/components/menuButton': typeof ComponentsMenuButtonIndexRoute
+  '/components/modal': typeof ComponentsModalIndexRoute
+  '/components/multiButton': typeof ComponentsMultiButtonIndexRoute
+  '/components/multiInput': typeof ComponentsMultiInputIndexRoute
+  '/components/notification': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput': typeof ComponentsNumberInputIndexRoute
+  '/components/overflowMenu': typeof ComponentsOverflowMenuIndexRoute
+  '/components/paginationOne': typeof ComponentsPaginationOneIndexRoute
+  '/components/paginationTwo': typeof ComponentsPaginationTwoIndexRoute
+  '/components/phoneNumberInput': typeof ComponentsPhoneNumberInputIndexRoute
+  '/components/pills': typeof ComponentsPillsIndexRoute
+  '/components/progressHeader': typeof ComponentsProgressHeaderIndexRoute
+  '/components/progressPage': typeof ComponentsProgressPageIndexRoute
+  '/components/progressStepper': typeof ComponentsProgressStepperIndexRoute
+  '/components/radiobutton': typeof ComponentsRadiobuttonIndexRoute
+  '/components/scrollContainer': typeof ComponentsScrollContainerIndexRoute
+  '/components/segmentedControl': typeof ComponentsSegmentedControlIndexRoute
+  '/components/select': typeof ComponentsSelectIndexRoute
+  '/components/skeleton': typeof ComponentsSkeletonIndexRoute
+  '/components/slider': typeof ComponentsSliderIndexRoute
+  '/components/sliderInput': typeof ComponentsSliderInputIndexRoute
+  '/components/spinner': typeof ComponentsSpinnerIndexRoute
+  '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
+  '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/t': typeof ComponentsTIndexRoute
+  '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
+  '/components/table': typeof ComponentsTableIndexRoute
+  '/components/tag': typeof ComponentsTagIndexRoute
+  '/components/textArea': typeof ComponentsTextAreaIndexRoute
+  '/components/textButton': typeof ComponentsTextButtonIndexRoute
+  '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/timeInput': typeof ComponentsTimeInputIndexRoute
+  '/components/toast': typeof ComponentsToastIndexRoute
+  '/components/toggle': typeof ComponentsToggleIndexRoute
+  '/components/tooltip': typeof ComponentsTooltipIndexRoute
+  '/components/tree': typeof ComponentsTreeIndexRoute
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute;
-  '/': typeof IndexRoute;
-  '/components': typeof ComponentsRouteWithChildren;
-  '/general': typeof GeneralRouteWithChildren;
-  '/general/faqs': typeof GeneralFaqsRoute;
-  '/general/installation': typeof GeneralInstallationRoute;
-  '/general/resources': typeof GeneralResourcesRoute;
-  '/general/usage': typeof GeneralUsageRoute;
-  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute;
-  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute;
-  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute;
-  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute;
-  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute;
-  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute;
-  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute;
-  '/components/anchor/state': typeof ComponentsAnchorStateRoute;
-  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute;
-  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute;
-  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute;
-  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute;
-  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute;
-  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute;
-  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute;
-  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute;
-  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute;
-  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute;
-  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute;
-  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute;
-  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute;
-  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute;
-  '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute;
-  '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute;
-  '/components/button/dimension': typeof ComponentsButtonDimensionRoute;
-  '/components/button/state': typeof ComponentsButtonStateRoute;
-  '/components/button/types': typeof ComponentsButtonTypesRoute;
-  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute;
-  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute;
-  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute;
-  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute;
-  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute;
-  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute;
-  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute;
-  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute;
-  '/components/calendar/range': typeof ComponentsCalendarRangeRoute;
-  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute;
-  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute;
-  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute;
-  '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute;
-  '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute;
-  '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute;
-  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute;
-  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute;
-  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute;
-  '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute;
-  '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute;
-  '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute;
-  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute;
-  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute;
-  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute;
-  '/components/chips/select': typeof ComponentsChipsSelectRoute;
-  '/components/chips/sizes': typeof ComponentsChipsSizesRoute;
-  '/components/chips/styles': typeof ComponentsChipsStylesRoute;
-  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute;
-  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute;
-  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute;
-  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute;
-  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute;
-  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute;
-  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute;
-  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute;
-  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute;
-  '/components/currencyInput/currencyInputField': typeof ComponentsCurrencyInputCurrencyInputFieldRoute;
-  '/components/currencyInput/minMaxvalue': typeof ComponentsCurrencyInputMinMaxvalueRoute;
-  '/components/currencyInput/withPrefix': typeof ComponentsCurrencyInputWithPrefixRoute;
-  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute;
-  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute;
-  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute;
-  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute;
-  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute;
-  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute;
-  '/components/dateInput/state': typeof ComponentsDateInputStateRoute;
-  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute;
-  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute;
-  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute;
-  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute;
-  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute;
-  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute;
-  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute;
-  '/components/divider/length': typeof ComponentsDividerLengthRoute;
-  '/components/divider/style': typeof ComponentsDividerStyleRoute;
-  '/components/divider/thikness': typeof ComponentsDividerThiknessRoute;
-  '/components/divider/type': typeof ComponentsDividerTypeRoute;
-  '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute;
-  '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute;
-  '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute;
-  '/components/drawer/position': typeof ComponentsDrawerPositionRoute;
-  '/components/drawer/width': typeof ComponentsDrawerWidthRoute;
-  '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute;
-  '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute;
-  '/components/dropdown/customDropdownContainer': typeof ComponentsDropdownCustomDropdownContainerRoute;
-  '/components/dropdown/dropMenuControlled': typeof ComponentsDropdownDropMenuControlledRoute;
-  '/components/dropdown/dropMenuUncontrolled': typeof ComponentsDropdownDropMenuUncontrolledRoute;
-  '/components/dropdown/menuActionSearch': typeof ComponentsDropdownMenuActionSearchRoute;
-  '/components/dropdown/menuActionTwoButtons': typeof ComponentsDropdownMenuActionTwoButtonsRoute;
-  '/components/dropdown/menuCategories': typeof ComponentsDropdownMenuCategoriesRoute;
-  '/components/dropdown/menuCustomItems': typeof ComponentsDropdownMenuCustomItemsRoute;
-  '/components/dropdown/menuDimensions': typeof ComponentsDropdownMenuDimensionsRoute;
-  '/components/dropdown/menuLockCycleScroll': typeof ComponentsDropdownMenuLockCycleScrollRoute;
-  '/components/dropdown/menuManyItems': typeof ComponentsDropdownMenuManyItemsRoute;
-  '/components/dropdown/menuMultiLevel': typeof ComponentsDropdownMenuMultiLevelRoute;
-  '/components/dropdown/menuMultiLine': typeof ComponentsDropdownMenuMultiLineRoute;
-  '/components/dropdown/menuPreselect': typeof ComponentsDropdownMenuPreselectRoute;
-  '/components/dropdown/menuVirtualScroll': typeof ComponentsDropdownMenuVirtualScrollRoute;
-  '/components/dropdown/menuWithAddTextAndIcons': typeof ComponentsDropdownMenuWithAddTextAndIconsRoute;
-  '/components/dropdown/menuWithCheckbox': typeof ComponentsDropdownMenuWithCheckboxRoute;
-  '/components/dropdown/menuWithCheckboxGroup': typeof ComponentsDropdownMenuWithCheckboxGroupRoute;
-  '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute;
-  '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute;
-  '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute;
-  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute;
-  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute;
-  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute;
-  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute;
-  '/components/editMode/status': typeof ComponentsEditModeStatusRoute;
-  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute;
-  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute;
-  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute;
-  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute;
-  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute;
-  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute;
-  '/components/fileinput/state': typeof ComponentsFileinputStateRoute;
-  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute;
-  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute;
-  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute;
-  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute;
-  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute;
-  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute;
-  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute;
-  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute;
-  '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute;
-  '/components/hint/className': typeof ComponentsHintClassNameRoute;
-  '/components/hint/position': typeof ComponentsHintPositionRoute;
-  '/components/hint/scenario': typeof ComponentsHintScenarioRoute;
-  '/components/hint/sizes': typeof ComponentsHintSizesRoute;
-  '/components/hint/variants': typeof ComponentsHintVariantsRoute;
-  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute;
-  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute;
-  '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute;
-  '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute;
-  '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute;
-  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute;
-  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute;
-  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute;
-  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute;
-  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute;
-  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute;
-  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute;
-  '/components/inputEx/custom': typeof ComponentsInputExCustomRoute;
-  '/components/inputEx/inputExField': typeof ComponentsInputExInputExFieldRoute;
-  '/components/inputEx/prefixSuffixSelect': typeof ComponentsInputExPrefixSuffixSelectRoute;
-  '/components/inputEx/sizes': typeof ComponentsInputExSizesRoute;
-  '/components/inputEx/state': typeof ComponentsInputExStateRoute;
-  '/components/inputEx/status': typeof ComponentsInputExStatusRoute;
-  '/components/link/asProp': typeof ComponentsLinkAsPropRoute;
-  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute;
-  '/components/link/styles': typeof ComponentsLinkStylesRoute;
-  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute;
-  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute;
-  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute;
-  '/components/list/multiline': typeof ComponentsListMultilineRoute;
-  '/components/list/nested': typeof ComponentsListNestedRoute;
-  '/components/list/orderedList': typeof ComponentsListOrderedListRoute;
-  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute;
-  '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute;
-  '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute;
-  '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute;
-  '/components/menuButton/multiLevelMenu': typeof ComponentsMenuButtonMultiLevelMenuRoute;
-  '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute;
-  '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute;
-  '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute;
-  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute;
-  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute;
-  '/components/modal/scroll': typeof ComponentsModalScrollRoute;
-  '/components/modal/sizes': typeof ComponentsModalSizesRoute;
-  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute;
-  '/components/modal/variants': typeof ComponentsModalVariantsRoute;
-  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute;
-  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute;
-  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute;
-  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute;
-  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute;
-  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute;
-  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute;
-  '/components/notification/states': typeof ComponentsNotificationStatesRoute;
-  '/components/notification/styles': typeof ComponentsNotificationStylesRoute;
-  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute;
-  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute;
-  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute;
-  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute;
-  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute;
-  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute;
-  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute;
-  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute;
-  '/components/overflowMenu/multiLevel': typeof ComponentsOverflowMenuMultiLevelRoute;
-  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute;
-  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute;
-  '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute;
-  '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute;
-  '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute;
-  '/components/paginationTwo/entries': typeof ComponentsPaginationTwoEntriesRoute;
-  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute;
-  '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute;
-  '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute;
-  '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute;
-  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute;
-  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute;
-  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute;
-  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute;
-  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute;
-  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute;
-  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute;
-  '/components/pills/menu': typeof ComponentsPillsMenuRoute;
-  '/components/pills/nested': typeof ComponentsPillsNestedRoute;
-  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute;
-  '/components/progressHeader/animation': typeof ComponentsProgressHeaderAnimationRoute;
-  '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute;
-  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute;
-  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute;
-  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute;
-  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute;
-  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute;
-  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute;
-  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute;
-  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute;
-  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute;
-  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute;
-  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute;
-  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute;
-  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute;
-  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute;
-  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute;
-  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute;
-  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute;
-  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute;
-  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute;
-  '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute;
-  '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute;
-  '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute;
-  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute;
-  '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute;
-  '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute;
-  '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute;
-  '/components/select/multiCustomOptionsByRenderChip': typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute;
-  '/components/select/multiCustomValues': typeof ComponentsSelectMultiCustomValuesRoute;
-  '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute;
-  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute;
-  '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute;
-  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute;
-  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute;
-  '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute;
-  '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute;
-  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute;
-  '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute;
-  '/components/select/sizes': typeof ComponentsSelectSizesRoute;
-  '/components/select/state': typeof ComponentsSelectStateRoute;
-  '/components/select/status': typeof ComponentsSelectStatusRoute;
-  '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute;
-  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute;
-  '/components/slider/custom': typeof ComponentsSliderCustomRoute;
-  '/components/slider/options': typeof ComponentsSliderOptionsRoute;
-  '/components/slider/range': typeof ComponentsSliderRangeRoute;
-  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute;
-  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute;
-  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute;
-  '/components/slider/sizes': typeof ComponentsSliderSizesRoute;
-  '/components/slider/state': typeof ComponentsSliderStateRoute;
-  '/components/sliderInput/controlled': typeof ComponentsSliderInputControlledRoute;
-  '/components/sliderInput/custom': typeof ComponentsSliderInputCustomRoute;
-  '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute;
-  '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute;
-  '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute;
-  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute;
-  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute;
-  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute;
-  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute;
-  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute;
-  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute;
-  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute;
-  '/components/stepper/custom': typeof ComponentsStepperCustomRoute;
-  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute;
-  '/components/stepper/options': typeof ComponentsStepperOptionsRoute;
-  '/components/stepper/state': typeof ComponentsStepperStateRoute;
-  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute;
-  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute;
-  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute;
-  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute;
-  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute;
-  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute;
-  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute;
-  '/components/t/stylesList': typeof ComponentsTStylesListRoute;
-  '/components/t/variants': typeof ComponentsTVariantsRoute;
-  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute;
-  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute;
-  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute;
-  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute;
-  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute;
-  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute;
-  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute;
-  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute;
-  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute;
-  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute;
-  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute;
-  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute;
-  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute;
-  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute;
-  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute;
-  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute;
-  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute;
-  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute;
-  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute;
-  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute;
-  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute;
-  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute;
-  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute;
-  '/components/table/expand': typeof ComponentsTableExpandRoute;
-  '/components/table/extraText': typeof ComponentsTableExtraTextRoute;
-  '/components/table/filter': typeof ComponentsTableFilterRoute;
-  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute;
-  '/components/table/group': typeof ComponentsTableGroupRoute;
-  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute;
-  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute;
-  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute;
-  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute;
-  '/components/table/multiline': typeof ComponentsTableMultilineRoute;
-  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute;
-  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute;
-  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute;
-  '/components/table/rowState': typeof ComponentsTableRowStateRoute;
-  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute;
-  '/components/table/sort': typeof ComponentsTableSortRoute;
-  '/components/table/sticky': typeof ComponentsTableStickyRoute;
-  '/components/table/style': typeof ComponentsTableStyleRoute;
-  '/components/table/width': typeof ComponentsTableWidthRoute;
-  '/components/table/zebra': typeof ComponentsTableZebraRoute;
-  '/components/tag/menu': typeof ComponentsTagMenuRoute;
-  '/components/tag/styles': typeof ComponentsTagStylesRoute;
-  '/components/tag/tags': typeof ComponentsTagTagsRoute;
-  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute;
-  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute;
-  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute;
-  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute;
-  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute;
-  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute;
-  '/components/textButton/states': typeof ComponentsTextButtonStatesRoute;
-  '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute;
-  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute;
-  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute;
-  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute;
-  '/components/toast/position': typeof ComponentsToastPositionRoute;
-  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute;
-  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute;
-  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute;
-  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute;
-  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute;
-  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute;
-  '/components/toggle/states': typeof ComponentsToggleStatesRoute;
-  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute;
-  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute;
-  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute;
-  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute;
-  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute;
-  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute;
-  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute;
-  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute;
-  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute;
-  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute;
-  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute;
-  '/components/tree/custom': typeof ComponentsTreeCustomRoute;
-  '/components/tree/mobile': typeof ComponentsTreeMobileRoute;
-  '/components/tree/sizes': typeof ComponentsTreeSizesRoute;
-  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute;
-  '/components/tree/variants': typeof ComponentsTreeVariantsRoute;
-  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute;
-  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute;
-  '/components/accordion/': typeof ComponentsAccordionIndexRoute;
-  '/components/actionBar/': typeof ComponentsActionBarIndexRoute;
-  '/components/anchor/': typeof ComponentsAnchorIndexRoute;
-  '/components/avatar/': typeof ComponentsAvatarIndexRoute;
-  '/components/badge/': typeof ComponentsBadgeIndexRoute;
-  '/components/badgeDot/': typeof ComponentsBadgeDotIndexRoute;
-  '/components/breadcrumbs/': typeof ComponentsBreadcrumbsIndexRoute;
-  '/components/button/': typeof ComponentsButtonIndexRoute;
-  '/components/buttonGroup/': typeof ComponentsButtonGroupIndexRoute;
-  '/components/calendar/': typeof ComponentsCalendarIndexRoute;
-  '/components/carousel/': typeof ComponentsCarouselIndexRoute;
-  '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute;
-  '/components/checkbox/': typeof ComponentsCheckboxIndexRoute;
-  '/components/chips/': typeof ComponentsChipsIndexRoute;
-  '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute;
-  '/components/currencyInput/': typeof ComponentsCurrencyInputIndexRoute;
-  '/components/dateInput/': typeof ComponentsDateInputIndexRoute;
-  '/components/dateTimeField/': typeof ComponentsDateTimeFieldIndexRoute;
-  '/components/divider/': typeof ComponentsDividerIndexRoute;
-  '/components/drawer/': typeof ComponentsDrawerIndexRoute;
-  '/components/dropdown/': typeof ComponentsDropdownIndexRoute;
-  '/components/editMode/': typeof ComponentsEditModeIndexRoute;
-  '/components/fileinput/': typeof ComponentsFileinputIndexRoute;
-  '/components/flex/': typeof ComponentsFlexIndexRoute;
-  '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute;
-  '/components/globalSearch/': typeof ComponentsGlobalSearchIndexRoute;
-  '/components/groupActionsPane/': typeof ComponentsGroupActionsPaneIndexRoute;
-  '/components/hint/': typeof ComponentsHintIndexRoute;
-  '/components/iconButton/': typeof ComponentsIconButtonIndexRoute;
-  '/components/iconButtonGroup/': typeof ComponentsIconButtonGroupIndexRoute;
-  '/components/iconPlacement/': typeof ComponentsIconPlacementIndexRoute;
-  '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute;
-  '/components/inputEx/': typeof ComponentsInputExIndexRoute;
-  '/components/link/': typeof ComponentsLinkIndexRoute;
-  '/components/list/': typeof ComponentsListIndexRoute;
-  '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute;
-  '/components/modal/': typeof ComponentsModalIndexRoute;
-  '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute;
-  '/components/multiInput/': typeof ComponentsMultiInputIndexRoute;
-  '/components/notification/': typeof ComponentsNotificationIndexRoute;
-  '/components/numberInput/': typeof ComponentsNumberInputIndexRoute;
-  '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute;
-  '/components/paginationOne/': typeof ComponentsPaginationOneIndexRoute;
-  '/components/paginationTwo/': typeof ComponentsPaginationTwoIndexRoute;
-  '/components/phoneNumberInput/': typeof ComponentsPhoneNumberInputIndexRoute;
-  '/components/pills/': typeof ComponentsPillsIndexRoute;
-  '/components/progressHeader/': typeof ComponentsProgressHeaderIndexRoute;
-  '/components/progressPage/': typeof ComponentsProgressPageIndexRoute;
-  '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute;
-  '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute;
-  '/components/scrollContainer/': typeof ComponentsScrollContainerIndexRoute;
-  '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute;
-  '/components/select/': typeof ComponentsSelectIndexRoute;
-  '/components/skeleton/': typeof ComponentsSkeletonIndexRoute;
-  '/components/slider/': typeof ComponentsSliderIndexRoute;
-  '/components/sliderInput/': typeof ComponentsSliderInputIndexRoute;
-  '/components/spinner/': typeof ComponentsSpinnerIndexRoute;
-  '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute;
-  '/components/stepper/': typeof ComponentsStepperIndexRoute;
-  '/components/suggestInput/': typeof ComponentsSuggestInputIndexRoute;
-  '/components/t/': typeof ComponentsTIndexRoute;
-  '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute;
-  '/components/table/': typeof ComponentsTableIndexRoute;
-  '/components/tag/': typeof ComponentsTagIndexRoute;
-  '/components/textArea/': typeof ComponentsTextAreaIndexRoute;
-  '/components/textButton/': typeof ComponentsTextButtonIndexRoute;
-  '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute;
-  '/components/toast/': typeof ComponentsToastIndexRoute;
-  '/components/toggle/': typeof ComponentsToggleIndexRoute;
-  '/components/tooltip/': typeof ComponentsTooltipIndexRoute;
-  '/components/tree/': typeof ComponentsTreeIndexRoute;
+  __root__: typeof rootRoute
+  '/': typeof IndexRoute
+  '/components': typeof ComponentsRouteWithChildren
+  '/general': typeof GeneralRouteWithChildren
+  '/general/faqs': typeof GeneralFaqsRoute
+  '/general/installation': typeof GeneralInstallationRoute
+  '/general/resources': typeof GeneralResourcesRoute
+  '/general/usage': typeof GeneralUsageRoute
+  '/components/accordion/accordionDimension': typeof ComponentsAccordionAccordionDimensionRoute
+  '/components/accordion/accordionDivider': typeof ComponentsAccordionAccordionDividerRoute
+  '/components/accordion/accordionIcon': typeof ComponentsAccordionAccordionIconRoute
+  '/components/accordion/accordionModes': typeof ComponentsAccordionAccordionModesRoute
+  '/components/actionBar/adaptive': typeof ComponentsActionBarAdaptiveRoute
+  '/components/actionBar/dimensions': typeof ComponentsActionBarDimensionsRoute
+  '/components/anchor/sizes': typeof ComponentsAnchorSizesRoute
+  '/components/anchor/state': typeof ComponentsAnchorStateRoute
+  '/components/anchor/tree': typeof ComponentsAnchorTreeRoute
+  '/components/avatar/avatarGroup': typeof ComponentsAvatarAvatarGroupRoute
+  '/components/avatar/avatarGroupLimitedWidth': typeof ComponentsAvatarAvatarGroupLimitedWidthRoute
+  '/components/avatar/sizeXXS': typeof ComponentsAvatarSizeXXSRoute
+  '/components/avatar/styles': typeof ComponentsAvatarStylesRoute
+  '/components/badge/badgeAccessibility': typeof ComponentsBadgeBadgeAccessibilityRoute
+  '/components/badge/badgeVariants': typeof ComponentsBadgeBadgeVariantsRoute
+  '/components/badgeDot/variants': typeof ComponentsBadgeDotVariantsRoute
+  '/components/breadcrumbs/activeCrumb': typeof ComponentsBreadcrumbsActiveCrumbRoute
+  '/components/breadcrumbs/icons': typeof ComponentsBreadcrumbsIconsRoute
+  '/components/breadcrumbs/link': typeof ComponentsBreadcrumbsLinkRoute
+  '/components/breadcrumbs/mobile': typeof ComponentsBreadcrumbsMobileRoute
+  '/components/breadcrumbs/sizes': typeof ComponentsBreadcrumbsSizesRoute
+  '/components/button/adaptive': typeof ComponentsButtonAdaptiveRoute
+  '/components/button/buttonWithBadge': typeof ComponentsButtonButtonWithBadgeRoute
+  '/components/button/buttonWithIcon': typeof ComponentsButtonButtonWithIconRoute
+  '/components/button/dimension': typeof ComponentsButtonDimensionRoute
+  '/components/button/state': typeof ComponentsButtonStateRoute
+  '/components/button/types': typeof ComponentsButtonTypesRoute
+  '/components/buttonGroup/sizes': typeof ComponentsButtonGroupSizesRoute
+  '/components/buttonGroup/states': typeof ComponentsButtonGroupStatesRoute
+  '/components/buttonGroup/styles': typeof ComponentsButtonGroupStylesRoute
+  '/components/buttonGroup/variants': typeof ComponentsButtonGroupVariantsRoute
+  '/components/calendar/activeViewDate': typeof ComponentsCalendarActiveViewDateRoute
+  '/components/calendar/callback': typeof ComponentsCalendarCallbackRoute
+  '/components/calendar/filterDate': typeof ComponentsCalendarFilterDateRoute
+  '/components/calendar/maxDate': typeof ComponentsCalendarMaxDateRoute
+  '/components/calendar/range': typeof ComponentsCalendarRangeRoute
+  '/components/calendar/specialDates': typeof ComponentsCalendarSpecialDatesRoute
+  '/components/calendar/viewDateAfterChoose': typeof ComponentsCalendarViewDateAfterChooseRoute
+  '/components/calendar/viewDateMonthsYears': typeof ComponentsCalendarViewDateMonthsYearsRoute
+  '/components/carousel/arrows': typeof ComponentsCarouselArrowsRoute
+  '/components/carousel/carouselAutoChange': typeof ComponentsCarouselCarouselAutoChangeRoute
+  '/components/carousel/sliderPosition': typeof ComponentsCarouselSliderPositionRoute
+  '/components/carouselSlider/carouselSliderAutoChange': typeof ComponentsCarouselSliderCarouselSliderAutoChangeRoute
+  '/components/carouselSlider/styles': typeof ComponentsCarouselSliderStylesRoute
+  '/components/checkbox/additionalText': typeof ComponentsCheckboxAdditionalTextRoute
+  '/components/checkbox/compositeGroup': typeof ComponentsCheckboxCompositeGroupRoute
+  '/components/checkbox/fieldSet': typeof ComponentsCheckboxFieldSetRoute
+  '/components/checkbox/states': typeof ComponentsCheckboxStatesRoute
+  '/components/checkbox/withInformer': typeof ComponentsCheckboxWithInformerRoute
+  '/components/chips/chipsClose': typeof ComponentsChipsChipsCloseRoute
+  '/components/chips/multiSelect': typeof ComponentsChipsMultiSelectRoute
+  '/components/chips/select': typeof ComponentsChipsSelectRoute
+  '/components/chips/sizes': typeof ComponentsChipsSizesRoute
+  '/components/chips/styles': typeof ComponentsChipsStylesRoute
+  '/components/chips/withBadge': typeof ComponentsChipsWithBadgeRoute
+  '/components/chips/withIcon': typeof ComponentsChipsWithIconRoute
+  '/components/chips/withTooltip': typeof ComponentsChipsWithTooltipRoute
+  '/components/contentSwitcher/adaptive': typeof ComponentsContentSwitcherAdaptiveRoute
+  '/components/contentSwitcher/iconsOnly': typeof ComponentsContentSwitcherIconsOnlyRoute
+  '/components/contentSwitcher/sizes': typeof ComponentsContentSwitcherSizesRoute
+  '/components/contentSwitcher/styles': typeof ComponentsContentSwitcherStylesRoute
+  '/components/contentSwitcher/withBadge': typeof ComponentsContentSwitcherWithBadgeRoute
+  '/components/contentSwitcher/withIcons': typeof ComponentsContentSwitcherWithIconsRoute
+  '/components/currencyInput/currencyInputField': typeof ComponentsCurrencyInputCurrencyInputFieldRoute
+  '/components/currencyInput/minMaxvalue': typeof ComponentsCurrencyInputMinMaxvalueRoute
+  '/components/currencyInput/withPrefix': typeof ComponentsCurrencyInputWithPrefixRoute
+  '/components/dateInput/custom': typeof ComponentsDateInputCustomRoute
+  '/components/dateInput/dateField': typeof ComponentsDateInputDateFieldRoute
+  '/components/dateInput/dateFieldState': typeof ComponentsDateInputDateFieldStateRoute
+  '/components/dateInput/range': typeof ComponentsDateInputRangeRoute
+  '/components/dateInput/sizes': typeof ComponentsDateInputSizesRoute
+  '/components/dateInput/specialDates': typeof ComponentsDateInputSpecialDatesRoute
+  '/components/dateInput/state': typeof ComponentsDateInputStateRoute
+  '/components/dateInput/status': typeof ComponentsDateInputStatusRoute
+  '/components/dateInput/variants': typeof ComponentsDateInputVariantsRoute
+  '/components/dateInput/withButton': typeof ComponentsDateInputWithButtonRoute
+  '/components/dateTimeField/dimension': typeof ComponentsDateTimeFieldDimensionRoute
+  '/components/dateTimeField/displayInline': typeof ComponentsDateTimeFieldDisplayInlineRoute
+  '/components/dateTimeField/extraText': typeof ComponentsDateTimeFieldExtraTextRoute
+  '/components/dateTimeField/status': typeof ComponentsDateTimeFieldStatusRoute
+  '/components/divider/length': typeof ComponentsDividerLengthRoute
+  '/components/divider/style': typeof ComponentsDividerStyleRoute
+  '/components/divider/thikness': typeof ComponentsDividerThiknessRoute
+  '/components/divider/type': typeof ComponentsDividerTypeRoute
+  '/components/drawer/customContent': typeof ComponentsDrawerCustomContentRoute
+  '/components/drawer/mobile': typeof ComponentsDrawerMobileRoute
+  '/components/drawer/nonClosable': typeof ComponentsDrawerNonClosableRoute
+  '/components/drawer/position': typeof ComponentsDrawerPositionRoute
+  '/components/drawer/width': typeof ComponentsDrawerWidthRoute
+  '/components/drawer/withBackdrop': typeof ComponentsDrawerWithBackdropRoute
+  '/components/drawer/withoutBackdrop': typeof ComponentsDrawerWithoutBackdropRoute
+  '/components/dropdown/customDropdownContainer': typeof ComponentsDropdownCustomDropdownContainerRoute
+  '/components/dropdown/dropMenuControlled': typeof ComponentsDropdownDropMenuControlledRoute
+  '/components/dropdown/dropMenuUncontrolled': typeof ComponentsDropdownDropMenuUncontrolledRoute
+  '/components/dropdown/menuActionSearch': typeof ComponentsDropdownMenuActionSearchRoute
+  '/components/dropdown/menuActionTwoButtons': typeof ComponentsDropdownMenuActionTwoButtonsRoute
+  '/components/dropdown/menuCategories': typeof ComponentsDropdownMenuCategoriesRoute
+  '/components/dropdown/menuCustomItems': typeof ComponentsDropdownMenuCustomItemsRoute
+  '/components/dropdown/menuDimensions': typeof ComponentsDropdownMenuDimensionsRoute
+  '/components/dropdown/menuLockCycleScroll': typeof ComponentsDropdownMenuLockCycleScrollRoute
+  '/components/dropdown/menuManyItems': typeof ComponentsDropdownMenuManyItemsRoute
+  '/components/dropdown/menuMultiLevel': typeof ComponentsDropdownMenuMultiLevelRoute
+  '/components/dropdown/menuMultiLine': typeof ComponentsDropdownMenuMultiLineRoute
+  '/components/dropdown/menuPreselect': typeof ComponentsDropdownMenuPreselectRoute
+  '/components/dropdown/menuVirtualScroll': typeof ComponentsDropdownMenuVirtualScrollRoute
+  '/components/dropdown/menuWithAddTextAndIcons': typeof ComponentsDropdownMenuWithAddTextAndIconsRoute
+  '/components/dropdown/menuWithCheckbox': typeof ComponentsDropdownMenuWithCheckboxRoute
+  '/components/dropdown/menuWithCheckboxGroup': typeof ComponentsDropdownMenuWithCheckboxGroupRoute
+  '/components/dropdown/menuWithIcons': typeof ComponentsDropdownMenuWithIconsRoute
+  '/components/dropdown/menuWithRadioButton': typeof ComponentsDropdownMenuWithRadioButtonRoute
+  '/components/dropdown/menuWithTooltip': typeof ComponentsDropdownMenuWithTooltipRoute
+  '/components/editMode/dimensions': typeof ComponentsEditModeDimensionsRoute
+  '/components/editMode/disablecopying': typeof ComponentsEditModeDisablecopyingRoute
+  '/components/editMode/extratext': typeof ComponentsEditModeExtratextRoute
+  '/components/editMode/multiline': typeof ComponentsEditModeMultilineRoute
+  '/components/editMode/status': typeof ComponentsEditModeStatusRoute
+  '/components/editMode/tooltip': typeof ComponentsEditModeTooltipRoute
+  '/components/fileinput/customizing': typeof ComponentsFileinputCustomizingRoute
+  '/components/fileinput/customizingFileType': typeof ComponentsFileinputCustomizingFileTypeRoute
+  '/components/fileinput/dimensions': typeof ComponentsFileinputDimensionsRoute
+  '/components/fileinput/extratext': typeof ComponentsFileinputExtratextRoute
+  '/components/fileinput/filestatus': typeof ComponentsFileinputFilestatusRoute
+  '/components/fileinput/state': typeof ComponentsFileinputStateRoute
+  '/components/floatingButton/mobile': typeof ComponentsFloatingButtonMobileRoute
+  '/components/floatingButton/position': typeof ComponentsFloatingButtonPositionRoute
+  '/components/floatingButton/styles': typeof ComponentsFloatingButtonStylesRoute
+  '/components/floatingButton/tooltip': typeof ComponentsFloatingButtonTooltipRoute
+  '/components/floatingButton/withMenu': typeof ComponentsFloatingButtonWithMenuRoute
+  '/components/floatingButton/withMenuModes': typeof ComponentsFloatingButtonWithMenuModesRoute
+  '/components/globalSearch/sizes': typeof ComponentsGlobalSearchSizesRoute
+  '/components/globalSearch/variants': typeof ComponentsGlobalSearchVariantsRoute
+  '/components/hint/anchorCssMixin': typeof ComponentsHintAnchorCssMixinRoute
+  '/components/hint/className': typeof ComponentsHintClassNameRoute
+  '/components/hint/position': typeof ComponentsHintPositionRoute
+  '/components/hint/scenario': typeof ComponentsHintScenarioRoute
+  '/components/hint/sizes': typeof ComponentsHintSizesRoute
+  '/components/hint/variants': typeof ComponentsHintVariantsRoute
+  '/components/iconButton/states': typeof ComponentsIconButtonStatesRoute
+  '/components/iconButton/styles': typeof ComponentsIconButtonStylesRoute
+  '/components/iconButtonGroup/sizes': typeof ComponentsIconButtonGroupSizesRoute
+  '/components/iconButtonGroup/states': typeof ComponentsIconButtonGroupStatesRoute
+  '/components/iconButtonGroup/tooltip': typeof ComponentsIconButtonGroupTooltipRoute
+  '/components/iconPlacement/sizes': typeof ComponentsIconPlacementSizesRoute
+  '/components/iconPlacement/styles': typeof ComponentsIconPlacementStylesRoute
+  '/components/iconPlacement/variants': typeof ComponentsIconPlacementVariantsRoute
+  '/components/imageViewer/errorOnLoad': typeof ComponentsImageViewerErrorOnLoadRoute
+  '/components/imageViewer/imageMiniature': typeof ComponentsImageViewerImageMiniatureRoute
+  '/components/imageViewer/keyboardCommands': typeof ComponentsImageViewerKeyboardCommandsRoute
+  '/components/imageViewer/viewOptions': typeof ComponentsImageViewerViewOptionsRoute
+  '/components/inputEx/custom': typeof ComponentsInputExCustomRoute
+  '/components/inputEx/inputExField': typeof ComponentsInputExInputExFieldRoute
+  '/components/inputEx/prefixSuffixSelect': typeof ComponentsInputExPrefixSuffixSelectRoute
+  '/components/inputEx/sizes': typeof ComponentsInputExSizesRoute
+  '/components/inputEx/state': typeof ComponentsInputExStateRoute
+  '/components/inputEx/status': typeof ComponentsInputExStatusRoute
+  '/components/link/asProp': typeof ComponentsLinkAsPropRoute
+  '/components/link/cssMixin': typeof ComponentsLinkCssMixinRoute
+  '/components/link/styles': typeof ComponentsLinkStylesRoute
+  '/components/link/withIcon': typeof ComponentsLinkWithIconRoute
+  '/components/list/customMarker': typeof ComponentsListCustomMarkerRoute
+  '/components/list/markerColor': typeof ComponentsListMarkerColorRoute
+  '/components/list/multiline': typeof ComponentsListMultilineRoute
+  '/components/list/nested': typeof ComponentsListNestedRoute
+  '/components/list/orderedList': typeof ComponentsListOrderedListRoute
+  '/components/list/unorderedList': typeof ComponentsListUnorderedListRoute
+  '/components/menuButton/actions': typeof ComponentsMenuButtonActionsRoute
+  '/components/menuButton/checkboxAndBottomPanel': typeof ComponentsMenuButtonCheckboxAndBottomPanelRoute
+  '/components/menuButton/checkboxAndTopPanel': typeof ComponentsMenuButtonCheckboxAndTopPanelRoute
+  '/components/menuButton/multiLevelMenu': typeof ComponentsMenuButtonMultiLevelMenuRoute
+  '/components/menuButton/states': typeof ComponentsMenuButtonStatesRoute
+  '/components/menuButton/styles': typeof ComponentsMenuButtonStylesRoute
+  '/components/menuButton/withIcon': typeof ComponentsMenuButtonWithIconRoute
+  '/components/modal/closeIcon': typeof ComponentsModalCloseIconRoute
+  '/components/modal/customOverlay': typeof ComponentsModalCustomOverlayRoute
+  '/components/modal/scroll': typeof ComponentsModalScrollRoute
+  '/components/modal/sizes': typeof ComponentsModalSizesRoute
+  '/components/modal/statusIcons': typeof ComponentsModalStatusIconsRoute
+  '/components/modal/variants': typeof ComponentsModalVariantsRoute
+  '/components/multiButton/states': typeof ComponentsMultiButtonStatesRoute
+  '/components/multiButton/styles': typeof ComponentsMultiButtonStylesRoute
+  '/components/multiButton/withIcon': typeof ComponentsMultiButtonWithIconRoute
+  '/components/multiInput/size': typeof ComponentsMultiInputSizeRoute
+  '/components/multiInput/state': typeof ComponentsMultiInputStateRoute
+  '/components/multiInput/status': typeof ComponentsMultiInputStatusRoute
+  '/components/multiInput/withOptions': typeof ComponentsMultiInputWithOptionsRoute
+  '/components/notification/states': typeof ComponentsNotificationStatesRoute
+  '/components/notification/styles': typeof ComponentsNotificationStylesRoute
+  '/components/numberInput/controlledInput': typeof ComponentsNumberInputControlledInputRoute
+  '/components/numberInput/custom': typeof ComponentsNumberInputCustomRoute
+  '/components/numberInput/minMaxValue': typeof ComponentsNumberInputMinMaxValueRoute
+  '/components/numberInput/numberInputField': typeof ComponentsNumberInputNumberInputFieldRoute
+  '/components/numberInput/sizes': typeof ComponentsNumberInputSizesRoute
+  '/components/numberInput/spaces': typeof ComponentsNumberInputSpacesRoute
+  '/components/numberInput/state': typeof ComponentsNumberInputStateRoute
+  '/components/numberInput/status': typeof ComponentsNumberInputStatusRoute
+  '/components/overflowMenu/multiLevel': typeof ComponentsOverflowMenuMultiLevelRoute
+  '/components/overflowMenu/styles': typeof ComponentsOverflowMenuStylesRoute
+  '/components/paginationOne/sizes': typeof ComponentsPaginationOneSizesRoute
+  '/components/paginationOne/states': typeof ComponentsPaginationOneStatesRoute
+  '/components/paginationOne/types': typeof ComponentsPaginationOneTypesRoute
+  '/components/paginationOne/withInput': typeof ComponentsPaginationOneWithInputRoute
+  '/components/paginationTwo/entries': typeof ComponentsPaginationTwoEntriesRoute
+  '/components/paginationTwo/mobile': typeof ComponentsPaginationTwoMobileRoute
+  '/components/paginationTwo/pages': typeof ComponentsPaginationTwoPagesRoute
+  '/components/paginationTwo/state': typeof ComponentsPaginationTwoStateRoute
+  '/components/paginationTwo/withInput': typeof ComponentsPaginationTwoWithInputRoute
+  '/components/phoneNumberInput/phoneNumberInputField': typeof ComponentsPhoneNumberInputPhoneNumberInputFieldRoute
+  '/components/phoneNumberInput/selectedCountry': typeof ComponentsPhoneNumberInputSelectedCountryRoute
+  '/components/phoneNumberInput/sizes': typeof ComponentsPhoneNumberInputSizesRoute
+  '/components/phoneNumberInput/state': typeof ComponentsPhoneNumberInputStateRoute
+  '/components/phoneNumberInput/status': typeof ComponentsPhoneNumberInputStatusRoute
+  '/components/phoneNumberInput/withFilter': typeof ComponentsPhoneNumberInputWithFilterRoute
+  '/components/phoneNumberInput/withPlaceholder': typeof ComponentsPhoneNumberInputWithPlaceholderRoute
+  '/components/pills/menu': typeof ComponentsPillsMenuRoute
+  '/components/pills/nested': typeof ComponentsPillsNestedRoute
+  '/components/pills/tooltip': typeof ComponentsPillsTooltipRoute
+  '/components/progressHeader/animation': typeof ComponentsProgressHeaderAnimationRoute
+  '/components/progressHeader/styles': typeof ComponentsProgressHeaderStylesRoute
+  '/components/progressPage/animation': typeof ComponentsProgressPageAnimationRoute
+  '/components/progressPage/styles': typeof ComponentsProgressPageStylesRoute
+  '/components/progressStepper/descriptionNextSteps': typeof ComponentsProgressStepperDescriptionNextStepsRoute
+  '/components/progressStepper/mobile': typeof ComponentsProgressStepperMobileRoute
+  '/components/progressStepper/scenario': typeof ComponentsProgressStepperScenarioRoute
+  '/components/progressStepper/stepsNaming': typeof ComponentsProgressStepperStepsNamingRoute
+  '/components/radiobutton/extraText': typeof ComponentsRadiobuttonExtraTextRoute
+  '/components/radiobutton/fieldSet': typeof ComponentsRadiobuttonFieldSetRoute
+  '/components/radiobutton/informer': typeof ComponentsRadiobuttonInformerRoute
+  '/components/radiobutton/sizes': typeof ComponentsRadiobuttonSizesRoute
+  '/components/radiobutton/states': typeof ComponentsRadiobuttonStatesRoute
+  '/components/scrollContainer/state': typeof ComponentsScrollContainerStateRoute
+  '/components/segmentedControl/checkBoxMode': typeof ComponentsSegmentedControlCheckBoxModeRoute
+  '/components/segmentedControl/radioButtonMode': typeof ComponentsSegmentedControlRadioButtonModeRoute
+  '/components/segmentedControl/sizes': typeof ComponentsSegmentedControlSizesRoute
+  '/components/segmentedControl/states': typeof ComponentsSegmentedControlStatesRoute
+  '/components/segmentedControl/styles': typeof ComponentsSegmentedControlStylesRoute
+  '/components/segmentedControl/variants': typeof ComponentsSegmentedControlVariantsRoute
+  '/components/select/asyncSearch': typeof ComponentsSelectAsyncSearchRoute
+  '/components/select/customOptionsByRenderProps': typeof ComponentsSelectCustomOptionsByRenderPropsRoute
+  '/components/select/customOptionsWithCustomFilter': typeof ComponentsSelectCustomOptionsWithCustomFilterRoute
+  '/components/select/customValues': typeof ComponentsSelectCustomValuesRoute
+  '/components/select/externalFilter': typeof ComponentsSelectExternalFilterRoute
+  '/components/select/forceHideOverflowTooltip': typeof ComponentsSelectForceHideOverflowTooltipRoute
+  '/components/select/groupOfOptions': typeof ComponentsSelectGroupOfOptionsRoute
+  '/components/select/multiCustomDeleteChip': typeof ComponentsSelectMultiCustomDeleteChipRoute
+  '/components/select/multiCustomOptionsByRenderChip': typeof ComponentsSelectMultiCustomOptionsByRenderChipRoute
+  '/components/select/multiCustomValues': typeof ComponentsSelectMultiCustomValuesRoute
+  '/components/select/multiSelectApplyButton': typeof ComponentsSelectMultiSelectApplyButtonRoute
+  '/components/select/multiSelectChooseAll': typeof ComponentsSelectMultiSelectChooseAllRoute
+  '/components/select/multiSelectExpandedHeight': typeof ComponentsSelectMultiSelectExpandedHeightRoute
+  '/components/select/multiSelectOnChange': typeof ComponentsSelectMultiSelectOnChangeRoute
+  '/components/select/multiSelectWithSelectedOnTop': typeof ComponentsSelectMultiSelectWithSelectedOnTopRoute
+  '/components/select/panelWithAddButton': typeof ComponentsSelectPanelWithAddButtonRoute
+  '/components/select/progressiveRenderOptionsScroll': typeof ComponentsSelectProgressiveRenderOptionsScrollRoute
+  '/components/select/searchWithClearInputAfterSelect': typeof ComponentsSelectSearchWithClearInputAfterSelectRoute
+  '/components/select/selectField': typeof ComponentsSelectSelectFieldRoute
+  '/components/select/sizes': typeof ComponentsSelectSizesRoute
+  '/components/select/state': typeof ComponentsSelectStateRoute
+  '/components/select/status': typeof ComponentsSelectStatusRoute
+  '/components/select/uncontrolledSubmitSearch': typeof ComponentsSelectUncontrolledSubmitSearchRoute
+  '/components/select/virtualScroll': typeof ComponentsSelectVirtualScrollRoute
+  '/components/slider/custom': typeof ComponentsSliderCustomRoute
+  '/components/slider/options': typeof ComponentsSliderOptionsRoute
+  '/components/slider/range': typeof ComponentsSliderRangeRoute
+  '/components/slider/rangeOptions': typeof ComponentsSliderRangeOptionsRoute
+  '/components/slider/rangeSizes': typeof ComponentsSliderRangeSizesRoute
+  '/components/slider/rangeState': typeof ComponentsSliderRangeStateRoute
+  '/components/slider/sizes': typeof ComponentsSliderSizesRoute
+  '/components/slider/state': typeof ComponentsSliderStateRoute
+  '/components/sliderInput/controlled': typeof ComponentsSliderInputControlledRoute
+  '/components/sliderInput/custom': typeof ComponentsSliderInputCustomRoute
+  '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute
+  '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute
+  '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute
+  '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
+  '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
+  '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
+  '/components/statusIndicator/sizes': typeof ComponentsStatusIndicatorSizesRoute
+  '/components/statusIndicator/states': typeof ComponentsStatusIndicatorStatesRoute
+  '/components/statusIndicator/variants': typeof ComponentsStatusIndicatorVariantsRoute
+  '/components/stepper/adaptive': typeof ComponentsStepperAdaptiveRoute
+  '/components/stepper/custom': typeof ComponentsStepperCustomRoute
+  '/components/stepper/mobile': typeof ComponentsStepperMobileRoute
+  '/components/stepper/options': typeof ComponentsStepperOptionsRoute
+  '/components/stepper/state': typeof ComponentsStepperStateRoute
+  '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
+  '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/t/stylesList': typeof ComponentsTStylesListRoute
+  '/components/t/variants': typeof ComponentsTVariantsRoute
+  '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
+  '/components/tabMenu/addTab': typeof ComponentsTabMenuAddTabRoute
+  '/components/tabMenu/addTabVertical': typeof ComponentsTabMenuAddTabVerticalRoute
+  '/components/tabMenu/cardTabMenu': typeof ComponentsTabMenuCardTabMenuRoute
+  '/components/tabMenu/cardTabMenuWithoutBorder': typeof ComponentsTabMenuCardTabMenuWithoutBorderRoute
+  '/components/tabMenu/filterTabs': typeof ComponentsTabMenuFilterTabsRoute
+  '/components/tabMenu/filterTabsMobile': typeof ComponentsTabMenuFilterTabsMobileRoute
+  '/components/tabMenu/filterTabsSize': typeof ComponentsTabMenuFilterTabsSizeRoute
+  '/components/tabMenu/horizontalTabs': typeof ComponentsTabMenuHorizontalTabsRoute
+  '/components/tabMenu/options': typeof ComponentsTabMenuOptionsRoute
+  '/components/tabMenu/optionsVerticalTabs': typeof ComponentsTabMenuOptionsVerticalTabsRoute
+  '/components/tabMenu/size': typeof ComponentsTabMenuSizeRoute
+  '/components/tabMenu/sizeVerticalTabs': typeof ComponentsTabMenuSizeVerticalTabsRoute
+  '/components/tabMenu/tabMenuIcon': typeof ComponentsTabMenuTabMenuIconRoute
+  '/components/tabMenu/tabMenuVertical': typeof ComponentsTabMenuTabMenuVerticalRoute
+  '/components/tabMenu/withOverflowMenu': typeof ComponentsTabMenuWithOverflowMenuRoute
+  '/components/tabMenu/withPadding': typeof ComponentsTabMenuWithPaddingRoute
+  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
+  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
+  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
+  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
+  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
+  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
+  '/components/table/expand': typeof ComponentsTableExpandRoute
+  '/components/table/extraText': typeof ComponentsTableExtraTextRoute
+  '/components/table/filter': typeof ComponentsTableFilterRoute
+  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
+  '/components/table/group': typeof ComponentsTableGroupRoute
+  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
+  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
+  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
+  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
+  '/components/table/multiline': typeof ComponentsTableMultilineRoute
+  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
+  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute
+  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
+  '/components/table/rowState': typeof ComponentsTableRowStateRoute
+  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
+  '/components/table/sort': typeof ComponentsTableSortRoute
+  '/components/table/sticky': typeof ComponentsTableStickyRoute
+  '/components/table/style': typeof ComponentsTableStyleRoute
+  '/components/table/width': typeof ComponentsTableWidthRoute
+  '/components/table/zebra': typeof ComponentsTableZebraRoute
+  '/components/tag/menu': typeof ComponentsTagMenuRoute
+  '/components/tag/styles': typeof ComponentsTagStylesRoute
+  '/components/tag/tags': typeof ComponentsTagTagsRoute
+  '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
+  '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
+  '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
+  '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
+  '/components/textArea/variants': typeof ComponentsTextAreaVariantsRoute
+  '/components/textButton/states': typeof ComponentsTextButtonStatesRoute
+  '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
+  '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
+  '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
+  '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
+  '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
+  '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
+  '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
+  '/components/toast/position': typeof ComponentsToastPositionRoute
+  '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
+  '/components/toast/withProgressBarStopOnHover': typeof ComponentsToastWithProgressBarStopOnHoverRoute
+  '/components/toggle/extraText': typeof ComponentsToggleExtraTextRoute
+  '/components/toggle/labelPosition': typeof ComponentsToggleLabelPositionRoute
+  '/components/toggle/mobile': typeof ComponentsToggleMobileRoute
+  '/components/toggle/sizes': typeof ComponentsToggleSizesRoute
+  '/components/toggle/states': typeof ComponentsToggleStatesRoute
+  '/components/tooltip/hocBase': typeof ComponentsTooltipHocBaseRoute
+  '/components/tooltip/hocClass': typeof ComponentsTooltipHocClassRoute
+  '/components/tooltip/hocFC': typeof ComponentsTooltipHocFCRoute
+  '/components/tooltip/hocRef': typeof ComponentsTooltipHocRefRoute
+  '/components/tooltip/hocRefSetter': typeof ComponentsTooltipHocRefSetterRoute
+  '/components/tooltip/position': typeof ComponentsTooltipPositionRoute
+  '/components/tooltip/ref': typeof ComponentsTooltipRefRoute
+  '/components/tooltip/scenario': typeof ComponentsTooltipScenarioRoute
+  '/components/tooltip/sizes': typeof ComponentsTooltipSizesRoute
+  '/components/tooltip/variants': typeof ComponentsTooltipVariantsRoute
+  '/components/tooltip/withMenuButton': typeof ComponentsTooltipWithMenuButtonRoute
+  '/components/tree/custom': typeof ComponentsTreeCustomRoute
+  '/components/tree/mobile': typeof ComponentsTreeMobileRoute
+  '/components/tree/sizes': typeof ComponentsTreeSizesRoute
+  '/components/tree/uncontrolled': typeof ComponentsTreeUncontrolledRoute
+  '/components/tree/variants': typeof ComponentsTreeVariantsRoute
+  '/components/tree/withControlCheckCount': typeof ComponentsTreeWithControlCheckCountRoute
+  '/components/tree/withOnChangeHandler': typeof ComponentsTreeWithOnChangeHandlerRoute
+  '/components/accordion/': typeof ComponentsAccordionIndexRoute
+  '/components/actionBar/': typeof ComponentsActionBarIndexRoute
+  '/components/anchor/': typeof ComponentsAnchorIndexRoute
+  '/components/avatar/': typeof ComponentsAvatarIndexRoute
+  '/components/badge/': typeof ComponentsBadgeIndexRoute
+  '/components/badgeDot/': typeof ComponentsBadgeDotIndexRoute
+  '/components/breadcrumbs/': typeof ComponentsBreadcrumbsIndexRoute
+  '/components/button/': typeof ComponentsButtonIndexRoute
+  '/components/buttonGroup/': typeof ComponentsButtonGroupIndexRoute
+  '/components/calendar/': typeof ComponentsCalendarIndexRoute
+  '/components/carousel/': typeof ComponentsCarouselIndexRoute
+  '/components/carouselSlider/': typeof ComponentsCarouselSliderIndexRoute
+  '/components/checkbox/': typeof ComponentsCheckboxIndexRoute
+  '/components/chips/': typeof ComponentsChipsIndexRoute
+  '/components/contentSwitcher/': typeof ComponentsContentSwitcherIndexRoute
+  '/components/currencyInput/': typeof ComponentsCurrencyInputIndexRoute
+  '/components/dateInput/': typeof ComponentsDateInputIndexRoute
+  '/components/dateTimeField/': typeof ComponentsDateTimeFieldIndexRoute
+  '/components/divider/': typeof ComponentsDividerIndexRoute
+  '/components/drawer/': typeof ComponentsDrawerIndexRoute
+  '/components/dropdown/': typeof ComponentsDropdownIndexRoute
+  '/components/editMode/': typeof ComponentsEditModeIndexRoute
+  '/components/fileinput/': typeof ComponentsFileinputIndexRoute
+  '/components/flex/': typeof ComponentsFlexIndexRoute
+  '/components/floatingButton/': typeof ComponentsFloatingButtonIndexRoute
+  '/components/globalSearch/': typeof ComponentsGlobalSearchIndexRoute
+  '/components/groupActionsPane/': typeof ComponentsGroupActionsPaneIndexRoute
+  '/components/hint/': typeof ComponentsHintIndexRoute
+  '/components/iconButton/': typeof ComponentsIconButtonIndexRoute
+  '/components/iconButtonGroup/': typeof ComponentsIconButtonGroupIndexRoute
+  '/components/iconPlacement/': typeof ComponentsIconPlacementIndexRoute
+  '/components/imageViewer/': typeof ComponentsImageViewerIndexRoute
+  '/components/inputEx/': typeof ComponentsInputExIndexRoute
+  '/components/link/': typeof ComponentsLinkIndexRoute
+  '/components/list/': typeof ComponentsListIndexRoute
+  '/components/menuButton/': typeof ComponentsMenuButtonIndexRoute
+  '/components/modal/': typeof ComponentsModalIndexRoute
+  '/components/multiButton/': typeof ComponentsMultiButtonIndexRoute
+  '/components/multiInput/': typeof ComponentsMultiInputIndexRoute
+  '/components/notification/': typeof ComponentsNotificationIndexRoute
+  '/components/numberInput/': typeof ComponentsNumberInputIndexRoute
+  '/components/overflowMenu/': typeof ComponentsOverflowMenuIndexRoute
+  '/components/paginationOne/': typeof ComponentsPaginationOneIndexRoute
+  '/components/paginationTwo/': typeof ComponentsPaginationTwoIndexRoute
+  '/components/phoneNumberInput/': typeof ComponentsPhoneNumberInputIndexRoute
+  '/components/pills/': typeof ComponentsPillsIndexRoute
+  '/components/progressHeader/': typeof ComponentsProgressHeaderIndexRoute
+  '/components/progressPage/': typeof ComponentsProgressPageIndexRoute
+  '/components/progressStepper/': typeof ComponentsProgressStepperIndexRoute
+  '/components/radiobutton/': typeof ComponentsRadiobuttonIndexRoute
+  '/components/scrollContainer/': typeof ComponentsScrollContainerIndexRoute
+  '/components/segmentedControl/': typeof ComponentsSegmentedControlIndexRoute
+  '/components/select/': typeof ComponentsSelectIndexRoute
+  '/components/skeleton/': typeof ComponentsSkeletonIndexRoute
+  '/components/slider/': typeof ComponentsSliderIndexRoute
+  '/components/sliderInput/': typeof ComponentsSliderInputIndexRoute
+  '/components/spinner/': typeof ComponentsSpinnerIndexRoute
+  '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
+  '/components/stepper/': typeof ComponentsStepperIndexRoute
+  '/components/t/': typeof ComponentsTIndexRoute
+  '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
+  '/components/table/': typeof ComponentsTableIndexRoute
+  '/components/tag/': typeof ComponentsTagIndexRoute
+  '/components/textArea/': typeof ComponentsTextAreaIndexRoute
+  '/components/textButton/': typeof ComponentsTextButtonIndexRoute
+  '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/timeInput/': typeof ComponentsTimeInputIndexRoute
+  '/components/toast/': typeof ComponentsToastIndexRoute
+  '/components/toggle/': typeof ComponentsToggleIndexRoute
+  '/components/tooltip/': typeof ComponentsTooltipIndexRoute
+  '/components/tree/': typeof ComponentsTreeIndexRoute
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
+  fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/components'
@@ -8972,11 +9345,6 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
-    | '/components/suggestInput/field'
-    | '/components/suggestInput/filter'
-    | '/components/suggestInput/icon'
-    | '/components/suggestInput/sizes'
-    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -9035,6 +9403,10 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
+    | '/components/timeInput/sizes'
+    | '/components/timeInput/state'
+    | '/components/timeInput/status'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -9121,7 +9493,6 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
-    | '/components/suggestInput'
     | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
@@ -9129,11 +9500,12 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/timeInput'
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
-    | '/components/tree';
-  fileRoutesByTo: FileRoutesByTo;
+    | '/components/tree'
+  fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/components'
@@ -9428,11 +9800,6 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
-    | '/components/suggestInput/field'
-    | '/components/suggestInput/filter'
-    | '/components/suggestInput/icon'
-    | '/components/suggestInput/sizes'
-    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -9491,6 +9858,10 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
+    | '/components/timeInput/sizes'
+    | '/components/timeInput/state'
+    | '/components/timeInput/status'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -9577,7 +9948,6 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
-    | '/components/suggestInput'
     | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
@@ -9585,10 +9955,11 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/timeInput'
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
-    | '/components/tree';
+    | '/components/tree'
   id:
     | '__root__'
     | '/'
@@ -9884,11 +10255,6 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
-    | '/components/suggestInput/field'
-    | '/components/suggestInput/filter'
-    | '/components/suggestInput/icon'
-    | '/components/suggestInput/sizes'
-    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -9947,6 +10313,10 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
+    | '/components/timeInput/sizes'
+    | '/components/timeInput/state'
+    | '/components/timeInput/status'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -10033,7 +10403,6 @@ export interface FileRouteTypes {
     | '/components/spinner/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
-    | '/components/suggestInput/'
     | '/components/t/'
     | '/components/tabMenu/'
     | '/components/table/'
@@ -10041,26 +10410,29 @@ export interface FileRouteTypes {
     | '/components/textArea/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
+    | '/components/timeInput/'
     | '/components/toast/'
     | '/components/toggle/'
     | '/components/tooltip/'
-    | '/components/tree/';
-  fileRoutesById: FileRoutesById;
+    | '/components/tree/'
+  fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  ComponentsRoute: typeof ComponentsRouteWithChildren;
-  GeneralRoute: typeof GeneralRouteWithChildren;
+  IndexRoute: typeof IndexRoute
+  ComponentsRoute: typeof ComponentsRouteWithChildren
+  GeneralRoute: typeof GeneralRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComponentsRoute: ComponentsRouteWithChildren,
   GeneralRoute: GeneralRouteWithChildren,
-};
+}
 
-export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();
+export const routeTree = rootRoute
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
 /* ROUTE_MANIFEST_START
 {
@@ -10365,11 +10737,6 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
         "/components/stepper/state",
         "/components/stepper/variants",
         "/components/stepper/vertical",
-        "/components/suggestInput/field",
-        "/components/suggestInput/filter",
-        "/components/suggestInput/icon",
-        "/components/suggestInput/sizes",
-        "/components/suggestInput/uncontrolled",
         "/components/t/stylesList",
         "/components/t/variants",
         "/components/tabMenu/addCardTab",
@@ -10428,6 +10795,10 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
         "/components/textButtonMenu/styles",
+        "/components/timeInput/custom",
+        "/components/timeInput/sizes",
+        "/components/timeInput/state",
+        "/components/timeInput/status",
         "/components/toast/lineNotification",
         "/components/toast/position",
         "/components/toast/withProgressBar",
@@ -10514,7 +10885,6 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
         "/components/spinner/",
         "/components/statusIndicator/",
         "/components/stepper/",
-        "/components/suggestInput/",
         "/components/t/",
         "/components/tabMenu/",
         "/components/table/",
@@ -10522,6 +10892,7 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
         "/components/textArea/",
         "/components/textButton/",
         "/components/textButtonMenu/",
+        "/components/timeInput/",
         "/components/toast/",
         "/components/toggle/",
         "/components/tooltip/",
@@ -11697,26 +12068,6 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
       "filePath": "components/stepper/vertical.tsx",
       "parent": "/components"
     },
-    "/components/suggestInput/field": {
-      "filePath": "components/suggestInput/field.tsx",
-      "parent": "/components"
-    },
-    "/components/suggestInput/filter": {
-      "filePath": "components/suggestInput/filter.tsx",
-      "parent": "/components"
-    },
-    "/components/suggestInput/icon": {
-      "filePath": "components/suggestInput/icon.tsx",
-      "parent": "/components"
-    },
-    "/components/suggestInput/sizes": {
-      "filePath": "components/suggestInput/sizes.tsx",
-      "parent": "/components"
-    },
-    "/components/suggestInput/uncontrolled": {
-      "filePath": "components/suggestInput/uncontrolled.tsx",
-      "parent": "/components"
-    },
     "/components/t/stylesList": {
       "filePath": "components/t/stylesList.tsx",
       "parent": "/components"
@@ -11947,6 +12298,22 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
     },
     "/components/textButtonMenu/styles": {
       "filePath": "components/textButtonMenu/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/custom": {
+      "filePath": "components/timeInput/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/sizes": {
+      "filePath": "components/timeInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/state": {
+      "filePath": "components/timeInput/state.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/status": {
+      "filePath": "components/timeInput/status.tsx",
       "parent": "/components"
     },
     "/components/toast/lineNotification": {
@@ -12293,10 +12660,6 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
       "filePath": "components/stepper/index.tsx",
       "parent": "/components"
     },
-    "/components/suggestInput/": {
-      "filePath": "components/suggestInput/index.tsx",
-      "parent": "/components"
-    },
     "/components/t/": {
       "filePath": "components/t/index.tsx",
       "parent": "/components"
@@ -12323,6 +12686,10 @@ export const routeTree = rootRoute._addFileChildren(rootRouteChildren)._addFileT
     },
     "/components/textButtonMenu/": {
       "filePath": "components/textButtonMenu/index.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/": {
+      "filePath": "components/timeInput/index.tsx",
       "parent": "/components"
     },
     "/components/toast/": {
