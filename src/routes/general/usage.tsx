@@ -18,7 +18,6 @@ function Description() {
     import { ThemeProvider } from 'styled-components';
     import { LIGHT_THEME, FontsVTBGroup, DropdownProvider } from '@admiral-ds/react-ui';
     import App from './App';
-    import './index.css';
     
     ReactDOM.createRoot(document.getElementById('root')!).render(
       <React.StrictMode>
