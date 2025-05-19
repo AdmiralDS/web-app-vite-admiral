@@ -1,6 +1,8 @@
 import { ExampleSection } from '#examples/-helpers';
-import { SlotProps, TimeField } from '@admiral-ds/react-ui';
+import { SlotProps, TimeField, InputIconButton } from '@admiral-ds/react-ui';
 import { ChangeEvent, useState } from 'react';
+import GPSOutline from '@admiral-ds/icons/build/location/GPSOutline.svg?react';
+import TimeSolid from '@admiral-ds/icons/build/system/TimeSolid.svg?react';
 
 const customSlots: SlotProps[] = [
   { value: '00:00', disabled: false },
@@ -38,7 +40,7 @@ export const TimeInputCustom = () => {
   };
   return (
     <>
-      <ExampleSection text="Пример с кастомными и задизейбленными значениями и диапазоном времени.">
+      <ExampleSection text="В компоненте можно указать произвольные интервалы ('slots'), выставить диапазон времени доступный для выбора ('startTime', 'endTime'), а также добавить и/или изменить иконку для открытия выпадающего списка ('iconsAfter', 'icon').">
         <TimeField
           label="Введите время"
           extraText="Дополнительный текст"
@@ -50,6 +52,8 @@ export const TimeInputCustom = () => {
           disabledSlots={['12:00', '15:00', '17:00']}
           startTime="11:00"
           endTime="20:00"
+          iconsAfter={<InputIconButton icon={GPSOutline} onClick={() => setValue('12:00')} />}
+          icon={TimeSolid}
         />
       </ExampleSection>
     </>
