@@ -22,6 +22,7 @@ import { Route as ComponentsTreeIndexImport } from './routes/components/tree/ind
 import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
+import { Route as ComponentsTextInputIndexImport } from './routes/components/textInput/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
 import { Route as ComponentsTextAreaIndexImport } from './routes/components/textArea/index'
@@ -115,6 +116,12 @@ import { Route as ComponentsToastWithProgressBarStopOnHoverImport } from './rout
 import { Route as ComponentsToastWithProgressBarImport } from './routes/components/toast/withProgressBar'
 import { Route as ComponentsToastPositionImport } from './routes/components/toast/position'
 import { Route as ComponentsToastLineNotificationImport } from './routes/components/toast/lineNotification'
+import { Route as ComponentsTextInputWithIconImport } from './routes/components/textInput/withIcon'
+import { Route as ComponentsTextInputVariantsImport } from './routes/components/textInput/variants'
+import { Route as ComponentsTextInputStatusesImport } from './routes/components/textInput/statuses'
+import { Route as ComponentsTextInputStatesImport } from './routes/components/textInput/states'
+import { Route as ComponentsTextInputSizesImport } from './routes/components/textInput/sizes'
+import { Route as ComponentsTextInputControlledImport } from './routes/components/textInput/controlled'
 import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles'
 import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
@@ -525,6 +532,12 @@ const ComponentsToggleIndexRoute = ComponentsToggleIndexImport.update({
 const ComponentsToastIndexRoute = ComponentsToastIndexImport.update({
   id: '/toast/',
   path: '/toast/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextInputIndexRoute = ComponentsTextInputIndexImport.update({
+  id: '/textInput/',
+  path: '/textInput/',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -1128,6 +1141,46 @@ const ComponentsToastLineNotificationRoute =
   ComponentsToastLineNotificationImport.update({
     id: '/toast/lineNotification',
     path: '/toast/lineNotification',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextInputWithIconRoute =
+  ComponentsTextInputWithIconImport.update({
+    id: '/textInput/withIcon',
+    path: '/textInput/withIcon',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextInputVariantsRoute =
+  ComponentsTextInputVariantsImport.update({
+    id: '/textInput/variants',
+    path: '/textInput/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextInputStatusesRoute =
+  ComponentsTextInputStatusesImport.update({
+    id: '/textInput/statuses',
+    path: '/textInput/statuses',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTextInputStatesRoute = ComponentsTextInputStatesImport.update({
+  id: '/textInput/states',
+  path: '/textInput/states',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextInputSizesRoute = ComponentsTextInputSizesImport.update({
+  id: '/textInput/sizes',
+  path: '/textInput/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTextInputControlledRoute =
+  ComponentsTextInputControlledImport.update({
+    id: '/textInput/controlled',
+    path: '/textInput/controlled',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -5923,6 +5976,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textInput/controlled': {
+      id: '/components/textInput/controlled'
+      path: '/textInput/controlled'
+      fullPath: '/components/textInput/controlled'
+      preLoaderRoute: typeof ComponentsTextInputControlledImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/sizes': {
+      id: '/components/textInput/sizes'
+      path: '/textInput/sizes'
+      fullPath: '/components/textInput/sizes'
+      preLoaderRoute: typeof ComponentsTextInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/states': {
+      id: '/components/textInput/states'
+      path: '/textInput/states'
+      fullPath: '/components/textInput/states'
+      preLoaderRoute: typeof ComponentsTextInputStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/statuses': {
+      id: '/components/textInput/statuses'
+      path: '/textInput/statuses'
+      fullPath: '/components/textInput/statuses'
+      preLoaderRoute: typeof ComponentsTextInputStatusesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/variants': {
+      id: '/components/textInput/variants'
+      path: '/textInput/variants'
+      fullPath: '/components/textInput/variants'
+      preLoaderRoute: typeof ComponentsTextInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/textInput/withIcon': {
+      id: '/components/textInput/withIcon'
+      path: '/textInput/withIcon'
+      fullPath: '/components/textInput/withIcon'
+      preLoaderRoute: typeof ComponentsTextInputWithIconImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toast/lineNotification': {
       id: '/components/toast/lineNotification'
       path: '/toast/lineNotification'
@@ -6574,6 +6669,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonMenuIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/textInput/': {
+      id: '/components/textInput/'
+      path: '/textInput'
+      fullPath: '/components/textInput'
+      preLoaderRoute: typeof ComponentsTextInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/toast/': {
       id: '/components/toast/'
       path: '/toast'
@@ -6952,6 +7054,12 @@ interface ComponentsRouteChildren {
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
   ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
   ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute
+  ComponentsTextInputControlledRoute: typeof ComponentsTextInputControlledRoute
+  ComponentsTextInputSizesRoute: typeof ComponentsTextInputSizesRoute
+  ComponentsTextInputStatesRoute: typeof ComponentsTextInputStatesRoute
+  ComponentsTextInputStatusesRoute: typeof ComponentsTextInputStatusesRoute
+  ComponentsTextInputVariantsRoute: typeof ComponentsTextInputVariantsRoute
+  ComponentsTextInputWithIconRoute: typeof ComponentsTextInputWithIconRoute
   ComponentsToastLineNotificationRoute: typeof ComponentsToastLineNotificationRoute
   ComponentsToastPositionRoute: typeof ComponentsToastPositionRoute
   ComponentsToastWithProgressBarRoute: typeof ComponentsToastWithProgressBarRoute
@@ -7045,6 +7153,7 @@ interface ComponentsRouteChildren {
   ComponentsTextAreaIndexRoute: typeof ComponentsTextAreaIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
+  ComponentsTextInputIndexRoute: typeof ComponentsTextInputIndexRoute
   ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
   ComponentsTooltipIndexRoute: typeof ComponentsTooltipIndexRoute
@@ -7477,6 +7586,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
   ComponentsTextButtonMenuStylesRoute: ComponentsTextButtonMenuStylesRoute,
+  ComponentsTextInputControlledRoute: ComponentsTextInputControlledRoute,
+  ComponentsTextInputSizesRoute: ComponentsTextInputSizesRoute,
+  ComponentsTextInputStatesRoute: ComponentsTextInputStatesRoute,
+  ComponentsTextInputStatusesRoute: ComponentsTextInputStatusesRoute,
+  ComponentsTextInputVariantsRoute: ComponentsTextInputVariantsRoute,
+  ComponentsTextInputWithIconRoute: ComponentsTextInputWithIconRoute,
   ComponentsToastLineNotificationRoute: ComponentsToastLineNotificationRoute,
   ComponentsToastPositionRoute: ComponentsToastPositionRoute,
   ComponentsToastWithProgressBarRoute: ComponentsToastWithProgressBarRoute,
@@ -7573,6 +7688,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextAreaIndexRoute: ComponentsTextAreaIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
+  ComponentsTextInputIndexRoute: ComponentsTextInputIndexRoute,
   ComponentsToastIndexRoute: ComponentsToastIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
   ComponentsTooltipIndexRoute: ComponentsTooltipIndexRoute,
@@ -7952,6 +8068,12 @@ export interface FileRoutesByFullPath {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/textInput/controlled': typeof ComponentsTextInputControlledRoute
+  '/components/textInput/sizes': typeof ComponentsTextInputSizesRoute
+  '/components/textInput/states': typeof ComponentsTextInputStatesRoute
+  '/components/textInput/statuses': typeof ComponentsTextInputStatusesRoute
+  '/components/textInput/variants': typeof ComponentsTextInputVariantsRoute
+  '/components/textInput/withIcon': typeof ComponentsTextInputWithIconRoute
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
@@ -8045,6 +8167,7 @@ export interface FileRoutesByFullPath {
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/textInput': typeof ComponentsTextInputIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
   '/components/tooltip': typeof ComponentsTooltipIndexRoute
@@ -8403,6 +8526,12 @@ export interface FileRoutesByTo {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/textInput/controlled': typeof ComponentsTextInputControlledRoute
+  '/components/textInput/sizes': typeof ComponentsTextInputSizesRoute
+  '/components/textInput/states': typeof ComponentsTextInputStatesRoute
+  '/components/textInput/statuses': typeof ComponentsTextInputStatusesRoute
+  '/components/textInput/variants': typeof ComponentsTextInputVariantsRoute
+  '/components/textInput/withIcon': typeof ComponentsTextInputWithIconRoute
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
@@ -8496,6 +8625,7 @@ export interface FileRoutesByTo {
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/textInput': typeof ComponentsTextInputIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
   '/components/tooltip': typeof ComponentsTooltipIndexRoute
@@ -8855,6 +8985,12 @@ export interface FileRoutesById {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/textInput/controlled': typeof ComponentsTextInputControlledRoute
+  '/components/textInput/sizes': typeof ComponentsTextInputSizesRoute
+  '/components/textInput/states': typeof ComponentsTextInputStatesRoute
+  '/components/textInput/statuses': typeof ComponentsTextInputStatusesRoute
+  '/components/textInput/variants': typeof ComponentsTextInputVariantsRoute
+  '/components/textInput/withIcon': typeof ComponentsTextInputWithIconRoute
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
@@ -8948,6 +9084,7 @@ export interface FileRoutesById {
   '/components/textArea/': typeof ComponentsTextAreaIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/textInput/': typeof ComponentsTextInputIndexRoute
   '/components/toast/': typeof ComponentsToastIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
   '/components/tooltip/': typeof ComponentsTooltipIndexRoute
@@ -9308,6 +9445,12 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/textInput/controlled'
+    | '/components/textInput/sizes'
+    | '/components/textInput/states'
+    | '/components/textInput/statuses'
+    | '/components/textInput/variants'
+    | '/components/textInput/withIcon'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -9401,6 +9544,7 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/textInput'
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
@@ -9758,6 +9902,12 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/textInput/controlled'
+    | '/components/textInput/sizes'
+    | '/components/textInput/states'
+    | '/components/textInput/statuses'
+    | '/components/textInput/variants'
+    | '/components/textInput/withIcon'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -9851,6 +10001,7 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/textInput'
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
@@ -10208,6 +10359,12 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/textInput/controlled'
+    | '/components/textInput/sizes'
+    | '/components/textInput/states'
+    | '/components/textInput/statuses'
+    | '/components/textInput/variants'
+    | '/components/textInput/withIcon'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -10301,6 +10458,7 @@ export interface FileRouteTypes {
     | '/components/textArea/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
+    | '/components/textInput/'
     | '/components/toast/'
     | '/components/toggle/'
     | '/components/tooltip/'
@@ -10685,6 +10843,12 @@ export const routeTree = rootRoute
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
         "/components/textButtonMenu/styles",
+        "/components/textInput/controlled",
+        "/components/textInput/sizes",
+        "/components/textInput/states",
+        "/components/textInput/statuses",
+        "/components/textInput/variants",
+        "/components/textInput/withIcon",
         "/components/toast/lineNotification",
         "/components/toast/position",
         "/components/toast/withProgressBar",
@@ -10778,6 +10942,7 @@ export const routeTree = rootRoute
         "/components/textArea/",
         "/components/textButton/",
         "/components/textButtonMenu/",
+        "/components/textInput/",
         "/components/toast/",
         "/components/toggle/",
         "/components/tooltip/",
@@ -12185,6 +12350,30 @@ export const routeTree = rootRoute
       "filePath": "components/textButtonMenu/styles.tsx",
       "parent": "/components"
     },
+    "/components/textInput/controlled": {
+      "filePath": "components/textInput/controlled.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/sizes": {
+      "filePath": "components/textInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/states": {
+      "filePath": "components/textInput/states.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/statuses": {
+      "filePath": "components/textInput/statuses.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/variants": {
+      "filePath": "components/textInput/variants.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/withIcon": {
+      "filePath": "components/textInput/withIcon.tsx",
+      "parent": "/components"
+    },
     "/components/toast/lineNotification": {
       "filePath": "components/toast/lineNotification.tsx",
       "parent": "/components"
@@ -12555,6 +12744,10 @@ export const routeTree = rootRoute
     },
     "/components/textButtonMenu/": {
       "filePath": "components/textButtonMenu/index.tsx",
+      "parent": "/components"
+    },
+    "/components/textInput/": {
+      "filePath": "components/textInput/index.tsx",
       "parent": "/components"
     },
     "/components/toast/": {
