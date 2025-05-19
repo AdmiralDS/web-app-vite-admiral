@@ -2,7 +2,13 @@ import { ExampleSection } from '#examples/-helpers';
 import { SliderRange } from '@admiral-ds/react-ui';
 
 export const SliderRangeInputCustom = () => {
-  const handleChange = (value: [{ str: string; num: number }, { str: string; num: number }]) => console.log(value);
+  const handleChange = (
+    value: [{ str: string; num: number }, { str: string; num: number }],
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    console.log(value, event);
+  };
+
   return (
     <>
       <ExampleSection text="Пример изменения настроек (suffix, prefix, placeholder).">

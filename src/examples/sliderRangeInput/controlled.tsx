@@ -4,8 +4,11 @@ import { useState } from 'react';
 
 export const SliderRangeInputControlled = () => {
   const [value, setValue] = useState<[string, string]>(['2,0', '5,0']);
-  const handleChange = (value: [{ str: string; num: number }, { str: string; num: number }]) => {
-    console.log(value);
+  const handleChange = (
+    value: [{ str: string; num: number }, { str: string; num: number }],
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    console.log(value, event);
     setValue([value[0].str, value[1].str]);
   };
 
@@ -31,14 +34,6 @@ export const SliderRangeInputControlled = () => {
         <SliderRange
           value={value}
           onChange={handleChange}
-          /* onChange={(
-            value: [{ str: string; num: number }, { str: string; num: number }],
-            event: React.ChangeEvent<HTMLInputElement>,
-          ) => {
-            // eslint-disable-next-line no-console
-            console.log(value, event);
-            setValue([value[0].str, value[1].str]);
-          }} */
           prefix={['От', 'До']}
           suffix="₽"
           placeholder={['От 0,0 ₽', 'До 0,0 ₽']}
