@@ -919,6 +919,29 @@
       ]
     },
     {
+      "name": "SuggestInput",
+      "path": "/components/suggestInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/suggestInput" },
+        { "name": "Пример с фильтрацией", "path": "/components/suggestInput/filter" },
+        { "name": "Неконтролируемый режим", "path": "/components/suggestInput/uncontrolled" },
+        { "name": "Размеры", "path": "/components/suggestInput/sizes" },
+        { "name": "Альтернативная иконка", "path": "/components/suggestInput/icon" },
+        { "name": "SuggestField. Базовый пример", "path": "/components/suggestInput/field" }
+      ]
+    },
+    {
+      "name": "TimeInput",
+      "path": "/components/timeInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/timeInput" },
+        { "name": "Размеры", "path": "/components/timeInput/sizes" },
+        { "name": "Состояния", "path": "/components/timeInput/state" },
+        { "name": "Статусы", "path": "/components/timeInput/status" },
+        { "name": "Кастомизация", "path": "/components/timeInput/custom" }
+      ]
+    },
+    {
       "name": "SliderRangeInput",
       "path": "/components/sliderRangeInput",
       "routes": [

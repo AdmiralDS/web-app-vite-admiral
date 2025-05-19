@@ -22,6 +22,7 @@ import { Route as ComponentsTreeIndexImport } from './routes/components/tree/ind
 import { Route as ComponentsTooltipIndexImport } from './routes/components/tooltip/index'
 import { Route as ComponentsToggleIndexImport } from './routes/components/toggle/index'
 import { Route as ComponentsToastIndexImport } from './routes/components/toast/index'
+import { Route as ComponentsTimeInputIndexImport } from './routes/components/timeInput/index'
 import { Route as ComponentsTextButtonMenuIndexImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexImport } from './routes/components/textButton/index'
 import { Route as ComponentsTextAreaIndexImport } from './routes/components/textArea/index'
@@ -29,6 +30,7 @@ import { Route as ComponentsTagIndexImport } from './routes/components/tag/index
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
 import { Route as ComponentsTIndexImport } from './routes/components/t/index'
+import { Route as ComponentsSuggestInputIndexImport } from './routes/components/suggestInput/index'
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
@@ -116,6 +118,10 @@ import { Route as ComponentsToastWithProgressBarStopOnHoverImport } from './rout
 import { Route as ComponentsToastWithProgressBarImport } from './routes/components/toast/withProgressBar'
 import { Route as ComponentsToastPositionImport } from './routes/components/toast/position'
 import { Route as ComponentsToastLineNotificationImport } from './routes/components/toast/lineNotification'
+import { Route as ComponentsTimeInputStatusImport } from './routes/components/timeInput/status'
+import { Route as ComponentsTimeInputStateImport } from './routes/components/timeInput/state'
+import { Route as ComponentsTimeInputSizesImport } from './routes/components/timeInput/sizes'
+import { Route as ComponentsTimeInputCustomImport } from './routes/components/timeInput/custom'
 import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles'
 import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
@@ -174,6 +180,11 @@ import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabM
 import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
 import { Route as ComponentsTVariantsImport } from './routes/components/t/variants'
 import { Route as ComponentsTStylesListImport } from './routes/components/t/stylesList'
+import { Route as ComponentsSuggestInputUncontrolledImport } from './routes/components/suggestInput/uncontrolled'
+import { Route as ComponentsSuggestInputSizesImport } from './routes/components/suggestInput/sizes'
+import { Route as ComponentsSuggestInputIconImport } from './routes/components/suggestInput/icon'
+import { Route as ComponentsSuggestInputFilterImport } from './routes/components/suggestInput/filter'
+import { Route as ComponentsSuggestInputFieldImport } from './routes/components/suggestInput/field'
 import { Route as ComponentsStepperVerticalImport } from './routes/components/stepper/vertical'
 import { Route as ComponentsStepperVariantsImport } from './routes/components/stepper/variants'
 import { Route as ComponentsStepperStateImport } from './routes/components/stepper/state'
@@ -534,6 +545,12 @@ const ComponentsToastIndexRoute = ComponentsToastIndexImport.update({
   getParentRoute: () => ComponentsRoute,
 } as any)
 
+const ComponentsTimeInputIndexRoute = ComponentsTimeInputIndexImport.update({
+  id: '/timeInput/',
+  path: '/timeInput/',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
 const ComponentsTextButtonMenuIndexRoute =
   ComponentsTextButtonMenuIndexImport.update({
     id: '/textButtonMenu/',
@@ -576,6 +593,13 @@ const ComponentsTIndexRoute = ComponentsTIndexImport.update({
   path: '/t/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsSuggestInputIndexRoute =
+  ComponentsSuggestInputIndexImport.update({
+    id: '/suggestInput/',
+    path: '/suggestInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsStepperIndexRoute = ComponentsStepperIndexImport.update({
   id: '/stepper/',
@@ -1144,6 +1168,30 @@ const ComponentsToastLineNotificationRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsTimeInputStatusRoute = ComponentsTimeInputStatusImport.update({
+  id: '/timeInput/status',
+  path: '/timeInput/status',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTimeInputStateRoute = ComponentsTimeInputStateImport.update({
+  id: '/timeInput/state',
+  path: '/timeInput/state',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTimeInputSizesRoute = ComponentsTimeInputSizesImport.update({
+  id: '/timeInput/sizes',
+  path: '/timeInput/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTimeInputCustomRoute = ComponentsTimeInputCustomImport.update({
+  id: '/timeInput/custom',
+  path: '/timeInput/custom',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
 const ComponentsTextButtonMenuStylesRoute =
   ComponentsTextButtonMenuStylesImport.update({
     id: '/textButtonMenu/styles',
@@ -1529,6 +1577,42 @@ const ComponentsTStylesListRoute = ComponentsTStylesListImport.update({
   path: '/t/stylesList',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsSuggestInputUncontrolledRoute =
+  ComponentsSuggestInputUncontrolledImport.update({
+    id: '/suggestInput/uncontrolled',
+    path: '/suggestInput/uncontrolled',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSuggestInputSizesRoute =
+  ComponentsSuggestInputSizesImport.update({
+    id: '/suggestInput/sizes',
+    path: '/suggestInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSuggestInputIconRoute = ComponentsSuggestInputIconImport.update(
+  {
+    id: '/suggestInput/icon',
+    path: '/suggestInput/icon',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsSuggestInputFilterRoute =
+  ComponentsSuggestInputFilterImport.update({
+    id: '/suggestInput/filter',
+    path: '/suggestInput/filter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSuggestInputFieldRoute =
+  ComponentsSuggestInputFieldImport.update({
+    id: '/suggestInput/field',
+    path: '/suggestInput/field',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsStepperVerticalRoute = ComponentsStepperVerticalImport.update({
   id: '/stepper/vertical',
@@ -5600,6 +5684,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStepperVerticalImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/suggestInput/field': {
+      id: '/components/suggestInput/field'
+      path: '/suggestInput/field'
+      fullPath: '/components/suggestInput/field'
+      preLoaderRoute: typeof ComponentsSuggestInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/filter': {
+      id: '/components/suggestInput/filter'
+      path: '/suggestInput/filter'
+      fullPath: '/components/suggestInput/filter'
+      preLoaderRoute: typeof ComponentsSuggestInputFilterImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/icon': {
+      id: '/components/suggestInput/icon'
+      path: '/suggestInput/icon'
+      fullPath: '/components/suggestInput/icon'
+      preLoaderRoute: typeof ComponentsSuggestInputIconImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/sizes': {
+      id: '/components/suggestInput/sizes'
+      path: '/suggestInput/sizes'
+      fullPath: '/components/suggestInput/sizes'
+      preLoaderRoute: typeof ComponentsSuggestInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/uncontrolled': {
+      id: '/components/suggestInput/uncontrolled'
+      path: '/suggestInput/uncontrolled'
+      fullPath: '/components/suggestInput/uncontrolled'
+      preLoaderRoute: typeof ComponentsSuggestInputUncontrolledImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/t/stylesList': {
       id: '/components/t/stylesList'
       path: '/t/stylesList'
@@ -6004,6 +6123,34 @@ declare module '@tanstack/react-router' {
       path: '/textButtonMenu/styles'
       fullPath: '/components/textButtonMenu/styles'
       preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/custom': {
+      id: '/components/timeInput/custom'
+      path: '/timeInput/custom'
+      fullPath: '/components/timeInput/custom'
+      preLoaderRoute: typeof ComponentsTimeInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/sizes': {
+      id: '/components/timeInput/sizes'
+      path: '/timeInput/sizes'
+      fullPath: '/components/timeInput/sizes'
+      preLoaderRoute: typeof ComponentsTimeInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/state': {
+      id: '/components/timeInput/state'
+      path: '/timeInput/state'
+      fullPath: '/components/timeInput/state'
+      preLoaderRoute: typeof ComponentsTimeInputStateImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/status': {
+      id: '/components/timeInput/status'
+      path: '/timeInput/status'
+      fullPath: '/components/timeInput/status'
+      preLoaderRoute: typeof ComponentsTimeInputStatusImport
       parentRoute: typeof ComponentsImport
     }
     '/components/toast/lineNotification': {
@@ -6615,6 +6762,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStepperIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/suggestInput/': {
+      id: '/components/suggestInput/'
+      path: '/suggestInput'
+      fullPath: '/components/suggestInput'
+      preLoaderRoute: typeof ComponentsSuggestInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/t/': {
       id: '/components/t/'
       path: '/t'
@@ -6662,6 +6816,13 @@ declare module '@tanstack/react-router' {
       path: '/textButtonMenu'
       fullPath: '/components/textButtonMenu'
       preLoaderRoute: typeof ComponentsTextButtonMenuIndexImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/timeInput/': {
+      id: '/components/timeInput/'
+      path: '/timeInput'
+      fullPath: '/components/timeInput'
+      preLoaderRoute: typeof ComponentsTimeInputIndexImport
       parentRoute: typeof ComponentsImport
     }
     '/components/toast/': {
@@ -6989,6 +7150,11 @@ interface ComponentsRouteChildren {
   ComponentsStepperStateRoute: typeof ComponentsStepperStateRoute
   ComponentsStepperVariantsRoute: typeof ComponentsStepperVariantsRoute
   ComponentsStepperVerticalRoute: typeof ComponentsStepperVerticalRoute
+  ComponentsSuggestInputFieldRoute: typeof ComponentsSuggestInputFieldRoute
+  ComponentsSuggestInputFilterRoute: typeof ComponentsSuggestInputFilterRoute
+  ComponentsSuggestInputIconRoute: typeof ComponentsSuggestInputIconRoute
+  ComponentsSuggestInputSizesRoute: typeof ComponentsSuggestInputSizesRoute
+  ComponentsSuggestInputUncontrolledRoute: typeof ComponentsSuggestInputUncontrolledRoute
   ComponentsTStylesListRoute: typeof ComponentsTStylesListRoute
   ComponentsTVariantsRoute: typeof ComponentsTVariantsRoute
   ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
@@ -7047,6 +7213,10 @@ interface ComponentsRouteChildren {
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
   ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
   ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute
+  ComponentsTimeInputCustomRoute: typeof ComponentsTimeInputCustomRoute
+  ComponentsTimeInputSizesRoute: typeof ComponentsTimeInputSizesRoute
+  ComponentsTimeInputStateRoute: typeof ComponentsTimeInputStateRoute
+  ComponentsTimeInputStatusRoute: typeof ComponentsTimeInputStatusRoute
   ComponentsToastLineNotificationRoute: typeof ComponentsToastLineNotificationRoute
   ComponentsToastPositionRoute: typeof ComponentsToastPositionRoute
   ComponentsToastWithProgressBarRoute: typeof ComponentsToastWithProgressBarRoute
@@ -7134,6 +7304,7 @@ interface ComponentsRouteChildren {
   ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
+  ComponentsSuggestInputIndexRoute: typeof ComponentsSuggestInputIndexRoute
   ComponentsTIndexRoute: typeof ComponentsTIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
@@ -7141,6 +7312,7 @@ interface ComponentsRouteChildren {
   ComponentsTextAreaIndexRoute: typeof ComponentsTextAreaIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
+  ComponentsTimeInputIndexRoute: typeof ComponentsTimeInputIndexRoute
   ComponentsToastIndexRoute: typeof ComponentsToastIndexRoute
   ComponentsToggleIndexRoute: typeof ComponentsToggleIndexRoute
   ComponentsTooltipIndexRoute: typeof ComponentsTooltipIndexRoute
@@ -7510,6 +7682,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsStepperStateRoute: ComponentsStepperStateRoute,
   ComponentsStepperVariantsRoute: ComponentsStepperVariantsRoute,
   ComponentsStepperVerticalRoute: ComponentsStepperVerticalRoute,
+  ComponentsSuggestInputFieldRoute: ComponentsSuggestInputFieldRoute,
+  ComponentsSuggestInputFilterRoute: ComponentsSuggestInputFilterRoute,
+  ComponentsSuggestInputIconRoute: ComponentsSuggestInputIconRoute,
+  ComponentsSuggestInputSizesRoute: ComponentsSuggestInputSizesRoute,
+  ComponentsSuggestInputUncontrolledRoute:
+    ComponentsSuggestInputUncontrolledRoute,
   ComponentsTStylesListRoute: ComponentsTStylesListRoute,
   ComponentsTVariantsRoute: ComponentsTVariantsRoute,
   ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
@@ -7580,6 +7758,10 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
   ComponentsTextButtonMenuStylesRoute: ComponentsTextButtonMenuStylesRoute,
+  ComponentsTimeInputCustomRoute: ComponentsTimeInputCustomRoute,
+  ComponentsTimeInputSizesRoute: ComponentsTimeInputSizesRoute,
+  ComponentsTimeInputStateRoute: ComponentsTimeInputStateRoute,
+  ComponentsTimeInputStatusRoute: ComponentsTimeInputStatusRoute,
   ComponentsToastLineNotificationRoute: ComponentsToastLineNotificationRoute,
   ComponentsToastPositionRoute: ComponentsToastPositionRoute,
   ComponentsToastWithProgressBarRoute: ComponentsToastWithProgressBarRoute,
@@ -7670,6 +7852,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
+  ComponentsSuggestInputIndexRoute: ComponentsSuggestInputIndexRoute,
   ComponentsTIndexRoute: ComponentsTIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
@@ -7677,6 +7860,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextAreaIndexRoute: ComponentsTextAreaIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
+  ComponentsTimeInputIndexRoute: ComponentsTimeInputIndexRoute,
   ComponentsToastIndexRoute: ComponentsToastIndexRoute,
   ComponentsToggleIndexRoute: ComponentsToggleIndexRoute,
   ComponentsTooltipIndexRoute: ComponentsTooltipIndexRoute,
@@ -8003,6 +8187,11 @@ export interface FileRoutesByFullPath {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute
+  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute
+  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute
+  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute
+  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute
   '/components/t/stylesList': typeof ComponentsTStylesListRoute
   '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
@@ -8061,6 +8250,10 @@ export interface FileRoutesByFullPath {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
+  '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
+  '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
+  '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
@@ -8148,6 +8341,7 @@ export interface FileRoutesByFullPath {
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/suggestInput': typeof ComponentsSuggestInputIndexRoute
   '/components/t': typeof ComponentsTIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -8155,6 +8349,7 @@ export interface FileRoutesByFullPath {
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/timeInput': typeof ComponentsTimeInputIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
   '/components/tooltip': typeof ComponentsTooltipIndexRoute
@@ -8460,6 +8655,11 @@ export interface FileRoutesByTo {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute
+  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute
+  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute
+  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute
+  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute
   '/components/t/stylesList': typeof ComponentsTStylesListRoute
   '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
@@ -8518,6 +8718,10 @@ export interface FileRoutesByTo {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
+  '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
+  '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
+  '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
@@ -8605,6 +8809,7 @@ export interface FileRoutesByTo {
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/suggestInput': typeof ComponentsSuggestInputIndexRoute
   '/components/t': typeof ComponentsTIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -8612,6 +8817,7 @@ export interface FileRoutesByTo {
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/timeInput': typeof ComponentsTimeInputIndexRoute
   '/components/toast': typeof ComponentsToastIndexRoute
   '/components/toggle': typeof ComponentsToggleIndexRoute
   '/components/tooltip': typeof ComponentsTooltipIndexRoute
@@ -8918,6 +9124,11 @@ export interface FileRoutesById {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute
+  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute
+  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute
+  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute
+  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute
   '/components/t/stylesList': typeof ComponentsTStylesListRoute
   '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
@@ -8976,6 +9187,10 @@ export interface FileRoutesById {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
+  '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
+  '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
+  '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
   '/components/toast/lineNotification': typeof ComponentsToastLineNotificationRoute
   '/components/toast/position': typeof ComponentsToastPositionRoute
   '/components/toast/withProgressBar': typeof ComponentsToastWithProgressBarRoute
@@ -9063,6 +9278,7 @@ export interface FileRoutesById {
   '/components/spinner/': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
+  '/components/suggestInput/': typeof ComponentsSuggestInputIndexRoute
   '/components/t/': typeof ComponentsTIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
@@ -9070,6 +9286,7 @@ export interface FileRoutesById {
   '/components/textArea/': typeof ComponentsTextAreaIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
+  '/components/timeInput/': typeof ComponentsTimeInputIndexRoute
   '/components/toast/': typeof ComponentsToastIndexRoute
   '/components/toggle/': typeof ComponentsToggleIndexRoute
   '/components/tooltip/': typeof ComponentsTooltipIndexRoute
@@ -9377,6 +9594,11 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/suggestInput/field'
+    | '/components/suggestInput/filter'
+    | '/components/suggestInput/icon'
+    | '/components/suggestInput/sizes'
+    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -9435,6 +9657,10 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
+    | '/components/timeInput/sizes'
+    | '/components/timeInput/state'
+    | '/components/timeInput/status'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -9522,6 +9748,7 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
+    | '/components/suggestInput'
     | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
@@ -9529,6 +9756,7 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/timeInput'
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
@@ -9833,6 +10061,11 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/suggestInput/field'
+    | '/components/suggestInput/filter'
+    | '/components/suggestInput/icon'
+    | '/components/suggestInput/sizes'
+    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -9891,6 +10124,10 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
+    | '/components/timeInput/sizes'
+    | '/components/timeInput/state'
+    | '/components/timeInput/status'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -9978,6 +10215,7 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
+    | '/components/suggestInput'
     | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
@@ -9985,6 +10223,7 @@ export interface FileRouteTypes {
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
+    | '/components/timeInput'
     | '/components/toast'
     | '/components/toggle'
     | '/components/tooltip'
@@ -10289,6 +10528,11 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/suggestInput/field'
+    | '/components/suggestInput/filter'
+    | '/components/suggestInput/icon'
+    | '/components/suggestInput/sizes'
+    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -10347,6 +10591,10 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
+    | '/components/timeInput/sizes'
+    | '/components/timeInput/state'
+    | '/components/timeInput/status'
     | '/components/toast/lineNotification'
     | '/components/toast/position'
     | '/components/toast/withProgressBar'
@@ -10434,6 +10682,7 @@ export interface FileRouteTypes {
     | '/components/spinner/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
+    | '/components/suggestInput/'
     | '/components/t/'
     | '/components/tabMenu/'
     | '/components/table/'
@@ -10441,6 +10690,7 @@ export interface FileRouteTypes {
     | '/components/textArea/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
+    | '/components/timeInput/'
     | '/components/toast/'
     | '/components/toggle/'
     | '/components/tooltip/'
@@ -10772,6 +11022,11 @@ export const routeTree = rootRoute
         "/components/stepper/state",
         "/components/stepper/variants",
         "/components/stepper/vertical",
+        "/components/suggestInput/field",
+        "/components/suggestInput/filter",
+        "/components/suggestInput/icon",
+        "/components/suggestInput/sizes",
+        "/components/suggestInput/uncontrolled",
         "/components/t/stylesList",
         "/components/t/variants",
         "/components/tabMenu/addCardTab",
@@ -10830,6 +11085,10 @@ export const routeTree = rootRoute
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
         "/components/textButtonMenu/styles",
+        "/components/timeInput/custom",
+        "/components/timeInput/sizes",
+        "/components/timeInput/state",
+        "/components/timeInput/status",
         "/components/toast/lineNotification",
         "/components/toast/position",
         "/components/toast/withProgressBar",
@@ -10917,6 +11176,7 @@ export const routeTree = rootRoute
         "/components/spinner/",
         "/components/statusIndicator/",
         "/components/stepper/",
+        "/components/suggestInput/",
         "/components/t/",
         "/components/tabMenu/",
         "/components/table/",
@@ -10924,6 +11184,7 @@ export const routeTree = rootRoute
         "/components/textArea/",
         "/components/textButton/",
         "/components/textButtonMenu/",
+        "/components/timeInput/",
         "/components/toast/",
         "/components/toggle/",
         "/components/tooltip/",
@@ -12119,6 +12380,26 @@ export const routeTree = rootRoute
       "filePath": "components/stepper/vertical.tsx",
       "parent": "/components"
     },
+    "/components/suggestInput/field": {
+      "filePath": "components/suggestInput/field.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/filter": {
+      "filePath": "components/suggestInput/filter.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/icon": {
+      "filePath": "components/suggestInput/icon.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/sizes": {
+      "filePath": "components/suggestInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/uncontrolled": {
+      "filePath": "components/suggestInput/uncontrolled.tsx",
+      "parent": "/components"
+    },
     "/components/t/stylesList": {
       "filePath": "components/t/stylesList.tsx",
       "parent": "/components"
@@ -12349,6 +12630,22 @@ export const routeTree = rootRoute
     },
     "/components/textButtonMenu/styles": {
       "filePath": "components/textButtonMenu/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/custom": {
+      "filePath": "components/timeInput/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/sizes": {
+      "filePath": "components/timeInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/state": {
+      "filePath": "components/timeInput/state.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/status": {
+      "filePath": "components/timeInput/status.tsx",
       "parent": "/components"
     },
     "/components/toast/lineNotification": {
@@ -12699,6 +12996,10 @@ export const routeTree = rootRoute
       "filePath": "components/stepper/index.tsx",
       "parent": "/components"
     },
+    "/components/suggestInput/": {
+      "filePath": "components/suggestInput/index.tsx",
+      "parent": "/components"
+    },
     "/components/t/": {
       "filePath": "components/t/index.tsx",
       "parent": "/components"
@@ -12725,6 +13026,10 @@ export const routeTree = rootRoute
     },
     "/components/textButtonMenu/": {
       "filePath": "components/textButtonMenu/index.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/": {
+      "filePath": "components/timeInput/index.tsx",
       "parent": "/components"
     },
     "/components/toast/": {
