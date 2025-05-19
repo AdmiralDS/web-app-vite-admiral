@@ -931,6 +931,17 @@
       ]
     },
     {
+      "name": "TimeInput",
+      "path": "/components/timeInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/timeInput" },
+        { "name": "Размеры", "path": "/components/timeInput/sizes" },
+        { "name": "Состояния", "path": "/components/timeInput/state" },
+        { "name": "Статусы", "path": "/components/timeInput/status" },
+        { "name": "Кастомизация", "path": "/components/timeInput/custom" }
+      ]
+    },
+    {
        "name": "TextInput",
       "path": "/components/textInput",
       "routes": [
