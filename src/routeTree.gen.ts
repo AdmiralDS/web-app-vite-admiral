@@ -119,6 +119,7 @@ import { Route as ComponentsToastLineNotificationImport } from './routes/compone
 import { Route as ComponentsTimeInputStatusImport } from './routes/components/timeInput/status'
 import { Route as ComponentsTimeInputStateImport } from './routes/components/timeInput/state'
 import { Route as ComponentsTimeInputSizesImport } from './routes/components/timeInput/sizes'
+import { Route as ComponentsTimeInputCustomImport } from './routes/components/timeInput/custom'
 import { Route as ComponentsTextButtonMenuStylesImport } from './routes/components/textButtonMenu/styles'
 import { Route as ComponentsTextButtonMenuStatesImport } from './routes/components/textButtonMenu/states'
 import { Route as ComponentsTextButtonStylesImport } from './routes/components/textButton/styles'
@@ -1156,6 +1157,12 @@ const ComponentsTimeInputStateRoute = ComponentsTimeInputStateImport.update({
 const ComponentsTimeInputSizesRoute = ComponentsTimeInputSizesImport.update({
   id: '/timeInput/sizes',
   path: '/timeInput/sizes',
+  getParentRoute: () => ComponentsRoute,
+} as any)
+
+const ComponentsTimeInputCustomRoute = ComponentsTimeInputCustomImport.update({
+  id: '/timeInput/custom',
+  path: '/timeInput/custom',
   getParentRoute: () => ComponentsRoute,
 } as any)
 
@@ -5951,6 +5958,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTextButtonMenuStylesImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/timeInput/custom': {
+      id: '/components/timeInput/custom'
+      path: '/timeInput/custom'
+      fullPath: '/components/timeInput/custom'
+      preLoaderRoute: typeof ComponentsTimeInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/timeInput/sizes': {
       id: '/components/timeInput/sizes'
       path: '/timeInput/sizes'
@@ -7008,6 +7022,7 @@ interface ComponentsRouteChildren {
   ComponentsTextButtonStylesRoute: typeof ComponentsTextButtonStylesRoute
   ComponentsTextButtonMenuStatesRoute: typeof ComponentsTextButtonMenuStatesRoute
   ComponentsTextButtonMenuStylesRoute: typeof ComponentsTextButtonMenuStylesRoute
+  ComponentsTimeInputCustomRoute: typeof ComponentsTimeInputCustomRoute
   ComponentsTimeInputSizesRoute: typeof ComponentsTimeInputSizesRoute
   ComponentsTimeInputStateRoute: typeof ComponentsTimeInputStateRoute
   ComponentsTimeInputStatusRoute: typeof ComponentsTimeInputStatusRoute
@@ -7537,6 +7552,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTextButtonStylesRoute: ComponentsTextButtonStylesRoute,
   ComponentsTextButtonMenuStatesRoute: ComponentsTextButtonMenuStatesRoute,
   ComponentsTextButtonMenuStylesRoute: ComponentsTextButtonMenuStylesRoute,
+  ComponentsTimeInputCustomRoute: ComponentsTimeInputCustomRoute,
   ComponentsTimeInputSizesRoute: ComponentsTimeInputSizesRoute,
   ComponentsTimeInputStateRoute: ComponentsTimeInputStateRoute,
   ComponentsTimeInputStatusRoute: ComponentsTimeInputStatusRoute,
@@ -8016,6 +8032,7 @@ export interface FileRoutesByFullPath {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
   '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
   '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
   '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
@@ -8471,6 +8488,7 @@ export interface FileRoutesByTo {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
   '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
   '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
   '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
@@ -8927,6 +8945,7 @@ export interface FileRoutesById {
   '/components/textButton/styles': typeof ComponentsTextButtonStylesRoute
   '/components/textButtonMenu/states': typeof ComponentsTextButtonMenuStatesRoute
   '/components/textButtonMenu/styles': typeof ComponentsTextButtonMenuStylesRoute
+  '/components/timeInput/custom': typeof ComponentsTimeInputCustomRoute
   '/components/timeInput/sizes': typeof ComponentsTimeInputSizesRoute
   '/components/timeInput/state': typeof ComponentsTimeInputStateRoute
   '/components/timeInput/status': typeof ComponentsTimeInputStatusRoute
@@ -9384,6 +9403,7 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
     | '/components/timeInput/sizes'
     | '/components/timeInput/state'
     | '/components/timeInput/status'
@@ -9838,6 +9858,7 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
     | '/components/timeInput/sizes'
     | '/components/timeInput/state'
     | '/components/timeInput/status'
@@ -10292,6 +10313,7 @@ export interface FileRouteTypes {
     | '/components/textButton/styles'
     | '/components/textButtonMenu/states'
     | '/components/textButtonMenu/styles'
+    | '/components/timeInput/custom'
     | '/components/timeInput/sizes'
     | '/components/timeInput/state'
     | '/components/timeInput/status'
@@ -10773,6 +10795,7 @@ export const routeTree = rootRoute
         "/components/textButton/styles",
         "/components/textButtonMenu/states",
         "/components/textButtonMenu/styles",
+        "/components/timeInput/custom",
         "/components/timeInput/sizes",
         "/components/timeInput/state",
         "/components/timeInput/status",
@@ -12275,6 +12298,10 @@ export const routeTree = rootRoute
     },
     "/components/textButtonMenu/styles": {
       "filePath": "components/textButtonMenu/styles.tsx",
+      "parent": "/components"
+    },
+    "/components/timeInput/custom": {
+      "filePath": "components/timeInput/custom.tsx",
       "parent": "/components"
     },
     "/components/timeInput/sizes": {

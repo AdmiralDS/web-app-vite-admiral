@@ -35,14 +35,14 @@ export const TimeInputState = () => {
       <ExampleSection text="readOnly">
         <TimeInputStyled readOnly value={nowTime} dropContainerClassName="dropContainerClass" />
       </ExampleSection>
+      <ExampleSection text="disableCopying - отключает возможность выделения и копирования значения поля">
+        <TimeInputStyled disableCopying value={valueNowTime} dropContainerClassName="dropContainerClass" />
+      </ExampleSection>
       <ExampleSection text="isLoading">
         <TimeInputStyled isLoading dropContainerClassName="dropContainerClass" />
       </ExampleSection>
       <ExampleSection text="skeleton">
         <TimeInputStyled skeleton dropContainerClassName="dropContainerClass" />
-      </ExampleSection>
-      <ExampleSection text="disableCopying - отключает возможность выделения и копирования значения поля">
-        <TimeInputStyled disableCopying value={valueNowTime} dropContainerClassName="dropContainerClass" />
       </ExampleSection>
     </>
   );

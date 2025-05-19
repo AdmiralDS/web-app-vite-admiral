@@ -925,7 +925,8 @@
         { "name": "Базовый пример", "path": "/components/timeInput" },
         { "name": "Размеры", "path": "/components/timeInput/sizes" },
         { "name": "Состояния", "path": "/components/timeInput/state" },
-        { "name": "Статусы", "path": "/components/timeInput/status" }
+        { "name": "Статусы", "path": "/components/timeInput/status" },
+        { "name": "Кастомизация", "path": "/components/timeInput/custom" }
       ]
     }
   ]
