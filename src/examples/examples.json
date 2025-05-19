@@ -919,7 +919,19 @@
       ]
     },
     {
-      "name": "TextInput",
+      "name": "SuggestInput",
+      "path": "/components/suggestInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/suggestInput" },
+        { "name": "Пример с фильтрацией", "path": "/components/suggestInput/filter" },
+        { "name": "Неконтролируемый режим", "path": "/components/suggestInput/uncontrolled" },
+        { "name": "Размеры", "path": "/components/suggestInput/sizes" },
+        { "name": "Альтернативная иконка", "path": "/components/suggestInput/icon" },
+        { "name": "SuggestField. Базовый пример", "path": "/components/suggestInput/field" }
+      ]
+    },
+    {
+       "name": "TextInput",
       "path": "/components/textInput",
       "routes": [
         { "name": "Базовый пример", "path": "/components/textInput" },

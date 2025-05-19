@@ -30,6 +30,7 @@ import { Route as ComponentsTagIndexImport } from './routes/components/tag/index
 import { Route as ComponentsTableIndexImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexImport } from './routes/components/tabMenu/index'
 import { Route as ComponentsTIndexImport } from './routes/components/t/index'
+import { Route as ComponentsSuggestInputIndexImport } from './routes/components/suggestInput/index'
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
@@ -180,6 +181,11 @@ import { Route as ComponentsTabMenuAddTabImport } from './routes/components/tabM
 import { Route as ComponentsTabMenuAddCardTabImport } from './routes/components/tabMenu/addCardTab'
 import { Route as ComponentsTVariantsImport } from './routes/components/t/variants'
 import { Route as ComponentsTStylesListImport } from './routes/components/t/stylesList'
+import { Route as ComponentsSuggestInputUncontrolledImport } from './routes/components/suggestInput/uncontrolled'
+import { Route as ComponentsSuggestInputSizesImport } from './routes/components/suggestInput/sizes'
+import { Route as ComponentsSuggestInputIconImport } from './routes/components/suggestInput/icon'
+import { Route as ComponentsSuggestInputFilterImport } from './routes/components/suggestInput/filter'
+import { Route as ComponentsSuggestInputFieldImport } from './routes/components/suggestInput/field'
 import { Route as ComponentsStepperVerticalImport } from './routes/components/stepper/vertical'
 import { Route as ComponentsStepperVariantsImport } from './routes/components/stepper/variants'
 import { Route as ComponentsStepperStateImport } from './routes/components/stepper/state'
@@ -583,6 +589,13 @@ const ComponentsTIndexRoute = ComponentsTIndexImport.update({
   path: '/t/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsSuggestInputIndexRoute =
+  ComponentsSuggestInputIndexImport.update({
+    id: '/suggestInput/',
+    path: '/suggestInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsStepperIndexRoute = ComponentsStepperIndexImport.update({
   id: '/stepper/',
@@ -1569,6 +1582,42 @@ const ComponentsTStylesListRoute = ComponentsTStylesListImport.update({
   path: '/t/stylesList',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsSuggestInputUncontrolledRoute =
+  ComponentsSuggestInputUncontrolledImport.update({
+    id: '/suggestInput/uncontrolled',
+    path: '/suggestInput/uncontrolled',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSuggestInputSizesRoute =
+  ComponentsSuggestInputSizesImport.update({
+    id: '/suggestInput/sizes',
+    path: '/suggestInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSuggestInputIconRoute = ComponentsSuggestInputIconImport.update(
+  {
+    id: '/suggestInput/icon',
+    path: '/suggestInput/icon',
+    getParentRoute: () => ComponentsRoute,
+  } as any,
+)
+
+const ComponentsSuggestInputFilterRoute =
+  ComponentsSuggestInputFilterImport.update({
+    id: '/suggestInput/filter',
+    path: '/suggestInput/filter',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSuggestInputFieldRoute =
+  ComponentsSuggestInputFieldImport.update({
+    id: '/suggestInput/field',
+    path: '/suggestInput/field',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsStepperVerticalRoute = ComponentsStepperVerticalImport.update({
   id: '/stepper/vertical',
@@ -5570,6 +5619,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStepperVerticalImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/suggestInput/field': {
+      id: '/components/suggestInput/field'
+      path: '/suggestInput/field'
+      fullPath: '/components/suggestInput/field'
+      preLoaderRoute: typeof ComponentsSuggestInputFieldImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/filter': {
+      id: '/components/suggestInput/filter'
+      path: '/suggestInput/filter'
+      fullPath: '/components/suggestInput/filter'
+      preLoaderRoute: typeof ComponentsSuggestInputFilterImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/icon': {
+      id: '/components/suggestInput/icon'
+      path: '/suggestInput/icon'
+      fullPath: '/components/suggestInput/icon'
+      preLoaderRoute: typeof ComponentsSuggestInputIconImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/sizes': {
+      id: '/components/suggestInput/sizes'
+      path: '/suggestInput/sizes'
+      fullPath: '/components/suggestInput/sizes'
+      preLoaderRoute: typeof ComponentsSuggestInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/suggestInput/uncontrolled': {
+      id: '/components/suggestInput/uncontrolled'
+      path: '/suggestInput/uncontrolled'
+      fullPath: '/components/suggestInput/uncontrolled'
+      preLoaderRoute: typeof ComponentsSuggestInputUncontrolledImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/t/stylesList': {
       id: '/components/t/stylesList'
       path: '/t/stylesList'
@@ -6620,6 +6704,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsStepperIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/suggestInput/': {
+      id: '/components/suggestInput/'
+      path: '/suggestInput'
+      fullPath: '/components/suggestInput'
+      preLoaderRoute: typeof ComponentsSuggestInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/t/': {
       id: '/components/t/'
       path: '/t'
@@ -6996,6 +7087,11 @@ interface ComponentsRouteChildren {
   ComponentsStepperStateRoute: typeof ComponentsStepperStateRoute
   ComponentsStepperVariantsRoute: typeof ComponentsStepperVariantsRoute
   ComponentsStepperVerticalRoute: typeof ComponentsStepperVerticalRoute
+  ComponentsSuggestInputFieldRoute: typeof ComponentsSuggestInputFieldRoute
+  ComponentsSuggestInputFilterRoute: typeof ComponentsSuggestInputFilterRoute
+  ComponentsSuggestInputIconRoute: typeof ComponentsSuggestInputIconRoute
+  ComponentsSuggestInputSizesRoute: typeof ComponentsSuggestInputSizesRoute
+  ComponentsSuggestInputUncontrolledRoute: typeof ComponentsSuggestInputUncontrolledRoute
   ComponentsTStylesListRoute: typeof ComponentsTStylesListRoute
   ComponentsTVariantsRoute: typeof ComponentsTVariantsRoute
   ComponentsTabMenuAddCardTabRoute: typeof ComponentsTabMenuAddCardTabRoute
@@ -7146,6 +7242,7 @@ interface ComponentsRouteChildren {
   ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
+  ComponentsSuggestInputIndexRoute: typeof ComponentsSuggestInputIndexRoute
   ComponentsTIndexRoute: typeof ComponentsTIndexRoute
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
@@ -7516,6 +7613,12 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsStepperStateRoute: ComponentsStepperStateRoute,
   ComponentsStepperVariantsRoute: ComponentsStepperVariantsRoute,
   ComponentsStepperVerticalRoute: ComponentsStepperVerticalRoute,
+  ComponentsSuggestInputFieldRoute: ComponentsSuggestInputFieldRoute,
+  ComponentsSuggestInputFilterRoute: ComponentsSuggestInputFilterRoute,
+  ComponentsSuggestInputIconRoute: ComponentsSuggestInputIconRoute,
+  ComponentsSuggestInputSizesRoute: ComponentsSuggestInputSizesRoute,
+  ComponentsSuggestInputUncontrolledRoute:
+    ComponentsSuggestInputUncontrolledRoute,
   ComponentsTStylesListRoute: ComponentsTStylesListRoute,
   ComponentsTVariantsRoute: ComponentsTVariantsRoute,
   ComponentsTabMenuAddCardTabRoute: ComponentsTabMenuAddCardTabRoute,
@@ -7681,6 +7784,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
+  ComponentsSuggestInputIndexRoute: ComponentsSuggestInputIndexRoute,
   ComponentsTIndexRoute: ComponentsTIndexRoute,
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
@@ -8010,6 +8114,11 @@ export interface FileRoutesByFullPath {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute
+  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute
+  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute
+  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute
+  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute
   '/components/t/stylesList': typeof ComponentsTStylesListRoute
   '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
@@ -8160,6 +8269,7 @@ export interface FileRoutesByFullPath {
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/suggestInput': typeof ComponentsSuggestInputIndexRoute
   '/components/t': typeof ComponentsTIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -8468,6 +8578,11 @@ export interface FileRoutesByTo {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute
+  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute
+  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute
+  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute
+  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute
   '/components/t/stylesList': typeof ComponentsTStylesListRoute
   '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
@@ -8618,6 +8733,7 @@ export interface FileRoutesByTo {
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
+  '/components/suggestInput': typeof ComponentsSuggestInputIndexRoute
   '/components/t': typeof ComponentsTIndexRoute
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
@@ -8927,6 +9043,11 @@ export interface FileRoutesById {
   '/components/stepper/state': typeof ComponentsStepperStateRoute
   '/components/stepper/variants': typeof ComponentsStepperVariantsRoute
   '/components/stepper/vertical': typeof ComponentsStepperVerticalRoute
+  '/components/suggestInput/field': typeof ComponentsSuggestInputFieldRoute
+  '/components/suggestInput/filter': typeof ComponentsSuggestInputFilterRoute
+  '/components/suggestInput/icon': typeof ComponentsSuggestInputIconRoute
+  '/components/suggestInput/sizes': typeof ComponentsSuggestInputSizesRoute
+  '/components/suggestInput/uncontrolled': typeof ComponentsSuggestInputUncontrolledRoute
   '/components/t/stylesList': typeof ComponentsTStylesListRoute
   '/components/t/variants': typeof ComponentsTVariantsRoute
   '/components/tabMenu/addCardTab': typeof ComponentsTabMenuAddCardTabRoute
@@ -9077,6 +9198,7 @@ export interface FileRoutesById {
   '/components/spinner/': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
+  '/components/suggestInput/': typeof ComponentsSuggestInputIndexRoute
   '/components/t/': typeof ComponentsTIndexRoute
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
@@ -9387,6 +9509,11 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/suggestInput/field'
+    | '/components/suggestInput/filter'
+    | '/components/suggestInput/icon'
+    | '/components/suggestInput/sizes'
+    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -9537,6 +9664,7 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
+    | '/components/suggestInput'
     | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
@@ -9844,6 +9972,11 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/suggestInput/field'
+    | '/components/suggestInput/filter'
+    | '/components/suggestInput/icon'
+    | '/components/suggestInput/sizes'
+    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -9994,6 +10127,7 @@ export interface FileRouteTypes {
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
+    | '/components/suggestInput'
     | '/components/t'
     | '/components/tabMenu'
     | '/components/table'
@@ -10301,6 +10435,11 @@ export interface FileRouteTypes {
     | '/components/stepper/state'
     | '/components/stepper/variants'
     | '/components/stepper/vertical'
+    | '/components/suggestInput/field'
+    | '/components/suggestInput/filter'
+    | '/components/suggestInput/icon'
+    | '/components/suggestInput/sizes'
+    | '/components/suggestInput/uncontrolled'
     | '/components/t/stylesList'
     | '/components/t/variants'
     | '/components/tabMenu/addCardTab'
@@ -10451,6 +10590,7 @@ export interface FileRouteTypes {
     | '/components/spinner/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
+    | '/components/suggestInput/'
     | '/components/t/'
     | '/components/tabMenu/'
     | '/components/table/'
@@ -10785,6 +10925,11 @@ export const routeTree = rootRoute
         "/components/stepper/state",
         "/components/stepper/variants",
         "/components/stepper/vertical",
+        "/components/suggestInput/field",
+        "/components/suggestInput/filter",
+        "/components/suggestInput/icon",
+        "/components/suggestInput/sizes",
+        "/components/suggestInput/uncontrolled",
         "/components/t/stylesList",
         "/components/t/variants",
         "/components/tabMenu/addCardTab",
@@ -10935,6 +11080,7 @@ export const routeTree = rootRoute
         "/components/spinner/",
         "/components/statusIndicator/",
         "/components/stepper/",
+        "/components/suggestInput/",
         "/components/t/",
         "/components/tabMenu/",
         "/components/table/",
@@ -12118,6 +12264,26 @@ export const routeTree = rootRoute
       "filePath": "components/stepper/vertical.tsx",
       "parent": "/components"
     },
+    "/components/suggestInput/field": {
+      "filePath": "components/suggestInput/field.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/filter": {
+      "filePath": "components/suggestInput/filter.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/icon": {
+      "filePath": "components/suggestInput/icon.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/sizes": {
+      "filePath": "components/suggestInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/uncontrolled": {
+      "filePath": "components/suggestInput/uncontrolled.tsx",
+      "parent": "/components"
+    },
     "/components/t/stylesList": {
       "filePath": "components/t/stylesList.tsx",
       "parent": "/components"
@@ -12716,6 +12882,10 @@ export const routeTree = rootRoute
     },
     "/components/stepper/": {
       "filePath": "components/stepper/index.tsx",
+      "parent": "/components"
+    },
+    "/components/suggestInput/": {
+      "filePath": "components/suggestInput/index.tsx",
       "parent": "/components"
     },
     "/components/t/": {
