@@ -942,7 +942,7 @@
       ]
     },
     {
-       "name": "TextInput",
+      "name": "TextInput",
       "path": "/components/textInput",
       "routes": [
         { "name": "Базовый пример", "path": "/components/textInput" },
@@ -955,7 +955,7 @@
       ]
     },
     {
-      "name": "SliderRangeInput",
+      "name": "SliderRange",
       "path": "/components/sliderRangeInput",
       "routes": [
         { "name": "Базовый пример", "path": "/components/sliderRangeInput" },

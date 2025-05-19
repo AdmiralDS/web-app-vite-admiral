@@ -18,22 +18,17 @@ export const SliderRangeInputBasic = () => {
               Поле ввода с двойным слайдером позволяет выбирать диапазон внутри обозначенного диапазона значений. Так же
               возможен ввод вручную.
             </PStyled>
-            <PStyled>
-              В диапозон может быть добавлено любое значение: рубли, доллары, деревья, дни и тп.
-            </PStyled>
+            <PStyled>В диапозон может быть добавлено любое значение: рубли, доллары, деревья, дни и тп.</PStyled>
           </>
         }
       >
-        <SliderRange
-          defaultValue={['1', '5']}
-          onChange={handleChange}
-        />
+        <SliderRange defaultValue={['1', '5']} onChange={handleChange} />
       </ExampleSection>
       <ExampleSection
         text={
           <>
             <PStyled>
-              Для того, чтобы добавть лэйбл или дополнительный текст, используйте компонент SliderRangeField
+              Для того, чтобы добавить лэйбл или дополнительный текст, используйте компонент SliderRangeField
             </PStyled>
           </>
         }

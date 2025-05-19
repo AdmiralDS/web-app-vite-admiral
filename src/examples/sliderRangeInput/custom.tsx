@@ -14,10 +14,6 @@ export const SliderRangeInputCustom = () => {
       <ExampleSection text="Пример изменения настроек (suffix, prefix, placeholder).">
         <SliderRange
           onChange={handleChange}
-          /* onChange={(
-            value: [{ str: string; num: number }, { str: string; num: number }],
-            event: React.ChangeEvent<HTMLInputElement>,
-          ) => console.log(value, event)} */
           minValue={10}
           maxValue={100}
           prefix={['From', 'To']}
