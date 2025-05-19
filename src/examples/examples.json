@@ -942,7 +942,7 @@
       ]
     },
     {
-       "name": "TextInput",
+      "name": "TextInput",
       "path": "/components/textInput",
       "routes": [
         { "name": "Базовый пример", "path": "/components/textInput" },
@@ -952,6 +952,18 @@
         { "name": "Варианты использования", "path": "/components/textInput/variants" },
         { "name": "С иконками", "path": "/components/textInput/withIcon" },
         { "name": "Контроллируемый инпут", "path": "/components/textInput/controlled" }
+      ]
+    },
+    {
+      "name": "SliderRange",
+      "path": "/components/sliderRangeInput",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/sliderRangeInput" },
+        { "name": "Размеры", "path": "/components/sliderRangeInput/sizes" },
+        { "name": "Состояния", "path": "/components/sliderRangeInput/states" },
+        { "name": "Варианты использования", "path": "/components/sliderRangeInput/variants" },
+        { "name": "Кастомизация", "path": "/components/sliderRangeInput/custom" },
+        { "name": "Контроллируемый инпут", "path": "/components/sliderRangeInput/controlled" }
       ]
     }
   ]

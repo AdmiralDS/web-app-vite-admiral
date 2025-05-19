@@ -35,6 +35,7 @@ import { Route as ComponentsSuggestInputIndexImport } from './routes/components/
 import { Route as ComponentsStepperIndexImport } from './routes/components/stepper/index'
 import { Route as ComponentsStatusIndicatorIndexImport } from './routes/components/statusIndicator/index'
 import { Route as ComponentsSpinnerIndexImport } from './routes/components/spinner/index'
+import { Route as ComponentsSliderRangeInputIndexImport } from './routes/components/sliderRangeInput/index'
 import { Route as ComponentsSliderInputIndexImport } from './routes/components/sliderInput/index'
 import { Route as ComponentsSliderIndexImport } from './routes/components/slider/index'
 import { Route as ComponentsSkeletonIndexImport } from './routes/components/skeleton/index'
@@ -204,6 +205,11 @@ import { Route as ComponentsStatusIndicatorSizesImport } from './routes/componen
 import { Route as ComponentsSpinnerWithOtherComponentsImport } from './routes/components/spinner/withOtherComponents'
 import { Route as ComponentsSpinnerVariantsImport } from './routes/components/spinner/variants'
 import { Route as ComponentsSpinnerSizesImport } from './routes/components/spinner/sizes'
+import { Route as ComponentsSliderRangeInputVariantsImport } from './routes/components/sliderRangeInput/variants'
+import { Route as ComponentsSliderRangeInputStatesImport } from './routes/components/sliderRangeInput/states'
+import { Route as ComponentsSliderRangeInputSizesImport } from './routes/components/sliderRangeInput/sizes'
+import { Route as ComponentsSliderRangeInputCustomImport } from './routes/components/sliderRangeInput/custom'
+import { Route as ComponentsSliderRangeInputControlledImport } from './routes/components/sliderRangeInput/controlled'
 import { Route as ComponentsSliderInputVariantsImport } from './routes/components/sliderInput/variants'
 import { Route as ComponentsSliderInputStatesImport } from './routes/components/sliderInput/states'
 import { Route as ComponentsSliderInputSizesImport } from './routes/components/sliderInput/sizes'
@@ -626,6 +632,13 @@ const ComponentsSpinnerIndexRoute = ComponentsSpinnerIndexImport.update({
   path: '/spinner/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsSliderRangeInputIndexRoute =
+  ComponentsSliderRangeInputIndexImport.update({
+    id: '/sliderRangeInput/',
+    path: '/sliderRangeInput/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSliderInputIndexRoute = ComponentsSliderInputIndexImport.update(
   {
@@ -1735,6 +1748,41 @@ const ComponentsSpinnerSizesRoute = ComponentsSpinnerSizesImport.update({
   path: '/spinner/sizes',
   getParentRoute: () => ComponentsRoute,
 } as any)
+
+const ComponentsSliderRangeInputVariantsRoute =
+  ComponentsSliderRangeInputVariantsImport.update({
+    id: '/sliderRangeInput/variants',
+    path: '/sliderRangeInput/variants',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSliderRangeInputStatesRoute =
+  ComponentsSliderRangeInputStatesImport.update({
+    id: '/sliderRangeInput/states',
+    path: '/sliderRangeInput/states',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSliderRangeInputSizesRoute =
+  ComponentsSliderRangeInputSizesImport.update({
+    id: '/sliderRangeInput/sizes',
+    path: '/sliderRangeInput/sizes',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSliderRangeInputCustomRoute =
+  ComponentsSliderRangeInputCustomImport.update({
+    id: '/sliderRangeInput/custom',
+    path: '/sliderRangeInput/custom',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsSliderRangeInputControlledRoute =
+  ComponentsSliderRangeInputControlledImport.update({
+    id: '/sliderRangeInput/controlled',
+    path: '/sliderRangeInput/controlled',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 
 const ComponentsSliderInputVariantsRoute =
   ComponentsSliderInputVariantsImport.update({
@@ -5563,6 +5611,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSliderInputVariantsImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/sliderRangeInput/controlled': {
+      id: '/components/sliderRangeInput/controlled'
+      path: '/sliderRangeInput/controlled'
+      fullPath: '/components/sliderRangeInput/controlled'
+      preLoaderRoute: typeof ComponentsSliderRangeInputControlledImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/sliderRangeInput/custom': {
+      id: '/components/sliderRangeInput/custom'
+      path: '/sliderRangeInput/custom'
+      fullPath: '/components/sliderRangeInput/custom'
+      preLoaderRoute: typeof ComponentsSliderRangeInputCustomImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/sliderRangeInput/sizes': {
+      id: '/components/sliderRangeInput/sizes'
+      path: '/sliderRangeInput/sizes'
+      fullPath: '/components/sliderRangeInput/sizes'
+      preLoaderRoute: typeof ComponentsSliderRangeInputSizesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/sliderRangeInput/states': {
+      id: '/components/sliderRangeInput/states'
+      path: '/sliderRangeInput/states'
+      fullPath: '/components/sliderRangeInput/states'
+      preLoaderRoute: typeof ComponentsSliderRangeInputStatesImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/sliderRangeInput/variants': {
+      id: '/components/sliderRangeInput/variants'
+      path: '/sliderRangeInput/variants'
+      fullPath: '/components/sliderRangeInput/variants'
+      preLoaderRoute: typeof ComponentsSliderRangeInputVariantsImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/sizes': {
       id: '/components/spinner/sizes'
       path: '/spinner/sizes'
@@ -6746,6 +6829,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsSliderInputIndexImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/sliderRangeInput/': {
+      id: '/components/sliderRangeInput/'
+      path: '/sliderRangeInput'
+      fullPath: '/components/sliderRangeInput'
+      preLoaderRoute: typeof ComponentsSliderRangeInputIndexImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/spinner/': {
       id: '/components/spinner/'
       path: '/spinner'
@@ -7144,6 +7234,11 @@ interface ComponentsRouteChildren {
   ComponentsSliderInputSizesRoute: typeof ComponentsSliderInputSizesRoute
   ComponentsSliderInputStatesRoute: typeof ComponentsSliderInputStatesRoute
   ComponentsSliderInputVariantsRoute: typeof ComponentsSliderInputVariantsRoute
+  ComponentsSliderRangeInputControlledRoute: typeof ComponentsSliderRangeInputControlledRoute
+  ComponentsSliderRangeInputCustomRoute: typeof ComponentsSliderRangeInputCustomRoute
+  ComponentsSliderRangeInputSizesRoute: typeof ComponentsSliderRangeInputSizesRoute
+  ComponentsSliderRangeInputStatesRoute: typeof ComponentsSliderRangeInputStatesRoute
+  ComponentsSliderRangeInputVariantsRoute: typeof ComponentsSliderRangeInputVariantsRoute
   ComponentsSpinnerSizesRoute: typeof ComponentsSpinnerSizesRoute
   ComponentsSpinnerVariantsRoute: typeof ComponentsSpinnerVariantsRoute
   ComponentsSpinnerWithOtherComponentsRoute: typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -7313,6 +7408,7 @@ interface ComponentsRouteChildren {
   ComponentsSkeletonIndexRoute: typeof ComponentsSkeletonIndexRoute
   ComponentsSliderIndexRoute: typeof ComponentsSliderIndexRoute
   ComponentsSliderInputIndexRoute: typeof ComponentsSliderInputIndexRoute
+  ComponentsSliderRangeInputIndexRoute: typeof ComponentsSliderRangeInputIndexRoute
   ComponentsSpinnerIndexRoute: typeof ComponentsSpinnerIndexRoute
   ComponentsStatusIndicatorIndexRoute: typeof ComponentsStatusIndicatorIndexRoute
   ComponentsStepperIndexRoute: typeof ComponentsStepperIndexRoute
@@ -7673,6 +7769,13 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSliderInputSizesRoute: ComponentsSliderInputSizesRoute,
   ComponentsSliderInputStatesRoute: ComponentsSliderInputStatesRoute,
   ComponentsSliderInputVariantsRoute: ComponentsSliderInputVariantsRoute,
+  ComponentsSliderRangeInputControlledRoute:
+    ComponentsSliderRangeInputControlledRoute,
+  ComponentsSliderRangeInputCustomRoute: ComponentsSliderRangeInputCustomRoute,
+  ComponentsSliderRangeInputSizesRoute: ComponentsSliderRangeInputSizesRoute,
+  ComponentsSliderRangeInputStatesRoute: ComponentsSliderRangeInputStatesRoute,
+  ComponentsSliderRangeInputVariantsRoute:
+    ComponentsSliderRangeInputVariantsRoute,
   ComponentsSpinnerSizesRoute: ComponentsSpinnerSizesRoute,
   ComponentsSpinnerVariantsRoute: ComponentsSpinnerVariantsRoute,
   ComponentsSpinnerWithOtherComponentsRoute:
@@ -7860,6 +7963,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsSkeletonIndexRoute: ComponentsSkeletonIndexRoute,
   ComponentsSliderIndexRoute: ComponentsSliderIndexRoute,
   ComponentsSliderInputIndexRoute: ComponentsSliderInputIndexRoute,
+  ComponentsSliderRangeInputIndexRoute: ComponentsSliderRangeInputIndexRoute,
   ComponentsSpinnerIndexRoute: ComponentsSpinnerIndexRoute,
   ComponentsStatusIndicatorIndexRoute: ComponentsStatusIndicatorIndexRoute,
   ComponentsStepperIndexRoute: ComponentsStepperIndexRoute,
@@ -8181,6 +8285,11 @@ export interface FileRoutesByFullPath {
   '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute
   '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute
   '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute
+  '/components/sliderRangeInput/controlled': typeof ComponentsSliderRangeInputControlledRoute
+  '/components/sliderRangeInput/custom': typeof ComponentsSliderRangeInputCustomRoute
+  '/components/sliderRangeInput/sizes': typeof ComponentsSliderRangeInputSizesRoute
+  '/components/sliderRangeInput/states': typeof ComponentsSliderRangeInputStatesRoute
+  '/components/sliderRangeInput/variants': typeof ComponentsSliderRangeInputVariantsRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -8350,6 +8459,7 @@ export interface FileRoutesByFullPath {
   '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/sliderInput': typeof ComponentsSliderInputIndexRoute
+  '/components/sliderRangeInput': typeof ComponentsSliderRangeInputIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
@@ -8650,6 +8760,11 @@ export interface FileRoutesByTo {
   '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute
   '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute
   '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute
+  '/components/sliderRangeInput/controlled': typeof ComponentsSliderRangeInputControlledRoute
+  '/components/sliderRangeInput/custom': typeof ComponentsSliderRangeInputCustomRoute
+  '/components/sliderRangeInput/sizes': typeof ComponentsSliderRangeInputSizesRoute
+  '/components/sliderRangeInput/states': typeof ComponentsSliderRangeInputStatesRoute
+  '/components/sliderRangeInput/variants': typeof ComponentsSliderRangeInputVariantsRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -8819,6 +8934,7 @@ export interface FileRoutesByTo {
   '/components/skeleton': typeof ComponentsSkeletonIndexRoute
   '/components/slider': typeof ComponentsSliderIndexRoute
   '/components/sliderInput': typeof ComponentsSliderInputIndexRoute
+  '/components/sliderRangeInput': typeof ComponentsSliderRangeInputIndexRoute
   '/components/spinner': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper': typeof ComponentsStepperIndexRoute
@@ -9120,6 +9236,11 @@ export interface FileRoutesById {
   '/components/sliderInput/sizes': typeof ComponentsSliderInputSizesRoute
   '/components/sliderInput/states': typeof ComponentsSliderInputStatesRoute
   '/components/sliderInput/variants': typeof ComponentsSliderInputVariantsRoute
+  '/components/sliderRangeInput/controlled': typeof ComponentsSliderRangeInputControlledRoute
+  '/components/sliderRangeInput/custom': typeof ComponentsSliderRangeInputCustomRoute
+  '/components/sliderRangeInput/sizes': typeof ComponentsSliderRangeInputSizesRoute
+  '/components/sliderRangeInput/states': typeof ComponentsSliderRangeInputStatesRoute
+  '/components/sliderRangeInput/variants': typeof ComponentsSliderRangeInputVariantsRoute
   '/components/spinner/sizes': typeof ComponentsSpinnerSizesRoute
   '/components/spinner/variants': typeof ComponentsSpinnerVariantsRoute
   '/components/spinner/withOtherComponents': typeof ComponentsSpinnerWithOtherComponentsRoute
@@ -9289,6 +9410,7 @@ export interface FileRoutesById {
   '/components/skeleton/': typeof ComponentsSkeletonIndexRoute
   '/components/slider/': typeof ComponentsSliderIndexRoute
   '/components/sliderInput/': typeof ComponentsSliderInputIndexRoute
+  '/components/sliderRangeInput/': typeof ComponentsSliderRangeInputIndexRoute
   '/components/spinner/': typeof ComponentsSpinnerIndexRoute
   '/components/statusIndicator/': typeof ComponentsStatusIndicatorIndexRoute
   '/components/stepper/': typeof ComponentsStepperIndexRoute
@@ -9591,6 +9713,11 @@ export interface FileRouteTypes {
     | '/components/sliderInput/sizes'
     | '/components/sliderInput/states'
     | '/components/sliderInput/variants'
+    | '/components/sliderRangeInput/controlled'
+    | '/components/sliderRangeInput/custom'
+    | '/components/sliderRangeInput/sizes'
+    | '/components/sliderRangeInput/states'
+    | '/components/sliderRangeInput/variants'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -9760,6 +9887,7 @@ export interface FileRouteTypes {
     | '/components/skeleton'
     | '/components/slider'
     | '/components/sliderInput'
+    | '/components/sliderRangeInput'
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
@@ -10059,6 +10187,11 @@ export interface FileRouteTypes {
     | '/components/sliderInput/sizes'
     | '/components/sliderInput/states'
     | '/components/sliderInput/variants'
+    | '/components/sliderRangeInput/controlled'
+    | '/components/sliderRangeInput/custom'
+    | '/components/sliderRangeInput/sizes'
+    | '/components/sliderRangeInput/states'
+    | '/components/sliderRangeInput/variants'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -10228,6 +10361,7 @@ export interface FileRouteTypes {
     | '/components/skeleton'
     | '/components/slider'
     | '/components/sliderInput'
+    | '/components/sliderRangeInput'
     | '/components/spinner'
     | '/components/statusIndicator'
     | '/components/stepper'
@@ -10527,6 +10661,11 @@ export interface FileRouteTypes {
     | '/components/sliderInput/sizes'
     | '/components/sliderInput/states'
     | '/components/sliderInput/variants'
+    | '/components/sliderRangeInput/controlled'
+    | '/components/sliderRangeInput/custom'
+    | '/components/sliderRangeInput/sizes'
+    | '/components/sliderRangeInput/states'
+    | '/components/sliderRangeInput/variants'
     | '/components/spinner/sizes'
     | '/components/spinner/variants'
     | '/components/spinner/withOtherComponents'
@@ -10696,6 +10835,7 @@ export interface FileRouteTypes {
     | '/components/skeleton/'
     | '/components/slider/'
     | '/components/sliderInput/'
+    | '/components/sliderRangeInput/'
     | '/components/spinner/'
     | '/components/statusIndicator/'
     | '/components/stepper/'
@@ -11022,6 +11162,11 @@ export const routeTree = rootRoute
         "/components/sliderInput/sizes",
         "/components/sliderInput/states",
         "/components/sliderInput/variants",
+        "/components/sliderRangeInput/controlled",
+        "/components/sliderRangeInput/custom",
+        "/components/sliderRangeInput/sizes",
+        "/components/sliderRangeInput/states",
+        "/components/sliderRangeInput/variants",
         "/components/spinner/sizes",
         "/components/spinner/variants",
         "/components/spinner/withOtherComponents",
@@ -11191,6 +11336,7 @@ export const routeTree = rootRoute
         "/components/skeleton/",
         "/components/slider/",
         "/components/sliderInput/",
+        "/components/sliderRangeInput/",
         "/components/spinner/",
         "/components/statusIndicator/",
         "/components/stepper/",
@@ -12327,6 +12473,26 @@ export const routeTree = rootRoute
       "filePath": "components/sliderInput/variants.tsx",
       "parent": "/components"
     },
+    "/components/sliderRangeInput/controlled": {
+      "filePath": "components/sliderRangeInput/controlled.tsx",
+      "parent": "/components"
+    },
+    "/components/sliderRangeInput/custom": {
+      "filePath": "components/sliderRangeInput/custom.tsx",
+      "parent": "/components"
+    },
+    "/components/sliderRangeInput/sizes": {
+      "filePath": "components/sliderRangeInput/sizes.tsx",
+      "parent": "/components"
+    },
+    "/components/sliderRangeInput/states": {
+      "filePath": "components/sliderRangeInput/states.tsx",
+      "parent": "/components"
+    },
+    "/components/sliderRangeInput/variants": {
+      "filePath": "components/sliderRangeInput/variants.tsx",
+      "parent": "/components"
+    },
     "/components/spinner/sizes": {
       "filePath": "components/spinner/sizes.tsx",
       "parent": "/components"
@@ -13001,6 +13167,10 @@ export const routeTree = rootRoute
     },
     "/components/sliderInput/": {
       "filePath": "components/sliderInput/index.tsx",
+      "parent": "/components"
+    },
+    "/components/sliderRangeInput/": {
+      "filePath": "components/sliderRangeInput/index.tsx",
       "parent": "/components"
     },
     "/components/spinner/": {
