@@ -1,56 +1,52 @@
-import { useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { LIGHT_THEME, DARK_THEME, LightThemeCssVars, DarkThemeCssVars } from '@admiral-ds/react-ui';
-import type { BorderRadiusType } from '@admiral-ds/react-ui';
-import { RouterProvider, createRouter } from '@tanstack/react-router';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
 import './App.css';
-import { SettingsContext } from './SettingsContext';
-import type { Theme, CSSPropsIn } from './SettingsContext';
-import { createBorderRadiusSwapper } from './createBorderRadiusSwapper';
-// Import the generated route tree
-import { routeTree } from './routeTree.gen';
+import { DropdownContainer, SelectField, Option, DateField, Flex } from '@admiral-ds/react-ui';
+import { useState } from 'react';
+import styled from 'styled-components';
 
-// Create a new router instance
-const router = createRouter({ routeTree });
+const DropdownWrapper = styled.div`
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.22);
+  padding: 24px;
+`;
 
-// Register the router instance for type safety
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router;
-  }
-  interface StaticDataRouteOption {
-    title?: ReactNode;
-    description?: ReactNode;
-  }
-}
+function Test() {
+  const [clickOusideCounter, setClickOutsideCounter] = useState(0);
+  const [targetElement, setTargetElement] = useState<HTMLDivElement | null>(null);
 
-// нужен для примера Select.Ассинхронный поиск
-const queryClient = new QueryClient();
-
-function App() {
-  const [theme, toggleTheme] = useState<Theme>('light');
-  const [CSSProps, setCSSProps] = useState<CSSPropsIn>('enable');
-  const [borderRadius, setBorderRadius] = useState<BorderRadiusType>('Border radius 4');
-
-  useEffect(() => {
-    document.body.classList.add(`admiral-theme-${theme === 'dark' ? 'dark' : 'light'}`);
-    document.body.classList.remove(`admiral-theme-${theme === 'dark' ? 'light' : 'dark'}`);
-  }, [theme]);
+  const onClickOutside = (e: Event) => {
+    console.log(e.target);
+    setClickOutsideCounter((prev) => ++prev);
+  };
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <SettingsContext.Provider value={{ theme, toggleTheme, CSSProps, setCSSProps, borderRadius, setBorderRadius }}>
-        <ThemeProvider theme={theme === 'light' ? LIGHT_THEME : DARK_THEME}>
-          {CSSProps === 'enable' ? theme === 'light' ? <LightThemeCssVars /> : <DarkThemeCssVars /> : null}
-          <ThemeProvider theme={createBorderRadiusSwapper(borderRadius, CSSProps)}>
-            <RouterProvider router={router} />
-          </ThemeProvider>
-        </ThemeProvider>
-      </SettingsContext.Provider>
-    </QueryClientProvider>
+    <>
+      <div style={{ marginBottom: '300px' }} ref={(targetElement) => setTargetElement(targetElement)}>
+        Outside click count: {clickOusideCounter}
+      </div>
+      <DropdownContainer alignSelf="flex-end" targetElement={targetElement} onClickOutside={onClickOutside}>
+        <DropdownWrapper>
+          <Flex.Container rowGap={16}>
+            <Flex.Row>
+              <DateField style={{ width: 300 }} />
+            </Flex.Row>
+            <Flex.Row>
+              <SelectField style={{ width: 300 }} dropContainerClassName="inner_drop">
+                <Option value="1">1</Option>
+              </SelectField>
+            </Flex.Row>
+          </Flex.Container>
+        </DropdownWrapper>
+      </DropdownContainer>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Test />
+      <Test />
+    </>
   );
 }
 
