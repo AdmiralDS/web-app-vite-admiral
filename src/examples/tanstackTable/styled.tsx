@@ -69,7 +69,6 @@ export const HeaderTr = styled.tr<{
 }>`
   box-sizing: border-box;
   min-width: fit-content;
-  ${headerStyle}
   background: ${(p) =>
     p.$greyHeader
       ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
@@ -86,6 +85,7 @@ export const HeaderCellTh = styled.th<{ $dimension: Dimension; $resizer?: boolea
   }
   text-align: start;
   border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+  ${headerStyle}
 `;
 
 export const Body = styled.tbody``;
@@ -117,4 +117,11 @@ export const RowLine = styled.div`
   width: 1px;
   height: 16px;
   background-color: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+`;
+
+export const Title = styled.div`
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
 `;
