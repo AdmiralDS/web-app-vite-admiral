@@ -48,7 +48,7 @@
         { "name": "Базовый HTML table с multi-level header", "path": "/components/table/multiLevelHeader" }
       ]
     },
-        {
+    {
       "name": "User Table (by A. Popovsky)",
       "path": "/components/userTable",
       "routes": [
@@ -61,6 +61,14 @@
         { "name": "Пример с hidden columns", "path": "/components/userTable/withHiddenColumnsTable" },
         { "name": "Пример с with no last column name", "path": "/components/userTable/withNoLastColumnNameTable" },
         { "name": "Пример с column group", "path": "/components/userTable/columnGroupTable" }
+      ]
+    },
+    {
+      "name": "Tanstack examples",
+      "path": "/components/tanstackTable",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/tanstackTable/baseExample" },
+        { "name": "C переполнением заголовков", "path": "/components/tanstackTable/withOverflowHeaders" }
       ]
     }
   ]
