@@ -11,7 +11,7 @@ import {
   CellTd,
   ThWrapper,
   RowLine,
-} from './styled';
+} from '#examples/-helpers/tanstackTable/styled';
 import styled from 'styled-components';
 
 type Person = {
@@ -119,7 +119,7 @@ export const BaseExample = () => {
         </HeaderWrapper>
         <Body>
           {table.getRowModel().rows.map((row) => (
-            <BodyTr>
+            <BodyTr key={row.id}>
               {row.getVisibleCells().map((cell) => (
                 <CellTd $dimension="m" key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

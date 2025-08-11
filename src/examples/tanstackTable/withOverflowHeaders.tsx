@@ -9,9 +9,9 @@ import {
   CellTd,
   ThWrapper,
   RowLine,
-} from './styled';
+} from '#examples/-helpers/tanstackTable/styled';
 import styled from 'styled-components';
-import { TitleText } from './TitleText';
+import { TitleText } from '#examples/-helpers/tanstackTable/TitleText';
 import { useState } from 'react';
 
 type Person = {
