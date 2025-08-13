@@ -11,7 +11,7 @@ import {
   CellTd,
   ThWrapper,
   RowLine,
-} from './styled';
+} from '#examples/-helpers/tanstackTable/styled';
 import styled from 'styled-components';
 
 type Person = {

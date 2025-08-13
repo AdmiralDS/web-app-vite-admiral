@@ -1,5 +1,9 @@
 import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import styled from 'styled-components';
+
+import { useState } from 'react';
 import {
+  HeaderCellTitle,
   Body,
   HeaderTr,
   HeaderCellTh,
@@ -9,11 +13,8 @@ import {
   CellTd,
   ThWrapper,
   RowLine,
-  HeaderCellTitle,
-} from './styled';
-import styled from 'styled-components';
-import { TitleText } from './TitleText';
-import { useState } from 'react';
+} from '#examples/-helpers/tanstackTable/styled';
+import { TitleText } from '#examples/-helpers/tanstackTable/TitleText';
 
 type Person = {
   firstName: string;
