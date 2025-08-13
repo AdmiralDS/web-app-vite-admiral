@@ -61,6 +61,7 @@ export const TableContainer = styled.table`
   width: 100%;
   background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
   overflow: auto;
+  table-layout: fixed;
   /* 
   &[data-borders='true'] {
     border: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
@@ -135,7 +136,6 @@ export const RowLine = styled.div`
 
 export const Title = styled.div<{ $lineClamp: number }>`
   text-overflow: ellipsis;
-  white-space: nowrap;
   width: 100%;
   overflow: hidden;
 
