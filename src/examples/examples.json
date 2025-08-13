@@ -68,7 +68,8 @@
       "path": "/components/tanstackTable",
       "routes": [
         { "name": "Базовый пример", "path": "/components/tanstackTable/baseExample" },
-        { "name": "C переполнением заголовков", "path": "/components/tanstackTable/withOverflowHeaders" }
+        { "name": "C переполнением заголовков", "path": "/components/tanstackTable/withOverflowHeaders" },
+        { "name": "C дополнительным текстом в заголовках", "path": "/components/tanstackTable/withExtraTextInHeader" }
       ]
     }
   ]
