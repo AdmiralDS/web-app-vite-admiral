@@ -9,6 +9,7 @@ import {
   CellTd,
   ThWrapper,
   RowLine,
+  HeaderCellTitle,
 } from './styled';
 import styled from 'styled-components';
 import { TitleText } from './TitleText';
@@ -66,11 +67,13 @@ const columns = [
     cell: (info) => info.getValue(),
     footer: (info) => info.column.id,
   }),
+
   columnHelper.accessor((row) => row.lastName, {
     id: 'lastName',
     cell: (info) => <i>{info.getValue()}</i>,
-    header: () => <span>Last Name1</span>,
+    header: () => <span>Last Name</span>,
     footer: (info) => info.column.id,
+    meta: { extraText: 'Description Last Name' },
   }),
   columnHelper.accessor('age', {
     header: () => 'Age LongLong Title',
@@ -79,19 +82,17 @@ const columns = [
   }),
   columnHelper.accessor('visits', {
     header: () => <span>Visits</span>,
-    footer: (info) => info.column.id,
   }),
   columnHelper.accessor('status', {
     header: 'Status',
-    footer: (info) => info.column.id,
+    meta: { extraText: 'Description Status' },
   }),
   columnHelper.accessor('progress', {
     header: 'Profile Progress',
-    footer: (info) => info.column.id,
   }),
 ];
 
-export const WithOverflowHeaders = () => {
+export const WithExtraTextInHeader = ({ headerLineClamp = 1, headerExtraLineClamp = 1 }) => {
   const [data, _setData] = useState(() => [...defaultData]);
 
   const table = useReactTable({
@@ -107,15 +108,28 @@ export const WithOverflowHeaders = () => {
           {table.getHeaderGroups().map((headerGroup) => (
             <HeaderTr $dimension="m" key={headerGroup.id}>
               {headerGroup.headers.map((header, id) => {
+                const extraText = header.column.columnDef.meta?.extraText;
+
                 return (
-                  <HeaderCellTh style={{ maxWidth: '100px' }} $dimension="m" key={header.id}>
+                  <HeaderCellTh $dimension="m" key={header.id}>
                     <ThWrapper $dimension="m">
-                      <TitleText
-                        lineClamp={1}
-                        title={
-                          header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())
-                        }
-                      />
+                      <HeaderCellTitle>
+                        <TitleText
+                          lineClamp={headerLineClamp}
+                          title={
+                            header.isPlaceholder
+                              ? null
+                              : flexRender(header.column.columnDef.header, header.getContext())
+                          }
+                        />
+                        {extraText && (
+                          <TitleText
+                            extraText
+                            lineClamp={headerExtraLineClamp}
+                            title={header.isPlaceholder ? null : flexRender(extraText, header.getContext())}
+                          />
+                        )}
+                      </HeaderCellTitle>
                       {headerGroup.headers.length !== id + 1 && <RowLine />}
                     </ThWrapper>
                   </HeaderCellTh>

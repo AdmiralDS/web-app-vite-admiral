@@ -40,10 +40,22 @@ export const rowStyle = css<{ $dimension: Dimension }>`
     $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 1 Short'] : typography['Body/Body 2 Short']}
 `;
 
-// устанавливаем  pointer-events: none для ResizerWrapper во время drag&drop столбцов, так как ResizerWrapper
-// располагается прямо между соседними столбцами, и это мешает правильно рассчитать то, над каким столбцом находится курсор
+export const singleLineTitle = css`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+export const multiLineTitle = css<{ $lineClamp: number }>`
+  display: -webkit-inline-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: ${({ $lineClamp }) => $lineClamp};
+  overflow: hidden;
+`;
+
 export const TableContainer = styled.table`
   border-collapse: collapse;
+
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -69,6 +81,7 @@ export const HeaderTr = styled.tr<{
 }>`
   box-sizing: border-box;
   min-width: fit-content;
+
   background: ${(p) =>
     p.$greyHeader
       ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
@@ -109,6 +122,7 @@ export const ThWrapper = styled.div<{ $dimension: Dimension }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   ${cellStyle};
 `;
 
@@ -119,9 +133,22 @@ export const RowLine = styled.div`
   background-color: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ $lineClamp: number }>`
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+  overflow: hidden;
+
+  ${({ $lineClamp }) => ($lineClamp === 1 ? singleLineTitle : multiLineTitle)}
+`;
+
+export const ExtraText = styled(Title)<{ $dimension: Dimension }>`
+  margin: 2px 0;
+  color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
+  ${({ $dimension }) =>
+    $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 2 Long'] : typography['Caption/Caption 1']}
+`;
+
+export const HeaderCellTitle = styled.div`
   overflow: hidden;
 `;

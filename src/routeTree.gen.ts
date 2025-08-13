@@ -29,6 +29,7 @@ import { Route as ComponentsUserTableColumnGroupTableImport } from './routes/com
 import { Route as ComponentsUserTableBenchmarkTableImport } from './routes/components/userTable/benchmarkTable'
 import { Route as ComponentsUserTableBaseTableImport } from './routes/components/userTable/baseTable'
 import { Route as ComponentsTanstackTableWithOverflowHeadersImport } from './routes/components/tanstackTable/withOverflowHeaders'
+import { Route as ComponentsTanstackTableWithExtraTextInHeaderImport } from './routes/components/tanstackTable/withExtraTextInHeader'
 import { Route as ComponentsTanstackTableBaseExampleImport } from './routes/components/tanstackTable/baseExample'
 import { Route as ComponentsTableZebraImport } from './routes/components/table/zebra'
 import { Route as ComponentsTableWidthImport } from './routes/components/table/width'
@@ -174,6 +175,13 @@ const ComponentsTanstackTableWithOverflowHeadersRoute =
   ComponentsTanstackTableWithOverflowHeadersImport.update({
     id: '/tanstackTable/withOverflowHeaders',
     path: '/tanstackTable/withOverflowHeaders',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTanstackTableWithExtraTextInHeaderRoute =
+  ComponentsTanstackTableWithExtraTextInHeaderImport.update({
+    id: '/tanstackTable/withExtraTextInHeader',
+    path: '/tanstackTable/withExtraTextInHeader',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -596,6 +604,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTanstackTableBaseExampleImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tanstackTable/withExtraTextInHeader': {
+      id: '/components/tanstackTable/withExtraTextInHeader'
+      path: '/tanstackTable/withExtraTextInHeader'
+      fullPath: '/components/tanstackTable/withExtraTextInHeader'
+      preLoaderRoute: typeof ComponentsTanstackTableWithExtraTextInHeaderImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tanstackTable/withOverflowHeaders': {
       id: '/components/tanstackTable/withOverflowHeaders'
       path: '/tanstackTable/withOverflowHeaders'
@@ -706,6 +721,7 @@ interface ComponentsRouteChildren {
   ComponentsTableWidthRoute: typeof ComponentsTableWidthRoute
   ComponentsTableZebraRoute: typeof ComponentsTableZebraRoute
   ComponentsTanstackTableBaseExampleRoute: typeof ComponentsTanstackTableBaseExampleRoute
+  ComponentsTanstackTableWithExtraTextInHeaderRoute: typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   ComponentsTanstackTableWithOverflowHeadersRoute: typeof ComponentsTanstackTableWithOverflowHeadersRoute
   ComponentsUserTableBaseTableRoute: typeof ComponentsUserTableBaseTableRoute
   ComponentsUserTableBenchmarkTableRoute: typeof ComponentsUserTableBenchmarkTableRoute
@@ -755,6 +771,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTableZebraRoute: ComponentsTableZebraRoute,
   ComponentsTanstackTableBaseExampleRoute:
     ComponentsTanstackTableBaseExampleRoute,
+  ComponentsTanstackTableWithExtraTextInHeaderRoute:
+    ComponentsTanstackTableWithExtraTextInHeaderRoute,
   ComponentsTanstackTableWithOverflowHeadersRoute:
     ComponentsTanstackTableWithOverflowHeadersRoute,
   ComponentsUserTableBaseTableRoute: ComponentsUserTableBaseTableRoute,
@@ -833,6 +851,7 @@ export interface FileRoutesByFullPath {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
   '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
@@ -881,6 +900,7 @@ export interface FileRoutesByTo {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
   '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
@@ -930,6 +950,7 @@ export interface FileRoutesById {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
   '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
@@ -980,6 +1001,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/withExtraTextInHeader'
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/userTable/baseTable'
     | '/components/userTable/benchmarkTable'
@@ -1027,6 +1049,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/withExtraTextInHeader'
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/userTable/baseTable'
     | '/components/userTable/benchmarkTable'
@@ -1074,6 +1097,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/withExtraTextInHeader'
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/userTable/baseTable'
     | '/components/userTable/benchmarkTable'
@@ -1148,6 +1172,7 @@ export const routeTree = rootRoute
         "/components/table/width",
         "/components/table/zebra",
         "/components/tanstackTable/baseExample",
+        "/components/tanstackTable/withExtraTextInHeader",
         "/components/tanstackTable/withOverflowHeaders",
         "/components/userTable/baseTable",
         "/components/userTable/benchmarkTable",
@@ -1292,6 +1317,10 @@ export const routeTree = rootRoute
     },
     "/components/tanstackTable/baseExample": {
       "filePath": "components/tanstackTable/baseExample.tsx",
+      "parent": "/components"
+    },
+    "/components/tanstackTable/withExtraTextInHeader": {
+      "filePath": "components/tanstackTable/withExtraTextInHeader.tsx",
       "parent": "/components"
     },
     "/components/tanstackTable/withOverflowHeaders": {
