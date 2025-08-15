@@ -10,7 +10,7 @@ import {
   BodyTr,
   CellTd,
   ThWrapper,
-  RowLine,
+  ColumnSeparator,
 } from '#examples/-helpers/tanstackTable/styled';
 import styled from 'styled-components';
 
@@ -108,9 +108,9 @@ export const BaseExample = () => {
             <HeaderTr $dimension="m" key={headerGroup.id}>
               {headerGroup.headers.map((header, id) => (
                 <HeaderCellTh $dimension="m" key={header.id}>
-                  <ThWrapper $dimension="m">
+                  <ThWrapper $dimension="m" $sortable={false} $sort={false}>
                     {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-                    {headerGroup.headers.length !== id + 1 && <RowLine />}
+                    {headerGroup.headers.length !== id + 1 && <ColumnSeparator />}
                   </ThWrapper>
                 </HeaderCellTh>
               ))}

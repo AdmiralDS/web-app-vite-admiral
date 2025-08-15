@@ -12,7 +12,7 @@ import {
   BodyTr,
   CellTd,
   ThWrapper,
-  RowLine,
+  ColumnSeparator,
 } from '#examples/-helpers/tanstackTable/styled';
 import { TitleText } from '#examples/-helpers/tanstackTable/TitleText';
 
@@ -112,7 +112,7 @@ export const WithLineClampInHeader = ({ headerLineClamp = 3, headerExtraLineClam
 
                 return (
                   <HeaderCellTh $dimension="m" key={header.id}>
-                    <ThWrapper $dimension="m">
+                    <ThWrapper $dimension="m" $sortable={false} $sort={false}>
                       <HeaderCellTitle>
                         <TitleText
                           lineClamp={headerLineClamp}
@@ -130,7 +130,7 @@ export const WithLineClampInHeader = ({ headerLineClamp = 3, headerExtraLineClam
                           />
                         )}
                       </HeaderCellTitle>
-                      {headerGroup.headers.length !== id + 1 && <RowLine />}
+                      {headerGroup.headers.length !== id + 1 && <ColumnSeparator />}
                     </ThWrapper>
                   </HeaderCellTh>
                 );

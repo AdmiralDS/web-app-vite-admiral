@@ -8,7 +8,7 @@ import {
   BodyTr,
   CellTd,
   ThWrapper,
-  RowLine,
+  ColumnSeparator,
 } from '#examples/-helpers/tanstackTable/styled';
 import styled from 'styled-components';
 import { TitleText } from '#examples/-helpers/tanstackTable/TitleText';
@@ -109,14 +109,14 @@ export const WithOverflowHeaders = () => {
               {headerGroup.headers.map((header, id) => {
                 return (
                   <HeaderCellTh style={{ maxWidth: '100px' }} $dimension="m" key={header.id}>
-                    <ThWrapper $dimension="m">
+                    <ThWrapper $dimension="m" $sortable={false} $sort={false}>
                       <TitleText
                         lineClamp={1}
                         title={
                           header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())
                         }
                       />
-                      {headerGroup.headers.length !== id + 1 && <RowLine />}
+                      {headerGroup.headers.length !== id + 1 && <ColumnSeparator />}
                     </ThWrapper>
                   </HeaderCellTh>
                 );
