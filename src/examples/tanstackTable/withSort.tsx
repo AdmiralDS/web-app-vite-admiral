@@ -162,8 +162,8 @@ export const WithSort = () => {
       </T>
       {tables.map((table, id) => {
         return (
-          <>
-            <T font="Body/Body 1 Long" as="div">
+          <div key={id} style={{ display: 'flex', flexDirection: 'column' }}>
+            <T font="Body/Body 1 Long" as="div" style={{ marginBottom: '20px' }}>
               {id === 0 ? 'Single sort.' : 'Milti sort.'}
             </T>
             <Wrapper>
@@ -218,7 +218,7 @@ export const WithSort = () => {
                 </Body>
               </TableContainer>
             </Wrapper>
-          </>
+          </div>
         );
       })}
     </>

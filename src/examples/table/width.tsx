@@ -14,6 +14,9 @@ const AmountCell = styled.div`
     }
   }
 `;
+const Separator = styled.div<{ $height?: number }>`
+  height: ${(p) => p.$height || 24}px;
+`;
 
 const numberFormatter = new Intl.NumberFormat();
 
@@ -235,7 +238,13 @@ export const TableWidth = () => {
           </>
         }
       >
+        <T font="Body/Body 2 Long">Пример с активированным ресайзом колонок</T>
+        <Separator />
         <Table rowList={rowList} columnList={cols} onColumnResize={handleResize} />
+        <Separator style={{ height: '40px' }} />
+        <T font="Body/Body 2 Long">Пример с отключенным ресайзом колонок</T>
+        <Separator />
+        <Table rowList={rowList} columnList={columnList} disableColumnResize />
       </ExampleSection>
     </>
   );
