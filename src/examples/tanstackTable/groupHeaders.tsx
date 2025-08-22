@@ -53,17 +53,18 @@ const columnHelper = createColumnHelper<Person>();
 const columns = [
   columnHelper.group({
     id: 'hello',
-    header: () => <span>Hello</span>,
+    header: 'Hello',
     footer: (props) => props.column.id,
     columns: [
       columnHelper.accessor('firstName', {
         cell: (info) => info.getValue(),
         footer: (props) => props.column.id,
+        header: 'firstName',
       }),
       columnHelper.accessor((row) => row.lastName, {
         id: 'lastName',
         cell: (info) => info.getValue(),
-        header: () => <span>Last Name</span>,
+        header: 'Last Name',
         footer: (props) => props.column.id,
       }),
     ],
@@ -73,14 +74,14 @@ const columns = [
     footer: (props) => props.column.id,
     columns: [
       columnHelper.accessor('age', {
-        header: () => 'Age',
+        header: 'Age',
         footer: (props) => props.column.id,
       }),
       columnHelper.group({
         header: 'More Info',
         columns: [
           columnHelper.accessor('visits', {
-            header: () => <span>Visits</span>,
+            header: 'Visits',
             footer: (props) => props.column.id,
           }),
           columnHelper.accessor('status', {

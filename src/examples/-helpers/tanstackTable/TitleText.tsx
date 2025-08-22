@@ -14,9 +14,8 @@ export const TitleText: React.FC<TitleTextProps> = ({ lineClamp, dimension, extr
   const textRef = useRef<HTMLDivElement>(null);
   const [overflow, setOverflow] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
-  // const titleNotCustom = typeof title === 'string' || typeof title === 'number';
-  // const withTooltip = overflow && tooltipVisible && titleNotCustom;
-  const withTooltip = overflow && tooltipVisible;
+  const titleNotCustom = typeof title === 'string' || typeof title === 'number';
+  const withTooltip = overflow && tooltipVisible && titleNotCustom;
 
   useLayoutEffect(() => {
     const element = textRef.current;

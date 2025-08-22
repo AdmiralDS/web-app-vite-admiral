@@ -75,7 +75,8 @@
           "path": "/components/tanstackTable/withLineClampInHeader"
         },
         { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" },
-        { "name": "C многоуровневыми заголовками (draft)", "path": "/components/tanstackTable/groupHeaders" }
+        { "name": "C многоуровневыми заголовками (draft)", "path": "/components/tanstackTable/groupHeaders" },
+        { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" }
       ]
     }
   ]

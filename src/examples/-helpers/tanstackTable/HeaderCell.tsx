@@ -20,6 +20,7 @@ interface Props {
   sortIndex: number;
   sortable: boolean;
   dimension: Dimension;
+  multiSortable: boolean;
 }
 
 export const HeaderCell = ({
@@ -32,6 +33,7 @@ export const HeaderCell = ({
   sortIndex,
   sortable,
   dimension,
+  multiSortable,
 }: Props) => {
   const iconSize = dimension === 's' || dimension === 'm' ? 16 : 20;
 
@@ -45,7 +47,7 @@ export const HeaderCell = ({
         {sortable && (
           <SortIconWrapper>
             <SortIcon $sort={sort} width={iconSize} height={iconSize} />
-            {sort && sortIndex && <SortOrder>{sortIndex}</SortOrder>}
+            {multiSortable && sort && sortIndex && <SortOrder>{sortIndex}</SortOrder>}
           </SortIconWrapper>
         )}
       </HeaderCellTitle>
