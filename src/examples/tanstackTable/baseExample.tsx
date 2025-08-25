@@ -1,18 +1,8 @@
 import * as React from 'react';
 
-import { createColumnHelper, flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import {
-  Body,
-  HeaderTr,
-  HeaderCellTh,
-  HeaderWrapper,
-  TableContainer,
-  BodyTr,
-  CellTd,
-  ThWrapper,
-  ColumnSeparator,
-} from '#examples/-helpers/tanstackTable/styled';
+import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import styled from 'styled-components';
+import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 
 type Person = {
   firstName: string;
@@ -98,51 +88,12 @@ export const BaseExample = () => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    enableSorting: false,
   });
 
   return (
     <Wrapper>
-      <TableContainer>
-        <HeaderWrapper>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <HeaderTr $dimension="m" key={headerGroup.id}>
-              {headerGroup.headers.map((header, id) => (
-                <HeaderCellTh $dimension="m" key={header.id}>
-                  <ThWrapper $dimension="m" $sortable={false} $sort={false}>
-                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-                    {headerGroup.headers.length !== id + 1 && <ColumnSeparator />}
-                  </ThWrapper>
-                </HeaderCellTh>
-              ))}
-            </HeaderTr>
-          ))}
-        </HeaderWrapper>
-        <Body>
-          {table.getRowModel().rows.map((row) => (
-            <BodyTr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <CellTd $dimension="m" key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </CellTd>
-              ))}
-            </BodyTr>
-          ))}
-        </Body>
-        {/* <tfoot>
-          {table.getFooterGroups().map((footerGroup) => (
-            <HeaderTr $dimension="m" key={footerGroup.id}>
-              {footerGroup.headers.map((header, id) => (
-                <HeaderCellTh $dimension="m" key={header.id}>
-                  <ThWrapper $dimension="m">
-                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.footer, header.getContext())}
-                    {footerGroup.headers.length !== id + 1 && <RowLine />}
-                  </ThWrapper>
-                </HeaderCellTh>
-              ))}
-            </HeaderTr>
-          ))}
-        </tfoot> */}
-      </TableContainer>
+      <TanstackTable table={table} />
     </Wrapper>
   );
 };

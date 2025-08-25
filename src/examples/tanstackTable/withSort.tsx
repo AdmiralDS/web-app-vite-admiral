@@ -1,25 +1,9 @@
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from '@tanstack/react-table';
+import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import styled from 'styled-components';
-
 import { useState } from 'react';
-import {
-  Body,
-  HeaderTr,
-  HeaderCellTh,
-  HeaderWrapper,
-  TableContainer,
-  BodyTr,
-  CellTd,
-  ThWrapper,
-} from '#examples/-helpers/tanstackTable/styled';
+
 import { Link, T } from '@admiral-ds/react-ui';
-import { HeaderCell } from '#examples/-helpers/tanstackTable/HeaderCell';
+import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 
 type Person = {
   firstName: string;
@@ -71,23 +55,24 @@ const columns = [
   columnHelper.accessor('firstName', {
     cell: (info) => info.getValue(),
     footer: (info) => info.column.id,
+    header: 'firstName',
     enableSorting: false,
   }),
 
   columnHelper.accessor((row) => row.lastName, {
     id: 'lastName',
     cell: (info) => <i>{info.getValue()}</i>,
-    header: () => 'Last Name Last Name Last Name Last Name',
+    header: 'Last Name Last Name Last Name Last Name',
     footer: (info) => info.column.id,
   }),
   columnHelper.accessor('age', {
-    header: () => 'Age LongLong Title',
+    header: 'Age LongLong Title',
     cell: (info) => info.renderValue(),
     footer: (info) => info.column.id,
     sortDescFirst: false,
   }),
   columnHelper.accessor('visits', {
-    header: () => <span>Visits</span>,
+    header: 'Visits',
     sortDescFirst: false,
   }),
   columnHelper.accessor('status', {
@@ -102,9 +87,6 @@ const columns = [
 ];
 
 export const WithSort = () => {
-  const headerLineClamp = 3;
-  const headerExtraLineClamp = 2;
-  const dimension = 'm';
   const [data, _setData] = useState(() => [...defaultData]);
 
   const tableSingleSort = useReactTable({
@@ -167,56 +149,7 @@ export const WithSort = () => {
               {id === 0 ? 'Single sort.' : 'Milti sort.'}
             </T>
             <Wrapper>
-              <TableContainer>
-                <HeaderWrapper>
-                  {table.getHeaderGroups().map((headerGroup) => (
-                    <HeaderTr $dimension="m" key={headerGroup.id}>
-                      {headerGroup.headers.map((header, id) => {
-                        const extraText = header.isPlaceholder
-                          ? null
-                          : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-                        const title = header.isPlaceholder
-                          ? null
-                          : flexRender(header.column.columnDef.header, header.getContext());
-
-                        return (
-                          <HeaderCellTh $dimension={dimension} key={header.id}>
-                            <ThWrapper
-                              $dimension={dimension}
-                              onClick={header.column.getToggleSortingHandler()}
-                              $sort={header.column.getIsSorted()}
-                              $sortable={header.column.getCanSort()}
-                            >
-                              <HeaderCell
-                                headerLineClamp={headerLineClamp}
-                                headerExtraLineClamp={headerExtraLineClamp}
-                                title={title as string}
-                                extraText={extraText as string}
-                                visibleColumnSeparator={headerGroup.headers.length !== id + 1}
-                                sort={header.column.getIsSorted()}
-                                sortable={header.column.getCanSort()}
-                                sortIndex={header.column.getSortIndex() + 1}
-                                dimension={dimension}
-                              />
-                            </ThWrapper>
-                          </HeaderCellTh>
-                        );
-                      })}
-                    </HeaderTr>
-                  ))}
-                </HeaderWrapper>
-                <Body>
-                  {table.getRowModel().rows.map((row) => (
-                    <BodyTr key={row.id}>
-                      {row.getVisibleCells().map((cell) => (
-                        <CellTd $dimension={dimension} key={cell.id}>
-                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                        </CellTd>
-                      ))}
-                    </BodyTr>
-                  ))}
-                </Body>
-              </TableContainer>
+              <TanstackTable table={table} headerLineClamp={3} headerExtraLineClamp={2} />
             </Wrapper>
           </div>
         );

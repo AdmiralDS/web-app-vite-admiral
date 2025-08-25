@@ -6,13 +6,13 @@ import type { SortDirection } from '@tanstack/react-table';
 
 export type Dimension = 'xl' | 'l' | 'm' | 's';
 
-export const borderStyle = css<{ $resizer?: boolean }>`
-  border-right: 1px solid transparent;
-  [data-borders='true'] & {
-    border-color: ${(p) =>
-      p.$resizer ? `var(--admiral-color-Neutral_Neutral20, ${p.theme.color['Neutral/Neutral 20']})` : 'transparent'};
-  }
-`;
+// export const borderStyle = css<{ $resizer?: boolean }>`
+//   border-right: 1px solid transparent;
+//   [data-borders='true'] & {
+//     border-color: ${(p) =>
+//       p.$resizer ? `var(--admiral-color-Neutral_Neutral20, ${p.theme.color['Neutral/Neutral 20']})` : 'transparent'};
+//   }
+// `;
 
 // padding-bottom меньше padding-top на 1px, т.к. 1px остается для border-bottom ячейки
 export const cellStyle = css<{ $dimension: Dimension }>`
@@ -56,6 +56,24 @@ export const multiLineTitle = css<{ $lineClamp: number }>`
   overflow: hidden;
 `;
 
+export const rowBackground = css<{
+  selected?: boolean;
+  disabled?: boolean;
+  // $grey?: boolean;
+  // $status?: TableRow['status'];
+  // $rowStatusMap?: TableProps['rowBackgroundColorByStatusMap'];
+}>`
+  ${({ theme, selected, disabled }) => {
+    if (disabled) {
+      return `var(--admiral-color-Neutral_Neutral00, ${theme.color['Neutral/Neutral 00']})`;
+    }
+    if (selected) {
+      return `var(--admiral-color-Primary_Primary20, ${theme.color['Primary/Primary 20']})`;
+    }
+    return `var(--admiral-color-Neutral_Neutral00, ${theme.color['Neutral/Neutral 00']})`;
+  }}
+`;
+
 export const TableContainer = styled.table`
   border-collapse: collapse;
 
@@ -95,7 +113,6 @@ export const HeaderTr = styled.tr<{
 export const HeaderCellTh = styled.th<{ $dimension: Dimension; $resizer?: boolean }>`
   position: relative;
   box-sizing: border-box;
-  ${borderStyle}
   cursor: default;
   &[data-draggable='true'] {
     cursor: pointer;
@@ -107,16 +124,17 @@ export const HeaderCellTh = styled.th<{ $dimension: Dimension; $resizer?: boolea
 
 export const Body = styled.tbody``;
 
-export const BodyTr = styled.tr`
+export const BodyTr = styled.tr<{ selected?: boolean; disabled?: boolean }>`
   position: relative;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
+  & > * {
+    background: ${rowBackground};
+  }
 `;
 
 export const CellTd = styled.td<{ $dimension: Dimension; $resizer?: boolean }>`
   box-sizing: border-box;
   ${cellStyle};
   overflow: hidden;
-  ${borderStyle}
   text-align: start;
   border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
   ${rowStyle}
