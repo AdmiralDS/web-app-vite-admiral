@@ -73,7 +73,8 @@
         {
           "name": "С headerLineClamp и headerExtraLineClamp",
           "path": "/components/tanstackTable/withLineClampInHeader"
-        }
+        },
+        { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" }
       ]
     }
   ]

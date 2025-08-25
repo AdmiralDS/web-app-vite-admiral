@@ -1,6 +1,9 @@
 import { typography } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 
+import ArrowUpOutline from '@admiral-ds/icons/build/system/ArrowUpOutline.svg?react';
+import type { SortDirection } from '@tanstack/react-table';
+
 export type Dimension = 'xl' | 'l' | 'm' | 's';
 
 export const borderStyle = css<{ $resizer?: boolean }>`
@@ -119,15 +122,40 @@ export const CellTd = styled.td<{ $dimension: Dimension; $resizer?: boolean }>`
   ${rowStyle}
 `;
 
-export const ThWrapper = styled.div<{ $dimension: Dimension }>`
+export const SortIcon = styled(ArrowUpOutline)<{ $sort: SortDirection | false }>`
+  display: flex;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
+  //todo проверить
+  transform: rotate(0deg);
+  margin: 2px 0;
+
+  & *[fill^='#'] {
+    fill: ${({ theme, $sort }) =>
+      $sort ? `var(--admiral-color-Primary_Primary60Main, ${theme.color['Primary/Primary 60 Main']})` : 'transparent'};
+  }
+  ${({ $sort }) => ($sort === 'desc' ? 'transform: rotate(180deg);' : '')}
+`;
+
+export const ThWrapper = styled.div<{ $dimension: Dimension; $sortable: boolean; $sort: SortDirection | false }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   ${cellStyle};
+
+  ${({ $sortable }) => $sortable && 'cursor: pointer;'}
+  &:hover {
+    ${SortIcon} *[fill^='#'] {
+      fill: ${({ theme, $sort }) =>
+        $sort
+          ? `var(--admiral-color-Primary_Primary70, ${theme.color['Primary/Primary 70']})`
+          : `var(--admiral-color-Neutral_Neutral50, ${theme.color['Neutral/Neutral 50']})`};
+    }
+  }
 `;
 
-export const RowLine = styled.div`
+export const ColumnSeparator = styled.div`
   margin-left: 12px;
   width: 1px;
   height: 16px;
@@ -151,4 +179,28 @@ export const ExtraText = styled(Title)<{ $dimension: Dimension }>`
 
 export const HeaderCellTitle = styled.div`
   overflow: hidden;
+  display: flex;
+`;
+
+export const TitleContent = styled.div`
+  overflow: hidden;
+`;
+
+export const SortIconWrapper = styled.div`
+  position: relative;
+`;
+
+export const SortOrder = styled.div`
+  position: absolute;
+  top: 1px;
+  right: 0;
+  font-family: var(--admiral-font-family, ${(p) => p.theme.fontFamily});
+  font-style: normal;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 9px;
+  font-feature-settings:
+    'tnum' on,
+    'lnum' on;
+  color: var(--admiral-color-Primary_Primary60Main, ${(p) => p.theme.color['Primary/Primary 60 Main']});
 `;
