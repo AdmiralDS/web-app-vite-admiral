@@ -64,12 +64,14 @@ export const RowSelection = () => {
             {...{
               checked: table.getIsAllRowsSelected(),
               indeterminate: table.getIsSomeRowsSelected(),
-              onChange: table.getToggleAllRowsSelectedHandler(),
+              onChange: table.getIsSomeRowsSelected()
+                ? () => setRowSelection({})
+                : table.getToggleAllRowsSelectedHandler(),
             }}
           />
         ),
         cell: ({ row }) => (
-          <div className="px-1">
+          <div>
             <CheckboxField
               dimension="s"
               {...{
