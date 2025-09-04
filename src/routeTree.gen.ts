@@ -28,10 +28,12 @@ import { Route as ComponentsUserTableLoremItemTableImport } from './routes/compo
 import { Route as ComponentsUserTableColumnGroupTableImport } from './routes/components/userTable/columnGroupTable'
 import { Route as ComponentsUserTableBenchmarkTableImport } from './routes/components/userTable/benchmarkTable'
 import { Route as ComponentsUserTableBaseTableImport } from './routes/components/userTable/baseTable'
+import { Route as ComponentsTanstackTableZebraExampleImport } from './routes/components/tanstackTable/zebraExample'
 import { Route as ComponentsTanstackTableWithSortImport } from './routes/components/tanstackTable/withSort'
 import { Route as ComponentsTanstackTableWithOverflowHeadersImport } from './routes/components/tanstackTable/withOverflowHeaders'
 import { Route as ComponentsTanstackTableWithLineClampInHeaderImport } from './routes/components/tanstackTable/withLineClampInHeader'
 import { Route as ComponentsTanstackTableWithExtraTextInHeaderImport } from './routes/components/tanstackTable/withExtraTextInHeader'
+import { Route as ComponentsTanstackTableRowStateImport } from './routes/components/tanstackTable/rowState'
 import { Route as ComponentsTanstackTableRowSelectionImport } from './routes/components/tanstackTable/rowSelection'
 import { Route as ComponentsTanstackTableGroupHeadersImport } from './routes/components/tanstackTable/groupHeaders'
 import { Route as ComponentsTanstackTableBaseExampleImport } from './routes/components/tanstackTable/baseExample'
@@ -175,6 +177,13 @@ const ComponentsUserTableBaseTableRoute =
     getParentRoute: () => ComponentsRoute,
   } as any)
 
+const ComponentsTanstackTableZebraExampleRoute =
+  ComponentsTanstackTableZebraExampleImport.update({
+    id: '/tanstackTable/zebraExample',
+    path: '/tanstackTable/zebraExample',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
 const ComponentsTanstackTableWithSortRoute =
   ComponentsTanstackTableWithSortImport.update({
     id: '/tanstackTable/withSort',
@@ -200,6 +209,13 @@ const ComponentsTanstackTableWithExtraTextInHeaderRoute =
   ComponentsTanstackTableWithExtraTextInHeaderImport.update({
     id: '/tanstackTable/withExtraTextInHeader',
     path: '/tanstackTable/withExtraTextInHeader',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTanstackTableRowStateRoute =
+  ComponentsTanstackTableRowStateImport.update({
+    id: '/tanstackTable/rowState',
+    path: '/tanstackTable/rowState',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -650,6 +666,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTanstackTableRowSelectionImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tanstackTable/rowState': {
+      id: '/components/tanstackTable/rowState'
+      path: '/tanstackTable/rowState'
+      fullPath: '/components/tanstackTable/rowState'
+      preLoaderRoute: typeof ComponentsTanstackTableRowStateImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tanstackTable/withExtraTextInHeader': {
       id: '/components/tanstackTable/withExtraTextInHeader'
       path: '/tanstackTable/withExtraTextInHeader'
@@ -676,6 +699,13 @@ declare module '@tanstack/react-router' {
       path: '/tanstackTable/withSort'
       fullPath: '/components/tanstackTable/withSort'
       preLoaderRoute: typeof ComponentsTanstackTableWithSortImport
+      parentRoute: typeof ComponentsImport
+    }
+    '/components/tanstackTable/zebraExample': {
+      id: '/components/tanstackTable/zebraExample'
+      path: '/tanstackTable/zebraExample'
+      fullPath: '/components/tanstackTable/zebraExample'
+      preLoaderRoute: typeof ComponentsTanstackTableZebraExampleImport
       parentRoute: typeof ComponentsImport
     }
     '/components/userTable/baseTable': {
@@ -783,10 +813,12 @@ interface ComponentsRouteChildren {
   ComponentsTanstackTableBaseExampleRoute: typeof ComponentsTanstackTableBaseExampleRoute
   ComponentsTanstackTableGroupHeadersRoute: typeof ComponentsTanstackTableGroupHeadersRoute
   ComponentsTanstackTableRowSelectionRoute: typeof ComponentsTanstackTableRowSelectionRoute
+  ComponentsTanstackTableRowStateRoute: typeof ComponentsTanstackTableRowStateRoute
   ComponentsTanstackTableWithExtraTextInHeaderRoute: typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   ComponentsTanstackTableWithLineClampInHeaderRoute: typeof ComponentsTanstackTableWithLineClampInHeaderRoute
   ComponentsTanstackTableWithOverflowHeadersRoute: typeof ComponentsTanstackTableWithOverflowHeadersRoute
   ComponentsTanstackTableWithSortRoute: typeof ComponentsTanstackTableWithSortRoute
+  ComponentsTanstackTableZebraExampleRoute: typeof ComponentsTanstackTableZebraExampleRoute
   ComponentsUserTableBaseTableRoute: typeof ComponentsUserTableBaseTableRoute
   ComponentsUserTableBenchmarkTableRoute: typeof ComponentsUserTableBenchmarkTableRoute
   ComponentsUserTableColumnGroupTableRoute: typeof ComponentsUserTableColumnGroupTableRoute
@@ -839,6 +871,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTanstackTableGroupHeadersRoute,
   ComponentsTanstackTableRowSelectionRoute:
     ComponentsTanstackTableRowSelectionRoute,
+  ComponentsTanstackTableRowStateRoute: ComponentsTanstackTableRowStateRoute,
   ComponentsTanstackTableWithExtraTextInHeaderRoute:
     ComponentsTanstackTableWithExtraTextInHeaderRoute,
   ComponentsTanstackTableWithLineClampInHeaderRoute:
@@ -846,6 +879,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTanstackTableWithOverflowHeadersRoute:
     ComponentsTanstackTableWithOverflowHeadersRoute,
   ComponentsTanstackTableWithSortRoute: ComponentsTanstackTableWithSortRoute,
+  ComponentsTanstackTableZebraExampleRoute:
+    ComponentsTanstackTableZebraExampleRoute,
   ComponentsUserTableBaseTableRoute: ComponentsUserTableBaseTableRoute,
   ComponentsUserTableBenchmarkTableRoute:
     ComponentsUserTableBenchmarkTableRoute,
@@ -924,10 +959,12 @@ export interface FileRoutesByFullPath {
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
+  '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
   '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   '/components/tanstackTable/withLineClampInHeader': typeof ComponentsTanstackTableWithLineClampInHeaderRoute
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
+  '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
   '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
   '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
   '/components/userTable/columnGroupTable': typeof ComponentsUserTableColumnGroupTableRoute
@@ -977,10 +1014,12 @@ export interface FileRoutesByTo {
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
+  '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
   '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   '/components/tanstackTable/withLineClampInHeader': typeof ComponentsTanstackTableWithLineClampInHeaderRoute
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
+  '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
   '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
   '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
   '/components/userTable/columnGroupTable': typeof ComponentsUserTableColumnGroupTableRoute
@@ -1031,10 +1070,12 @@ export interface FileRoutesById {
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
+  '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
   '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
   '/components/tanstackTable/withLineClampInHeader': typeof ComponentsTanstackTableWithLineClampInHeaderRoute
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
+  '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
   '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
   '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
   '/components/userTable/columnGroupTable': typeof ComponentsUserTableColumnGroupTableRoute
@@ -1086,10 +1127,12 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/rowSelection'
+    | '/components/tanstackTable/rowState'
     | '/components/tanstackTable/withExtraTextInHeader'
     | '/components/tanstackTable/withLineClampInHeader'
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/tanstackTable/withSort'
+    | '/components/tanstackTable/zebraExample'
     | '/components/userTable/baseTable'
     | '/components/userTable/benchmarkTable'
     | '/components/userTable/columnGroupTable'
@@ -1138,10 +1181,12 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/rowSelection'
+    | '/components/tanstackTable/rowState'
     | '/components/tanstackTable/withExtraTextInHeader'
     | '/components/tanstackTable/withLineClampInHeader'
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/tanstackTable/withSort'
+    | '/components/tanstackTable/zebraExample'
     | '/components/userTable/baseTable'
     | '/components/userTable/benchmarkTable'
     | '/components/userTable/columnGroupTable'
@@ -1190,10 +1235,12 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/rowSelection'
+    | '/components/tanstackTable/rowState'
     | '/components/tanstackTable/withExtraTextInHeader'
     | '/components/tanstackTable/withLineClampInHeader'
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/tanstackTable/withSort'
+    | '/components/tanstackTable/zebraExample'
     | '/components/userTable/baseTable'
     | '/components/userTable/benchmarkTable'
     | '/components/userTable/columnGroupTable'
@@ -1269,10 +1316,12 @@ export const routeTree = rootRoute
         "/components/tanstackTable/baseExample",
         "/components/tanstackTable/groupHeaders",
         "/components/tanstackTable/rowSelection",
+        "/components/tanstackTable/rowState",
         "/components/tanstackTable/withExtraTextInHeader",
         "/components/tanstackTable/withLineClampInHeader",
         "/components/tanstackTable/withOverflowHeaders",
         "/components/tanstackTable/withSort",
+        "/components/tanstackTable/zebraExample",
         "/components/userTable/baseTable",
         "/components/userTable/benchmarkTable",
         "/components/userTable/columnGroupTable",
@@ -1426,6 +1475,10 @@ export const routeTree = rootRoute
       "filePath": "components/tanstackTable/rowSelection.tsx",
       "parent": "/components"
     },
+    "/components/tanstackTable/rowState": {
+      "filePath": "components/tanstackTable/rowState.tsx",
+      "parent": "/components"
+    },
     "/components/tanstackTable/withExtraTextInHeader": {
       "filePath": "components/tanstackTable/withExtraTextInHeader.tsx",
       "parent": "/components"
@@ -1440,6 +1493,10 @@ export const routeTree = rootRoute
     },
     "/components/tanstackTable/withSort": {
       "filePath": "components/tanstackTable/withSort.tsx",
+      "parent": "/components"
+    },
+    "/components/tanstackTable/zebraExample": {
+      "filePath": "components/tanstackTable/zebraExample.tsx",
       "parent": "/components"
     },
     "/components/userTable/baseTable": {

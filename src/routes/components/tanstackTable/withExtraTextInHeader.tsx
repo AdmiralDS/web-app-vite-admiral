@@ -5,6 +5,6 @@ export const Route = createFileRoute('/components/tanstackTable/withExtraTextInH
   component: () => <WithExtraTextInHeader />,
   staticData: {
     title: 'TanstackTable.',
-    description: `Пример с дополнительным текстом в заголовках`,
+    description: `Пример с дополнительным текстом в заголовках.`,
   },
 });
