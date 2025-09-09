@@ -36,6 +36,7 @@ import { Route as ComponentsTanstackTableWithExtraTextInHeaderImport } from './r
 import { Route as ComponentsTanstackTableRowStateImport } from './routes/components/tanstackTable/rowState'
 import { Route as ComponentsTanstackTableRowSelectionImport } from './routes/components/tanstackTable/rowSelection'
 import { Route as ComponentsTanstackTableGroupHeadersImport } from './routes/components/tanstackTable/groupHeaders'
+import { Route as ComponentsTanstackTableExpandedRowImport } from './routes/components/tanstackTable/expandedRow'
 import { Route as ComponentsTanstackTableBaseExampleImport } from './routes/components/tanstackTable/baseExample'
 import { Route as ComponentsTableZebraImport } from './routes/components/table/zebra'
 import { Route as ComponentsTableWidthImport } from './routes/components/table/width'
@@ -230,6 +231,13 @@ const ComponentsTanstackTableGroupHeadersRoute =
   ComponentsTanstackTableGroupHeadersImport.update({
     id: '/tanstackTable/groupHeaders',
     path: '/tanstackTable/groupHeaders',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTanstackTableExpandedRowRoute =
+  ComponentsTanstackTableExpandedRowImport.update({
+    id: '/tanstackTable/expandedRow',
+    path: '/tanstackTable/expandedRow',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -652,6 +660,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTanstackTableBaseExampleImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tanstackTable/expandedRow': {
+      id: '/components/tanstackTable/expandedRow'
+      path: '/tanstackTable/expandedRow'
+      fullPath: '/components/tanstackTable/expandedRow'
+      preLoaderRoute: typeof ComponentsTanstackTableExpandedRowImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tanstackTable/groupHeaders': {
       id: '/components/tanstackTable/groupHeaders'
       path: '/tanstackTable/groupHeaders'
@@ -811,6 +826,7 @@ interface ComponentsRouteChildren {
   ComponentsTableWidthRoute: typeof ComponentsTableWidthRoute
   ComponentsTableZebraRoute: typeof ComponentsTableZebraRoute
   ComponentsTanstackTableBaseExampleRoute: typeof ComponentsTanstackTableBaseExampleRoute
+  ComponentsTanstackTableExpandedRowRoute: typeof ComponentsTanstackTableExpandedRowRoute
   ComponentsTanstackTableGroupHeadersRoute: typeof ComponentsTanstackTableGroupHeadersRoute
   ComponentsTanstackTableRowSelectionRoute: typeof ComponentsTanstackTableRowSelectionRoute
   ComponentsTanstackTableRowStateRoute: typeof ComponentsTanstackTableRowStateRoute
@@ -867,6 +883,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTableZebraRoute: ComponentsTableZebraRoute,
   ComponentsTanstackTableBaseExampleRoute:
     ComponentsTanstackTableBaseExampleRoute,
+  ComponentsTanstackTableExpandedRowRoute:
+    ComponentsTanstackTableExpandedRowRoute,
   ComponentsTanstackTableGroupHeadersRoute:
     ComponentsTanstackTableGroupHeadersRoute,
   ComponentsTanstackTableRowSelectionRoute:
@@ -957,6 +975,7 @@ export interface FileRoutesByFullPath {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
   '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
@@ -1012,6 +1031,7 @@ export interface FileRoutesByTo {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
   '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
@@ -1068,6 +1088,7 @@ export interface FileRoutesById {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
   '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
@@ -1125,6 +1146,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/rowSelection'
     | '/components/tanstackTable/rowState'
@@ -1179,6 +1201,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/rowSelection'
     | '/components/tanstackTable/rowState'
@@ -1233,6 +1256,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/rowSelection'
     | '/components/tanstackTable/rowState'
@@ -1314,6 +1338,7 @@ export const routeTree = rootRoute
         "/components/table/width",
         "/components/table/zebra",
         "/components/tanstackTable/baseExample",
+        "/components/tanstackTable/expandedRow",
         "/components/tanstackTable/groupHeaders",
         "/components/tanstackTable/rowSelection",
         "/components/tanstackTable/rowState",
@@ -1465,6 +1490,10 @@ export const routeTree = rootRoute
     },
     "/components/tanstackTable/baseExample": {
       "filePath": "components/tanstackTable/baseExample.tsx",
+      "parent": "/components"
+    },
+    "/components/tanstackTable/expandedRow": {
+      "filePath": "components/tanstackTable/expandedRow.tsx",
       "parent": "/components"
     },
     "/components/tanstackTable/groupHeaders": {

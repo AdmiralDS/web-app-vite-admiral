@@ -56,7 +56,7 @@ export const RowSelection = () => {
   const columns = useMemo<ColumnDef<Person>[]>(
     () => [
       {
-        id: 'select',
+        id: 'select', //required id='select'
         header: ({ table }) => (
           <CheckboxField
             dimension="s"

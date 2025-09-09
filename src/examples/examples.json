@@ -78,7 +78,8 @@
         { "name": "C многоуровневыми заголовками (draft)", "path": "/components/tanstackTable/groupHeaders" },
         { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" },
         { "name": "Состояния строк", "path": "/components/tanstackTable/rowState" },
-        { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" }
+        { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" },
+        { "name": "Пример c детализацией строки", "path": "/components/tanstackTable/expandedRow" }
       ]
     }
   ]

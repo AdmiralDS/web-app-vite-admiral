@@ -1,9 +1,11 @@
-import { typography, type Color } from '@admiral-ds/react-ui';
+import { IconPlacement, typography, type Color } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 
 import { SortIcon } from './HeaderCell/styled';
 import type { SortDirection } from '@tanstack/react-table';
 import type { Status } from './Table';
+
+import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
 
 export type Dimension = 'xl' | 'l' | 'm' | 's';
 
@@ -151,12 +153,14 @@ export const BodyTr = styled.tr<{
   }
 `;
 
-export const CellTd = styled.td<{ $dimension: Dimension; $resizer?: boolean }>`
+export const CellTd = styled.td<{ $dimension: Dimension; $resizer?: boolean; $expandedRow?: boolean }>`
   box-sizing: border-box;
   ${cellStyle};
   overflow: hidden;
   text-align: start;
-  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+  ${({ $expandedRow, theme }) =>
+    !$expandedRow &&
+    `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
 `;
 
 export const ThWrapper = styled.div<{ $dimension: Dimension; $sortable: boolean; $sort: SortDirection | false }>`
@@ -175,4 +179,41 @@ export const ThWrapper = styled.div<{ $dimension: Dimension; $sortable: boolean;
           : `var(--admiral-color-Neutral_Neutral50, ${theme.color['Neutral/Neutral 50']})`};
     }
   }
+`;
+
+export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(${(p) => (p.$isOpened ? 180 : 0)}deg);
+`;
+
+export const ExpandIconPlacement = styled(IconPlacement)`
+  margin: 0;
+  flex-shrink: 0;
+`;
+
+export const ExpandCell = styled.div<{ $dimension: Dimension }>`
+  width: ${({ $dimension }) => ($dimension === 's' || $dimension === 'm' ? 44 : 56)}px;
+  padding: ${({ $dimension }) => {
+    switch ($dimension) {
+      case 's':
+        return '6px 12px 5px 12px';
+      case 'l':
+        return '12px 16px 11px 16px';
+      case 'xl':
+        return '16px 16px 15px 16px';
+      case 'm':
+      default:
+        return '10px 12px 9px 12px';
+    }
+  }};
+
+  box-sizing: border-box;
+  ${cellStyle};
+  overflow: hidden;
+  text-align: start;
+`;
+
+export const RowCellContent = styled.div`
+  display: flex;
+  align-items: center;
 `;

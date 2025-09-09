@@ -7,3 +7,4 @@ export * from './groupHeaders';
 export * from './rowSelection';
 export * from './rowState';
 export * from './zebraExample';
+export * from './expandedRow';
