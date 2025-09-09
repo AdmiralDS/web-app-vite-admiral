@@ -1,4 +1,4 @@
-import { flexRender, type RowData, type Table } from '@tanstack/react-table';
+import { flexRender, type Row, type RowData, type Table } from '@tanstack/react-table';
 import {
   Body,
   BodyTr,
@@ -12,15 +12,17 @@ import {
 } from './styled';
 import { HeaderCell } from './HeaderCell';
 import type { Color } from '@admiral-ds/react-ui';
+import { Fragment } from 'react';
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
 
-export interface MetaRowProps {
+export interface MetaRowProps<T> {
   meta?: {
     hover?: boolean;
     status?: Status;
     disabled?: boolean;
     selected?: boolean;
+    expandedRowRender?: (props: { row: Row<T> }) => React.ReactElement;
   };
 }
 
@@ -58,9 +60,12 @@ export const TanstackTable = <T,>({
                   ? null
                   : flexRender(header.column.columnDef.header, header.getContext());
 
-                const visibleColumnSeparator = !header.isPlaceholder
+                const emptyCell = !header.isPlaceholder
                   ? headerGroup.headers.length !== id + 1
                   : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
+
+                const additionalEmptyCells = header.id === 'expander' || header.id === 'select';
+                const visibleColumnSeparator = emptyCell && !additionalEmptyCells;
 
                 const sortable = header.column.getCanSort() && !!title;
 
@@ -94,24 +99,32 @@ export const TanstackTable = <T,>({
       </HeaderWrapper>
       <Body>
         {table.getRowModel().rows.map((row, index) => {
-          const original = row.original as RowData & MetaRowProps;
+          const original = row.original as RowData & MetaRowProps<T>;
 
           return (
-            <BodyTr
-              key={row.id}
-              $dimension={dimension}
-              selected={row.getIsSelected() || original.meta?.selected}
-              disabled={original.meta?.disabled}
-              $hover={original.meta?.hover}
-              $grey={greyZebraRows && index % 2 === 1}
-              $status={original.meta?.status}
-            >
-              {row.getVisibleCells().map((cell) => (
-                <CellTd $dimension={dimension} key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </CellTd>
-              ))}
-            </BodyTr>
+            <Fragment key={row.id}>
+              <BodyTr
+                $dimension={dimension}
+                selected={row.getIsSelected() || original.meta?.selected}
+                disabled={original.meta?.disabled}
+                $hover={original.meta?.hover}
+                $grey={greyZebraRows && index % 2 === 1}
+                $status={original.meta?.status}
+              >
+                {row.getVisibleCells().map((cell) => (
+                  <CellTd $dimension={dimension} key={cell.id} $expandedRow={row.getIsExpanded()}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </CellTd>
+                ))}
+              </BodyTr>
+              {row.getIsExpanded() && (
+                <BodyTr $dimension={dimension}>
+                  <CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
+                    {original.meta?.expandedRowRender ? original.meta.expandedRowRender({ row }) : null}
+                  </CellTd>
+                </BodyTr>
+              )}
+            </Fragment>
           );
         })}
       </Body>

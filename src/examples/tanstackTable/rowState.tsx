@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 
-interface Person extends MetaRowProps {
+interface Person extends MetaRowProps<Person> {
   firstName: string;
   lastName: string;
   age: number;
