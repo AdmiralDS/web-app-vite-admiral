@@ -1,4 +1,4 @@
-import { flexRender, type Table } from '@tanstack/react-table';
+import { flexRender, type RowData, type Table } from '@tanstack/react-table';
 import {
   Body,
   BodyTr,
@@ -11,12 +11,26 @@ import {
   type Dimension,
 } from './styled';
 import { HeaderCell } from './HeaderCell';
+import type { Color } from '@admiral-ds/react-ui';
+
+export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
+
+export interface MetaRowProps {
+  meta?: {
+    hover?: boolean;
+    status?: Status;
+    disabled?: boolean;
+    selected?: boolean;
+  };
+}
 
 interface Props<T> {
   table: Table<T>;
   dimension?: Dimension;
   headerLineClamp?: number;
   headerExtraLineClamp?: number;
+  greyHeader?: boolean;
+  greyZebraRows?: boolean;
 }
 
 export const TanstackTable = <T,>({
@@ -24,6 +38,8 @@ export const TanstackTable = <T,>({
   dimension = 'm',
   headerLineClamp = 1,
   headerExtraLineClamp = 1,
+  greyHeader,
+  greyZebraRows,
 }: Props<T>) => {
   return (
     <TableContainer>
@@ -33,7 +49,7 @@ export const TanstackTable = <T,>({
             headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
 
           return (
-            <HeaderTr $dimension={dimension} key={headerGroup.id}>
+            <HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
               {headerGroup.headers.map((header, id) => {
                 const extraText = header.isPlaceholder
                   ? null
@@ -77,15 +93,27 @@ export const TanstackTable = <T,>({
         })}
       </HeaderWrapper>
       <Body>
-        {table.getRowModel().rows.map((row) => (
-          <BodyTr key={row.id} selected={row.getIsSelected()}>
-            {row.getVisibleCells().map((cell) => (
-              <CellTd $dimension={dimension} key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </CellTd>
-            ))}
-          </BodyTr>
-        ))}
+        {table.getRowModel().rows.map((row, index) => {
+          const original = row.original as RowData & MetaRowProps;
+
+          return (
+            <BodyTr
+              key={row.id}
+              $dimension={dimension}
+              selected={row.getIsSelected() || original.meta?.selected}
+              disabled={original.meta?.disabled}
+              $hover={original.meta?.hover}
+              $grey={greyZebraRows && index % 2 === 1}
+              $status={original.meta?.status}
+            >
+              {row.getVisibleCells().map((cell) => (
+                <CellTd $dimension={dimension} key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </CellTd>
+              ))}
+            </BodyTr>
+          );
+        })}
       </Body>
     </TableContainer>
   );

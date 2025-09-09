@@ -1,18 +1,11 @@
-import { typography } from '@admiral-ds/react-ui';
+import { typography, type Color } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 
-import ArrowUpOutline from '@admiral-ds/icons/build/system/ArrowUpOutline.svg?react';
+import { SortIcon } from './HeaderCell/styled';
 import type { SortDirection } from '@tanstack/react-table';
+import type { Status } from './Table';
 
 export type Dimension = 'xl' | 'l' | 'm' | 's';
-
-// export const borderStyle = css<{ $resizer?: boolean }>`
-//   border-right: 1px solid transparent;
-//   [data-borders='true'] & {
-//     border-color: ${(p) =>
-//       p.$resizer ? `var(--admiral-color-Neutral_Neutral20, ${p.theme.color['Neutral/Neutral 20']})` : 'transparent'};
-//   }
-// `;
 
 // padding-bottom меньше padding-top на 1px, т.к. 1px остается для border-bottom ячейки
 export const cellStyle = css<{ $dimension: Dimension }>`
@@ -43,50 +36,63 @@ export const rowStyle = css<{ $dimension: Dimension }>`
     $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 1 Short'] : typography['Body/Body 2 Short']}
 `;
 
-export const singleLineTitle = css`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-export const multiLineTitle = css<{ $lineClamp: number }>`
-  display: -webkit-inline-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: ${({ $lineClamp }) => $lineClamp};
-  overflow: hidden;
-`;
-
 export const rowBackground = css<{
   selected?: boolean;
   disabled?: boolean;
-  // $grey?: boolean;
-  // $status?: TableRow['status'];
-  // $rowStatusMap?: TableProps['rowBackgroundColorByStatusMap'];
+  $grey?: boolean;
+  $status?: Status;
 }>`
-  ${({ theme, selected, disabled }) => {
+  ${({ theme, selected, disabled, $grey, $status }) => {
     if (disabled) {
       return `var(--admiral-color-Neutral_Neutral00, ${theme.color['Neutral/Neutral 00']})`;
     }
     if (selected) {
       return `var(--admiral-color-Primary_Primary20, ${theme.color['Primary/Primary 20']})`;
     }
+    if ($status) {
+      if (theme.color.hasOwnProperty($status)) {
+        const cssVar = `--admiral-color-${$status?.replace('/', '_').replaceAll(' ', '')}`;
+
+        return `var(${cssVar}, ${theme.color[$status as keyof Color]})`;
+      } else if ($status === 'error') return `var(--admiral-color-Error_Error20, ${theme.color['Error/Error 20']})`;
+      else if ($status === 'success')
+        return `var(--admiral-color-Success_Success20, ${theme.color['Success/Success 20']})`;
+      else {
+        return $status;
+      }
+    }
+    if ($grey) {
+      return `var(--admiral-color-Neutral_Neutral05, ${theme.color['Neutral/Neutral 05']})`;
+    }
     return `var(--admiral-color-Neutral_Neutral00, ${theme.color['Neutral/Neutral 00']})`;
   }}
 `;
 
+export const disabledRow = css`
+  color: var(--admiral-color-Neutral_Neutral30, ${(p) => p.theme.color['Neutral/Neutral 30']});
+  & > * {
+    pointer-events: none;
+  }
+  //todo cursor не работает из-за того что у дочернего компонента(td) pointer-events: none;
+  cursor: not-allowed;
+`;
+
+const rowHoverMixin = css`
+  cursor: pointer;
+
+  & > * {
+    background: var(--admiral-color-Primary_Primary10, ${(p) => p.theme.color['Primary/Primary 10']});
+  }
+`;
+
 export const TableContainer = styled.table`
   border-collapse: collapse;
-
   position: relative;
   box-sizing: border-box;
   width: 100%;
   background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
   overflow: auto;
   table-layout: fixed;
-  /* 
-  &[data-borders='true'] {
-    border: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
-  } */
 `;
 
 export const HeaderWrapper = styled.thead`
@@ -103,7 +109,6 @@ export const HeaderTr = styled.tr<{
 }>`
   box-sizing: border-box;
   min-width: fit-content;
-
   background: ${(p) =>
     p.$greyHeader
       ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
@@ -114,20 +119,35 @@ export const HeaderCellTh = styled.th<{ $dimension: Dimension; $resizer?: boolea
   position: relative;
   box-sizing: border-box;
   cursor: default;
+  text-align: start;
+  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+
+  ${headerStyle}
+
   &[data-draggable='true'] {
     cursor: pointer;
   }
-  text-align: start;
-  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
-  ${headerStyle}
 `;
 
 export const Body = styled.tbody``;
 
-export const BodyTr = styled.tr<{ selected?: boolean; disabled?: boolean }>`
+export const BodyTr = styled.tr<{
+  selected?: boolean;
+  disabled?: boolean;
+  $hover?: boolean;
+  $grey?: boolean;
+  $status?: Status;
+  $dimension: Dimension;
+}>`
   position: relative;
   & > * {
     background: ${rowBackground};
+  }
+  ${rowStyle}
+  ${({ disabled }) => disabled && disabledRow}
+
+  &:hover {
+    ${({ $hover, disabled }) => $hover && !disabled && rowHoverMixin}
   }
 `;
 
@@ -137,22 +157,6 @@ export const CellTd = styled.td<{ $dimension: Dimension; $resizer?: boolean }>`
   overflow: hidden;
   text-align: start;
   border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
-  ${rowStyle}
-`;
-
-export const SortIcon = styled(ArrowUpOutline)<{ $sort: SortDirection | false }>`
-  display: flex;
-  flex-shrink: 0;
-  transition: transform 0.3s ease-in-out;
-  //todo проверить
-  transform: rotate(0deg);
-  margin: 2px 0;
-
-  & *[fill^='#'] {
-    fill: ${({ theme, $sort }) =>
-      $sort ? `var(--admiral-color-Primary_Primary60Main, ${theme.color['Primary/Primary 60 Main']})` : 'transparent'};
-  }
-  ${({ $sort }) => ($sort === 'desc' ? 'transform: rotate(180deg);' : '')}
 `;
 
 export const ThWrapper = styled.div<{ $dimension: Dimension; $sortable: boolean; $sort: SortDirection | false }>`
@@ -171,54 +175,4 @@ export const ThWrapper = styled.div<{ $dimension: Dimension; $sortable: boolean;
           : `var(--admiral-color-Neutral_Neutral50, ${theme.color['Neutral/Neutral 50']})`};
     }
   }
-`;
-
-export const ColumnSeparator = styled.div`
-  margin-left: 12px;
-  width: 1px;
-  height: 16px;
-  background-color: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
-`;
-
-export const Title = styled.div<{ $lineClamp: number }>`
-  text-overflow: ellipsis;
-  width: 100%;
-  overflow: hidden;
-
-  ${({ $lineClamp }) => ($lineClamp === 1 ? singleLineTitle : multiLineTitle)}
-`;
-
-export const ExtraText = styled(Title)<{ $dimension: Dimension }>`
-  margin: 2px 0;
-  color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
-  ${({ $dimension }) =>
-    $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 2 Long'] : typography['Caption/Caption 1']}
-`;
-
-export const HeaderCellTitle = styled.div`
-  overflow: hidden;
-  display: flex;
-`;
-
-export const TitleContent = styled.div`
-  overflow: hidden;
-`;
-
-export const SortIconWrapper = styled.div`
-  position: relative;
-`;
-
-export const SortOrder = styled.div`
-  position: absolute;
-  top: 1px;
-  right: 0;
-  font-family: var(--admiral-font-family, ${(p) => p.theme.fontFamily});
-  font-style: normal;
-  font-weight: 500;
-  font-size: 8px;
-  line-height: 9px;
-  font-feature-settings:
-    'tnum' on,
-    'lnum' on;
-  color: var(--admiral-color-Primary_Primary60Main, ${(p) => p.theme.color['Primary/Primary 60 Main']});
 `;

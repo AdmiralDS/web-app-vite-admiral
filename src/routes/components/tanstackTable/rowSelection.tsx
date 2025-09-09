@@ -5,6 +5,6 @@ export const Route = createFileRoute('/components/tanstackTable/rowSelection')({
   component: () => <RowSelection />,
   staticData: {
     title: 'TanstackTable.',
-    description: `Пример с выбором строк`,
+    description: `Пример с выбором строк.`,
   },
 });

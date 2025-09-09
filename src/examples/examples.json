@@ -76,7 +76,9 @@
         },
         { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" },
         { "name": "C многоуровневыми заголовками (draft)", "path": "/components/tanstackTable/groupHeaders" },
-        { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" }
+        { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" },
+        { "name": "Состояния строк", "path": "/components/tanstackTable/rowState" },
+        { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" }
       ]
     }
   ]

@@ -1,14 +1,7 @@
 import type { SortDirection } from '@tanstack/react-table';
-import {
-  HeaderCellTitle,
-  ColumnSeparator,
-  SortIcon,
-  TitleContent,
-  type Dimension,
-  SortIconWrapper,
-  SortOrder,
-} from './styled';
+import { HeaderCellTitle, ColumnSeparator, SortIcon, TitleContent, SortIconWrapper, SortOrder } from './styled';
 import { TitleText } from './TitleText';
+import type { Dimension } from '../styled';
 
 interface Props {
   headerLineClamp: number;
