@@ -79,7 +79,8 @@
         { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" },
         { "name": "Состояния строк", "path": "/components/tanstackTable/rowState" },
         { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" },
-        { "name": "Пример c детализацией строки", "path": "/components/tanstackTable/expandedRow" }
+        { "name": "Пример c детализацией строки", "path": "/components/tanstackTable/expandedRow" },
+        { "name": "Пример c фильтрацией", "path": "/components/tanstackTable/filterExample" }
       ]
     }
   ]

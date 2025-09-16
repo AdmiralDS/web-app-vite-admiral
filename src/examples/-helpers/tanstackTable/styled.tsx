@@ -1,8 +1,6 @@
 import { IconPlacement, typography, type Color } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
 
-import { SortIcon } from './HeaderCell/styled';
-import type { SortDirection } from '@tanstack/react-table';
 import type { Status } from './Table';
 
 import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
@@ -21,15 +19,9 @@ export const cellStyle = css<{ $dimension: Dimension }>`
         return '16px 16px 15px 16px';
       case 'm':
       default:
-        return '10px 0px 9px 12px';
+        return '10px 12px 9px 12px';
     }
   }};
-`;
-
-export const headerStyle = css<{ $dimension: Dimension }>`
-  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-  ${({ $dimension }) =>
-    $dimension === 'l' || $dimension === 'xl' ? typography['Subtitle/Subtitle 2'] : typography['Subtitle/Subtitle 3']}
 `;
 
 export const rowStyle = css<{ $dimension: Dimension }>`
@@ -87,6 +79,14 @@ const rowHoverMixin = css`
   }
 `;
 
+export const borderStyle = css<{ $resizer?: boolean }>`
+  border-right: 1px solid transparent;
+  [data-borders='true'] & {
+    border-color: ${(p) =>
+      p.$resizer ? `var(--admiral-color-Neutral_Neutral20, ${p.theme.color['Neutral/Neutral 20']})` : 'transparent'};
+  }
+`;
+
 export const TableContainer = styled.table`
   border-collapse: collapse;
   position: relative;
@@ -117,20 +117,6 @@ export const HeaderTr = styled.tr<{
       : `var(--admiral-color-Neutral_Neutral00, ${p.theme.color['Neutral/Neutral 00']})`};
 `;
 
-export const HeaderCellTh = styled.th<{ $dimension: Dimension; $resizer?: boolean }>`
-  position: relative;
-  box-sizing: border-box;
-  cursor: default;
-  text-align: start;
-  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
-
-  ${headerStyle}
-
-  &[data-draggable='true'] {
-    cursor: pointer;
-  }
-`;
-
 export const Body = styled.tbody``;
 
 export const BodyTr = styled.tr<{
@@ -153,32 +139,21 @@ export const BodyTr = styled.tr<{
   }
 `;
 
-export const CellTd = styled.td<{ $dimension: Dimension; $resizer?: boolean; $expandedRow?: boolean }>`
+export const CellTd = styled.td<{
+  $dimension: Dimension;
+  $resizer?: boolean;
+  $expandedRow?: boolean;
+  $cellAlign?: 'left' | 'right';
+}>`
   box-sizing: border-box;
   ${cellStyle};
   overflow: hidden;
-  text-align: start;
+  text-align: ${({ $cellAlign }) => ($cellAlign === 'right' ? 'right' : 'left')};
   ${({ $expandedRow, theme }) =>
     !$expandedRow &&
     `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
-`;
 
-export const ThWrapper = styled.div<{ $dimension: Dimension; $sortable: boolean; $sort: SortDirection | false }>`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  ${cellStyle};
-
-  ${({ $sortable }) => $sortable && 'cursor: pointer;'}
-  &:hover {
-    ${SortIcon} *[fill^='#'] {
-      fill: ${({ theme, $sort }) =>
-        $sort
-          ? `var(--admiral-color-Primary_Primary70, ${theme.color['Primary/Primary 70']})`
-          : `var(--admiral-color-Neutral_Neutral50, ${theme.color['Neutral/Neutral 50']})`};
-    }
-  }
+  ${borderStyle}
 `;
 
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
