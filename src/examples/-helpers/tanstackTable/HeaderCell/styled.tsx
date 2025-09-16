@@ -4,7 +4,7 @@ import { typography } from '@admiral-ds/react-ui';
 import ArrowUpOutline from '@admiral-ds/icons/build/system/ArrowUpOutline.svg?react';
 
 import type { SortDirection } from '@tanstack/react-table';
-import type { Dimension } from '../styled';
+import { cellStyle, type Dimension } from '../styled';
 
 export const singleLineTitle = css`
   overflow: hidden;
@@ -19,13 +19,13 @@ export const multiLineTitle = css<{ $lineClamp: number }>`
   overflow: hidden;
 `;
 
-export const HeaderCellTitle = styled.div`
-  overflow: hidden;
-  display: flex;
+export const headerStyle = css<{ $dimension: Dimension }>`
+  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
+  ${({ $dimension }) =>
+    $dimension === 'l' || $dimension === 'xl' ? typography['Subtitle/Subtitle 2'] : typography['Subtitle/Subtitle 3']}
 `;
 
 export const ColumnSeparator = styled.div`
-  margin-left: 12px;
   width: 1px;
   height: 16px;
   background-color: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
@@ -35,8 +35,6 @@ export const SortIcon = styled(ArrowUpOutline)<{ $sort: SortDirection | false }>
   display: flex;
   flex-shrink: 0;
   transition: transform 0.3s ease-in-out;
-  //todo проверить
-  /* transform: rotate(0deg); */
   margin: 2px 0;
 
   & *[fill^='#'] {
@@ -82,4 +80,59 @@ export const ExtraText = styled(Title)<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
   ${({ $dimension }) =>
     $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 2 Long'] : typography['Caption/Caption 1']}
+`;
+
+export const HeaderCellTh = styled.th<{ $dimension: Dimension; $resizer?: boolean }>`
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+  text-align: start;
+  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+
+  ${headerStyle}
+
+  &[data-draggable='true'] {
+    cursor: pointer;
+  }
+`;
+
+export const ThWrapper = styled.div<{ $dimension: Dimension; $cellAlign?: 'left' | 'right' }>`
+  display: flex;
+  width: 100%;
+
+  align-items: center;
+  ${cellStyle};
+
+  ${({ $cellAlign }) =>
+    $cellAlign === 'right' &&
+    css`
+      flex-direction: row-reverse;
+      & > ${HeaderCellTitle} {
+        text-align: right;
+        flex-direction: row-reverse;
+      }
+    `}
+`;
+
+export const ThContainer = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+`;
+
+export const HeaderCellTitle = styled.div<{ $sortable: boolean; $sort: SortDirection | false }>`
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+
+  ${({ $sortable }) => $sortable && 'cursor: pointer;'}
+  &:hover {
+    ${SortIcon} *[fill^='#'] {
+      fill: ${({ theme, $sort }) =>
+        $sort
+          ? `var(--admiral-color-Primary_Primary70, ${theme.color['Primary/Primary 70']})`
+          : `var(--admiral-color-Neutral_Neutral50, ${theme.color['Neutral/Neutral 50']})`};
+    }
+  }
 `;
