@@ -1,8 +1,8 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { useState } from 'react';
 
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
+import { ExampleSection } from '#examples/-helpers';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -70,14 +70,6 @@ const defaultData: Person[] = [
   },
 ];
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
-
 export const RowState = () => {
   const [data, _setData] = useState(() => [...defaultData]);
 
@@ -122,8 +114,8 @@ export const RowState = () => {
   });
 
   return (
-    <Wrapper>
+    <ExampleSection>
       <TanstackTable table={table} />
-    </Wrapper>
+    </ExampleSection>
   );
 };

@@ -1,8 +1,8 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { useState } from 'react';
 
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { ExampleSection } from '#examples/-helpers';
 
 interface Person {
   firstName: string;
@@ -64,14 +64,6 @@ const defaultData: Person[] = [
   },
 ];
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
-
 export const ZebraExample = () => {
   const [data, _setData] = useState(() => [...defaultData]);
 
@@ -116,8 +108,8 @@ export const ZebraExample = () => {
   });
 
   return (
-    <Wrapper>
+    <ExampleSection>
       <TanstackTable table={table} greyHeader greyZebraRows />
-    </Wrapper>
+    </ExampleSection>
   );
 };

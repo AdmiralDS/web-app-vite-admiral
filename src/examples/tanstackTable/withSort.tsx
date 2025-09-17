@@ -1,9 +1,9 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { useState } from 'react';
 
 import { Link, T } from '@admiral-ds/react-ui';
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { ExampleSection } from '#examples/-helpers';
 
 type Person = {
   firstName: string;
@@ -40,14 +40,6 @@ const defaultData: Person[] = [
     progress: 10,
   },
 ];
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
 
 const columnHelper = createColumnHelper<Person>();
 
@@ -148,9 +140,9 @@ export const WithSort = () => {
             <T font="Body/Body 1 Long" as="div" style={{ marginBottom: '20px' }}>
               {id === 0 ? 'Single sort.' : 'Milti sort.'}
             </T>
-            <Wrapper>
+            <ExampleSection>
               <TanstackTable table={table} headerLineClamp={3} headerExtraLineClamp={2} />
-            </Wrapper>
+            </ExampleSection>
           </div>
         );
       })}
