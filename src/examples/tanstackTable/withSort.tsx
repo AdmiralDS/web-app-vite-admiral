@@ -1,9 +1,10 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { useState } from 'react';
 
 import { Link, T } from '@admiral-ds/react-ui';
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { ExampleSection } from '#examples/-helpers';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
 
 type Person = {
   firstName: string;
@@ -41,47 +42,43 @@ const defaultData: Person[] = [
   },
 ];
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
-
 const columnHelper = createColumnHelper<Person>();
 
 const columns = [
   columnHelper.accessor('firstName', {
-    cell: (info) => info.getValue(),
-    footer: (info) => info.column.id,
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
     header: 'firstName',
     enableSorting: false,
   }),
 
   columnHelper.accessor((row) => row.lastName, {
     id: 'lastName',
-    cell: (info) => <i>{info.getValue()}</i>,
+    cell: (info) => (
+      <CellText>
+        <i>{info.getValue()}</i>
+      </CellText>
+    ),
     header: 'Last Name Last Name Last Name Last Name',
-    footer: (info) => info.column.id,
   }),
   columnHelper.accessor('age', {
     header: 'Age LongLong Title',
-    cell: (info) => info.renderValue(),
-    footer: (info) => info.column.id,
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
     sortDescFirst: false,
   }),
   columnHelper.accessor('visits', {
     header: 'Visits',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
     sortDescFirst: false,
   }),
   columnHelper.accessor('status', {
     header: 'Status',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
     enableSorting: false,
     meta: { extraText: 'Description Status Description Status Description Status' },
   }),
   columnHelper.accessor('progress', {
     header: 'Profile Progress',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
     sortDescFirst: false,
   }),
 ];
@@ -144,14 +141,14 @@ export const WithSort = () => {
       </T>
       {tables.map((table, id) => {
         return (
-          <div key={id} style={{ display: 'flex', flexDirection: 'column' }}>
-            <T font="Body/Body 1 Long" as="div" style={{ marginBottom: '20px' }}>
-              {id === 0 ? 'Single sort.' : 'Milti sort.'}
-            </T>
-            <Wrapper>
-              <TanstackTable table={table} headerLineClamp={3} headerExtraLineClamp={2} />
-            </Wrapper>
-          </div>
+          <ExampleSection key={id} header={id === 0 ? 'Single sort.' : 'Milti sort.'}>
+            <TanstackTable
+              table={table}
+              headerLineClamp={3}
+              headerExtraLineClamp={2}
+              gridTemplateColumns="100px 150px 150px 100px 150px 1fr"
+            />
+          </ExampleSection>
         );
       })}
     </>

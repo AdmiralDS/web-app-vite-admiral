@@ -1,8 +1,6 @@
 import { IconPlacement, typography, type Color } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
-
 import type { Status } from './Table';
-
 import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
 
 export type Dimension = 'xl' | 'l' | 'm' | 's';
@@ -71,7 +69,7 @@ export const disabledRow = css`
   cursor: not-allowed;
 `;
 
-const rowHoverMixin = css`
+export const rowHoverMixin = css`
   cursor: pointer;
 
   & > * {
@@ -87,38 +85,53 @@ export const borderStyle = css<{ $resizer?: boolean }>`
   }
 `;
 
-export const TableContainer = styled.table`
-  border-collapse: collapse;
+/** aka TableContainer in react-ui */
+export const Table = styled.table`
+  display: grid;
+  width: 100%;
   position: relative;
   box-sizing: border-box;
-  width: 100%;
   background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
   overflow: auto;
-  table-layout: fixed;
+
+  &[data-borders='true'] {
+    border: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+  }
 `;
 
-export const HeaderWrapper = styled.thead`
+/** aka HeaderWrapper in react-ui */
+export const Header = styled.thead`
+  display: grid;
+  width: 100%;
   box-sizing: border-box;
   position: sticky;
   top: 0;
   z-index: 6;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
 `;
 
+/** нужны ли?
+ * box-sizing: border-box; min-width: fit-content; */
 export const HeaderTr = styled.tr<{
   $dimension: Dimension;
   $greyHeader?: boolean;
 }>`
+  display: grid;
+  grid-template-columns: var(--columns-template);
+  justify-content: start;
   box-sizing: border-box;
   min-width: fit-content;
   background: ${(p) =>
     p.$greyHeader
       ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
       : `var(--admiral-color-Neutral_Neutral00, ${p.theme.color['Neutral/Neutral 00']})`};
+  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
 `;
 
-export const Body = styled.tbody``;
+export const Body = styled.tbody`
+  display: grid;
+`;
 
+/** aka Row + SimpleRow from react-ui */
 export const BodyTr = styled.tr<{
   selected?: boolean;
   disabled?: boolean;
@@ -126,8 +139,13 @@ export const BodyTr = styled.tr<{
   $grey?: boolean;
   $status?: Status;
   $dimension: Dimension;
+  $expandedRow?: boolean;
 }>`
   position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: var(--columns-template);
+  min-width: fit-content;
   & > * {
     background: ${rowBackground};
   }
@@ -137,23 +155,60 @@ export const BodyTr = styled.tr<{
   &:hover {
     ${({ $hover, disabled }) => $hover && !disabled && rowHoverMixin}
   }
-`;
 
-export const CellTd = styled.td<{
-  $dimension: Dimension;
-  $resizer?: boolean;
-  $expandedRow?: boolean;
-  $cellAlign?: 'left' | 'right';
-}>`
-  box-sizing: border-box;
-  ${cellStyle};
-  overflow: hidden;
-  text-align: ${({ $cellAlign }) => ($cellAlign === 'right' ? 'right' : 'left')};
   ${({ $expandedRow, theme }) =>
     !$expandedRow &&
     `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
 
+  min-height: ${({ $dimension }) => {
+    switch ($dimension) {
+      case 's':
+        return '32px';
+      case 'l':
+        return '48px';
+      case 'xl':
+        return '56px';
+      case 'm':
+      default:
+        return '40px';
+    }
+  }};
+`;
+
+/** Подумать про text-align */
+export const CellTd = styled.td<{
+  $dimension: Dimension;
+  $resizer?: boolean;
+  $cellAlign?: 'left' | 'right';
+}>`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+  text-align: ${({ $cellAlign }) => ($cellAlign === 'right' ? 'right' : 'left')};
   ${borderStyle}
+`;
+
+/** учтены 2px отступы по вертикали */
+export const CellText = styled.div<{ $dimension?: Dimension }>`
+  display: block;
+  width: 100%;
+  padding: ${({ $dimension }) => {
+    switch ($dimension) {
+      case 's':
+        return '8px 12px 7px 12px';
+      case 'l':
+        return '14px 16px 13px 16px';
+      case 'xl':
+        return '18px 16px 17px 16px';
+      case 'm':
+      default:
+        return '12px 12px 11px 12px';
+    }
+  }};
 `;
 
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`

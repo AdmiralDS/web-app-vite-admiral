@@ -1,18 +1,18 @@
 import { flexRender, type Header } from '@tanstack/react-table';
 import {
+  HeaderCell,
+  HeaderCellContent,
   HeaderCellTitle,
-  ColumnSeparator,
+  HeaderCellSpacer,
   SortIcon,
   TitleContent,
   SortIconWrapper,
   SortOrder,
-  ThWrapper,
-  HeaderCellTh,
-  ThContainer,
 } from './styled';
 import { TitleText } from './TitleText';
-import type { Dimension } from '../styled';
+import type { Dimension } from '../style';
 import { Filter } from '../Filter/Filter';
+import { RowWidthResizer } from '../RowWidthResizer';
 import { useState } from 'react';
 
 interface Props<T> {
@@ -24,7 +24,7 @@ interface Props<T> {
   isEmptyCell?: boolean;
 }
 
-export const HeaderCell = <T,>({
+export const CellTh = <T,>({
   headerLineClamp,
   headerExtraLineClamp,
   dimension,
@@ -46,36 +46,39 @@ export const HeaderCell = <T,>({
 
   const sortable = header.column.getCanSort() && !!title;
 
+  const defaultSpacer = dimension === 'l' || dimension === 'xl' ? '16px' : '12px';
+
   const iconSize = dimension === 's' || dimension === 'm' ? 16 : 20;
   const sortIndex = column.getSortIndex() + 1;
   const sort = column.getIsSorted();
 
   return (
-    <HeaderCellTh $dimension={dimension} key={header.id} colSpan={header.colSpan} ref={(node) => setHeaderRef(node)}>
-      <ThContainer>
-        <ThWrapper $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
-          <HeaderCellTitle
-            onClick={sortable ? header.column.getToggleSortingHandler() : () => {}}
-            $sort={header.column.getIsSorted()}
-            $sortable={sortable}
-          >
-            <TitleContent>
-              <TitleText lineClamp={headerLineClamp} title={title} />
-              {extraText && <TitleText extraText lineClamp={headerExtraLineClamp} title={title} />}
-            </TitleContent>
-            {sortable && (
-              <SortIconWrapper>
-                <SortIcon $sort={sort} width={iconSize} height={iconSize} />
-                {multiSortable && sort && sortIndex && <SortOrder>{sortIndex}</SortOrder>}
-              </SortIconWrapper>
-            )}
-          </HeaderCellTitle>
-          {column.getCanFilter() && column.columnDef.meta?.filter?.renderFilter && (
-            <Filter column={column} targetElement={headerRef} />
+    <HeaderCell $dimension={dimension} key={header.id} colSpan={header.colSpan} ref={(node) => setHeaderRef(node)}>
+      <HeaderCellContent $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
+        <HeaderCellTitle
+          onClick={sortable ? header.column.getToggleSortingHandler() : () => {}}
+          $sort={header.column.getIsSorted()}
+          $sortable={sortable}
+        >
+          <TitleContent $dimension={dimension} $sortable={sortable}>
+            <TitleText lineClamp={headerLineClamp} title={title} />
+            {extraText && <TitleText extraText lineClamp={headerExtraLineClamp} title={extraText} />}
+          </TitleContent>
+          {sortable && (
+            <SortIconWrapper>
+              <SortIcon $sort={sort} width={iconSize} height={iconSize} />
+              {multiSortable && sort && sortIndex && <SortOrder>{sortIndex}</SortOrder>}
+            </SortIconWrapper>
           )}
-        </ThWrapper>
-        {visibleColumnSeparator && <ColumnSeparator />}
-      </ThContainer>
-    </HeaderCellTh>
+        </HeaderCellTitle>
+        {column.getCanFilter() && column.columnDef.meta?.filter?.renderFilter && (
+          <>
+            <HeaderCellSpacer width={defaultSpacer} />
+            <Filter column={column} targetElement={headerRef} />
+          </>
+        )}
+      </HeaderCellContent>
+      {visibleColumnSeparator && <RowWidthResizer disabled dimension={dimension} />}
+    </HeaderCell>
   );
 };

@@ -4,20 +4,7 @@ import { typography } from '@admiral-ds/react-ui';
 import ArrowUpOutline from '@admiral-ds/icons/build/system/ArrowUpOutline.svg?react';
 
 import type { SortDirection } from '@tanstack/react-table';
-import { cellStyle, type Dimension } from '../styled';
-
-export const singleLineTitle = css`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-export const multiLineTitle = css<{ $lineClamp: number }>`
-  display: -webkit-inline-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: ${({ $lineClamp }) => $lineClamp};
-  overflow: hidden;
-`;
+import { cellStyle, borderStyle, type Dimension } from '../style';
 
 export const headerStyle = css<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
@@ -25,15 +12,10 @@ export const headerStyle = css<{ $dimension: Dimension }>`
     $dimension === 'l' || $dimension === 'xl' ? typography['Subtitle/Subtitle 2'] : typography['Subtitle/Subtitle 3']}
 `;
 
-export const ColumnSeparator = styled.div`
-  width: 1px;
-  height: 16px;
-  background-color: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
-`;
-
 export const SortIcon = styled(ArrowUpOutline)<{ $sort: SortDirection | false }>`
   display: flex;
   flex-shrink: 0;
+  transform: ${({ $sort }) => ($sort === 'desc' ? 'rotate(180deg)' : 'rotate(0deg)')};
   transition: transform 0.3s ease-in-out;
   margin: 2px 0;
 
@@ -41,11 +23,15 @@ export const SortIcon = styled(ArrowUpOutline)<{ $sort: SortDirection | false }>
     fill: ${({ theme, $sort }) =>
       $sort ? `var(--admiral-color-Primary_Primary60Main, ${theme.color['Primary/Primary 60 Main']})` : 'transparent'};
   }
-  ${({ $sort }) => ($sort === 'desc' ? 'transform: rotate(180deg);' : '')}
 `;
 
-export const TitleContent = styled.div`
-  overflow: hidden;
+export const TitleContent = styled.div<{ $dimension: Dimension; $sortable?: boolean }>`
+  display: flex;
+  flex-direction: column;
+
+  // leave 20px/16px for SortIcon
+  max-width: ${({ $sortable, $dimension }) =>
+    $sortable ? `calc(100% - ${$dimension === 's' || $dimension === 'm' ? 16 : 20}px)` : '100%'};
 `;
 
 export const SortIconWrapper = styled.div`
@@ -67,11 +53,23 @@ export const SortOrder = styled.div`
   color: var(--admiral-color-Primary_Primary60Main, ${(p) => p.theme.color['Primary/Primary 60 Main']});
 `;
 
-export const Title = styled.div<{ $lineClamp: number }>`
-  text-overflow: ellipsis;
-  width: 100%;
+const singleLineTitle = css`
+  display: inline-block;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
 
+const multiLineTitle = css<{ $lineClamp: number }>`
+  display: -webkit-inline-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: ${({ $lineClamp }) => $lineClamp};
+  overflow: hidden;
+`;
+
+export const Title = styled.div<{ $lineClamp: number }>`
+  position: relative;
+  width: 100%;
   ${({ $lineClamp }) => ($lineClamp === 1 ? singleLineTitle : multiLineTitle)}
 `;
 
@@ -82,27 +80,23 @@ export const ExtraText = styled(Title)<{ $dimension: Dimension }>`
     $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 2 Long'] : typography['Caption/Caption 1']}
 `;
 
-export const HeaderCellTh = styled.th<{ $dimension: Dimension; $resizer?: boolean }>`
+export const HeaderCell = styled.th<{ $dimension: Dimension; $resizer?: boolean }>`
   position: relative;
-  padding: 0;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
   box-sizing: border-box;
   cursor: default;
-  text-align: start;
-  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
-
+  ${cellStyle}
   ${headerStyle}
-
-  &[data-draggable='true'] {
-    cursor: pointer;
-  }
+  ${borderStyle}
 `;
 
-export const ThWrapper = styled.div<{ $dimension: Dimension; $cellAlign?: 'left' | 'right' }>`
+export const HeaderCellContent = styled.div<{ $dimension: Dimension; $cellAlign?: 'left' | 'right' }>`
   display: flex;
   width: 100%;
-
-  align-items: center;
-  ${cellStyle};
+  align-items: flex-start;
+  text-align: left;
 
   ${({ $cellAlign }) =>
     $cellAlign === 'right' &&
@@ -115,16 +109,11 @@ export const ThWrapper = styled.div<{ $dimension: Dimension; $cellAlign?: 'left'
     `}
 `;
 
-export const ThContainer = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-`;
-
 export const HeaderCellTitle = styled.div<{ $sortable: boolean; $sort: SortDirection | false }>`
-  overflow: hidden;
-  display: flex;
+  display: inline-flex;
+  align-items: flex-start;
   width: 100%;
+  overflow: hidden;
 
   ${({ $sortable }) => $sortable && 'cursor: pointer;'}
   &:hover {
@@ -135,4 +124,11 @@ export const HeaderCellTitle = styled.div<{ $sortable: boolean; $sort: SortDirec
           : `var(--admiral-color-Neutral_Neutral50, ${theme.color['Neutral/Neutral 50']})`};
     }
   }
+`;
+
+export const HeaderCellSpacer = styled.div<{ width?: string }>`
+  display: flex;
+  align-self: stretch;
+  width: ${(p) => (p.width ? p.width : '12px')};
+  flex-shrink: 0;
 `;

@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 import { IconPlacement } from '@admiral-ds/react-ui';
 import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
+import { ExampleSection } from '#examples/-helpers';
 
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
   transition: transform 0.3s ease-in-out;
@@ -85,14 +86,6 @@ const defaultData: Person[] = [
     meta: { expandedRowRender: expandedRowRender },
   },
 ];
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
 
 const WrapperExpand = styled.div`
   display: flex;
@@ -198,8 +191,8 @@ export const ExpandedRow = () => {
   });
 
   return (
-    <Wrapper>
+    <ExampleSection>
       <TanstackTable table={table} />
-    </Wrapper>
+    </ExampleSection>
   );
 };

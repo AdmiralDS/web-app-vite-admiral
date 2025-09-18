@@ -1,8 +1,9 @@
 import { flexRender, type Row, type RowData, type Table } from '@tanstack/react-table';
-import { Body, BodyTr, CellTd, HeaderTr, HeaderWrapper, TableContainer, type Dimension } from './styled';
-import { HeaderCell } from './HeaderCell';
 import type { Color } from '@admiral-ds/react-ui';
 import { Fragment } from 'react';
+import * as S from './style';
+import type { Dimension } from './style';
+import { CellTh } from './HeaderCell';
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
 
@@ -23,6 +24,7 @@ interface Props<T> {
   headerExtraLineClamp?: number;
   greyHeader?: boolean;
   greyZebraRows?: boolean;
+  gridTemplateColumns?: string;
 }
 
 export const TanstackTable = <T,>({
@@ -32,23 +34,30 @@ export const TanstackTable = <T,>({
   headerExtraLineClamp = 1,
   greyHeader,
   greyZebraRows,
+  gridTemplateColumns,
 }: Props<T>) => {
   return (
-    <TableContainer>
-      <HeaderWrapper>
+    <S.Table
+      style={
+        {
+          '--columns-template': gridTemplateColumns ?? `repeat(${table.getAllLeafColumns().length}, 100px)`,
+        } as React.CSSProperties
+      }
+    >
+      <S.Header>
         {table.getHeaderGroups().map((headerGroup) => {
           const multiSortable =
             headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
 
           return (
-            <HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
+            <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
               {headerGroup.headers.map((header, id) => {
                 const isEmptyCell = !header.isPlaceholder
                   ? headerGroup.headers.length !== id + 1
                   : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
 
                 return (
-                  <HeaderCell
+                  <CellTh
                     key={header.id}
                     header={header}
                     headerLineClamp={headerLineClamp}
@@ -59,46 +68,42 @@ export const TanstackTable = <T,>({
                   />
                 );
               })}
-            </HeaderTr>
+            </S.HeaderTr>
           );
         })}
-      </HeaderWrapper>
-      <Body>
+      </S.Header>
+      <S.Body>
         {table.getRowModel().rows.map((row, index) => {
           const original = row.original as RowData & MetaRowProps<T>;
 
           return (
             <Fragment key={row.id}>
-              <BodyTr
+              <S.BodyTr
                 $dimension={dimension}
                 selected={row.getIsSelected() || original.meta?.selected}
                 disabled={original.meta?.disabled}
                 $hover={original.meta?.hover}
                 $grey={greyZebraRows && index % 2 === 1}
                 $status={original.meta?.status}
+                $expandedRow={row.getIsExpanded()}
               >
                 {row.getVisibleCells().map((cell) => (
-                  <CellTd
-                    $dimension={dimension}
-                    key={cell.id}
-                    $expandedRow={row.getIsExpanded()}
-                    $cellAlign={cell.column.columnDef.meta?.cellAlign}
-                  >
+                  <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </CellTd>
+                  </S.CellTd>
                 ))}
-              </BodyTr>
+              </S.BodyTr>
               {row.getIsExpanded() && (
-                <BodyTr $dimension={dimension}>
-                  <CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
+                <S.BodyTr $dimension={dimension}>
+                  <S.CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
                     {original.meta?.expandedRowRender ? original.meta.expandedRowRender({ row }) : null}
-                  </CellTd>
-                </BodyTr>
+                  </S.CellTd>
+                </S.BodyTr>
               )}
             </Fragment>
           );
         })}
-      </Body>
-    </TableContainer>
+      </S.Body>
+    </S.Table>
   );
 };
