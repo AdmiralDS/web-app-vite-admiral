@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import type { Dimension } from './style';
-// import type { TableProps } from '#src/components/Table';
-// import { throttle } from '#src/components/common/utils/throttle';
 
 const RESIZER_WIDTH = '17px';
 
@@ -49,75 +47,8 @@ type ResizerProps = {
   onChange?: (evt: { name: string; width: number }) => void;
 };
 
-export function RowWidthResizer({ name, disabled, dimension, columnMinWidth, onChange }: ResizerProps) {
+export function RowWidthResizer({ disabled, dimension }: ResizerProps) {
   const node = React.useRef<HTMLDivElement | null>(null);
-  // const clientXRef = React.useRef(0);
-  // const [isTaken, setTaken] = React.useState(false);
-
-  // const handleResize = (e: any) => {
-  //   e.preventDefault();
-  //   const width = node.current?.parentElement?.getBoundingClientRect().width || 100;
-  //   const clientX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-  //   let newWidth = width - (clientXRef.current - clientX);
-  //   newWidth = newWidth >= columnMinWidth ? newWidth : columnMinWidth;
-  //   if (width !== newWidth) {
-  //     onChange({ name, width: newWidth });
-  //   }
-  //   clientXRef.current = clientX;
-  // };
-
-  // const handleClick = (e: any) => {
-  //   e.preventDefault();
-  //   // block column drag
-  //   e.stopPropagation();
-  //   setTaken(true);
-  //   clientXRef.current = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-  // };
-
-  // const handleMouseMove = (e: MouseEvent | TouchEvent) => {
-  //   if (isTaken) {
-  //     handleResize(e);
-  //   }
-  // };
-
-  // const handleMouseUp = (e: MouseEvent | TouchEvent) => {
-  //   if (isTaken) {
-  //     handleResize(e);
-  //     setTaken(false);
-  //   }
-  // };
-
-  // const [updateOnMove, freeResources] = throttle(handleMouseMove, 100);
-
-  // React.useEffect(() => {
-  //   if (!disabled) {
-  //     document.addEventListener('mousemove', updateOnMove);
-  //     document.addEventListener('mouseup', handleMouseUp);
-  //     document.addEventListener('touchmove', updateOnMove);
-  //     document.addEventListener('touchend', handleMouseUp);
-
-  //     return () => {
-  //       freeResources();
-  //       document.removeEventListener('mousemove', updateOnMove);
-  //       document.removeEventListener('mouseup', handleMouseUp);
-  //       document.removeEventListener('touchmove', updateOnMove);
-  //       document.removeEventListener('touchend', handleMouseUp);
-  //     };
-  //   }
-  // });
-
-  // React.useEffect(() => {
-  //   const wrapper = node.current;
-  //   if (!disabled && wrapper) {
-  //     wrapper.addEventListener('mousedown', handleClick);
-  //     wrapper.addEventListener('touchstart', handleClick);
-
-  //     return () => {
-  //       wrapper.removeEventListener('mousedown', handleClick);
-  //       wrapper.removeEventListener('touchstart', handleClick);
-  //     };
-  //   }
-  // }, [disabled]);
 
   return (
     <ResizerWrapper ref={node} disabled={disabled} $dimension={dimension}>

@@ -5,21 +5,21 @@ import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { ExampleSection } from '#examples/-helpers';
 import { CellText } from '#examples/-helpers/tanstackTable/style';
 
-type Person = {
+type Column = {
   first: string;
   second: string;
   third: string;
   forth: string;
 };
 
-const defaultData: Person[] = [...Array(4).keys()].map((_item) => ({
+const defaultData: Column[] = [...Array(4).keys()].map((_item) => ({
   first: 'Cell text',
   second: 'Cell text',
   third: 'Cell text',
   forth: 'Cell text',
 }));
 
-const columnHelper = createColumnHelper<Person>();
+const columnHelper = createColumnHelper<Column>();
 
 const columns = [
   columnHelper.accessor('first', {

@@ -10,7 +10,7 @@ import {
   SortOrder,
 } from './styled';
 import { TitleText } from './TitleText';
-import type { Dimension } from '../styled';
+import type { Dimension } from '../style';
 import { Filter } from '../Filter/Filter';
 import { RowWidthResizer } from '../RowWidthResizer';
 import { useState } from 'react';
@@ -62,7 +62,7 @@ export const CellTh = <T,>({
         >
           <TitleContent $dimension={dimension} $sortable={sortable}>
             <TitleText lineClamp={headerLineClamp} title={title} />
-            {extraText && <TitleText extraText lineClamp={headerExtraLineClamp} title={title} />}
+            {extraText && <TitleText extraText lineClamp={headerExtraLineClamp} title={extraText} />}
           </TitleContent>
           {sortable && (
             <SortIconWrapper>

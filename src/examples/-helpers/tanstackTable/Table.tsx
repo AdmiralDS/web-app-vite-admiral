@@ -1,9 +1,9 @@
 import { flexRender, type Row, type RowData, type Table } from '@tanstack/react-table';
-import { type Dimension } from './styled';
-import * as S from './style';
-import { CellTh } from './HeaderCell';
 import type { Color } from '@admiral-ds/react-ui';
 import { Fragment } from 'react';
+import * as S from './style';
+import type { Dimension } from './style';
+import { CellTh } from './HeaderCell';
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
 
@@ -40,7 +40,7 @@ export const TanstackTable = <T,>({
     <S.Table
       style={
         {
-          '--columns-template': gridTemplateColumns ?? `repeat(${table.getAllFlatColumns().length}, 100px)`,
+          '--columns-template': gridTemplateColumns ?? `repeat(${table.getAllLeafColumns().length}, 100px)`,
         } as React.CSSProperties
       }
     >

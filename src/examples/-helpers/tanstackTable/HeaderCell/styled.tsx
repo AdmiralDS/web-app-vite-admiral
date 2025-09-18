@@ -4,8 +4,7 @@ import { typography } from '@admiral-ds/react-ui';
 import ArrowUpOutline from '@admiral-ds/icons/build/system/ArrowUpOutline.svg?react';
 
 import type { SortDirection } from '@tanstack/react-table';
-import { cellStyle, type Dimension } from '../styled';
-import { borderStyle } from '../mixins';
+import { cellStyle, borderStyle, type Dimension } from '../style';
 
 export const headerStyle = css<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
@@ -55,12 +54,12 @@ export const SortOrder = styled.div`
 `;
 
 const singleLineTitle = css`
+  display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
 
-/** check vendor prefixes */
 const multiLineTitle = css<{ $lineClamp: number }>`
   display: -webkit-inline-box;
   -webkit-box-orient: vertical;
@@ -97,6 +96,7 @@ export const HeaderCellContent = styled.div<{ $dimension: Dimension; $cellAlign?
   display: flex;
   width: 100%;
   align-items: flex-start;
+  text-align: left;
 
   ${({ $cellAlign }) =>
     $cellAlign === 'right' &&
