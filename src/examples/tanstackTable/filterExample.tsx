@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { Button, DateField, FieldSet, RadioButton, T, TextInput } from '@admiral-ds/react-ui';
 import AcceptSolid from '@admiral-ds/icons/build/category/AcceptSolid.svg?react';
+import { ExampleSection } from '#examples/-helpers';
 
 interface Person {
   firstName: string;
@@ -49,14 +50,6 @@ const defaultData: Person[] = [
     dateOfBirth: new Date('1980-11-06').toLocaleDateString(),
   },
 ];
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
 
 const WrapperFilter = styled.div`
   display: flex;
@@ -252,8 +245,8 @@ export const FilterExample = () => {
   });
 
   return (
-    <Wrapper>
+    <ExampleSection>
       <TanstackTable table={table} />
-    </Wrapper>
+    </ExampleSection>
   );
 };

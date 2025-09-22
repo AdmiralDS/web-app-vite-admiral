@@ -1,83 +1,82 @@
 import * as React from 'react';
 
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 
-type Person = {
-  firstName: string;
-  lastName: string;
-  age: number;
-  visits: number;
+type Transaction = {
+  type: string;
+  date: string;
+  amount: string;
+  currency: string;
+  rate: string;
   status: string;
-  progress: number;
 };
 
-const defaultData: Person[] = [
+const defaultData: Transaction[] = [
   {
-    firstName: 'tanner',
-    lastName: 'linsley',
-    age: 24,
-    visits: 100,
-    status: 'In Relationship',
-    progress: 50,
+    type: 'МНО',
+    date: new Date('2021-03-23').toLocaleDateString(),
+    amount: new Intl.NumberFormat().format(32_500_000_000),
+    currency: 'RUB',
+    rate: '7 %',
+    status: 'Выполнено',
   },
   {
-    firstName: 'tandy',
-    lastName: 'miller',
-    age: 40,
-    visits: 40,
-    status: 'Single',
-    progress: 80,
+    type: 'МНО',
+    date: new Date('2021-03-23').toLocaleDateString(),
+    amount: new Intl.NumberFormat().format(50_000_000),
+    currency: 'USD',
+    rate: '3 %',
+    status: 'В ожидании',
   },
   {
-    firstName: 'joe',
-    lastName: 'dirte',
-    age: 45,
-    visits: 20,
-    status: 'Complicated',
-    progress: 10,
+    type: 'МНО',
+    date: new Date('2021-05-12').toLocaleDateString(),
+    amount: new Intl.NumberFormat().format(700_000_000),
+    currency: 'XRP',
+    rate: '7 %',
+    status: 'Выполнено',
+  },
+  {
+    type: 'МНО',
+    date: new Date('2021-03-23').toLocaleDateString(),
+    amount: new Intl.NumberFormat().format(4_000_000),
+    currency: 'USDT',
+    rate: '5 %',
+    status: 'Выполнено',
   },
 ];
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  margin: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
-
-const columnHelper = createColumnHelper<Person>();
+const columnHelper = createColumnHelper<Transaction>();
 
 const columns = [
-  columnHelper.accessor('firstName', {
-    cell: (info) => info.getValue(),
-    footer: (info) => info.column.id,
+  columnHelper.accessor('type', {
+    header: 'Тип сделки',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
   }),
-  columnHelper.accessor((row) => row.lastName, {
-    id: 'lastName',
-    cell: (info) => <i>{info.getValue()}</i>,
-    header: () => <span>Last Name</span>,
-    footer: (info) => info.column.id,
+  columnHelper.accessor('date', {
+    header: 'Дата сделки',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
   }),
-  columnHelper.accessor('age', {
-    header: () => 'Age',
-    cell: (info) => info.renderValue(),
-    footer: (info) => info.column.id,
+  columnHelper.accessor('amount', {
+    header: 'Сумма',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    meta: { cellAlign: 'right' },
   }),
-  columnHelper.accessor('visits', {
-    header: () => <span>Visits</span>,
-    footer: (info) => info.column.id,
+  columnHelper.accessor('currency', {
+    header: 'Валюта',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
+  }),
+  columnHelper.accessor('rate', {
+    header: 'Ставка',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    meta: { cellAlign: 'right' },
   }),
   columnHelper.accessor('status', {
-    header: 'Status',
-    footer: (info) => info.column.id,
-  }),
-  columnHelper.accessor('progress', {
-    header: 'Profile Progress',
-    footer: (info) => info.column.id,
+    header: 'Статус',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
   }),
 ];
 
@@ -92,8 +91,17 @@ export const BaseExample = () => {
   });
 
   return (
-    <Wrapper>
-      <TanstackTable table={table} />
-    </Wrapper>
+    <ExampleSection
+      text={
+        <>
+          <PStyled>
+            Контент ячеек не имеет внутренних отступов. Вы можете использовать styled-компонент CellText, который
+            предоставляет дефолтные отступы, либо можете оборачивать контент ячейки в свою обертку
+          </PStyled>
+        </>
+      }
+    >
+      <TanstackTable table={table} gridTemplateColumns="141px 149px 150px 100px 96px 110px" />
+    </ExampleSection>
   );
 };

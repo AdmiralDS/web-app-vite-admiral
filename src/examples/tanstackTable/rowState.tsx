@@ -1,8 +1,9 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { useState } from 'react';
 
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
+import { ExampleSection } from '#examples/-helpers';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -70,14 +71,6 @@ const defaultData: Person[] = [
   },
 ];
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
-
 export const RowState = () => {
   const [data, _setData] = useState(() => [...defaultData]);
 
@@ -85,32 +78,33 @@ export const RowState = () => {
 
   const columns = [
     columnHelper.accessor('firstName', {
-      cell: (info) => info.getValue(),
-      footer: (info) => info.column.id,
       header: 'firstName',
+      cell: (info) => <CellText>{info.getValue()}</CellText>,
     }),
     columnHelper.accessor((row) => row.lastName, {
       id: 'lastName',
-      cell: (info) => <i>{info.getValue()}</i>,
       header: 'Last Name',
-      footer: (info) => info.column.id,
+      cell: (info) => (
+        <CellText>
+          <i>{info.getValue()}</i>
+        </CellText>
+      ),
     }),
     columnHelper.accessor('age', {
       header: 'Age',
-      cell: (info) => info.renderValue(),
-      footer: (info) => info.column.id,
+      cell: (info) => <CellText>{info.renderValue()}</CellText>,
     }),
     columnHelper.accessor('visits', {
       header: 'Visits',
-      footer: (info) => info.column.id,
+      cell: (info) => <CellText>{info.getValue()}</CellText>,
     }),
     columnHelper.accessor('status', {
       header: 'Status',
-      footer: (info) => info.column.id,
+      cell: (info) => <CellText>{info.getValue()}</CellText>,
     }),
     columnHelper.accessor('progress', {
       header: 'Profile Progress',
-      footer: (info) => info.column.id,
+      cell: (info) => <CellText>{info.getValue()}</CellText>,
     }),
   ];
 
@@ -122,8 +116,8 @@ export const RowState = () => {
   });
 
   return (
-    <Wrapper>
+    <ExampleSection>
       <TanstackTable table={table} />
-    </Wrapper>
+    </ExampleSection>
   );
 };

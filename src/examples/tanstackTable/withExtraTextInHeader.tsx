@@ -1,84 +1,46 @@
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { useState } from 'react';
 
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { ExampleSection } from '#examples/-helpers';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
 
-type Person = {
-  firstName: string;
-  lastName: string;
-  age: number;
-  visits: number;
-  status: string;
-  progress: number;
+type Column = {
+  first: string;
+  second: string;
+  third: string;
+  forth: string;
 };
 
-const defaultData: Person[] = [
-  {
-    firstName: 'tanner',
-    lastName: 'linsley',
-    age: 24,
-    visits: 100,
-    status: 'In Relationship',
-    progress: 50,
-  },
-  {
-    firstName: 'tandy',
-    lastName: 'miller',
-    age: 40,
-    visits: 40,
-    status: 'Single',
-    progress: 80,
-  },
-  {
-    firstName: 'joe',
-    lastName: 'dirte',
-    age: 45,
-    visits: 20,
-    status: 'Complicated',
-    progress: 10,
-  },
-];
+const defaultData: Column[] = [...Array(4).keys()].map((_item) => ({
+  first: 'Cell text',
+  second: 'Cell text',
+  third: 'Cell text',
+  forth: 'Cell text',
+}));
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  margin: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
-
-const columnHelper = createColumnHelper<Person>();
+const columnHelper = createColumnHelper<Column>();
 
 const columns = [
-  columnHelper.accessor('firstName', {
-    cell: (info) => info.getValue(),
-    footer: (info) => info.column.id,
-    header: 'first Name',
+  columnHelper.accessor('first', {
+    header: 'Размер M',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    meta: { extraText: 'Add text' },
   }),
-
-  columnHelper.accessor((row) => row.lastName, {
-    id: 'lastName',
-    cell: (info) => <i>{info.getValue()}</i>,
-    header: 'Last Name',
-    footer: (info) => info.column.id,
-    meta: { extraText: 'Description Last Name' },
+  columnHelper.accessor('second', {
+    header: 'Column title',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    meta: { extraText: 'Add text. Текст длиннее основного' },
   }),
-  columnHelper.accessor('age', {
-    header: 'Age LongLong Title',
-    cell: (info) => info.renderValue(),
-    footer: (info) => info.column.id,
+  columnHelper.accessor('third', {
+    header: 'Column title',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    meta: { extraText: 'Add text', cellAlign: 'right' },
   }),
-  columnHelper.accessor('visits', {
-    header: 'Visits',
-  }),
-  columnHelper.accessor('status', {
-    header: 'Status',
-    meta: { extraText: 'Description Status' },
-  }),
-  columnHelper.accessor('progress', {
-    header: 'Profile Progress',
+  columnHelper.accessor('forth', {
+    header: 'Column title',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    meta: { extraText: 'Add text' },
   }),
 ];
 
@@ -93,8 +55,8 @@ export const WithExtraTextInHeader = () => {
   });
 
   return (
-    <Wrapper>
-      <TanstackTable table={table} />
-    </Wrapper>
+    <ExampleSection>
+      <TanstackTable table={table} gridTemplateColumns="131px 250px 158px 146px" />
+    </ExampleSection>
   );
 };

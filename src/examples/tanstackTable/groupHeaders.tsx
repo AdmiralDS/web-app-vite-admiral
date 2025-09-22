@@ -1,8 +1,8 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
-import styled from 'styled-components';
 
 import { useState } from 'react';
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { ExampleSection } from '#examples/-helpers';
 
 type Person = {
   firstName: string;
@@ -39,14 +39,6 @@ const defaultData: Person[] = [
     progress: 10,
   },
 ];
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
 
 const columnHelper = createColumnHelper<Person>();
 
@@ -109,8 +101,8 @@ export const GroupHeaders = () => {
   });
 
   return (
-    <Wrapper>
+    <ExampleSection>
       <TanstackTable table={table} />
-    </Wrapper>
+    </ExampleSection>
   );
 };

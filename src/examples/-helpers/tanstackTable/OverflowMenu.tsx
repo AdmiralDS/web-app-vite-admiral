@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
-import type { Dimension } from './styled';
 import type { Row, RowData } from '@tanstack/react-table';
-import type { MetaRowProps } from './Table';
+import type { Dimension, MetaRowProps } from './Table';
 
 export const getActionSize = (dimension: Dimension) => {
   switch (dimension) {

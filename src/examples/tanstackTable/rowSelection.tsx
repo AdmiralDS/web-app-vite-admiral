@@ -1,9 +1,9 @@
 import { getCoreRowModel, getSortedRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { useMemo, useState } from 'react';
 
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { CheckboxField } from '@admiral-ds/react-ui';
+import { ExampleSection } from '#examples/-helpers';
 
 type Person = {
   firstName: string;
@@ -40,14 +40,6 @@ const defaultData: Person[] = [
     progress: 10,
   },
 ];
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
 
 export const RowSelection = () => {
   const [data, _setData] = useState(() => [...defaultData]);
@@ -152,8 +144,8 @@ export const RowSelection = () => {
   });
 
   return (
-    <Wrapper>
+    <ExampleSection>
       <TanstackTable table={table} />
-    </Wrapper>
+    </ExampleSection>
   );
 };

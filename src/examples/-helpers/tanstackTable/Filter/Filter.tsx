@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import type { Dimension } from '../styled';
+import type { Dimension } from '../style';
 import { keyboardKey, refSetter, StyledDropdownContainer } from '@admiral-ds/react-ui';
 import type { Column } from '@tanstack/react-table';
 import { Button } from './Button';

@@ -3,6 +3,8 @@ import MoreHorizontalOutline from '@admiral-ds/icons/build/system/MoreHorizontal
 import { forwardRef, useEffect, useRef } from 'react';
 import { refSetter } from '@admiral-ds/react-ui';
 
+type Dimension = 'xl' | 'l' | 'm' | 's';
+
 const activeFilter = css`
   & *[fill^='#'] {
     fill: var(--admiral-color-Primary_Primary60Main, ${(p) => p.theme.color['Primary/Primary 60 Main']});
@@ -49,8 +51,6 @@ export const ButtonContent = styled.span<{ $isFilterActive?: boolean; $iconSize:
 
   ${({ $isFilterActive }) => $isFilterActive && activeFilter}
 `;
-
-type Dimension = 'xl' | 'l' | 'm' | 's';
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   dimension?: Dimension;

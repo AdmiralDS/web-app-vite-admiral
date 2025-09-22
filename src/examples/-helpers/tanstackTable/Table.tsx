@@ -1,11 +1,14 @@
 import { flexRender, type Row, type RowData, type Table } from '@tanstack/react-table';
-import { ActionMock, Body, BodyTr, CellTd, HeaderTr, HeaderWrapper, TableContainer, type Dimension } from './styled';
-import { HeaderCell } from './HeaderCell';
-import type { Color } from '@admiral-ds/react-ui';
 import { Fragment, useLayoutEffect, useRef, useState } from 'react';
+import type { Color } from '@admiral-ds/react-ui';
+
 import { OverflowMenu } from './OverflowMenu';
+import * as S from './style';
+import { CellTh } from './HeaderCell';
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
+
+export type Dimension = 'xl' | 'l' | 'm' | 's';
 
 export interface MetaRowProps<T> {
   meta?: {
@@ -48,6 +51,7 @@ interface Props<T> {
   /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions?: boolean;
+  gridTemplateColumns?: string;
 }
 
 export const TanstackTable = <T,>({
@@ -58,6 +62,7 @@ export const TanstackTable = <T,>({
   greyHeader,
   greyZebraRows,
   showRowsActions: userShowRowsActions = false,
+  gridTemplateColumns,
 }: Props<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
@@ -84,21 +89,28 @@ export const TanstackTable = <T,>({
   }, [setHeaderHeight]);
 
   return (
-    <TableContainer ref={tableRef}>
-      <HeaderWrapper ref={headerRef}>
+    <S.Table
+      ref={tableRef}
+      style={
+        {
+          '--columns-template': gridTemplateColumns ?? `repeat(${table.getAllLeafColumns().length}, 100px)`,
+        } as React.CSSProperties
+      }
+    >
+      <S.Header ref={headerRef}>
         {table.getHeaderGroups().map((headerGroup) => {
           const multiSortable =
             headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
 
           return (
-            <HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
+            <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
               {headerGroup.headers.map((header, id) => {
                 const isEmptyCell = !header.isPlaceholder
                   ? headerGroup.headers.length !== id + 1
                   : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
 
                 return (
-                  <HeaderCell
+                  <CellTh
                     key={header.id}
                     header={header}
                     headerLineClamp={headerLineClamp}
@@ -109,14 +121,12 @@ export const TanstackTable = <T,>({
                   />
                 );
               })}
-              <th>
-                <ActionMock $dimension={dimension} />
-              </th>
-            </HeaderTr>
+              <S.ActionMock $dimension={dimension} />
+            </S.HeaderTr>
           );
         })}
-      </HeaderWrapper>
-      <Body>
+      </S.Header>
+      <S.Body>
         {table.getRowModel().rows.map((row, index) => {
           const original = row.original as RowData & MetaRowProps<T>;
           const showRowsActions =
@@ -124,7 +134,7 @@ export const TanstackTable = <T,>({
 
           return (
             <Fragment key={row.id}>
-              <BodyTr
+              <S.BodyTr
                 $dimension={dimension}
                 selected={row.getIsSelected() || original.meta?.selected}
                 disabled={original.meta?.disabled}
@@ -132,42 +142,36 @@ export const TanstackTable = <T,>({
                 $grey={greyZebraRows && index % 2 === 1}
                 $status={original.meta?.status}
                 $showRowsActions={showRowsActions}
+                $expandedRow={row.getIsExpanded()}
               >
                 {row.getVisibleCells().map((cell) => (
-                  <CellTd
-                    $dimension={dimension}
-                    key={cell.id}
-                    $expandedRow={row.getIsExpanded()}
-                    $cellAlign={cell.column.columnDef.meta?.cellAlign}
-                  >
+                  <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </CellTd>
+                  </S.CellTd>
                 ))}
                 {(showRowsActions || original.meta?.actionRender || original.meta?.overflowMenuRender) && (
-                  <td>
-                    <OverflowMenu
-                      dimension={dimension}
-                      row={row}
-                      onClick={handleOverflowMenuClick}
-                      //todo пересмотреть
-                      showRowsActions={!!showRowsActions}
-                      tableRef={tableRef}
-                      headerHeight={headerHeight}
-                    />
-                  </td>
+                  <OverflowMenu
+                    dimension={dimension}
+                    row={row}
+                    onClick={handleOverflowMenuClick}
+                    //todo пересмотреть
+                    showRowsActions={!!showRowsActions}
+                    tableRef={tableRef}
+                    headerHeight={headerHeight}
+                  />
                 )}
-              </BodyTr>
+              </S.BodyTr>
               {row.getIsExpanded() && (
-                <BodyTr $dimension={dimension}>
-                  <CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
+                <S.BodyTr $dimension={dimension}>
+                  <S.CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
                     {original.meta?.expandedRowRender ? original.meta.expandedRowRender({ row }) : null}
-                  </CellTd>
-                </BodyTr>
+                  </S.CellTd>
+                </S.BodyTr>
               )}
             </Fragment>
           );
         })}
-      </Body>
-    </TableContainer>
+      </S.Body>
+    </S.Table>
   );
 };
