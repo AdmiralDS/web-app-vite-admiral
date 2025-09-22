@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import type { Status } from './Table';
 
 import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
+import { getActionSize } from './OverflowMenu';
 
 export type Dimension = 'xl' | 'l' | 'm' | 's';
 
@@ -126,6 +127,7 @@ export const BodyTr = styled.tr<{
   $grey?: boolean;
   $status?: Status;
   $dimension: Dimension;
+  $showRowsActions?: boolean;
 }>`
   position: relative;
   & > * {
@@ -137,6 +139,19 @@ export const BodyTr = styled.tr<{
   &:hover {
     ${({ $hover, disabled }) => $hover && !disabled && rowHoverMixin}
   }
+
+  ${({ $showRowsActions }) =>
+    !$showRowsActions &&
+    css`
+      &:hover {
+        & div[data-overflowmenu] {
+          visibility: visible;
+        }
+      }
+      & div[data-overflowmenu][data-opened='true'] {
+        visibility: visible;
+      }
+    `}
 `;
 
 export const CellTd = styled.td<{
@@ -191,4 +206,18 @@ export const ExpandCell = styled.div<{ $dimension: Dimension }>`
 export const RowCellContent = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const ActionMock = styled.div<{ $dimension: Dimension }>`
+  display: flex;
+  position: sticky;
+  right: 0;
+  z-index: 5;
+  .table[data-shadow-right='true'] & {
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
+  }
+
+  min-height: ${({ $dimension }) => getActionSize($dimension) - 1}px;
+  width: ${({ $dimension }) => getActionSize($dimension)}px;
+  background-color: inherit;
 `;

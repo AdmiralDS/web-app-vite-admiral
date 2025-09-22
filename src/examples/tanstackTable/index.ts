@@ -9,3 +9,4 @@ export * from './rowState';
 export * from './zebraExample';
 export * from './expandedRow';
 export * from './filterExample';
+export * from './overflowMenu';
