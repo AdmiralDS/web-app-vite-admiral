@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 import { MenuItem, OverflowMenu, RowAction, TooltipHoc, type RenderOptionProps } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { ExampleSection } from '#examples/-helpers';
 const TooltipedRowAction = TooltipHoc(RowAction);
 
 interface Person extends MetaRowProps<Person> {
@@ -103,38 +105,32 @@ const defaultData: Person[] = [
   },
 ];
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  margin: 20px;
-  overflow: hidden;
-  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
-`;
-
 const columnHelper = createColumnHelper<Person>();
 
 const columns = [
   columnHelper.accessor('firstName', {
-    cell: (info) => info.getValue(),
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
   }),
   columnHelper.accessor((row) => row.lastName, {
     id: 'lastName',
-    cell: (info) => <i>{info.getValue()}</i>,
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
     header: 'Last Name',
   }),
   columnHelper.accessor('age', {
     header: 'Age',
-    cell: (info) => info.renderValue(),
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
   }),
   columnHelper.accessor('visits', {
     header: 'Visits',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
   }),
   columnHelper.accessor('status', {
     header: 'Status',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
   }),
   columnHelper.accessor('progress', {
     header: 'Profile Progress',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
   }),
 ];
 
@@ -150,12 +146,12 @@ export const WithOverflowMenu = () => {
 
   return (
     <>
-      <Wrapper>
-        <TanstackTable table={table} />
-      </Wrapper>
-      <Wrapper>
-        <TanstackTable table={table} showRowsActions />
-      </Wrapper>
+      <ExampleSection text="Пример с иконками действий над строками, которые видны только по ховеру">
+        <TanstackTable table={table} gridTemplateColumns="100px 100px 100px 100px 130px 100px 1fr" />
+      </ExampleSection>
+      <ExampleSection text="Пример с постоянно видимыми иконками действий над строками">
+        <TanstackTable table={table} showRowsActions gridTemplateColumns="100px 100px 100px 100px 130px 100px 1fr" />
+      </ExampleSection>
     </>
   );
 };

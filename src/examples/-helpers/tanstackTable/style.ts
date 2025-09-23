@@ -160,11 +160,11 @@ export const BodyTr = styled.tr<{
     !$showRowsActions &&
     css`
       &:hover {
-        & div[data-overflowmenu] {
+        & td[data-overflowmenu] {
           visibility: visible;
         }
       }
-      & div[data-overflowmenu][data-opened='true'] {
+      & td[data-overflowmenu][data-opened='true'] {
         visibility: visible;
       }
     `}
@@ -261,7 +261,7 @@ export const RowCellContent = styled.div`
   align-items: center;
 `;
 
-export const ActionMock = styled.div<{ $dimension: Dimension }>`
+export const ActionMock = styled.th<{ $dimension: Dimension }>`
   display: flex;
   position: sticky;
   right: 0;

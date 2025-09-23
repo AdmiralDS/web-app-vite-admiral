@@ -88,12 +88,22 @@ export const TanstackTable = <T,>({
     };
   }, [setHeaderHeight]);
 
+  const isRowsActions = table.getRowModel().rows.some((row) => {
+    const original = row.original as RowData & MetaRowProps<T>;
+
+    return original.meta?.actionRender || original.meta?.overflowMenuRender;
+  });
+
+  const showRowsActions = isRowsActions && userShowRowsActions;
+
   return (
     <S.Table
       ref={tableRef}
       style={
         {
-          '--columns-template': gridTemplateColumns ?? `repeat(${table.getAllLeafColumns().length}, 100px)`,
+          '--columns-template':
+            gridTemplateColumns ??
+            `repeat(${isRowsActions ? table.getAllLeafColumns().length + 1 : table.getAllLeafColumns().length}, 100px)`,
         } as React.CSSProperties
       }
     >
@@ -121,7 +131,7 @@ export const TanstackTable = <T,>({
                   />
                 );
               })}
-              <S.ActionMock $dimension={dimension} />
+              {showRowsActions && <S.ActionMock $dimension={dimension} />}
             </S.HeaderTr>
           );
         })}
@@ -129,8 +139,6 @@ export const TanstackTable = <T,>({
       <S.Body>
         {table.getRowModel().rows.map((row, index) => {
           const original = row.original as RowData & MetaRowProps<T>;
-          const showRowsActions =
-            (original.meta?.actionRender || original.meta?.overflowMenuRender) && userShowRowsActions;
 
           return (
             <Fragment key={row.id}>
@@ -154,8 +162,7 @@ export const TanstackTable = <T,>({
                     dimension={dimension}
                     row={row}
                     onClick={handleOverflowMenuClick}
-                    //todo пересмотреть
-                    showRowsActions={!!showRowsActions}
+                    showRowsActions={showRowsActions}
                     tableRef={tableRef}
                     headerHeight={headerHeight}
                   />

@@ -17,10 +17,12 @@ export const getActionSize = (dimension: Dimension) => {
   }
 };
 
-const OverflowMenuWrapper = styled.div<{ $showRowsActions?: boolean }>`
+const OverflowMenuWrapper = styled.td<{ $showRowsActions?: boolean }>`
   position: sticky;
   right: 0;
   z-index: 5;
+  display: flex;
+  justify-content: end;
 
   .table[data-shadow-right='true'] & {
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
@@ -29,8 +31,6 @@ const OverflowMenuWrapper = styled.div<{ $showRowsActions?: boolean }>`
   ${({ $showRowsActions }) =>
     !$showRowsActions &&
     css`
-      width: 0;
-      direction: rtl;
       visibility: hidden;
       &:hover {
         visibility: visible;
@@ -81,7 +81,7 @@ export const OverflowMenu = <T,>({
 }: OverflowMenuProps<T>) => {
   const original = row.original as RowData & MetaRowProps<T>;
 
-  const oveflowMenuRef = useRef<HTMLDivElement>(null);
+  const oveflowMenuRef = useRef<HTMLTableCellElement>(null);
 
   const handleVisibilityChange = (isVisible: boolean) => {
     if (!showRowsActions) {

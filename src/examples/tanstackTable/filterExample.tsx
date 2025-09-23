@@ -14,6 +14,7 @@ import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { Button, DateField, FieldSet, RadioButton, T, TextInput } from '@admiral-ds/react-ui';
 import AcceptSolid from '@admiral-ds/icons/build/category/AcceptSolid.svg?react';
 import { ExampleSection } from '#examples/-helpers';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
 
 interface Person {
   firstName: string;
@@ -181,21 +182,21 @@ export const FilterExample = () => {
 
   const columns = [
     columnHelper.accessor('firstName', {
-      cell: (info) => info.getValue(),
+      cell: (info) => <CellText>{info.renderValue()}</CellText>,
       footer: (info) => info.column.id,
       header: 'firstName',
       enableColumnFilter: false,
     }),
     columnHelper.accessor((row) => row.lastName, {
       id: 'lastName',
-      cell: (info) => <i>{info.getValue()}</i>,
+      cell: (info) => <CellText>{info.renderValue()}</CellText>,
       header: 'Last Name',
       footer: (info) => info.column.id,
       meta: { cellAlign: 'right', filter: { renderFilter: renderInputFilter, onFilterMenuClickOutside } },
     }),
     columnHelper.accessor('age', {
       header: 'Age',
-      cell: (info) => info.renderValue(),
+      cell: (info) => <CellText>{info.renderValue()}</CellText>,
       footer: (info) => info.column.id,
       meta: { filter: { renderFilter: renderNumFilter, onFilterMenuClickOutside } },
       filterFn: (row, _, filterValue) => (filterValue === '1' ? row.original.age > 30 : row.original.age <= 30),
@@ -203,6 +204,7 @@ export const FilterExample = () => {
     columnHelper.accessor('visits', {
       header: 'Visits',
       footer: (info) => info.column.id,
+      cell: (info) => <CellText>{info.renderValue()}</CellText>,
       meta: {
         filter: {
           renderFilter: () => (
@@ -223,10 +225,12 @@ export const FilterExample = () => {
       header: 'Date Of Birth',
       footer: (info) => info.column.id,
       meta: { filter: { renderFilter: renderDateFilter, onFilterMenuClickOutside } },
+      cell: (info) => <CellText>{info.renderValue()}</CellText>,
     }),
     columnHelper.accessor('status', {
       header: 'Status',
       footer: (info) => info.column.id,
+      cell: (info) => <CellText>{info.renderValue()}</CellText>,
       enableColumnFilter: false,
     }),
   ];
@@ -246,7 +250,7 @@ export const FilterExample = () => {
 
   return (
     <ExampleSection>
-      <TanstackTable table={table} />
+      <TanstackTable table={table} gridTemplateColumns="120px 120px 120px 120px 120px 140px" />
     </ExampleSection>
   );
 };
