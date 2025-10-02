@@ -37,6 +37,7 @@ import { Route as ComponentsTanstackTableRowStateImport } from './routes/compone
 import { Route as ComponentsTanstackTableRowSelectionImport } from './routes/components/tanstackTable/rowSelection'
 import { Route as ComponentsTanstackTableOverflowMenuImport } from './routes/components/tanstackTable/overflowMenu'
 import { Route as ComponentsTanstackTableGroupHeadersImport } from './routes/components/tanstackTable/groupHeaders'
+import { Route as ComponentsTanstackTableFixedVirtualScrollImport } from './routes/components/tanstackTable/fixedVirtualScroll'
 import { Route as ComponentsTanstackTableFilterExampleImport } from './routes/components/tanstackTable/filterExample'
 import { Route as ComponentsTanstackTableExpandedRowImport } from './routes/components/tanstackTable/expandedRow'
 import { Route as ComponentsTanstackTableBaseExampleImport } from './routes/components/tanstackTable/baseExample'
@@ -240,6 +241,13 @@ const ComponentsTanstackTableGroupHeadersRoute =
   ComponentsTanstackTableGroupHeadersImport.update({
     id: '/tanstackTable/groupHeaders',
     path: '/tanstackTable/groupHeaders',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+
+const ComponentsTanstackTableFixedVirtualScrollRoute =
+  ComponentsTanstackTableFixedVirtualScrollImport.update({
+    id: '/tanstackTable/fixedVirtualScroll',
+    path: '/tanstackTable/fixedVirtualScroll',
     getParentRoute: () => ComponentsRoute,
   } as any)
 
@@ -690,6 +698,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTanstackTableFilterExampleImport
       parentRoute: typeof ComponentsImport
     }
+    '/components/tanstackTable/fixedVirtualScroll': {
+      id: '/components/tanstackTable/fixedVirtualScroll'
+      path: '/tanstackTable/fixedVirtualScroll'
+      fullPath: '/components/tanstackTable/fixedVirtualScroll'
+      preLoaderRoute: typeof ComponentsTanstackTableFixedVirtualScrollImport
+      parentRoute: typeof ComponentsImport
+    }
     '/components/tanstackTable/groupHeaders': {
       id: '/components/tanstackTable/groupHeaders'
       path: '/tanstackTable/groupHeaders'
@@ -858,6 +873,7 @@ interface ComponentsRouteChildren {
   ComponentsTanstackTableBaseExampleRoute: typeof ComponentsTanstackTableBaseExampleRoute
   ComponentsTanstackTableExpandedRowRoute: typeof ComponentsTanstackTableExpandedRowRoute
   ComponentsTanstackTableFilterExampleRoute: typeof ComponentsTanstackTableFilterExampleRoute
+  ComponentsTanstackTableFixedVirtualScrollRoute: typeof ComponentsTanstackTableFixedVirtualScrollRoute
   ComponentsTanstackTableGroupHeadersRoute: typeof ComponentsTanstackTableGroupHeadersRoute
   ComponentsTanstackTableOverflowMenuRoute: typeof ComponentsTanstackTableOverflowMenuRoute
   ComponentsTanstackTableRowSelectionRoute: typeof ComponentsTanstackTableRowSelectionRoute
@@ -919,6 +935,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
     ComponentsTanstackTableExpandedRowRoute,
   ComponentsTanstackTableFilterExampleRoute:
     ComponentsTanstackTableFilterExampleRoute,
+  ComponentsTanstackTableFixedVirtualScrollRoute:
+    ComponentsTanstackTableFixedVirtualScrollRoute,
   ComponentsTanstackTableGroupHeadersRoute:
     ComponentsTanstackTableGroupHeadersRoute,
   ComponentsTanstackTableOverflowMenuRoute:
@@ -1013,6 +1031,7 @@ export interface FileRoutesByFullPath {
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
+  '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
@@ -1071,6 +1090,7 @@ export interface FileRoutesByTo {
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
+  '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
@@ -1130,6 +1150,7 @@ export interface FileRoutesById {
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
+  '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
@@ -1190,6 +1211,7 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/filterExample'
+    | '/components/tanstackTable/fixedVirtualScroll'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/overflowMenu'
     | '/components/tanstackTable/rowSelection'
@@ -1247,6 +1269,7 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/filterExample'
+    | '/components/tanstackTable/fixedVirtualScroll'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/overflowMenu'
     | '/components/tanstackTable/rowSelection'
@@ -1304,6 +1327,7 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/filterExample'
+    | '/components/tanstackTable/fixedVirtualScroll'
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/overflowMenu'
     | '/components/tanstackTable/rowSelection'
@@ -1388,6 +1412,7 @@ export const routeTree = rootRoute
         "/components/tanstackTable/baseExample",
         "/components/tanstackTable/expandedRow",
         "/components/tanstackTable/filterExample",
+        "/components/tanstackTable/fixedVirtualScroll",
         "/components/tanstackTable/groupHeaders",
         "/components/tanstackTable/overflowMenu",
         "/components/tanstackTable/rowSelection",
@@ -1548,6 +1573,10 @@ export const routeTree = rootRoute
     },
     "/components/tanstackTable/filterExample": {
       "filePath": "components/tanstackTable/filterExample.tsx",
+      "parent": "/components"
+    },
+    "/components/tanstackTable/fixedVirtualScroll": {
+      "filePath": "components/tanstackTable/fixedVirtualScroll.tsx",
       "parent": "/components"
     },
     "/components/tanstackTable/groupHeaders": {

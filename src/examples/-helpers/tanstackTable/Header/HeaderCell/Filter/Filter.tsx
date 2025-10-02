@@ -1,10 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import type { Dimension } from '../style';
 import { keyboardKey, refSetter, StyledDropdownContainer } from '@admiral-ds/react-ui';
 import type { Column } from '@tanstack/react-table';
 import { Button } from './Button';
+import type { Dimension } from '#examples/-helpers/tanstackTable/Table';
 
 const FilterDropdownContainer = styled(StyledDropdownContainer)`
   background-color: var(--admiral-color-Special_ElevatedBG, ${(p) => p.theme.color['Special/Elevated BG']});

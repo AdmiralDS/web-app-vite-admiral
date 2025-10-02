@@ -10,12 +10,12 @@ import {
   SortOrder,
 } from './styled';
 import { TitleText } from './TitleText';
-import { Filter } from '../Filter/Filter';
-import { RowWidthResizer } from '../RowWidthResizer';
+import { Filter } from './Filter';
+import { RowWidthResizer } from './RowWidthResizer';
 import { useState } from 'react';
 import type { Dimension } from '@admiral-ds/react-ui';
 
-interface Props<T> {
+interface Props<T> extends React.HTMLAttributes<HTMLElement> {
   headerLineClamp: number;
   headerExtraLineClamp: number;
   dimension: Dimension;
@@ -31,6 +31,7 @@ export const CellTh = <T,>({
   multiSortable,
   header,
   isEmptyCell,
+  ...props
 }: Props<T>) => {
   const [headerRef, setHeaderRef] = useState<HTMLDivElement | null>(null);
 
@@ -53,7 +54,13 @@ export const CellTh = <T,>({
   const sort = column.getIsSorted();
 
   return (
-    <HeaderCell $dimension={dimension} key={header.id} colSpan={header.colSpan} ref={(node) => setHeaderRef(node)}>
+    <HeaderCell
+      {...props}
+      $dimension={dimension}
+      key={header.id}
+      colSpan={header.colSpan}
+      ref={(node) => setHeaderRef(node)}
+    >
       <HeaderCellContent $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
         <HeaderCellTitle
           onClick={sortable ? header.column.getToggleSortingHandler() : () => {}}

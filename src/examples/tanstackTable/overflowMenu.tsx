@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
-import styled from 'styled-components';
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 import { MenuItem, OverflowMenu, RowAction, TooltipHoc, type RenderOptionProps } from '@admiral-ds/react-ui';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
