@@ -39,19 +39,19 @@ export const Resizer = styled.div`
   background: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
 `;
 
-type ResizerProps = {
+interface ResizerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   name?: string;
   disabled: boolean;
   dimension: Dimension;
   columnMinWidth?: number;
   onChange?: (evt: { name: string; width: number }) => void;
-};
+}
 
-export function RowWidthResizer({ disabled, dimension }: ResizerProps) {
+export function RowWidthResizer({ disabled, dimension, onChange, ...props }: ResizerProps) {
   const node = React.useRef<HTMLDivElement | null>(null);
 
   return (
-    <ResizerWrapper ref={node} disabled={disabled} $dimension={dimension}>
+    <ResizerWrapper ref={node} disabled={disabled} $dimension={dimension} {...props}>
       <Resizer />
     </ResizerWrapper>
   );

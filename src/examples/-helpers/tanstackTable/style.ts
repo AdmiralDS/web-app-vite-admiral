@@ -70,10 +70,7 @@ export const disabledRow = css`
 
 export const rowHoverMixin = css`
   cursor: pointer;
-
-  & > * {
-    background: var(--admiral-color-Primary_Primary10, ${(p) => p.theme.color['Primary/Primary 10']});
-  }
+  background: var(--admiral-color-Primary_Primary10, ${(p) => p.theme.color['Primary/Primary 10']});
 `;
 
 export const borderStyle = css<{ $resizer?: boolean }>`
@@ -146,9 +143,8 @@ export const BodyTr = styled.tr<{
   display: grid;
   grid-template-columns: var(--columns-template);
   min-width: fit-content;
-  & > * {
-    background: ${rowBackground};
-  }
+  background: ${rowBackground};
+
   ${rowStyle}
   ${({ disabled }) => disabled && disabledRow}
 

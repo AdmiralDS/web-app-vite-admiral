@@ -51,8 +51,17 @@ interface Props<T> {
   /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions?: boolean;
-  gridTemplateColumns?: string;
 }
+
+export const defaultOptions: any = {
+  enableSorting: false,
+  columnResizeMode: 'onChange',
+  defaultColumn: {
+    size: 100, //starting column size
+    minSize: 50, //enforced during column resizing
+    maxSize: 500, //enforced during column resizing
+  },
+};
 
 export const TanstackTable = <T,>({
   table,
@@ -62,7 +71,6 @@ export const TanstackTable = <T,>({
   greyHeader,
   greyZebraRows,
   showRowsActions: userShowRowsActions = false,
-  gridTemplateColumns,
 }: Props<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
@@ -96,14 +104,28 @@ export const TanstackTable = <T,>({
 
   const showRowsActions = isRowsActions && userShowRowsActions;
 
+  const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
+    if (
+      header.column.getIsPinned() == 'left' &&
+      (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
+    ) {
+      return result + ` min-content`;
+    }
+    let width = header.column.getCanResize()
+      ? header.getSize() + 'px'
+      : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
+
+    return result + ` ${width}`;
+  }, '');
+
+  const gridTemplateColumns = isRowsActions ? `${gridVisibleTemplateColumns} 1fr` : gridVisibleTemplateColumns;
+
   return (
     <S.Table
       ref={tableRef}
       style={
         {
-          '--columns-template':
-            gridTemplateColumns ??
-            `repeat(${isRowsActions ? table.getAllLeafColumns().length + 1 : table.getAllLeafColumns().length}, 100px)`,
+          '--columns-template': gridTemplateColumns,
         } as React.CSSProperties
       }
     >

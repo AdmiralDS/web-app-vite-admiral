@@ -25,20 +25,24 @@ const columns = [
   columnHelper.accessor('first', {
     header: 'Размер M',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 131,
     meta: { extraText: 'Add text' },
   }),
   columnHelper.accessor('second', {
     header: 'Column title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 250,
     meta: { extraText: 'Add text. Текст длиннее основного' },
   }),
   columnHelper.accessor('third', {
     header: 'Column title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 158,
     meta: { extraText: 'Add text', cellAlign: 'right' },
   }),
   columnHelper.accessor('forth', {
     header: 'Column title',
+    size: 146,
     cell: (info) => <CellText>{info.getValue()}</CellText>,
     meta: { extraText: 'Add text' },
   }),
@@ -56,7 +60,7 @@ export const WithExtraTextInHeader = () => {
 
   return (
     <ExampleSection>
-      <TanstackTable table={table} gridTemplateColumns="131px 250px 158px 146px" />
+      <TanstackTable table={table} />
     </ExampleSection>
   );
 };

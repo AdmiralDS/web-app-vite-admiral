@@ -41,7 +41,7 @@ export const CellTh = <T,>({
     : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
   const title = header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext());
 
-  const additionalEmptyCells = header.id === 'expander' || header.id === 'select';
+  const additionalEmptyCells = header.id === 'expand-column' || header.id === 'checkbox-column';
   const visibleColumnSeparator = isEmptyCell && !additionalEmptyCells;
 
   const sortable = header.column.getCanSort() && !!title;
@@ -78,7 +78,14 @@ export const CellTh = <T,>({
           </>
         )}
       </HeaderCellContent>
-      {visibleColumnSeparator && <RowWidthResizer disabled dimension={dimension} />}
+      {visibleColumnSeparator && (
+        <RowWidthResizer
+          disabled={!header.column.getCanResize()}
+          dimension={dimension}
+          onMouseDown={header.getResizeHandler()}
+          onTouchStart={header.getResizeHandler()}
+        />
+      )}
     </HeaderCell>
   );
 };
