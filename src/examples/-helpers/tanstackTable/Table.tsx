@@ -24,8 +24,17 @@ interface Props<T> {
   headerExtraLineClamp?: number;
   greyHeader?: boolean;
   greyZebraRows?: boolean;
-  gridTemplateColumns?: string;
 }
+
+export const defaultOptions: any = {
+  enableSorting: false,
+  columnResizeMode: 'onChange',
+  defaultColumn: {
+    size: 100, //starting column size
+    minSize: 50, //enforced during column resizing
+    maxSize: 500, //enforced during column resizing
+  },
+};
 
 export const TanstackTable = <T,>({
   table,
@@ -34,16 +43,23 @@ export const TanstackTable = <T,>({
   headerExtraLineClamp = 1,
   greyHeader,
   greyZebraRows,
-  gridTemplateColumns,
 }: Props<T>) => {
+  const gridTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
+    if (
+      header.column.getIsPinned() == 'left' &&
+      (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
+    ) {
+      return result + ` min-content`;
+    }
+    let width = header.column.getCanResize()
+      ? header.getSize() + 'px'
+      : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
+
+    return result + ` ${width}`;
+  }, '');
+
   return (
-    <S.Table
-      style={
-        {
-          '--columns-template': gridTemplateColumns ?? `repeat(${table.getAllLeafColumns().length}, 100px)`,
-        } as React.CSSProperties
-      }
-    >
+    <S.Table style={{ '--columns-template': gridTemplateColumns } as React.CSSProperties}>
       <S.Header>
         {table.getHeaderGroups().map((headerGroup) => {
           const multiSortable =

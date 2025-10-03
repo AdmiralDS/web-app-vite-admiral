@@ -110,7 +110,7 @@ export const ExpandedRow = () => {
 
   const columns: ColumnDef<Person>[] = [
     {
-      id: 'expander', //required id='expander'
+      id: 'expand-column', // required id
       header: () => null,
       cell: ({ row }) => {
         const original = row.original as RowData & MetaRowProps<Person>;
@@ -150,34 +150,28 @@ export const ExpandedRow = () => {
           {getValue<string>()}
         </div>
       ),
-      footer: (props) => props.column.id,
     },
     {
       accessorFn: (row) => row.lastName,
       id: 'lastName',
       cell: (info) => info.getValue(),
       header: 'Last Name',
-      footer: (props) => props.column.id,
     },
     {
       accessorKey: 'age',
       header: 'Age',
-      footer: (props) => props.column.id,
     },
     {
       accessorKey: 'visits',
       header: 'Visits',
-      footer: (props) => props.column.id,
     },
     {
       accessorKey: 'status',
       header: 'Status',
-      footer: (props) => props.column.id,
     },
     {
       accessorKey: 'progress',
       header: 'Profile Progress',
-      footer: (props) => props.column.id,
     },
   ];
 
@@ -188,6 +182,11 @@ export const ExpandedRow = () => {
     getSortedRowModel: getSortedRowModel(),
     getRowCanExpand: () => true,
     getExpandedRowModel: getExpandedRowModel(),
+    initialState: {
+      columnPinning: {
+        left: ['expand-column'],
+      },
+    },
   });
 
   return (

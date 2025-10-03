@@ -25,18 +25,22 @@ const columns = [
   columnHelper.accessor('first', {
     header: 'Column title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 146,
   }),
   columnHelper.accessor('second', {
     header: 'Column title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 146,
   }),
   columnHelper.accessor('third', {
     header: 'Длинный текст очень для этой колонки',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 204,
   }),
   columnHelper.accessor('forth', {
     header: 'Column title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 146,
   }),
 ];
 
@@ -52,7 +56,7 @@ export const WithOverflowHeaders = () => {
 
   return (
     <ExampleSection>
-      <TanstackTable table={table} gridTemplateColumns="146px 146px 204px 146px" />
+      <TanstackTable table={table} />
     </ExampleSection>
   );
 };

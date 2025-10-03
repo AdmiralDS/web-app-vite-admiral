@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { CheckboxField } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
 
 type Person = {
   firstName: string;
@@ -48,7 +49,7 @@ export const RowSelection = () => {
   const columns = useMemo<ColumnDef<Person>[]>(
     () => [
       {
-        id: 'select', //required id='select'
+        id: 'checkbox-column', // required id
         header: ({ table }) => (
           <CheckboxField
             dimension="s"
@@ -77,55 +78,15 @@ export const RowSelection = () => {
         ),
       },
       {
-        header: 'Name',
-        footer: (props) => props.column.id,
-        columns: [
-          {
-            accessorKey: 'firstName',
-            cell: (info) => info.getValue(),
-            footer: (props) => props.column.id,
-            header: 'First Name',
-          },
-          {
-            accessorFn: (row) => row.lastName,
-            id: 'lastName',
-            cell: (info) => info.getValue(),
-            header: 'Last Name',
-            footer: (props) => props.column.id,
-          },
-        ],
+        id: 'firstName',
+        header: 'First Name',
+        cell: ({ row }) => <CellText>{row.original.firstName}</CellText>,
       },
-      {
-        header: 'Info',
-        footer: (props) => props.column.id,
-        columns: [
-          {
-            accessorKey: 'age',
-            header: 'Age',
-            footer: (props) => props.column.id,
-          },
-          {
-            header: 'More Info',
-            columns: [
-              {
-                accessorKey: 'visits',
-                header: 'Visits',
-                footer: (props) => props.column.id,
-              },
-              {
-                accessorKey: 'status',
-                header: 'Status',
-                footer: (props) => props.column.id,
-              },
-              {
-                accessorKey: 'progress',
-                header: 'Profile Progress',
-                footer: (props) => props.column.id,
-              },
-            ],
-          },
-        ],
-      },
+      { id: 'lastName', header: 'Last Name', cell: ({ row }) => <CellText>{row.original.lastName}</CellText> },
+      { id: 'age', header: 'Age', cell: ({ row }) => <CellText>{row.original.age}</CellText> },
+      { id: 'visits', header: 'Visits', cell: ({ row }) => <CellText>{row.original.visits}</CellText> },
+      { id: 'status', header: 'Status', cell: ({ row }) => <CellText>{row.original.status}</CellText> },
+      { id: 'progress', header: 'Progress', cell: ({ row }) => <CellText>{row.original.progress}</CellText> },
     ],
     [],
   );
@@ -141,6 +102,11 @@ export const RowSelection = () => {
     enableRowSelection: true, //enable row selection for all rows
     // enableRowSelection: row => row.original.age > 18, // or enable row selection conditionally per row
     onRowSelectionChange: setRowSelection,
+    initialState: {
+      columnPinning: {
+        left: ['checkbox-column'],
+      },
+    },
   });
 
   return (
