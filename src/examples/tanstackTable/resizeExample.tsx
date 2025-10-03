@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable/Table';
 import { CellText } from '#examples/-helpers/tanstackTable/style';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
@@ -55,17 +55,14 @@ const columns = [
   columnHelper.accessor('type', {
     header: 'Тип сделки',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
-    size: 141,
   }),
   columnHelper.accessor('date', {
     header: 'Дата сделки',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
-    size: 149,
   }),
   columnHelper.accessor('amount', {
     header: 'Сумма',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
-    size: 150,
     meta: { cellAlign: 'right' },
   }),
   columnHelper.accessor('currency', {
@@ -75,24 +72,24 @@ const columns = [
   columnHelper.accessor('rate', {
     header: 'Ставка',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
-    size: 96,
     meta: { cellAlign: 'right' },
   }),
   columnHelper.accessor('status', {
     header: 'Статус',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
-    size: 110,
+    enableResizing: false,
+    meta: { gridColumnTemplate: '1fr' },
   }),
 ];
 
-export const BaseExample = () => {
+export const ResizeExample = () => {
   const [data, _setData] = React.useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    enableSorting: false,
+    ...defaultOptions,
   });
 
   return (
@@ -100,8 +97,20 @@ export const BaseExample = () => {
       text={
         <>
           <PStyled>
-            Контент ячеек не имеет внутренних отступов. Вы можете использовать styled-компонент CellText, который
-            предоставляет дефолтные отступы, либо можете оборачивать контент ячейки в свою обертку
+            По умолчанию у всех колонок (кроме чекбоксов/стрелок/оверфлоу меню) включен ресайз. Включением/отключением
+            ресайза можно управлять через глобальную опцию таблицы enableColumnResizing или через индивидуальный
+            параметр каждой колонки enableResizing.
+          </PStyled>
+          <PStyled>
+            Когда у колонки включен ресайз, ширина колонки управляется через параметр колонки size (minsize, maxsize при
+            желании). Значением size может быть ТОЛЬКО ЧИСЛО, которое равно ширине колонки в пикселях (px). Ресайзинг
+            колонки не предполагает относительных величин ширины (никаких %, fr, em, min-content, max-content). Объект
+            defaultOptions включает в себя дефолтные настройки size/minsize/maxsize, при желании их можно менять.
+          </PStyled>
+          <PStyled>
+            Если вам необходимо задать ширину колонки не только в пикселях, то вы должны отключить ресайз колонки и
+            задать в параметре meta.gridTemplateColumn желаемое значение ширины, например, meta.gridTemplateColumn:
+            '1fr'
           </PStyled>
         </>
       }

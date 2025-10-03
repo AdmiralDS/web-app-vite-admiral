@@ -74,6 +74,7 @@
           "name": "С headerLineClamp и headerExtraLineClamp",
           "path": "/components/tanstackTable/withLineClampInHeader"
         },
+        { "name": "Пример c ресайзом колонок", "path": "/components/tanstackTable/resizeExample" },
         { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" },
         { "name": "C многоуровневыми заголовками (draft)", "path": "/components/tanstackTable/groupHeaders" },
         { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" },
