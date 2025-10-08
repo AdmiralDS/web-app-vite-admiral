@@ -10,3 +10,4 @@ export * from './zebraExample';
 export * from './expandedRow';
 export * from './filterExample';
 export * from './resizeExample';
+export * from './styleExample';

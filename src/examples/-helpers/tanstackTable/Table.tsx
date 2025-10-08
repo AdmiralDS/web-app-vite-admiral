@@ -24,6 +24,13 @@ interface Props<T> {
   headerExtraLineClamp?: number;
   greyHeader?: boolean;
   greyZebraRows?: boolean;
+  /** Отображение разделителя для последней колонки. По умолчанию разделитель не отображается */
+  showDividerForLastColumn?: boolean;
+  /** Отображение серой линии подчеркивания для последней строки. По умолчанию линия отображается */
+  showLastRowUnderline?: boolean;
+  /** Включение границ между ячейками таблицы и обводки всей таблицы.
+   * Последняя колонка имеет границы справа только, если параметр showDividerForLastColumn равен true. */
+  showBorders?: boolean;
 }
 
 export const defaultOptions: any = {
@@ -43,6 +50,9 @@ export const TanstackTable = <T,>({
   headerExtraLineClamp = 1,
   greyHeader,
   greyZebraRows,
+  showDividerForLastColumn = false,
+  showLastRowUnderline = true,
+  showBorders = false,
 }: Props<T>) => {
   const gridTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
     if (
@@ -59,7 +69,7 @@ export const TanstackTable = <T,>({
   }, '');
 
   return (
-    <S.Table style={{ '--columns-template': gridTemplateColumns } as React.CSSProperties}>
+    <S.Table style={{ '--columns-template': gridTemplateColumns } as React.CSSProperties} data-borders={showBorders}>
       <S.Header>
         {table.getHeaderGroups().map((headerGroup) => {
           const multiSortable =
@@ -67,10 +77,13 @@ export const TanstackTable = <T,>({
 
           return (
             <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
-              {headerGroup.headers.map((header, id) => {
+              {headerGroup.headers.map((header, index, headers) => {
+                // TODO: упростить данные вычисления, возможно добавить комментарии
                 const isEmptyCell = !header.isPlaceholder
-                  ? headerGroup.headers.length !== id + 1
-                  : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
+                  ? index === headers.length - 1
+                    ? showDividerForLastColumn
+                    : true
+                  : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
 
                 return (
                   <CellTh
@@ -89,8 +102,9 @@ export const TanstackTable = <T,>({
         })}
       </S.Header>
       <S.Body>
-        {table.getRowModel().rows.map((row, index) => {
+        {table.getRowModel().rows.map((row, index, rows) => {
           const original = row.original as RowData & MetaRowProps<T>;
+          const isLastRow = index === rows.length - 1;
 
           return (
             <Fragment key={row.id}>
@@ -101,10 +115,15 @@ export const TanstackTable = <T,>({
                 $hover={original.meta?.hover}
                 $grey={greyZebraRows && index % 2 === 1}
                 $status={original.meta?.status}
-                $expandedRow={row.getIsExpanded()}
+                $underline={!row.getIsExpanded() && (isLastRow ? showLastRowUnderline && !showBorders : true)}
               >
-                {row.getVisibleCells().map((cell) => (
-                  <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
+                {row.getVisibleCells().map((cell, index, cells) => (
+                  <S.CellTd
+                    key={cell.id}
+                    $dimension={dimension}
+                    $cellAlign={cell.column.columnDef.meta?.cellAlign}
+                    $resizer={index === cells.length - 1 ? showDividerForLastColumn : true}
+                  >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </S.CellTd>
                 ))}
