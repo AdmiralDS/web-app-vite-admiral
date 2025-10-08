@@ -22,7 +22,6 @@ interface Props<T> {
   multiSortable: boolean;
   header: Header<T, unknown>;
   isEmptyCell?: boolean;
-  showResizer?: boolean;
 }
 
 export const CellTh = <T,>({
