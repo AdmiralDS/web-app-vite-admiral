@@ -92,8 +92,14 @@ export const CellTh = <T,>({
         <RowWidthResizer
           disabled={!header.column.getCanResize()}
           dimension={dimension}
-          onMouseDown={header.getResizeHandler()}
-          onTouchStart={header.getResizeHandler()}
+          onMouseDown={(event) => {
+            event.preventDefault();
+            return header.getResizeHandler()(event);
+          }}
+          onTouchStart={(event) => {
+            event.preventDefault();
+            return header.getResizeHandler()(event);
+          }}
         />
       )}
     </HeaderCell>
