@@ -10,7 +10,7 @@ import {
 import styled from 'styled-components';
 import { useState } from 'react';
 
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { Button, DateField, FieldSet, RadioButton, T, TextInput } from '@admiral-ds/react-ui';
 import AcceptSolid from '@admiral-ds/icons/build/category/AcceptSolid.svg?react';
 import { ExampleSection } from '#examples/-helpers';
@@ -186,6 +186,7 @@ export const FilterExample = () => {
       footer: (info) => info.column.id,
       header: 'firstName',
       enableColumnFilter: false,
+      size: 140,
     }),
     columnHelper.accessor((row) => row.lastName, {
       id: 'lastName',
@@ -193,6 +194,7 @@ export const FilterExample = () => {
       header: 'Last Name',
       footer: (info) => info.column.id,
       meta: { cellAlign: 'right', filter: { renderFilter: renderInputFilter, onFilterMenuClickOutside } },
+      size: 160,
     }),
     columnHelper.accessor('age', {
       header: 'Age',
@@ -200,6 +202,7 @@ export const FilterExample = () => {
       footer: (info) => info.column.id,
       meta: { filter: { renderFilter: renderNumFilter, onFilterMenuClickOutside } },
       filterFn: (row, _, filterValue) => (filterValue === '1' ? row.original.age > 30 : row.original.age <= 30),
+      size: 100,
     }),
     columnHelper.accessor('visits', {
       header: 'Visits',
@@ -220,18 +223,21 @@ export const FilterExample = () => {
           onFilterMenuOpen: () => console.log('filter menu open'),
         },
       },
+      size: 120,
     }),
     columnHelper.accessor('dateOfBirth', {
       header: 'Date Of Birth',
       footer: (info) => info.column.id,
       meta: { filter: { renderFilter: renderDateFilter, onFilterMenuClickOutside } },
       cell: (info) => <CellText>{info.renderValue()}</CellText>,
+      size: 160,
     }),
     columnHelper.accessor('status', {
       header: 'Status',
       footer: (info) => info.column.id,
       cell: (info) => <CellText>{info.renderValue()}</CellText>,
       enableColumnFilter: false,
+      size: 140,
     }),
   ];
 
@@ -246,11 +252,13 @@ export const FilterExample = () => {
     },
     onColumnFiltersChange: setColumnFilters,
     getFilteredRowModel: getFilteredRowModel(), //client side filtering
+    ...defaultOptions,
+    enableSorting: true,
   });
 
   return (
     <ExampleSection>
-      <TanstackTable table={table} gridTemplateColumns="120px 120px 120px 120px 120px 140px" />
+      <TanstackTable table={table} />
     </ExampleSection>
   );
 };

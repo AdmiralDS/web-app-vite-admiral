@@ -5,6 +5,6 @@ export const Route = createFileRoute('/components/tanstackTable/overflowMenu')({
   component: () => <WithOverflowMenu />,
   staticData: {
     title: 'TanstackTable.',
-    description: `Пример с overflowMenu.`,
+    description: `Пример с OverflowMenu и иконками одиночных действий.`,
   },
 });

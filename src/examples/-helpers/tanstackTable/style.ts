@@ -113,7 +113,6 @@ export const HeaderTr = styled.tr<{
 }>`
   display: grid;
   grid-template-columns: var(--columns-template);
-  justify-content: start;
   box-sizing: border-box;
   min-width: fit-content;
   background: ${(p) =>
@@ -259,14 +258,23 @@ export const RowCellContent = styled.div`
 
 export const ActionMock = styled.th<{ $dimension: Dimension }>`
   display: flex;
+  justify-self: end;
   position: sticky;
   right: 0;
   z-index: 5;
-  .table[data-shadow-right='true'] & {
+  padding: 0;
+  ${Table}[data-shadow-right='true'] & {
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
   }
 
   min-height: ${({ $dimension }) => getActionSize($dimension) - 1}px;
   width: ${({ $dimension }) => getActionSize($dimension)}px;
   background-color: inherit;
+`;
+
+export const Edge = styled.th`
+  display: flex;
+  width: 0;
+  height: auto;
+  padding: 0;
 `;

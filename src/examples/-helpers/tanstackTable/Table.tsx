@@ -75,6 +75,7 @@ export const TanstackTable = <T,>({
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
   const headerRef = useRef(null);
+  const rightEdgeRef = useRef(null);
 
   const handleOverflowMenuClick = (e: React.MouseEvent<HTMLElement>) => {
     // клик по меню не должен вызывать событие клика по строке
@@ -118,7 +119,33 @@ export const TanstackTable = <T,>({
     return result + ` ${width}`;
   }, '');
 
-  const gridTemplateColumns = isRowsActions ? `${gridVisibleTemplateColumns} 1fr` : gridVisibleTemplateColumns;
+  const gridTemplateColumns = isRowsActions
+    ? `${gridVisibleTemplateColumns} minmax(min-content, auto) 0px`
+    : gridVisibleTemplateColumns;
+
+  useLayoutEffect(() => {
+    const table: HTMLElement | null = tableRef.current;
+    const rightEdge = rightEdgeRef.current;
+
+    function handleIntersection([entry]: IntersectionObserverEntry[]) {
+      if (table) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
+          table.setAttribute('data-shadow-right', 'false');
+        } else {
+          table.setAttribute('data-shadow-right', 'true');
+        }
+      }
+    }
+
+    if (table && rightEdge && showRowsActions) {
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: table,
+        threshold: [0, 1.0],
+      });
+      observer.observe(rightEdge);
+      return () => observer.disconnect();
+    }
+  }, [showRowsActions]);
 
   return (
     <S.Table
@@ -153,7 +180,11 @@ export const TanstackTable = <T,>({
                   />
                 );
               })}
-              {showRowsActions && <S.ActionMock $dimension={dimension} />}
+              {showRowsActions && (
+                <>
+                  <S.ActionMock $dimension={dimension} /> <S.Edge ref={rightEdgeRef} />
+                </>
+              )}
             </S.HeaderTr>
           );
         })}

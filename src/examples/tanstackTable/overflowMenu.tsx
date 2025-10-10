@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
 import { MenuItem, OverflowMenu, RowAction, TooltipHoc, type RenderOptionProps } from '@admiral-ds/react-ui';
 
-import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
+import { defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 import { CellText } from '#examples/-helpers/tanstackTable/style';
 import { ExampleSection } from '#examples/-helpers';
@@ -110,23 +110,28 @@ const columnHelper = createColumnHelper<Person>();
 const columns = [
   columnHelper.accessor('firstName', {
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 141,
   }),
   columnHelper.accessor((row) => row.lastName, {
     id: 'lastName',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
     header: 'Last Name',
+    size: 149,
   }),
   columnHelper.accessor('age', {
     header: 'Age',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 100,
   }),
   columnHelper.accessor('visits', {
     header: 'Visits',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 150,
   }),
   columnHelper.accessor('status', {
     header: 'Status',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 150,
   }),
   columnHelper.accessor('progress', {
     header: 'Profile Progress',
@@ -141,7 +146,7 @@ export const WithOverflowMenu = () => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    enableSorting: false,
+    ...defaultOptions,
   });
 
   return (

@@ -82,7 +82,10 @@
         { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" },
         { "name": "Пример c детализацией строки", "path": "/components/tanstackTable/expandedRow" },
         { "name": "Пример c фильтрацией", "path": "/components/tanstackTable/filterExample" },
-        { "name": "Пример с OverflowMenu", "path": "/components/tanstackTable/overflowMenu" }
+        {
+          "name": "Пример с OverflowMenu и иконками одиночных действий",
+          "path": "/components/tanstackTable/overflowMenu"
+        }
       ]
     }
   ]
