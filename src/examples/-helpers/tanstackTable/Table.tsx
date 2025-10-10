@@ -1,6 +1,6 @@
 import { flexRender, type Row, type RowData, type Table } from '@tanstack/react-table';
 import { Fragment, useLayoutEffect, useRef, useState } from 'react';
-import type { Color } from '@admiral-ds/react-ui';
+import { CheckboxField, type Color } from '@admiral-ds/react-ui';
 
 import { OverflowMenu } from './OverflowMenu';
 import * as S from './style';
@@ -16,6 +16,7 @@ export interface MetaRowProps<T> {
     status?: Status;
     disabled?: boolean;
     selected?: boolean;
+
     /** Функция рендера содержимого раскрытой части строки (детализации строки) */
     expandedRowRender?: (props: { row: Row<T> }) => React.ReactElement;
 
@@ -30,6 +31,7 @@ export interface MetaRowProps<T> {
      * Для таблицы с dimension='l' или dimension='xl' используется OverflowMenu c dimension='l'.
      */
     overflowMenuRender?: (row: any, onVisibilityChange?: (isVisible: boolean) => void) => React.ReactNode;
+
     /** Функция рендера одиночного действия над строкой.
      * Одиночное действие отображается в виде иконки при ховере на строку
      * и располагается по правому краю строки в видимой области таблицы.
@@ -38,10 +40,15 @@ export interface MetaRowProps<T> {
      * внутрь которого нужно передать произвольную иконку для отображения действия.
      */
     actionRender?: (row: any) => React.ReactNode;
+
+    /** Название группы */
+    groupTitle?: string;
+    /** Строки таблицы, находящиеся в группе */
+    subRows?: T[];
   };
 }
 
-interface Props<T> {
+export interface TanstackTableProps<T> {
   table: Table<T>;
   dimension?: Dimension;
   headerLineClamp?: number;
@@ -51,9 +58,12 @@ interface Props<T> {
   /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions?: boolean;
+
+  /** Отображать чекбоксы в названиях групп */
+  showCheckboxTitleGroup?: boolean;
 }
 
-export const defaultOptions: any = {
+export const defaultOptions = {
   enableSorting: false,
   columnResizeMode: 'onChange',
   defaultColumn: {
@@ -61,7 +71,7 @@ export const defaultOptions: any = {
     minSize: 50, //enforced during column resizing
     maxSize: 500, //enforced during column resizing
   },
-};
+} as const;
 
 export const TanstackTable = <T,>({
   table,
@@ -71,7 +81,8 @@ export const TanstackTable = <T,>({
   greyHeader,
   greyZebraRows,
   showRowsActions: userShowRowsActions = false,
-}: Props<T>) => {
+  showCheckboxTitleGroup = false,
+}: TanstackTableProps<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
   const headerRef = useRef(null);
@@ -140,17 +151,32 @@ export const TanstackTable = <T,>({
                 const isEmptyCell = !header.isPlaceholder
                   ? headerGroup.headers.length !== id + 1
                   : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
+                const title = header.isPlaceholder
+                  ? null
+                  : flexRender(header.column.columnDef.header, header.getContext());
+
+                const extraText = header.isPlaceholder
+                  ? null
+                  : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
 
                 return (
-                  <CellTh
-                    key={header.id}
-                    header={header}
-                    headerLineClamp={headerLineClamp}
-                    headerExtraLineClamp={headerExtraLineClamp}
-                    multiSortable={multiSortable}
-                    dimension={dimension}
-                    isEmptyCell={isEmptyCell}
-                  />
+                  <Fragment key={header.id}>
+                    {typeof title === 'string' ? (
+                      <CellTh
+                        key={header.id}
+                        header={header}
+                        headerLineClamp={headerLineClamp}
+                        headerExtraLineClamp={headerExtraLineClamp}
+                        multiSortable={multiSortable}
+                        dimension={dimension}
+                        isEmptyCell={isEmptyCell}
+                        title={title}
+                        extraText={extraText}
+                      />
+                    ) : (
+                      title
+                    )}
+                  </Fragment>
                 );
               })}
               {showRowsActions && <S.ActionMock $dimension={dimension} />}
@@ -172,13 +198,52 @@ export const TanstackTable = <T,>({
                 $grey={greyZebraRows && index % 2 === 1}
                 $status={original.meta?.status}
                 $showRowsActions={showRowsActions}
-                $expandedRow={row.getIsExpanded()}
+                $expandedRow={row.getIsExpanded() && !!original.meta?.expandedRowRender}
               >
-                {row.getVisibleCells().map((cell) => (
-                  <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </S.CellTd>
-                ))}
+                {original.meta?.groupTitle ? (
+                  <td
+                    colSpan={row.getVisibleCells().length}
+                    style={{ gridColumn: `span ${row.getVisibleCells().length}` }}
+                  >
+                    <S.WrapperExpandContent
+                      $depth={row.getCanExpand() ? row.depth : row.depth + 1}
+                      $dimension={dimension}
+                    >
+                      {row.getCanExpand() && (
+                        <S.ExpandCell $dimension={dimension}>
+                          <S.ExpandIconPlacement
+                            dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
+                            highlightFocus={false}
+                            onClick={row.getToggleExpandedHandler()}
+                          >
+                            <S.ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+                          </S.ExpandIconPlacement>
+                        </S.ExpandCell>
+                      )}
+                      {row.getCanSelect() && showCheckboxTitleGroup && (
+                        <S.CheckboxCell $dimension={dimension}>
+                          <CheckboxField
+                            dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
+                            {...{
+                              checked: row.getIsSelected(),
+                              disabled: !row.getCanSelect(),
+                              indeterminate: row.getIsSomeSelected(),
+                              onChange: row.getToggleSelectedHandler(),
+                            }}
+                          />
+                        </S.CheckboxCell>
+                      )}
+
+                      <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
+                    </S.WrapperExpandContent>
+                  </td>
+                ) : (
+                  row.getVisibleCells().map((cell) => (
+                    <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </S.CellTd>
+                  ))
+                )}
                 {(showRowsActions || original.meta?.actionRender || original.meta?.overflowMenuRender) && (
                   <OverflowMenu
                     dimension={dimension}
@@ -190,10 +255,10 @@ export const TanstackTable = <T,>({
                   />
                 )}
               </S.BodyTr>
-              {row.getIsExpanded() && (
+              {row.getIsExpanded() && original.meta?.expandedRowRender && (
                 <S.BodyTr $dimension={dimension}>
                   <S.CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
-                    {original.meta?.expandedRowRender ? original.meta.expandedRowRender({ row }) : null}
+                    {original.meta.expandedRowRender({ row })}
                   </S.CellTd>
                 </S.BodyTr>
               )}

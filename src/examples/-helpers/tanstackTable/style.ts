@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import type { Dimension, Status } from './Table';
 import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
 import { getActionSize } from './OverflowMenu';
+// import { headerStyle } from './HeaderCell/styled';
 
 // padding-bottom меньше padding-top на 1px, т.к. 1px остается для border-bottom ячейки
 export const cellStyle = css<{ $dimension: Dimension }>`
@@ -205,6 +206,9 @@ export const CellTd = styled.td<{
 export const CellText = styled.div<{ $dimension?: Dimension }>`
   display: block;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   padding: ${({ $dimension }) => {
     switch ($dimension) {
       case 's':
@@ -218,38 +222,6 @@ export const CellText = styled.div<{ $dimension?: Dimension }>`
         return '12px 12px 11px 12px';
     }
   }};
-`;
-
-export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
-  transition: transform 0.3s ease-in-out;
-  transform: rotate(${(p) => (p.$isOpened ? 180 : 0)}deg);
-`;
-
-export const ExpandIconPlacement = styled(IconPlacement)`
-  margin: 0;
-  flex-shrink: 0;
-`;
-
-export const ExpandCell = styled.div<{ $dimension: Dimension }>`
-  width: ${({ $dimension }) => ($dimension === 's' || $dimension === 'm' ? 44 : 56)}px;
-  padding: ${({ $dimension }) => {
-    switch ($dimension) {
-      case 's':
-        return '6px 12px 5px 12px';
-      case 'l':
-        return '12px 16px 11px 16px';
-      case 'xl':
-        return '16px 16px 15px 16px';
-      case 'm':
-      default:
-        return '10px 12px 9px 12px';
-    }
-  }};
-
-  box-sizing: border-box;
-  ${cellStyle};
-  overflow: hidden;
-  text-align: start;
 `;
 
 export const RowCellContent = styled.div`
@@ -269,4 +241,97 @@ export const ActionMock = styled.th<{ $dimension: Dimension }>`
   min-height: ${({ $dimension }) => getActionSize($dimension) - 1}px;
   width: ${({ $dimension }) => getActionSize($dimension)}px;
   background-color: inherit;
+`;
+
+export const ExpandCell = styled.div<{ $dimension: Dimension }>`
+  width: ${({ $dimension }) => ($dimension === 's' || $dimension === 'm' ? 44 : 56)}px;
+  padding: ${({ $dimension }) => {
+    switch ($dimension) {
+      case 's':
+        return '6px 12px 5px 12px';
+      case 'l':
+        return '12px 16px 11px 16px';
+      case 'xl':
+        return '16px 16px 15px 16px';
+      case 'm':
+      default:
+        return '10px 12px 9px 12px';
+    }
+  }};
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+`;
+
+export const ExpandIconPlacement = styled(IconPlacement)`
+  margin: 0;
+  flex-shrink: 0;
+`;
+export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(${(p) => (p.$isOpened ? 180 : 0)}deg);
+`;
+
+export const WrapperExpandContent = styled.div<{ $dimension?: Dimension; $depth: number }>`
+  padding-left: ${({ $depth, $dimension }) => `${$depth * ($dimension === 's' || $dimension === 'm' ? 44 : 56)}px`};
+  display: inline-flex;
+  overflow: hidden;
+`;
+
+//todo удалить при мерже с виртуальным скролом
+export const headerStyle = css<{ $dimension: Dimension }>`
+  color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
+  ${({ $dimension }) =>
+    $dimension === 'l' || $dimension === 'xl' ? typography['Subtitle/Subtitle 2'] : typography['Subtitle/Subtitle 3']}
+`;
+
+export const GroupTitleCell = styled.div<{ $dimension: Dimension }>`
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  cursor: default;
+
+  ${headerStyle}
+  ${cellStyle}
+`;
+
+export const CheckboxCell = styled.div<{ $dimension: Dimension }>`
+  width: ${({ $dimension }) => ($dimension === 's' || $dimension === 'm' ? 44 : 56)}px;
+  padding: ${({ $dimension }) => {
+    switch ($dimension) {
+      case 's':
+        return '6px 12px 5px 12px';
+      case 'l':
+        return '12px 16px 11px 16px';
+      case 'xl':
+        return '16px 16px 15px 16px';
+      case 'm':
+      default:
+        return '10px 12px 9px 12px';
+    }
+  }};
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+`;
+
+export const WrapperTitleCell = styled.th<{ $dimension: Dimension }>`
+  padding: 0;
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: flex-start;
+  box-sizing: border-box;
+  cursor: default;
+  padding-left: ${({ $dimension }) => ($dimension === 'm' || $dimension === 's' ? '44' : '56')}px;
+  width: 100%;
+  height: 100%;
 `;

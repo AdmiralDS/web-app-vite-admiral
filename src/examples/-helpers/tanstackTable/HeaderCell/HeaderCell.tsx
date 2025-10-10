@@ -1,4 +1,4 @@
-import { flexRender, type Header } from '@tanstack/react-table';
+import { type Header } from '@tanstack/react-table';
 import {
   HeaderCell,
   HeaderCellContent,
@@ -14,14 +14,20 @@ import { Filter } from '../Filter/Filter';
 import { RowWidthResizer } from '../RowWidthResizer';
 import { useState } from 'react';
 import type { Dimension } from '@admiral-ds/react-ui';
+import type { CSSProperties } from 'styled-components';
 
 interface Props<T> {
   headerLineClamp: number;
   headerExtraLineClamp: number;
   dimension: Dimension;
-  multiSortable: boolean;
+  multiSortable?: boolean;
   header: Header<T, unknown>;
+  title: React.ReactNode;
+  extraText?: React.ReactNode;
   isEmptyCell?: boolean;
+  //todo пересмотреть тип
+  as?: React.ReactNode;
+  style?: CSSProperties;
 }
 
 export const CellTh = <T,>({
@@ -31,15 +37,13 @@ export const CellTh = <T,>({
   multiSortable,
   header,
   isEmptyCell,
+  title,
+  extraText,
+  ...props
 }: Props<T>) => {
   const [headerRef, setHeaderRef] = useState<HTMLDivElement | null>(null);
 
   const column = header.column;
-
-  const extraText = header.isPlaceholder
-    ? null
-    : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-  const title = header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext());
 
   const additionalEmptyCells = header.id === 'expand-column' || header.id === 'checkbox-column';
   const visibleColumnSeparator = isEmptyCell && !additionalEmptyCells;
@@ -53,7 +57,13 @@ export const CellTh = <T,>({
   const sort = column.getIsSorted();
 
   return (
-    <HeaderCell $dimension={dimension} key={header.id} colSpan={header.colSpan} ref={(node) => setHeaderRef(node)}>
+    <HeaderCell
+      {...props}
+      $dimension={dimension}
+      key={header.id}
+      colSpan={header.colSpan}
+      ref={(node) => setHeaderRef(node)}
+    >
       <HeaderCellContent $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
         <HeaderCellTitle
           onClick={sortable ? header.column.getToggleSortingHandler() : () => {}}
