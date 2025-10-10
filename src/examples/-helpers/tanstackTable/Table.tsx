@@ -51,6 +51,13 @@ interface Props<T> {
   /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions?: boolean;
+  /** Отображение разделителя для последней колонки. По умолчанию разделитель не отображается */
+  showDividerForLastColumn?: boolean;
+  /** Отображение серой линии подчеркивания для последней строки. По умолчанию линия отображается */
+  showLastRowUnderline?: boolean;
+  /** Включение границ между ячейками таблицы и обводки всей таблицы.
+   * Последняя колонка имеет границы справа только, если параметр showDividerForLastColumn равен true. */
+  showBorders?: boolean;
 }
 
 export const defaultOptions: any = {
@@ -71,6 +78,9 @@ export const TanstackTable = <T,>({
   greyHeader,
   greyZebraRows,
   showRowsActions: userShowRowsActions = false,
+  showDividerForLastColumn = false,
+  showLastRowUnderline = true,
+  showBorders = false,
 }: Props<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
@@ -155,6 +165,7 @@ export const TanstackTable = <T,>({
           '--columns-template': gridTemplateColumns,
         } as React.CSSProperties
       }
+      data-borders={showBorders}
     >
       <S.Header ref={headerRef}>
         {table.getHeaderGroups().map((headerGroup) => {
@@ -163,10 +174,13 @@ export const TanstackTable = <T,>({
 
           return (
             <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
-              {headerGroup.headers.map((header, id) => {
+              {headerGroup.headers.map((header, index, headers) => {
+                // TODO: упростить данные вычисления, возможно добавить комментарии
                 const isEmptyCell = !header.isPlaceholder
-                  ? headerGroup.headers.length !== id + 1
-                  : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
+                  ? index === headers.length - 1
+                    ? showDividerForLastColumn
+                    : true
+                  : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
 
                 return (
                   <CellTh
@@ -182,7 +196,8 @@ export const TanstackTable = <T,>({
               })}
               {showRowsActions && (
                 <>
-                  <S.ActionMock $dimension={dimension} /> <S.Edge ref={rightEdgeRef} />
+                  <S.ActionMock $dimension={dimension} />
+                  <S.Edge ref={rightEdgeRef} />
                 </>
               )}
             </S.HeaderTr>
@@ -190,8 +205,9 @@ export const TanstackTable = <T,>({
         })}
       </S.Header>
       <S.Body>
-        {table.getRowModel().rows.map((row, index) => {
+        {table.getRowModel().rows.map((row, index, rows) => {
           const original = row.original as RowData & MetaRowProps<T>;
+          const isLastRow = index === rows.length - 1;
 
           return (
             <Fragment key={row.id}>
@@ -204,9 +220,15 @@ export const TanstackTable = <T,>({
                 $status={original.meta?.status}
                 $showRowsActions={showRowsActions}
                 $expandedRow={row.getIsExpanded()}
+                $underline={!row.getIsExpanded() && (isLastRow ? showLastRowUnderline && !showBorders : true)}
               >
-                {row.getVisibleCells().map((cell) => (
-                  <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
+                {row.getVisibleCells().map((cell, index, cells) => (
+                  <S.CellTd
+                    key={cell.id}
+                    $dimension={dimension}
+                    $cellAlign={cell.column.columnDef.meta?.cellAlign}
+                    $resizer={index === cells.length - 1 ? showDividerForLastColumn : true}
+                  >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </S.CellTd>
                 ))}

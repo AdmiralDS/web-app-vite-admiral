@@ -53,7 +53,13 @@ export const CellTh = <T,>({
   const sort = column.getIsSorted();
 
   return (
-    <HeaderCell $dimension={dimension} key={header.id} colSpan={header.colSpan} ref={(node) => setHeaderRef(node)}>
+    <HeaderCell
+      key={header.id}
+      $dimension={dimension}
+      $resizer={visibleColumnSeparator}
+      colSpan={header.colSpan}
+      ref={(node) => setHeaderRef(node)}
+    >
       <HeaderCellContent $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
         <HeaderCellTitle
           onClick={sortable ? header.column.getToggleSortingHandler() : () => {}}

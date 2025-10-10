@@ -136,6 +136,7 @@ export const BodyTr = styled.tr<{
   $dimension: Dimension;
   $showRowsActions?: boolean;
   $expandedRow?: boolean;
+  $underline?: boolean;
 }>`
   position: relative;
   box-sizing: border-box;
@@ -164,8 +165,9 @@ export const BodyTr = styled.tr<{
       }
     `}
 
-  ${({ $expandedRow, theme }) =>
+  ${({ $expandedRow, theme, $underline }) =>
     !$expandedRow &&
+    $underline &&
     `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
 
   min-height: ${({ $dimension }) => {
