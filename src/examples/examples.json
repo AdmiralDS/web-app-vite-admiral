@@ -75,6 +75,7 @@
           "path": "/components/tanstackTable/withLineClampInHeader"
         },
         { "name": "Пример c ресайзом колонок", "path": "/components/tanstackTable/resizeExample" },
+        { "name": "Пример стилизации таблицы через props", "path": "/components/tanstackTable/styleExample" },
         { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" },
         { "name": "C многоуровневыми заголовками (draft)", "path": "/components/tanstackTable/groupHeaders" },
         { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" },
@@ -82,7 +83,10 @@
         { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" },
         { "name": "Пример c детализацией строки", "path": "/components/tanstackTable/expandedRow" },
         { "name": "Пример c фильтрацией", "path": "/components/tanstackTable/filterExample" },
-        { "name": "Пример с OverflowMenu", "path": "/components/tanstackTable/overflowMenu" },
+        {
+          "name": "Пример с OverflowMenu и иконками одиночных действий",
+          "path": "/components/tanstackTable/overflowMenu"
+        },
         { "name": "Пример с группировкой строк", "path": "/components/tanstackTable/groupRow" }
       ]
     }

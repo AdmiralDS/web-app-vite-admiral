@@ -59,8 +59,9 @@ export const CellTh = <T,>({
   return (
     <HeaderCell
       {...props}
-      $dimension={dimension}
       key={header.id}
+      $dimension={dimension}
+      $resizer={visibleColumnSeparator}
       colSpan={header.colSpan}
       ref={(node) => setHeaderRef(node)}
     >

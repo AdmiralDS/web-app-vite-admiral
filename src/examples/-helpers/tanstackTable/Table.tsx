@@ -58,9 +58,15 @@ export interface TanstackTableProps<T> {
   /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions?: boolean;
-
   /** Отображать чекбоксы в названиях групп */
   showCheckboxTitleGroup?: boolean;
+  /** Отображение разделителя для последней колонки. По умолчанию разделитель не отображается */
+  showDividerForLastColumn?: boolean;
+  /** Отображение серой линии подчеркивания для последней строки. По умолчанию линия отображается */
+  showLastRowUnderline?: boolean;
+  /** Включение границ между ячейками таблицы и обводки всей таблицы.
+   * Последняя колонка имеет границы справа только, если параметр showDividerForLastColumn равен true. */
+  showBorders?: boolean;
 }
 
 export const defaultOptions = {
@@ -82,10 +88,14 @@ export const TanstackTable = <T,>({
   greyZebraRows,
   showRowsActions: userShowRowsActions = false,
   showCheckboxTitleGroup = false,
+  showDividerForLastColumn = false,
+  showLastRowUnderline = true,
+  showBorders = false,
 }: TanstackTableProps<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
   const headerRef = useRef(null);
+  const rightEdgeRef = useRef(null);
 
   const handleOverflowMenuClick = (e: React.MouseEvent<HTMLElement>) => {
     // клик по меню не должен вызывать событие клика по строке
@@ -129,7 +139,33 @@ export const TanstackTable = <T,>({
     return result + ` ${width}`;
   }, '');
 
-  const gridTemplateColumns = isRowsActions ? `${gridVisibleTemplateColumns} 1fr` : gridVisibleTemplateColumns;
+  const gridTemplateColumns = isRowsActions
+    ? `${gridVisibleTemplateColumns} minmax(min-content, auto) 0px`
+    : gridVisibleTemplateColumns;
+
+  useLayoutEffect(() => {
+    const table: HTMLElement | null = tableRef.current;
+    const rightEdge = rightEdgeRef.current;
+
+    function handleIntersection([entry]: IntersectionObserverEntry[]) {
+      if (table) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
+          table.setAttribute('data-shadow-right', 'false');
+        } else {
+          table.setAttribute('data-shadow-right', 'true');
+        }
+      }
+    }
+
+    if (table && rightEdge && showRowsActions) {
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: table,
+        threshold: [0, 1.0],
+      });
+      observer.observe(rightEdge);
+      return () => observer.disconnect();
+    }
+  }, [showRowsActions]);
 
   return (
     <S.Table
@@ -139,6 +175,7 @@ export const TanstackTable = <T,>({
           '--columns-template': gridTemplateColumns,
         } as React.CSSProperties
       }
+      data-borders={showBorders}
     >
       <S.Header ref={headerRef}>
         {table.getHeaderGroups().map((headerGroup) => {
@@ -147,14 +184,16 @@ export const TanstackTable = <T,>({
 
           return (
             <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
-              {headerGroup.headers.map((header, id) => {
+              {headerGroup.headers.map((header, index, headers) => {
+                // TODO: упростить данные вычисления, возможно добавить комментарии
                 const isEmptyCell = !header.isPlaceholder
-                  ? headerGroup.headers.length !== id + 1
-                  : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
+                  ? index === headers.length - 1
+                    ? showDividerForLastColumn
+                    : true
+                  : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
                 const title = header.isPlaceholder
                   ? null
                   : flexRender(header.column.columnDef.header, header.getContext());
-
                 const extraText = header.isPlaceholder
                   ? null
                   : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
@@ -179,14 +218,20 @@ export const TanstackTable = <T,>({
                   </Fragment>
                 );
               })}
-              {showRowsActions && <S.ActionMock $dimension={dimension} />}
+              {showRowsActions && (
+                <>
+                  <S.ActionMock $dimension={dimension} />
+                  <S.Edge ref={rightEdgeRef} />
+                </>
+              )}
             </S.HeaderTr>
           );
         })}
       </S.Header>
       <S.Body>
-        {table.getRowModel().rows.map((row, index) => {
+        {table.getRowModel().rows.map((row, index, rows) => {
           const original = row.original as RowData & MetaRowProps<T>;
+          const isLastRow = index === rows.length - 1;
 
           return (
             <Fragment key={row.id}>
@@ -199,6 +244,7 @@ export const TanstackTable = <T,>({
                 $status={original.meta?.status}
                 $showRowsActions={showRowsActions}
                 $expandedRow={row.getIsExpanded() && !!original.meta?.expandedRowRender}
+                $underline={!row.getIsExpanded() && (isLastRow ? showLastRowUnderline && !showBorders : true)}
               >
                 {original.meta?.groupTitle ? (
                   <td
@@ -238,8 +284,13 @@ export const TanstackTable = <T,>({
                     </S.WrapperExpandContent>
                   </td>
                 ) : (
-                  row.getVisibleCells().map((cell) => (
-                    <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
+                  row.getVisibleCells().map((cell, index, cells) => (
+                    <S.CellTd
+                      key={cell.id}
+                      $dimension={dimension}
+                      $cellAlign={cell.column.columnDef.meta?.cellAlign}
+                      $resizer={index === cells.length - 1 ? showDividerForLastColumn : true}
+                    >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </S.CellTd>
                   ))

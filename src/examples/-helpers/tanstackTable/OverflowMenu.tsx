@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import type { Row, RowData } from '@tanstack/react-table';
 import type { Dimension, MetaRowProps } from './Table';
+import { Table } from './style';
 
 export const getActionSize = (dimension: Dimension) => {
   switch (dimension) {
@@ -22,9 +23,11 @@ const OverflowMenuWrapper = styled.td<{ $showRowsActions?: boolean }>`
   right: 0;
   z-index: 5;
   display: flex;
-  justify-content: end;
+  justify-self: end;
+  padding: 0;
+  background-color: inherit;
 
-  .table[data-shadow-right='true'] & {
+  ${Table}[data-shadow-right='true'] & {
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
   }
 
@@ -32,6 +35,8 @@ const OverflowMenuWrapper = styled.td<{ $showRowsActions?: boolean }>`
     !$showRowsActions &&
     css`
       visibility: hidden;
+      width: 0;
+      direction: rtl;
       &:hover {
         visibility: visible;
       }
@@ -46,6 +51,8 @@ const OverflowMenuContent = styled.div<{
   justify-content: center;
   box-sizing: border-box;
   height: 100%;
+  min-width: ${({ $dimension }) => getActionSize($dimension)}px;
+  //todo нужен ли тут width?
   width: ${({ $dimension }) => getActionSize($dimension)}px;
   padding: ${({ $dimension }) => {
     switch ($dimension) {

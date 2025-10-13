@@ -114,7 +114,6 @@ export const HeaderTr = styled.tr<{
 }>`
   display: grid;
   grid-template-columns: var(--columns-template);
-  justify-content: start;
   box-sizing: border-box;
   min-width: fit-content;
   background: ${(p) =>
@@ -138,6 +137,7 @@ export const BodyTr = styled.tr<{
   $dimension: Dimension;
   $showRowsActions?: boolean;
   $expandedRow?: boolean;
+  $underline?: boolean;
 }>`
   position: relative;
   box-sizing: border-box;
@@ -166,8 +166,9 @@ export const BodyTr = styled.tr<{
       }
     `}
 
-  ${({ $expandedRow, theme }) =>
+  ${({ $expandedRow, theme, $underline }) =>
     !$expandedRow &&
+    $underline &&
     `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
 
   min-height: ${({ $dimension }) => {
@@ -231,10 +232,12 @@ export const RowCellContent = styled.div`
 
 export const ActionMock = styled.th<{ $dimension: Dimension }>`
   display: flex;
+  justify-self: end;
   position: sticky;
   right: 0;
   z-index: 5;
-  .table[data-shadow-right='true'] & {
+  padding: 0;
+  ${Table}[data-shadow-right='true'] & {
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
   }
 
@@ -334,4 +337,11 @@ export const WrapperTitleCell = styled.th<{ $dimension: Dimension }>`
   padding-left: ${({ $dimension }) => ($dimension === 'm' || $dimension === 's' ? '44' : '56')}px;
   width: 100%;
   height: 100%;
+`;
+
+export const Edge = styled.th`
+  display: flex;
+  width: 0;
+  height: auto;
+  padding: 0;
 `;
