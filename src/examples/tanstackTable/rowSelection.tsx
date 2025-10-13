@@ -1,10 +1,10 @@
-import { getCoreRowModel, getSortedRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
+import { getCoreRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
 
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { CheckboxField } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { CellText, CheckboxCell, WrapperTitleCell } from '#examples/-helpers/tanstackTable/style';
 
 type Person = {
   firstName: string;
@@ -46,27 +46,33 @@ export const RowSelection = () => {
   const [data, _setData] = useState(() => [...defaultData]);
   const [rowSelection, setRowSelection] = useState({});
 
+  const dimension = 'm';
+
   const columns = useMemo<ColumnDef<Person>[]>(
     () => [
       {
         id: 'checkbox-column', // required id
         header: ({ table }) => (
-          <CheckboxField
-            dimension="s"
-            type="checkbox"
-            {...{
-              checked: table.getIsAllRowsSelected(),
-              indeterminate: table.getIsSomeRowsSelected(),
-              onChange: table.getIsSomeRowsSelected()
-                ? () => setRowSelection({})
-                : table.getToggleAllRowsSelectedHandler(),
-            }}
-          />
+          <WrapperTitleCell>
+            <CheckboxCell $dimension={dimension}>
+              <CheckboxField
+                dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
+                type="checkbox"
+                {...{
+                  checked: table.getIsAllRowsSelected(),
+                  indeterminate: table.getIsSomeRowsSelected(),
+                  onChange: table.getIsSomeRowsSelected()
+                    ? () => setRowSelection({})
+                    : table.getToggleAllRowsSelectedHandler(),
+                }}
+              />
+            </CheckboxCell>
+          </WrapperTitleCell>
         ),
         cell: ({ row }) => (
-          <div>
+          <CheckboxCell $dimension={dimension}>
             <CheckboxField
-              dimension="s"
+              dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
               {...{
                 checked: row.getIsSelected(),
                 disabled: !row.getCanSelect(),
@@ -74,7 +80,7 @@ export const RowSelection = () => {
                 onChange: row.getToggleSelectedHandler(),
               }}
             />
-          </div>
+          </CheckboxCell>
         ),
       },
       {
@@ -95,7 +101,6 @@ export const RowSelection = () => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
     state: {
       rowSelection,
     },
@@ -107,6 +112,7 @@ export const RowSelection = () => {
         left: ['checkbox-column'],
       },
     },
+    ...defaultOptions,
   });
 
   return (

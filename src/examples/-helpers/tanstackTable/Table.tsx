@@ -239,7 +239,12 @@ export const TanstackTable = <T,>({
                   </td>
                 ) : (
                   row.getVisibleCells().map((cell) => (
-                    <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
+                    <S.CellTd
+                      $dimension={dimension}
+                      key={cell.id}
+                      $cellAlign={cell.column.columnDef.meta?.cellAlign}
+                      $disableBorderStyle={cell.column.id === 'checkbox-column'}
+                    >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </S.CellTd>
                   ))

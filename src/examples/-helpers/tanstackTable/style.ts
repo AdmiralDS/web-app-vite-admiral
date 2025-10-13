@@ -189,6 +189,7 @@ export const BodyTr = styled.tr<{
 export const CellTd = styled.td<{
   $dimension: Dimension;
   $resizer?: boolean;
+  $disableBorderStyle?: boolean;
   $cellAlign?: 'left' | 'right';
 }>`
   display: flex;
@@ -199,7 +200,7 @@ export const CellTd = styled.td<{
   padding: 0;
   overflow: hidden;
   text-align: ${({ $cellAlign }) => ($cellAlign === 'right' ? 'right' : 'left')};
-  ${borderStyle}
+  ${({ $disableBorderStyle }) => !$disableBorderStyle && borderStyle}
 `;
 
 /** учтены 2px отступы по вертикали */
@@ -323,7 +324,7 @@ export const CheckboxCell = styled.div<{ $dimension: Dimension }>`
   overflow: hidden;
 `;
 
-export const WrapperTitleCell = styled.th<{ $dimension: Dimension }>`
+export const WrapperTitleCell = styled.th`
   padding: 0;
   position: relative;
   display: inline-flex;
@@ -331,7 +332,6 @@ export const WrapperTitleCell = styled.th<{ $dimension: Dimension }>`
   align-items: flex-start;
   box-sizing: border-box;
   cursor: default;
-  padding-left: ${({ $dimension }) => ($dimension === 'm' || $dimension === 's' ? '44' : '56')}px;
   width: 100%;
   height: 100%;
 `;
