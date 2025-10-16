@@ -11,28 +11,14 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
-import { IconPlacement } from '@admiral-ds/react-ui';
-import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
 import { ExampleSection } from '#examples/-helpers';
-
-export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
-  transition: transform 0.3s ease-in-out;
-  transform: rotate(${(p) => (p.$isOpened ? 180 : 0)}deg);
-`;
-
-export const ExpandIconPlacement = styled(IconPlacement)`
-  margin: 0;
-  flex-shrink: 0;
-`;
-
-export const ExpandCell = styled.div`
-  width: 44px;
-  padding: 10px 0px 9px 12px;
-
-  box-sizing: border-box;
-  overflow: hidden;
-  text-align: start;
-`;
+import {
+  CellText,
+  ExpandCell,
+  ExpandIcon,
+  ExpandIconPlacement,
+  WrapperTitleCell,
+} from '#examples/-helpers/tanstackTable/style';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -108,16 +94,22 @@ const Content = styled.div`
 export const ExpandedRow = () => {
   const [data, _setData] = useState(() => [...defaultData]);
 
+  const dimension = 'm';
+
   const columns: ColumnDef<Person>[] = [
     {
       id: 'expand-column', // required id
-      header: () => null,
+      header: () => (
+        <WrapperTitleCell>
+          <ExpandCell $dimension={dimension} />
+        </WrapperTitleCell>
+      ),
       cell: ({ row }) => {
         const original = row.original as RowData & MetaRowProps<Person>;
 
         return (
           row.getCanExpand() && (
-            <ExpandCell>
+            <ExpandCell $dimension={dimension}>
               {original.meta?.expandedRowRender && (
                 <ExpandIconPlacement
                   style={{ margin: 0, flexShrink: 0 }}
@@ -137,41 +129,33 @@ export const ExpandedRow = () => {
     {
       accessorKey: 'firstName',
       header: 'First Name',
-      cell: ({ row, getValue }) => (
-        <div
-          style={{
-            // Since rows are flattened by default,
-            // we can use the row.depth property
-            // and paddingLeft to visually indicate the depth
-            // of the row
-            paddingLeft: `${row.depth * 2}rem`,
-          }}
-        >
-          {getValue<string>()}
-        </div>
-      ),
+      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
     },
     {
       accessorFn: (row) => row.lastName,
       id: 'lastName',
-      cell: (info) => info.getValue(),
+      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
       header: 'Last Name',
     },
     {
       accessorKey: 'age',
       header: 'Age',
+      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
     },
     {
       accessorKey: 'visits',
       header: 'Visits',
+      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
     },
     {
       accessorKey: 'status',
       header: 'Status',
+      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
     },
     {
       accessorKey: 'progress',
       header: 'Profile Progress',
+      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
     },
   ];
 
