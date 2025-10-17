@@ -2,12 +2,12 @@ import { Fragment } from 'react';
 import { flexRender, type RowData, type Table } from '@tanstack/react-table';
 
 import { OverflowMenu } from './OverflowMenu';
-import type { Dimension, MetaRowProps } from '../Table';
 
 import * as S from './style';
 import { ExpandedRow } from './ExpandedRow';
 import { CheckboxCell, ExpandCell, ExpandIcon, ExpandIconPlacement, WrapperExpandContent } from '../style';
 import { CheckboxField } from '@admiral-ds/react-ui';
+import type { Dimension, MetaRowProps } from '../types';
 
 interface Bodys<T> {
   table: Table<T>;

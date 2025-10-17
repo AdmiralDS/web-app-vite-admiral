@@ -10,11 +10,10 @@ import {
 import styled from 'styled-components';
 import { useState } from 'react';
 
-import { defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { Button, DateField, FieldSet, RadioButton, T, TextInput } from '@admiral-ds/react-ui';
 import AcceptSolid from '@admiral-ds/icons/build/category/AcceptSolid.svg?react';
 import { ExampleSection } from '#examples/-helpers';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 interface Person {
   firstName: string;

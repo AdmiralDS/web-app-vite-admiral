@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import { BodyTr, CellTd, ExpandedRowContent } from './style';
 
-import type { Dimension, MetaRowProps } from '../Table';
 import { Transition } from '../../../../layout/SideMenu/Transition';
+import type { Dimension, MetaRowProps } from '../types';
 
 const ExpandTr = styled(BodyTr)`
   grid-template-columns: unset;

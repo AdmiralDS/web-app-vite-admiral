@@ -1,7 +1,7 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 
 import { useState } from 'react';
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
 
 type Person = {

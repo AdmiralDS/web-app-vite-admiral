@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import type { Dimension, Status } from './Table';
 import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
 import { IconPlacement } from '@admiral-ds/react-ui';
-// import { headerStyle } from './HeaderCell/styled';
+import type { Dimension } from './types';
 
 // padding-bottom меньше padding-top на 1px, т.к. 1px остается для border-bottom ячейки
 export const cellStyle = css<{ $dimension: Dimension }>`

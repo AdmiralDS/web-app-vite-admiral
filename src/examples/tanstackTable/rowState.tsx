@@ -1,9 +1,8 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
+import { CellText, defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -113,6 +112,7 @@ export const RowState = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    ...defaultOptions,
   });
 
   return (

@@ -1,0 +1,130 @@
+import type { Color } from '@admiral-ds/react-ui';
+import type { Row, Table, Column, RowData } from '@tanstack/react-table';
+import '@tanstack/react-table';
+import type { css } from 'styled-components';
+import type { CSSProperties } from 'react';
+
+export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
+
+export type Dimension = 'xl' | 'l' | 'm' | 's';
+
+export type VirtualScroll = {
+  /** Фиксированная высота строки, применяется в вертикальном скролле */
+  fixedRowHeight?: number;
+  /** Включение вертикального скролла */
+  horizontal?: boolean;
+  /** Включение горизотнального скролла */
+  vertical?: boolean;
+  /** Фиксированная ширина столбца, применяется в горизонтальном скролле */
+  fixedColumnWidth?: number;
+};
+
+export interface MetaRowProps<T> {
+  meta?: {
+    /** Окраска строки по Hover. Данная окраска должна применяться, если строка кликабельна и ведет к каким-либо действиям */
+    hover?: boolean;
+    /** Статус строки. По умолчанию таблица предоставляет статусы error и success.
+     * Также пользователь может создать свои кастомные статусы, для этого нужно передать параметр из цветовой палитры ДС Адмирал или любой другой цвет в формате строки */
+    status?: Status;
+    /** Строка в состоянии disabled  */
+    disabled?: boolean;
+    /** Строка в состоянии selected */
+    selected?: boolean;
+
+    /** Функция рендера содержимого раскрытой части строки (детализации строки) */
+    expandedRowRender?: (props: { row: Row<T> }) => React.ReactElement;
+
+    /** Функция рендера OverflowMenu для строки.
+     * Входные параметры: сама строка, колбек onVisibilityChange.
+     * Колбек необходимо вызывать при открытии/закрытии меню для того, чтобы таблица могла управлять видимостью OverflowMenu.
+     * OverflowMenu отображается при ховере на строку или при открытом меню
+     * и располагается по правому краю строки в видимой области таблицы.
+     *
+     * В качестве результата функция должна возвращать OverflowMenu.
+     * Для таблицы с dimension='s' или dimension='m' используется OverflowMenu c dimension='m'.
+     * Для таблицы с dimension='l' или dimension='xl' используется OverflowMenu c dimension='l'.
+     */
+    overflowMenuRender?: (row: any, onVisibilityChange?: (isVisible: boolean) => void) => React.ReactNode;
+
+    /** Функция рендера одиночного действия над строкой.
+     * Одиночное действие отображается в виде иконки при ховере на строку
+     * и располагается по правому краю строки в видимой области таблицы.
+     *
+     * В качестве результата функция должна возвращать компонент RowAction,
+     * внутрь которого нужно передать произвольную иконку для отображения действия.
+     */
+    actionRender?: (row: any) => React.ReactNode;
+
+    /** Название группы */
+    groupTitle?: string;
+    /** Строки таблицы, находящиеся в группе */
+    subRows?: T[];
+  };
+}
+
+export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableElement> {
+  /** Ядро таблицы созданное с помощью useReactTable */
+  table: Table<T>;
+  /** Размер таблицы */
+  dimension?: Dimension;
+  /** Параметр, определяющий максимальное количество строк, которое может занимать заголовок столбца таблицы.
+   * По умолчанию заголовок занимает не более одной строки
+   */
+  headerLineClamp?: number;
+  /** Параметр, определяющий максимальное количество строк, которое может занимать дополнительный текст заголовка столбца таблицы.
+   * По умолчанию дополнительный текст занимает не более одной строки
+   */
+  headerExtraLineClamp?: number;
+  /** Окрашивание шапки таблицы в серый цвет */
+  greyHeader?: boolean;
+  /** Окрашивание строк таблицы через одну в цвет вторичного фона (зебра) */
+  greyZebraRows?: boolean;
+  /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
+   * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
+  showRowsActions?: boolean;
+  virtualScroll?: VirtualScroll;
+  /** Отображать чекбоксы в названиях групп */
+  showCheckboxTitleGroup?: boolean;
+  /** Отображение разделителя для последней колонки. По умолчанию разделитель не отображается */
+  showDividerForLastColumn?: boolean;
+  /** Отображение серой линии подчеркивания для последней строки. По умолчанию линия отображается */
+  showLastRowUnderline?: boolean;
+  /** Включение границ между ячейками таблицы и обводки всей таблицы.
+   * Последняя колонка имеет границы справа только, если параметр showDividerForLastColumn равен true. */
+  showBorders?: boolean;
+}
+
+type FilterColumn = {
+  /** Функция отрисовки содержимого фильтра (выпадающего меню фильтра). Если её не передать, значок фильтра отображаться не будет */
+  renderFilter?: (closeMenu: () => void, column: Column<any, unknown>) => React.ReactNode;
+  /** Функция отрисовки иконки фильтра. По умолчанию в качестве иконки фильтра применяется OverflowIcon (троеточие) */
+  renderFilterIcon?: () => React.ReactNode;
+  /** Колбек на клик вне меню фильтра */
+  onFilterMenuClickOutside?: (closeMenu: () => void, event: Event) => void;
+  /** Колбек на открытие меню фильтра */
+  onFilterMenuOpen?: () => void;
+  /** Колбек на закрытие меню фильтра */
+  onFilterMenuClose?: () => void;
+  /**
+   *  Позволяет выравнивать меню фильтра относительно столбца
+   *  https://developer.mozilla.org/en-US/docs/Web/CSS/align-self
+   */
+  filterMenuAlignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+
+  /** Позволяет добавлять миксин для меню фильтра, созданный с помощью styled css  */
+  filterMenuCssMixin?: ReturnType<typeof css>;
+  /** Позволяет добавлять класс на контейнер выпадающего меню  */
+  filterMenuClassName?: string;
+  /** Позволяет добавлять стили на контейнер выпадающего меню  */
+  filterMenuStyle?: CSSProperties;
+};
+
+declare module '@tanstack/react-table' {
+  interface ColumnMeta<TData extends RowData, TValue> {
+    gridColumnTemplate?: string;
+    extraText?: string;
+    filter?: FilterColumn;
+    /** Выравнивание контента ячеек столбца по левому или правому краю. По умолчанию left */
+    cellAlign?: 'left' | 'right';
+  }
+}

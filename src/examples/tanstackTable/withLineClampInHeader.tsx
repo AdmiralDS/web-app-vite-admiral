@@ -1,9 +1,8 @@
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { ExampleSection } from '#examples/-helpers';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 type Column = {
   first: string;
@@ -54,7 +53,7 @@ export const WithLineClampInHeader = ({}) => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    enableSorting: false,
+    ...defaultOptions,
   });
 
   return (

@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import type { Dimension, Status } from '../Table';
 import { borderStyle, cellStyle } from '../style';
 import { typography, type Color } from '@admiral-ds/react-ui';
 import { headerStyle } from '../Header/HeaderCell/styled';
+import type { Dimension, Status } from '../types';
 
 export const rowStyle = css<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});

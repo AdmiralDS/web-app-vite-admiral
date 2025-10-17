@@ -1,10 +1,15 @@
 import { getCoreRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
 
-import { defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import {
+  CellText,
+  defaultOptions,
+  TanstackTable,
+  CheckboxCell,
+  WrapperTitleCell,
+} from '#examples/-helpers/tanstackTable';
 import { CheckboxField } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
-import { CellText, CheckboxCell, WrapperTitleCell } from '#examples/-helpers/tanstackTable/style';
 
 type Person = {
   firstName: string;

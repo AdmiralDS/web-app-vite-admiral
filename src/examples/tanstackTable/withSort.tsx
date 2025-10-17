@@ -2,9 +2,8 @@ import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable }
 import { useState } from 'react';
 
 import { Link, T } from '@admiral-ds/react-ui';
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { ExampleSection } from '#examples/-helpers';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 type Person = {
   firstName: string;
@@ -106,6 +105,8 @@ export const WithSort = () => {
     getSortedRowModel: getSortedRowModel(),
     //для включения мультисортировки кликом мыши(по умолчанию включается кликом с shiftKey)
     isMultiSortEvent: () => true,
+    ...defaultOptions,
+    enableSorting: true,
   });
 
   const tables = [tableSingleSort, tableWithMultiSort];

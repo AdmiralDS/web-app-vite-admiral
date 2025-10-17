@@ -5,7 +5,7 @@ import ArrowUpOutline from '@admiral-ds/icons/build/system/ArrowUpOutline.svg?re
 
 import type { SortDirection } from '@tanstack/react-table';
 import { cellStyle, borderStyle } from '../../style';
-import type { Dimension } from '../../Table';
+import type { Dimension } from '../../types';
 
 export const headerStyle = css<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
