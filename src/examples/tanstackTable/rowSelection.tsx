@@ -8,8 +8,8 @@ import {
   CheckboxCell,
   WrapperTitleCell,
 } from '#examples/-helpers/tanstackTable';
-import { CheckboxField } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#examples/-helpers';
+import { CheckboxField, Link, T } from '@admiral-ds/react-ui';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 
 type Person = {
   firstName: string;
@@ -121,7 +121,41 @@ export const RowSelection = () => {
   });
 
   return (
-    <ExampleSection>
+    <ExampleSection
+      text={
+        <T font="Body/Body 1 Long" as="div">
+          <PStyled>
+            Чекбокс в шапке таблицы позволяет выбрать все строки (если не выбрано ни одной строки), либо отменить
+            выбранные до этого строки. Отображение столбца детализации (столбец со стрелками) регулируется
+            пользователем, в столбец необходимо передавать <i>id: 'checkbox-column'</i>.
+          </PStyled>
+          <PStyled>
+            Если необходимо задизейблить чекбокс отдельных строк, для этого нужно в useReactTable передать{' '}
+            <i>
+              <code>enableRowSelection: (row) {`=>`} условие</code>
+            </i>
+            .
+          </PStyled>
+          <PStyled>
+            Если нужно включить выбор только одной строки, то в useReactTable нужно передать{' '}
+            <i>
+              <code>enableMultiRowSelection: false</code>
+            </i>
+            .
+          </PStyled>
+          <div style={{ display: 'flex' }}>
+            Дополнительная документация по
+            <Link
+              style={{ marginLeft: '4px' }}
+              href="https://tanstack.com/table/latest/docs/guide/row-selection"
+              target="_blank"
+            >
+              ссылке
+            </Link>
+          </div>
+        </T>
+      }
+    >
       <TanstackTable table={table} />
     </ExampleSection>
   );
