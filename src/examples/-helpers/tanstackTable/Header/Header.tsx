@@ -108,6 +108,7 @@ export const Header = <T,>({
                   virtualPaddingLeft={virtualPaddingLeft}
                   virtualPaddingRight={virtualPaddingLeft}
                   virtualColumns={virtualColumns}
+                  showDividerForLastColumn={showDividerForLastColumn}
                 /> */}
                 {
                   //todo закоментировать всё до </>
