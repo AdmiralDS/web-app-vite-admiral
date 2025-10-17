@@ -25,6 +25,7 @@ export interface MetaRowProps<T> {
     status?: Status;
     disabled?: boolean;
     selected?: boolean;
+
     /** Функция рендера содержимого раскрытой части строки (детализации строки) */
     expandedRowRender?: (props: { row: Row<T> }) => React.ReactElement;
 
@@ -39,6 +40,7 @@ export interface MetaRowProps<T> {
      * Для таблицы с dimension='l' или dimension='xl' используется OverflowMenu c dimension='l'.
      */
     overflowMenuRender?: (row: any, onVisibilityChange?: (isVisible: boolean) => void) => React.ReactNode;
+
     /** Функция рендера одиночного действия над строкой.
      * Одиночное действие отображается в виде иконки при ховере на строку
      * и располагается по правому краю строки в видимой области таблицы.
@@ -47,10 +49,15 @@ export interface MetaRowProps<T> {
      * внутрь которого нужно передать произвольную иконку для отображения действия.
      */
     actionRender?: (row: any) => React.ReactNode;
+
+    /** Название группы */
+    groupTitle?: string;
+    /** Строки таблицы, находящиеся в группе */
+    subRows?: T[];
   };
 }
 
-interface Props<T> extends React.HTMLAttributes<HTMLTableElement> {
+export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableElement> {
   table: Table<T>;
   dimension?: Dimension;
   headerLineClamp?: number;
@@ -60,9 +67,27 @@ interface Props<T> extends React.HTMLAttributes<HTMLTableElement> {
   /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions?: boolean;
-  gridTemplateColumns?: string;
   virtualScroll?: VirtualScroll;
+  /** Отображать чекбоксы в названиях групп */
+  showCheckboxTitleGroup?: boolean;
+  /** Отображение разделителя для последней колонки. По умолчанию разделитель не отображается */
+  showDividerForLastColumn?: boolean;
+  /** Отображение серой линии подчеркивания для последней строки. По умолчанию линия отображается */
+  showLastRowUnderline?: boolean;
+  /** Включение границ между ячейками таблицы и обводки всей таблицы.
+   * Последняя колонка имеет границы справа только, если параметр showDividerForLastColumn равен true. */
+  showBorders?: boolean;
 }
+
+export const defaultOptions = {
+  enableSorting: false,
+  columnResizeMode: 'onChange',
+  defaultColumn: {
+    size: 100, //starting column size
+    minSize: 50, //enforced during column resizing
+    maxSize: 500, //enforced during column resizing
+  },
+} as const;
 
 export const DEFAULT_COLUMN_WIDTH = 100;
 
@@ -74,10 +99,13 @@ export const TanstackTable = <T,>({
   greyHeader,
   greyZebraRows,
   showRowsActions: userShowRowsActions = false,
-  gridTemplateColumns,
   virtualScroll,
+  showCheckboxTitleGroup = false,
+  showDividerForLastColumn = false,
+  showLastRowUnderline = true,
+  showBorders = false,
   ...props
-}: Props<T>) => {
+}: TanstackTableProps<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
 
@@ -86,9 +114,9 @@ export const TanstackTable = <T,>({
 
     return original.meta?.actionRender || original.meta?.overflowMenuRender;
   });
-
   const showRowsActions = isRowsActions && userShowRowsActions;
 
+  //виртуализация
   const visibleColumns = table.getVisibleLeafColumns();
   let virtualPaddingLeft = 0;
   let virtualPaddingRight = 0;
@@ -112,18 +140,42 @@ export const TanstackTable = <T,>({
     }
   }
 
+  //определение ширины колонок
+  const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
+    if (
+      header.column.getIsPinned() == 'left' &&
+      (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
+    ) {
+      return result + ` min-content`;
+    }
+    if (virtualScroll && virtualScroll.horizontal) return `${virtualScroll.fixedColumnWidth ?? DEFAULT_COLUMN_WIDTH}px`;
+    else {
+      let width = header.column.getCanResize()
+        ? header.getSize() + 'px'
+        : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
+
+      return result + ` ${width}`;
+    }
+  }, '');
+
+  const gridTemplateColumns = isRowsActions
+    ? `${gridVisibleTemplateColumns} minmax(min-content, auto) 0px`
+    : gridVisibleTemplateColumns;
+
   return (
     <S.Table
       ref={tableRef}
-      $gridTemplateColumns={
-        gridTemplateColumns ??
-        `repeat(${isRowsActions ? table.getAllLeafColumns().length + 1 : table.getAllLeafColumns().length}, ${(virtualScroll && virtualScroll.fixedColumnWidth) ?? DEFAULT_COLUMN_WIDTH}px)`
+      style={
+        {
+          '--columns-template': gridTemplateColumns,
+        } as React.CSSProperties
       }
+      data-borders={showBorders}
       {...props}
     >
       <Header
         table={table}
-        setHeaderHeight={(headerHeight) => setHeaderHeight(headerHeight)}
+        setHeaderHeight={(height) => setHeaderHeight(height)}
         dimension={dimension}
         headerLineClamp={headerLineClamp}
         headerExtraLineClamp={headerExtraLineClamp}
@@ -134,6 +186,8 @@ export const TanstackTable = <T,>({
         virtualScroll={virtualScroll}
         virtualColumns={virtualColumns}
         fixedColumnWidth={virtualScroll?.fixedColumnWidth || DEFAULT_COLUMN_WIDTH}
+        showDividerForLastColumn={showDividerForLastColumn}
+        tableRef={tableRef}
       />
 
       {virtualScroll && virtualScroll.vertical ? (
@@ -157,6 +211,10 @@ export const TanstackTable = <T,>({
           greyZebraRows={greyZebraRows}
           showRowsActions={showRowsActions}
           headerHeight={headerHeight}
+          showLastRowUnderline={showLastRowUnderline}
+          showBorders={showBorders}
+          showCheckboxTitleGroup={showCheckboxTitleGroup}
+          showDividerForLastColumn={showDividerForLastColumn}
         />
       )}
     </S.Table>

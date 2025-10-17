@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 import type { Dimension, Status } from '../Table';
-import { borderStyle } from '../style';
+import { borderStyle, cellStyle } from '../style';
 import { typography, type Color } from '@admiral-ds/react-ui';
+import { headerStyle } from '../Header/HeaderCell/styled';
 
 export const rowStyle = css<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
@@ -78,15 +79,15 @@ export const BodyTr = styled.tr<{
   $dimension: Dimension;
   $showRowsActions?: boolean;
   $expandedRow?: boolean;
+  $showUnderline?: boolean;
 }>`
   position: relative;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: var(--columns-template);
   min-width: fit-content;
-  & > * {
-    background: ${rowBackground};
-  }
+  background: ${rowBackground};
+
   ${rowStyle}
   ${({ disabled }) => disabled && disabledRow}
 
@@ -107,8 +108,8 @@ export const BodyTr = styled.tr<{
       }
     `}
 
-  ${({ $expandedRow, theme }) =>
-    !$expandedRow &&
+  ${({ theme, $showUnderline }) =>
+    $showUnderline &&
     `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
 
   min-height: ${({ $dimension }) => {
@@ -133,10 +134,30 @@ export const VirtualBodyTr = styled(BodyTr)<{ $moveY: number }>`
   width: 100%;
 `;
 
+//todo возможно вынести его чтобы пользователи могли сами решить нужны ли им отступы или нет
+export const ExpandedRowContent = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  height: fit-content;
+  box-sizing: border-box;
+  padding: 0 12px 11px 12px;
+`;
+
+export const GroupTitleCell = styled.div<{ $dimension: Dimension }>`
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  cursor: default;
+
+  ${headerStyle}
+  ${cellStyle}
+`;
+
 /** Подумать про text-align */
 export const CellTd = styled.td<{
   $dimension: Dimension;
   $resizer?: boolean;
+  $disableBorderStyle?: boolean;
   $cellAlign?: 'left' | 'right';
 }>`
   display: flex;
@@ -147,7 +168,7 @@ export const CellTd = styled.td<{
   padding: 0;
   overflow: hidden;
   text-align: ${({ $cellAlign }) => ($cellAlign === 'right' ? 'right' : 'left')};
-  ${borderStyle}
+  ${({ $disableBorderStyle }) => !$disableBorderStyle && borderStyle}
 `;
 
 export const SpacerCellTd = styled(CellTd)<{ $width: number }>`

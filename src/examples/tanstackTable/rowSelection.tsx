@@ -1,9 +1,10 @@
-import { getCoreRowModel, getSortedRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
+import { getCoreRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
 
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { CheckboxField } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
+import { CellText, CheckboxCell, WrapperTitleCell } from '#examples/-helpers/tanstackTable/style';
 
 type Person = {
   firstName: string;
@@ -45,27 +46,33 @@ export const RowSelection = () => {
   const [data, _setData] = useState(() => [...defaultData]);
   const [rowSelection, setRowSelection] = useState({});
 
+  const dimension = 'm';
+
   const columns = useMemo<ColumnDef<Person>[]>(
     () => [
       {
-        id: 'select', //required id='select'
+        id: 'checkbox-column', // required id
         header: ({ table }) => (
-          <CheckboxField
-            dimension="s"
-            type="checkbox"
-            {...{
-              checked: table.getIsAllRowsSelected(),
-              indeterminate: table.getIsSomeRowsSelected(),
-              onChange: table.getIsSomeRowsSelected()
-                ? () => setRowSelection({})
-                : table.getToggleAllRowsSelectedHandler(),
-            }}
-          />
+          <WrapperTitleCell>
+            <CheckboxCell $dimension={dimension}>
+              <CheckboxField
+                dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
+                type="checkbox"
+                {...{
+                  checked: table.getIsAllRowsSelected(),
+                  indeterminate: table.getIsSomeRowsSelected(),
+                  onChange: table.getIsSomeRowsSelected()
+                    ? () => setRowSelection({})
+                    : table.getToggleAllRowsSelectedHandler(),
+                }}
+              />
+            </CheckboxCell>
+          </WrapperTitleCell>
         ),
         cell: ({ row }) => (
-          <div>
+          <CheckboxCell $dimension={dimension}>
             <CheckboxField
-              dimension="s"
+              dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
               {...{
                 checked: row.getIsSelected(),
                 disabled: !row.getCanSelect(),
@@ -73,59 +80,19 @@ export const RowSelection = () => {
                 onChange: row.getToggleSelectedHandler(),
               }}
             />
-          </div>
+          </CheckboxCell>
         ),
       },
       {
-        header: 'Name',
-        footer: (props) => props.column.id,
-        columns: [
-          {
-            accessorKey: 'firstName',
-            cell: (info) => info.getValue(),
-            footer: (props) => props.column.id,
-            header: 'First Name',
-          },
-          {
-            accessorFn: (row) => row.lastName,
-            id: 'lastName',
-            cell: (info) => info.getValue(),
-            header: 'Last Name',
-            footer: (props) => props.column.id,
-          },
-        ],
+        id: 'firstName',
+        header: 'First Name',
+        cell: ({ row }) => <CellText>{row.original.firstName}</CellText>,
       },
-      {
-        header: 'Info',
-        footer: (props) => props.column.id,
-        columns: [
-          {
-            accessorKey: 'age',
-            header: 'Age',
-            footer: (props) => props.column.id,
-          },
-          {
-            header: 'More Info',
-            columns: [
-              {
-                accessorKey: 'visits',
-                header: 'Visits',
-                footer: (props) => props.column.id,
-              },
-              {
-                accessorKey: 'status',
-                header: 'Status',
-                footer: (props) => props.column.id,
-              },
-              {
-                accessorKey: 'progress',
-                header: 'Profile Progress',
-                footer: (props) => props.column.id,
-              },
-            ],
-          },
-        ],
-      },
+      { id: 'lastName', header: 'Last Name', cell: ({ row }) => <CellText>{row.original.lastName}</CellText> },
+      { id: 'age', header: 'Age', cell: ({ row }) => <CellText>{row.original.age}</CellText> },
+      { id: 'visits', header: 'Visits', cell: ({ row }) => <CellText>{row.original.visits}</CellText> },
+      { id: 'status', header: 'Status', cell: ({ row }) => <CellText>{row.original.status}</CellText> },
+      { id: 'progress', header: 'Progress', cell: ({ row }) => <CellText>{row.original.progress}</CellText> },
     ],
     [],
   );
@@ -134,13 +101,18 @@ export const RowSelection = () => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
     state: {
       rowSelection,
     },
     enableRowSelection: true, //enable row selection for all rows
     // enableRowSelection: row => row.original.age > 18, // or enable row selection conditionally per row
     onRowSelectionChange: setRowSelection,
+    initialState: {
+      columnPinning: {
+        left: ['checkbox-column'],
+      },
+    },
+    ...defaultOptions,
   });
 
   return (

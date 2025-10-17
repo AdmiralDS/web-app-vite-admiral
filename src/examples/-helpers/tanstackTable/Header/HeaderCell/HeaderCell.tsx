@@ -1,4 +1,4 @@
-import { flexRender, type Header } from '@tanstack/react-table';
+import { type Header } from '@tanstack/react-table';
 import {
   HeaderCell,
   HeaderCellContent,
@@ -14,14 +14,21 @@ import { Filter } from './Filter';
 import { RowWidthResizer } from './RowWidthResizer';
 import { useState } from 'react';
 import type { Dimension } from '@admiral-ds/react-ui';
+import type { CSSProperties } from 'styled-components';
 
-interface Props<T> extends React.HTMLAttributes<HTMLElement> {
+//todo пересмотреть тип
+interface Props<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
   headerLineClamp: number;
   headerExtraLineClamp: number;
   dimension: Dimension;
-  multiSortable: boolean;
+  multiSortable?: boolean;
   header: Header<T, unknown>;
+  title: React.ReactNode;
+  extraText?: React.ReactNode;
   isEmptyCell?: boolean;
+  //todo пересмотреть тип
+  as?: React.ReactNode;
+  style?: CSSProperties;
 }
 
 export const CellTh = <T,>({
@@ -31,18 +38,15 @@ export const CellTh = <T,>({
   multiSortable,
   header,
   isEmptyCell,
+  title,
+  extraText,
   ...props
 }: Props<T>) => {
   const [headerRef, setHeaderRef] = useState<HTMLDivElement | null>(null);
 
   const column = header.column;
 
-  const extraText = header.isPlaceholder
-    ? null
-    : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-  const title = header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext());
-
-  const additionalEmptyCells = header.id === 'expander' || header.id === 'select';
+  const additionalEmptyCells = header.id === 'expand-column' || header.id === 'checkbox-column';
   const visibleColumnSeparator = isEmptyCell && !additionalEmptyCells;
 
   const sortable = header.column.getCanSort() && !!title;
@@ -56,8 +60,9 @@ export const CellTh = <T,>({
   return (
     <HeaderCell
       {...props}
-      $dimension={dimension}
       key={header.id}
+      $dimension={dimension}
+      $resizer={visibleColumnSeparator}
       colSpan={header.colSpan}
       ref={(node) => setHeaderRef(node)}
     >
@@ -85,7 +90,20 @@ export const CellTh = <T,>({
           </>
         )}
       </HeaderCellContent>
-      {visibleColumnSeparator && <RowWidthResizer disabled dimension={dimension} />}
+      {visibleColumnSeparator && (
+        <RowWidthResizer
+          disabled={!header.column.getCanResize()}
+          dimension={dimension}
+          onMouseDown={(event) => {
+            event.preventDefault();
+            return header.getResizeHandler()(event);
+          }}
+          onTouchStart={(event) => {
+            event.preventDefault();
+            return header.getResizeHandler()(event);
+          }}
+        />
+      )}
     </HeaderCell>
   );
 };

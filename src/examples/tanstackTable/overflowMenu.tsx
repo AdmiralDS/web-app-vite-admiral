@@ -1,11 +1,12 @@
 import * as React from 'react';
-
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
-import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 import { MenuItem, OverflowMenu, RowAction, TooltipHoc, type RenderOptionProps } from '@admiral-ds/react-ui';
+
+import { defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 import { CellText } from '#examples/-helpers/tanstackTable/style';
 import { ExampleSection } from '#examples/-helpers';
+
 const TooltipedRowAction = TooltipHoc(RowAction);
 
 interface Person extends MetaRowProps<Person> {
@@ -108,24 +109,30 @@ const columnHelper = createColumnHelper<Person>();
 
 const columns = [
   columnHelper.accessor('firstName', {
+    header: 'firstName',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 141,
   }),
   columnHelper.accessor((row) => row.lastName, {
     id: 'lastName',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
     header: 'Last Name',
+    size: 149,
   }),
   columnHelper.accessor('age', {
     header: 'Age',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 100,
   }),
   columnHelper.accessor('visits', {
     header: 'Visits',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 150,
   }),
   columnHelper.accessor('status', {
     header: 'Status',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 150,
   }),
   columnHelper.accessor('progress', {
     header: 'Profile Progress',
@@ -140,16 +147,16 @@ export const WithOverflowMenu = () => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    enableSorting: false,
+    ...defaultOptions,
   });
 
   return (
     <>
       <ExampleSection text="Пример с иконками действий над строками, которые видны только по ховеру">
-        <TanstackTable table={table} gridTemplateColumns="100px 100px 100px 100px 130px 100px 1fr" />
+        <TanstackTable table={table} />
       </ExampleSection>
       <ExampleSection text="Пример с постоянно видимыми иконками действий над строками">
-        <TanstackTable table={table} showRowsActions gridTemplateColumns="100px 100px 100px 100px 130px 100px 1fr" />
+        <TanstackTable table={table} showRowsActions />
       </ExampleSection>
     </>
   );

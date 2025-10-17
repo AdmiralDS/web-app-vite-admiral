@@ -59,11 +59,13 @@ const columns = [
       </CellText>
     ),
     header: 'Last Name Last Name Last Name Last Name',
+    size: 150,
   }),
   columnHelper.accessor('age', {
     header: 'Age LongLong Title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
     sortDescFirst: false,
+    size: 150,
   }),
   columnHelper.accessor('visits', {
     header: 'Visits',
@@ -74,12 +76,15 @@ const columns = [
     header: 'Status',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
     enableSorting: false,
+    size: 150,
     meta: { extraText: 'Description Status Description Status Description Status' },
   }),
   columnHelper.accessor('progress', {
     header: 'Profile Progress',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
     sortDescFirst: false,
+    enableResizing: false,
+    meta: { gridColumnTemplate: '1fr' },
   }),
 ];
 
@@ -142,12 +147,7 @@ export const WithSort = () => {
       {tables.map((table, id) => {
         return (
           <ExampleSection key={id} header={id === 0 ? 'Single sort.' : 'Milti sort.'}>
-            <TanstackTable
-              table={table}
-              headerLineClamp={3}
-              headerExtraLineClamp={2}
-              gridTemplateColumns="100px 150px 150px 100px 150px 1fr"
-            />
+            <TanstackTable table={table} headerLineClamp={3} headerExtraLineClamp={2} />
           </ExampleSection>
         );
       })}

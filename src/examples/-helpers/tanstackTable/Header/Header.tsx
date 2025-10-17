@@ -11,11 +11,13 @@ interface Props<T> {
   virtualPaddingRight: number;
   virtualColumns: VirtualItem[];
   virtualScroll?: VirtualScroll;
+  showDividerForLastColumn: boolean;
+  tableRef: React.MutableRefObject<null>;
 }
 
-import { useLayoutEffect, useRef } from 'react';
+import { Fragment, useLayoutEffect, useRef } from 'react';
 import * as S from './style';
-import type { Table } from '@tanstack/react-table';
+import { flexRender, type Table } from '@tanstack/react-table';
 import type { Dimension, VirtualScroll } from '../Table';
 import { CellTh } from './HeaderCell';
 import { HeaderCell } from './HeaderCell/styled';
@@ -35,8 +37,11 @@ export const Header = <T,>({
   virtualScroll,
   virtualColumns,
   fixedColumnWidth,
+  showDividerForLastColumn,
+  tableRef,
 }: Props<T>) => {
   const headerRef = useRef(null);
+  const rightEdgeRef = useRef(null);
 
   // check header size updates
   useLayoutEffect(() => {
@@ -52,6 +57,31 @@ export const Header = <T,>({
       resizeObserver.disconnect();
     };
   }, [setHeaderHeight]);
+
+  //добавление тени справо
+  useLayoutEffect(() => {
+    const table: HTMLElement | null = tableRef.current;
+    const rightEdge = rightEdgeRef.current;
+
+    function handleIntersection([entry]: IntersectionObserverEntry[]) {
+      if (table) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
+          table.setAttribute('data-shadow-right', 'false');
+        } else {
+          table.setAttribute('data-shadow-right', 'true');
+        }
+      }
+    }
+
+    if (table && rightEdge && showRowsActions) {
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: table,
+        threshold: [0, 1.0],
+      });
+      observer.observe(rightEdge);
+      return () => observer.disconnect();
+    }
+  }, [showRowsActions]);
 
   return (
     <S.Header ref={headerRef}>
@@ -86,25 +116,43 @@ export const Header = <T,>({
                     <HeaderCell $dimension={dimension} style={{ width: virtualPaddingLeft }} />
                   )
                 }
-                {virtualColumns.map((vc) => {
+                {virtualColumns.map((vc, index) => {
                   const id = vc.index;
                   const header = headerGroup.headers[id];
+                  const headers = headerGroup.headers;
 
+                  // TODO: упростить данные вычисления, возможно добавить комментарии
                   const isEmptyCell = !header.isPlaceholder
-                    ? headerGroup.headers.length !== id + 1
-                    : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
+                    ? index === headers.length - 1
+                      ? showDividerForLastColumn
+                      : true
+                    : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
+                  const title = header.isPlaceholder
+                    ? null
+                    : flexRender(header.column.columnDef.header, header.getContext());
+                  const extraText = header.isPlaceholder
+                    ? null
+                    : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
 
                   return (
-                    <CellTh
-                      style={{ display: 'flex', width: fixedColumnWidth }}
-                      key={header.id}
-                      header={header}
-                      headerLineClamp={headerLineClamp}
-                      headerExtraLineClamp={headerExtraLineClamp}
-                      multiSortable={multiSortable}
-                      dimension={dimension}
-                      isEmptyCell={isEmptyCell}
-                    />
+                    <Fragment key={header.id}>
+                      {typeof title === 'string' ? (
+                        <CellTh
+                          style={{ display: 'flex', width: fixedColumnWidth }}
+                          key={header.id}
+                          header={header}
+                          headerLineClamp={headerLineClamp}
+                          headerExtraLineClamp={headerExtraLineClamp}
+                          multiSortable={multiSortable}
+                          dimension={dimension}
+                          isEmptyCell={isEmptyCell}
+                          title={title}
+                          extraText={extraText}
+                        />
+                      ) : (
+                        title
+                      )}
+                    </Fragment>
                   );
                 })}
                 {!!virtualPaddingRight && (
@@ -113,25 +161,47 @@ export const Header = <T,>({
                 )}
               </>
             ) : (
-              headerGroup.headers.map((header, id) => {
+              headerGroup.headers.map((header, index, headers) => {
+                // TODO: упростить данные вычисления, возможно добавить комментарии
                 const isEmptyCell = !header.isPlaceholder
-                  ? headerGroup.headers.length !== id + 1
-                  : !headerGroup.headers[id + 1 === headerGroup.headers.length ? id : id + 1].isPlaceholder;
+                  ? index === headers.length - 1
+                    ? showDividerForLastColumn
+                    : true
+                  : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
+                const title = header.isPlaceholder
+                  ? null
+                  : flexRender(header.column.columnDef.header, header.getContext());
+                const extraText = header.isPlaceholder
+                  ? null
+                  : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
 
                 return (
-                  <CellTh
-                    key={header.id}
-                    header={header}
-                    headerLineClamp={headerLineClamp}
-                    headerExtraLineClamp={headerExtraLineClamp}
-                    multiSortable={multiSortable}
-                    dimension={dimension}
-                    isEmptyCell={isEmptyCell}
-                  />
+                  <Fragment key={header.id}>
+                    {typeof title === 'string' ? (
+                      <CellTh
+                        key={header.id}
+                        header={header}
+                        headerLineClamp={headerLineClamp}
+                        headerExtraLineClamp={headerExtraLineClamp}
+                        multiSortable={multiSortable}
+                        dimension={dimension}
+                        isEmptyCell={isEmptyCell}
+                        title={title}
+                        extraText={extraText}
+                      />
+                    ) : (
+                      title
+                    )}
+                  </Fragment>
                 );
               })
             )}
-            {showRowsActions && <S.ActionMock $dimension={dimension} />}
+            {showRowsActions && (
+              <>
+                <S.ActionMock $dimension={dimension} />
+                <S.Edge ref={rightEdgeRef} />
+              </>
+            )}
           </S.HeaderTr>
         );
       })}

@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 import type { Dimension } from '../Table';
 import { getActionSize } from '../Body/OverflowMenu';
+import { Table } from '../style';
 
 export const ActionMock = styled.th<{ $dimension: Dimension }>`
   display: flex;
+  justify-self: end;
   position: sticky;
   right: 0;
   z-index: 5;
-  .table[data-shadow-right='true'] & {
+  padding: 0;
+  ${Table}[data-shadow-right='true'] & {
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
   }
 
@@ -42,4 +45,11 @@ export const Header = styled.thead`
   position: sticky;
   top: 0;
   z-index: 6;
+`;
+
+export const Edge = styled.th`
+  display: flex;
+  width: 0;
+  height: auto;
+  padding: 0;
 `;

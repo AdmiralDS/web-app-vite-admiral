@@ -5,6 +5,9 @@ import { OverflowMenu } from './OverflowMenu';
 import type { Dimension, MetaRowProps } from '../Table';
 
 import * as S from './style';
+import { ExpandedRow } from './ExpandedRow';
+import { CheckboxCell, ExpandCell, ExpandIcon, ExpandIconPlacement, WrapperExpandContent } from '../style';
+import { CheckboxField } from '@admiral-ds/react-ui';
 
 interface Bodys<T> {
   table: Table<T>;
@@ -15,9 +18,24 @@ interface Bodys<T> {
   dimension: Dimension;
   tableRef: React.MutableRefObject<null>;
   headerHeight: number;
+  showLastRowUnderline: boolean;
+  showBorders: boolean;
+  showCheckboxTitleGroup: boolean;
+  showDividerForLastColumn: boolean;
 }
 
-export const Body = <T,>({ table, dimension, tableRef, greyZebraRows, showRowsActions, headerHeight }: Bodys<T>) => {
+export const Body = <T,>({
+  table,
+  dimension,
+  tableRef,
+  greyZebraRows,
+  showRowsActions,
+  headerHeight,
+  showLastRowUnderline,
+  showBorders,
+  showCheckboxTitleGroup,
+  showDividerForLastColumn,
+}: Bodys<T>) => {
   const handleOverflowMenuClick = (e: React.MouseEvent<HTMLElement>) => {
     // клик по меню не должен вызывать событие клика по строке
     e.stopPropagation();
@@ -25,8 +43,10 @@ export const Body = <T,>({ table, dimension, tableRef, greyZebraRows, showRowsAc
 
   return (
     <S.Body>
-      {table.getRowModel().rows.map((row, index) => {
+      {table.getRowModel().rows.map((row, index, rows) => {
         const original = row.original as RowData & MetaRowProps<T>;
+        const isLastRow = index === rows.length - 1;
+        const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
 
         return (
           <Fragment key={row.id}>
@@ -38,13 +58,55 @@ export const Body = <T,>({ table, dimension, tableRef, greyZebraRows, showRowsAc
               $grey={greyZebraRows && index % 2 === 1}
               $status={original.meta?.status}
               $showRowsActions={showRowsActions}
-              $expandedRow={row.getIsExpanded()}
+              $showUnderline={!original.meta?.expandedRowRender && showUnderline}
             >
-              {row.getVisibleCells().map((cell) => (
-                <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </S.CellTd>
-              ))}
+              {original.meta?.groupTitle ? (
+                <td
+                  colSpan={row.getVisibleCells().length}
+                  style={{ gridColumn: `span ${row.getVisibleCells().length}` }}
+                >
+                  <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+                    {row.getCanExpand() && (
+                      <ExpandCell $dimension={dimension}>
+                        <ExpandIconPlacement
+                          dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
+                          highlightFocus={false}
+                          onClick={row.getToggleExpandedHandler()}
+                        >
+                          <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+                        </ExpandIconPlacement>
+                      </ExpandCell>
+                    )}
+                    {row.getCanSelect() && showCheckboxTitleGroup && (
+                      <CheckboxCell $dimension={dimension}>
+                        <CheckboxField
+                          dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
+                          {...{
+                            checked: row.getIsSelected(),
+                            disabled: !row.getCanSelect(),
+                            indeterminate: row.getIsSomeSelected(),
+                            onChange: row.getToggleSelectedHandler(),
+                          }}
+                        />
+                      </CheckboxCell>
+                    )}
+
+                    <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
+                  </WrapperExpandContent>
+                </td>
+              ) : (
+                row.getVisibleCells().map((cell, index, cells) => (
+                  <S.CellTd
+                    key={cell.id}
+                    $dimension={dimension}
+                    $cellAlign={cell.column.columnDef.meta?.cellAlign}
+                    $resizer={index === cells.length - 1 ? showDividerForLastColumn : true}
+                    $disableBorderStyle={cell.column.id === 'checkbox-column'}
+                  >
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </S.CellTd>
+                ))
+              )}
               {(showRowsActions || original.meta?.actionRender || original.meta?.overflowMenuRender) && (
                 <OverflowMenu
                   dimension={dimension}
@@ -56,12 +118,8 @@ export const Body = <T,>({ table, dimension, tableRef, greyZebraRows, showRowsAc
                 />
               )}
             </S.BodyTr>
-            {row.getIsExpanded() && (
-              <S.BodyTr $dimension={dimension}>
-                <S.CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
-                  {original.meta?.expandedRowRender ? original.meta.expandedRowRender({ row }) : null}
-                </S.CellTd>
-              </S.BodyTr>
+            {row.getCanExpand() && original.meta?.expandedRowRender && (
+              <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
             )}
           </Fragment>
         );

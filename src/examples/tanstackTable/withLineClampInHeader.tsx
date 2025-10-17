@@ -30,16 +30,19 @@ const columns = [
   columnHelper.accessor('second', {
     header: 'Текст в две строки',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 120,
     meta: { extraText: 'Add text. Текст длиннее основного. Следующая строка.' },
   }),
   columnHelper.accessor('third', {
     header: 'Column title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 150,
     meta: { extraText: 'Add text', cellAlign: 'right' },
   }),
   columnHelper.accessor('forth', {
     header: 'Column title',
     cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 180,
     meta: { extraText: 'Add text. Текст длиннее основного. Следующая строка.' },
   }),
 ];
@@ -56,12 +59,7 @@ export const WithLineClampInHeader = ({}) => {
 
   return (
     <ExampleSection>
-      <TanstackTable
-        table={table}
-        headerLineClamp={2}
-        headerExtraLineClamp={3}
-        gridTemplateColumns="100px 120px 150px 180px"
-      />
+      <TanstackTable table={table} headerLineClamp={2} headerExtraLineClamp={3} />
     </ExampleSection>
   );
 };
