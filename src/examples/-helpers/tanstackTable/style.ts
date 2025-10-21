@@ -1,9 +1,8 @@
 import { IconPlacement, typography, type Color } from '@admiral-ds/react-ui';
 import styled, { css } from 'styled-components';
-import type { Status } from './Table';
+import type { Dimension, Status } from './Table';
 import ChevronDownOutline from '@admiral-ds/icons/build/system/ChevronDownOutline.svg?react';
-
-export type Dimension = 'xl' | 'l' | 'm' | 's';
+import { getActionSize } from './OverflowMenu';
 
 // padding-bottom меньше padding-top на 1px, т.к. 1px остается для border-bottom ячейки
 export const cellStyle = css<{ $dimension: Dimension }>`
@@ -114,7 +113,6 @@ export const HeaderTr = styled.tr<{
 }>`
   display: grid;
   grid-template-columns: var(--columns-template);
-  justify-content: start;
   box-sizing: border-box;
   min-width: fit-content;
   background: ${(p) =>
@@ -136,6 +134,8 @@ export const BodyTr = styled.tr<{
   $grey?: boolean;
   $status?: Status;
   $dimension: Dimension;
+  $showRowsActions?: boolean;
+  $expandedRow?: boolean;
   $underline?: boolean;
 }>`
   position: relative;
@@ -152,7 +152,21 @@ export const BodyTr = styled.tr<{
     ${({ $hover, disabled }) => $hover && !disabled && rowHoverMixin}
   }
 
-  ${({ $underline, theme }) =>
+  ${({ $showRowsActions }) =>
+    !$showRowsActions &&
+    css`
+      &:hover {
+        & td[data-overflowmenu] {
+          visibility: visible;
+        }
+      }
+      & td[data-overflowmenu][data-opened='true'] {
+        visibility: visible;
+      }
+    `}
+
+  ${({ $expandedRow, theme, $underline }) =>
+    !$expandedRow &&
     $underline &&
     `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
 
@@ -242,4 +256,27 @@ export const ExpandCell = styled.div<{ $dimension: Dimension }>`
 export const RowCellContent = styled.div`
   display: flex;
   align-items: center;
+`;
+
+export const ActionMock = styled.th<{ $dimension: Dimension }>`
+  display: flex;
+  justify-self: end;
+  position: sticky;
+  right: 0;
+  z-index: 5;
+  padding: 0;
+  ${Table}[data-shadow-right='true'] & {
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
+  }
+
+  min-height: ${({ $dimension }) => getActionSize($dimension) - 1}px;
+  width: ${({ $dimension }) => getActionSize($dimension)}px;
+  background-color: inherit;
+`;
+
+export const Edge = styled.th`
+  display: flex;
+  width: 0;
+  height: auto;
+  padding: 0;
 `;

@@ -10,10 +10,10 @@ import {
   SortOrder,
 } from './styled';
 import { TitleText } from './TitleText';
-import type { Dimension } from '../style';
 import { Filter } from '../Filter/Filter';
 import { RowWidthResizer } from '../RowWidthResizer';
 import { useState } from 'react';
+import type { Dimension } from '@admiral-ds/react-ui';
 
 interface Props<T> {
   headerLineClamp: number;

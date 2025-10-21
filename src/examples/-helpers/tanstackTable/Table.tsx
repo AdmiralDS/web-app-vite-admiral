@@ -1,11 +1,14 @@
 import { flexRender, type Row, type RowData, type Table } from '@tanstack/react-table';
+import { Fragment, useLayoutEffect, useRef, useState } from 'react';
 import type { Color } from '@admiral-ds/react-ui';
-import { Fragment } from 'react';
+
+import { OverflowMenu } from './OverflowMenu';
 import * as S from './style';
-import type { Dimension } from './style';
 import { CellTh } from './HeaderCell';
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
+
+export type Dimension = 'xl' | 'l' | 'm' | 's';
 
 export interface MetaRowProps<T> {
   meta?: {
@@ -13,7 +16,28 @@ export interface MetaRowProps<T> {
     status?: Status;
     disabled?: boolean;
     selected?: boolean;
+    /** Функция рендера содержимого раскрытой части строки (детализации строки) */
     expandedRowRender?: (props: { row: Row<T> }) => React.ReactElement;
+
+    /** Функция рендера OverflowMenu для строки.
+     * Входные параметры: сама строка, колбек onVisibilityChange.
+     * Колбек необходимо вызывать при открытии/закрытии меню для того, чтобы таблица могла управлять видимостью OverflowMenu.
+     * OverflowMenu отображается при ховере на строку или при открытом меню
+     * и располагается по правому краю строки в видимой области таблицы.
+     *
+     * В качестве результата функция должна возвращать OverflowMenu.
+     * Для таблицы с dimension='s' или dimension='m' используется OverflowMenu c dimension='m'.
+     * Для таблицы с dimension='l' или dimension='xl' используется OverflowMenu c dimension='l'.
+     */
+    overflowMenuRender?: (row: any, onVisibilityChange?: (isVisible: boolean) => void) => React.ReactNode;
+    /** Функция рендера одиночного действия над строкой.
+     * Одиночное действие отображается в виде иконки при ховере на строку
+     * и располагается по правому краю строки в видимой области таблицы.
+     *
+     * В качестве результата функция должна возвращать компонент RowAction,
+     * внутрь которого нужно передать произвольную иконку для отображения действия.
+     */
+    actionRender?: (row: any) => React.ReactNode;
   };
 }
 
@@ -24,6 +48,9 @@ interface Props<T> {
   headerExtraLineClamp?: number;
   greyHeader?: boolean;
   greyZebraRows?: boolean;
+  /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
+   * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
+  showRowsActions?: boolean;
   /** Отображение разделителя для последней колонки. По умолчанию разделитель не отображается */
   showDividerForLastColumn?: boolean;
   /** Отображение серой линии подчеркивания для последней строки. По умолчанию линия отображается */
@@ -50,11 +77,45 @@ export const TanstackTable = <T,>({
   headerExtraLineClamp = 1,
   greyHeader,
   greyZebraRows,
+  showRowsActions: userShowRowsActions = false,
   showDividerForLastColumn = false,
   showLastRowUnderline = true,
   showBorders = false,
 }: Props<T>) => {
-  const gridTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const tableRef = useRef(null);
+  const headerRef = useRef(null);
+  const rightEdgeRef = useRef(null);
+
+  const handleOverflowMenuClick = (e: React.MouseEvent<HTMLElement>) => {
+    // клик по меню не должен вызывать событие клика по строке
+    e.stopPropagation();
+  };
+
+  // check header size updates
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+
+    if (!header) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      setHeaderHeight((header as HTMLElement).getBoundingClientRect().height);
+    });
+    resizeObserver.observe(header);
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [setHeaderHeight]);
+
+  const isRowsActions = table.getRowModel().rows.some((row) => {
+    const original = row.original as RowData & MetaRowProps<T>;
+
+    return original.meta?.actionRender || original.meta?.overflowMenuRender;
+  });
+
+  const showRowsActions = isRowsActions && userShowRowsActions;
+
+  const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
     if (
       header.column.getIsPinned() == 'left' &&
       (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
@@ -68,9 +129,45 @@ export const TanstackTable = <T,>({
     return result + ` ${width}`;
   }, '');
 
+  const gridTemplateColumns = isRowsActions
+    ? `${gridVisibleTemplateColumns} minmax(min-content, auto) 0px`
+    : gridVisibleTemplateColumns;
+
+  useLayoutEffect(() => {
+    const table: HTMLElement | null = tableRef.current;
+    const rightEdge = rightEdgeRef.current;
+
+    function handleIntersection([entry]: IntersectionObserverEntry[]) {
+      if (table) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
+          table.setAttribute('data-shadow-right', 'false');
+        } else {
+          table.setAttribute('data-shadow-right', 'true');
+        }
+      }
+    }
+
+    if (table && rightEdge && showRowsActions) {
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: table,
+        threshold: [0, 1.0],
+      });
+      observer.observe(rightEdge);
+      return () => observer.disconnect();
+    }
+  }, [showRowsActions]);
+
   return (
-    <S.Table style={{ '--columns-template': gridTemplateColumns } as React.CSSProperties} data-borders={showBorders}>
-      <S.Header>
+    <S.Table
+      ref={tableRef}
+      style={
+        {
+          '--columns-template': gridTemplateColumns,
+        } as React.CSSProperties
+      }
+      data-borders={showBorders}
+    >
+      <S.Header ref={headerRef}>
         {table.getHeaderGroups().map((headerGroup) => {
           const multiSortable =
             headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
@@ -97,6 +194,12 @@ export const TanstackTable = <T,>({
                   />
                 );
               })}
+              {showRowsActions && (
+                <>
+                  <S.ActionMock $dimension={dimension} />
+                  <S.Edge ref={rightEdgeRef} />
+                </>
+              )}
             </S.HeaderTr>
           );
         })}
@@ -115,6 +218,8 @@ export const TanstackTable = <T,>({
                 $hover={original.meta?.hover}
                 $grey={greyZebraRows && index % 2 === 1}
                 $status={original.meta?.status}
+                $showRowsActions={showRowsActions}
+                $expandedRow={row.getIsExpanded()}
                 $underline={!row.getIsExpanded() && (isLastRow ? showLastRowUnderline && !showBorders : true)}
               >
                 {row.getVisibleCells().map((cell, index, cells) => (
@@ -127,6 +232,16 @@ export const TanstackTable = <T,>({
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </S.CellTd>
                 ))}
+                {(showRowsActions || original.meta?.actionRender || original.meta?.overflowMenuRender) && (
+                  <OverflowMenu
+                    dimension={dimension}
+                    row={row}
+                    onClick={handleOverflowMenuClick}
+                    showRowsActions={showRowsActions}
+                    tableRef={tableRef}
+                    headerHeight={headerHeight}
+                  />
+                )}
               </S.BodyTr>
               {row.getIsExpanded() && (
                 <S.BodyTr $dimension={dimension}>

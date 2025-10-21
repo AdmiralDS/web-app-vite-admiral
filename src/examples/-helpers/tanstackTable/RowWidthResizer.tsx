@@ -1,6 +1,6 @@
+import type { Dimension } from '@admiral-ds/react-ui';
 import * as React from 'react';
 import styled from 'styled-components';
-import type { Dimension } from './style';
 
 const RESIZER_WIDTH = '17px';
 
