@@ -2,6 +2,7 @@ import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable }
 
 import { useState } from 'react';
 import { TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable/Table';
+import { CellText } from '#examples/-helpers/tanstackTable/style';
 import { ExampleSection } from '#examples/-helpers';
 
 type Person = {
@@ -46,43 +47,39 @@ const columns = [
   columnHelper.group({
     id: 'hello',
     header: 'Hello',
-    footer: (props) => props.column.id,
     columns: [
       columnHelper.accessor('firstName', {
-        cell: (info) => info.getValue(),
-        footer: (props) => props.column.id,
+        cell: (info) => <CellText>{info.getValue()}</CellText>,
         header: 'firstName',
       }),
       columnHelper.accessor((row) => row.lastName, {
         id: 'lastName',
-        cell: (info) => info.getValue(),
+        cell: (info) => <CellText>{info.getValue()}</CellText>,
         header: 'Last Name',
-        footer: (props) => props.column.id,
       }),
     ],
   }),
   columnHelper.group({
     header: 'Info',
-    footer: (props) => props.column.id,
     columns: [
       columnHelper.accessor('age', {
         header: 'Age',
-        footer: (props) => props.column.id,
+        cell: (info) => <CellText>{info.getValue()}</CellText>,
       }),
       columnHelper.group({
         header: 'More Info',
         columns: [
           columnHelper.accessor('visits', {
             header: 'Visits',
-            footer: (props) => props.column.id,
+            cell: (info) => <CellText>{info.getValue()}</CellText>,
           }),
           columnHelper.accessor('status', {
             header: 'Status',
-            footer: (props) => props.column.id,
+            cell: (info) => <CellText>{info.getValue()}</CellText>,
           }),
           columnHelper.accessor('progress', {
             header: 'Profile Progress',
-            footer: (props) => props.column.id,
+            cell: (info) => <CellText>{info.getValue()}</CellText>,
           }),
         ],
       }),
