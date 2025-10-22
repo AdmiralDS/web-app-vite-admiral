@@ -1,7 +1,7 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 
 import { useState } from 'react';
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
+import { TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable/Table';
 import { ExampleSection } from '#examples/-helpers';
 
 type Person = {
@@ -98,6 +98,7 @@ export const GroupHeaders = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    ...defaultOptions,
   });
 
   return (

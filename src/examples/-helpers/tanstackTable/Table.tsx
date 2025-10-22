@@ -116,6 +116,10 @@ export const TanstackTable = <T,>({
   const showRowsActions = isRowsActions && userShowRowsActions;
 
   const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
+    if (header.subHeaders.length > 0) {
+      // пропускаем заголовки, у которых есть подзаголовки
+      return result + '';
+    }
     if (
       header.column.getIsPinned() == 'left' &&
       (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
@@ -167,13 +171,17 @@ export const TanstackTable = <T,>({
       }
       data-borders={showBorders}
     >
-      <S.Header ref={headerRef}>
+      <S.Header ref={headerRef} data-borders={showBorders || Boolean(table.getHeaderGroups().length)}>
         {table.getHeaderGroups().map((headerGroup) => {
           const multiSortable =
             headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
 
           return (
-            <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
+            <S.HeaderTr
+              $greyHeader={greyHeader || Boolean(table.getHeaderGroups().length)}
+              $dimension={dimension}
+              key={headerGroup.id}
+            >
               {headerGroup.headers.map((header, index, headers) => {
                 // TODO: упростить данные вычисления, возможно добавить комментарии
                 const isEmptyCell = !header.isPlaceholder

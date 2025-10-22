@@ -81,13 +81,14 @@ export const ExtraText = styled(Title)<{ $dimension: Dimension }>`
     $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 2 Long'] : typography['Caption/Caption 1']}
 `;
 
-export const HeaderCell = styled.th<{ $dimension: Dimension; $resizer?: boolean }>`
+export const HeaderCell = styled.th<{ $dimension: Dimension; colSpan: number; $resizer?: boolean }>`
   position: relative;
   display: inline-flex;
   flex: 0 0 auto;
   align-items: flex-start;
   box-sizing: border-box;
   cursor: default;
+  grid-column: span ${(p) => p.colSpan};
   ${cellStyle}
   ${headerStyle}
   ${borderStyle}
