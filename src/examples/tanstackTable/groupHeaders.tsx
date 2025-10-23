@@ -100,7 +100,7 @@ export const GroupHeaders = () => {
 
   return (
     <ExampleSection>
-      <TanstackTable table={table} />
+      <TanstackTable table={table} greyHeader showBorders />
     </ExampleSection>
   );
 };

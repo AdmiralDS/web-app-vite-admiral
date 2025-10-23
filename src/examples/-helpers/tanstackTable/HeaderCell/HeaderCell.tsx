@@ -21,7 +21,8 @@ interface Props<T> {
   dimension: Dimension;
   multiSortable: boolean;
   header: Header<T, unknown>;
-  isEmptyCell?: boolean;
+  showResizer?: boolean;
+  rowSpan?: number;
 }
 
 export const CellTh = <T,>({
@@ -30,19 +31,17 @@ export const CellTh = <T,>({
   dimension,
   multiSortable,
   header,
-  isEmptyCell,
+  showResizer,
+  rowSpan = 1,
 }: Props<T>) => {
   const [headerRef, setHeaderRef] = useState<HTMLDivElement | null>(null);
 
   const column = header.column;
+  const extraText = flexRender(column.columnDef.meta?.extraText, header.getContext());
+  const title = flexRender(column.columnDef.header, header.getContext());
 
-  const extraText = header.isPlaceholder
-    ? null
-    : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-  const title = header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext());
-
-  const additionalEmptyCells = header.id === 'expand-column' || header.id === 'checkbox-column';
-  const visibleColumnSeparator = isEmptyCell && !additionalEmptyCells;
+  const additionalCells = header.id === 'expand-column' || header.id === 'checkbox-column';
+  const visibleResizer = showResizer && !additionalCells;
 
   const sortable = header.column.getCanSort() && !!title;
 
@@ -56,8 +55,9 @@ export const CellTh = <T,>({
     <HeaderCell
       key={header.id}
       $dimension={dimension}
-      $resizer={visibleColumnSeparator}
+      $resizer={visibleResizer}
       colSpan={header.colSpan}
+      rowSpan={rowSpan}
       ref={(node) => setHeaderRef(node)}
     >
       <HeaderCellContent $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
@@ -84,7 +84,7 @@ export const CellTh = <T,>({
           </>
         )}
       </HeaderCellContent>
-      {visibleColumnSeparator && (
+      {visibleResizer && (
         <RowWidthResizer
           disabled={!header.column.getCanResize()}
           dimension={dimension}
