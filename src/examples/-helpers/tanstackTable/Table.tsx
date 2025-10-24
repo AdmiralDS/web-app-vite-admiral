@@ -5,6 +5,7 @@ import { CheckboxField, type Color } from '@admiral-ds/react-ui';
 import { OverflowMenu } from './OverflowMenu';
 import * as S from './style';
 import { CellTh } from './HeaderCell';
+import { tableHeaderRowSpan } from './utils';
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
 
@@ -126,6 +127,9 @@ export const TanstackTable = <T,>({
   const showRowsActions = isRowsActions && userShowRowsActions;
 
   const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
+    if (header.subHeaders.length > 0) {
+      return result + '';
+    }
     if (
       header.column.getIsPinned() == 'left' &&
       (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
@@ -139,9 +143,10 @@ export const TanstackTable = <T,>({
     return result + ` ${width}`;
   }, '');
 
+  // Spacer - minmax(0px, auto), ActionMock - min-content, Edge - 0px
   const gridTemplateColumns = isRowsActions
-    ? `${gridVisibleTemplateColumns} minmax(min-content, auto) 0px`
-    : gridVisibleTemplateColumns;
+    ? `${gridVisibleTemplateColumns} minmax(0px, auto) min-content 0px`
+    : `${gridVisibleTemplateColumns} minmax(0px, auto)`;
 
   useLayoutEffect(() => {
     const table: HTMLElement | null = tableRef.current;
@@ -177,56 +182,56 @@ export const TanstackTable = <T,>({
       }
       data-borders={showBorders}
     >
-      <S.Header ref={headerRef}>
-        {table.getHeaderGroups().map((headerGroup) => {
-          const multiSortable =
-            headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
+      <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1}>
+        <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension}>
+          {table.getHeaderGroups().map((headerGroup) => {
+            const multiSortable =
+              headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
 
-          return (
-            <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension} key={headerGroup.id}>
-              {headerGroup.headers.map((header, index, headers) => {
-                // TODO: упростить данные вычисления, возможно добавить комментарии
-                const isEmptyCell = !header.isPlaceholder
-                  ? index === headers.length - 1
-                    ? showDividerForLastColumn
-                    : true
-                  : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
-                const title = header.isPlaceholder
-                  ? null
-                  : flexRender(header.column.columnDef.header, header.getContext());
-                const extraText = header.isPlaceholder
-                  ? null
-                  : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
+            return (
+              <Fragment key={headerGroup.id}>
+                {headerGroup.headers.map((header, index, headers) => {
+                  const rowSpan = tableHeaderRowSpan(header);
+                  if (!rowSpan) {
+                    return null;
+                  }
+                  const showResizer = index === headers.length - 1 ? showDividerForLastColumn : true;
 
-                return (
-                  <Fragment key={header.id}>
-                    {typeof title === 'string' ? (
-                      <CellTh
-                        key={header.id}
-                        header={header}
-                        headerLineClamp={headerLineClamp}
-                        headerExtraLineClamp={headerExtraLineClamp}
-                        multiSortable={multiSortable}
-                        dimension={dimension}
-                        isEmptyCell={isEmptyCell}
-                        title={title}
-                        extraText={extraText}
-                      />
-                    ) : (
-                      title
-                    )}
-                  </Fragment>
-                );
-              })}
-              {showRowsActions && (
-                <>
-                  <S.ActionMock $dimension={dimension} />
-                  <S.Edge ref={rightEdgeRef} />
-                </>
-              )}
-            </S.HeaderTr>
-          );
-        })}
+                  const title = flexRender(header.column.columnDef.header, header.getContext());
+                  const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
+                  /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
+                  return (
+                    <Fragment key={header.id}>
+                      {typeof title === 'string' ? (
+                        <CellTh
+                          key={header.id}
+                          header={header}
+                          headerLineClamp={headerLineClamp}
+                          headerExtraLineClamp={headerExtraLineClamp}
+                          multiSortable={multiSortable}
+                          dimension={dimension}
+                          showResizer={showResizer}
+                          rowSpan={rowSpan}
+                          title={title}
+                          extraText={extraText}
+                        />
+                      ) : (
+                        title
+                      )}
+                    </Fragment>
+                  );
+                })}
+                <S.Spacer />
+              </Fragment>
+            );
+          })}
+          {showRowsActions && (
+            <>
+              <S.ActionMock $dimension={dimension} />
+              <S.Edge ref={rightEdgeRef} />
+            </>
+          )}
+        </S.HeaderTr>
       </S.Header>
       <S.Body>
         {table.getRowModel().rows.map((row, index, rows) => {
