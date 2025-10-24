@@ -295,6 +295,7 @@ export const TanstackTable = <T,>({
                       $dimension={dimension}
                       $cellAlign={cell.column.columnDef.meta?.cellAlign}
                       $resizer={index === cells.length - 1 ? showDividerForLastColumn : true}
+                      $disableBorderStyle={cell.column.id === 'checkbox-column'}
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </S.CellTd>
