@@ -11,4 +11,5 @@ export * from './expandedRow';
 export * from './filterExample';
 export * from './overflowMenu';
 export * from './resizeExample';
+export * from './groupRow';
 export * from './styleExample';

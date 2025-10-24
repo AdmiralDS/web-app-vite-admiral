@@ -86,7 +86,8 @@
         {
           "name": "Пример с OverflowMenu и иконками одиночных действий",
           "path": "/components/tanstackTable/overflowMenu"
-        }
+        },
+        { "name": "Пример с группировкой строк", "path": "/components/tanstackTable/groupRow" }
       ]
     }
   ]
