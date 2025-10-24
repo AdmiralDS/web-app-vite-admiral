@@ -199,7 +199,7 @@ export const TanstackTable = <T,>({
 
                   const title = flexRender(header.column.columnDef.header, header.getContext());
                   const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-
+                  /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
                   return (
                     <Fragment key={header.id}>
                       {typeof title === 'string' ? (
