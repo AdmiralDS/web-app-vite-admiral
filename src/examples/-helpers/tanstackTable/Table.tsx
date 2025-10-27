@@ -5,7 +5,11 @@ import { CheckboxField, type Color } from '@admiral-ds/react-ui';
 import { OverflowMenu } from './OverflowMenu';
 import * as S from './style';
 import { CellTh } from './HeaderCell';
+<<<<<<< HEAD
+import { ExpandedRow } from './ExpandedRow';
+=======
 import { tableHeaderRowSpan } from './utils';
+>>>>>>> tanstack-examples
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
 
@@ -237,6 +241,7 @@ export const TanstackTable = <T,>({
         {table.getRowModel().rows.map((row, index, rows) => {
           const original = row.original as RowData & MetaRowProps<T>;
           const isLastRow = index === rows.length - 1;
+          const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
 
           return (
             <Fragment key={row.id}>
@@ -248,8 +253,7 @@ export const TanstackTable = <T,>({
                 $grey={greyZebraRows && index % 2 === 1}
                 $status={original.meta?.status}
                 $showRowsActions={showRowsActions}
-                $expandedRow={row.getIsExpanded() && !!original.meta?.expandedRowRender}
-                $underline={!row.getIsExpanded() && (isLastRow ? showLastRowUnderline && !showBorders : true)}
+                $showUnderline={!original.meta?.expandedRowRender && showUnderline}
               >
                 {original.meta?.groupTitle ? (
                   <td
@@ -312,12 +316,8 @@ export const TanstackTable = <T,>({
                   />
                 )}
               </S.BodyTr>
-              {row.getIsExpanded() && original.meta?.expandedRowRender && (
-                <S.BodyTr $dimension={dimension}>
-                  <S.CellTd $dimension={dimension} colSpan={row.getVisibleCells().length}>
-                    {original.meta.expandedRowRender({ row })}
-                  </S.CellTd>
-                </S.BodyTr>
+              {row.getCanExpand() && original.meta?.expandedRowRender && (
+                <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
               )}
             </Fragment>
           );

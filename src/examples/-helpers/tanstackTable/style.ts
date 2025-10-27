@@ -142,7 +142,7 @@ export const BodyTr = styled.tr<{
   $dimension: Dimension;
   $showRowsActions?: boolean;
   $expandedRow?: boolean;
-  $underline?: boolean;
+  $showUnderline?: boolean;
 }>`
   position: relative;
   box-sizing: border-box;
@@ -171,9 +171,8 @@ export const BodyTr = styled.tr<{
       }
     `}
 
-  ${({ $expandedRow, theme, $underline }) =>
-    !$expandedRow &&
-    $underline &&
+  ${({ theme, $showUnderline }) =>
+    $showUnderline &&
     `border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${theme.color['Neutral/Neutral 20']})`};
 
   min-height: ${({ $dimension }) => {
@@ -279,9 +278,13 @@ export const ExpandIconPlacement = styled(IconPlacement)`
   margin: 0;
   flex-shrink: 0;
 `;
+
+//todo transition не работает при использовании в cell из-за ререндера ячеек
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
-  transition: transform 0.3s ease-in-out;
-  transform: rotate(${(p) => (p.$isOpened ? 180 : 0)}deg);
+  transition:
+    transform 0.3s,
+    ease-in-out;
+  transform: rotate(${({ $isOpened }) => ($isOpened ? 180 : 0)}deg);
 `;
 
 export const WrapperExpandContent = styled.div<{ $dimension?: Dimension; $depth: number }>`
@@ -348,6 +351,15 @@ export const Edge = styled.th`
   width: 0;
   height: auto;
   padding: 0;
+`;
+
+//todo возможно вынести его чтобы пользователи могли сами решить нужны ли им отступы или нет
+export const ExpandedRowContent = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  height: fit-content;
+  box-sizing: border-box;
+  padding: 0 12px 11px 12px;
 `;
 
 export const Spacer = styled.th`
