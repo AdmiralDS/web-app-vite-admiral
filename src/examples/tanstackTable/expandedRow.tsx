@@ -10,7 +10,7 @@ import {
 import styled from 'styled-components';
 import { useState } from 'react';
 
-import { ExampleSection } from '#examples/-helpers';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import {
   CellText,
   ExpandCell,
@@ -19,6 +19,7 @@ import {
   WrapperTitleCell,
 } from '#examples/-helpers/tanstackTable/style';
 import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
+import { Link, T } from '@admiral-ds/react-ui';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -174,7 +175,30 @@ export const ExpandedRow = () => {
   });
 
   return (
-    <ExampleSection>
+    <ExampleSection
+      text={
+        <T font="Body/Body 1 Long" as="div">
+          <PStyled>
+            Отображение столбца детализации (столбец со стрелками) регулируется пользователем, в столбец необходимо
+            передавать <i>id: 'expand-column'</i>.
+          </PStyled>
+          <PStyled>
+            C помощью функции expandedRowRender происходит рендер развернутой части строки (рендер детализированной
+            информации).
+          </PStyled>
+          <div style={{ display: 'flex' }}>
+            Дополнительная документация по
+            <Link
+              style={{ marginLeft: '4px' }}
+              href="https://tanstack.com/table/latest/docs/guide/expanding"
+              target="_blank"
+            >
+              ссылке
+            </Link>
+          </div>
+        </T>
+      }
+    >
       <TanstackTable table={table} />
     </ExampleSection>
   );
