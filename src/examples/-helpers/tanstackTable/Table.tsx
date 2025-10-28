@@ -1,19 +1,23 @@
-import { flexRender, type Row, type RowData, type Table } from '@tanstack/react-table';
-import { Fragment, useLayoutEffect, useRef, useState } from 'react';
-import { CheckboxField, type Color } from '@admiral-ds/react-ui';
+import { type Row, type RowData, type Table } from '@tanstack/react-table';
+import { useRef, useState } from 'react';
+import type { Color } from '@admiral-ds/react-ui';
 
-import { OverflowMenu } from './OverflowMenu';
 import * as S from './style';
-import { CellTh } from './HeaderCell';
-<<<<<<< HEAD
-import { ExpandedRow } from './ExpandedRow';
-=======
-import { tableHeaderRowSpan } from './utils';
->>>>>>> tanstack-examples
+import { Body } from './Body';
+import { VirtualBody } from './Body/VirtualBody';
+import { useVirtualizer, type VirtualItem, type Virtualizer } from '@tanstack/react-virtual';
+import { Header } from './Header';
 
 export type Status = 'success' | 'error' | keyof Color | `#${string}` | `rgb(${string})` | `rgba(${string})`;
 
 export type Dimension = 'xl' | 'l' | 'm' | 's';
+
+export type VirtualScroll = {
+  fixedRowHeight?: number;
+  horizontal?: boolean;
+  vertical?: boolean;
+  fixedColumnWidth?: number;
+};
 
 export interface MetaRowProps<T> {
   meta?: {
@@ -53,7 +57,7 @@ export interface MetaRowProps<T> {
   };
 }
 
-export interface TanstackTableProps<T> {
+export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableElement> {
   table: Table<T>;
   dimension?: Dimension;
   headerLineClamp?: number;
@@ -63,6 +67,7 @@ export interface TanstackTableProps<T> {
   /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions?: boolean;
+  virtualScroll?: VirtualScroll;
   /** Отображать чекбоксы в названиях групп */
   showCheckboxTitleGroup?: boolean;
   /** Отображение разделителя для последней колонки. По умолчанию разделитель не отображается */
@@ -84,6 +89,8 @@ export const defaultOptions = {
   },
 } as const;
 
+export const DEFAULT_COLUMN_WIDTH = 100;
+
 export const TanstackTable = <T,>({
   table,
   dimension = 'm',
@@ -92,44 +99,48 @@ export const TanstackTable = <T,>({
   greyHeader,
   greyZebraRows,
   showRowsActions: userShowRowsActions = false,
+  virtualScroll,
   showCheckboxTitleGroup = false,
   showDividerForLastColumn = false,
   showLastRowUnderline = true,
   showBorders = false,
+  ...props
 }: TanstackTableProps<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const tableRef = useRef(null);
-  const headerRef = useRef(null);
-  const rightEdgeRef = useRef(null);
-
-  const handleOverflowMenuClick = (e: React.MouseEvent<HTMLElement>) => {
-    // клик по меню не должен вызывать событие клика по строке
-    e.stopPropagation();
-  };
-
-  // check header size updates
-  useLayoutEffect(() => {
-    const header = headerRef.current;
-
-    if (!header) return;
-
-    const resizeObserver = new ResizeObserver(() => {
-      setHeaderHeight((header as HTMLElement).getBoundingClientRect().height);
-    });
-    resizeObserver.observe(header);
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, [setHeaderHeight]);
 
   const isRowsActions = table.getRowModel().rows.some((row) => {
     const original = row.original as RowData & MetaRowProps<T>;
 
     return original.meta?.actionRender || original.meta?.overflowMenuRender;
   });
-
   const showRowsActions = isRowsActions && userShowRowsActions;
 
+  //виртуализация
+  const visibleColumns = table.getVisibleLeafColumns();
+  let virtualPaddingLeft = 0;
+  let virtualPaddingRight = 0;
+  let columnVirtualizer: Virtualizer<HTMLDivElement, HTMLTableCellElement>;
+  let virtualColumns: VirtualItem[] = [];
+
+  if (virtualScroll && virtualScroll.horizontal) {
+    columnVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableCellElement>({
+      count: visibleColumns.length,
+      estimateSize: () => virtualScroll.fixedColumnWidth || DEFAULT_COLUMN_WIDTH, //estimate width of each column for accurate scrollbar dragging
+      getScrollElement: () => tableRef.current,
+      horizontal: true,
+      overscan: 3, //how many columns to render on each side off screen each way (adjust this for performance)
+    });
+
+    virtualColumns = columnVirtualizer.getVirtualItems();
+
+    if (columnVirtualizer && virtualColumns?.length) {
+      virtualPaddingLeft = virtualColumns[0]?.start ?? 0;
+      virtualPaddingRight = columnVirtualizer.getTotalSize() - (virtualColumns[virtualColumns.length - 1]?.end ?? 0);
+    }
+  }
+
+  //определение ширины колонок
   const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
     if (header.subHeaders.length > 0) {
       return result + '';
@@ -140,41 +151,20 @@ export const TanstackTable = <T,>({
     ) {
       return result + ` min-content`;
     }
-    let width = header.column.getCanResize()
-      ? header.getSize() + 'px'
-      : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
+    if (virtualScroll && virtualScroll.horizontal) return `${virtualScroll.fixedColumnWidth ?? DEFAULT_COLUMN_WIDTH}px`;
+    else {
+      let width = header.column.getCanResize()
+        ? header.getSize() + 'px'
+        : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
 
-    return result + ` ${width}`;
+      return result + ` ${width}`;
+    }
   }, '');
 
   // Spacer - minmax(0px, auto), ActionMock - min-content, Edge - 0px
   const gridTemplateColumns = isRowsActions
     ? `${gridVisibleTemplateColumns} minmax(0px, auto) min-content 0px`
     : `${gridVisibleTemplateColumns} minmax(0px, auto)`;
-
-  useLayoutEffect(() => {
-    const table: HTMLElement | null = tableRef.current;
-    const rightEdge = rightEdgeRef.current;
-
-    function handleIntersection([entry]: IntersectionObserverEntry[]) {
-      if (table) {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
-          table.setAttribute('data-shadow-right', 'false');
-        } else {
-          table.setAttribute('data-shadow-right', 'true');
-        }
-      }
-    }
-
-    if (table && rightEdge && showRowsActions) {
-      const observer = new IntersectionObserver(handleIntersection, {
-        root: table,
-        threshold: [0, 1.0],
-      });
-      observer.observe(rightEdge);
-      return () => observer.disconnect();
-    }
-  }, [showRowsActions]);
 
   return (
     <S.Table
@@ -185,144 +175,53 @@ export const TanstackTable = <T,>({
         } as React.CSSProperties
       }
       data-borders={showBorders}
+      {...props}
     >
-      <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1}>
-        <S.HeaderTr $greyHeader={greyHeader} $dimension={dimension}>
-          {table.getHeaderGroups().map((headerGroup) => {
-            const multiSortable =
-              headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
+      <Header
+        table={table}
+        setHeaderHeight={(height) => setHeaderHeight(height)}
+        dimension={dimension}
+        headerLineClamp={headerLineClamp}
+        headerExtraLineClamp={headerExtraLineClamp}
+        greyHeader={greyHeader}
+        showRowsActions={showRowsActions}
+        virtualPaddingLeft={virtualPaddingLeft}
+        virtualPaddingRight={virtualPaddingRight}
+        virtualScroll={virtualScroll}
+        virtualColumns={virtualColumns}
+        fixedColumnWidth={virtualScroll?.fixedColumnWidth || DEFAULT_COLUMN_WIDTH}
+        showDividerForLastColumn={showDividerForLastColumn}
+        tableRef={tableRef}
+        showBorders={showBorders}
+      />
 
-            return (
-              <Fragment key={headerGroup.id}>
-                {headerGroup.headers.map((header, index, headers) => {
-                  const rowSpan = tableHeaderRowSpan(header);
-                  if (!rowSpan) {
-                    return null;
-                  }
-                  const showResizer = index === headers.length - 1 ? showDividerForLastColumn : true;
-
-                  const title = flexRender(header.column.columnDef.header, header.getContext());
-                  const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-                  /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
-                  return (
-                    <Fragment key={header.id}>
-                      {typeof title === 'string' ? (
-                        <CellTh
-                          key={header.id}
-                          header={header}
-                          headerLineClamp={headerLineClamp}
-                          headerExtraLineClamp={headerExtraLineClamp}
-                          multiSortable={multiSortable}
-                          dimension={dimension}
-                          showResizer={showResizer}
-                          rowSpan={rowSpan}
-                          title={title}
-                          extraText={extraText}
-                        />
-                      ) : (
-                        title
-                      )}
-                    </Fragment>
-                  );
-                })}
-                <S.Spacer />
-              </Fragment>
-            );
-          })}
-          {showRowsActions && (
-            <>
-              <S.ActionMock $dimension={dimension} />
-              <S.Edge ref={rightEdgeRef} />
-            </>
-          )}
-        </S.HeaderTr>
-      </S.Header>
-      <S.Body>
-        {table.getRowModel().rows.map((row, index, rows) => {
-          const original = row.original as RowData & MetaRowProps<T>;
-          const isLastRow = index === rows.length - 1;
-          const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
-
-          return (
-            <Fragment key={row.id}>
-              <S.BodyTr
-                $dimension={dimension}
-                selected={row.getIsSelected() || original.meta?.selected}
-                disabled={original.meta?.disabled}
-                $hover={original.meta?.hover}
-                $grey={greyZebraRows && index % 2 === 1}
-                $status={original.meta?.status}
-                $showRowsActions={showRowsActions}
-                $showUnderline={!original.meta?.expandedRowRender && showUnderline}
-              >
-                {original.meta?.groupTitle ? (
-                  <td
-                    colSpan={row.getVisibleCells().length}
-                    style={{ gridColumn: `span ${row.getVisibleCells().length}` }}
-                  >
-                    <S.WrapperExpandContent
-                      $depth={row.getCanExpand() ? row.depth : row.depth + 1}
-                      $dimension={dimension}
-                    >
-                      {row.getCanExpand() && (
-                        <S.ExpandCell $dimension={dimension}>
-                          <S.ExpandIconPlacement
-                            dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                            highlightFocus={false}
-                            onClick={row.getToggleExpandedHandler()}
-                          >
-                            <S.ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                          </S.ExpandIconPlacement>
-                        </S.ExpandCell>
-                      )}
-                      {row.getCanSelect() && showCheckboxTitleGroup && (
-                        <S.CheckboxCell $dimension={dimension}>
-                          <CheckboxField
-                            dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                            {...{
-                              checked: row.getIsSelected(),
-                              disabled: !row.getCanSelect(),
-                              indeterminate: row.getIsSomeSelected(),
-                              onChange: row.getToggleSelectedHandler(),
-                            }}
-                          />
-                        </S.CheckboxCell>
-                      )}
-
-                      <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
-                    </S.WrapperExpandContent>
-                  </td>
-                ) : (
-                  row.getVisibleCells().map((cell, index, cells) => (
-                    <S.CellTd
-                      key={cell.id}
-                      $dimension={dimension}
-                      $cellAlign={cell.column.columnDef.meta?.cellAlign}
-                      $resizer={index === cells.length - 1 ? showDividerForLastColumn : true}
-                      $disableBorderStyle={cell.column.id === 'checkbox-column'}
-                    >
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </S.CellTd>
-                  ))
-                )}
-                {(showRowsActions || original.meta?.actionRender || original.meta?.overflowMenuRender) && (
-                  <OverflowMenu
-                    dimension={dimension}
-                    row={row}
-                    onClick={handleOverflowMenuClick}
-                    showRowsActions={showRowsActions}
-                    tableRef={tableRef}
-                    headerHeight={headerHeight}
-                  />
-                )}
-              </S.BodyTr>
-              {row.getCanExpand() && original.meta?.expandedRowRender && (
-                <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
-              )}
-            </Fragment>
-          );
-        })}
-      </S.Body>
+      {virtualScroll && virtualScroll.vertical ? (
+        <VirtualBody
+          dimension={dimension}
+          table={table}
+          tableRef={tableRef}
+          virtualScroll={virtualScroll}
+          greyZebraRows={greyZebraRows}
+          showRowsActions={showRowsActions}
+          headerHeight={headerHeight}
+          virtualColumns={virtualScroll.horizontal ? virtualColumns : undefined}
+          virtualPaddingLeft={virtualPaddingLeft}
+          virtualPaddingRight={virtualPaddingRight}
+        />
+      ) : (
+        <Body
+          dimension={dimension}
+          table={table}
+          tableRef={tableRef}
+          greyZebraRows={greyZebraRows}
+          showRowsActions={showRowsActions}
+          headerHeight={headerHeight}
+          showLastRowUnderline={showLastRowUnderline}
+          showBorders={showBorders}
+          showCheckboxTitleGroup={showCheckboxTitleGroup}
+          showDividerForLastColumn={showDividerForLastColumn}
+        />
+      )}
     </S.Table>
   );
 };

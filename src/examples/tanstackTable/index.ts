@@ -10,6 +10,7 @@ export * from './zebraExample';
 export * from './expandedRow';
 export * from './filterExample';
 export * from './overflowMenu';
+export * from './fixedVirtualScroll';
 export * from './resizeExample';
 export * from './groupRow';
 export * from './styleExample';

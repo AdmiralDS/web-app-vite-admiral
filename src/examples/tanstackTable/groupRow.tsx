@@ -23,10 +23,10 @@ import {
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState } from 'react';
 import { CheckboxField } from '@admiral-ds/react-ui';
-import { CellTh } from '#examples/-helpers/tanstackTable/HeaderCell';
+//todo ипоправить импорт при выполнении задачи на добавление типизации
+import { CellTh } from '#examples/-helpers/tanstackTable/Header/HeaderCell';
 
 interface Transaction extends MetaRowProps<Transaction> {
-  //type обязательный параметр, так как является первой ячейкой в строке
   type?: string;
   date?: string;
   amount?: string;

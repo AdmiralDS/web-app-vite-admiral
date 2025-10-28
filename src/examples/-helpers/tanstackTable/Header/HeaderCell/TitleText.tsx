@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 
 import { checkOverflow, Tooltip } from '@admiral-ds/react-ui';
 import { ExtraText, Title } from './styled';
-import type { Dimension } from '../Table';
+import type { Dimension } from '../../Table';
 
 type TitleTextProps = {
   lineClamp: number;

@@ -10,13 +10,14 @@ import {
   SortOrder,
 } from './styled';
 import { TitleText } from './TitleText';
-import { Filter } from '../Filter/Filter';
-import { RowWidthResizer } from '../RowWidthResizer';
+import { Filter } from './Filter';
+import { RowWidthResizer } from './RowWidthResizer';
 import { useState } from 'react';
 import type { Dimension } from '@admiral-ds/react-ui';
 import type { CSSProperties } from 'styled-components';
 
-interface Props<T> {
+//todo пересмотреть тип
+interface Props<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
   headerLineClamp: number;
   headerExtraLineClamp: number;
   dimension: Dimension;

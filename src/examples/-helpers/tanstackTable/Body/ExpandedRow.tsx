@@ -2,10 +2,10 @@ import { useLayoutEffect, useRef } from 'react';
 import type { Row, RowData } from '@tanstack/react-table';
 import styled from 'styled-components';
 
-import { Transition } from '../../../layout/SideMenu/Transition';
 import { BodyTr, CellTd, ExpandedRowContent } from './style';
 
-import type { Dimension, MetaRowProps } from './Table';
+import type { Dimension, MetaRowProps } from '../Table';
+import { Transition } from '../../../../layout/SideMenu/Transition';
 
 const ExpandTr = styled(BodyTr)`
   grid-template-columns: unset;
