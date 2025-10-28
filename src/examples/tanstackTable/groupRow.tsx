@@ -6,25 +6,22 @@ import {
   type ExpandedState,
 } from '@tanstack/react-table';
 import {
+  CellText,
   defaultOptions,
   TanstackTable,
-  type MetaRowProps,
-  type TanstackTableProps,
-} from '#examples/-helpers/tanstackTable/Table';
-import {
-  CellText,
   CheckboxCell,
   ExpandCell,
   ExpandIcon,
   ExpandIconPlacement,
   WrapperTitleCell,
   WrapperExpandContent,
-} from '#examples/-helpers/tanstackTable/style';
+  type MetaRowProps,
+  type TanstackTableProps,
+  CellTh,
+} from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState } from 'react';
 import { CheckboxField } from '@admiral-ds/react-ui';
-//todo ипоправить импорт при выполнении задачи на добавление типизации
-import { CellTh } from '#examples/-helpers/tanstackTable/Header/HeaderCell';
 
 interface Transaction extends MetaRowProps<Transaction> {
   type?: string;

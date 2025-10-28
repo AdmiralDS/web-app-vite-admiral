@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import type { Dimension } from '../Table';
 import { getActionSize } from '../Body/OverflowMenu';
 import { Table } from '../style';
+import type { Dimension } from '../types';
 
 export const ActionMock = styled.th<{ $dimension: Dimension }>`
   display: flex;

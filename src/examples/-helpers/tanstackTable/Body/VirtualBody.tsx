@@ -2,9 +2,9 @@ import { flexRender, type RowData, type Table } from '@tanstack/react-table';
 import { useVirtualizer, type VirtualItem } from '@tanstack/react-virtual';
 
 import { OverflowMenu } from './OverflowMenu';
-import type { Dimension, MetaRowProps } from '../Table';
 
 import * as S from './style';
+import type { Dimension, MetaRowProps } from '../types';
 
 interface Bodys<T> {
   table: Table<T>;

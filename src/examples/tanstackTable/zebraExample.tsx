@@ -1,9 +1,8 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
 import { ExampleSection } from '#examples/-helpers';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 interface Person {
   firstName: string;
@@ -107,6 +106,7 @@ export const ZebraExample = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    ...defaultOptions,
   });
 
   return (

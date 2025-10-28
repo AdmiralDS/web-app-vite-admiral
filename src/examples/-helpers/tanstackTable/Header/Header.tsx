@@ -19,11 +19,11 @@ interface Props<T> {
 import { Fragment, useLayoutEffect, useRef } from 'react';
 import * as S from './style';
 import { flexRender, type Table } from '@tanstack/react-table';
-import type { Dimension, VirtualScroll } from '../Table';
 import { CellTh } from './HeaderCell';
 import { HeaderCell } from './HeaderCell/styled';
 import type { VirtualItem } from '@tanstack/react-virtual';
 import { VirtualHeaderCells } from './VirtualHeaderCells';
+import type { Dimension, VirtualScroll } from '../types';
 import { tableHeaderRowSpan } from './utils';
 
 export const Header = <T,>({

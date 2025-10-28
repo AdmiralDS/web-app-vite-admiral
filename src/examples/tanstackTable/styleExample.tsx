@@ -1,9 +1,8 @@
 import * as React from 'react';
 
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable/Table';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
 import { ExampleSection, PStyled } from '#examples/-helpers';
+import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 type Transaction = {
   type: string;

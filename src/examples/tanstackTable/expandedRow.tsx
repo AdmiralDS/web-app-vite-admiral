@@ -10,7 +10,6 @@ import {
 import styled from 'styled-components';
 import { useState } from 'react';
 
-import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
 import { ExampleSection } from '#examples/-helpers';
 import {
   CellText,
@@ -19,6 +18,7 @@ import {
   ExpandIconPlacement,
   WrapperTitleCell,
 } from '#examples/-helpers/tanstackTable/style';
+import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;

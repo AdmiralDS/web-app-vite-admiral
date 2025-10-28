@@ -1,10 +1,10 @@
 import type { VirtualItem } from '@tanstack/react-virtual';
 import { flexRender, type HeaderGroup } from '@tanstack/react-table';
-import { type Dimension } from '../Table';
 import { Fragment } from 'react';
 
 import { CellTh } from './HeaderCell';
 import { HeaderCell } from './HeaderCell/styled';
+import type { Dimension } from '../types';
 
 interface Props<T> {
   dimension: Dimension;

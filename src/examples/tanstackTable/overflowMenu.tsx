@@ -2,7 +2,8 @@ import * as React from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
 import { MenuItem, OverflowMenu, RowAction, TooltipHoc, type RenderOptionProps } from '@admiral-ds/react-ui';
 
-import { defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable/Table';
+import { defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
+
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
 import { CellText } from '#examples/-helpers/tanstackTable/style';
 import { ExampleSection } from '#examples/-helpers';

@@ -1,8 +1,7 @@
 import * as React from 'react';
 
 import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { TanstackTable } from '#examples/-helpers/tanstackTable/Table';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
+import { CellText, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
 
 export type Person = ReturnType<typeof makeData>[0];
@@ -26,7 +25,7 @@ export const makeData = () =>
 
 export const FixedVirtualScrollExample = () => {
   const [data, _setData] = React.useState(() => makeData());
-
+  //todo отключить ресайз
   const table = useReactTable({
     data,
     columns: makeColumns(),
