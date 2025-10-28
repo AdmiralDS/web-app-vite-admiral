@@ -25,10 +25,11 @@ interface Props<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
   header: Header<T, unknown>;
   title: React.ReactNode;
   extraText?: React.ReactNode;
-  isEmptyCell?: boolean;
   //todo пересмотреть тип
   as?: React.ReactNode;
   style?: CSSProperties;
+  showResizer?: boolean;
+  rowSpan?: number;
 }
 
 export const CellTh = <T,>({
@@ -37,19 +38,20 @@ export const CellTh = <T,>({
   dimension,
   multiSortable,
   header,
-  isEmptyCell,
   title,
   extraText,
+  showResizer,
+  rowSpan = 1,
   ...props
 }: Props<T>) => {
   const [headerRef, setHeaderRef] = useState<HTMLDivElement | null>(null);
 
   const column = header.column;
 
-  const additionalEmptyCells = header.id === 'expand-column' || header.id === 'checkbox-column';
-  const visibleColumnSeparator = isEmptyCell && !additionalEmptyCells;
+  const additionalCells = header.id === 'expand-column' || header.id === 'checkbox-column';
+  const visibleResizer = showResizer && !additionalCells;
 
-  const sortable = header.column.getCanSort() && !!title;
+  const sortable = column.getCanSort() && !!title;
 
   const defaultSpacer = dimension === 'l' || dimension === 'xl' ? '16px' : '12px';
 
@@ -62,14 +64,15 @@ export const CellTh = <T,>({
       {...props}
       key={header.id}
       $dimension={dimension}
-      $resizer={visibleColumnSeparator}
+      $resizer={visibleResizer}
       colSpan={header.colSpan}
+      rowSpan={rowSpan}
       ref={(node) => setHeaderRef(node)}
     >
       <HeaderCellContent $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
         <HeaderCellTitle
-          onClick={sortable ? header.column.getToggleSortingHandler() : () => {}}
-          $sort={header.column.getIsSorted()}
+          onClick={sortable ? column.getToggleSortingHandler() : () => {}}
+          $sort={column.getIsSorted()}
           $sortable={sortable}
         >
           <TitleContent $dimension={dimension} $sortable={sortable}>
@@ -90,9 +93,9 @@ export const CellTh = <T,>({
           </>
         )}
       </HeaderCellContent>
-      {visibleColumnSeparator && (
+      {visibleResizer && (
         <RowWidthResizer
-          disabled={!header.column.getCanResize()}
+          disabled={!column.getCanResize()}
           dimension={dimension}
           onMouseDown={(event) => {
             event.preventDefault();

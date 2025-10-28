@@ -61,12 +61,17 @@ export const HeaderTr = styled.tr<{
 }>`
   display: grid;
   grid-template-columns: var(--columns-template);
+  grid-row-gap: 1px;
   box-sizing: border-box;
   min-width: fit-content;
-  background: ${(p) =>
-    p.$greyHeader
-      ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
-      : `var(--admiral-color-Neutral_Neutral00, ${p.theme.color['Neutral/Neutral 00']})`};
+  // данный background будет виден через grid-row-gap и будет создавать иллюзию подчеркивания строк
+  background: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+  & > * {
+    background: ${(p) =>
+      p.$greyHeader
+        ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
+        : `var(--admiral-color-Neutral_Neutral00, ${p.theme.color['Neutral/Neutral 00']})`};
+  }
   border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
 `;
 
