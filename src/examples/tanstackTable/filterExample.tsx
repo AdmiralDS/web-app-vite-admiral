@@ -10,9 +10,9 @@ import {
 import styled from 'styled-components';
 import { useState } from 'react';
 
-import { Button, DateField, FieldSet, RadioButton, T, TextInput } from '@admiral-ds/react-ui';
+import { Button, DateField, FieldSet, Link, RadioButton, T, TextInput } from '@admiral-ds/react-ui';
 import AcceptSolid from '@admiral-ds/icons/build/category/AcceptSolid.svg?react';
-import { ExampleSection } from '#examples/-helpers';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 interface Person {
@@ -256,7 +256,53 @@ export const FilterExample = () => {
   });
 
   return (
-    <ExampleSection>
+    <ExampleSection
+      text={
+        <T font="Body/Body 1 Long" as="div">
+          <PStyled>
+            Опционально в заголовках можно включать фильтрацию столбцов. При этом у заголовка будет появляться иконка
+            фильтрации, по нажатию на которую будет открываться меню фильтрации.
+          </PStyled>
+          <PStyled>
+            Для того чтобы задать фильтр для столбца достаточно задать для него параметр renderFilter - функцию, которая
+            будет отрисовывать содержимое меню фильтра. Данная функция имеет в качестве входного параметра:
+          </PStyled>
+          <PStyled>closeMenu - колбек, при вызове которого происходит закрытие меню фильтра;</PStyled>
+          <PStyled>
+            Для создания кастомной фильтрации в столбец нужно передавать параметр filterFn, которое будте возвращать
+            условие фильтра
+          </PStyled>
+          <PStyled>
+            Меню фильтра является произвольным и полностью контролируется пользователем. Закрытие меню и установка
+            фильтра в активное/неактивное состояние производится пользователем внутри функции renderFilter с помощью
+            вышеописанных колбеков. С помощью параметров filterMenuAlignSelf, filterMenuClassName, filterMenuCssMixin и
+            filterMenuStyle пользователь также может управлять выравниваем фильтра, добавлять className и изменять его
+            стили.
+          </PStyled>
+          <PStyled>
+            Иконка фильтрации может быть любой (шестеренка, фильтр и т.д.). По умолчанию в качестве иконки фильтра
+            используется иконка MoreHorizontalOutline. Дефолтную иконку можно заменить с помощью параметра
+            renderFilterIcon.
+          </PStyled>
+          <PStyled>
+            Кроме того для столбца можно задать колбеки onFilterMenuOpen и onFilterMenuClose, которые будут срабатывать
+            соответственно при открытии и закрытии меню фильтра. А также для столбца можно задать колбек
+            onFilterMenuClickOutside, который будет срабатывать при клике вне меню фильтра. Данный колбек имеет в
+            качестве входных параметров объект со свойством closeMenu и параметр event.
+          </PStyled>
+          <div style={{ display: 'flex' }}>
+            Дополнительная документация по
+            <Link
+              style={{ marginLeft: '4px' }}
+              href="https://tanstack.com/table/latest/docs/guide/column-filtering"
+              target="_blank"
+            >
+              ссылке
+            </Link>
+          </div>
+        </T>
+      }
+    >
       <TanstackTable table={table} />
     </ExampleSection>
   );
