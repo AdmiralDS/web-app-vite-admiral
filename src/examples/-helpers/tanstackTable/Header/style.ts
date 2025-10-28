@@ -53,3 +53,7 @@ export const Edge = styled.th`
   height: auto;
   padding: 0;
 `;
+
+export const Spacer = styled.th`
+  padding: 0;
+`;

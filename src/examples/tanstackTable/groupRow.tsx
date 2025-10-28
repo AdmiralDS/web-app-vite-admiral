@@ -226,6 +226,7 @@ export const GroupRowExample = () => {
     ...defaultOptions,
   });
 
+  // Подумать над созданием отдельного компонента, так как не очень хорошо, что пользователь будет вручную управлять стилями
   const columns2 = [
     columnHelper.accessor('type', {
       header: ({ table, header }) => {
@@ -254,7 +255,7 @@ export const GroupRowExample = () => {
               }}
               header={header}
               dimension={dimension}
-              isEmptyCell={true}
+              showResizer
               headerLineClamp={1}
               headerExtraLineClamp={1}
               title="Тип сделки"

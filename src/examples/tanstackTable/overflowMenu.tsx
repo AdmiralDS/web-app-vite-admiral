@@ -109,7 +109,7 @@ const columnHelper = createColumnHelper<Person>();
 
 const columns = [
   columnHelper.accessor('firstName', {
-    header: 'firstName',
+    header: 'FirstName',
     cell: (info) => <CellText>{info.renderValue()}</CellText>,
     size: 141,
   }),

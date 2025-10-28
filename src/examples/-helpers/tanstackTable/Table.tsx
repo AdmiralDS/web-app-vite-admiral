@@ -142,6 +142,9 @@ export const TanstackTable = <T,>({
 
   //определение ширины колонок
   const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
+    if (header.subHeaders.length > 0) {
+      return result + '';
+    }
     if (
       header.column.getIsPinned() == 'left' &&
       (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
@@ -158,9 +161,10 @@ export const TanstackTable = <T,>({
     }
   }, '');
 
+  // Spacer - minmax(0px, auto), ActionMock - min-content, Edge - 0px
   const gridTemplateColumns = isRowsActions
-    ? `${gridVisibleTemplateColumns} minmax(min-content, auto) 0px`
-    : gridVisibleTemplateColumns;
+    ? `${gridVisibleTemplateColumns} minmax(0px, auto) min-content 0px`
+    : `${gridVisibleTemplateColumns} minmax(0px, auto)`;
 
   return (
     <S.Table
@@ -188,6 +192,7 @@ export const TanstackTable = <T,>({
         fixedColumnWidth={virtualScroll?.fixedColumnWidth || DEFAULT_COLUMN_WIDTH}
         showDividerForLastColumn={showDividerForLastColumn}
         tableRef={tableRef}
+        showBorders={showBorders}
       />
 
       {virtualScroll && virtualScroll.vertical ? (
