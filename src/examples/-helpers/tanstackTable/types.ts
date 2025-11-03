@@ -1,6 +1,5 @@
 import type { Color } from '@admiral-ds/react-ui';
 import type { Row, Table, Column, RowData } from '@tanstack/react-table';
-import '@tanstack/react-table';
 import type { css } from 'styled-components';
 import type { CSSProperties } from 'react';
 
@@ -21,10 +20,16 @@ export type VirtualScroll = {
 
 export interface MetaRowProps<T> {
   meta?: {
-    /** Окраска строки по Hover. Данная окраска должна применяться, если строка кликабельна и ведет к каким-либо действиям */
+    /**
+     * Окраска строки по Hover. Данная окраска должна применяться,
+     * если строка кликабельна и ведет к каким-либо действиям
+     */
     hover?: boolean;
-    /** Статус строки. По умолчанию таблица предоставляет статусы error и success.
-     * Также пользователь может создать свои кастомные статусы, для этого нужно передать параметр из цветовой палитры ДС Адмирал или любой другой цвет в формате строки */
+    /**
+     * Статус строки. По умолчанию таблица предоставляет статусы error и success.
+     * Также пользователь может создать свои кастомные статусы, для этого нужно
+     * передать параметр из цветовой палитры ДС Адмирал или любой другой цвет в формате строки
+     */
     status?: Status;
     /** Строка в состоянии disabled  */
     disabled?: boolean;
@@ -34,7 +39,8 @@ export interface MetaRowProps<T> {
     /** Функция рендера содержимого раскрытой части строки (детализации строки) */
     expandedRowRender?: (props: { row: Row<T> }) => React.ReactElement;
 
-    /** Функция рендера OverflowMenu для строки.
+    /**
+     * Функция рендера OverflowMenu для строки.
      * Входные параметры: сама строка, колбек onVisibilityChange.
      * Колбек необходимо вызывать при открытии/закрытии меню для того, чтобы таблица могла управлять видимостью OverflowMenu.
      * OverflowMenu отображается при ховере на строку или при открытом меню
@@ -46,7 +52,8 @@ export interface MetaRowProps<T> {
      */
     overflowMenuRender?: (row: any, onVisibilityChange?: (isVisible: boolean) => void) => React.ReactNode;
 
-    /** Функция рендера одиночного действия над строкой.
+    /**
+     * Функция рендера одиночного действия над строкой.
      * Одиночное действие отображается в виде иконки при ховере на строку
      * и располагается по правому краю строки в видимой области таблицы.
      *
@@ -63,15 +70,19 @@ export interface MetaRowProps<T> {
 }
 
 export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableElement> {
-  /** Ядро таблицы созданное с помощью useReactTable */
+  /** Ядро таблицы, созданное с помощью useReactTable */
   table: Table<T>;
   /** Размер таблицы */
   dimension?: Dimension;
-  /** Параметр, определяющий максимальное количество строк, которое может занимать заголовок столбца таблицы.
+  /**
+   * Параметр, определяющий максимальное количество строк,
+   * которое может занимать заголовок столбца таблицы.
    * По умолчанию заголовок занимает не более одной строки
    */
   headerLineClamp?: number;
-  /** Параметр, определяющий максимальное количество строк, которое может занимать дополнительный текст заголовка столбца таблицы.
+  /**
+   * Параметр, определяющий максимальное количество строк, которое может занимать
+   * дополнительный текст заголовка столбца таблицы.
    * По умолчанию дополнительный текст занимает не более одной строки
    */
   headerExtraLineClamp?: number;
@@ -79,9 +90,12 @@ export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableEle
   greyHeader?: boolean;
   /** Окрашивание строк таблицы через одну в цвет вторичного фона (зебра) */
   greyZebraRows?: boolean;
-  /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
-   * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
+  /**
+   * Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
+   * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк.
+   */
   showRowsActions?: boolean;
+  /** Настройки виртуализации */
   virtualScroll?: VirtualScroll;
   /** Отображать чекбоксы в названиях групп */
   showCheckboxTitleGroup?: boolean;
@@ -95,9 +109,11 @@ export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableEle
 }
 
 type FilterColumn = {
-  /** Функция отрисовки содержимого фильтра (выпадающего меню фильтра). Если её не передать, значок фильтра отображаться не будет */
+  /** Функция отрисовки содержимого фильтра (выпадающего меню фильтра).
+   * Если её не передать, значок фильтра отображаться не будет */
   renderFilter?: (closeMenu: () => void, column: Column<any, unknown>) => React.ReactNode;
-  /** Функция отрисовки иконки фильтра. По умолчанию в качестве иконки фильтра применяется OverflowIcon (троеточие) */
+  /** Функция отрисовки иконки фильтра.
+   * По умолчанию в качестве иконки фильтра применяется OverflowIcon (троеточие) */
   renderFilterIcon?: () => React.ReactNode;
   /** Колбек на клик вне меню фильтра */
   onFilterMenuClickOutside?: (closeMenu: () => void, event: Event) => void;
@@ -121,8 +137,11 @@ type FilterColumn = {
 
 declare module '@tanstack/react-table' {
   interface ColumnMeta<TData extends RowData, TValue> {
+    /** Настройки ширины столбца */
     gridColumnTemplate?: string;
+    /** Дополнительный текст заголовка столбца */
     extraText?: string;
+    /** Настройки фильтрации для столбца */
     filter?: FilterColumn;
     /** Выравнивание контента ячеек столбца по левому или правому краю. По умолчанию left */
     cellAlign?: 'left' | 'right';

@@ -77,7 +77,7 @@
         { "name": "Пример c ресайзом колонок", "path": "/components/tanstackTable/resizeExample" },
         { "name": "Пример стилизации таблицы через props", "path": "/components/tanstackTable/styleExample" },
         { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" },
-        { "name": "C многоуровневыми заголовками (draft)", "path": "/components/tanstackTable/groupHeaders" },
+        { "name": "C многоуровневыми заголовками", "path": "/components/tanstackTable/groupHeaders" },
         { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" },
         { "name": "Состояния строк", "path": "/components/tanstackTable/rowState" },
         { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" },

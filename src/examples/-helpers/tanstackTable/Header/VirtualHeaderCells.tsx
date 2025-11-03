@@ -5,6 +5,8 @@ import { Fragment } from 'react';
 import { CellTh } from './HeaderCell';
 import { HeaderCell } from './HeaderCell/styled';
 import type { Dimension } from '../types';
+import * as S from './style';
+import { tableHeaderRowSpan } from './utils';
 
 interface Props<T> {
   dimension: Dimension;
@@ -35,36 +37,36 @@ export const VirtualHeaderCells = <T,>({
     <>
       {!!virtualPaddingLeft && (
         //fake empty column to the left for virtualization scroll padding
-        <HeaderCell $dimension={dimension} style={{ width: virtualPaddingLeft }} />
+        <HeaderCell $dimension={dimension} colSpan={1} rowSpan={10} />
       )}
       {virtualColumns.map((vc, index) => {
         const id = vc.index;
         const header = headerGroup.headers[id];
         const headers = headerGroup.headers;
 
-        // TODO: упростить данные вычисления, возможно добавить комментарии
-        const isEmptyCell = !header.isPlaceholder
-          ? index === headers.length - 1
-            ? showDividerForLastColumn
-            : true
-          : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
-        const title = header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext());
-        const extraText = header.isPlaceholder
-          ? null
-          : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
+        const rowSpan = tableHeaderRowSpan(header);
+        if (!rowSpan) {
+          return null;
+        }
+
+        const showResizer = index === headers.length - 1 ? showDividerForLastColumn : true;
+
+        const title = flexRender(header.column.columnDef.header, header.getContext());
+        const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
 
         return (
+          /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
           <Fragment key={header.id}>
             {typeof title === 'string' ? (
               <CellTh
-                style={{ display: 'flex', width: fixedColumnWidth }}
+                // style={{ display: 'flex', width: fixedColumnWidth }}
                 key={header.id}
                 header={header}
                 headerLineClamp={headerLineClamp}
                 headerExtraLineClamp={headerExtraLineClamp}
                 multiSortable={multiSortable}
                 dimension={dimension}
-                isEmptyCell={isEmptyCell}
+                showResizer={showResizer}
                 title={title}
                 extraText={extraText}
               />
@@ -74,9 +76,10 @@ export const VirtualHeaderCells = <T,>({
           </Fragment>
         );
       })}
+      <S.Spacer />
       {!!virtualPaddingRight && (
         //fake empty column to the right for virtualization scroll padding
-        <HeaderCell $dimension={dimension} style={{ width: virtualPaddingRight }} />
+        <HeaderCell $dimension={dimension} colSpan={1} rowSpan={10} />
       )}
     </>
   );

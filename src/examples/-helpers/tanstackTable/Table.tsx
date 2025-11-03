@@ -46,6 +46,7 @@ export const TanstackTable = <T,>({
   const showRowsActions = isRowsActions && userShowRowsActions;
 
   //виртуализация
+  // Не учитывается, что есть колонки с чекбоксами/ стрелками, фиксированные колонки !!!
   const visibleColumns = table.getVisibleLeafColumns();
   let virtualPaddingLeft = 0;
   let virtualPaddingRight = 0;
@@ -80,31 +81,40 @@ export const TanstackTable = <T,>({
     ) {
       return result + ` min-content`;
     }
-    if (virtualScroll && virtualScroll.horizontal) return `${virtualScroll.fixedColumnWidth ?? DEFAULT_COLUMN_WIDTH}px`;
-    else {
-      let width = header.column.getCanResize()
-        ? header.getSize() + 'px'
-        : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
+    // нужно перебирать только virtualColumns, а не все подряд
+    // if (virtualScroll && virtualScroll.horizontal) {
+    //   return result + ` ${virtualScroll.fixedColumnWidth ?? DEFAULT_COLUMN_WIDTH}px`;
+    // }
+    let width = header.column.getCanResize()
+      ? header.getSize() + 'px'
+      : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
 
-      return result + ` ${width}`;
-    }
+    return result + ` ${width}`;
   }, '');
 
-  // Spacer - minmax(0px, auto), ActionMock - min-content, Edge - 0px
-  const gridTemplateColumns = isRowsActions
-    ? `${gridVisibleTemplateColumns} minmax(0px, auto) min-content 0px`
-    : `${gridVisibleTemplateColumns} minmax(0px, auto)`;
+  // Spacer - minmax(0px, auto)
+  let gridTemplateColumns = `${gridVisibleTemplateColumns} minmax(0px, auto)`;
+
+  // if (virtualScroll && virtualScroll.horizontal) {
+  //   gridTemplateColumns = `${virtualPaddingLeft} ` + gridTemplateColumns + ` ${virtualPaddingRight}`;
+  // }
+
+  if (isRowsActions) {
+    // ActionMock - min-content, Edge - 0px
+    gridTemplateColumns = `${gridTemplateColumns} min-content 0px`;
+  }
 
   return (
     <S.Table
       ref={tableRef}
+      data-borders={showBorders}
+      {...props}
       style={
         {
           '--columns-template': gridTemplateColumns,
+          ...props.style,
         } as React.CSSProperties
       }
-      data-borders={showBorders}
-      {...props}
     >
       <Header
         table={table}
