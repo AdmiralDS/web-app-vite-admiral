@@ -88,15 +88,34 @@ export const Header = <T,>({
 
   return (
     <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1}>
-      {table.getHeaderGroups().map((headerGroup) => {
-        return (
-          <S.HeaderTr
-            $greyHeader={greyHeader}
-            $dimension={dimension}
-            key={headerGroup.id}
-            // style={virtualScroll && virtualScroll.horizontal ? { display: 'flex', width: '100%' } : {}}
-          >
-            {table.getHeaderGroups().map((headerGroup) => {
+      {
+        <S.HeaderTr
+          $greyHeader={greyHeader}
+          $dimension={dimension}
+          // style={virtualScroll && virtualScroll.horizontal ? { display: 'flex', width: '100%' } : {}}
+        >
+          {
+            // virtualScroll && virtualScroll.horizontal
+            //   ? table.getHeaderGroups().map((headerGroup) => {
+            //       const multiSortable =
+            //         headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
+            //       return (
+            //         <VirtualHeaderCells
+            //           fixedColumnWidth={fixedColumnWidth}
+            //           multiSortable={multiSortable}
+            //           headerGroup={headerGroup}
+            //           dimension={dimension}
+            //           headerLineClamp={headerLineClamp}
+            //           headerExtraLineClamp={headerExtraLineClamp}
+            //           virtualPaddingLeft={virtualPaddingLeft}
+            //           virtualPaddingRight={virtualPaddingLeft}
+            //           virtualColumns={virtualColumns}
+            //           showDividerForLastColumn={showDividerForLastColumn}
+            //         />
+            //       );
+            //     })
+            //   :
+            table.getHeaderGroups().map((headerGroup) => {
               const multiSortable =
                 headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
 
@@ -136,118 +155,16 @@ export const Header = <T,>({
                   <S.Spacer />
                 </Fragment>
               );
-            })}
-            {showRowsActions && (
-              <>
-                <S.ActionMock $dimension={dimension} />
-                <S.Edge ref={rightEdgeRef} />
-              </>
-            )}
-          </S.HeaderTr>
-        );
-      })}
+            })
+          }
+          {showRowsActions && (
+            <>
+              <S.ActionMock $dimension={dimension} />
+              <S.Edge ref={rightEdgeRef} />
+            </>
+          )}
+        </S.HeaderTr>
+      }
     </S.Header>
   );
 };
-
-// virtualScroll && virtualScroll.horizontal ? (
-//               <>
-//                 {/* <VirtualHeaderCells //todo раскоментировать это
-//                   fixedColumnWidth={fixedColumnWidth}
-//                   multiSortable={multiSortable}
-//                   headerGroup={headerGroup}
-//                   dimension={dimension}
-//                   headerLineClamp={headerLineClamp}
-//                   headerExtraLineClamp={headerExtraLineClamp}
-//                   virtualPaddingLeft={virtualPaddingLeft}
-//                   virtualPaddingRight={virtualPaddingLeft}
-//                   virtualColumns={virtualColumns}
-//                   showDividerForLastColumn={showDividerForLastColumn}
-//                 /> */}
-//                 {
-//                   //todo закоментировать всё до </>
-//                   !!virtualPaddingLeft && (
-//                     //fake empty column to the left for virtualization scroll padding
-//                     <HeaderCell $dimension={dimension} style={{ width: virtualPaddingLeft }} />
-//                   )
-//                 }
-//                 {virtualColumns.map((vc, index) => {
-//                   const id = vc.index;
-//                   const header = headerGroup.headers[id];
-//                   const headers = headerGroup.headers;
-
-//                   // TODO: упростить данные вычисления, возможно добавить комментарии
-//                   const isEmptyCell = !header.isPlaceholder
-//                     ? index === headers.length - 1
-//                       ? showDividerForLastColumn
-//                       : true
-//                     : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
-//                   const title = header.isPlaceholder
-//                     ? null
-//                     : flexRender(header.column.columnDef.header, header.getContext());
-//                   const extraText = header.isPlaceholder
-//                     ? null
-//                     : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-
-//                   return (
-//                     <Fragment key={header.id}>
-//                       {typeof title === 'string' ? (
-//                         <CellTh
-//                           style={{ display: 'flex', width: fixedColumnWidth }}
-//                           key={header.id}
-//                           header={header}
-//                           headerLineClamp={headerLineClamp}
-//                           headerExtraLineClamp={headerExtraLineClamp}
-//                           multiSortable={multiSortable}
-//                           dimension={dimension}
-//                           isEmptyCell={isEmptyCell}
-//                           title={title}
-//                           extraText={extraText}
-//                         />
-//                       ) : (
-//                         title
-//                       )}
-//                     </Fragment>
-//                   );
-//                 })}
-//                 {!!virtualPaddingRight && (
-//                   //fake empty column to the right for virtualization scroll padding
-//                   <HeaderCell $dimension={dimension} style={{ width: virtualPaddingRight }} />
-//                 )}
-//               </>
-//             ) : (
-//               headerGroup.headers.map((header, index, headers) => {
-//                 // TODO: упростить данные вычисления, возможно добавить комментарии
-//                 const isEmptyCell = !header.isPlaceholder
-//                   ? index === headers.length - 1
-//                     ? showDividerForLastColumn
-//                     : true
-//                   : !headers[index + 1 === headers.length ? index : index + 1].isPlaceholder;
-//                 const title = header.isPlaceholder
-//                   ? null
-//                   : flexRender(header.column.columnDef.header, header.getContext());
-//                 const extraText = header.isPlaceholder
-//                   ? null
-//                   : flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-
-//                 return (
-//                   <Fragment key={header.id}>
-//                     {typeof title === 'string' ? (
-//                       <CellTh
-//                         key={header.id}
-//                         header={header}
-//                         headerLineClamp={headerLineClamp}
-//                         headerExtraLineClamp={headerExtraLineClamp}
-//                         multiSortable={multiSortable}
-//                         dimension={dimension}
-//                         isEmptyCell={isEmptyCell}
-//                         title={title}
-//                         extraText={extraText}
-//                       />
-//                     ) : (
-//                       title
-//                     )}
-//                   </Fragment>
-//                 );
-//               })
-//             )
