@@ -147,7 +147,7 @@ export const Header = <T,>({
             //     })
             //   :
             <>
-              {!!table.getLeftHeaderGroups().length && (
+              {!!table.getLeftLeafHeaders().length && (
                 <S.StickyWrapper
                   $gridColumn={`2 / ${table.getLeftLeafHeaders().length + 2}`}
                   $gridTemplateRows={`repeat(${table.getHeaderGroups().length}, 1fr)`}
