@@ -22,13 +22,20 @@ export const ActionMock = styled.th<{ $dimension: Dimension }>`
  * box-sizing: border-box; min-width: fit-content; */
 export const HeaderTr = styled.tr<{
   $dimension: Dimension;
-  $greyHeader?: boolean;
 }>`
   display: grid;
   grid-template-columns: var(--columns-template);
-  grid-row-gap: 1px;
   box-sizing: border-box;
   min-width: fit-content;
+  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+`;
+
+export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows?: string; $greyHeader?: boolean }>`
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: ${(p) => p.$gridColumn};
+  ${(p) => p.$gridTemplateRows && `grid-template-rows: ${p.$gridTemplateRows};`}
+  grid-row-gap: 1px;
   // данный background будет виден через grid-row-gap и будет создавать иллюзию подчеркивания строк
   background: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
   & > * {
@@ -37,7 +44,16 @@ export const HeaderTr = styled.tr<{
         ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
         : `var(--admiral-color-Neutral_Neutral00, ${p.theme.color['Neutral/Neutral 00']})`};
   }
-  border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+`;
+
+export const StickyWrapper = styled(NormalWrapper)`
+  position: sticky;
+  left: 0;
+  z-index: 2;
+
+  ${Table}[data-shadow-left='true'] & {
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
+  }
 `;
 
 /** aka HeaderWrapper in react-ui */

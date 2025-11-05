@@ -14,3 +14,4 @@ export * from './fixedVirtualScroll';
 export * from './resizeExample';
 export * from './groupRow';
 export * from './styleExample';
+export * from './stickyColumnsExample';

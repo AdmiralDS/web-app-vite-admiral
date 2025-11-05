@@ -115,6 +115,7 @@ export const TanstackTable = <T,>({
           ...props.style,
         } as React.CSSProperties
       }
+      className={`table ${props.className || ''}`}
     >
       <Header
         table={table}
@@ -132,6 +133,11 @@ export const TanstackTable = <T,>({
         showDividerForLastColumn={showDividerForLastColumn}
         tableRef={tableRef}
         showBorders={showBorders}
+        style={
+          {
+            '--columns-template': `0px ${gridTemplateColumns}`,
+          } as React.CSSProperties
+        }
       />
 
       {virtualScroll && virtualScroll.vertical ? (
