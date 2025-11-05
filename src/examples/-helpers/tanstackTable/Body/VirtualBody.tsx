@@ -70,28 +70,31 @@ export const VirtualBody = <T,>({
             $status={original.meta?.status}
             $showRowsActions={showRowsActions}
             $moveY={virtualRow.start}
+            //добавить проверку на последнюю строку
+            $showUnderline={true}
           >
-            {virtualColumns ? (
-              <>
-                {!!virtualPaddingLeft && <S.SpacerCellTd $width={virtualPaddingLeft} $dimension={dimension} />}
-                {virtualColumns.map((virtualColumn) => {
-                  const cell = row.getVisibleCells()[virtualColumn.index];
+            {
+              // virtualColumns ? (
+              //   <>
+              //     {!!virtualPaddingLeft && <S.SpacerCellTd $width={virtualPaddingLeft} $dimension={dimension} />}
+              //     {virtualColumns.map((virtualColumn) => {
+              //       const cell = row.getVisibleCells()[virtualColumn.index];
 
-                  return (
-                    <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </S.CellTd>
-                  );
-                })}
-                {!!virtualPaddingRight && <S.SpacerCellTd $width={virtualPaddingRight} $dimension={dimension} />}
-              </>
-            ) : (
+              //       return (
+              //         <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
+              //           {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              //         </S.CellTd>
+              //       );
+              //     })}
+              //     {!!virtualPaddingRight && <S.SpacerCellTd $width={virtualPaddingRight} $dimension={dimension} />}
+              //   </>
+              // ) :
               row.getVisibleCells().map((cell) => (
                 <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </S.CellTd>
               ))
-            )}
+            }
             {(showRowsActions || original.meta?.actionRender || original.meta?.overflowMenuRender) && (
               <OverflowMenu
                 dimension={dimension}

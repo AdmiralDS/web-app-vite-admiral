@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'styled-components';
+
 interface Props<T> {
   table: Table<T>;
   setHeaderHeight: (headerHeight: number) => void;
@@ -14,6 +16,7 @@ interface Props<T> {
   showDividerForLastColumn: boolean;
   tableRef: React.MutableRefObject<null>;
   showBorders?: boolean;
+  style?: CSSProperties;
 }
 
 import { Fragment, useLayoutEffect, useRef } from 'react';
@@ -42,9 +45,12 @@ export const Header = <T,>({
   showDividerForLastColumn,
   tableRef,
   showBorders,
+  style,
 }: Props<T>) => {
   const headerRef = useRef(null);
+  const leftEdgeRef = useRef(null);
   const rightEdgeRef = useRef(null);
+  const enableLeftShadow = !!table.getLeftHeaderGroups().length;
 
   // check header size updates
   useLayoutEffect(() => {
@@ -61,7 +67,32 @@ export const Header = <T,>({
     };
   }, [setHeaderHeight]);
 
-  //добавление тени справо
+  // добавление тени слева
+  useLayoutEffect(() => {
+    const table: HTMLElement | null = tableRef.current;
+    const leftEdge = leftEdgeRef.current;
+
+    function handleIntersection([entry]: IntersectionObserverEntry[]) {
+      if (table) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
+          table.setAttribute('data-shadow-left', 'false');
+        } else {
+          table.setAttribute('data-shadow-left', 'true');
+        }
+      }
+    }
+
+    if (table && leftEdge && enableLeftShadow) {
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: table,
+        threshold: [0, 1.0],
+      });
+      observer.observe(leftEdge);
+      return () => observer.disconnect();
+    }
+  }, [enableLeftShadow]);
+
+  //добавление тени справа
   useLayoutEffect(() => {
     const table: HTMLElement | null = tableRef.current;
     const rightEdge = rightEdgeRef.current;
@@ -87,13 +118,13 @@ export const Header = <T,>({
   }, [showRowsActions]);
 
   return (
-    <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1}>
+    <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1} style={style}>
       {
         <S.HeaderTr
-          $greyHeader={greyHeader}
           $dimension={dimension}
           // style={virtualScroll && virtualScroll.horizontal ? { display: 'flex', width: '100%' } : {}}
         >
+          <S.Edge ref={leftEdgeRef} />
           {
             // virtualScroll && virtualScroll.horizontal
             //   ? table.getHeaderGroups().map((headerGroup) => {
@@ -115,47 +146,102 @@ export const Header = <T,>({
             //       );
             //     })
             //   :
-            table.getHeaderGroups().map((headerGroup) => {
-              const multiSortable =
-                headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
+            <>
+              {!!table.getLeftHeaderGroups().length && (
+                <S.StickyWrapper
+                  $gridColumn={`2 / ${table.getLeftLeafHeaders().length + 2}`}
+                  $gridTemplateRows={`repeat(${table.getHeaderGroups().length}, 1fr)`}
+                  $greyHeader={greyHeader}
+                >
+                  {table.getLeftHeaderGroups().map((headerGroup) => {
+                    const multiSortable =
+                      headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
 
-              return (
-                <Fragment key={headerGroup.id}>
-                  {headerGroup.headers.map((header, index, headers) => {
-                    const rowSpan = tableHeaderRowSpan(header);
-                    if (!rowSpan) {
-                      return null;
-                    }
-                    const showResizer = index === headers.length - 1 ? showDividerForLastColumn : true;
-
-                    const title = flexRender(header.column.columnDef.header, header.getContext());
-                    const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-                    /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
                     return (
-                      <Fragment key={header.id}>
-                        {typeof title === 'string' ? (
-                          <CellTh
-                            key={header.id}
-                            header={header}
-                            headerLineClamp={headerLineClamp}
-                            headerExtraLineClamp={headerExtraLineClamp}
-                            multiSortable={multiSortable}
-                            dimension={dimension}
-                            showResizer={showResizer}
-                            rowSpan={rowSpan}
-                            title={title}
-                            extraText={extraText}
-                          />
-                        ) : (
-                          title
-                        )}
+                      <Fragment key={headerGroup.id}>
+                        {headerGroup.headers.map((header) => {
+                          const rowSpan = tableHeaderRowSpan(header);
+                          if (!rowSpan) {
+                            return null;
+                          }
+
+                          const title = flexRender(header.column.columnDef.header, header.getContext());
+                          const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
+                          /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
+                          return (
+                            <Fragment key={header.id}>
+                              {typeof title === 'string' ? (
+                                <CellTh
+                                  key={header.id}
+                                  header={header}
+                                  headerLineClamp={headerLineClamp}
+                                  headerExtraLineClamp={headerExtraLineClamp}
+                                  multiSortable={multiSortable}
+                                  dimension={dimension}
+                                  showResizer
+                                  rowSpan={rowSpan}
+                                  title={title}
+                                  extraText={extraText}
+                                />
+                              ) : (
+                                title
+                              )}
+                            </Fragment>
+                          );
+                        })}
                       </Fragment>
                     );
                   })}
-                  <S.Spacer />
-                </Fragment>
-              );
-            })
+                </S.StickyWrapper>
+              )}
+              <S.NormalWrapper
+                $gridColumn={`${table.getLeftLeafHeaders().length + 2} / -1`}
+                $gridTemplateRows={`repeat(${table.getHeaderGroups().length}, 1fr)`}
+                $greyHeader={greyHeader}
+              >
+                {table.getCenterHeaderGroups().map((headerGroup) => {
+                  const multiSortable =
+                    headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
+
+                  return (
+                    <Fragment key={headerGroup.id}>
+                      {headerGroup.headers.map((header, index, headers) => {
+                        const rowSpan = tableHeaderRowSpan(header);
+                        if (!rowSpan) {
+                          return null;
+                        }
+                        const showResizer = index === headers.length - 1 ? showDividerForLastColumn : true;
+
+                        const title = flexRender(header.column.columnDef.header, header.getContext());
+                        const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
+                        /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
+                        return (
+                          <Fragment key={header.id}>
+                            {typeof title === 'string' ? (
+                              <CellTh
+                                key={header.id}
+                                header={header}
+                                headerLineClamp={headerLineClamp}
+                                headerExtraLineClamp={headerExtraLineClamp}
+                                multiSortable={multiSortable}
+                                dimension={dimension}
+                                showResizer={showResizer}
+                                rowSpan={rowSpan}
+                                title={title}
+                                extraText={extraText}
+                              />
+                            ) : (
+                              title
+                            )}
+                          </Fragment>
+                        );
+                      })}
+                      <S.Spacer />
+                    </Fragment>
+                  );
+                })}
+              </S.NormalWrapper>
+            </>
           }
           {showRowsActions && (
             <>

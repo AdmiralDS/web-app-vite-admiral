@@ -95,17 +95,36 @@ export const Body = <T,>({
                   </WrapperExpandContent>
                 </td>
               ) : (
-                row.getVisibleCells().map((cell, index, cells) => (
-                  <S.CellTd
-                    key={cell.id}
-                    $dimension={dimension}
-                    $cellAlign={cell.column.columnDef.meta?.cellAlign}
-                    $resizer={index === cells.length - 1 ? showDividerForLastColumn : true}
-                    $disableBorderStyle={cell.column.id === 'checkbox-column'}
-                  >
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </S.CellTd>
-                ))
+                <>
+                  {!!row.getLeftVisibleCells().length && (
+                    <S.StickyWrapper $gridColumn={`1 / ${row.getLeftVisibleCells().length + 1}`}>
+                      {row.getLeftVisibleCells().map((cell) => (
+                        <S.CellTd
+                          key={cell.id}
+                          $dimension={dimension}
+                          $cellAlign={cell.column.columnDef.meta?.cellAlign}
+                          $resizer={true}
+                          $disableBorderStyle={cell.column.id === 'checkbox-column'}
+                        >
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </S.CellTd>
+                      ))}
+                    </S.StickyWrapper>
+                  )}
+                  <S.NormalWrapper $gridColumn={`${row.getLeftVisibleCells().length + 1} / -1`}>
+                    {row.getCenterVisibleCells().map((cell) => (
+                      <S.CellTd
+                        key={cell.id}
+                        $dimension={dimension}
+                        $cellAlign={cell.column.columnDef.meta?.cellAlign}
+                        $resizer={showDividerForLastColumn && cell.column.getIsLastColumn()}
+                        $disableBorderStyle={cell.column.id === 'checkbox-column'}
+                      >
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </S.CellTd>
+                    ))}
+                  </S.NormalWrapper>
+                </>
               )}
               {(showRowsActions || original.meta?.actionRender || original.meta?.overflowMenuRender) && (
                 <OverflowMenu

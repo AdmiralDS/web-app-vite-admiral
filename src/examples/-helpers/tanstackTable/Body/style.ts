@@ -69,6 +69,22 @@ export const VirtualBody = styled.tbody<{ $heightBody?: string }>`
   height: ${({ $heightBody }) => $heightBody};
 `;
 
+export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows?: string }>`
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: ${(p) => p.$gridColumn};
+  ${(p) => p.$gridTemplateRows && `grid-template-rows: ${p.$gridTemplateRows};`}
+`;
+
+export const StickyWrapper = styled(NormalWrapper)`
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  .table[data-shadow-left='true'] & {
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
+  }
+`;
+
 /** aka Row + SimpleRow from react-ui */
 export const BodyTr = styled.tr<{
   selected?: boolean;
@@ -87,6 +103,9 @@ export const BodyTr = styled.tr<{
   grid-template-columns: var(--columns-template);
   min-width: fit-content;
   background: ${rowBackground};
+  & > ${StickyWrapper} {
+    background: ${rowBackground};
+  }
 
   ${rowStyle}
   ${({ disabled }) => disabled && disabledRow}
