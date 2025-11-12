@@ -91,7 +91,7 @@ export const RowContent = <T,>({
                 key={cell.id}
                 $dimension={dimension}
                 $cellAlign={cell.column.columnDef.meta?.cellAlign}
-                $resizer={showDividerForLastColumn && cell.column.getIsLastColumn()}
+                $resizer={cell.column.getIsLastColumn() ? showDividerForLastColumn : true}
                 $disableBorderStyle={cell.column.id === 'checkbox-column'}
               >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}

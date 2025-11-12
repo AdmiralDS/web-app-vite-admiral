@@ -10,7 +10,7 @@ const StyledCellText = styled(CellText)`
 `;
 
 const makeColumns = () =>
-  [...Array(4)].map((_, i) => {
+  [...Array(2)].map((_, i) => {
     return {
       accessorKey: i.toString(),
       header: i === 0 ? 'Random text' : 'Row index',
