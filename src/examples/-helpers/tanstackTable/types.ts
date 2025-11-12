@@ -10,12 +10,16 @@ export type Dimension = 'xl' | 'l' | 'm' | 's';
 export type VirtualScroll = {
   /** Фиксированная высота строки, применяется в вертикальном скролле */
   fixedRowHeight?: number;
+  /** Примерная высота строки. Данный параметр применяется, если строки в таблице имеют динамическую высоту */
+  estimatedRowHeight?: number;
   /** Включение вертикального скролла */
   horizontal?: boolean;
   /** Включение горизотнального скролла */
   vertical?: boolean;
   /** Фиксированная ширина столбца, применяется в горизонтальном скролле */
   fixedColumnWidth?: number;
+  /** Количество подгружаемых элементов сверху и снизу */
+  overscan?: number;
 };
 
 export interface MetaRowProps<T> {

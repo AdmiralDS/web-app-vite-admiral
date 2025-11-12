@@ -4,8 +4,6 @@ import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { CellText, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
 
-export type Person = ReturnType<typeof makeData>[0];
-
 const makeColumns = () =>
   [...Array(1000)].map((_, i) => {
     return {
@@ -18,14 +16,14 @@ const makeColumns = () =>
 
 const date = new Date('2020-08-06').toLocaleDateString();
 
-export const makeData = () =>
+const makeData = () =>
   [...Array(1000)].map(() => ({
     ...Object.fromEntries(makeColumns().map((col) => [col.accessorKey, date])),
   }));
 
 export const FixedVirtualScrollExample = () => {
   const [data, _setData] = React.useState(() => makeData());
-  //todo отключить ресайз
+  //todo при ресейзе будет неправильное отображение горизонтального скролла
   const table = useReactTable({
     data,
     columns: makeColumns(),

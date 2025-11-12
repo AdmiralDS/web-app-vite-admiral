@@ -89,6 +89,10 @@
         {
           "name": "Пример виртуального скролла с фиксированной высотой строки и шириной столбца",
           "path": "/components/tanstackTable/fixedVirtualScroll"
+        },
+        {
+          "name": "Пример виртуального скролла с динамической высотой строки",
+          "path": "/components/tanstackTable/dynamicVirtualScroll"
         }
       ]
     }
