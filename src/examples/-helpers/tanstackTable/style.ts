@@ -60,6 +60,7 @@ export const Body = styled.tbody`
 /** учтены 2px отступы по вертикали */
 export const CellText = styled.div<{ $dimension?: Dimension }>`
   display: block;
+  box-sizing: border-box;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

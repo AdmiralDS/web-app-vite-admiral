@@ -31,16 +31,12 @@ export const VirtualBody = <T,>({
   showCheckboxTitleGroup,
   showDividerForLastColumn,
 }: VirtualBodyProps<T>) => {
+  const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
   const rowVirtualizer = useVirtualizer({
     getScrollElement: () => tableRef.current,
-    estimateSize: () => virtualScroll?.fixedRowHeight || virtualScroll?.estimatedRowHeight || 40,
+    estimateSize: (index: number) => fixedRowHeight?.(index) || estimatedRowHeight?.(index) || 40,
     count: table.getRowModel().rows.length,
-    //measure dynamic row height, except in firefox because it measures table border height incorrectly
-    // measureElement:
-    //   typeof window !== 'undefined' && navigator.userAgent.indexOf('Firefox') === -1
-    //     ? (element) => element?.getBoundingClientRect()?.height
-    //     : undefined,
-    overscan: virtualScroll?.overscan || 5,
+    overscan: overscan,
   });
 
   return (
@@ -56,7 +52,7 @@ export const VirtualBody = <T,>({
           <Fragment key={virtualRow.index}>
             <S.VirtualBodyTr
               data-index={virtualRow.index} //needed for dynamic row height measurement
-              ref={virtualScroll?.estimatedRowHeight ? rowVirtualizer.measureElement : null}
+              ref={estimatedRowHeight ? rowVirtualizer.measureElement : null}
               $dimension={dimension}
               selected={row.getIsSelected() || original.meta?.selected}
               disabled={original.meta?.disabled}

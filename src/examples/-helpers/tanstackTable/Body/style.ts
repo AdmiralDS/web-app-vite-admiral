@@ -63,7 +63,7 @@ export const Body = styled.tbody`
   display: grid;
 `;
 
-export const VirtualBody = styled.tbody<{ $heightBody?: string }>`
+export const VirtualBody = styled.tbody<{ $heightBody: string }>`
   display: grid;
   position: relative;
   height: ${({ $heightBody }) => $heightBody};
@@ -133,7 +133,6 @@ export const BodyTr = styled.tr<{
 export const VirtualBodyTr = styled(BodyTr)<{ $moveY: number }>`
   position: absolute;
   transform: translateY(${({ $moveY }) => $moveY}px);
-  display: grid;
 `;
 
 //todo возможно вынести его чтобы пользователи могли сами решить нужны ли им отступы или нет?
