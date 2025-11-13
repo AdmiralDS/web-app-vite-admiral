@@ -24,5 +24,5 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
-  base: process.env.VITE_BASE_URL || '/',
+  base: process.env.BASE_PATH || '/',
 });
