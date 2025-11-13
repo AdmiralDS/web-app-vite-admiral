@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { CellText, TanstackTable } from '#examples/-helpers/tanstackTable';
+import { CellText, TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, columnFlexMixin } from '#examples/-helpers';
 
 const date = new Date('2020-08-06').toLocaleDateString();
@@ -52,14 +52,14 @@ export const FixedVirtualScrollExample = () => {
     data,
     columns: makeColumns1(),
     getCoreRowModel: getCoreRowModel(),
-    enableSorting: false,
+    ...defaultOptions,
   });
 
   const table2 = useReactTable({
     data: data2,
     columns: makeColumns2(),
     getCoreRowModel: getCoreRowModel(),
-    enableSorting: false,
+    ...defaultOptions,
   });
 
   return (
