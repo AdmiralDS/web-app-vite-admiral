@@ -19,6 +19,8 @@ export interface BodyProps<T> {
   showBorders: boolean;
   showCheckboxTitleGroup: boolean;
   showDividerForLastColumn: boolean;
+  columnsLength: number;
+  emptyMessage?: React.ReactNode;
 }
 
 export const Body = <T,>({
@@ -32,43 +34,56 @@ export const Body = <T,>({
   showBorders,
   showCheckboxTitleGroup,
   showDividerForLastColumn,
+  columnsLength,
+  emptyMessage,
 }: BodyProps<T>) => {
+  const isEmptyArrayRows = table.getRowModel().rows.length === 0;
+
   return (
     <S.Body>
-      {table.getRowModel().rows.map((row, index, rows) => {
-        const original = row.original as RowData & MetaRowProps<T>;
-        const isLastRow = index === rows.length - 1;
-        const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
+      {isEmptyArrayRows ? (
+        <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
+          <S.EmptyCell style={{ gridColumn: `span ${columnsLength}` }} $dimension={dimension} $resizer={true}>
+            {emptyMessage || 'Нет совпадений'}
+          </S.EmptyCell>
+        </S.BodyTr>
+      ) : (
+        table.getRowModel().rows.map((row, index, rows) => {
+          const original = row.original as RowData & MetaRowProps<T>;
+          const isLastRow = index === rows.length - 1;
+          const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
 
-        return (
-          <Fragment key={row.id}>
-            <S.BodyTr
-              $dimension={dimension}
-              selected={row.getIsSelected() || original.meta?.selected}
-              disabled={original.meta?.disabled}
-              $hover={original.meta?.hover}
-              $grey={greyZebraRows && index % 2 === 1}
-              $status={original.meta?.status}
-              $showRowsActions={showRowsActions}
-              $showUnderline={!original.meta?.expandedRowRender && showUnderline}
-            >
-              <RowContent
-                original={original}
-                row={row}
-                dimension={dimension}
-                showCheckboxTitleGroup={showCheckboxTitleGroup}
-                showDividerForLastColumn={showDividerForLastColumn}
-                showRowsActions={showRowsActions}
-                tableRef={tableRef}
-                headerHeight={headerHeight}
-              />
-            </S.BodyTr>
-            {row.getCanExpand() && original.meta?.expandedRowRender && (
-              <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
-            )}
-          </Fragment>
-        );
-      })}
+          return (
+            <Fragment key={row.id}>
+              <S.BodyTr
+                $dimension={dimension}
+                selected={row.getIsSelected() || original.meta?.selected}
+                disabled={original.meta?.disabled}
+                $hover={original.meta?.hover}
+                $grey={greyZebraRows && index % 2 === 1}
+                $status={original.meta?.status}
+                $showRowsActions={showRowsActions}
+                $showUnderline={!original.meta?.expandedRowRender && showUnderline}
+              >
+                <RowContent
+                  original={original}
+                  row={row}
+                  dimension={dimension}
+                  showCheckboxTitleGroup={showCheckboxTitleGroup}
+                  showDividerForLastColumn={showDividerForLastColumn}
+                  showRowsActions={showRowsActions}
+                  tableRef={tableRef}
+                  headerHeight={headerHeight}
+                  columnsLength={columnsLength}
+                />
+              </S.BodyTr>
+              {row.getCanExpand() && original.meta?.expandedRowRender && (
+                <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
+              )}
+            </Fragment>
+          );
+        })
+      )}
     </S.Body>
   );
 };

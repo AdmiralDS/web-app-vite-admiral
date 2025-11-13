@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { borderStyle } from '../style';
+import { borderStyle, cellStyle } from '../style';
 import { typography, type Color } from '@admiral-ds/react-ui';
 import type { Dimension, Status } from '../types';
 import { StickyWrapper } from './RowContent/style';
@@ -167,4 +167,10 @@ export const SpacerCellTd = styled(CellTd)<{ $width: number }>`
   border: none;
   flex: none;
   width: ${({ $width }) => `${$width}px`};
+`;
+
+export const EmptyCell = styled(CellTd)`
+  margin: 2px 0;
+  color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
+  ${cellStyle}
 `;
