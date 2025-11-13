@@ -9,6 +9,8 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
+const BASE_PATH = process.env.BASE_PATH || '/';
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -24,5 +26,8 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
-  base: process.env.BASE_PATH || '/',
+  base: BASE_PATH,
+  define: {
+    'import.meta.env.BASE_PATH': JSON.stringify(BASE_PATH),
+  },
 });
