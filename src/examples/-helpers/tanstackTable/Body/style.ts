@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { borderStyle, cellStyle } from '../style';
+import { borderStyle } from '../style';
 import { typography, type Color } from '@admiral-ds/react-ui';
-import { headerStyle } from '../Header/HeaderCell/styled';
 import type { Dimension, Status } from '../types';
+import { StickyWrapper } from './RowContent/style';
 
 export const rowStyle = css<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
@@ -63,26 +63,10 @@ export const Body = styled.tbody`
   display: grid;
 `;
 
-export const VirtualBody = styled.tbody<{ $heightBody?: string }>`
+export const VirtualBody = styled.tbody<{ $heightBody: string }>`
   display: grid;
   position: relative;
   height: ${({ $heightBody }) => $heightBody};
-`;
-
-export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows?: string }>`
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: ${(p) => p.$gridColumn};
-  ${(p) => p.$gridTemplateRows && `grid-template-rows: ${p.$gridTemplateRows};`}
-`;
-
-export const StickyWrapper = styled(NormalWrapper)`
-  position: sticky;
-  left: 0;
-  z-index: 2;
-  .table[data-shadow-left='true'] & {
-    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
-  }
 `;
 
 /** aka Row + SimpleRow from react-ui */
@@ -149,27 +133,15 @@ export const BodyTr = styled.tr<{
 export const VirtualBodyTr = styled(BodyTr)<{ $moveY: number }>`
   position: absolute;
   transform: translateY(${({ $moveY }) => $moveY}px);
-  display: flex;
-  width: 100%;
 `;
 
-//todo возможно вынести его чтобы пользователи могли сами решить нужны ли им отступы или нет
+//todo возможно вынести его чтобы пользователи могли сами решить нужны ли им отступы или нет?
 export const ExpandedRowContent = styled.div`
   display: flex;
   flex: 1 0 auto;
   height: fit-content;
   box-sizing: border-box;
   padding: 0 12px 11px 12px;
-`;
-
-export const GroupTitleCell = styled.div<{ $dimension: Dimension }>`
-  display: flex;
-  align-items: flex-start;
-  box-sizing: border-box;
-  cursor: default;
-
-  ${headerStyle}
-  ${cellStyle}
 `;
 
 /** Подумать про text-align */

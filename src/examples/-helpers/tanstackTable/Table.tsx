@@ -152,6 +152,10 @@ export const TanstackTable = <T,>({
           virtualColumns={virtualScroll.horizontal ? virtualColumns : undefined}
           virtualPaddingLeft={virtualPaddingLeft}
           virtualPaddingRight={virtualPaddingRight}
+          showLastRowUnderline={showLastRowUnderline}
+          showBorders={showBorders}
+          showCheckboxTitleGroup={showCheckboxTitleGroup}
+          showDividerForLastColumn={showDividerForLastColumn}
         />
       ) : (
         <Body

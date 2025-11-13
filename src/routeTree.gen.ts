@@ -42,6 +42,7 @@ import { Route as ComponentsTanstackTableGroupHeadersRouteImport } from './route
 import { Route as ComponentsTanstackTableFixedVirtualScrollRouteImport } from './routes/components/tanstackTable/fixedVirtualScroll'
 import { Route as ComponentsTanstackTableFilterExampleRouteImport } from './routes/components/tanstackTable/filterExample'
 import { Route as ComponentsTanstackTableExpandedRowRouteImport } from './routes/components/tanstackTable/expandedRow'
+import { Route as ComponentsTanstackTableDynamicVirtualScrollRouteImport } from './routes/components/tanstackTable/dynamicVirtualScroll'
 import { Route as ComponentsTanstackTableBaseExampleRouteImport } from './routes/components/tanstackTable/baseExample'
 import { Route as ComponentsTableZebraRouteImport } from './routes/components/table/zebra'
 import { Route as ComponentsTableWidthRouteImport } from './routes/components/table/width'
@@ -260,6 +261,12 @@ const ComponentsTanstackTableExpandedRowRoute =
     path: '/tanstackTable/expandedRow',
     getParentRoute: () => ComponentsRoute,
   } as any)
+const ComponentsTanstackTableDynamicVirtualScrollRoute =
+  ComponentsTanstackTableDynamicVirtualScrollRouteImport.update({
+    id: '/tanstackTable/dynamicVirtualScroll',
+    path: '/tanstackTable/dynamicVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 const ComponentsTanstackTableBaseExampleRoute =
   ComponentsTanstackTableBaseExampleRouteImport.update({
     id: '/tanstackTable/baseExample',
@@ -447,6 +454,7 @@ export interface FileRoutesByFullPath {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/dynamicVirtualScroll': typeof ComponentsTanstackTableDynamicVirtualScrollRoute
   '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
   '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
@@ -509,6 +517,7 @@ export interface FileRoutesByTo {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/dynamicVirtualScroll': typeof ComponentsTanstackTableDynamicVirtualScrollRoute
   '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
   '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
@@ -572,6 +581,7 @@ export interface FileRoutesById {
   '/components/table/width': typeof ComponentsTableWidthRoute
   '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
+  '/components/tanstackTable/dynamicVirtualScroll': typeof ComponentsTanstackTableDynamicVirtualScrollRoute
   '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
   '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
   '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
@@ -636,6 +646,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/dynamicVirtualScroll'
     | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/filterExample'
     | '/components/tanstackTable/fixedVirtualScroll'
@@ -698,6 +709,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/dynamicVirtualScroll'
     | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/filterExample'
     | '/components/tanstackTable/fixedVirtualScroll'
@@ -760,6 +772,7 @@ export interface FileRouteTypes {
     | '/components/table/width'
     | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
+    | '/components/tanstackTable/dynamicVirtualScroll'
     | '/components/tanstackTable/expandedRow'
     | '/components/tanstackTable/filterExample'
     | '/components/tanstackTable/fixedVirtualScroll'
@@ -1027,6 +1040,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTanstackTableExpandedRowRouteImport
       parentRoute: typeof ComponentsRoute
     }
+    '/components/tanstackTable/dynamicVirtualScroll': {
+      id: '/components/tanstackTable/dynamicVirtualScroll'
+      path: '/tanstackTable/dynamicVirtualScroll'
+      fullPath: '/components/tanstackTable/dynamicVirtualScroll'
+      preLoaderRoute: typeof ComponentsTanstackTableDynamicVirtualScrollRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
     '/components/tanstackTable/baseExample': {
       id: '/components/tanstackTable/baseExample'
       path: '/tanstackTable/baseExample'
@@ -1247,6 +1267,7 @@ interface ComponentsRouteChildren {
   ComponentsTableWidthRoute: typeof ComponentsTableWidthRoute
   ComponentsTableZebraRoute: typeof ComponentsTableZebraRoute
   ComponentsTanstackTableBaseExampleRoute: typeof ComponentsTanstackTableBaseExampleRoute
+  ComponentsTanstackTableDynamicVirtualScrollRoute: typeof ComponentsTanstackTableDynamicVirtualScrollRoute
   ComponentsTanstackTableExpandedRowRoute: typeof ComponentsTanstackTableExpandedRowRoute
   ComponentsTanstackTableFilterExampleRoute: typeof ComponentsTanstackTableFilterExampleRoute
   ComponentsTanstackTableFixedVirtualScrollRoute: typeof ComponentsTanstackTableFixedVirtualScrollRoute
@@ -1311,6 +1332,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTableZebraRoute: ComponentsTableZebraRoute,
   ComponentsTanstackTableBaseExampleRoute:
     ComponentsTanstackTableBaseExampleRoute,
+  ComponentsTanstackTableDynamicVirtualScrollRoute:
+    ComponentsTanstackTableDynamicVirtualScrollRoute,
   ComponentsTanstackTableExpandedRowRoute:
     ComponentsTanstackTableExpandedRowRoute,
   ComponentsTanstackTableFilterExampleRoute:

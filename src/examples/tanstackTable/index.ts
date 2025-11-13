@@ -15,3 +15,4 @@ export * from './resizeExample';
 export * from './groupRow';
 export * from './styleExample';
 export * from './stickyColumnsExample';
+export * from './dynamicVirtualScroll';
