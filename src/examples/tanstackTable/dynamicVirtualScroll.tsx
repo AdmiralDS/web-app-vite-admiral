@@ -57,7 +57,7 @@ export const DynamicVirtualScroll = () => {
       <TanstackTable
         table={table}
         style={{ height: '500px' }}
-        virtualScroll={{ vertical: true, estimatedRowHeight: 60 }}
+        virtualScroll={{ vertical: true, estimatedRowHeight: () => 60 }}
         showLastRowUnderline={false}
       />
     </ExampleSection>
