@@ -87,7 +87,7 @@
         { "name": "Пример с OverflowMenu", "path": "/components/tanstackTable/overflowMenu" },
         { "name": "Пример с группировкой строк", "path": "/components/tanstackTable/groupRow" },
         {
-          "name": "Пример виртуального скролла с фиксированной высотой строки и шириной столбца",
+          "name": "Пример виртуального скролла с фиксированной высотой строки",
           "path": "/components/tanstackTable/fixedVirtualScroll"
         },
         {

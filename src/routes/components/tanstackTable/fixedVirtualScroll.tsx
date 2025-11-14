@@ -5,6 +5,6 @@ export const Route = createFileRoute('/components/tanstackTable/fixedVirtualScro
   component: () => <FixedVirtualScrollExample />,
   staticData: {
     title: 'TanstackTable.',
-    description: `Пример виртуального скролла с фиксированной высотой строки и шириной столбца.`,
+    description: `Пример виртуального скролла с фиксированной высотой строки.`,
   },
 });

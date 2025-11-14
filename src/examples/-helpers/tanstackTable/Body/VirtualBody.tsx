@@ -33,20 +33,16 @@ export const VirtualBody = <T,>({
   columnsLength,
   emptyMessage,
 }: VirtualBodyProps<T>) => {
+  const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
   const isEmptyArrayRows = table.getRowModel().rows.length === 0;
 
   const rowVirtualizer = isEmptyArrayRows
     ? undefined
     : useVirtualizer({
         getScrollElement: () => tableRef.current,
-        estimateSize: () => virtualScroll?.fixedRowHeight || virtualScroll?.estimatedRowHeight || 40,
+        estimateSize: (index: number) => fixedRowHeight?.(index) || estimatedRowHeight?.(index) || 40,
         count: table.getRowModel().rows.length,
-        //measure dynamic row height, except in firefox because it measures table border height incorrectly
-        // measureElement:
-        //   typeof window !== 'undefined' && navigator.userAgent.indexOf('Firefox') === -1
-        //     ? (element) => element?.getBoundingClientRect()?.height
-        //     : undefined,
-        overscan: virtualScroll?.overscan || 5,
+        overscan: overscan,
       });
 
   return (
@@ -64,12 +60,11 @@ export const VirtualBody = <T,>({
 
           const isLastRow = virtualRow.index === table.getRowModel().rows.length - 1;
           const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
-
           return (
             <Fragment key={virtualRow.index}>
               <S.VirtualBodyTr
                 data-index={virtualRow.index} //needed for dynamic row height measurement
-                ref={virtualScroll?.estimatedRowHeight ? rowVirtualizer.measureElement : null}
+                ref={estimatedRowHeight ? rowVirtualizer.measureElement : null}
                 $dimension={dimension}
                 selected={row.getIsSelected() || original.meta?.selected}
                 disabled={original.meta?.disabled}
