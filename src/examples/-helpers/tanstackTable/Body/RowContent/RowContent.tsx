@@ -18,7 +18,6 @@ interface RowContentProps<T> {
   headerHeight: number;
   showCheckboxTitleGroup: boolean;
   showDividerForLastColumn: boolean;
-  columnsLength: number;
 }
 
 export const RowContent = <T,>({
@@ -30,7 +29,6 @@ export const RowContent = <T,>({
   showRowsActions,
   tableRef,
   headerHeight,
-  columnsLength,
 }: RowContentProps<T>) => {
   const handleOverflowMenuClick = (e: React.MouseEvent<HTMLElement>) => {
     // клик по меню не должен вызывать событие клика по строке
@@ -40,7 +38,7 @@ export const RowContent = <T,>({
   return (
     <>
       {original.meta?.groupTitle ? (
-        <td colSpan={columnsLength} style={{ gridColumn: `span ${columnsLength}` }}>
+        <td style={{ gridColumn: `1/-1` }}>
           <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
             {row.getCanExpand() && (
               <ExpandCell $dimension={dimension}>

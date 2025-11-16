@@ -30,7 +30,6 @@ export const VirtualBody = <T,>({
   showBorders,
   showCheckboxTitleGroup,
   showDividerForLastColumn,
-  columnsLength,
   emptyMessage,
 }: VirtualBodyProps<T>) => {
   const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
@@ -49,7 +48,7 @@ export const VirtualBody = <T,>({
     <S.VirtualBody $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
       {isEmptyArrayRows ? (
         <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell style={{ gridColumn: `span ${columnsLength}` }} $dimension={dimension} $resizer={true}>
+          <S.EmptyCell style={{ gridColumn: `1/-1` }} $dimension={dimension} $resizer={true}>
             {emptyMessage || 'Нет совпадений'}
           </S.EmptyCell>
         </S.BodyTr>
@@ -100,7 +99,6 @@ export const VirtualBody = <T,>({
                   showRowsActions={showRowsActions}
                   tableRef={tableRef}
                   headerHeight={headerHeight}
-                  columnsLength={columnsLength}
                 />
               </S.VirtualBodyTr>
               {row.getCanExpand() && original.meta?.expandedRowRender && (

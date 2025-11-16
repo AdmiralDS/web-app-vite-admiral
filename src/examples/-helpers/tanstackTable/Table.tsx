@@ -95,7 +95,6 @@ export const TanstackTable = <T,>({
 
   // Spacer - minmax(0px, auto)
   let gridTemplateColumns = `${gridVisibleTemplateColumns} minmax(0px, auto)`;
-  let columnsLength = table.getLeafHeaders().length + 1;
 
   // if (virtualScroll && virtualScroll.horizontal) {
   //   gridTemplateColumns = `${virtualPaddingLeft} ` + gridTemplateColumns + ` ${virtualPaddingRight}`;
@@ -104,7 +103,6 @@ export const TanstackTable = <T,>({
   if (isRowsActions) {
     // ActionMock - min-content, Edge - 0px
     gridTemplateColumns = `${gridTemplateColumns} min-content 0px`;
-    columnsLength = columnsLength + 1;
   }
 
   return (
@@ -159,7 +157,6 @@ export const TanstackTable = <T,>({
           showBorders={showBorders}
           showCheckboxTitleGroup={showCheckboxTitleGroup}
           showDividerForLastColumn={showDividerForLastColumn}
-          columnsLength={columnsLength}
           emptyMessage={emptyMessage}
         />
       ) : (
@@ -174,7 +171,6 @@ export const TanstackTable = <T,>({
           showBorders={showBorders}
           showCheckboxTitleGroup={showCheckboxTitleGroup}
           showDividerForLastColumn={showDividerForLastColumn}
-          columnsLength={columnsLength}
           emptyMessage={emptyMessage}
         />
       )}
