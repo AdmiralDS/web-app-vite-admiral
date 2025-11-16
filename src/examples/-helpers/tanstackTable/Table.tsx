@@ -33,6 +33,7 @@ export const TanstackTable = <T,>({
   showDividerForLastColumn = false,
   showLastRowUnderline = true,
   showBorders = false,
+  emptyMessage,
   ...props
 }: TanstackTableProps<T>) => {
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -156,6 +157,7 @@ export const TanstackTable = <T,>({
           showBorders={showBorders}
           showCheckboxTitleGroup={showCheckboxTitleGroup}
           showDividerForLastColumn={showDividerForLastColumn}
+          emptyMessage={emptyMessage}
         />
       ) : (
         <Body
@@ -169,6 +171,7 @@ export const TanstackTable = <T,>({
           showBorders={showBorders}
           showCheckboxTitleGroup={showCheckboxTitleGroup}
           showDividerForLastColumn={showDividerForLastColumn}
+          emptyMessage={emptyMessage}
         />
       )}
     </S.Table>

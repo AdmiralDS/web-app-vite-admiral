@@ -30,72 +30,84 @@ export const VirtualBody = <T,>({
   showBorders,
   showCheckboxTitleGroup,
   showDividerForLastColumn,
+  emptyMessage,
 }: VirtualBodyProps<T>) => {
   const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
-  const rowVirtualizer = useVirtualizer({
-    getScrollElement: () => tableRef.current,
-    estimateSize: (index: number) => fixedRowHeight?.(index) || estimatedRowHeight?.(index) || 40,
-    count: table.getRowModel().rows.length,
-    overscan: overscan,
-  });
+  const isEmptyArrayRows = table.getRowModel().rows.length === 0;
+
+  const rowVirtualizer = isEmptyArrayRows
+    ? undefined
+    : useVirtualizer({
+        getScrollElement: () => tableRef.current,
+        estimateSize: (index: number) => fixedRowHeight?.(index) || estimatedRowHeight?.(index) || 40,
+        count: table.getRowModel().rows.length,
+        overscan: overscan,
+      });
 
   return (
-    <S.VirtualBody $heightBody={`${rowVirtualizer.getTotalSize()}px`}>
-      {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-        const row = table.getRowModel().rows[virtualRow.index];
-        const original = row.original as RowData & MetaRowProps<T>;
+    <S.VirtualBody $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
+      {isEmptyArrayRows ? (
+        <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
+          <S.EmptyCell $dimension={dimension} $resizer={false}>
+            {emptyMessage || 'Нет совпадений'}
+          </S.EmptyCell>
+        </S.BodyTr>
+      ) : (
+        rowVirtualizer?.getVirtualItems().map((virtualRow) => {
+          const row = table.getRowModel().rows[virtualRow.index];
+          const original = row.original as RowData & MetaRowProps<T>;
 
-        const isLastRow = virtualRow.index === table.getRowModel().rows.length - 1;
-        const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
-
-        return (
-          <Fragment key={virtualRow.index}>
-            <S.VirtualBodyTr
-              data-index={virtualRow.index} //needed for dynamic row height measurement
-              ref={estimatedRowHeight ? rowVirtualizer.measureElement : null}
-              $dimension={dimension}
-              selected={row.getIsSelected() || original.meta?.selected}
-              disabled={original.meta?.disabled}
-              $hover={original.meta?.hover}
-              $grey={greyZebraRows && virtualRow.index % 2 === 1}
-              $status={original.meta?.status}
-              $showRowsActions={showRowsActions}
-              $moveY={virtualRow.start}
-              $showUnderline={!original.meta?.expandedRowRender && showUnderline}
-            >
-              {
-                // virtualColumns ? (
-                //   <>
-                //     {!!virtualPaddingLeft && <S.SpacerCellTd $width={virtualPaddingLeft} $dimension={dimension} />}
-                //     {virtualColumns.map((virtualColumn) => {
-                //       const cell = row.getVisibleCells()[virtualColumn.index];
-                //       return (
-                //         <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
-                //           {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                //         </S.CellTd>
-                //       );
-                //     })}
-                //     {!!virtualPaddingRight && <S.SpacerCellTd $width={virtualPaddingRight} $dimension={dimension} />}
-                //   </>
-                // ) : (
-              }
-              <RowContent
-                original={original}
-                row={row}
-                dimension={dimension}
-                showCheckboxTitleGroup={showCheckboxTitleGroup}
-                showDividerForLastColumn={showDividerForLastColumn}
-                showRowsActions={showRowsActions}
-                tableRef={tableRef}
-                headerHeight={headerHeight}
-              />
-            </S.VirtualBodyTr>
-            {row.getCanExpand() && original.meta?.expandedRowRender && (
-              <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
-            )}
-          </Fragment>
-        );
-      })}
+          const isLastRow = virtualRow.index === table.getRowModel().rows.length - 1;
+          const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
+          return (
+            <Fragment key={virtualRow.index}>
+              <S.VirtualBodyTr
+                data-index={virtualRow.index} //needed for dynamic row height measurement
+                ref={estimatedRowHeight ? rowVirtualizer.measureElement : null}
+                $dimension={dimension}
+                selected={row.getIsSelected() || original.meta?.selected}
+                disabled={original.meta?.disabled}
+                $hover={original.meta?.hover}
+                $grey={greyZebraRows && virtualRow.index % 2 === 1}
+                $status={original.meta?.status}
+                $showRowsActions={showRowsActions}
+                $moveY={virtualRow.start}
+                $showUnderline={!original.meta?.expandedRowRender && showUnderline}
+              >
+                {
+                  // virtualColumns ? (
+                  //   <>
+                  //     {!!virtualPaddingLeft && <S.SpacerCellTd $width={virtualPaddingLeft} $dimension={dimension} />}
+                  //     {virtualColumns.map((virtualColumn) => {
+                  //       const cell = row.getVisibleCells()[virtualColumn.index];
+                  //       return (
+                  //         <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
+                  //           {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  //         </S.CellTd>
+                  //       );
+                  //     })}
+                  //     {!!virtualPaddingRight && <S.SpacerCellTd $width={virtualPaddingRight} $dimension={dimension} />}
+                  //   </>
+                  // ) : (
+                }
+                <RowContent
+                  original={original}
+                  row={row}
+                  dimension={dimension}
+                  showCheckboxTitleGroup={showCheckboxTitleGroup}
+                  showDividerForLastColumn={showDividerForLastColumn}
+                  showRowsActions={showRowsActions}
+                  tableRef={tableRef}
+                  headerHeight={headerHeight}
+                />
+              </S.VirtualBodyTr>
+              {row.getCanExpand() && original.meta?.expandedRowRender && (
+                <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
+              )}
+            </Fragment>
+          );
+        })
+      )}
     </S.VirtualBody>
   );
 };

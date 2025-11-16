@@ -137,6 +137,8 @@ export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableEle
   /** Включение границ между ячейками таблицы и обводки всей таблицы.
    * Последняя колонка имеет границы справа только, если параметр showDividerForLastColumn равен true. */
   showBorders?: boolean;
+  /** Сообщение, отображаемое при отсутствии совпадений в строках после применения фильтра */
+  emptyMessage?: React.ReactNode;
 }
 
 type FilterColumn = {

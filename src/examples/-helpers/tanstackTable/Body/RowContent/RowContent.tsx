@@ -38,7 +38,7 @@ export const RowContent = <T,>({
   return (
     <>
       {original.meta?.groupTitle ? (
-        <td colSpan={row.getVisibleCells().length} style={{ gridColumn: `span ${row.getVisibleCells().length}` }}>
+        <td style={{ gridColumn: `1/-1` }}>
           <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
             {row.getCanExpand() && (
               <ExpandCell $dimension={dimension}>
