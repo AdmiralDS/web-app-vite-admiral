@@ -48,7 +48,7 @@ export const VirtualBody = <T,>({
     <S.VirtualBody $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
       {isEmptyArrayRows ? (
         <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell style={{ gridColumn: `1/-1` }} $dimension={dimension} $resizer={true}>
+          <S.EmptyCell $dimension={dimension} $resizer={false}>
             {emptyMessage || 'Нет совпадений'}
           </S.EmptyCell>
         </S.BodyTr>
