@@ -15,12 +15,15 @@ export const ActionMock = styled.th<{ $dimension: Dimension }>`
  * box-sizing: border-box; min-width: fit-content; */
 export const HeaderTr = styled.tr<{
   $dimension: Dimension;
+  $isSomeRowsGrouped?: boolean;
 }>`
   display: grid;
   grid-template-columns: var(--columns-template);
   box-sizing: border-box;
   min-width: fit-content;
   border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+  ${({ $dimension, $isSomeRowsGrouped }) =>
+    $isSomeRowsGrouped && `padding-left: ${$dimension === 'm' || $dimension === 's' ? '44px' : '56px'}}`}
 `;
 
 export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows?: string; $greyHeader?: boolean }>`

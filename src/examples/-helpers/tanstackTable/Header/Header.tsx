@@ -1,8 +1,8 @@
 import type { CSSProperties } from 'styled-components';
 import { Fragment, useLayoutEffect, useRef } from 'react';
-import { flexRender, type Table, type HeaderGroup } from '@tanstack/react-table';
+import { flexRender, type Table, type HeaderGroup, type RowData } from '@tanstack/react-table';
 
-import type { Dimension, VirtualScroll } from '../types';
+import type { Dimension, MetaRowProps, VirtualScroll } from '../types';
 import * as S from './style';
 import { CellTh } from './HeaderCell';
 import { tableHeaderRowSpan } from './utils';
@@ -41,6 +41,11 @@ export const Header = <T,>({
   const rightEdgeRef = useRef(null);
   const enableLeftShadow = table.getIsSomeColumnsPinned('left');
   const enableRightShadow = table.getIsSomeColumnsPinned('right') || showRowsActions;
+  const isSomeRowsGrouped = table.options.data.some((item) => {
+    const dataRow = item as RowData & MetaRowProps<T>;
+
+    return !!dataRow.meta?.subRows;
+  });
 
   // check header size updates
   useLayoutEffect(() => {
@@ -149,7 +154,7 @@ export const Header = <T,>({
 
   return (
     <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1} style={style}>
-      <S.HeaderTr $dimension={dimension}>
+      <S.HeaderTr $dimension={dimension} $isSomeRowsGrouped={isSomeRowsGrouped}>
         <>
           {table.getIsSomeColumnsPinned('left') && (
             <>
