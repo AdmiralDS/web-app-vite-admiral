@@ -19,17 +19,10 @@ export const getActionSize = (dimension: Dimension) => {
 };
 
 const OverflowMenuWrapper = styled.td<{ $showRowsActions?: boolean }>`
-  position: sticky;
-  right: 0;
-  z-index: 5;
   display: flex;
   justify-self: end;
   padding: 0;
   background-color: inherit;
-
-  ${Table}[data-shadow-right='true'] & {
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
-  }
 
   ${({ $showRowsActions }) =>
     !$showRowsActions &&

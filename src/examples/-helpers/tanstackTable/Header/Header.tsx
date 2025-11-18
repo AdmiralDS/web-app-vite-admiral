@@ -1,4 +1,11 @@
 import type { CSSProperties } from 'styled-components';
+import { Fragment, useLayoutEffect, useRef } from 'react';
+import { flexRender, type Table, type HeaderGroup } from '@tanstack/react-table';
+
+import type { Dimension, VirtualScroll } from '../types';
+import * as S from './style';
+import { CellTh } from './HeaderCell';
+import { tableHeaderRowSpan } from './utils';
 
 interface Props<T> {
   table: Table<T>;
@@ -9,25 +16,12 @@ interface Props<T> {
   greyHeader?: boolean;
   showRowsActions?: boolean;
   fixedColumnWidth: number;
-  virtualPaddingLeft: number;
-  virtualPaddingRight: number;
-  virtualColumns: VirtualItem[];
   virtualScroll?: VirtualScroll;
   showDividerForLastColumn: boolean;
   tableRef: React.MutableRefObject<null>;
   showBorders?: boolean;
   style?: CSSProperties;
 }
-
-import { Fragment, useLayoutEffect, useRef } from 'react';
-import * as S from './style';
-import { flexRender, type Table } from '@tanstack/react-table';
-import { CellTh } from './HeaderCell';
-import { HeaderCell } from './HeaderCell/styled';
-import type { VirtualItem } from '@tanstack/react-virtual';
-import { VirtualHeaderCells } from './VirtualHeaderCells';
-import type { Dimension, VirtualScroll } from '../types';
-import { tableHeaderRowSpan } from './utils';
 
 export const Header = <T,>({
   table,
@@ -37,11 +31,6 @@ export const Header = <T,>({
   headerExtraLineClamp,
   greyHeader,
   showRowsActions,
-  virtualPaddingLeft,
-  virtualPaddingRight,
-  virtualScroll,
-  virtualColumns,
-  fixedColumnWidth,
   showDividerForLastColumn,
   tableRef,
   showBorders,
@@ -50,7 +39,8 @@ export const Header = <T,>({
   const headerRef = useRef(null);
   const leftEdgeRef = useRef(null);
   const rightEdgeRef = useRef(null);
-  const enableLeftShadow = !!table.getLeftHeaderGroups().length;
+  const enableLeftShadow = table.getIsSomeColumnsPinned('left');
+  const enableRightShadow = table.getIsSomeColumnsPinned('right') || showRowsActions;
 
   // check header size updates
   useLayoutEffect(() => {
@@ -107,7 +97,7 @@ export const Header = <T,>({
       }
     }
 
-    if (table && rightEdge && showRowsActions) {
+    if (table && rightEdge && enableRightShadow) {
       const observer = new IntersectionObserver(handleIntersection, {
         root: table,
         threshold: [0, 1.0],
@@ -115,142 +105,89 @@ export const Header = <T,>({
       observer.observe(rightEdge);
       return () => observer.disconnect();
     }
-  }, [showRowsActions]);
+  }, [enableRightShadow]);
+
+  const renderHeaderGroup = (headerGroup: HeaderGroup<T>) => {
+    const multiSortable = headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
+
+    return (
+      <Fragment key={headerGroup.id}>
+        {headerGroup.headers.map((header) => {
+          const rowSpan = tableHeaderRowSpan(header);
+          if (!rowSpan) {
+            return null;
+          }
+
+          const showResizer = header.column.getIsLastColumn() ? showDividerForLastColumn : true;
+          const title = flexRender(header.column.columnDef.header, header.getContext());
+          const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
+          /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
+          return (
+            <Fragment key={header.id}>
+              {typeof title === 'string' ? (
+                <CellTh
+                  key={header.id}
+                  header={header}
+                  headerLineClamp={headerLineClamp}
+                  headerExtraLineClamp={headerExtraLineClamp}
+                  multiSortable={multiSortable}
+                  dimension={dimension}
+                  showResizer={showResizer}
+                  rowSpan={rowSpan}
+                  title={title}
+                  extraText={extraText}
+                />
+              ) : (
+                title
+              )}
+            </Fragment>
+          );
+        })}
+      </Fragment>
+    );
+  };
 
   return (
     <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1} style={style}>
-      {
-        <S.HeaderTr
-          $dimension={dimension}
-          // style={virtualScroll && virtualScroll.horizontal ? { display: 'flex', width: '100%' } : {}}
-        >
-          <S.Edge ref={leftEdgeRef} />
-          {
-            // virtualScroll && virtualScroll.horizontal
-            //   ? table.getHeaderGroups().map((headerGroup) => {
-            //       const multiSortable =
-            //         headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
-            //       return (
-            //         <VirtualHeaderCells
-            //           fixedColumnWidth={fixedColumnWidth}
-            //           multiSortable={multiSortable}
-            //           headerGroup={headerGroup}
-            //           dimension={dimension}
-            //           headerLineClamp={headerLineClamp}
-            //           headerExtraLineClamp={headerExtraLineClamp}
-            //           virtualPaddingLeft={virtualPaddingLeft}
-            //           virtualPaddingRight={virtualPaddingLeft}
-            //           virtualColumns={virtualColumns}
-            //           showDividerForLastColumn={showDividerForLastColumn}
-            //         />
-            //       );
-            //     })
-            //   :
+      <S.HeaderTr $dimension={dimension}>
+        <>
+          {table.getIsSomeColumnsPinned('left') && (
             <>
-              {!!table.getLeftLeafHeaders().length && (
-                <S.StickyWrapper
-                  $gridColumn={`2 / ${table.getLeftLeafHeaders().length + 2}`}
-                  $gridTemplateRows={`repeat(${table.getHeaderGroups().length}, 1fr)`}
-                  $greyHeader={greyHeader}
-                >
-                  {table.getLeftHeaderGroups().map((headerGroup) => {
-                    const multiSortable =
-                      headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
-
-                    return (
-                      <Fragment key={headerGroup.id}>
-                        {headerGroup.headers.map((header) => {
-                          const rowSpan = tableHeaderRowSpan(header);
-                          if (!rowSpan) {
-                            return null;
-                          }
-
-                          const title = flexRender(header.column.columnDef.header, header.getContext());
-                          const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-                          /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
-                          return (
-                            <Fragment key={header.id}>
-                              {typeof title === 'string' ? (
-                                <CellTh
-                                  key={header.id}
-                                  header={header}
-                                  headerLineClamp={headerLineClamp}
-                                  headerExtraLineClamp={headerExtraLineClamp}
-                                  multiSortable={multiSortable}
-                                  dimension={dimension}
-                                  showResizer
-                                  rowSpan={rowSpan}
-                                  title={title}
-                                  extraText={extraText}
-                                />
-                              ) : (
-                                title
-                              )}
-                            </Fragment>
-                          );
-                        })}
-                      </Fragment>
-                    );
-                  })}
-                </S.StickyWrapper>
-              )}
-              <S.NormalWrapper
-                $gridColumn={`${table.getLeftLeafHeaders().length + 2} / -1`}
+              <S.Edge ref={leftEdgeRef} />
+              <S.StickyWrapper
+                $position="left"
+                $gridColumn={`2 / span ${table.getLeftLeafHeaders().length}`}
                 $gridTemplateRows={`repeat(${table.getHeaderGroups().length}, 1fr)`}
                 $greyHeader={greyHeader}
               >
-                {table.getCenterHeaderGroups().map((headerGroup) => {
-                  const multiSortable =
-                    headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;
-
-                  return (
-                    <Fragment key={headerGroup.id}>
-                      {headerGroup.headers.map((header, index, headers) => {
-                        const rowSpan = tableHeaderRowSpan(header);
-                        if (!rowSpan) {
-                          return null;
-                        }
-                        const showResizer = index === headers.length - 1 ? showDividerForLastColumn : true;
-
-                        const title = flexRender(header.column.columnDef.header, header.getContext());
-                        const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-                        /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
-                        return (
-                          <Fragment key={header.id}>
-                            {typeof title === 'string' ? (
-                              <CellTh
-                                key={header.id}
-                                header={header}
-                                headerLineClamp={headerLineClamp}
-                                headerExtraLineClamp={headerExtraLineClamp}
-                                multiSortable={multiSortable}
-                                dimension={dimension}
-                                showResizer={showResizer}
-                                rowSpan={rowSpan}
-                                title={title}
-                                extraText={extraText}
-                              />
-                            ) : (
-                              title
-                            )}
-                          </Fragment>
-                        );
-                      })}
-                      <S.Spacer />
-                    </Fragment>
-                  );
-                })}
-              </S.NormalWrapper>
+                {table.getLeftHeaderGroups().map((headerGroup) => renderHeaderGroup(headerGroup))}
+              </S.StickyWrapper>
             </>
-          }
-          {showRowsActions && (
+          )}
+          <S.NormalWrapper
+            $gridColumn={`${table.getLeftLeafHeaders().length ? table.getLeftLeafHeaders().length + 2 : 1} / span ${table.getCenterLeafHeaders().length}`}
+            $gridTemplateRows={`repeat(${table.getHeaderGroups().length}, 1fr)`}
+            $greyHeader={greyHeader}
+          >
+            {table.getCenterHeaderGroups().map((headerGroup) => renderHeaderGroup(headerGroup))}
+          </S.NormalWrapper>
+          <S.Spacer $greyHeader={greyHeader} />
+          {(table.getIsSomeColumnsPinned('right') || showRowsActions) && (
             <>
-              <S.ActionMock $dimension={dimension} />
+              <S.StickyWrapper
+                $position="right"
+                $gridColumn={`-2 / -${2 + table.getRightLeafHeaders().length + (showRowsActions ? 1 : 0)}`}
+                $gridTemplateRows={`repeat(${table.getHeaderGroups().length}, 1fr)`}
+                $greyHeader={greyHeader}
+              >
+                {table.getRightHeaderGroups().map((headerGroup) => renderHeaderGroup(headerGroup))}
+                {showRowsActions && <S.ActionMock $dimension={dimension} />}
+              </S.StickyWrapper>
               <S.Edge ref={rightEdgeRef} />
             </>
           )}
-        </S.HeaderTr>
-      }
+        </>
+      </S.HeaderTr>
     </S.Header>
   );
 };

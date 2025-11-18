@@ -111,7 +111,7 @@ export const GroupHeaders = () => {
         </>
       }
     >
-      <TanstackTable table={table} greyHeader />
+      <TanstackTable table={table} greyHeader showDividerForLastColumn />
     </ExampleSection>
   );
 };
