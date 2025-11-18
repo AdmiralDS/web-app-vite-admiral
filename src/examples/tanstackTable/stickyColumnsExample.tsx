@@ -177,6 +177,7 @@ export const StickyColumnsExample = () => {
     initialState: {
       columnPinning: {
         left: ['type', 'date'],
+        right: ['status'],
       },
     },
     ...defaultOptions,
@@ -189,6 +190,7 @@ export const StickyColumnsExample = () => {
     initialState: {
       columnPinning: {
         left: ['firstName', 'lastName'],
+        // right: ['age', 'visits', 'status', 'progress'],
       },
     },
     ...defaultOptions,
@@ -219,7 +221,7 @@ export const StickyColumnsExample = () => {
     >
       <TanstackTable table={table} />
       <div style={{ width: '100%', height: '40px' }} />
-      <TanstackTable table={table2} showBorders greyHeader />
+      <TanstackTable table={table2} showBorders greyHeader showDividerForLastColumn />
     </ExampleSection>
   );
 };

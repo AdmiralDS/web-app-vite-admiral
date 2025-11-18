@@ -1,5 +1,5 @@
 import { type RowData } from '@tanstack/react-table';
-import { useVirtualizer, type VirtualItem } from '@tanstack/react-virtual';
+import { useVirtualizer } from '@tanstack/react-virtual';
 import { Fragment } from 'react';
 
 import * as S from './style';
@@ -10,9 +10,6 @@ import type { BodyProps } from './Body';
 
 interface VirtualBodyProps<T> extends BodyProps<T> {
   virtualScroll: Omit<VirtualScroll, 'horizontal'>;
-  virtualColumns?: VirtualItem[];
-  virtualPaddingLeft: number;
-  virtualPaddingRight: number;
 }
 
 export const VirtualBody = <T,>({
@@ -23,9 +20,6 @@ export const VirtualBody = <T,>({
   greyZebraRows,
   showRowsActions,
   headerHeight,
-  // virtualColumns,
-  // virtualPaddingLeft,
-  // virtualPaddingRight,
   showLastRowUnderline,
   showBorders,
   showCheckboxTitleGroup,
@@ -74,22 +68,6 @@ export const VirtualBody = <T,>({
                 $moveY={virtualRow.start}
                 $showUnderline={!original.meta?.expandedRowRender && showUnderline}
               >
-                {
-                  // virtualColumns ? (
-                  //   <>
-                  //     {!!virtualPaddingLeft && <S.SpacerCellTd $width={virtualPaddingLeft} $dimension={dimension} />}
-                  //     {virtualColumns.map((virtualColumn) => {
-                  //       const cell = row.getVisibleCells()[virtualColumn.index];
-                  //       return (
-                  //         <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
-                  //           {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  //         </S.CellTd>
-                  //       );
-                  //     })}
-                  //     {!!virtualPaddingRight && <S.SpacerCellTd $width={virtualPaddingRight} $dimension={dimension} />}
-                  //   </>
-                  // ) : (
-                }
                 <RowContent
                   original={original}
                   row={row}

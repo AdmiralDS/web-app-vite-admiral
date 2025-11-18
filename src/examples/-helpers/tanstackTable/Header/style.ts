@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Table } from '../style';
 import type { Dimension } from '../types';
 import { getActionSize } from '../Body/RowContent/OverflowMenu';
@@ -6,14 +6,7 @@ import { getActionSize } from '../Body/RowContent/OverflowMenu';
 export const ActionMock = styled.th<{ $dimension: Dimension }>`
   display: flex;
   justify-self: end;
-  position: sticky;
-  right: 0;
-  z-index: 5;
   padding: 0;
-  ${Table}[data-shadow-right='true'] & {
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
-  }
-
   min-height: ${({ $dimension }) => getActionSize($dimension) - 1}px;
   width: ${({ $dimension }) => getActionSize($dimension)}px;
 `;
@@ -46,14 +39,26 @@ export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows
   }
 `;
 
-export const StickyWrapper = styled(NormalWrapper)`
+export const StickyWrapper = styled(NormalWrapper)<{ $position: 'left' | 'right' }>`
   position: sticky;
-  left: 0;
   z-index: 2;
 
-  ${Table}[data-shadow-left='true'] & {
-    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
-  }
+  ${(p) =>
+    p.$position == 'left' &&
+    css`
+      left: 0;
+      ${Table}[data-shadow-left='true'] & {
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
+      }
+    `}
+  ${(p) =>
+    p.$position == 'right' &&
+    css`
+      right: 0;
+      ${Table}[data-shadow-right='true'] & {
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
+      }
+    `}
 `;
 
 /** aka HeaderWrapper in react-ui */
@@ -73,6 +78,10 @@ export const Edge = styled.th`
   padding: 0;
 `;
 
-export const Spacer = styled.th`
+export const Spacer = styled.th<{ $greyHeader?: boolean }>`
   padding: 0;
+  background: ${(p) =>
+    p.$greyHeader
+      ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
+      : `var(--admiral-color-Neutral_Neutral00, ${p.theme.color['Neutral/Neutral 00']})`};
 `;

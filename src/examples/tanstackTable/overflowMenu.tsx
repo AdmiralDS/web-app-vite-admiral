@@ -148,6 +148,11 @@ export const WithOverflowMenu = () => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    initialState: {
+      columnPinning: {
+        right: ['progress'],
+      },
+    },
     ...defaultOptions,
   });
 

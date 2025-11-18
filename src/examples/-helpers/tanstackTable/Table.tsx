@@ -1,10 +1,9 @@
-import { type RowData } from '@tanstack/react-table';
+import { type RowData, type Column } from '@tanstack/react-table';
 import { useRef, useState } from 'react';
 
 import * as S from './style';
 import { Body } from './Body';
 import { VirtualBody } from './Body/VirtualBody';
-import { useVirtualizer, type VirtualItem, type Virtualizer } from '@tanstack/react-virtual';
 import { Header } from './Header';
 import type { MetaRowProps, TanstackTableProps } from './types';
 
@@ -46,64 +45,42 @@ export const TanstackTable = <T,>({
   });
   const showRowsActions = isRowsActions && userShowRowsActions;
 
-  //виртуализация
-  // Не учитывается, что есть колонки с чекбоксами/ стрелками, фиксированные колонки !!!
-  const visibleColumns = table.getVisibleLeafColumns();
-  let virtualPaddingLeft = 0;
-  let virtualPaddingRight = 0;
-  let columnVirtualizer: Virtualizer<HTMLDivElement, HTMLTableCellElement>;
-  let virtualColumns: VirtualItem[] = [];
+  //определение ширины колонок Проверить и отладить всё это!!!
+  let leftTemplate = '',
+    centerTemplate = '',
+    rightTemplate = '';
 
-  if (virtualScroll && virtualScroll.horizontal) {
-    columnVirtualizer = useVirtualizer<HTMLDivElement, HTMLTableCellElement>({
-      count: visibleColumns.length,
-      estimateSize: () => virtualScroll.fixedColumnWidth || DEFAULT_COLUMN_WIDTH, //estimate width of each column for accurate scrollbar dragging
-      getScrollElement: () => tableRef.current,
-      horizontal: true,
-      overscan: 3, //how many columns to render on each side off screen each way (adjust this for performance)
-    });
+  const getColumnWidth = (column: Column<T>) => {
+    return column.getCanResize()
+      ? `${column.getSize()}px`
+      : column.columnDef.meta?.gridColumnTemplate || `${column.getSize()}px`;
+  };
 
-    virtualColumns = columnVirtualizer.getVirtualItems();
-
-    if (columnVirtualizer && virtualColumns?.length) {
-      virtualPaddingLeft = virtualColumns[0]?.start ?? 0;
-      virtualPaddingRight = columnVirtualizer.getTotalSize() - (virtualColumns[virtualColumns.length - 1]?.end ?? 0);
-    }
+  if (table.getIsSomeColumnsPinned('left')) {
+    leftTemplate = table.getLeftLeafColumns().reduce((result, column) => {
+      if (column.id == 'checkbox-column' || column.id == 'expand-column') {
+        return `${result} min-content`;
+      }
+      return `${result} ${getColumnWidth(column)}`;
+    }, '');
   }
 
-  //определение ширины колонок
-  const gridVisibleTemplateColumns = table.getLeafHeaders().reduce((result, header) => {
-    if (header.subHeaders.length > 0) {
-      return result + '';
-    }
-    if (
-      header.column.getIsPinned() == 'left' &&
-      (header.column.id == 'checkbox-column' || header.column.id == 'expand-column')
-    ) {
-      return result + ` min-content`;
-    }
-    // нужно перебирать только virtualColumns, а не все подряд
-    // if (virtualScroll && virtualScroll.horizontal) {
-    //   return result + ` ${virtualScroll.fixedColumnWidth ?? DEFAULT_COLUMN_WIDTH}px`;
-    // }
-    let width = header.column.getCanResize()
-      ? header.getSize() + 'px'
-      : header.column.columnDef.meta?.gridColumnTemplate || header.getSize() + 'px';
+  // minmax(0px, auto) для Spacer
+  centerTemplate =
+    table.getCenterLeafColumns().reduce((result, column) => `${result} ${getColumnWidth(column)}`, '') +
+    ' minmax(0px, auto)';
 
-    return result + ` ${width}`;
-  }, '');
-
-  // Spacer - minmax(0px, auto)
-  let gridTemplateColumns = `${gridVisibleTemplateColumns} minmax(0px, auto)`;
-
-  // if (virtualScroll && virtualScroll.horizontal) {
-  //   gridTemplateColumns = `${virtualPaddingLeft} ` + gridTemplateColumns + ` ${virtualPaddingRight}`;
-  // }
-
-  if (isRowsActions) {
-    // ActionMock - min-content, Edge - 0px
-    gridTemplateColumns = `${gridTemplateColumns} min-content 0px`;
+  if (table.getIsSomeColumnsPinned('right')) {
+    rightTemplate = table.getRightLeafColumns().reduce((result, column) => `${result} ${getColumnWidth(column)}`, ' ');
   }
+
+  const gridTemplate = leftTemplate + centerTemplate + rightTemplate;
+  const gridTemplateColumns = gridTemplate + (isRowsActions ? ' min-content' : '');
+
+  const gridTemplateHeaders =
+    (table.getIsSomeColumnsPinned('left') ? '0px ' : '') +
+    gridTemplate +
+    (table.getIsSomeColumnsPinned('right') || showRowsActions ? ` ${showRowsActions ? 'min-content ' : ''}0px` : '');
 
   return (
     <S.Table
@@ -126,17 +103,14 @@ export const TanstackTable = <T,>({
         headerExtraLineClamp={headerExtraLineClamp}
         greyHeader={greyHeader}
         showRowsActions={showRowsActions}
-        virtualPaddingLeft={virtualPaddingLeft}
-        virtualPaddingRight={virtualPaddingRight}
         virtualScroll={virtualScroll}
-        virtualColumns={virtualColumns}
         fixedColumnWidth={virtualScroll?.fixedColumnWidth || DEFAULT_COLUMN_WIDTH}
         showDividerForLastColumn={showDividerForLastColumn}
         tableRef={tableRef}
         showBorders={showBorders}
         style={
           {
-            '--columns-template': `0px ${gridTemplateColumns}`,
+            '--columns-template': gridTemplateHeaders,
           } as React.CSSProperties
         }
       />
@@ -150,9 +124,6 @@ export const TanstackTable = <T,>({
           greyZebraRows={greyZebraRows}
           showRowsActions={showRowsActions}
           headerHeight={headerHeight}
-          virtualColumns={virtualScroll.horizontal ? virtualColumns : undefined}
-          virtualPaddingLeft={virtualPaddingLeft}
-          virtualPaddingRight={virtualPaddingRight}
           showLastRowUnderline={showLastRowUnderline}
           showBorders={showBorders}
           showCheckboxTitleGroup={showCheckboxTitleGroup}
