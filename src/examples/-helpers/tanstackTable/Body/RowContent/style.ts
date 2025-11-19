@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { headerStyle } from '../../Header/HeaderCell/styled';
 import { cellStyle } from '../../style';
 import type { Dimension } from '../../types';
@@ -20,11 +20,27 @@ export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows
   ${(p) => p.$gridTemplateRows && `grid-template-rows: ${p.$gridTemplateRows};`}
 `;
 
-export const StickyWrapper = styled(NormalWrapper)`
+export const StickyWrapper = styled(NormalWrapper)<{ $position: 'left' | 'right' }>`
   position: sticky;
-  left: 0;
   z-index: 2;
-  .table[data-shadow-left='true'] & {
-    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
-  }
+  ${(p) =>
+    p.$position == 'left' &&
+    css`
+      left: 0;
+      .table[data-shadow-left='true'] & {
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
+      }
+    `}
+  ${(p) =>
+    p.$position == 'right' &&
+    css`
+      right: 0;
+      .table[data-shadow-right='true'] & {
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
+      }
+    `}
+`;
+
+export const Spacer = styled.td`
+  padding: 0;
 `;

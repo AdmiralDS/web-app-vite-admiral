@@ -169,6 +169,7 @@ export const SpacerCellTd = styled(CellTd)<{ $width: number }>`
 `;
 
 export const EmptyCell = styled(CellTd)`
+  grid-column: 1 / -1;
   margin: 2px 0;
   color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
   ${cellStyle}

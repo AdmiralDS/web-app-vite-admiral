@@ -10,9 +10,6 @@ import type { BodyProps } from './Body';
 
 interface VirtualBodyProps<T> extends BodyProps<T> {
   virtualScroll: Omit<VirtualScroll, 'horizontal'>;
-  virtualColumns?: VirtualItem[];
-  virtualPaddingLeft: number;
-  virtualPaddingRight: number;
 }
 
 export const VirtualBody = <T,>({
@@ -23,14 +20,10 @@ export const VirtualBody = <T,>({
   greyZebraRows,
   showRowsActions,
   headerHeight,
-  // virtualColumns,
-  // virtualPaddingLeft,
-  // virtualPaddingRight,
   showLastRowUnderline,
   showBorders,
   showCheckboxTitleGroup,
   showDividerForLastColumn,
-  columnsLength,
   emptyMessage,
   renderRowWrapper,
 }: VirtualBodyProps<T>) => {
@@ -96,7 +89,6 @@ export const VirtualBody = <T,>({
             showRowsActions={showRowsActions}
             tableRef={tableRef}
             headerHeight={headerHeight}
-            columnsLength={columnsLength}
           />
         </S.VirtualBodyTr>
         {row.getCanExpand() && original.meta?.expandedRowRender && (
@@ -112,7 +104,7 @@ export const VirtualBody = <T,>({
     <S.VirtualBody $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
       {isEmptyArrayRows ? (
         <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell style={{ gridColumn: `span ${columnsLength}` }} $dimension={dimension} $resizer={true}>
+          <S.EmptyCell $dimension={dimension} $resizer={false}>
             {emptyMessage || 'Нет совпадений'}
           </S.EmptyCell>
         </S.BodyTr>

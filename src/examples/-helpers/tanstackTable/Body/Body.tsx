@@ -19,7 +19,6 @@ export interface BodyProps<T> {
   showBorders: boolean;
   showCheckboxTitleGroup: boolean;
   showDividerForLastColumn: boolean;
-  columnsLength: number;
   emptyMessage?: React.ReactNode;
   renderRowWrapper?: (row: Row<T>, index: number, rowNode: React.ReactNode) => React.ReactNode;
 }
@@ -35,7 +34,6 @@ export const Body = <T,>({
   showBorders,
   showCheckboxTitleGroup,
   showDividerForLastColumn,
-  columnsLength,
   emptyMessage,
   renderRowWrapper,
 }: BodyProps<T>) => {
@@ -66,7 +64,6 @@ export const Body = <T,>({
             showRowsActions={showRowsActions}
             tableRef={tableRef}
             headerHeight={headerHeight}
-            columnsLength={columnsLength}
           />
         </S.BodyTr>
         {row.getCanExpand() && original.meta?.expandedRowRender && (
@@ -82,7 +79,7 @@ export const Body = <T,>({
     <S.Body>
       {isEmptyArrayRows ? (
         <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell style={{ gridColumn: `span ${columnsLength}` }} $dimension={dimension} $resizer={true}>
+          <S.EmptyCell $dimension={dimension} $resizer={false}>
             {emptyMessage || 'Нет совпадений'}
           </S.EmptyCell>
         </S.BodyTr>
