@@ -139,6 +139,10 @@ export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableEle
   showBorders?: boolean;
   /** Сообщение, отображаемое при отсутствии совпадений в строках после применения фильтра */
   emptyMessage?: React.ReactNode;
+  /** Рендер функция для отрисовки обертки вокруг строки.
+   * Входные параметры - объект строки, её порядковый номер и элемент который должен быть отрисован внутри создаваемой обертки
+   * */
+  renderRowWrapper?: (row: Row<T>, index: number, rowNode: React.ReactNode) => React.ReactNode;
 }
 
 type FilterColumn = {

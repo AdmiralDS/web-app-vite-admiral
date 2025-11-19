@@ -93,6 +93,10 @@
         {
           "name": "Пример виртуального скролла с динамической высотой строки",
           "path": "/components/tanstackTable/dynamicVirtualScroll"
+        },
+        {
+          "name": "Подзагрузка данных при скролле",
+          "path": "/components/tanstackTable/loadScroll"
         }
       ]
     }
