@@ -16,3 +16,4 @@ export * from './groupRow';
 export * from './styleExample';
 export * from './stickyColumnsExample';
 export * from './dynamicVirtualScroll';
+export * from './loadScroll';
