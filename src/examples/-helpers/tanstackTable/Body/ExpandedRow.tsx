@@ -71,11 +71,7 @@ export const ExpandedRow = <T,>({
       onExiting={handleTransitionExiting}
     >
       <ExpandTr ref={wrapperRef} $dimension={dimension} $showUnderline={showUnderline}>
-        <CellTd
-          $dimension={dimension}
-          colSpan={row.getVisibleCells().length}
-          style={{ gridColumn: `span ${row.getVisibleCells().length}` }}
-        >
+        <CellTd $dimension={dimension} colSpan={row.getVisibleCells().length} style={{ gridColumn: 'span 1/-1' }}>
           <ExpandedRowContent ref={contentRef}>
             {original.meta?.expandedRowRender && original.meta.expandedRowRender({ row })}
           </ExpandedRowContent>
