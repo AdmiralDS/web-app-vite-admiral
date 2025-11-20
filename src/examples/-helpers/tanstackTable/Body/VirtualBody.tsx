@@ -64,22 +64,6 @@ export const VirtualBody = <T,>({
           $moveY={virtualRow.start}
           $showUnderline={!original.meta?.expandedRowRender && showUnderline}
         >
-          {
-            // virtualColumns ? (
-            //   <>
-            //     {!!virtualPaddingLeft && <S.SpacerCellTd $width={virtualPaddingLeft} $dimension={dimension} />}
-            //     {virtualColumns.map((virtualColumn) => {
-            //       const cell = row.getVisibleCells()[virtualColumn.index];
-            //       return (
-            //         <S.CellTd $dimension={dimension} key={cell.id} $cellAlign={cell.column.columnDef.meta?.cellAlign}>
-            //           {flexRender(cell.column.columnDef.cell, cell.getContext())}
-            //         </S.CellTd>
-            //       );
-            //     })}
-            //     {!!virtualPaddingRight && <S.SpacerCellTd $width={virtualPaddingRight} $dimension={dimension} />}
-            //   </>
-            // ) : (
-          }
           <RowContent
             original={original}
             row={row}
