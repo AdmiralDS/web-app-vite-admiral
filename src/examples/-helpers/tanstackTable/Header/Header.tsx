@@ -126,10 +126,14 @@ export const Header = <T,>({
           const showResizer = header.column.getIsLastColumn() ? showDividerForLastColumn : true;
           const title = flexRender(header.column.columnDef.header, header.getContext());
           const extraText = flexRender(header.column.columnDef.meta?.extraText, header.getContext());
-          /** некорректное сравнение на тип string, так как в случае если header не задан напрямую может сломаться дизайн */
+
+          const headerString =
+            typeof header.column.columnDef.header === 'string' ||
+            (typeof header.column.columnDef.header === 'function' &&
+              typeof header.column.columnDef.header(header.getContext()) === 'string');
           return (
             <Fragment key={header.id}>
-              {typeof title === 'string' ? (
+              {headerString ? (
                 <CellTh
                   key={header.id}
                   header={header}
