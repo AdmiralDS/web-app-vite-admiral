@@ -3,6 +3,7 @@ import * as React from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
+import { T } from '@admiral-ds/react-ui';
 
 type Transaction = {
   type: string;
@@ -97,7 +98,7 @@ export const StyleExample = () => {
   return (
     <ExampleSection
       text={
-        <>
+        <T font="Body/Body 1 Long" as="div">
           <PStyled>Cуществует ряд параметров, влияющих на внешний вид таблицы:</PStyled>
           <PStyled>- dimension - параметр, регулирующий размер таблицы;</PStyled>
           <PStyled>- greyHeader - параметр, с помощью которого можно окрашивать шапку таблицы в серый цвет;</PStyled>
@@ -122,7 +123,7 @@ export const StyleExample = () => {
             сторону в сравнении с дефолтным значением, а расстояние между иконкой фильтра и остальным содержимым
             заголовка можно как уменьшать, так и увеличивать с помощью spacingBetweenItems.
           </PStyled>
-        </>
+        </T>
       }
     >
       <TanstackTable table={table} greyHeader showBorders />

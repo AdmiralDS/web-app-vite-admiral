@@ -1,8 +1,9 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import { ExampleSection } from '#examples/-helpers';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
+import { T } from '@admiral-ds/react-ui';
 
 interface Person {
   firstName: string;
@@ -110,7 +111,20 @@ export const ZebraExample = () => {
   });
 
   return (
-    <ExampleSection>
+    <ExampleSection
+      text={
+        <T font="Body/Body 1 Long" as="div">
+          <PStyled>
+            Опционально, для лучшей визуальной сепарации строк, их можно окрашивать через одну в цвет вторичного фона
+            (Neutral 05). Используйте для этого параметр greyZebraRows. Окраска начинается со второй строки, считая от
+            заголовка таблицы или группы.
+          </PStyled>
+          <PStyled>
+            Для консистентности рекомендуется заголовок таблицы тоже окрашивать в серый цвет (параметр greyHeader).
+          </PStyled>
+        </T>
+      }
+    >
       <TanstackTable table={table} greyHeader greyZebraRows />
     </ExampleSection>
   );

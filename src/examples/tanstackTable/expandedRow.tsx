@@ -11,14 +11,17 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 import { ExampleSection, PStyled } from '#examples/-helpers';
+
 import {
   CellText,
   ExpandCell,
+  ExpandedRowContent,
   ExpandIcon,
   ExpandIconPlacement,
+  TanstackTable,
   WrapperTitleCell,
-} from '#examples/-helpers/tanstackTable/style';
-import { TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
+  type MetaRowProps,
+} from '#examples/-helpers/tanstackTable';
 import { Link, T } from '@admiral-ds/react-ui';
 
 interface Person extends MetaRowProps<Person> {
@@ -32,16 +35,18 @@ interface Person extends MetaRowProps<Person> {
 
 const expandedRowRender = ({ row }: { row: Row<Person> }) => {
   return (
-    <WrapperExpand>
-      <Content>
-        <div>firstName: {row.original.firstName}</div>
-        <div>lastName: {row.original.lastName}</div>
-        <div>age: {row.original.age}</div>
-        <div>visits: {row.original.visits}</div>
-        <div>status: {row.original.status}</div>
-        <div>progress: {row.original.progress}</div>
-      </Content>
-    </WrapperExpand>
+    <ExpandedRowContent>
+      <WrapperExpand>
+        <Content>
+          <div>firstName: {row.original.firstName}</div>
+          <div>lastName: {row.original.lastName}</div>
+          <div>age: {row.original.age}</div>
+          <div>visits: {row.original.visits}</div>
+          <div>status: {row.original.status}</div>
+          <div>progress: {row.original.progress}</div>
+        </Content>
+      </WrapperExpand>
+    </ExpandedRowContent>
   );
 };
 
@@ -75,7 +80,6 @@ const defaultData: Person[] = [
 ];
 
 const WrapperExpand = styled.div`
-  display: flex;
   width: 100%;
   background: var(--admiral-color-Cyan_Cyan10, ${(p) => p.theme.color['Cyan/Cyan 10']});
   padding: 16px;
@@ -180,7 +184,8 @@ export const ExpandedRow = () => {
         <T font="Body/Body 1 Long" as="div">
           <PStyled>
             Отображение столбца детализации (столбец со стрелками) регулируется пользователем, в столбец необходимо
-            передавать <i>id: 'expand-column'</i>.
+            передавать <i>id: 'expand-column'</i>. Стрелка позволяет развернуть строку и посмотреть более
+            детализированную информацию о строке.
           </PStyled>
           <PStyled>
             C помощью функции expandedRowRender происходит рендер развернутой части строки (рендер детализированной
