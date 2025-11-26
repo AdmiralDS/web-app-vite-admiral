@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { CellText, defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import { ListItem, T, UnorderedList } from '@admiral-ds/react-ui';
+import { T } from '@admiral-ds/react-ui';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -121,24 +121,18 @@ export const RowState = () => {
       text={
         <T font="Body/Body 1 Long" as="div">
           <PStyled>Для каждой строки могут быть заданы следующие состояния: </PStyled>
-          <UnorderedList dimension="s">
-            <ListItem>
-              <code>selected</code> - строка выбрана, чекбокс в строке проставлен;
-            </ListItem>
-            <ListItem>
-              <code>disabled</code> - строка задизейблена;
-            </ListItem>
-            <ListItem>
-              <code>hover</code> - строка окрашивается при ховере. Данная окраска должна применяться, если строка
-              кликабельна и ведет к каким-либо действиям.
-            </ListItem>
-          </UnorderedList>
+          <PStyled>- selected - строка выбрана, чекбокс в строке проставлен;</PStyled>
+          <PStyled>- disabled - строка задизейблена;</PStyled>
+          <PStyled>
+            - hover - строка окрашивается при ховере. Данная окраска должна применяться, если строка кликабельна и ведет
+            к каким-либо действиям.
+          </PStyled>
           <PStyled>
             Также строке можно задать определенный статус, в соответствии с которым она будет окрашена. Чтобы задать
-            статус для строки необходимо использовать параметр <code>status</code>, где в качестве значения указывается
-            строка с названием статуса. По умолчанию таблица предоставляет два статуса: <code>error</code> и{' '}
-            <code>success</code>. Также пользователь может создать свои кастомные статусы, для этого нужно передать
-            параметр из цветовой палитры ДС Адмирал или любой другой цвет в формате строки
+            статус для строки необходимо использовать параметр status, где в качестве значения указывается строка с
+            названием статуса. По умолчанию таблица предоставляет два статуса: error и success. Также пользователь может
+            создать свои кастомные статусы, для этого нужно передать параметр из цветовой палитры ДС Адмирал или любой
+            другой цвет в формате строки
           </PStyled>
         </T>
       }

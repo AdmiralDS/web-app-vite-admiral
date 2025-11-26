@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { CellText, TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable';
-import { ExampleSection, columnFlexMixin } from '#examples/-helpers';
+import { ExampleSection, PStyled, columnFlexMixin } from '#examples/-helpers';
+import { T } from '@admiral-ds/react-ui';
 
 const date = new Date('2020-08-06').toLocaleDateString();
 
@@ -65,26 +66,52 @@ export const FixedVirtualScrollExample = () => {
   return (
     <>
       <ExampleSection
-        header="Fixed vertical virtualization"
-        text="Документация к виртуализации при фиксированной высоте строки"
+        text={
+          <>
+            <T font="Body/Body 1 Long" as="div">
+              <PStyled>
+                В случае если в таблице необходимо отобразить большое количество строк, возможно использовать функцию
+                виртуального скролла. Компонент предоставляет два вида виртуального скролла: виртуальный скролл для
+                строк с фиксированной высотой и виртуальный скролл для строк с динамической высотой.
+              </PStyled>
+              <PStyled>
+                Для того чтобы активировать виртуальный скролл для строк с фиксированной высотой, необходимо задать
+                параметр virtualScroll={'{{vertical: true}}'}. По умолчанию параметр fixedRowHeight = 40px, для того
+                чтобы изменить этот параметр, то необходимо передать в virtualScroll параметр fixedRowHeight с нужным
+                значением. Например, для размера таблицы m высота строки по умолчанию составляет 40px (если содержимое
+                ячеек занимает одну строку в высоту и для ячеек не было задано каких-то кастомных стилей), для размеров
+                s-32px, l-48px, xl-56px.
+              </PStyled>
+              {
+                //todo переписать абзац выше под размерность таблицы
+              }
+              <PStyled>
+                Функция fixedRowHeight качестве входного параметра получает индекс строки, который может быть
+                использован для фиксирования строк с различной высотой.
+              </PStyled>
+              <PStyled>
+                Примечание: таблица обязательно должна иметь четко заданную высоту. Это нужно для того, чтобы тело
+                таблицы не растягивалось до размера её содержимого.
+              </PStyled>
+            </T>
+            <br />
+            Пример виртуализации с фиксированной высотой строки
+          </>
+        }
         cssMixin={columnFlexMixin}
       >
         <TanstackTable
           table={table1}
           greyHeader
-          style={{ height: '500px' }}
+          style={{ height: '350px' }}
           virtualScroll={{ fixedRowHeight: () => 40, vertical: true }}
         />
       </ExampleSection>
-      <ExampleSection
-        header="Variable vertical virtualization"
-        text="Документация к примеру, когда строки переменной фиксированной высоты"
-        cssMixin={columnFlexMixin}
-      >
+      <ExampleSection text="Пример виртулаизации с переменной фиксированной высотой строки" cssMixin={columnFlexMixin}>
         <TanstackTable
           table={table2}
           greyHeader
-          style={{ height: '500px' }}
+          style={{ height: '350px' }}
           virtualScroll={{ fixedRowHeight: (index) => rowsVariable[index], vertical: true }}
         />
       </ExampleSection>
