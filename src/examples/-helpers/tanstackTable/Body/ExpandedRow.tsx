@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef } from 'react';
 import type { Row, RowData } from '@tanstack/react-table';
 import styled from 'styled-components';
 
-import { BodyTr, CellTd, ExpandedRowContent } from './style';
+import { BodyTr, ExpandCellTd } from './style';
 
 import { Transition } from '../../../../layout/SideMenu/Transition';
 import type { Dimension, MetaRowProps } from '../types';
@@ -25,7 +25,7 @@ export const ExpandedRow = <T,>({
   showUnderline: boolean;
 }) => {
   const wrapperRef = useRef<HTMLTableRowElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef(null);
 
   useLayoutEffect(() => {
     setWrapperHeight(row.getIsExpanded() ? 'auto' : '0px');
@@ -34,7 +34,7 @@ export const ExpandedRow = <T,>({
   const setWrapperHeight = (height?: string) => {
     // reading clientHeight will cause the browser to recalculate (reflow),
     // which will let animations work
-    const contentHeight = (contentRef.current?.clientHeight || 0) + 'px';
+    const contentHeight = ((contentRef.current as HTMLElement | null)?.clientHeight || 0) + 'px';
     const wrapperHeight = height ?? contentHeight;
 
     if (wrapperRef.current) {
@@ -71,11 +71,15 @@ export const ExpandedRow = <T,>({
       onExiting={handleTransitionExiting}
     >
       <ExpandTr ref={wrapperRef} $dimension={dimension} $showUnderline={showUnderline}>
-        <CellTd $dimension={dimension} colSpan={row.getVisibleCells().length} style={{ gridColumn: 'span 1/-1' }}>
-          <ExpandedRowContent ref={contentRef}>
-            {original.meta?.expandedRowRender && original.meta.expandedRowRender({ row })}
-          </ExpandedRowContent>
-        </CellTd>
+        <ExpandCellTd
+          $dimension={dimension}
+          //todo убрать при переходе на div
+          colSpan={row.getVisibleCells().length}
+          style={{ gridColumn: 'span 1/-1' }}
+          ref={contentRef}
+        >
+          {original.meta?.expandedRowRender && original.meta.expandedRowRender({ row })}
+        </ExpandCellTd>
       </ExpandTr>
     </Transition>
   );

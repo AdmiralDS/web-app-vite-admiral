@@ -137,15 +137,6 @@ export const VirtualBodyTr = styled(BodyTr)<{ $moveY: number }>`
   transform: translateY(${({ $moveY }) => $moveY}px);
 `;
 
-//todo возможно вынести его чтобы пользователи могли сами решить нужны ли им отступы или нет?
-export const ExpandedRowContent = styled.div`
-  display: flex;
-  flex: 1 0 auto;
-  height: fit-content;
-  box-sizing: border-box;
-  padding: 0 12px 11px 12px;
-`;
-
 /** Подумать про text-align */
 export const CellTd = styled.td<{
   $dimension: Dimension;
@@ -175,4 +166,8 @@ export const EmptyCell = styled(CellTd)`
   margin: 2px 0;
   color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
   ${cellStyle}
+`;
+
+export const ExpandCellTd = styled(CellTd)`
+  height: fit-content;
 `;

@@ -164,3 +164,10 @@ export const WrapperExpandContent = styled.div<{ $dimension?: Dimension; $depth:
   display: inline-flex;
   overflow: hidden;
 `;
+
+export const ExpandedRowContent = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  padding: 0 12px 11px 12px;
+`;

@@ -21,7 +21,7 @@ import {
 } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState } from 'react';
-import { CheckboxField } from '@admiral-ds/react-ui';
+import { CheckboxField, T } from '@admiral-ds/react-ui';
 
 interface Transaction extends MetaRowProps<Transaction> {
   type?: string;
@@ -336,17 +336,26 @@ export const GroupRowExample = () => {
 
   return (
     <>
-      <ExampleSection>
-        <TanstackTable table={table} />
-      </ExampleSection>
       <ExampleSection
         text={
           <>
-            <PStyled>Пример с чекбоксами.</PStyled> Для корректного отображения чекбоксов необходимо в таблицу
-            передавать prop showCheckboxTitleGroup
+            <T font="Body/Body 1 Long" as="div">
+              <PStyled>
+                Строки в таблице можно группировать под общим заголовком. Для того чтобы задать группу строк, нужно в
+                массиве с данными в строке добавить параметр meta передать subRows с параметрами строки или с заголовком
+                группы.
+              </PStyled>
+              <PStyled>
+                Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для
+                корректного отображения чекбоксов необходимо в таблицу передавать prop showCheckboxTitleGroup,
+              </PStyled>
+            </T>
           </>
         }
       >
+        <TanstackTable table={table} />
+      </ExampleSection>
+      <ExampleSection text="Пример с чекбоксами">
         <TanstackTable table={table2} showCheckboxTitleGroup />
       </ExampleSection>
     </>

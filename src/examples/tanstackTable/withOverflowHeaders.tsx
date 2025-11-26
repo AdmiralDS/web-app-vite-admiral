@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { ExampleSection } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
+import { T } from '@admiral-ds/react-ui';
 
 type Column = {
   first: string;
@@ -54,7 +55,14 @@ export const WithOverflowHeaders = () => {
   });
 
   return (
-    <ExampleSection>
+    <ExampleSection
+      text={
+        <T font="Body/Body 1 Long" as="div">
+          Заголовки таблицы по умолчанию выводятся в одну строку и при нехватке места сокращаются с помощью троеточия,
+          при наведении появляется тултип с полным текстом
+        </T>
+      }
+    >
       <TanstackTable table={table} />
     </ExampleSection>
   );

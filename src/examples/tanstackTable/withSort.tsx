@@ -2,7 +2,7 @@ import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable }
 import { useState } from 'react';
 
 import { Link, T } from '@admiral-ds/react-ui';
-import { ExampleSection } from '#examples/-helpers';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 type Person = {
@@ -95,6 +95,8 @@ export const WithSort = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    ...defaultOptions,
+    enableSorting: true,
     enableMultiSort: false,
   });
 
@@ -109,49 +111,59 @@ export const WithSort = () => {
     enableSorting: true,
   });
 
-  const tables = [tableSingleSort, tableWithMultiSort];
-
   return (
     <>
-      <T font="Body/Body 1 Long" as="div">
-        <ul style={{ lineHeight: '190%' }}>
-          <li>
-            <i>sortingFn</i>: функция для создания кастомной сортировки.
-          </li>
-          <li>
-            <i>sortDescFirst</i>: флаг для отображения при первом клике сортировки от большего к меньшему (Некоторые
-            данные в таблице с сортировкой по умолчанию могут иметь различные порядки отображения при первом клике).
-          </li>
-          <li>
-            <i>enableSorting</i>: флаг отключения сортировки в конкретном столбце.
-          </li>
-          <li>
-            <i>enableMultiSort</i>: флаг отключения мульти сортировки в конкретном столбце. По умолчанию
-            мультисортировка включена во всей таблице (для отключения во всей таблице этот флаг нужно передать в
-            useReactTable).
-          </li>
-          <li>
-            <i>invertSorting</i>: флаг флаг изменения порядка сортировки
-          </li>
-        </ul>
-        <div style={{ display: 'flex' }}>
-          Дополнительная документация настроек сортировки по
-          <Link
-            style={{ marginLeft: '4px' }}
-            href="https://tanstack.com/table/latest/docs/guide/sorting"
-            target="_blank"
-          >
-            ссылке
-          </Link>
-        </div>
-      </T>
-      {tables.map((table, id) => {
-        return (
-          <ExampleSection key={id} header={id === 0 ? 'Single sort.' : 'Milti sort.'}>
-            <TanstackTable table={table} headerLineClamp={3} headerExtraLineClamp={2} />
-          </ExampleSection>
-        );
-      })}
+      <ExampleSection
+        text={
+          <>
+            <T font="Body/Body 1 Long" as="div">
+              <PStyled>
+                Если к сортируемому столбцу пока не применена сортировка, то значок-стрелка виден только при наведении
+                на область заголовка и окрашивается в серый цвет. Если сортировка включена (первое нажатие - сортировка
+                по возрастанию), то ее значок-стрелка остается видимым при снятии фокуса с заголовка и окрашивается в
+                синий цвет. При повторном нажатии происходит сортировка в обратном порядке (стрелка меняет направление,
+                по убыванию). При третьем нажатии сортировка отменяется.
+              </PStyled>
+              <PStyled>
+                Дизайн-системой предусматривается многоуровневая сортировка. Рекомендуется использовать не более ДВУХ
+                уровней. Логика сортировки (взаимосвязи) выстраивается пользователем. При этом у иконок сортировки
+                появляются цифры, обозначающие порядок (приоритет) сортировки.
+              </PStyled>
+              <PStyled>- sortingFn - функция для создания кастомной сортировки;</PStyled>
+              <PStyled>
+                - sortDescFirst - параметр для отображения при первом клике сортировки от большего к меньшему (Некоторые
+                данные в таблице с сортировкой по умолчанию могут иметь различные порядки отображения при первом клике);
+              </PStyled>
+              <PStyled>- enableSorting - параметр отключения сортировки в конкретном столбце;</PStyled>
+              <PStyled>
+                - enableMultiSort - параметр отключения мульти сортировки в конкретном столбце. По умолчанию
+                мультисортировка включена во всей таблице (для отключения во всей таблице этот флаг нужно передать в
+                useReactTable);
+              </PStyled>
+              <PStyled>- invertSorting - параметр изменения порядка сортировки.</PStyled>
+
+              <PStyled style={{ display: 'flex' }}>
+                Дополнительная документация настроек сортировки по
+                <Link
+                  style={{ marginLeft: '4px' }}
+                  href="https://tanstack.com/table/latest/docs/guide/sorting"
+                  target="_blank"
+                >
+                  ссылке
+                </Link>
+              </PStyled>
+              <PStyled>В примерах используется сортировка предоставляемая Tanstack table</PStyled>
+            </T>
+            <br />
+            Single sort
+          </>
+        }
+      >
+        <TanstackTable table={tableSingleSort} headerLineClamp={3} headerExtraLineClamp={2} />
+      </ExampleSection>
+      <ExampleSection text="Milti sort">
+        <TanstackTable table={tableWithMultiSort} headerLineClamp={3} headerExtraLineClamp={2} />
+      </ExampleSection>
     </>
   );
 };
