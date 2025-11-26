@@ -15,7 +15,6 @@ interface Props<T> {
   headerExtraLineClamp: number;
   greyHeader?: boolean;
   showRowsActions?: boolean;
-  fixedColumnWidth: number;
   virtualScroll?: VirtualScroll;
   showDividerForLastColumn: boolean;
   tableRef: React.MutableRefObject<null>;

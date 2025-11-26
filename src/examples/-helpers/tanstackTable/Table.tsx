@@ -51,7 +51,7 @@ export const TanstackTable = forwardRef(
     });
     const showRowsActions = isRowsActions && userShowRowsActions;
 
-    //определение ширины колонок Проверить и отладить всё это!!!
+    //определение ширины колонок
     let leftTemplate = '',
       centerTemplate = '',
       rightTemplate = '';
@@ -112,7 +112,6 @@ export const TanstackTable = forwardRef(
           greyHeader={greyHeader}
           showRowsActions={showRowsActions}
           virtualScroll={virtualScroll}
-          fixedColumnWidth={virtualScroll?.fixedColumnWidth || DEFAULT_COLUMN_WIDTH}
           showDividerForLastColumn={showDividerForLastColumn}
           tableRef={tableRef}
           showBorders={showBorders}

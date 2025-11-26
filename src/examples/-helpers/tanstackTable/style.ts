@@ -32,6 +32,7 @@ export const borderStyle = css<{ $resizer?: boolean }>`
 /** aka TableContainer in react-ui */
 export const Table = styled.table<{ $gridTemplateColumns?: string }>`
   display: grid;
+  grid-template-rows: repeat(2, min-content);
   width: 100%;
   position: relative;
   box-sizing: border-box;
@@ -114,7 +115,7 @@ export const ExpandIconPlacement = styled(IconPlacement)`
   flex-shrink: 0;
 `;
 
-//todo transition не работает при использовании в cell из-за ререндера ячеек
+//TODO transition не работает при использовании в cell из-за ререндера ячеек
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
   transition:
     transform 0.3s,

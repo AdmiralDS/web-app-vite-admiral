@@ -132,6 +132,8 @@ export const BodyTr = styled.tr<{
 
 export const VirtualBodyTr = styled(BodyTr)<{ $moveY: number }>`
   position: absolute;
+  left: 0;
+  right: 0;
   transform: translateY(${({ $moveY }) => $moveY}px);
 `;
 

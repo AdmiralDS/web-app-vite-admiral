@@ -96,7 +96,7 @@ export const RowContent = <T,>({
           )}
           {row.getCenterVisibleCells().map((cell) => renderCellTd(cell))}
           <S.Spacer />
-          {(row.getRightVisibleCells() || renderOverflowMenu) && (
+          {(!!row.getRightVisibleCells().length || renderOverflowMenu) && (
             <S.StickyWrapper
               $position="right"
               $gridColumn={`-1 / -${1 + row.getRightVisibleCells().length + (renderOverflowMenu ? 1 : 0)}`}
