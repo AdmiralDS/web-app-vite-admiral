@@ -54,18 +54,18 @@ export const DynamicVirtualScroll = () => {
   });
 
   return (
-    <ExampleSection
-      text={
-        <>
-          <T font="Body/Body 1 Long" as="div">
+    <>
+      <ExampleSection
+        text={
+          <>
             <PStyled>
               В случае если в таблице необходимо отобразить большое количество строк, возможно использовать функцию
               виртуального скролла. Компонент предоставляет два вида виртуального скролла: виртуальный скролл для строк
               с фиксированной высотой и виртуальный скролл для строк с динамической высотой.
             </PStyled>
             <PStyled>
-              Для того чтобы активировать виртуальный скролл для строк с фиксированной высотой, необходимо задать
-              параметр virtualScroll={'{{vertical: true, estimatedRowHeight: () => Примерная высота строки}}'}. В
+              Для того чтобы активировать виртуальный скролл для строк с динамической высотой, необходимо задать
+              параметр virtualScroll={'{{vertical: true, estimatedRowHeight: (index) => Примерная высота строки}}'}. В
               качестве входного параметра estimatedRowHeight получает индекс строки, который может быть использован для
               определения примерной высоты строки. Также функция estimatedRowHeight влияет на подсчет высоты всех строк
               в таблице, а значит и на размер вертикального скролла. Поэтому важно, чтобы функция возвращала максимально
@@ -75,18 +75,17 @@ export const DynamicVirtualScroll = () => {
               Примечание: таблица обязательно должна иметь четко заданную высоту. Это нужно для того, чтобы тело таблицы
               не растягивалось до размера её содержимого.
             </PStyled>
-          </T>
-          <br />
-          Пример виртуализации с динамической высотой строки
-        </>
-      }
-    >
-      <TanstackTable
-        table={table}
-        style={{ height: '400px' }}
-        virtualScroll={{ vertical: true, estimatedRowHeight: () => 60 }}
-        showLastRowUnderline={false}
+          </>
+        }
       />
-    </ExampleSection>
+      <ExampleSection header="Пример виртуализации с динамической высотой строки">
+        <TanstackTable
+          table={table}
+          style={{ height: '400px' }}
+          virtualScroll={{ vertical: true, estimatedRowHeight: () => 60 }}
+          showLastRowUnderline={false}
+        />
+      </ExampleSection>
+    </>
   );
 };
