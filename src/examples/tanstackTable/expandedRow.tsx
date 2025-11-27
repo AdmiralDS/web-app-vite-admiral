@@ -105,7 +105,7 @@ export const ExpandedRow = () => {
     {
       id: 'expand-column', // required id
       header: () => (
-        <WrapperTitleCell>
+        <WrapperTitleCell className="th">
           <ExpandCell $dimension={dimension} />
         </WrapperTitleCell>
       ),

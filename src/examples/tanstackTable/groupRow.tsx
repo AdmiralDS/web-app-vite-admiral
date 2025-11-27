@@ -228,7 +228,7 @@ export const GroupRowExample = () => {
     columnHelper.accessor('type', {
       header: ({ table, header }) => {
         return (
-          <WrapperTitleCell>
+          <WrapperTitleCell className="th">
             <CheckboxCell $dimension={dimension}>
               <CheckboxField
                 dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}

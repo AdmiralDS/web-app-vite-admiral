@@ -41,6 +41,6 @@ export const StickyWrapper = styled(NormalWrapper)<{ $position: 'left' | 'right'
     `}
 `;
 
-export const Spacer = styled.td`
+export const Spacer = styled.div`
   padding: 0;
 `;

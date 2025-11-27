@@ -71,6 +71,7 @@ export const RowContent = <T,>({
 
   const renderCellTd = (cell: Cell<T, unknown>) => (
     <CellTd
+      className="td"
       key={cell.id}
       $dimension={dimension}
       $cellAlign={cell.column.columnDef.meta?.cellAlign}

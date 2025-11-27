@@ -59,18 +59,18 @@ export const rowHoverMixin = css`
   }
 `;
 
-export const Body = styled.tbody`
+export const Body = styled.div`
   display: grid;
 `;
 
-export const VirtualBody = styled.tbody<{ $heightBody: string }>`
+export const VirtualBody = styled.div<{ $heightBody: string }>`
   display: grid;
   position: relative;
   height: ${({ $heightBody }) => $heightBody};
 `;
 
 /** aka Row + SimpleRow from react-ui */
-export const BodyTr = styled.tr<{
+export const BodyTr = styled.div<{
   selected?: boolean;
   disabled?: boolean;
   $hover?: boolean;
@@ -138,7 +138,7 @@ export const VirtualBodyTr = styled(BodyTr)<{ $moveY: number }>`
 `;
 
 /** Подумать про text-align */
-export const CellTd = styled.td<{
+export const CellTd = styled.div<{
   $dimension: Dimension;
   $resizer?: boolean;
   $disableBorderStyle?: boolean;
@@ -153,12 +153,6 @@ export const CellTd = styled.td<{
   overflow: hidden;
   text-align: ${({ $cellAlign }) => ($cellAlign === 'right' ? 'right' : 'left')};
   ${({ $disableBorderStyle }) => !$disableBorderStyle && borderStyle}
-`;
-
-export const SpacerCellTd = styled(CellTd)<{ $width: number }>`
-  border: none;
-  flex: none;
-  width: ${({ $width }) => `${$width}px`};
 `;
 
 export const EmptyCell = styled(CellTd)`

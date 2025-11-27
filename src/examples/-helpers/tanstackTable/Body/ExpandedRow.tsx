@@ -70,14 +70,8 @@ export const ExpandedRow = <T,>({
       onExit={handleTransitionExit}
       onExiting={handleTransitionExiting}
     >
-      <ExpandTr ref={wrapperRef} $dimension={dimension} $showUnderline={showUnderline}>
-        <ExpandCellTd
-          $dimension={dimension}
-          //todo убрать при переходе на div
-          colSpan={row.getVisibleCells().length}
-          style={{ gridColumn: 'span 1/-1' }}
-          ref={contentRef}
-        >
+      <ExpandTr className="tr" ref={wrapperRef} $dimension={dimension} $showUnderline={showUnderline}>
+        <ExpandCellTd className="td" $dimension={dimension} style={{ gridColumn: 'span 1/-1' }} ref={contentRef}>
           {original.meta?.expandedRowRender && original.meta.expandedRowRender({ row })}
         </ExpandCellTd>
       </ExpandTr>
