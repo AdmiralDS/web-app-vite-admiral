@@ -7,6 +7,7 @@ export const ContentArea = styled.div<{ $cssMixin?: ReturnType<typeof css> }>`
   border-radius: 8px;
   background-color: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
   padding: 36px 40px;
+  margin-top: 16px;
   ${(p) => p.$cssMixin && p.$cssMixin};
 `;
 
@@ -31,17 +32,20 @@ export const SubHeader = styled.div`
 export const Text = styled.div`
   ${typography['Body/Body 2 Long']}
   max-width: 720px;
+
+  & > p:last-of-type {
+    margin: 0;
+  }
 `;
 
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
 `;
 
 export const PStyled = styled.p`
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 `;
 
 export interface SectionDescriptionProps {
@@ -71,9 +75,11 @@ export const ExampleSection = ({ header, text, children, cssMixin, ...props }: E
   return (
     <SectionWrapper>
       {(header || text) && <SectionDescription header={header} text={text} />}
-      <ContentArea {...props} $cssMixin={cssMixin}>
-        {children}
-      </ContentArea>
+      {children && (
+        <ContentArea {...props} $cssMixin={cssMixin}>
+          {children}
+        </ContentArea>
+      )}
     </SectionWrapper>
   );
 };
