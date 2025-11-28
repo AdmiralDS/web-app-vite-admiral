@@ -81,7 +81,7 @@ export const ExtraText = styled(Title)<{ $dimension: Dimension }>`
     $dimension === 'l' || $dimension === 'xl' ? typography['Body/Body 2 Long'] : typography['Caption/Caption 1']}
 `;
 
-export const HeaderCell = styled.th<{
+export const HeaderCell = styled.div<{
   $dimension: Dimension;
   colSpan: number;
   rowSpan: number;

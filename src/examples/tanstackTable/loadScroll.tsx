@@ -57,7 +57,6 @@ const LastRowWrapper2 = ({ containerRef, onVisible, rowNode, rowIndex }: LastRow
   const handleIntersection = async (entries: IntersectionObserverEntry[]) => {
     await sleep(1000);
     if (entries[0].isIntersecting && entries[0].intersectionRatio > 0 && !visible) {
-      console.log('🚀 ~ handleIntersection ~ await');
       await setVisible(true);
       await onVisible?.();
     }
