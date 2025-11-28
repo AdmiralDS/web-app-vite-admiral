@@ -20,7 +20,7 @@ import {
   CellTh,
 } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { CheckboxField, T } from '@admiral-ds/react-ui';
 
 interface Transaction extends MetaRowProps<Transaction> {
@@ -159,56 +159,59 @@ export const GroupRowExample = () => {
 
   const dimension: TanstackTableProps<Transaction>['dimension'] = 'm';
 
-  const columns = [
-    columnHelper.accessor('type', {
-      header: 'Тип сделки',
-      cell: ({ row, getValue }) => {
-        return (
-          <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
-            {row.getCanExpand() && (
-              <ExpandCell $dimension={dimension}>
-                <ExpandIconPlacement
-                  dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                  highlightFocus={false}
-                  onClick={row.getToggleExpandedHandler()}
-                >
-                  <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                </ExpandIconPlacement>
-              </ExpandCell>
-            )}
-            <CellText>{getValue<boolean>()}</CellText>
-          </WrapperExpandContent>
-        );
-      },
-      size: 141,
-    }),
-    columnHelper.accessor('date', {
-      header: 'Дата сделки',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 149,
-    }),
-    columnHelper.accessor('amount', {
-      header: 'Сумма',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 150,
-      meta: { cellAlign: 'right' },
-    }),
-    columnHelper.accessor('currency', {
-      header: 'Валюта',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-    }),
-    columnHelper.accessor('rate', {
-      header: 'Ставка',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      size: 96,
-      meta: { cellAlign: 'right' },
-    }),
-    columnHelper.accessor('status', {
-      header: 'Статус',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      size: 110,
-    }),
-  ];
+  const columns = useMemo(
+    () => [
+      columnHelper.accessor('type', {
+        header: 'Тип сделки',
+        cell: ({ row, getValue }) => {
+          return (
+            <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+              {row.getCanExpand() && (
+                <ExpandCell $dimension={dimension}>
+                  <ExpandIconPlacement
+                    dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
+                    highlightFocus={false}
+                    onClick={row.getToggleExpandedHandler()}
+                  >
+                    <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+                  </ExpandIconPlacement>
+                </ExpandCell>
+              )}
+              <CellText>{getValue<boolean>()}</CellText>
+            </WrapperExpandContent>
+          );
+        },
+        size: 141,
+      }),
+      columnHelper.accessor('date', {
+        header: 'Дата сделки',
+        cell: (info) => <CellText>{info.getValue()}</CellText>,
+        size: 149,
+      }),
+      columnHelper.accessor('amount', {
+        header: 'Сумма',
+        cell: (info) => <CellText>{info.getValue()}</CellText>,
+        size: 150,
+        meta: { cellAlign: 'right' },
+      }),
+      columnHelper.accessor('currency', {
+        header: 'Валюта',
+        cell: (info) => <CellText>{info.renderValue()}</CellText>,
+      }),
+      columnHelper.accessor('rate', {
+        header: 'Ставка',
+        cell: (info) => <CellText>{info.renderValue()}</CellText>,
+        size: 96,
+        meta: { cellAlign: 'right' },
+      }),
+      columnHelper.accessor('status', {
+        header: 'Статус',
+        cell: (info) => <CellText>{info.renderValue()}</CellText>,
+        size: 110,
+      }),
+    ],
+    [],
+  );
 
   const table = useReactTable({
     data,
@@ -224,100 +227,103 @@ export const GroupRowExample = () => {
   });
 
   // Подумать над созданием отдельного компонента, так как не очень хорошо, что пользователь будет вручную управлять стилями
-  const columns2 = [
-    columnHelper.accessor('type', {
-      header: ({ table, header }) => {
-        return (
-          <WrapperTitleCell className="th">
-            <CheckboxCell $dimension={dimension}>
-              <CheckboxField
-                dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                type="checkbox"
-                {...{
-                  checked: table.getIsAllRowsSelected(),
-                  indeterminate: table.getIsSomeRowsSelected(),
-                  onChange: table.getIsSomeRowsSelected()
-                    ? () => setRowSelection({})
-                    : table.getToggleAllRowsSelectedHandler(),
+  const columns2 = useMemo(
+    () => [
+      columnHelper.accessor('type', {
+        header: ({ table, header }) => {
+          return (
+            <WrapperTitleCell className="th">
+              <CheckboxCell $dimension={dimension}>
+                <CheckboxField
+                  dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
+                  type="checkbox"
+                  {...{
+                    checked: table.getIsAllRowsSelected(),
+                    indeterminate: table.getIsSomeRowsSelected(),
+                    onChange: table.getIsSomeRowsSelected()
+                      ? () => setRowSelection({})
+                      : table.getToggleAllRowsSelectedHandler(),
+                  }}
+                />
+              </CheckboxCell>
+              <CellTh
+                as="div"
+                style={{
+                  display: 'flex',
+                  flex: 'unset',
+                  position: 'unset',
+                  width: `calc(100% - ${dimension === 'm' || dimension === 's' ? '44' : '56'}px)`,
                 }}
+                header={header}
+                dimension={dimension}
+                showResizer
+                headerLineClamp={1}
+                headerExtraLineClamp={1}
+                title="Тип сделки"
               />
-            </CheckboxCell>
-            <CellTh
-              as="div"
-              style={{
-                display: 'flex',
-                flex: 'unset',
-                position: 'unset',
-                width: `calc(100% - ${dimension === 'm' || dimension === 's' ? '44' : '56'}px)`,
-              }}
-              header={header}
-              dimension={dimension}
-              showResizer
-              headerLineClamp={1}
-              headerExtraLineClamp={1}
-              title="Тип сделки"
-            />
-          </WrapperTitleCell>
-        );
-      },
-      cell: ({ row, getValue }) => {
-        return (
-          <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
-            {row.getCanExpand() && (
-              <ExpandCell $dimension={dimension}>
-                <ExpandIconPlacement
-                  dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                  highlightFocus={false}
-                  onClick={row.getToggleExpandedHandler()}
-                >
-                  <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                </ExpandIconPlacement>
-              </ExpandCell>
-            )}
-            <CheckboxCell $dimension={dimension}>
-              <CheckboxField
-                dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                {...{
-                  checked: row.getIsSelected(),
-                  disabled: !row.getCanSelect(),
-                  indeterminate: row.getIsSomeSelected(),
-                  onChange: row.getToggleSelectedHandler(),
-                }}
-              />
-            </CheckboxCell>
-            <CellText>{getValue<boolean>()}</CellText>
-          </WrapperExpandContent>
-        );
-      },
-      size: 141,
-    }),
-    columnHelper.accessor('date', {
-      header: 'Дата сделки',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 149,
-    }),
-    columnHelper.accessor('amount', {
-      header: 'Сумма',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 150,
-      meta: { cellAlign: 'right' },
-    }),
-    columnHelper.accessor('currency', {
-      header: 'Валюта',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-    }),
-    columnHelper.accessor('rate', {
-      header: 'Ставка',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      size: 96,
-      meta: { cellAlign: 'right' },
-    }),
-    columnHelper.accessor('status', {
-      header: 'Статус',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      size: 110,
-    }),
-  ];
+            </WrapperTitleCell>
+          );
+        },
+        cell: ({ row, getValue }) => {
+          return (
+            <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+              {row.getCanExpand() && (
+                <ExpandCell $dimension={dimension}>
+                  <ExpandIconPlacement
+                    dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
+                    highlightFocus={false}
+                    onClick={row.getToggleExpandedHandler()}
+                  >
+                    <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+                  </ExpandIconPlacement>
+                </ExpandCell>
+              )}
+              <CheckboxCell $dimension={dimension}>
+                <CheckboxField
+                  dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
+                  {...{
+                    checked: row.getIsSelected(),
+                    disabled: !row.getCanSelect(),
+                    indeterminate: row.getIsSomeSelected(),
+                    onChange: row.getToggleSelectedHandler(),
+                  }}
+                />
+              </CheckboxCell>
+              <CellText>{getValue<boolean>()}</CellText>
+            </WrapperExpandContent>
+          );
+        },
+        size: 141,
+      }),
+      columnHelper.accessor('date', {
+        header: 'Дата сделки',
+        cell: (info) => <CellText>{info.getValue()}</CellText>,
+        size: 149,
+      }),
+      columnHelper.accessor('amount', {
+        header: 'Сумма',
+        cell: (info) => <CellText>{info.getValue()}</CellText>,
+        size: 150,
+        meta: { cellAlign: 'right' },
+      }),
+      columnHelper.accessor('currency', {
+        header: 'Валюта',
+        cell: (info) => <CellText>{info.renderValue()}</CellText>,
+      }),
+      columnHelper.accessor('rate', {
+        header: 'Ставка',
+        cell: (info) => <CellText>{info.renderValue()}</CellText>,
+        size: 96,
+        meta: { cellAlign: 'right' },
+      }),
+      columnHelper.accessor('status', {
+        header: 'Статус',
+        cell: (info) => <CellText>{info.renderValue()}</CellText>,
+        size: 110,
+      }),
+    ],
+    [],
+  );
 
   const table2 = useReactTable({
     data,

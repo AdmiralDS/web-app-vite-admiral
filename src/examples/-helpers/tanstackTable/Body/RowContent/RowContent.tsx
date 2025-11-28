@@ -37,7 +37,7 @@ export const RowContent = <T,>({
   };
 
   const renderGroupTitle = () => (
-    <td style={{ gridColumn: `1/-1` }}>
+    <div className="td" style={{ gridColumn: `1/-1` }}>
       <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
         {row.getCanExpand() && (
           <ExpandCell $dimension={dimension}>
@@ -66,7 +66,7 @@ export const RowContent = <T,>({
 
         <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
       </WrapperExpandContent>
-    </td>
+    </div>
   );
 
   const renderCellTd = (cell: Cell<T, unknown>) => (

@@ -29,7 +29,7 @@ export const borderStyle = css<{ $resizer?: boolean }>`
   }
 `;
 
-export const Table = styled.div<{ $gridTemplateColumns?: string }>`
+export const Table = styled.div`
   display: grid;
   grid-template-rows: repeat(2, min-content);
   width: 100%;
@@ -102,9 +102,7 @@ export const ExpandIconPlacement = styled(IconPlacement)`
 
 //TODO transition не работает при использовании в cell из-за ререндера ячеек
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
-  transition:
-    transform 0.3s,
-    ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: rotate(${({ $isOpened }) => ($isOpened ? 180 : 0)}deg);
 `;
 
