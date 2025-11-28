@@ -100,7 +100,6 @@ export const ExpandIconPlacement = styled(IconPlacement)`
   flex-shrink: 0;
 `;
 
-//TODO transition не работает при использовании в cell из-за ререндера ячеек
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
   transition: transform 0.3s ease-in-out;
   transform: rotate(${({ $isOpened }) => ($isOpened ? 180 : 0)}deg);

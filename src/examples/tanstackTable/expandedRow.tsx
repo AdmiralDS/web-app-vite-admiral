@@ -8,7 +8,7 @@ import {
   type RowData,
 } from '@tanstack/react-table';
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
