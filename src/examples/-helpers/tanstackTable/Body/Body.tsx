@@ -46,6 +46,7 @@ export const Body = <T,>({
     const node = (
       <Fragment key={row.id}>
         <S.BodyTr
+          className="tr"
           $dimension={dimension}
           selected={row.getIsSelected() || original.meta?.selected}
           disabled={original.meta?.disabled}
@@ -76,10 +77,10 @@ export const Body = <T,>({
   };
 
   return (
-    <S.Body>
+    <S.Body className="tbody">
       {isEmptyArrayRows ? (
-        <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell $dimension={dimension} $resizer={false}>
+        <S.BodyTr className="tr" $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
+          <S.EmptyCell className="td" $dimension={dimension} $resizer={false}>
             {emptyMessage || 'Нет совпадений'}
           </S.EmptyCell>
         </S.BodyTr>

@@ -52,6 +52,7 @@ export const VirtualBody = <T,>({
     const node = (
       <Fragment key={index}>
         <S.VirtualBodyTr
+          className="tr"
           data-index={index} //needed for dynamic row height measurement
           ref={estimatedRowHeight ? rowVirtualizer?.measureElement : null}
           $dimension={dimension}
@@ -85,10 +86,10 @@ export const VirtualBody = <T,>({
   };
 
   return (
-    <S.VirtualBody $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
+    <S.VirtualBody className="tbody" $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
       {isEmptyArrayRows ? (
-        <S.BodyTr $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell $dimension={dimension} $resizer={false}>
+        <S.BodyTr className="tr" $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
+          <S.EmptyCell className="td" $dimension={dimension} $resizer={false}>
             {emptyMessage || 'Нет совпадений'}
           </S.EmptyCell>
         </S.BodyTr>

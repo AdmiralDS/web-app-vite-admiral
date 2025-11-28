@@ -62,6 +62,7 @@ export const CellTh = <T,>({
   return (
     <HeaderCell
       {...props}
+      className="th"
       key={header.id}
       $dimension={dimension}
       $resizer={visibleResizer}

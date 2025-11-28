@@ -96,73 +96,72 @@ const Content = styled.div`
   }
 `;
 
+const dimension = 'm';
+const columns: ColumnDef<Person>[] = [
+  {
+    id: 'expand-column', // required id
+    header: () => (
+      <WrapperTitleCell className="th">
+        <ExpandCell $dimension={dimension} />
+      </WrapperTitleCell>
+    ),
+    cell: ({ row }) => {
+      const original = row.original as RowData & MetaRowProps<Person>;
+
+      return (
+        row.getCanExpand() && (
+          <ExpandCell $dimension={dimension}>
+            {original.meta?.expandedRowRender && (
+              <ExpandIconPlacement
+                style={{ margin: 0, flexShrink: 0 }}
+                dimension="mBig"
+                disabled={original.meta?.disabled}
+                highlightFocus={false}
+                onClick={row.getToggleExpandedHandler()}
+              >
+                <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+              </ExpandIconPlacement>
+            )}
+          </ExpandCell>
+        )
+      );
+    },
+  },
+  {
+    accessorKey: 'firstName',
+    header: 'First Name',
+    cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+  },
+  {
+    accessorFn: (row) => row.lastName,
+    id: 'lastName',
+    cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+    header: 'Last Name',
+  },
+  {
+    accessorKey: 'age',
+    header: 'Age',
+    cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+  },
+  {
+    accessorKey: 'visits',
+    header: 'Visits',
+    cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+  },
+  {
+    accessorKey: 'status',
+    header: 'Status',
+    cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+  },
+  {
+    accessorKey: 'progress',
+    header: 'Profile Progress',
+    cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+  },
+];
+
 export const ExpandedRow = () => {
   const [data, _setData] = useState(() => [...defaultData]);
-
-  const dimension = 'm';
-
-  const columns: ColumnDef<Person>[] = [
-    {
-      id: 'expand-column', // required id
-      header: () => (
-        <WrapperTitleCell>
-          <ExpandCell $dimension={dimension} />
-        </WrapperTitleCell>
-      ),
-      cell: ({ row }) => {
-        const original = row.original as RowData & MetaRowProps<Person>;
-
-        return (
-          row.getCanExpand() && (
-            <ExpandCell $dimension={dimension}>
-              {original.meta?.expandedRowRender && (
-                <ExpandIconPlacement
-                  style={{ margin: 0, flexShrink: 0 }}
-                  dimension="mBig"
-                  disabled={original.meta?.disabled}
-                  highlightFocus={false}
-                  onClick={row.getToggleExpandedHandler()}
-                >
-                  <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                </ExpandIconPlacement>
-              )}
-            </ExpandCell>
-          )
-        );
-      },
-    },
-    {
-      accessorKey: 'firstName',
-      header: 'First Name',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorFn: (row) => row.lastName,
-      id: 'lastName',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-      header: 'Last Name',
-    },
-    {
-      accessorKey: 'age',
-      header: 'Age',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorKey: 'visits',
-      header: 'Visits',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorKey: 'status',
-      header: 'Status',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorKey: 'progress',
-      header: 'Profile Progress',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-  ];
 
   const table = useReactTable({
     data,

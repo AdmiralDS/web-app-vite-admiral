@@ -156,8 +156,13 @@ export const Header = <T,>({
   };
 
   return (
-    <S.Header ref={headerRef} data-borders={showBorders || table.getHeaderGroups().length > 1} style={style}>
-      <S.HeaderTr $dimension={dimension} $isSomeRowsGrouped={isSomeRowsGrouped}>
+    <S.Header
+      className="thead"
+      ref={headerRef}
+      data-borders={showBorders || table.getHeaderGroups().length > 1}
+      style={style}
+    >
+      <S.HeaderTr className="tr" $dimension={dimension} $isSomeRowsGrouped={isSomeRowsGrouped}>
         <>
           {table.getIsSomeColumnsPinned('left') && (
             <>

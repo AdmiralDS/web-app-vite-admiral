@@ -58,7 +58,7 @@ export const RowSelection = () => {
       {
         id: 'checkbox-column', // required id
         header: ({ table }) => (
-          <WrapperTitleCell>
+          <WrapperTitleCell className="th">
             <CheckboxCell $dimension={dimension}>
               <CheckboxField
                 dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
