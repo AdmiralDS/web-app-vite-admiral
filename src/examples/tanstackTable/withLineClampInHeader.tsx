@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
-import { T } from '@admiral-ds/react-ui';
+import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 type Column = {
   first: string;
@@ -60,17 +60,21 @@ export const WithLineClampInHeader = ({}) => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>
             Заголовки таблицы по умолчанию выводятся в одну строку и при нехватке места сокращаются с помощью троеточия.
             Управлять высотой заголовков позволяют параметры headerLineClamp и headerExtraLineClamp:
           </PStyled>
-          <PStyled>- headerLineClamp - задаёт максимальное количество строк основого текста в заголовке;</PStyled>
           <PStyled>
-            - headerExtraLineClamp - задаёт максимальное количество строк дополнительного текста в заголовке.
+            <UnorderedList dimension="s">
+              <ListItem>headerLineClamp - задаёт максимальное количество строк основого текста в заголовке;</ListItem>
+              <ListItem>
+                headerExtraLineClamp - задаёт максимальное количество строк дополнительного текста в заголовке.
+              </ListItem>
+            </UnorderedList>
           </PStyled>
-          В примере ниже используется headerLineClamp = 2 и headerExtraLineClamp = 3
-        </T>
+          <PStyled>В примере ниже используется headerLineClamp = 2 и headerExtraLineClamp = 3</PStyled>
+        </>
       }
     >
       <TanstackTable table={table} headerLineClamp={2} headerExtraLineClamp={3} />

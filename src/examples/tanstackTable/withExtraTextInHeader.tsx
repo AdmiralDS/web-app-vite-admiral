@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { ExampleSection } from '#examples/-helpers';
 
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
-import { T } from '@admiral-ds/react-ui';
 
 type Column = {
   first: string;
@@ -60,13 +59,7 @@ export const WithExtraTextInHeader = () => {
   });
 
   return (
-    <ExampleSection
-      text={
-        <T font="Body/Body 1 Long" as="div">
-          При необходимости в заголовке таблицы можно включать дополнительный текст с помощью параметра extraText.
-        </T>
-      }
-    >
+    <ExampleSection text="При необходимости в заголовке таблицы можно включать дополнительный текст с помощью параметра extraText.">
       <TanstackTable table={table} />
     </ExampleSection>
   );

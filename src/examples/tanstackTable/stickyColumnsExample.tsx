@@ -3,7 +3,6 @@ import * as React from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable';
-import { T } from '@admiral-ds/react-ui';
 
 type Transaction = {
   type: string;
@@ -200,7 +199,7 @@ export const StickyColumnsExample = () => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>
             При необходимости можно “закреплять” столбцы таблицы. Фиксированные столбцы располагаются по левому краю
             таблицы и идут друг за другом. Чтобы определить для таблицы список фиксированных столбцов, необходимо при
@@ -217,7 +216,7 @@ export const StickyColumnsExample = () => {
             showRowsActions=true) являются фиксированными по умолчанию. Столбец с OverflowMenu и иконками одиночных
             действий является единственным столбцом, который позиционируется по правому краю таблицы.
           </PStyled>
-        </T>
+        </>
       }
     >
       <TanstackTable table={table} />

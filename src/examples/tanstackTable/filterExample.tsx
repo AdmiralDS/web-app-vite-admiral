@@ -1,14 +1,14 @@
 import {
-  createColumnHelper,
   getCoreRowModel,
   getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
   type Column,
+  type ColumnDef,
   type ColumnFiltersState,
 } from '@tanstack/react-table';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { Button, DateField, FieldSet, Link, RadioButton, T, TextInput } from '@admiral-ds/react-ui';
 import AcceptSolid from '@admiral-ds/icons/build/category/AcceptSolid.svg?react';
@@ -72,8 +72,6 @@ export const FilterExample = () => {
   const [inputValue, setInputValue] = useState<string>('');
   const [selectedDate, setSelectedDate] = useState<string>('');
   const [selected, setSelected] = useState<string>('');
-
-  const columnHelper = createColumnHelper<Person>();
 
   const onFilterMenuClickOutside = (closeMenu: () => void) => closeMenu();
 
@@ -179,66 +177,75 @@ export const FilterExample = () => {
     </WrapperFilter>
   );
 
-  const columns = [
-    columnHelper.accessor('firstName', {
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      footer: (info) => info.column.id,
-      header: 'firstName',
-      enableColumnFilter: false,
-      size: 140,
-    }),
-    columnHelper.accessor((row) => row.lastName, {
-      id: 'lastName',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      header: 'Last Name',
-      footer: (info) => info.column.id,
-      meta: { cellAlign: 'right', filter: { renderFilter: renderInputFilter, onFilterMenuClickOutside } },
-      size: 160,
-    }),
-    columnHelper.accessor('age', {
-      header: 'Age',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      footer: (info) => info.column.id,
-      meta: { filter: { renderFilter: renderNumFilter, onFilterMenuClickOutside } },
-      filterFn: (row, _, filterValue) => (filterValue === '1' ? row.original.age > 30 : row.original.age <= 30),
-      size: 100,
-    }),
-    columnHelper.accessor('visits', {
-      header: 'Visits',
-      footer: (info) => info.column.id,
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      meta: {
-        filter: {
-          renderFilter: () => (
-            <WrapperFilter>
-              <T font="Body/Body 2 Long" as="div">
-                Пример кастомизации иконки фильтра с помощью функции renderFilterIcon
-              </T>
-            </WrapperFilter>
-          ),
-          onFilterMenuClickOutside,
-          renderFilterIcon: () => <AcceptSolid />,
-          onFilterMenuClose: () => console.log('filter menu close'),
-          onFilterMenuOpen: () => console.log('filter menu open'),
-        },
+  const columns: ColumnDef<Person>[] = useMemo(
+    () => [
+      {
+        accessorKey: 'firstName',
+        cell: (info) => <CellText>{info.renderValue<string>()}</CellText>,
+        footer: (info) => info.column.id,
+        header: 'firstName',
+        enableColumnFilter: false,
+        size: 140,
       },
-      size: 120,
-    }),
-    columnHelper.accessor('dateOfBirth', {
-      header: 'Date Of Birth',
-      footer: (info) => info.column.id,
-      meta: { filter: { renderFilter: renderDateFilter, onFilterMenuClickOutside } },
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      size: 160,
-    }),
-    columnHelper.accessor('status', {
-      header: 'Status',
-      footer: (info) => info.column.id,
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      enableColumnFilter: false,
-      size: 140,
-    }),
-  ];
+      {
+        accessorKey: 'lastName',
+        id: 'lastName',
+        cell: (info) => <CellText>{info.renderValue<string>()}</CellText>,
+        header: 'Last Name',
+        footer: (info) => info.column.id,
+        meta: { cellAlign: 'right', filter: { renderFilter: renderInputFilter, onFilterMenuClickOutside } },
+        size: 160,
+      },
+      {
+        accessorKey: 'age',
+        header: 'Age',
+        cell: (info) => <CellText>{info.renderValue<string>()}</CellText>,
+        footer: (info) => info.column.id,
+        meta: { filter: { renderFilter: renderNumFilter, onFilterMenuClickOutside } },
+        filterFn: (row, _, filterValue) => (filterValue === '1' ? row.original.age > 30 : row.original.age <= 30),
+        size: 100,
+      },
+      {
+        accessorKey: 'visits',
+        header: 'Visits',
+        footer: (info) => info.column.id,
+        cell: (info) => <CellText>{info.renderValue<string>()}</CellText>,
+        meta: {
+          filter: {
+            renderFilter: () => (
+              <WrapperFilter>
+                <T font="Body/Body 2 Long" as="div">
+                  Пример кастомизации иконки фильтра с помощью функции renderFilterIcon
+                </T>
+              </WrapperFilter>
+            ),
+            onFilterMenuClickOutside,
+            renderFilterIcon: () => <AcceptSolid />,
+            onFilterMenuClose: () => console.log('filter menu close'),
+            onFilterMenuOpen: () => console.log('filter menu open'),
+          },
+        },
+        size: 120,
+      },
+      {
+        accessorKey: 'dateOfBirth',
+        header: 'Date Of Birth',
+        footer: (info) => info.column.id,
+        meta: { filter: { renderFilter: renderDateFilter, onFilterMenuClickOutside } },
+        cell: (info) => <CellText>{info.renderValue<string>()}</CellText>,
+        size: 160,
+      },
+      {
+        accessorKey: 'status',
+        header: 'Status',
+        footer: (info) => info.column.id,
+        cell: (info) => <CellText>{info.renderValue<string>()}</CellText>,
+        enableColumnFilter: false,
+        size: 140,
+      },
+    ],
+    [],
+  );
 
   const table = useReactTable({
     data,
@@ -258,16 +265,16 @@ export const FilterExample = () => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>
             Опционально в заголовках можно включать фильтрацию столбцов. При этом у заголовка будет появляться иконка
             фильтрации, по нажатию на которую будет открываться меню фильтрации.
           </PStyled>
           <PStyled>
             Для того чтобы задать фильтр для столбца достаточно задать для него параметр renderFilter - функцию, которая
-            будет отрисовывать содержимое меню фильтра. Данная функция имеет в качестве входного параметра:
+            будет отрисовывать содержимое меню фильтра. Данная функция имеет в качестве входного параметра колбек
+            closeMenu, при вызове которого происходит закрытие меню фильтра;
           </PStyled>
-          <PStyled>closeMenu - колбек, при вызове которого происходит закрытие меню фильтра;</PStyled>
           <PStyled>
             Для создания кастомной фильтрации в столбец нужно передавать параметр filterFn, которое будте возвращать
             условие фильтра
@@ -290,17 +297,18 @@ export const FilterExample = () => {
             onFilterMenuClickOutside, который будет срабатывать при клике вне меню фильтра. Данный колбек имеет в
             качестве входных параметров объект со свойством closeMenu и параметр event.
           </PStyled>
-          <div style={{ display: 'flex' }}>
+          <PStyled style={{ display: 'flex' }}>
             Дополнительная документация по
             <Link
               style={{ marginLeft: '4px' }}
               href="https://tanstack.com/table/latest/docs/guide/column-filtering"
               target="_blank"
+              dimension="s"
             >
               ссылке
             </Link>
-          </div>
-        </T>
+          </PStyled>
+        </>
       }
     >
       <TanstackTable table={table} />

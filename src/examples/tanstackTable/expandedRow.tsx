@@ -8,7 +8,7 @@ import {
   type RowData,
 } from '@tanstack/react-table';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
@@ -22,7 +22,7 @@ import {
   WrapperTitleCell,
   type MetaRowProps,
 } from '#examples/-helpers/tanstackTable';
-import { Link, T } from '@admiral-ds/react-ui';
+import { Link } from '@admiral-ds/react-ui';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -101,68 +101,71 @@ export const ExpandedRow = () => {
 
   const dimension = 'm';
 
-  const columns: ColumnDef<Person>[] = [
-    {
-      id: 'expand-column', // required id
-      header: () => (
-        <WrapperTitleCell>
-          <ExpandCell $dimension={dimension} />
-        </WrapperTitleCell>
-      ),
-      cell: ({ row }) => {
-        const original = row.original as RowData & MetaRowProps<Person>;
+  const columns: ColumnDef<Person>[] = useMemo(
+    () => [
+      {
+        id: 'expand-column', // required id
+        header: () => (
+          <WrapperTitleCell>
+            <ExpandCell $dimension={dimension} />
+          </WrapperTitleCell>
+        ),
+        cell: ({ row }) => {
+          const original = row.original as RowData & MetaRowProps<Person>;
 
-        return (
-          row.getCanExpand() && (
-            <ExpandCell $dimension={dimension}>
-              {original.meta?.expandedRowRender && (
-                <ExpandIconPlacement
-                  style={{ margin: 0, flexShrink: 0 }}
-                  dimension="mBig"
-                  disabled={original.meta?.disabled}
-                  highlightFocus={false}
-                  onClick={row.getToggleExpandedHandler()}
-                >
-                  <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                </ExpandIconPlacement>
-              )}
-            </ExpandCell>
-          )
-        );
+          return (
+            row.getCanExpand() && (
+              <ExpandCell $dimension={dimension}>
+                {original.meta?.expandedRowRender && (
+                  <ExpandIconPlacement
+                    style={{ margin: 0, flexShrink: 0 }}
+                    dimension="mBig"
+                    disabled={original.meta?.disabled}
+                    highlightFocus={false}
+                    onClick={row.getToggleExpandedHandler()}
+                  >
+                    <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+                  </ExpandIconPlacement>
+                )}
+              </ExpandCell>
+            )
+          );
+        },
       },
-    },
-    {
-      accessorKey: 'firstName',
-      header: 'First Name',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorFn: (row) => row.lastName,
-      id: 'lastName',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-      header: 'Last Name',
-    },
-    {
-      accessorKey: 'age',
-      header: 'Age',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorKey: 'visits',
-      header: 'Visits',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorKey: 'status',
-      header: 'Status',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-    {
-      accessorKey: 'progress',
-      header: 'Profile Progress',
-      cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
-    },
-  ];
+      {
+        accessorKey: 'firstName',
+        header: 'First Name',
+        cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+      },
+      {
+        accessorFn: (row) => row.lastName,
+        id: 'lastName',
+        cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+        header: 'Last Name',
+      },
+      {
+        accessorKey: 'age',
+        header: 'Age',
+        cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+      },
+      {
+        accessorKey: 'visits',
+        header: 'Visits',
+        cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+      },
+      {
+        accessorKey: 'status',
+        header: 'Status',
+        cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+      },
+      {
+        accessorKey: 'progress',
+        header: 'Profile Progress',
+        cell: ({ getValue }) => <CellText>{getValue<string>()}</CellText>,
+      },
+    ],
+    [],
+  );
 
   const table = useReactTable({
     data,
@@ -181,7 +184,7 @@ export const ExpandedRow = () => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>
             Отображение столбца детализации (столбец со стрелками) регулируется пользователем, в столбец необходимо
             передавать <i>id: 'expand-column'</i>. Стрелка позволяет развернуть строку и посмотреть более
@@ -191,17 +194,18 @@ export const ExpandedRow = () => {
             C помощью функции expandedRowRender происходит рендер развернутой части строки (рендер детализированной
             информации).
           </PStyled>
-          <div style={{ display: 'flex' }}>
+          <PStyled style={{ display: 'flex' }}>
             Дополнительная документация по
             <Link
               style={{ marginLeft: '4px' }}
               href="https://tanstack.com/table/latest/docs/guide/expanding"
               target="_blank"
+              dimension="s"
             >
               ссылке
             </Link>
-          </div>
-        </T>
+          </PStyled>
+        </>
       }
     >
       <TanstackTable table={table} />

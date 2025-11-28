@@ -3,7 +3,8 @@ import * as React from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
-import { Spinner, T } from '@admiral-ds/react-ui';
+import { Spinner } from '@admiral-ds/react-ui';
+import { useMemo } from 'react';
 
 const ROW_COUNT = 100;
 
@@ -19,7 +20,6 @@ const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-    console.log('🚀 ~ handleIntersection ~ await');
     if (entries[0].isIntersecting && !visible) {
       setVisible(true);
       onVisible?.();
@@ -105,32 +105,32 @@ interface Props {
   transfer_amount: string;
 }
 
+const columnHelper = createColumnHelper<Props>();
+
+const columns = [
+  columnHelper.accessor('transfer_number', {
+    header: 'Дата сделки',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 149,
+  }),
+  columnHelper.accessor('transfer_type', {
+    header: 'Сумма',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 150,
+  }),
+  columnHelper.accessor('transfer_amount', {
+    header: 'Валюта',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
+  }),
+];
+
 export const LoadScrollExample = () => {
   const [rowsAmount, setRowsAmount] = React.useState(10);
   const [rowsAmount2, setRowsAmount2] = React.useState(10);
   const tableRef = React.useRef<HTMLDivElement>(null);
   const tableRef2 = React.useRef<HTMLDivElement>(null);
 
-  const columnHelper = createColumnHelper<Props>();
-
-  const columns = [
-    columnHelper.accessor('transfer_number', {
-      header: 'Дата сделки',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 149,
-    }),
-    columnHelper.accessor('transfer_type', {
-      header: 'Сумма',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 150,
-    }),
-    columnHelper.accessor('transfer_amount', {
-      header: 'Валюта',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-    }),
-  ];
-
-  const data: Props[] = React.useMemo(() => {
+  const data: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({
@@ -166,7 +166,7 @@ export const LoadScrollExample = () => {
   });
 
   //Для 2 примера
-  const data2: Props[] = React.useMemo(() => {
+  const data2: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount2 }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({
@@ -204,12 +204,7 @@ export const LoadScrollExample = () => {
 
   return (
     <>
-      <T font="Body/Body 2 Long" as="div">
-        Пользователь может реализовать подгрузку новых строк по мере скролла тела таблицы, например, следующим образом.
-        С помощью функции renderRowWrapper можно создать элемент-обёртку над последней строкой в таблице, и через
-        IntersectionObserver отслеживать момент, когда элемент-обёртка станет видим в пределах тела таблицы (т.е. момент
-        доскролла до последней строки). Это событие будет являться триггером для загрузки новой порции строк.
-      </T>
+      <ExampleSection text="Пользователь может реализовать подгрузку новых строк по мере скролла тела таблицы, например, следующим образом. С помощью функции renderRowWrapper можно создать элемент-обёртку над последней строкой в таблице, и через IntersectionObserver отслеживать момент, когда элемент-обёртка станет видим в пределах тела таблицы (т.е. момент доскролла до последней строки). Это событие будет являться триггером для загрузки новой порции строк." />
       <ExampleSection header="Пример с невидимой подгрузкой данных">
         <TanstackTable table={table} style={{ height: '350px' }} renderRowWrapper={renderRowWrapper} ref={tableRef} />
       </ExampleSection>

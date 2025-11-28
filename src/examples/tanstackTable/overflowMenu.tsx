@@ -1,6 +1,14 @@
 import * as React from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
-import { MenuItem, OverflowMenu, RowAction, T, TooltipHoc, type RenderOptionProps } from '@admiral-ds/react-ui';
+import {
+  ListItem,
+  MenuItem,
+  OverflowMenu,
+  RowAction,
+  TooltipHoc,
+  UnorderedList,
+  type RenderOptionProps,
+} from '@admiral-ds/react-ui';
 
 import { defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
 
@@ -161,48 +169,49 @@ export const WithOverflowMenu = () => {
       <ExampleSection
         text={
           <>
-            <T font="Body/Body 1 Long" as="div">
-              <PStyled>
-                Опционально со строками можно производить набор действий через OverflowMenu, которое по умолчанию
-                появляется при ховере над строкой. При этом, чтобы не накладываться на возможный текст, под иконкой меню
-                добавляется квадратная подложка белого цвета. В примере ниже OverflowMenu задано для первых двух строк в
-                таблицах.
-              </PStyled>
-              <PStyled>
-                Для того чтобы задать для строки OverflowMenu необходимо для строки прописать функцию
-                overflowMenuRender. Входные параметры функции: сама строка и колбек onVisibilityChange. Колбек
-                необходимо вызывать при открытии/закрытии меню для того, чтобы таблица могла управлять видимостью
-                OverflowMenu. В качестве результата функция должна возвращать компонент OverflowMenu. Размер
-                OverflowMenu следует задавать согласно правилу:
-              </PStyled>
-              <PStyled>
-                - для таблицы с dimension="s" или dimension="m" используется OverflowMenu c dimension="m"
-              </PStyled>
-              <PStyled>
-                - для таблицы с dimension="l" или dimension="xl" используется OverflowMenu c dimension="l"
-              </PStyled>
-              <PStyled>
-                Если подразумевается только одно действие над строкой, то вместо overflowMenuRender следует использовать
-                функцию actionRender (в примере используется для 3-4 строк). На вход функция получает саму строку, а
-                возвращает компонент RowAction (экспортируется из библиотеки Admiral), внутрь которого необходимо
-                передать иконку для обозначения действия над строкой.
-              </PStyled>
-              <PStyled>
-                Опционально допускается, чтобы OverflowMenu и иконки одиночных действий были видны постоянно, а не
-                только по ховеру. Данное поведение можно задать с помощью параметра showRowsActions. Если
-                showRowsActions=true, то все иконки меню и иконки одиночных действий во всех строках таблицы
-                отображаются постоянно. При этом в строки, для которых не заданы действия, добавляется подложка, для
-                того чтобы визуально был выделен столбец с действиями над строками
-              </PStyled>
-            </T>
-            <br />
-            Пример с иконками действий над строками, которые видны только по ховеру
+            <PStyled>
+              Опционально со строками можно производить набор действий через OverflowMenu, которое по умолчанию
+              появляется при ховере над строкой. При этом, чтобы не накладываться на возможный текст, под иконкой меню
+              добавляется квадратная подложка белого цвета. В примере ниже OverflowMenu задано для первых двух строк в
+              таблицах.
+            </PStyled>
+            <PStyled>
+              Для того чтобы задать для строки OverflowMenu необходимо для строки прописать функцию overflowMenuRender.
+              Входные параметры функции: сама строка и колбек onVisibilityChange. Колбек необходимо вызывать при
+              открытии/закрытии меню для того, чтобы таблица могла управлять видимостью OverflowMenu. В качестве
+              результата функция должна возвращать компонент OverflowMenu. Размер OverflowMenu следует задавать согласно
+              правилу:
+            </PStyled>
+            <PStyled>
+              <UnorderedList dimension="s">
+                <ListItem>
+                  для таблицы с dimension="s" или dimension="m" используется OverflowMenu c dimension="m"
+                </ListItem>
+                <ListItem>
+                  для таблицы с dimension="l" или dimension="xl" используется OverflowMenu c dimension="l"
+                </ListItem>
+              </UnorderedList>
+            </PStyled>
+            <PStyled>
+              Если подразумевается только одно действие над строкой, то вместо overflowMenuRender следует использовать
+              функцию actionRender (в примере используется для 3-4 строк). На вход функция получает саму строку, а
+              возвращает компонент RowAction (экспортируется из библиотеки Admiral), внутрь которого необходимо передать
+              иконку для обозначения действия над строкой.
+            </PStyled>
+            <PStyled>
+              Опционально допускается, чтобы OverflowMenu и иконки одиночных действий были видны постоянно, а не только
+              по ховеру. Данное поведение можно задать с помощью параметра showRowsActions. Если showRowsActions=true,
+              то все иконки меню и иконки одиночных действий во всех строках таблицы отображаются постоянно. При этом в
+              строки, для которых не заданы действия, добавляется подложка, для того чтобы визуально был выделен столбец
+              с действиями над строками
+            </PStyled>
           </>
         }
-      >
+      />
+      <ExampleSection header="Пример с иконками действий над строками, которые видны только по ховеру">
         <TanstackTable table={table} />
       </ExampleSection>
-      <ExampleSection text="Пример с постоянно видимыми иконками действий над строками">
+      <ExampleSection header="Пример с постоянно видимыми иконками действий над строками">
         <TanstackTable table={table} showRowsActions />
       </ExampleSection>
     </>

@@ -3,7 +3,6 @@ import * as React from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { ExampleSection } from '#examples/-helpers';
 import { CellText, TanstackTable } from '#examples/-helpers/tanstackTable';
-import { T } from '@admiral-ds/react-ui';
 
 type Transaction = {
   type: string;
@@ -96,14 +95,7 @@ export const BaseExample = () => {
   });
 
   return (
-    <ExampleSection
-      text={
-        <T font="Body/Body 1 Long" as="div">
-          Контент ячеек не имеет внутренних отступов. Вы можете использовать styled-компонент CellText, который
-          предоставляет дефолтные отступы, либо можете оборачивать контент ячейки в свою обертку
-        </T>
-      }
-    >
+    <ExampleSection text="Контент ячеек не имеет внутренних отступов. Вы можете использовать styled-компонент CellText, который предоставляет дефолтные отступы, либо можете оборачивать контент ячейки в свою обертку">
       <TanstackTable table={table} />
     </ExampleSection>
   );

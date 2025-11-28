@@ -21,7 +21,7 @@ import {
 } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState } from 'react';
-import { CheckboxField, T } from '@admiral-ds/react-ui';
+import { CheckboxField } from '@admiral-ds/react-ui';
 
 interface Transaction extends MetaRowProps<Transaction> {
   type?: string;
@@ -151,64 +151,64 @@ const defaultData: Transaction[] = [
 
 const columnHelper = createColumnHelper<Transaction>();
 
+const dimension: TanstackTableProps<Transaction>['dimension'] = 'm';
+
+const columns = [
+  columnHelper.accessor('type', {
+    header: 'Тип сделки',
+    cell: ({ row, getValue }) => {
+      return (
+        <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+          {row.getCanExpand() && (
+            <ExpandCell $dimension={dimension}>
+              <ExpandIconPlacement
+                dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
+                highlightFocus={false}
+                onClick={row.getToggleExpandedHandler()}
+              >
+                <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+              </ExpandIconPlacement>
+            </ExpandCell>
+          )}
+          <CellText>{getValue<boolean>()}</CellText>
+        </WrapperExpandContent>
+      );
+    },
+    size: 141,
+  }),
+  columnHelper.accessor('date', {
+    header: 'Дата сделки',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 149,
+  }),
+  columnHelper.accessor('amount', {
+    header: 'Сумма',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 150,
+    meta: { cellAlign: 'right' },
+  }),
+  columnHelper.accessor('currency', {
+    header: 'Валюта',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
+  }),
+  columnHelper.accessor('rate', {
+    header: 'Ставка',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 96,
+    meta: { cellAlign: 'right' },
+  }),
+  columnHelper.accessor('status', {
+    header: 'Статус',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
+    size: 110,
+  }),
+];
+
 export const GroupRowExample = () => {
   const [data, _setData] = useState(() => [...defaultData]);
   const [expanded, setExpanded] = useState<ExpandedState>({});
   const [expanded2, setExpanded2] = useState<ExpandedState>({});
   const [rowSelection, setRowSelection] = useState({});
-
-  const dimension: TanstackTableProps<Transaction>['dimension'] = 'm';
-
-  const columns = [
-    columnHelper.accessor('type', {
-      header: 'Тип сделки',
-      cell: ({ row, getValue }) => {
-        return (
-          <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
-            {row.getCanExpand() && (
-              <ExpandCell $dimension={dimension}>
-                <ExpandIconPlacement
-                  dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                  highlightFocus={false}
-                  onClick={row.getToggleExpandedHandler()}
-                >
-                  <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                </ExpandIconPlacement>
-              </ExpandCell>
-            )}
-            <CellText>{getValue<boolean>()}</CellText>
-          </WrapperExpandContent>
-        );
-      },
-      size: 141,
-    }),
-    columnHelper.accessor('date', {
-      header: 'Дата сделки',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 149,
-    }),
-    columnHelper.accessor('amount', {
-      header: 'Сумма',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 150,
-      meta: { cellAlign: 'right' },
-    }),
-    columnHelper.accessor('currency', {
-      header: 'Валюта',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-    }),
-    columnHelper.accessor('rate', {
-      header: 'Ставка',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      size: 96,
-      meta: { cellAlign: 'right' },
-    }),
-    columnHelper.accessor('status', {
-      header: 'Статус',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      size: 110,
-    }),
-  ];
 
   const table = useReactTable({
     data,
@@ -339,23 +339,21 @@ export const GroupRowExample = () => {
       <ExampleSection
         text={
           <>
-            <T font="Body/Body 1 Long" as="div">
-              <PStyled>
-                Строки в таблице можно группировать под общим заголовком. Для того чтобы задать группу строк, нужно в
-                массиве с данными в строке добавить параметр meta передать subRows с параметрами строки или с заголовком
-                группы.
-              </PStyled>
-              <PStyled>
-                Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для
-                корректного отображения чекбоксов необходимо в таблицу передавать prop showCheckboxTitleGroup,
-              </PStyled>
-            </T>
+            <PStyled>
+              Строки в таблице можно группировать под общим заголовком. Для того чтобы задать группу строк, нужно в
+              массиве с данными в строке добавить параметр meta передать subRows с параметрами строки или с заголовком
+              группы.
+            </PStyled>
           </>
         }
-      >
+      />
+      <ExampleSection header="Обычный пример">
         <TanstackTable table={table} />
       </ExampleSection>
-      <ExampleSection text="Пример с чекбоксами">
+      <ExampleSection
+        header="Пример с чекбоксами"
+        text="Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для корректного отображения чекбоксов необходимо в таблицу передавать prop showCheckboxTitleGroup,"
+      >
         <TanstackTable table={table2} showCheckboxTitleGroup />
       </ExampleSection>
     </>

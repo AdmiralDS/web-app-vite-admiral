@@ -4,7 +4,6 @@ import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import styled from 'styled-components';
-import { T } from '@admiral-ds/react-ui';
 
 const StyledCellText = styled(CellText)`
   white-space: unset;
@@ -77,8 +76,7 @@ export const DynamicVirtualScroll = () => {
             </PStyled>
           </>
         }
-      />
-      <ExampleSection header="Пример виртуализации с динамической высотой строки">
+      >
         <TanstackTable
           table={table}
           style={{ height: '400px' }}

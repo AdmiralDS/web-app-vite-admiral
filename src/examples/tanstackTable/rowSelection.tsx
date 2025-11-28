@@ -8,7 +8,7 @@ import {
   CheckboxCell,
   WrapperTitleCell,
 } from '#examples/-helpers/tanstackTable';
-import { CheckboxField, Link, T } from '@admiral-ds/react-ui';
+import { CheckboxField, Link, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
 type Person = {
@@ -123,37 +123,42 @@ export const RowSelection = () => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>
             Чекбокс в шапке таблицы позволяет выбрать все строки (если не выбрано ни одной строки), либо отменить
             выбранные до этого строки. Отображение столбца детализации (столбец со стрелками) регулируется
             пользователем, в столбец необходимо передавать <i>id: 'checkbox-column'</i>.
           </PStyled>
           <PStyled>
-            Если необходимо задизейблить чекбокс отдельных строк, для этого нужно в useReactTable передать{' '}
-            <i>
-              <code>enableRowSelection: (row) {`=>`} условие</code>
-            </i>
-            .
+            <UnorderedList dimension="s">
+              <ListItem>
+                Если необходимо отключить чекбокс отдельных строк, для этого нужно в useReactTable передать{' '}
+                <i>
+                  <code>enableRowSelection: (row) {`=>`} условие</code>
+                </i>
+                .
+              </ListItem>
+              <ListItem>
+                Если нужно включить выбор только одной строки, то в useReactTable нужно передать{' '}
+                <i>
+                  <code>enableMultiRowSelection: false</code>
+                </i>
+                .
+              </ListItem>
+            </UnorderedList>
           </PStyled>
-          <PStyled>
-            Если нужно включить выбор только одной строки, то в useReactTable нужно передать{' '}
-            <i>
-              <code>enableMultiRowSelection: false</code>
-            </i>
-            .
-          </PStyled>
-          <div style={{ display: 'flex' }}>
+          <PStyled style={{ display: 'flex' }}>
             Дополнительная документация по
             <Link
               style={{ marginLeft: '4px' }}
               href="https://tanstack.com/table/latest/docs/guide/row-selection"
               target="_blank"
+              dimension="s"
             >
               ссылке
             </Link>
-          </div>
-        </T>
+          </PStyled>
+        </>
       }
     >
       <TanstackTable table={table} />
