@@ -3,7 +3,7 @@ import { Table } from '../style';
 import type { Dimension } from '../types';
 import { getActionSize } from '../Body/RowContent/OverflowMenu';
 
-export const ActionMock = styled.th<{ $dimension: Dimension }>`
+export const ActionMock = styled.div<{ $dimension: Dimension }>`
   display: flex;
   justify-self: end;
   padding: 0;
@@ -13,7 +13,7 @@ export const ActionMock = styled.th<{ $dimension: Dimension }>`
 
 /** нужны ли?
  * box-sizing: border-box; min-width: fit-content; */
-export const HeaderTr = styled.tr<{
+export const HeaderTr = styled.div<{
   $dimension: Dimension;
   $isSomeRowsGrouped?: boolean;
 }>`
@@ -64,8 +64,7 @@ export const StickyWrapper = styled(NormalWrapper)<{ $position: 'left' | 'right'
     `}
 `;
 
-/** aka HeaderWrapper in react-ui */
-export const Header = styled.thead`
+export const Header = styled.div`
   display: grid;
   width: 100%;
   box-sizing: border-box;
@@ -74,14 +73,14 @@ export const Header = styled.thead`
   z-index: 6;
 `;
 
-export const Edge = styled.th`
+export const Edge = styled.div`
   display: flex;
   width: 0;
   height: auto;
   padding: 0;
 `;
 
-export const Spacer = styled.th<{ $greyHeader?: boolean }>`
+export const Spacer = styled.div<{ $greyHeader?: boolean }>`
   padding: 0;
   background: ${(p) =>
     p.$greyHeader

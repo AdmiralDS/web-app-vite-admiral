@@ -29,8 +29,7 @@ export const borderStyle = css<{ $resizer?: boolean }>`
   }
 `;
 
-/** aka TableContainer in react-ui */
-export const Table = styled.table<{ $gridTemplateColumns?: string }>`
+export const Table = styled.div`
   display: grid;
   grid-template-rows: repeat(2, min-content);
   width: 100%;
@@ -42,20 +41,6 @@ export const Table = styled.table<{ $gridTemplateColumns?: string }>`
   &[data-borders='true'] {
     border: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
   }
-`;
-
-/** aka HeaderWrapper in react-ui */
-export const Header = styled.thead`
-  display: grid;
-  width: 100%;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 6;
-`;
-
-export const Body = styled.tbody`
-  display: grid;
 `;
 
 /** учтены 2px отступы по вертикали */
@@ -115,11 +100,8 @@ export const ExpandIconPlacement = styled(IconPlacement)`
   flex-shrink: 0;
 `;
 
-//TODO transition не работает при использовании в cell из-за ререндера ячеек
 export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
-  transition:
-    transform 0.3s,
-    ease-in-out;
+  transition: transform 0.3s ease-in-out;
   transform: rotate(${({ $isOpened }) => ($isOpened ? 180 : 0)}deg);
 `;
 
@@ -147,7 +129,7 @@ export const CheckboxCell = styled.div<{ $dimension: Dimension }>`
   overflow: hidden;
 `;
 
-export const WrapperTitleCell = styled.th`
+export const WrapperTitleCell = styled.div`
   padding: 0;
   position: relative;
   display: inline-flex;

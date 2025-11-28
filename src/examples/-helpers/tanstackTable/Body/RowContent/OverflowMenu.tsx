@@ -18,7 +18,7 @@ export const getActionSize = (dimension: Dimension) => {
   }
 };
 
-const OverflowMenuWrapper = styled.td<{ $showRowsActions?: boolean }>`
+const OverflowMenuWrapper = styled.div<{ $showRowsActions?: boolean }>`
   display: flex;
   justify-self: end;
   padding: 0;
@@ -120,6 +120,7 @@ export const OverflowMenu = <T,>({
   return (
     <OverflowMenuWrapper
       ref={oveflowMenuRef}
+      className="td"
       data-overflowmenu
       data-opened={showRowsActions}
       $showRowsActions={showRowsActions}
