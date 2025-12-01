@@ -97,6 +97,10 @@
         {
           "name": "Подзагрузка данных при скролле",
           "path": "/components/tanstackTable/loadScroll"
+        },
+        {
+          "name": "Подзагрузка данных при скролле со скелетоном",
+          "path": "/components/tanstackTable/loadScrollSkeleton"
         }
       ]
     }

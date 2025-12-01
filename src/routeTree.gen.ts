@@ -37,6 +37,7 @@ import { Route as ComponentsTanstackTableRowStateRouteImport } from './routes/co
 import { Route as ComponentsTanstackTableRowSelectionRouteImport } from './routes/components/tanstackTable/rowSelection'
 import { Route as ComponentsTanstackTableResizeExampleRouteImport } from './routes/components/tanstackTable/resizeExample'
 import { Route as ComponentsTanstackTableOverflowMenuRouteImport } from './routes/components/tanstackTable/overflowMenu'
+import { Route as ComponentsTanstackTableLoadScrollSkeletonRouteImport } from './routes/components/tanstackTable/loadScrollSkeleton'
 import { Route as ComponentsTanstackTableLoadScrollRouteImport } from './routes/components/tanstackTable/loadScroll'
 import { Route as ComponentsTanstackTableGroupRowRouteImport } from './routes/components/tanstackTable/groupRow'
 import { Route as ComponentsTanstackTableGroupHeadersRouteImport } from './routes/components/tanstackTable/groupHeaders'
@@ -230,6 +231,12 @@ const ComponentsTanstackTableOverflowMenuRoute =
   ComponentsTanstackTableOverflowMenuRouteImport.update({
     id: '/tanstackTable/overflowMenu',
     path: '/tanstackTable/overflowMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableLoadScrollSkeletonRoute =
+  ComponentsTanstackTableLoadScrollSkeletonRouteImport.update({
+    id: '/tanstackTable/loadScrollSkeleton',
+    path: '/tanstackTable/loadScrollSkeleton',
     getParentRoute: () => ComponentsRoute,
   } as any)
 const ComponentsTanstackTableLoadScrollRoute =
@@ -468,6 +475,7 @@ export interface FileRoutesByFullPath {
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/groupRow': typeof ComponentsTanstackTableGroupRowRoute
   '/components/tanstackTable/loadScroll': typeof ComponentsTanstackTableLoadScrollRoute
+  '/components/tanstackTable/loadScrollSkeleton': typeof ComponentsTanstackTableLoadScrollSkeletonRoute
   '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
   '/components/tanstackTable/resizeExample': typeof ComponentsTanstackTableResizeExampleRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
@@ -532,6 +540,7 @@ export interface FileRoutesByTo {
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/groupRow': typeof ComponentsTanstackTableGroupRowRoute
   '/components/tanstackTable/loadScroll': typeof ComponentsTanstackTableLoadScrollRoute
+  '/components/tanstackTable/loadScrollSkeleton': typeof ComponentsTanstackTableLoadScrollSkeletonRoute
   '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
   '/components/tanstackTable/resizeExample': typeof ComponentsTanstackTableResizeExampleRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
@@ -597,6 +606,7 @@ export interface FileRoutesById {
   '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
   '/components/tanstackTable/groupRow': typeof ComponentsTanstackTableGroupRowRoute
   '/components/tanstackTable/loadScroll': typeof ComponentsTanstackTableLoadScrollRoute
+  '/components/tanstackTable/loadScrollSkeleton': typeof ComponentsTanstackTableLoadScrollSkeletonRoute
   '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
   '/components/tanstackTable/resizeExample': typeof ComponentsTanstackTableResizeExampleRoute
   '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
@@ -663,6 +673,7 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/groupRow'
     | '/components/tanstackTable/loadScroll'
+    | '/components/tanstackTable/loadScrollSkeleton'
     | '/components/tanstackTable/overflowMenu'
     | '/components/tanstackTable/resizeExample'
     | '/components/tanstackTable/rowSelection'
@@ -727,6 +738,7 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/groupRow'
     | '/components/tanstackTable/loadScroll'
+    | '/components/tanstackTable/loadScrollSkeleton'
     | '/components/tanstackTable/overflowMenu'
     | '/components/tanstackTable/resizeExample'
     | '/components/tanstackTable/rowSelection'
@@ -791,6 +803,7 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/groupHeaders'
     | '/components/tanstackTable/groupRow'
     | '/components/tanstackTable/loadScroll'
+    | '/components/tanstackTable/loadScrollSkeleton'
     | '/components/tanstackTable/overflowMenu'
     | '/components/tanstackTable/resizeExample'
     | '/components/tanstackTable/rowSelection'
@@ -1016,6 +1029,13 @@ declare module '@tanstack/react-router' {
       path: '/tanstackTable/overflowMenu'
       fullPath: '/components/tanstackTable/overflowMenu'
       preLoaderRoute: typeof ComponentsTanstackTableOverflowMenuRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/loadScrollSkeleton': {
+      id: '/components/tanstackTable/loadScrollSkeleton'
+      path: '/tanstackTable/loadScrollSkeleton'
+      fullPath: '/components/tanstackTable/loadScrollSkeleton'
+      preLoaderRoute: typeof ComponentsTanstackTableLoadScrollSkeletonRouteImport
       parentRoute: typeof ComponentsRoute
     }
     '/components/tanstackTable/loadScroll': {
@@ -1294,6 +1314,7 @@ interface ComponentsRouteChildren {
   ComponentsTanstackTableGroupHeadersRoute: typeof ComponentsTanstackTableGroupHeadersRoute
   ComponentsTanstackTableGroupRowRoute: typeof ComponentsTanstackTableGroupRowRoute
   ComponentsTanstackTableLoadScrollRoute: typeof ComponentsTanstackTableLoadScrollRoute
+  ComponentsTanstackTableLoadScrollSkeletonRoute: typeof ComponentsTanstackTableLoadScrollSkeletonRoute
   ComponentsTanstackTableOverflowMenuRoute: typeof ComponentsTanstackTableOverflowMenuRoute
   ComponentsTanstackTableResizeExampleRoute: typeof ComponentsTanstackTableResizeExampleRoute
   ComponentsTanstackTableRowSelectionRoute: typeof ComponentsTanstackTableRowSelectionRoute
@@ -1366,6 +1387,8 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTanstackTableGroupRowRoute: ComponentsTanstackTableGroupRowRoute,
   ComponentsTanstackTableLoadScrollRoute:
     ComponentsTanstackTableLoadScrollRoute,
+  ComponentsTanstackTableLoadScrollSkeletonRoute:
+    ComponentsTanstackTableLoadScrollSkeletonRoute,
   ComponentsTanstackTableOverflowMenuRoute:
     ComponentsTanstackTableOverflowMenuRoute,
   ComponentsTanstackTableResizeExampleRoute:
