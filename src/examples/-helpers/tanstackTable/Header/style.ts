@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 import { Table } from '../style';
 import type { Dimension } from '../types';
-import { getActionSize } from '../Body/RowContent/OverflowMenu';
+import { getRowHeight } from '../utils';
 
 export const ActionMock = styled.div<{ $dimension: Dimension }>`
   display: flex;
   justify-self: end;
   padding: 0;
-  min-height: ${({ $dimension }) => getActionSize($dimension) - 1}px;
-  width: ${({ $dimension }) => getActionSize($dimension)}px;
+  min-height: ${({ $dimension }) => getRowHeight($dimension) - 1}px;
+  width: ${({ $dimension }) => getRowHeight($dimension)}px;
 `;
 
 /** нужны ли?
@@ -23,7 +23,8 @@ export const HeaderTr = styled.div<{
   min-width: fit-content;
   border-bottom: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
   ${({ $dimension, $isSomeRowsGrouped }) =>
-    $isSomeRowsGrouped && `padding-left: ${$dimension === 'm' || $dimension === 's' ? '44px' : '56px'}}`}
+    $isSomeRowsGrouped &&
+    `.th:first-child {padding-left: ${$dimension === 'm' || $dimension === 's' ? '44px' : '56px'}}}`}
 `;
 
 export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows?: string; $greyHeader?: boolean }>`

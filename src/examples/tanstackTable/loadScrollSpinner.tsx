@@ -1,24 +1,38 @@
-import * as React from 'react';
-
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
+import { Spinner } from '@admiral-ds/react-ui';
+import styled from 'styled-components';
+
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
 
 const ROW_COUNT = 100;
 
+const WrapperSpinner = styled.div<{ $rowIndex?: number }>`
+  ${({ $rowIndex }) => $rowIndex && `position: absolute; transform: translateY(${($rowIndex || 0 + 1) * 40}px);`}
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+
+const sleep = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
 type LastRowProps = {
   containerRef: React.RefObject<HTMLElement>;
   onVisible: () => void;
-  rowNode: React.ReactNode;
   rowIndex?: number;
 };
 
-const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
-  const [visible, setVisible] = React.useState<boolean>(false);
-  const ref = React.useRef<HTMLDivElement>(null);
+const LastRowWrapper = ({ containerRef, onVisible, rowIndex }: LastRowProps) => {
+  const [visible, setVisible] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-    if (entries[0].isIntersecting && !visible) {
+    if (entries[0].isIntersecting && entries[0].intersectionRatio > 0 && !visible) {
       setVisible(true);
       onVisible?.();
     }
@@ -28,7 +42,7 @@ const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
       root: containerRef?.current,
       threshold: [0, 1.0],
@@ -39,9 +53,13 @@ const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
     }
 
     return () => observer.disconnect();
-  }, [visible, rowNode]);
+  }, [visible]);
 
-  return <div ref={ref}>{rowNode}</div>;
+  return (
+    <WrapperSpinner ref={ref} $rowIndex={rowIndex}>
+      <Spinner dimension="m" />
+    </WrapperSpinner>
+  );
 };
 
 interface Props {
@@ -69,13 +87,13 @@ const columns = [
   }),
 ];
 
-export const LoadScrollExample = () => {
-  const [rowsAmount, setRowsAmount] = React.useState(10);
-  const [rowsAmount2, setRowsAmount2] = React.useState(10);
-  const tableRef = React.useRef<HTMLDivElement>(null);
-  const tableRef2 = React.useRef<HTMLDivElement>(null);
+export const LoadScrollSpinnerExample = () => {
+  const [rowsAmount, setRowsAmount] = useState(10);
+  const [rowsAmount2, setRowsAmount2] = useState(10);
+  const tableRef = useRef<HTMLDivElement>(null);
+  const tableRef2 = useRef<HTMLDivElement>(null);
 
-  const data: Props[] = React.useMemo(() => {
+  const data: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({
@@ -86,13 +104,16 @@ export const LoadScrollExample = () => {
     return array;
   }, [rowsAmount]);
 
-  const uploadNewRows = () => {
-    if (rowsAmount < ROW_COUNT) setRowsAmount(rowsAmount + 10);
+  const uploadNewRows = async () => {
+    if (rowsAmount < ROW_COUNT) {
+      await sleep(1000);
+      await setRowsAmount(rowsAmount + 10);
+    }
   };
 
   const renderRowWrapper = (row: Row<Props>, index: number, rowNode: React.ReactNode) =>
     index === rowsAmount - 1 && index !== ROW_COUNT - 1 ? (
-      <LastRowWrapper key={`${row.id}`} containerRef={tableRef} onVisible={uploadNewRows} rowNode={rowNode} />
+      <LastRowWrapper key={`${row.id}`} containerRef={tableRef} onVisible={uploadNewRows} />
     ) : (
       rowNode
     );
@@ -105,7 +126,7 @@ export const LoadScrollExample = () => {
   });
 
   //Для 2 примера
-  const data2: Props[] = React.useMemo(() => {
+  const data2: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount2 }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({
@@ -116,8 +137,11 @@ export const LoadScrollExample = () => {
     return array;
   }, [rowsAmount2]);
 
-  const uploadNewRows2 = () => {
-    if (rowsAmount2 < ROW_COUNT) setRowsAmount2(rowsAmount2 + 10);
+  const uploadNewRows2 = async () => {
+    if (rowsAmount2 < ROW_COUNT) {
+      await sleep(1000);
+      await setRowsAmount2(rowsAmount2 + 10);
+    }
   };
 
   const renderRowWrapper2 = (row: Row<Props>, index: number, rowNode: React.ReactNode) =>
@@ -127,7 +151,7 @@ export const LoadScrollExample = () => {
         data-index={index}
         containerRef={tableRef2}
         onVisible={uploadNewRows2}
-        rowNode={rowNode}
+        rowIndex={index}
       />
     ) : (
       rowNode
@@ -148,10 +172,10 @@ export const LoadScrollExample = () => {
         IntersectionObserver отслеживать момент, когда элемент-обёртка станет видим в пределах тела таблицы (т.е. момент
         доскролла до последней строки). Это событие будет являться триггером для загрузки новой порции строк."
       />
-      <ExampleSection header="Пример с невидимой подгрузкой данных">
+      <ExampleSection header="Пример подгрузки данных с компонентом Spinner и задержкой в 1 секунду">
         <TanstackTable table={table} style={{ height: '350px' }} renderRowWrapper={renderRowWrapper} ref={tableRef} />
       </ExampleSection>
-      <ExampleSection header="Пример с невидимой подгрузкой данных с виртуализацией">
+      <ExampleSection header="Пример подгрузки данных с компонентом Spinner и задержкой в 1 секунду c виртуализацией">
         <TanstackTable
           table={table2}
           style={{ height: '350px' }}

@@ -1,20 +1,21 @@
 import { type RowData } from '@tanstack/react-table';
-import { useVirtualizer, type VirtualItem } from '@tanstack/react-virtual';
-import { Fragment, useEffect, useState } from 'react';
+import { type VirtualItem, type Virtualizer } from '@tanstack/react-virtual';
+import { Fragment } from 'react';
 
 import * as S from './style';
-import type { MetaRowProps, VirtualScroll } from '../types';
+import type { MetaRowProps } from '../types';
 import { ExpandedRow } from './ExpandedRow';
 import { RowContent } from './RowContent';
 import type { BodyProps } from './Body';
 
 interface VirtualBodyProps<T> extends BodyProps<T> {
-  virtualScroll: Omit<VirtualScroll, 'horizontal'>;
+  isDynamicRowHeight: boolean;
+  rowVirtualizer: Virtualizer<Element, Element>;
 }
 
 export const VirtualBody = <T,>({
   table,
-  virtualScroll,
+  isDynamicRowHeight,
   dimension,
   tableRef,
   greyZebraRows,
@@ -26,21 +27,9 @@ export const VirtualBody = <T,>({
   showDividerForLastColumn,
   emptyMessage,
   renderRowWrapper,
+  rowVirtualizer,
 }: VirtualBodyProps<T>) => {
-  const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
   const isEmptyArrayRows = table.getRowModel().rows.length === 0;
-  const [tableRefTest, setTableRefTest] = useState(null);
-
-  useEffect(() => {
-    setTableRefTest(tableRef.current);
-  }, [tableRef.current]);
-
-  const rowVirtualizer = useVirtualizer({
-    getScrollElement: () => tableRefTest,
-    estimateSize: (index: number) => fixedRowHeight?.(index) || estimatedRowHeight?.(index) || 40,
-    count: table.getRowModel().rows.length,
-    overscan: overscan,
-  });
 
   const renderRow = (virtualRow: VirtualItem) => {
     const index = virtualRow.index;
@@ -54,7 +43,7 @@ export const VirtualBody = <T,>({
         <S.VirtualBodyTr
           className="tr"
           data-index={index} //needed for dynamic row height measurement
-          ref={estimatedRowHeight ? rowVirtualizer?.measureElement : null}
+          ref={isDynamicRowHeight ? rowVirtualizer?.measureElement : null}
           $dimension={dimension}
           selected={row.getIsSelected() || original.meta?.selected}
           disabled={original.meta?.disabled}
