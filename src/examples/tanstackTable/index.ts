@@ -18,3 +18,4 @@ export * from './stickyColumnsExample';
 export * from './dynamicVirtualScroll';
 export * from './loadScroll';
 export * from './loadScrollSpinner';
+export * from './loadScrollSkeleton';

@@ -101,6 +101,10 @@
         {
           "name": "Подзагрузка данных при скролле со спиннером",
           "path": "/components/tanstackTable/loadScrollSpinner"
+        },
+        {
+          "name": "Подзагрузка данных при скролле со скелетоном",
+          "path": "/components/tanstackTable/loadScrollSkeleton"
         }
       ]
     }
