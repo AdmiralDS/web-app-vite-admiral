@@ -1,6 +1,6 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
@@ -82,7 +82,7 @@ const columns = [
 ];
 
 export const ResizeExample = () => {
-  const [data, _setData] = React.useState(() => [...defaultData]);
+  const [data, _setData] = useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,

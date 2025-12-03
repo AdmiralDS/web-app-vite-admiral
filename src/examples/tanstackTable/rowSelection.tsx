@@ -1,5 +1,6 @@
 import { getCoreRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
+import { CheckboxField, Link, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 import {
   CellText,
@@ -8,7 +9,6 @@ import {
   CheckboxCell,
   WrapperTitleCell,
 } from '#examples/-helpers/tanstackTable';
-import { CheckboxField, Link, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
 type Person = {
@@ -46,12 +46,11 @@ const defaultData: Person[] = [
     progress: 10,
   },
 ];
+const dimension = 'm';
 
 export const RowSelection = () => {
   const [data, _setData] = useState(() => [...defaultData]);
   const [rowSelection, setRowSelection] = useState({});
-
-  const dimension = 'm';
 
   const columns = useMemo<ColumnDef<Person>[]>(
     () => [
@@ -132,7 +131,7 @@ export const RowSelection = () => {
           <PStyled>
             <UnorderedList dimension="s">
               <ListItem>
-                Если необходимо отключить чекбокс отдельных строк, для этого нужно в useReactTable передать{' '}
+                Если необходимо отключить чекбокс отдельных строк, то следует в useReactTable передать{' '}
                 <i>
                   <code>enableRowSelection: (row) {`=>`} условие</code>
                 </i>
@@ -147,10 +146,10 @@ export const RowSelection = () => {
               </ListItem>
             </UnorderedList>
           </PStyled>
-          <PStyled style={{ display: 'flex' }}>
+          <PStyled>
             Дополнительная документация по
             <Link
-              style={{ marginLeft: '4px' }}
+              style={{ display: 'inline', marginLeft: '4px' }}
               href="https://tanstack.com/table/latest/docs/guide/row-selection"
               target="_blank"
               dimension="s"

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState, useMemo } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
 import {
   ListItem,
@@ -9,11 +9,9 @@ import {
   UnorderedList,
   type RenderOptionProps,
 } from '@admiral-ds/react-ui';
-
-import { defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
-
 import DeleteOutline from '@admiral-ds/icons/build/system/DeleteOutline.svg?react';
-import { CellText } from '#examples/-helpers/tanstackTable/style';
+
+import { defaultOptions, TanstackTable, CellText, type MetaRowProps } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
 const TooltipedRowAction = TooltipHoc(RowAction);
@@ -43,7 +41,7 @@ const items = [
 ];
 
 const Menu = ({ row, onVisibilityChange }: { row: Row<Person>; onVisibilityChange?: (isVisible: boolean) => void }) => {
-  const model = React.useMemo(() => {
+  const model = useMemo(() => {
     return items.map((item) => ({
       id: item.id,
       render: (options: RenderOptionProps) => (
@@ -150,17 +148,12 @@ const columns = [
 ];
 
 export const WithOverflowMenu = () => {
-  const [data, _setData] = React.useState(() => [...defaultData]);
+  const [data, _setData] = useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    initialState: {
-      columnPinning: {
-        right: ['progress'],
-      },
-    },
     ...defaultOptions,
   });
 
@@ -172,8 +165,7 @@ export const WithOverflowMenu = () => {
             <PStyled>
               Опционально со строками можно производить набор действий через OverflowMenu, которое по умолчанию
               появляется при ховере над строкой. При этом, чтобы не накладываться на возможный текст, под иконкой меню
-              добавляется квадратная подложка белого цвета. В примере ниже OverflowMenu задано для первых двух строк в
-              таблицах.
+              добавляется квадратная подложка белого цвета.
             </PStyled>
             <PStyled>
               Для того чтобы задать для строки OverflowMenu необходимо для строки прописать функцию overflowMenuRender.
@@ -194,9 +186,9 @@ export const WithOverflowMenu = () => {
             </PStyled>
             <PStyled>
               Если подразумевается только одно действие над строкой, то вместо overflowMenuRender следует использовать
-              функцию actionRender (в примере используется для 3-4 строк). На вход функция получает саму строку, а
-              возвращает компонент RowAction (экспортируется из библиотеки Admiral), внутрь которого необходимо передать
-              иконку для обозначения действия над строкой.
+              функцию actionRender. На вход функция получает саму строку, а возвращает компонент RowAction
+              (экспортируется из библиотеки Admiral), внутрь которого необходимо передать иконку для обозначения
+              действия над строкой.
             </PStyled>
             <PStyled>
               Опционально допускается, чтобы OverflowMenu и иконки одиночных действий были видны постоянно, а не только

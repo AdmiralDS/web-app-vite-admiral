@@ -1,7 +1,7 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
-
 import { Link, ListItem, UnorderedList } from '@admiral-ds/react-ui';
+
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
@@ -105,7 +105,7 @@ export const WithSort = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    //для включения мультисортировки кликом мыши(по умолчанию включается кликом с shiftKey)
+    //для включения мультисортировки кликом мыши (по умолчанию включается кликом с shiftKey)
     isMultiSortEvent: () => true,
     ...defaultOptions,
     enableSorting: true,
@@ -138,17 +138,17 @@ export const WithSort = () => {
                 </ListItem>
                 <ListItem>enableSorting - параметр отключения сортировки в конкретном столбце;</ListItem>
                 <ListItem>
-                  enableMultiSort - параметр отключения мульти сортировки в конкретном столбце. По умолчанию
+                  enableMultiSort - параметр отключения мультисортировки в конкретном столбце. По умолчанию
                   мультисортировка включена во всей таблице (для отключения во всей таблице этот флаг нужно передать в
                   useReactTable);
                 </ListItem>
                 <ListItem>invertSorting - параметр изменения порядка сортировки.</ListItem>
               </UnorderedList>
             </PStyled>
-            <PStyled style={{ display: 'flex' }}>
+            <PStyled>
               Дополнительная документация настроек сортировки по
               <Link
-                style={{ marginLeft: '4px' }}
+                style={{ display: 'inline', marginLeft: '4px' }}
                 href="https://tanstack.com/table/latest/docs/guide/sorting"
                 target="_blank"
                 dimension="s"
@@ -156,7 +156,7 @@ export const WithSort = () => {
                 ссылке
               </Link>
             </PStyled>
-            <PStyled>В примерах используется сортировка предоставляемая Tanstack table</PStyled>
+            <PStyled>В примерах используется сортировка предоставляемая Tanstack table.</PStyled>
           </>
         }
       />

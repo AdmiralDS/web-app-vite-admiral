@@ -1,8 +1,8 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+
 import { ExampleSection } from '#examples/-helpers';
-import { CellText, TanstackTable } from '#examples/-helpers/tanstackTable';
+import { CellText, TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable';
 
 type Transaction = {
   type: string;
@@ -85,17 +85,17 @@ const columns = [
 ];
 
 export const BaseExample = () => {
-  const [data, _setData] = React.useState(() => [...defaultData]);
+  const [data, _setData] = useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    enableSorting: false,
+    ...defaultOptions,
   });
 
   return (
-    <ExampleSection text="Контент ячеек не имеет внутренних отступов. Вы можете использовать styled-компонент CellText, который предоставляет дефолтные отступы, либо можете оборачивать контент ячейки в свою обертку">
+    <ExampleSection text="Контент ячеек не имеет внутренних отступов. Вы можете использовать styled-компонент CellText, который предоставляет дефолтные отступы, либо можете оборачивать контент ячейки в свою обертку.">
       <TanstackTable table={table} />
     </ExampleSection>
   );

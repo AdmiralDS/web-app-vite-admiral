@@ -1,9 +1,9 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
+import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 import { CellText, defaultOptions, TanstackTable, type MetaRowProps } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -136,7 +136,7 @@ export const RowState = () => {
             статус для строки необходимо использовать параметр status, где в качестве значения указывается строка с
             названием статуса. По умолчанию таблица предоставляет два статуса: error и success. Также пользователь может
             создать свои кастомные статусы, для этого нужно передать параметр из цветовой палитры ДС Адмирал или любой
-            другой цвет в формате строки
+            другой цвет в формате строки.
           </PStyled>
         </>
       }

@@ -1,6 +1,6 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable';
 
@@ -167,8 +167,8 @@ const columns2 = [
 ];
 
 export const StickyColumnsExample = () => {
-  const [data, _setData] = React.useState(() => [...defaultData]);
-  const [data2, _setData2] = React.useState(() => [...defaultData2]);
+  const [data, _setData] = useState(() => [...defaultData]);
+  const [data2, _setData2] = useState(() => [...defaultData2]);
 
   const table = useReactTable({
     data,
@@ -190,38 +190,43 @@ export const StickyColumnsExample = () => {
     initialState: {
       columnPinning: {
         left: ['firstName', 'lastName'],
-        // right: ['age', 'visits', 'status', 'progress'],
       },
     },
     ...defaultOptions,
   });
 
   return (
-    <ExampleSection
-      text={
-        <>
-          <PStyled>
-            При необходимости можно “закреплять” столбцы таблицы. Фиксированные столбцы располагаются по левому краю
-            таблицы и идут друг за другом. Чтобы определить для таблицы список фиксированных столбцов, необходимо при
-            создании объекта таблицы определить начальное состояние initialState, где в свойстве columnPinning.left
-            необходимо указать массив с id тех колонок, которые должны быть зафиксированны по левому краю.
-          </PStyled>
-          <PStyled>
-            В случае, если вы хотите зафиксировать позицию многоуровневого заголовка, то в columnPinning.left необходимо
-            указывать id тех колонок, которые имеют наибольший уровень вложенности в рамках данного многоуровневого
-            заголовка.
-          </PStyled>
-          <PStyled>
-            Столбцы с чекбоксами, стрелками, OverflowMenu и иконками одиночных действий (если задан параметр
-            showRowsActions=true) являются фиксированными по умолчанию. Столбец с OverflowMenu и иконками одиночных
-            действий является единственным столбцом, который позиционируется по правому краю таблицы.
-          </PStyled>
-        </>
-      }
-    >
-      <TanstackTable table={table} />
-      <div style={{ width: '100%', height: '40px' }} />
-      <TanstackTable table={table2} showBorders greyHeader showDividerForLastColumn />
-    </ExampleSection>
+    <>
+      <ExampleSection
+        text={
+          <>
+            <PStyled>
+              При необходимости можно “закреплять” столбцы таблицы. Фиксированные столбцы могут располагаться как по
+              левому, так и по правому краю таблицы. Чтобы определить для таблицы список фиксированных столбцов,
+              необходимо при создании объекта таблицы определить начальное состояние initialState, где в свойстве
+              columnPinning.left и columnPinning.right необходимо указать массив с id тех колонок, которые должны быть
+              зафиксированны по левому и правому краю соответственно.
+            </PStyled>
+            <PStyled>
+              В случае, если вы хотите зафиксировать позицию многоуровневого заголовка, то в columnPinning.(left/right)
+              необходимо указывать id тех колонок, которые имеют наибольший уровень вложенности в рамках данного
+              многоуровневого заголовка.
+            </PStyled>
+            <PStyled>
+              Столбцы с чекбоксами, стрелками, OverflowMenu и иконками одиночных действий (если задан параметр
+              showRowsActions=true) являются фиксированными по умолчанию. Столбцы с чекбоксами и стрелками фиксируются
+              по левому краю в то время, как столбец с OverflowMenu и иконками одиночных действий позиционируется по
+              правому краю таблицы.
+            </PStyled>
+          </>
+        }
+      />
+      <ExampleSection header="Фиксация столбцов при одноуровневых заголовках.">
+        <TanstackTable table={table} />
+      </ExampleSection>
+      <ExampleSection header="Фиксация столбцов при многоуровневых заголовках.">
+        <TanstackTable table={table2} showBorders greyHeader showDividerForLastColumn />
+      </ExampleSection>
+    </>
   );
 };

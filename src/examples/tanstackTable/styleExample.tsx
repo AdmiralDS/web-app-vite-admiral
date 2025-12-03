@@ -1,9 +1,9 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
+
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
-import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 type Transaction = {
   type: string;
@@ -86,7 +86,7 @@ const columns = [
 ];
 
 export const StyleExample = () => {
-  const [data, _setData] = React.useState(() => [...defaultData]);
+  const [data, _setData] = useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,

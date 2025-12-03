@@ -1,9 +1,9 @@
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
+import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
-import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 type Column = {
   first: string;
@@ -73,7 +73,7 @@ export const WithLineClampInHeader = ({}) => {
               </ListItem>
             </UnorderedList>
           </PStyled>
-          <PStyled>В примере ниже используется headerLineClamp = 2 и headerExtraLineClamp = 3</PStyled>
+          <PStyled>В примере ниже используется headerLineClamp = 2 и headerExtraLineClamp = 3.</PStyled>
         </>
       }
     >

@@ -1,9 +1,9 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import styled from 'styled-components';
+
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import styled from 'styled-components';
 
 const StyledCellText = styled(CellText)`
   white-space: unset;
@@ -44,7 +44,7 @@ const makeData = () =>
   }));
 
 export const DynamicVirtualScroll = () => {
-  const [data, _setData] = React.useState(() => makeData());
+  const [data, _setData] = useState(() => makeData());
   const table = useReactTable({
     data,
     columns: makeColumns(),

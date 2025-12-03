@@ -2,7 +2,6 @@ import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/re
 import { useState } from 'react';
 
 import { ExampleSection } from '#examples/-helpers';
-
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 
 type Column = {
