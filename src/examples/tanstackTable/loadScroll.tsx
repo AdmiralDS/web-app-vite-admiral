@@ -1,6 +1,6 @@
-import * as React from 'react';
-
+import { useMemo, useState, useRef, useEffect } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
+
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
 
@@ -14,8 +14,8 @@ type LastRowProps = {
 };
 
 const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
-  const [visible, setVisible] = React.useState<boolean>(false);
-  const ref = React.useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
     if (entries[0].isIntersecting && !visible) {
@@ -28,7 +28,7 @@ const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
       root: containerRef?.current,
       threshold: [0, 1.0],
@@ -39,7 +39,7 @@ const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
     }
 
     return () => observer.disconnect();
-  }, [visible, rowNode]);
+  }, [visible]);
 
   return <div ref={ref}>{rowNode}</div>;
 };
@@ -70,12 +70,12 @@ const columns = [
 ];
 
 export const LoadScrollExample = () => {
-  const [rowsAmount, setRowsAmount] = React.useState(10);
-  const [rowsAmount2, setRowsAmount2] = React.useState(10);
-  const tableRef = React.useRef<HTMLDivElement>(null);
-  const tableRef2 = React.useRef<HTMLDivElement>(null);
+  const [rowsAmount, setRowsAmount] = useState(10);
+  const [rowsAmount2, setRowsAmount2] = useState(10);
+  const tableRef = useRef<HTMLDivElement>(null);
+  const tableRef2 = useRef<HTMLDivElement>(null);
 
-  const data: Props[] = React.useMemo(() => {
+  const data: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({
@@ -104,8 +104,8 @@ export const LoadScrollExample = () => {
     ...defaultOptions,
   });
 
-  //Для 2 примера
-  const data2: Props[] = React.useMemo(() => {
+  // Для 2 примера
+  const data2: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount2 }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({

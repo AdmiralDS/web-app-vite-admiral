@@ -125,7 +125,7 @@ export const LoadScrollSpinnerExample = () => {
     ...defaultOptions,
   });
 
-  //Для 2 примера
+  // Для 2 примера
   const data2: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount2 }, (_, k) => {
       return `${k + 1}0000`;

@@ -154,7 +154,7 @@ export const LoadScrollSkeletonExample = () => {
     ...defaultOptions,
   });
 
-  //Для 2 примера
+  // Для 2 примера
   const columns2: ColumnDef<Props>[] = useMemo(
     () => [
       {

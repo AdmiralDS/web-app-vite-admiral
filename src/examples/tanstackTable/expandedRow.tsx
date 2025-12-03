@@ -1,17 +1,17 @@
 import {
+  useReactTable,
   getCoreRowModel,
   getSortedRowModel,
-  useReactTable,
-  type Row,
   getExpandedRowModel,
+  type Row,
   type ColumnDef,
   type RowData,
 } from '@tanstack/react-table';
 import styled from 'styled-components';
 import { useState } from 'react';
+import { Link } from '@admiral-ds/react-ui';
 
 import { ExampleSection, PStyled } from '#examples/-helpers';
-
 import {
   CellText,
   ExpandCell,
@@ -20,9 +20,9 @@ import {
   ExpandIconPlacement,
   TanstackTable,
   WrapperTitleCell,
+  defaultOptions,
   type MetaRowProps,
 } from '#examples/-helpers/tanstackTable';
-import { Link, T } from '@admiral-ds/react-ui';
 
 interface Person extends MetaRowProps<Person> {
   firstName: string;
@@ -58,7 +58,7 @@ const defaultData: Person[] = [
     visits: 100,
     status: 'In Relationship',
     progress: 50,
-    meta: { expandedRowRender: expandedRowRender },
+    meta: { expandedRowRender },
   },
   {
     firstName: 'tandy',
@@ -75,7 +75,7 @@ const defaultData: Person[] = [
     visits: 20,
     status: 'Complicated',
     progress: 10,
-    meta: { expandedRowRender: expandedRowRender },
+    meta: { expandedRowRender },
   },
 ];
 
@@ -170,6 +170,7 @@ export const ExpandedRow = () => {
     getSortedRowModel: getSortedRowModel(),
     getRowCanExpand: () => true,
     getExpandedRowModel: getExpandedRowModel(),
+    ...defaultOptions,
     initialState: {
       columnPinning: {
         left: ['expand-column'],
@@ -180,7 +181,7 @@ export const ExpandedRow = () => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>
             Отображение столбца детализации (столбец со стрелками) регулируется пользователем, в столбец необходимо
             передавать <i>id: 'expand-column'</i>. Стрелка позволяет развернуть строку и посмотреть более
@@ -190,17 +191,18 @@ export const ExpandedRow = () => {
             C помощью функции expandedRowRender происходит рендер развернутой части строки (рендер детализированной
             информации).
           </PStyled>
-          <div style={{ display: 'flex' }}>
+          <PStyled>
             Дополнительная документация по
             <Link
-              style={{ marginLeft: '4px' }}
+              style={{ display: 'inline', marginLeft: '4px' }}
               href="https://tanstack.com/table/latest/docs/guide/expanding"
               target="_blank"
+              dimension="s"
             >
               ссылке
             </Link>
-          </div>
-        </T>
+          </PStyled>
+        </>
       }
     >
       <TanstackTable table={table} />
