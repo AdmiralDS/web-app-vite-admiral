@@ -5,6 +5,9 @@ import {
   useReactTable,
   type ExpandedState,
 } from '@tanstack/react-table';
+import { useMemo, useState } from 'react';
+import { CheckboxField } from '@admiral-ds/react-ui';
+
 import {
   CellText,
   defaultOptions,
@@ -15,13 +18,11 @@ import {
   ExpandIconPlacement,
   WrapperTitleCell,
   WrapperExpandContent,
+  CellTh,
   type MetaRowProps,
   type TanstackTableProps,
-  CellTh,
 } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import { useState, useMemo } from 'react';
-import { CheckboxField, T } from '@admiral-ds/react-ui';
 
 interface Transaction extends MetaRowProps<Transaction> {
   type?: string;
@@ -149,8 +150,6 @@ const defaultData: Transaction[] = [
   },
 ];
 
-const columnHelper = createColumnHelper<Transaction>();
-
 export const GroupRowExample = () => {
   const [data, _setData] = useState(() => [...defaultData]);
   const [expanded, setExpanded] = useState<ExpandedState>({});
@@ -158,6 +157,8 @@ export const GroupRowExample = () => {
   const [rowSelection, setRowSelection] = useState({});
 
   const dimension: TanstackTableProps<Transaction>['dimension'] = 'm';
+
+  const columnHelper = createColumnHelper<Transaction>();
 
   const columns = useMemo(
     () => [
@@ -226,7 +227,7 @@ export const GroupRowExample = () => {
     ...defaultOptions,
   });
 
-  // Подумать над созданием отдельного компонента, так как не очень хорошо, что пользователь будет вручную управлять стилями
+  // TODO: Подумать над созданием отдельного компонента, так как не очень хорошо, что пользователь будет вручную управлять стилями
   const columns2 = useMemo(
     () => [
       columnHelper.accessor('type', {
@@ -344,24 +345,20 @@ export const GroupRowExample = () => {
     <>
       <ExampleSection
         text={
-          <>
-            <T font="Body/Body 1 Long" as="div">
-              <PStyled>
-                Строки в таблице можно группировать под общим заголовком. Для того чтобы задать группу строк, нужно в
-                массиве с данными в строке добавить параметр meta передать subRows с параметрами строки или с заголовком
-                группы.
-              </PStyled>
-              <PStyled>
-                Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для
-                корректного отображения чекбоксов необходимо в таблицу передавать prop showCheckboxTitleGroup,
-              </PStyled>
-            </T>
-          </>
+          <PStyled>
+            Строки в таблице можно группировать под общим заголовком. Для того чтобы задать группу строк, нужно в
+            массиве с данными в строке добавить параметр meta передать subRows с параметрами строки или с заголовком
+            группы.
+          </PStyled>
         }
-      >
+      />
+      <ExampleSection header="Обычный пример">
         <TanstackTable table={table} />
       </ExampleSection>
-      <ExampleSection text="Пример с чекбоксами">
+      <ExampleSection
+        header="Пример с чекбоксами"
+        text="Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для корректного отображения чекбоксов необходимо в таблицу передавать параметр showCheckboxTitleGroup."
+      >
         <TanstackTable table={table2} showCheckboxTitleGroup />
       </ExampleSection>
     </>

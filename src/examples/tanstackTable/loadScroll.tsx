@@ -1,9 +1,9 @@
-import * as React from 'react';
-
+import { Spinner } from '@admiral-ds/react-ui';
+import { useMemo, useState, useRef, useEffect } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable, type Row } from '@tanstack/react-table';
+
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection } from '#examples/-helpers';
-import { Spinner, T } from '@admiral-ds/react-ui';
 
 const ROW_COUNT = 100;
 
@@ -15,11 +15,10 @@ type LastRowProps = {
 };
 
 const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
-  const [visible, setVisible] = React.useState<boolean>(false);
-  const ref = React.useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-    console.log('🚀 ~ handleIntersection ~ await');
     if (entries[0].isIntersecting && !visible) {
       setVisible(true);
       onVisible?.();
@@ -30,7 +29,7 @@ const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
       root: containerRef?.current,
       threshold: [0, 1.0],
@@ -41,7 +40,7 @@ const LastRowWrapper = ({ containerRef, onVisible, rowNode }: LastRowProps) => {
     }
 
     return () => observer.disconnect();
-  }, [visible, rowNode]);
+  }, [visible]);
 
   return <div ref={ref}>{rowNode}</div>;
 };
@@ -50,14 +49,13 @@ const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-const LastRowWrapper2 = ({ containerRef, onVisible, rowNode, rowIndex }: LastRowProps) => {
-  const [visible, setVisible] = React.useState<boolean>(false);
-  const ref = React.useRef<HTMLDivElement>(null);
+const LastRowWrapper2 = ({ containerRef, onVisible, rowIndex }: LastRowProps) => {
+  const [visible, setVisible] = useState<boolean>(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleIntersection = async (entries: IntersectionObserverEntry[]) => {
     await sleep(1000);
     if (entries[0].isIntersecting && entries[0].intersectionRatio > 0 && !visible) {
-      console.log('🚀 ~ handleIntersection ~ await');
       await setVisible(true);
       await onVisible?.();
     }
@@ -67,7 +65,7 @@ const LastRowWrapper2 = ({ containerRef, onVisible, rowNode, rowIndex }: LastRow
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection, {
       root: containerRef?.current,
       threshold: [0, 1.0],
@@ -78,7 +76,7 @@ const LastRowWrapper2 = ({ containerRef, onVisible, rowNode, rowIndex }: LastRow
     }
 
     return () => observer.disconnect();
-  }, [visible, rowNode]);
+  }, [visible]);
 
   return (
     <div ref={ref}>
@@ -105,32 +103,32 @@ interface Props {
   transfer_amount: string;
 }
 
+const columnHelper = createColumnHelper<Props>();
+
+const columns = [
+  columnHelper.accessor('transfer_number', {
+    header: 'Дата сделки',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 149,
+  }),
+  columnHelper.accessor('transfer_type', {
+    header: 'Сумма',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    size: 150,
+  }),
+  columnHelper.accessor('transfer_amount', {
+    header: 'Валюта',
+    cell: (info) => <CellText>{info.renderValue()}</CellText>,
+  }),
+];
+
 export const LoadScrollExample = () => {
-  const [rowsAmount, setRowsAmount] = React.useState(10);
-  const [rowsAmount2, setRowsAmount2] = React.useState(10);
-  const tableRef = React.useRef<HTMLDivElement>(null);
-  const tableRef2 = React.useRef<HTMLDivElement>(null);
+  const [rowsAmount, setRowsAmount] = useState(10);
+  const [rowsAmount2, setRowsAmount2] = useState(10);
+  const tableRef = useRef<HTMLDivElement>(null);
+  const tableRef2 = useRef<HTMLDivElement>(null);
 
-  const columnHelper = createColumnHelper<Props>();
-
-  const columns = [
-    columnHelper.accessor('transfer_number', {
-      header: 'Дата сделки',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 149,
-    }),
-    columnHelper.accessor('transfer_type', {
-      header: 'Сумма',
-      cell: (info) => <CellText>{info.getValue()}</CellText>,
-      size: 150,
-    }),
-    columnHelper.accessor('transfer_amount', {
-      header: 'Валюта',
-      cell: (info) => <CellText>{info.renderValue()}</CellText>,
-    }),
-  ];
-
-  const data: Props[] = React.useMemo(() => {
+  const data: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({
@@ -165,8 +163,8 @@ export const LoadScrollExample = () => {
     ...defaultOptions,
   });
 
-  //Для 2 примера
-  const data2: Props[] = React.useMemo(() => {
+  // Для 2 примера
+  const data2: Props[] = useMemo(() => {
     const array = Array.from({ length: rowsAmount2 }, (_, k) => {
       return `${k + 1}0000`;
     }).map((item, index) => ({
@@ -204,12 +202,7 @@ export const LoadScrollExample = () => {
 
   return (
     <>
-      <T font="Body/Body 2 Long" as="div">
-        Пользователь может реализовать подгрузку новых строк по мере скролла тела таблицы, например, следующим образом.
-        С помощью функции renderRowWrapper можно создать элемент-обёртку над последней строкой в таблице, и через
-        IntersectionObserver отслеживать момент, когда элемент-обёртка станет видим в пределах тела таблицы (т.е. момент
-        доскролла до последней строки). Это событие будет являться триггером для загрузки новой порции строк.
-      </T>
+      <ExampleSection text="Пользователь может реализовать подгрузку новых строк по мере скролла тела таблицы, например, следующим образом. С помощью функции renderRowWrapper можно создать элемент-обёртку над последней строкой в таблице, и через IntersectionObserver отслеживать момент, когда элемент-обёртка станет видим в пределах тела таблицы (т.е. момент доскролла до последней строки). Это событие будет являться триггером для загрузки новой порции строк." />
       <ExampleSection header="Пример с невидимой подгрузкой данных">
         <TanstackTable table={table} style={{ height: '350px' }} renderRowWrapper={renderRowWrapper} ref={tableRef} />
       </ExampleSection>

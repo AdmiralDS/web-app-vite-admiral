@@ -1,9 +1,9 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
+
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
-import { T } from '@admiral-ds/react-ui';
 
 type Transaction = {
   type: string;
@@ -86,7 +86,7 @@ const columns = [
 ];
 
 export const StyleExample = () => {
-  const [data, _setData] = React.useState(() => [...defaultData]);
+  const [data, _setData] = useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,
@@ -98,32 +98,38 @@ export const StyleExample = () => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>Cуществует ряд параметров, влияющих на внешний вид таблицы:</PStyled>
-          <PStyled>- dimension - параметр, регулирующий размер таблицы;</PStyled>
-          <PStyled>- greyHeader - параметр, с помощью которого можно окрашивать шапку таблицы в серый цвет;</PStyled>
           <PStyled>
-            - showDividerForLastColumn - параметр, который отвечает за отображение вертикальной полосы разделителя для
-            последнего столбца таблицы. По умолчанию параметр равен false, то есть разделитель не отображается;
+            <UnorderedList dimension="s">
+              <ListItem>dimension - параметр, регулирующий размер таблицы;</ListItem>
+              <ListItem>
+                greyHeader - параметр, с помощью которого можно окрашивать шапку таблицы в серый цвет;
+              </ListItem>
+              <ListItem>
+                showDividerForLastColumn - параметр, который отвечает за отображение вертикальной полосы разделителя для
+                последнего столбца таблицы. По умолчанию параметр равен false, то есть разделитель не отображается;
+              </ListItem>
+              <ListItem>
+                showLastRowUnderline - параметр, который управляет отображением серой линии подчеркивания для последней
+                строки таблицы. По умолчанию параметр равен true, то есть линия отображается;
+              </ListItem>
+              <ListItem>
+                showBorders - параметр, который управляет отображением границ между ячейками таблицы и обводки всей
+                таблицы. По умолчанию параметр равен false, последняя колонка будет иметь границы справа только, если
+                параметр showDividerForLastColumn равен true;
+              </ListItem>
+              <ListItem>
+                spacingBetweenItems - параметр, который влияет на внешний вид заголовка и отвечает одновременно за
+                размер правого бокового отступа внутри заголовка и за расстояние между иконкой фильтра (при её наличии)
+                и остальным содержимым заголовка (описание параметра в макетах). По умолчанию минимальное значение 12,
+                для таблиц S и M, и 16 для таблиц L и XL. В коде предусмотрено, что правый боковой отступ можно менять
+                только в большую сторону в сравнении с дефолтным значением, а расстояние между иконкой фильтра и
+                остальным содержимым заголовка можно как уменьшать, так и увеличивать с помощью spacingBetweenItems.
+              </ListItem>
+            </UnorderedList>
           </PStyled>
-          <PStyled>
-            - showLastRowUnderline - параметр, который управляет отображением серой линии подчеркивания для последней
-            строки таблицы. По умолчанию параметр равен true, то есть линия отображается;
-          </PStyled>
-          <PStyled>
-            - showBorders - параметр, который управляет отображением границ между ячейками таблицы и обводки всей
-            таблицы. По умолчанию параметр равен false, последняя колонка будет иметь границы справа только, если
-            параметр showDividerForLastColumn равен true;
-          </PStyled>
-          <PStyled>
-            - spacingBetweenItems - параметр, который влияет на внешний вид заголовка и отвечает одновременно за размер
-            правого бокового отступа внутри заголовка и за расстояние между иконкой фильтра (при её наличии) и остальным
-            содержимым заголовка (описание параметра в макетах). По умолчанию минимальное значение 12, для таблиц S и M,
-            и 16 для таблиц L и XL. В коде предусмотрено, что правый боковой отступ можно менять только в большую
-            сторону в сравнении с дефолтным значением, а расстояние между иконкой фильтра и остальным содержимым
-            заголовка можно как уменьшать, так и увеличивать с помощью spacingBetweenItems.
-          </PStyled>
-        </T>
+        </>
       }
     >
       <TanstackTable table={table} greyHeader showBorders />
