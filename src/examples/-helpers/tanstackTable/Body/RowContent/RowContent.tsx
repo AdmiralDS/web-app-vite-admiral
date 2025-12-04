@@ -36,38 +36,48 @@ export const RowContent = <T,>({
     e.stopPropagation();
   };
 
-  const renderGroupTitle = () => (
-    <div className="td" style={{ gridColumn: `1/-1` }}>
-      <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
-        {row.getCanExpand() && (
-          <ExpandCell $dimension={dimension}>
-            <ExpandIconPlacement
-              dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-              highlightFocus={false}
-              onClick={row.getToggleExpandedHandler()}
-            >
-              <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-            </ExpandIconPlacement>
-          </ExpandCell>
-        )}
-        {row.getCanSelect() && showCheckboxTitleGroup && (
-          <CheckboxCell $dimension={dimension}>
-            <CheckboxField
-              dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-              {...{
-                checked: row.getIsSelected(),
-                disabled: !row.getCanSelect(),
-                indeterminate: row.getIsSomeSelected(),
-                onChange: row.getToggleSelectedHandler(),
-              }}
-            />
-          </CheckboxCell>
-        )}
+  const rowSelected = row.getIsAllSubRowsSelected();
+  const rowIndeterminate = row.getIsSomeSelected();
 
-        <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
-      </WrapperExpandContent>
-    </div>
-  );
+  const renderGroupTitle = () => {
+    const handleToggleSubRows = () => {
+      row.subRows.forEach((subRow) => {
+        rowSelected || rowIndeterminate ? subRow.toggleSelected(false) : subRow.toggleSelected(true);
+      });
+    };
+
+    return (
+      <div className="td" style={{ gridColumn: `1/-1` }}>
+        <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+          {row.getCanExpand() && (
+            <ExpandCell $dimension={dimension}>
+              <ExpandIconPlacement
+                dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
+                highlightFocus={false}
+                onClick={row.getToggleExpandedHandler()}
+              >
+                <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
+              </ExpandIconPlacement>
+            </ExpandCell>
+          )}
+          {showCheckboxTitleGroup && (
+            <CheckboxCell $dimension={dimension}>
+              <CheckboxField
+                dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
+                {...{
+                  checked: rowSelected,
+                  indeterminate: rowIndeterminate,
+                  onChange: handleToggleSubRows,
+                }}
+              />
+            </CheckboxCell>
+          )}
+
+          <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
+        </WrapperExpandContent>
+      </div>
+    );
+  };
 
   const renderCellTd = (cell: Cell<T, unknown>) => (
     <CellTd

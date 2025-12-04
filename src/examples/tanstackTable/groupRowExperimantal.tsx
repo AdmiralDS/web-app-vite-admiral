@@ -19,9 +19,9 @@ import {
   type TanstackTableProps,
   CellTh,
 } from '#examples/-helpers/tanstackTable';
-import { ExampleSection, PStyled } from '#examples/-helpers';
+import { ExampleSection } from '#examples/-helpers';
 import { useState, useMemo } from 'react';
-import { CheckboxField, T } from '@admiral-ds/react-ui';
+import { CheckboxField } from '@admiral-ds/react-ui';
 
 interface Transaction extends MetaRowProps<Transaction> {
   type?: string;
@@ -151,83 +151,15 @@ const defaultData: Transaction[] = [
 
 const columnHelper = createColumnHelper<Transaction>();
 
-export const GroupRowExample = () => {
+export const GroupRowExperimentalExample = () => {
   const [data, _setData] = useState(() => [...defaultData]);
   const [expanded, setExpanded] = useState<ExpandedState>({});
-  const [expanded2, setExpanded2] = useState<ExpandedState>({});
   const [rowSelection, setRowSelection] = useState({});
 
   const dimension: TanstackTableProps<Transaction>['dimension'] = 'm';
 
-  const columns = useMemo(
-    () => [
-      columnHelper.accessor('type', {
-        header: 'Тип сделки',
-        cell: ({ row, getValue }) => {
-          return (
-            <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
-              {row.getCanExpand() && (
-                <ExpandCell $dimension={dimension}>
-                  <ExpandIconPlacement
-                    dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                    highlightFocus={false}
-                    onClick={row.getToggleExpandedHandler()}
-                  >
-                    <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                  </ExpandIconPlacement>
-                </ExpandCell>
-              )}
-              <CellText>{getValue<boolean>()}</CellText>
-            </WrapperExpandContent>
-          );
-        },
-        size: 141,
-      }),
-      columnHelper.accessor('date', {
-        header: 'Дата сделки',
-        cell: (info) => <CellText>{info.getValue()}</CellText>,
-        size: 149,
-      }),
-      columnHelper.accessor('amount', {
-        header: 'Сумма',
-        cell: (info) => <CellText>{info.getValue()}</CellText>,
-        size: 150,
-        meta: { cellAlign: 'right' },
-      }),
-      columnHelper.accessor('currency', {
-        header: 'Валюта',
-        cell: (info) => <CellText>{info.renderValue()}</CellText>,
-      }),
-      columnHelper.accessor('rate', {
-        header: 'Ставка',
-        cell: (info) => <CellText>{info.renderValue()}</CellText>,
-        size: 96,
-        meta: { cellAlign: 'right' },
-      }),
-      columnHelper.accessor('status', {
-        header: 'Статус',
-        cell: (info) => <CellText>{info.renderValue()}</CellText>,
-        size: 110,
-      }),
-    ],
-    [],
-  );
-
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    state: {
-      expanded,
-    },
-    onExpandedChange: setExpanded,
-    getSubRows: (row) => row.meta?.subRows,
-    getExpandedRowModel: getExpandedRowModel(),
-    ...defaultOptions,
-  });
-
   //todo Подумать над созданием отдельного компонента, так как не очень хорошо, что пользователь будет вручную управлять стилями
-  const columns2 = useMemo(
+  const columns = useMemo(
     () => [
       columnHelper.accessor('type', {
         header: ({ table, header }) => {
@@ -265,19 +197,9 @@ export const GroupRowExample = () => {
           );
         },
         cell: ({ row, getValue }) => {
-          const rowSelected = row.getIsAllSubRowsSelected();
-          const rowIndeterminate = row.getIsSomeSelected();
-          const isRowHaveSubRows = row.getCanExpand();
-
-          const handleToggleSubRows = () => {
-            row.subRows.forEach((subRow) => {
-              rowSelected || rowIndeterminate ? subRow.toggleSelected(false) : subRow.toggleSelected(true);
-            });
-          };
-
           return (
-            <WrapperExpandContent $depth={isRowHaveSubRows ? row.depth : row.depth + 1} $dimension={dimension}>
-              {isRowHaveSubRows && (
+            <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+              {row.getCanExpand() && (
                 <ExpandCell $dimension={dimension}>
                   <ExpandIconPlacement
                     dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
@@ -292,10 +214,10 @@ export const GroupRowExample = () => {
                 <CheckboxField
                   dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
                   {...{
-                    checked: isRowHaveSubRows ? rowSelected : row.getIsSelected(),
-                    disabled: !isRowHaveSubRows && !row.getCanSelect(),
-                    indeterminate: rowIndeterminate,
-                    onChange: isRowHaveSubRows ? handleToggleSubRows : row.getToggleSelectedHandler(),
+                    checked: row.getIsSelected(),
+                    disabled: !row.getCanSelect(),
+                    indeterminate: row.getIsSomeSelected(),
+                    onChange: row.getToggleSelectedHandler(),
                   }}
                 />
               </CheckboxCell>
@@ -337,42 +259,23 @@ export const GroupRowExample = () => {
 
   const table2 = useReactTable({
     data,
-    columns: columns2,
+    columns,
     getCoreRowModel: getCoreRowModel(),
     state: {
       rowSelection,
-      expanded: expanded2,
+      expanded,
     },
-    onExpandedChange: setExpanded2,
+    onExpandedChange: setExpanded,
     getSubRows: (row) => row.meta?.subRows,
     onRowSelectionChange: setRowSelection,
     getExpandedRowModel: getExpandedRowModel(),
-    enableRowSelection: (row) => !row.original.meta?.groupTitle && !row.original.meta?.subRows,
+    enableRowSelection: (row) => !row.original.meta?.groupTitle,
     ...defaultOptions,
   });
 
   return (
     <>
-      <ExampleSection
-        text={
-          <>
-            <T font="Body/Body 1 Long" as="div">
-              <PStyled>
-                Строки в таблице можно группировать под общим заголовком. Для того чтобы задать группу строк, нужно в
-                массиве с данными в строке добавить параметр meta передать subRows с параметрами строки или с заголовком
-                группы.
-              </PStyled>
-              <PStyled>
-                Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для
-                корректного отображения чекбоксов необходимо в таблицу передавать prop showCheckboxTitleGroup,
-              </PStyled>
-            </T>
-          </>
-        }
-      >
-        <TanstackTable table={table} />
-      </ExampleSection>
-      <ExampleSection text="Пример с чекбоксами">
+      <ExampleSection text="Пример для использование со сценарием, когда нужно чтобы строка с данными в которой есть подстроки можно было выбрать отдельно">
         <TanstackTable table={table2} showCheckboxTitleGroup />
       </ExampleSection>
     </>

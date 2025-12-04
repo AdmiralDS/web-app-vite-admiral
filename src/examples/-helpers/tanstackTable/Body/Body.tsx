@@ -42,13 +42,18 @@ export const Body = <T,>({
   const renderRow = (row: Row<T>, index: number, isLastRow: boolean) => {
     const original = row.original as RowData & MetaRowProps<T>;
     const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
+    const isSelected =
+      row.getIsSelected() ||
+      original.meta?.selected ||
+      row.getIsSomeSelected() ||
+      (!row.getCanSelect() && row.getIsAllSubRowsSelected());
 
     const node = (
       <Fragment key={row.id}>
         <S.BodyTr
           className="tr"
           $dimension={dimension}
-          selected={row.getIsSelected() || original.meta?.selected}
+          selected={isSelected}
           disabled={original.meta?.disabled}
           $hover={original.meta?.hover}
           $grey={greyZebraRows && index % 2 === 1}

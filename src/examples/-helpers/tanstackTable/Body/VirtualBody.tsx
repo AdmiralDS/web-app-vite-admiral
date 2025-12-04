@@ -48,6 +48,11 @@ export const VirtualBody = <T,>({
     const original = row.original as RowData & MetaRowProps<T>;
     const isLastRow = index === table.getRowModel().rows.length - 1;
     const showUnderline = isLastRow ? showLastRowUnderline && !showBorders : true;
+    const isSelected =
+      row.getIsSelected() ||
+      original.meta?.selected ||
+      row.getIsSomeSelected() ||
+      (!row.getCanSelect() && row.getIsAllSubRowsSelected());
 
     const node = (
       <Fragment key={index}>
@@ -56,7 +61,7 @@ export const VirtualBody = <T,>({
           data-index={index} //needed for dynamic row height measurement
           ref={estimatedRowHeight ? rowVirtualizer?.measureElement : null}
           $dimension={dimension}
-          selected={row.getIsSelected() || original.meta?.selected}
+          selected={isSelected}
           disabled={original.meta?.disabled}
           $hover={original.meta?.hover}
           $grey={greyZebraRows && index % 2 === 1}
