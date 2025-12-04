@@ -1,9 +1,8 @@
-import * as React from 'react';
-
+import { useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+
 import { CellText, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import { T } from '@admiral-ds/react-ui';
 
 type Transaction = {
   type: string;
@@ -83,7 +82,7 @@ const columns = [
 ];
 
 export const ResizeExample = () => {
-  const [data, _setData] = React.useState(() => [...defaultData]);
+  const [data, _setData] = useState(() => [...defaultData]);
 
   const table = useReactTable({
     data,
@@ -95,7 +94,7 @@ export const ResizeExample = () => {
   return (
     <ExampleSection
       text={
-        <T font="Body/Body 1 Long" as="div">
+        <>
           <PStyled>
             По умолчанию у всех колонок (кроме чекбоксов/стрелок/оверфлоу меню) включен ресайз. Включением/отключением
             ресайза можно управлять через глобальную опцию таблицы enableColumnResizing или через индивидуальный
@@ -112,7 +111,7 @@ export const ResizeExample = () => {
             задать в параметре meta.gridTemplateColumn желаемое значение ширины, например, meta.gridTemplateColumn:
             '1fr'
           </PStyled>
-        </T>
+        </>
       }
     >
       <TanstackTable table={table} />
