@@ -102,11 +102,11 @@ export const BodyTr = styled.div<{
     !$showRowsActions &&
     css`
       &:hover {
-        & td[data-overflowmenu] {
+        & .td[data-overflowmenu] {
           visibility: visible;
         }
       }
-      & td[data-overflowmenu][data-opened='true'] {
+      & .td[data-overflowmenu][data-opened='true'] {
         visibility: visible;
       }
     `}
