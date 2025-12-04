@@ -19,7 +19,7 @@ import {
   type TanstackTableProps,
   CellTh,
 } from '#examples/-helpers/tanstackTable';
-import { ExampleSection } from '#examples/-helpers';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState, useMemo } from 'react';
 import { CheckboxField } from '@admiral-ds/react-ui';
 
@@ -275,7 +275,20 @@ export const GroupRowExperimentalExample = () => {
 
   return (
     <>
-      <ExampleSection text="Пример для использование со сценарием, когда нужно чтобы строка с данными в которой есть подстроки можно было выбрать отдельно">
+      <ExampleSection
+        text={
+          <>
+            <PStyled>
+              Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для
+              корректного отображения чекбоксов необходимо в таблицу передавать параметр showCheckboxTitleGroup.
+            </PStyled>
+            <PStyled>
+              Пример подходит для сценария, когда нужно чтобы строка с данными в которой есть подстроки можно было
+              выбрать отдельно от подстрок.
+            </PStyled>
+          </>
+        }
+      >
         <TanstackTable table={table2} showCheckboxTitleGroup />
       </ExampleSection>
     </>
