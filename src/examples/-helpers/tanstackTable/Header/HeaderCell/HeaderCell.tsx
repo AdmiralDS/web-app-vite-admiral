@@ -13,8 +13,9 @@ import { TitleText } from './TitleText';
 import { Filter } from './Filter';
 import { RowWidthResizer } from './RowWidthResizer';
 import { useState } from 'react';
-import type { Dimension } from '@admiral-ds/react-ui';
 import type { CSSProperties } from 'styled-components';
+
+import type { Dimension } from '../../types';
 
 //todo пересмотреть тип
 interface Props<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {

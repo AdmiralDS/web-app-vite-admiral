@@ -35,9 +35,10 @@ export const Header = <T,>({
   showBorders,
   style,
 }: Props<T>) => {
-  const headerRef = useRef(null);
-  const leftEdgeRef = useRef(null);
-  const rightEdgeRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement | null>(null);
+  const spacerRef = useRef<HTMLDivElement | null>(null);
+  const leftEdgeRef = useRef<HTMLDivElement | null>(null);
+  const rightEdgeRef = useRef<HTMLDivElement | null>(null);
   const enableLeftShadow = table.getIsSomeColumnsPinned('left');
   const enableRightShadow = table.getIsSomeColumnsPinned('right') || showRowsActions;
   const isSomeRowsGrouped = table.options.data.some((item) => {
@@ -50,16 +51,31 @@ export const Header = <T,>({
   useLayoutEffect(() => {
     const header = headerRef.current;
 
-    if (!header) return;
-
-    const resizeObserver = new ResizeObserver(() => {
-      setHeaderHeight((header as HTMLElement).getBoundingClientRect().height);
-    });
-    resizeObserver.observe(header);
-    return () => {
-      resizeObserver.disconnect();
-    };
+    if (header) {
+      const resizeObserver = new ResizeObserver(() => {
+        setHeaderHeight(header.getBoundingClientRect().height);
+      });
+      resizeObserver.observe(header);
+      return () => {
+        resizeObserver.disconnect();
+      };
+    }
   }, [setHeaderHeight]);
+
+  // check spacer size updates
+  useLayoutEffect(() => {
+    const spacer = spacerRef.current;
+
+    if (spacer) {
+      const resizeObserver = new ResizeObserver(() => {
+        spacer.dataset.empty = String(spacer.getBoundingClientRect().width == 0);
+      });
+      resizeObserver.observe(spacer);
+      return () => {
+        resizeObserver.disconnect();
+      };
+    }
+  }, []);
 
   // добавление тени слева
   useLayoutEffect(() => {
@@ -184,7 +200,7 @@ export const Header = <T,>({
           >
             {table.getCenterHeaderGroups().map((headerGroup) => renderHeaderGroup(headerGroup))}
           </S.NormalWrapper>
-          <S.Spacer $greyHeader={greyHeader} />
+          <S.Spacer ref={spacerRef} $greyHeader={greyHeader} />
           {(table.getIsSomeColumnsPinned('right') || showRowsActions) && (
             <>
               <S.StickyWrapper

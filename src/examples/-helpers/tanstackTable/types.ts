@@ -97,7 +97,7 @@ export interface MetaRowProps<T> {
   };
 }
 
-export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLTableElement> {
+export interface TanstackTableProps<T> extends React.HTMLAttributes<HTMLDivElement> {
   /** Ядро таблицы, созданное с помощью useReactTable */
   table: Table<T>;
   /** Размер таблицы */
