@@ -27,6 +27,15 @@ export const HeaderTr = styled.div<{
     `.th:first-child {padding-left: ${$dimension === 'm' || $dimension === 's' ? '44px' : '56px'}}}`}
 `;
 
+/**
+ * Если NormalWrapper занимает всё свободное место в строке (это можно проверить через элемент Spacer и его data-empty атрибут),
+ * то для NormalWrapper следует задать стиль overflow-x: hidden.
+ *
+ * Это важно для случаев, когда у последней ячейки включен resizer. Дело в том, что resizer выходит на 8px за пределы ячейки.
+ * И за счет этого может вызывать увеличение таблицы по длине. Чтобы этого не произошло используется стиль overflow-x: hidden.
+ *
+ * В качестве референса взята реализация из mui https://mui.com/material-ui/react-table/
+ */
 export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows?: string; $greyHeader?: boolean }>`
   display: grid;
   grid-template-columns: subgrid;
@@ -40,6 +49,10 @@ export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows
       p.$greyHeader
         ? `var(--admiral-color-Neutral_Neutral05, ${p.theme.color['Neutral/Neutral 05']})`
         : `var(--admiral-color-Neutral_Neutral00, ${p.theme.color['Neutral/Neutral 00']})`};
+  }
+
+  &:has(+ div[data-empty='true']) {
+    overflow-x: hidden;
   }
 `;
 
