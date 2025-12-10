@@ -118,6 +118,7 @@ export const Header = <T,>({
       <Fragment key={headerGroup.id}>
         {headerGroup.headers.map((header) => {
           const rowSpan = tableHeaderRowSpan(header);
+
           if (!rowSpan) {
             return null;
           }
@@ -135,6 +136,7 @@ export const Header = <T,>({
               {headerString ? (
                 <CellTh
                   key={header.id}
+                  data-th-column={header.id}
                   header={header}
                   headerLineClamp={headerLineClamp}
                   headerExtraLineClamp={headerExtraLineClamp}

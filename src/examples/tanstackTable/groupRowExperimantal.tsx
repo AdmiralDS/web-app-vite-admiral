@@ -11,8 +11,6 @@ import {
   TanstackTable,
   CheckboxCell,
   ExpandCell,
-  ExpandIcon,
-  ExpandIconPlacement,
   WrapperTitleCell,
   WrapperExpandContent,
   type MetaRowProps,
@@ -21,7 +19,6 @@ import {
 } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState, useMemo } from 'react';
-import { CheckboxField } from '@admiral-ds/react-ui';
 
 interface Transaction extends MetaRowProps<Transaction> {
   type?: string;
@@ -158,26 +155,22 @@ export const GroupRowExperimentalExample = () => {
 
   const dimension: TanstackTableProps<Transaction>['dimension'] = 'm';
 
-  //todo Подумать над созданием отдельного компонента, так как не очень хорошо, что пользователь будет вручную управлять стилями
   const columns = useMemo(
     () => [
       columnHelper.accessor('type', {
         header: ({ table, header }) => {
           return (
             <WrapperTitleCell className="th">
-              <CheckboxCell $dimension={dimension}>
-                <CheckboxField
-                  dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                  type="checkbox"
-                  {...{
-                    checked: table.getIsAllRowsSelected(),
-                    indeterminate: table.getIsSomeRowsSelected(),
-                    onChange: table.getIsSomeRowsSelected()
-                      ? () => setRowSelection({})
-                      : table.getToggleAllRowsSelectedHandler(),
-                  }}
-                />
-              </CheckboxCell>
+              <CheckboxCell
+                dimension={dimension}
+                {...{
+                  checked: table.getIsAllRowsSelected(),
+                  indeterminate: table.getIsSomeRowsSelected(),
+                  onChange: table.getIsSomeRowsSelected()
+                    ? () => setRowSelection({})
+                    : table.getToggleAllRowsSelectedHandler(),
+                }}
+              />
               <CellTh
                 as="div"
                 style={{
@@ -200,27 +193,21 @@ export const GroupRowExperimentalExample = () => {
           return (
             <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
               {row.getCanExpand() && (
-                <ExpandCell $dimension={dimension}>
-                  <ExpandIconPlacement
-                    dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                    highlightFocus={false}
-                    onClick={row.getToggleExpandedHandler()}
-                  >
-                    <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                  </ExpandIconPlacement>
-                </ExpandCell>
-              )}
-              <CheckboxCell $dimension={dimension}>
-                <CheckboxField
-                  dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                  {...{
-                    checked: row.getIsSelected(),
-                    disabled: !row.getCanSelect(),
-                    indeterminate: row.getIsSomeSelected(),
-                    onChange: row.getToggleSelectedHandler(),
-                  }}
+                <ExpandCell
+                  dimension={dimension}
+                  onClick={row.getToggleExpandedHandler()}
+                  isOpened={row.getIsExpanded()}
                 />
-              </CheckboxCell>
+              )}
+              <CheckboxCell
+                dimension={dimension}
+                {...{
+                  checked: row.getIsSelected(),
+                  disabled: !row.getCanSelect(),
+                  indeterminate: row.getIsSomeSelected(),
+                  onChange: row.getToggleSelectedHandler(),
+                }}
+              />
               <CellText>{getValue<boolean>()}</CellText>
             </WrapperExpandContent>
           );
