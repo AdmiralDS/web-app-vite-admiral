@@ -124,7 +124,7 @@ export const DataAtrClassNameExample = () => {
         </>
       }
     >
-      <TanstackTable table={tableDocs} dimension="s" showBorders />
+      <TanstackTable table={tableDocs} showBorders />
     </ExampleSection>
   );
 };
