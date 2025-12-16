@@ -20,8 +20,6 @@ export const defaultOptions = {
   },
 } as const;
 
-export const DEFAULT_COLUMN_WIDTH = 100;
-
 export const TanstackTable = forwardRef(
   <T,>(
     {
@@ -41,7 +39,7 @@ export const TanstackTable = forwardRef(
       renderRowWrapper,
       ...props
     }: TanstackTableProps<T>,
-    ref: React.ForwardedRef<HTMLElement>,
+    ref: React.ForwardedRef<HTMLDivElement>,
   ) => {
     const [headerHeight, setHeaderHeight] = useState(0);
     const tableRef = useRef(null);
@@ -168,4 +166,4 @@ export const TanstackTable = forwardRef(
       </S.Table>
     );
   },
-) as <T>(props: TanstackTableProps<T> & { ref?: React.ForwardedRef<HTMLElement> }) => JSX.Element;
+) as <T>(props: TanstackTableProps<T> & { ref?: React.ForwardedRef<HTMLDivElement> }) => JSX.Element;

@@ -1,6 +1,6 @@
-import type { Dimension } from '@admiral-ds/react-ui';
-import * as React from 'react';
 import styled from 'styled-components';
+
+import type { Dimension } from '../../types';
 
 const RESIZER_WIDTH = '17px';
 
@@ -39,19 +39,14 @@ export const Resizer = styled.div`
   background: var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
 `;
 
-interface ResizerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  name?: string;
+interface ResizerProps extends React.HTMLAttributes<HTMLDivElement> {
   disabled: boolean;
   dimension: Dimension;
-  columnMinWidth?: number;
-  onChange?: (evt: { name: string; width: number }) => void;
 }
 
-export function RowWidthResizer({ disabled, dimension, onChange, ...props }: ResizerProps) {
-  const node = React.useRef<HTMLDivElement | null>(null);
-
+export function RowWidthResizer({ disabled, dimension, ...props }: ResizerProps) {
   return (
-    <ResizerWrapper ref={node} disabled={disabled} $dimension={dimension} {...props}>
+    <ResizerWrapper disabled={disabled} $dimension={dimension} {...props}>
       <Resizer />
     </ResizerWrapper>
   );
