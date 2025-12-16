@@ -1,12 +1,12 @@
-import { CheckboxField } from '@admiral-ds/react-ui';
 import { flexRender, type Row, type RowData, type Cell } from '@tanstack/react-table';
 
 import type { Dimension, MetaRowProps } from '../../types';
-import { CheckboxCell, ExpandCell, ExpandIcon, ExpandIconPlacement, WrapperExpandContent } from '../../style';
+import { WrapperExpandContent } from '../../style';
 import { CellTd } from '../style';
 
 import * as S from './style';
 import { OverflowMenu } from './OverflowMenu';
+import { CheckboxCell, ExpandCell } from '../../components';
 
 interface RowContentProps<T> {
   original: RowData & MetaRowProps<T>;
@@ -47,30 +47,30 @@ export const RowContent = <T,>({
     };
 
     return (
-      <div className="td" style={{ gridColumn: `1/-1` }}>
+      <div className="td" data-column="group" data-row={row.id} style={{ gridColumn: `1/-1` }}>
         <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
           {row.getCanExpand() && (
-            <ExpandCell $dimension={dimension}>
-              <ExpandIconPlacement
-                dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                highlightFocus={false}
-                onClick={row.getToggleExpandedHandler()}
-              >
-                <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-              </ExpandIconPlacement>
-            </ExpandCell>
+            <ExpandCell
+              data-row={row.id}
+              data-item="expand"
+              className="item_expand"
+              dimension={dimension}
+              onClick={row.getToggleExpandedHandler()}
+              isOpened={row.getIsExpanded()}
+            />
           )}
           {showCheckboxTitleGroup && (
-            <CheckboxCell $dimension={dimension}>
-              <CheckboxField
-                dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                {...{
-                  checked: rowSelected,
-                  indeterminate: rowIndeterminate,
-                  onChange: handleToggleSubRows,
-                }}
-              />
-            </CheckboxCell>
+            <CheckboxCell
+              data-row={row.id}
+              data-item="checkbox"
+              className="item_checkbox"
+              dimension={dimension}
+              {...{
+                checked: rowSelected,
+                indeterminate: rowIndeterminate,
+                onChange: handleToggleSubRows,
+              }}
+            />
           )}
 
           <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
@@ -83,6 +83,8 @@ export const RowContent = <T,>({
     <CellTd
       className="td"
       key={cell.id}
+      data-column={cell.column.id}
+      data-row={cell.row.id}
       $dimension={dimension}
       $cellAlign={cell.column.columnDef.meta?.cellAlign}
       $resizer={cell.column.getIsLastColumn() ? showDividerForLastColumn : true}

@@ -76,6 +76,10 @@
         },
         { "name": "Пример c ресайзом колонок", "path": "/components/tanstackTable/resizeExample" },
         { "name": "Пример стилизации таблицы через props", "path": "/components/tanstackTable/styleExample" },
+        {
+          "name": "Пример с описанием classNames и data - атрибутов",
+          "path": "/components/tanstackTable/dataAtrClassName"
+        },
         { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" },
         { "name": "C многоуровневыми заголовками", "path": "/components/tanstackTable/groupHeaders" },
         { "name": "Пример с фиксированными колонками", "path": "/components/tanstackTable/stickyColumnsExample" },

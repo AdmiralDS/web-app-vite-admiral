@@ -128,7 +128,7 @@ export const WithSort = () => {
               уровней. Логика сортировки (взаимосвязи) выстраивается пользователем. При этом у иконок сортировки
               появляются цифры, обозначающие порядок (приоритет) сортировки.
             </PStyled>
-            <PStyled>
+            <PStyled as="div">
               <UnorderedList dimension="s">
                 <ListItem>sortingFn - функция для создания кастомной сортировки;</ListItem>
                 <ListItem>

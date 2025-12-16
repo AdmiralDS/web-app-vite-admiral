@@ -100,7 +100,7 @@ export const StyleExample = () => {
       text={
         <>
           <PStyled>Cуществует ряд параметров, влияющих на внешний вид таблицы:</PStyled>
-          <PStyled>
+          <PStyled as="div">
             <UnorderedList dimension="s">
               <ListItem>dimension - параметр, регулирующий размер таблицы;</ListItem>
               <ListItem>

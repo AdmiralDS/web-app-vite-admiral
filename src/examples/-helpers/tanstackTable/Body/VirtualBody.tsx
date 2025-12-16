@@ -48,6 +48,7 @@ export const VirtualBody = <T,>({
         <S.VirtualBodyTr
           className="tr"
           data-index={index} //needed for dynamic row height measurement
+          data-row={index}
           ref={isDynamicRowHeight ? rowVirtualizer?.measureElement : null}
           $dimension={dimension}
           selected={isSelected}

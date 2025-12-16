@@ -16,12 +16,11 @@ import {
   CellText,
   ExpandCell,
   ExpandedRowContent,
-  ExpandIcon,
-  ExpandIconPlacement,
   TanstackTable,
   WrapperTitleCell,
   defaultOptions,
   type MetaRowProps,
+  ExpandCellWrapper,
 } from '#examples/-helpers/tanstackTable';
 
 interface Person extends MetaRowProps<Person> {
@@ -86,7 +85,6 @@ const WrapperExpand = styled.div`
 `;
 const Content = styled.div`
   display: flex;
-  width: 100%;
   height: 100%;
   flex-direction: column;
   padding-left: 16px;
@@ -102,28 +100,22 @@ const columns: ColumnDef<Person>[] = [
     id: 'expand-column', // required id
     header: () => (
       <WrapperTitleCell className="th">
-        <ExpandCell $dimension={dimension} />
+        <ExpandCellWrapper $dimension={dimension} />
       </WrapperTitleCell>
     ),
     cell: ({ row }) => {
       const original = row.original as RowData & MetaRowProps<Person>;
 
-      return (
-        row.getCanExpand() && (
-          <ExpandCell $dimension={dimension}>
-            {original.meta?.expandedRowRender && (
-              <ExpandIconPlacement
-                style={{ margin: 0, flexShrink: 0 }}
-                dimension="mBig"
-                disabled={original.meta?.disabled}
-                highlightFocus={false}
-                onClick={row.getToggleExpandedHandler()}
-              >
-                <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-              </ExpandIconPlacement>
-            )}
-          </ExpandCell>
-        )
+      return row.getCanExpand() && original.meta?.expandedRowRender ? (
+        <ExpandCell
+          dimension={dimension}
+          style={{ margin: 0, flexShrink: 0 }}
+          isOpened={row.getIsExpanded()}
+          disabled={original.meta?.disabled}
+          onClick={row.getToggleExpandedHandler()}
+        />
+      ) : (
+        <ExpandCellWrapper $dimension={dimension} />
       );
     },
   },

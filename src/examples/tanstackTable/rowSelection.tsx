@@ -1,6 +1,6 @@
 import { getCoreRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
-import { CheckboxField, Link, ListItem, UnorderedList } from '@admiral-ds/react-ui';
+import { Link, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 import {
   CellText,
@@ -58,33 +58,28 @@ export const RowSelection = () => {
         id: 'checkbox-column', // required id
         header: ({ table }) => (
           <WrapperTitleCell className="th">
-            <CheckboxCell $dimension={dimension}>
-              <CheckboxField
-                dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                type="checkbox"
-                {...{
-                  checked: table.getIsAllRowsSelected(),
-                  indeterminate: table.getIsSomeRowsSelected(),
-                  onChange: table.getIsSomeRowsSelected()
-                    ? () => setRowSelection({})
-                    : table.getToggleAllRowsSelectedHandler(),
-                }}
-              />
-            </CheckboxCell>
+            <CheckboxCell
+              dimension={dimension}
+              {...{
+                checked: table.getIsAllRowsSelected(),
+                indeterminate: table.getIsSomeRowsSelected(),
+                onChange: table.getIsSomeRowsSelected()
+                  ? () => setRowSelection({})
+                  : table.getToggleAllRowsSelectedHandler(),
+              }}
+            />
           </WrapperTitleCell>
         ),
         cell: ({ row }) => (
-          <CheckboxCell $dimension={dimension}>
-            <CheckboxField
-              dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-              {...{
-                checked: row.getIsSelected(),
-                disabled: !row.getCanSelect(),
-                indeterminate: row.getIsSomeSelected(),
-                onChange: row.getToggleSelectedHandler(),
-              }}
-            />
-          </CheckboxCell>
+          <CheckboxCell
+            dimension={dimension}
+            {...{
+              checked: row.getIsSelected(),
+              disabled: !row.getCanSelect(),
+              indeterminate: row.getIsSomeSelected(),
+              onChange: row.getToggleSelectedHandler(),
+            }}
+          />
         ),
       },
       {
@@ -128,7 +123,7 @@ export const RowSelection = () => {
             выбранные до этого строки. Отображение столбца детализации (столбец со стрелками) регулируется
             пользователем, в столбец необходимо передавать <i>id: 'checkbox-column'</i>.
           </PStyled>
-          <PStyled>
+          <PStyled as="div">
             <UnorderedList dimension="s">
               <ListItem>
                 Если необходимо отключить чекбокс отдельных строк, то следует в useReactTable передать{' '}

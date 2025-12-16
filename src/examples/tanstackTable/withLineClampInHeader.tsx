@@ -65,7 +65,7 @@ export const WithLineClampInHeader = ({}) => {
             Заголовки таблицы по умолчанию выводятся в одну строку и при нехватке места сокращаются с помощью троеточия.
             Управлять высотой заголовков позволяют параметры headerLineClamp и headerExtraLineClamp:
           </PStyled>
-          <PStyled>
+          <PStyled as="div">
             <UnorderedList dimension="s">
               <ListItem>headerLineClamp - задаёт максимальное количество строк основого текста в заголовке;</ListItem>
               <ListItem>

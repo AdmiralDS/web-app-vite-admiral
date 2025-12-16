@@ -52,6 +52,7 @@ export const Body = <T,>({
       <Fragment key={row.id}>
         <S.BodyTr
           className="tr"
+          data-row={index}
           $dimension={dimension}
           selected={isSelected}
           disabled={original.meta?.disabled}

@@ -121,7 +121,7 @@ export const RowState = () => {
       text={
         <>
           <PStyled>Для каждой строки могут быть заданы следующие состояния: </PStyled>
-          <PStyled>
+          <PStyled as="div">
             <UnorderedList dimension="s">
               <ListItem>selected - строка выбрана, чекбокс в строке проставлен;</ListItem>
               <ListItem>disabled - строка задизейблена;</ListItem>
