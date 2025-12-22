@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import { UnorderedList, ListItem } from '@admiral-ds/react-ui';
 
-import { ExampleSection } from '#examples/-helpers';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 import { CellText, TanstackTable, defaultOptions } from '#examples/-helpers/tanstackTable';
 
 type Transaction = {
@@ -95,8 +96,50 @@ export const BaseExample = () => {
   });
 
   return (
-    <ExampleSection text="Контент ячеек не имеет внутренних отступов. Вы можете использовать styled-компонент CellText, который предоставляет дефолтные отступы, либо можете оборачивать контент ячейки в свою обертку.">
-      <TanstackTable table={table} />
-    </ExampleSection>
+    <>
+      <ExampleSection
+        header="FAQs"
+        text={
+          <>
+            <PStyled>
+              <UnorderedList dimension="s">
+                <ListItem>
+                  Почему таблица не поддерживает табличные теги (table, tbody, tr, td и т.д.), используя вместо этого
+                  верстку на div-элементах?
+                  <UnorderedList dimension="s" styleType="virgule">
+                    <ListItem>
+                      Во-первых, при построении таблицы через стандартные табличные теги возникают сложности в строгом
+                      определении ширины столбцов, что особенно критично при ресайзе. Даже при явно заданной ширине
+                      столбца через тег COL или параметр width, фактическая ширина столбца может отличаться.
+                    </ListItem>
+                    <ListItem>
+                      Во-вторых, при разработке функционала фиксированных колонок, было решено оборачивать фиксированные
+                      ячейки в строке в отдельный контейнер с position: sticky. Это позволяет один раз задать позицию
+                      (координаты left: 0 или right:0) для всего контейнера вместо того, чтобы многократно пересчитывать
+                      позицию каждой отдельной фиксированной ячейки. Такой подход улучшает производительность
+                      компонента, но не применим в сочетании с табличной вёрсткой, так как табличная разметка не
+                      предполагает использование промежуточных оберток между уровнями строк (tr) и ячеек (td).
+                    </ListItem>
+                  </UnorderedList>
+                </ListItem>
+                <ListItem>
+                  Поддерживает ли таблица функционал Copy/Paste данных, то есть можно ли выделить часть табличных
+                  данных, скопировать их и перенести в табличном виде в инструменты подобные Excel и наоборот?
+                  <UnorderedList dimension="s" styleType="virgule">
+                    <ListItem>
+                      Так как разметка таблица реализована на div-элементах, встроенная поддержка Copy/Paste функции
+                      отсутствует.
+                    </ListItem>
+                  </UnorderedList>
+                </ListItem>
+              </UnorderedList>
+            </PStyled>
+          </>
+        }
+      >
+        <TanstackTable table={table} />
+      </ExampleSection>
+      <ExampleSection text="P.S. Отдельная благодарность Андрею Поповскому за помощь в работе с Tanstack Table. " />
+    </>
   );
 };
