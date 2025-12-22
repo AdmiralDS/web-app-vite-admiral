@@ -1,4 +1,5 @@
 export * from './baseExample';
+export * from './cellText';
 export * from './withOverflowHeaders';
 export * from './withExtraTextInHeader';
 export * from './withLineClampInHeader';
