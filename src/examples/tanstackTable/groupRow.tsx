@@ -6,7 +6,6 @@ import {
   type ExpandedState,
 } from '@tanstack/react-table';
 import { useMemo, useState } from 'react';
-import { CheckboxField } from '@admiral-ds/react-ui';
 
 import {
   CellText,
@@ -14,8 +13,6 @@ import {
   TanstackTable,
   CheckboxCell,
   ExpandCell,
-  ExpandIcon,
-  ExpandIconPlacement,
   WrapperTitleCell,
   WrapperExpandContent,
   CellTh,
@@ -168,15 +165,11 @@ export const GroupRowExample = () => {
           return (
             <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
               {row.getCanExpand() && (
-                <ExpandCell $dimension={dimension}>
-                  <ExpandIconPlacement
-                    dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                    highlightFocus={false}
-                    onClick={row.getToggleExpandedHandler()}
-                  >
-                    <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                  </ExpandIconPlacement>
-                </ExpandCell>
+                <ExpandCell
+                  dimension={dimension}
+                  onClick={row.getToggleExpandedHandler()}
+                  isOpened={row.getIsExpanded()}
+                />
               )}
               <CellText>{getValue<boolean>()}</CellText>
             </WrapperExpandContent>
@@ -227,26 +220,22 @@ export const GroupRowExample = () => {
     ...defaultOptions,
   });
 
-  // TODO: Подумать над созданием отдельного компонента, так как не очень хорошо, что пользователь будет вручную управлять стилями
   const columns2 = useMemo(
     () => [
       columnHelper.accessor('type', {
         header: ({ table, header }) => {
           return (
             <WrapperTitleCell className="th">
-              <CheckboxCell $dimension={dimension}>
-                <CheckboxField
-                  dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                  type="checkbox"
-                  {...{
-                    checked: table.getIsAllRowsSelected(),
-                    indeterminate: table.getIsSomeRowsSelected(),
-                    onChange: table.getIsSomeRowsSelected()
-                      ? () => setRowSelection({})
-                      : table.getToggleAllRowsSelectedHandler(),
-                  }}
-                />
-              </CheckboxCell>
+              <CheckboxCell
+                dimension={dimension}
+                {...{
+                  checked: table.getIsAllRowsSelected(),
+                  indeterminate: table.getIsSomeRowsSelected(),
+                  onChange: table.getIsSomeRowsSelected()
+                    ? () => setRowSelection({})
+                    : table.getToggleAllRowsSelectedHandler(),
+                }}
+              />
               <CellTh
                 as="div"
                 style={{
@@ -279,27 +268,21 @@ export const GroupRowExample = () => {
           return (
             <WrapperExpandContent $depth={isRowHaveSubRows ? row.depth : row.depth + 1} $dimension={dimension}>
               {isRowHaveSubRows && (
-                <ExpandCell $dimension={dimension}>
-                  <ExpandIconPlacement
-                    dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
-                    highlightFocus={false}
-                    onClick={row.getToggleExpandedHandler()}
-                  >
-                    <ExpandIcon $isOpened={row.getIsExpanded()} aria-hidden />
-                  </ExpandIconPlacement>
-                </ExpandCell>
-              )}
-              <CheckboxCell $dimension={dimension}>
-                <CheckboxField
-                  dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'}
-                  {...{
-                    checked: isRowHaveSubRows ? rowSelected : row.getIsSelected(),
-                    disabled: !isRowHaveSubRows && !row.getCanSelect(),
-                    indeterminate: rowIndeterminate,
-                    onChange: isRowHaveSubRows ? handleToggleSubRows : row.getToggleSelectedHandler(),
-                  }}
+                <ExpandCell
+                  dimension={dimension}
+                  isOpened={row.getIsExpanded()}
+                  onClick={row.getToggleExpandedHandler()}
                 />
-              </CheckboxCell>
+              )}
+              <CheckboxCell
+                dimension={dimension}
+                {...{
+                  checked: isRowHaveSubRows ? rowSelected : row.getIsSelected(),
+                  disabled: !isRowHaveSubRows && !row.getCanSelect(),
+                  indeterminate: rowIndeterminate,
+                  onChange: isRowHaveSubRows ? handleToggleSubRows : row.getToggleSelectedHandler(),
+                }}
+              />
               <CellText>{getValue<boolean>()}</CellText>
             </WrapperExpandContent>
           );

@@ -174,7 +174,7 @@ export const WithOverflowMenu = () => {
               результата функция должна возвращать компонент OverflowMenu. Размер OverflowMenu следует задавать согласно
               правилу:
             </PStyled>
-            <PStyled>
+            <PStyled as="div">
               <UnorderedList dimension="s">
                 <ListItem>
                   для таблицы с dimension="s" или dimension="m" используется OverflowMenu c dimension="m"

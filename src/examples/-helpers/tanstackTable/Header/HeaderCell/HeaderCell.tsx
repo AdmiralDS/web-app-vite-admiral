@@ -19,8 +19,8 @@ import type { Dimension } from '../../types';
 
 //todo пересмотреть тип
 interface Props<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
-  headerLineClamp: number;
-  headerExtraLineClamp: number;
+  headerLineClamp?: number;
+  headerExtraLineClamp?: number;
   dimension: Dimension;
   multiSortable?: boolean;
   header: Header<T, unknown>;
@@ -34,8 +34,8 @@ interface Props<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
 }
 
 export const CellTh = <T,>({
-  headerLineClamp,
-  headerExtraLineClamp,
+  headerLineClamp = 1,
+  headerExtraLineClamp = 1,
   dimension,
   multiSortable,
   header,

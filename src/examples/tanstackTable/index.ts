@@ -21,3 +21,4 @@ export * from './loadScroll';
 export * from './loadScrollSpinner';
 export * from './loadScrollSkeleton';
 export * from './groupRowExperimantal';
+export * from './dataAtrClassName';
