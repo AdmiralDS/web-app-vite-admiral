@@ -2,7 +2,7 @@ import type { CSSProperties } from 'styled-components';
 import { Fragment, useLayoutEffect, useRef } from 'react';
 import { flexRender, type Table, type HeaderGroup, type RowData } from '@tanstack/react-table';
 
-import type { Dimension, MetaRowProps, VirtualScroll } from '../types';
+import type { Dimension, MetaRowProps } from '../types';
 import * as S from './style';
 import { CellTh } from './HeaderCell';
 import { tableHeaderRowSpan } from './utils';
@@ -15,7 +15,6 @@ interface Props<T> {
   headerExtraLineClamp: number;
   greyHeader?: boolean;
   showRowsActions?: boolean;
-  virtualScroll?: VirtualScroll;
   showDividerForLastColumn: boolean;
   tableRef: React.MutableRefObject<null>;
   showBorders?: boolean;

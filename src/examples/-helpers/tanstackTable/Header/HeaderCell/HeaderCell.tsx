@@ -45,7 +45,7 @@ export const CellTh = <T,>({
   rowSpan = 1,
   ...props
 }: Props<T>) => {
-  const [headerRef, setHeaderRef] = useState<HTMLDivElement | null>(null);
+  const [headerEl, setHeaderEl] = useState<HTMLDivElement | null>(null);
 
   const column = header.column;
 
@@ -69,7 +69,7 @@ export const CellTh = <T,>({
       $resizer={visibleResizer}
       colSpan={header.colSpan}
       rowSpan={rowSpan}
-      ref={(node) => setHeaderRef(node)}
+      ref={(node) => setHeaderEl(node)}
     >
       <HeaderCellContent $dimension={dimension} $cellAlign={column.columnDef.meta?.cellAlign}>
         <HeaderCellTitle
@@ -91,7 +91,7 @@ export const CellTh = <T,>({
         {column.getCanFilter() && column.columnDef.meta?.filter?.renderFilter && (
           <>
             <HeaderCellSpacer width={defaultSpacer} />
-            <Filter column={column} targetElement={headerRef} />
+            <Filter column={column} targetElement={headerEl} />
           </>
         )}
       </HeaderCellContent>

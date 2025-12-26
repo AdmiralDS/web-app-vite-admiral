@@ -85,7 +85,7 @@ export const VirtualBody = <T,>({
       {isEmptyArrayRows ? (
         <S.BodyTr className="tr" $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
           <S.EmptyCell className="td" $dimension={dimension} $resizer={false}>
-            {emptyMessage || 'Нет совпадений'}
+            {emptyMessage}
           </S.EmptyCell>
         </S.BodyTr>
       ) : (

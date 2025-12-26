@@ -35,8 +35,10 @@ export const TanstackTable = forwardRef(
       showDividerForLastColumn = false,
       showLastRowUnderline = true,
       showBorders = false,
-      emptyMessage,
+      emptyMessage = 'Нет совпадений',
       renderRowWrapper,
+      style,
+      className,
       ...props
     }: TanstackTableProps<T>,
     ref: React.ForwardedRef<HTMLDivElement>,
@@ -51,30 +53,21 @@ export const TanstackTable = forwardRef(
     });
     const showRowsActions = isRowsActions && userShowRowsActions;
 
-    //определение ширины колонок
-    let leftTemplate = '',
-      centerTemplate = '',
-      rightTemplate = '';
-
-    if (table.getIsSomeColumnsPinned('left')) {
-      leftTemplate = table.getLeftLeafColumns().reduce((result, column) => {
-        if (column.id == 'checkbox-column' || column.id == 'expand-column') {
-          return `${result} min-content`;
-        }
-        return `${result} ${getColumnWidth(column)}`;
-      }, '');
-    }
+    let leftTemplate = table.getLeftLeafColumns().reduce((result, column) => {
+      if (column.id == 'checkbox-column' || column.id == 'expand-column') {
+        return `${result} min-content`;
+      }
+      return `${result} ${getColumnWidth(column)}`;
+    }, '');
 
     // minmax(0px, auto) для Spacer
-    centerTemplate =
+    let centerTemplate =
       table.getCenterLeafColumns().reduce((result, column) => `${result} ${getColumnWidth(column)}`, '') +
       ' minmax(0px, auto)';
 
-    if (table.getIsSomeColumnsPinned('right')) {
-      rightTemplate = table
-        .getRightLeafColumns()
-        .reduce((result, column) => `${result} ${getColumnWidth(column)}`, ' ');
-    }
+    let rightTemplate = table
+      .getRightLeafColumns()
+      .reduce((result, column) => `${result} ${getColumnWidth(column)}`, '');
 
     const gridTemplate = leftTemplate + centerTemplate + rightTemplate;
     const gridTemplateColumns = gridTemplate + (isRowsActions ? ' min-content' : '');
@@ -94,7 +87,7 @@ export const TanstackTable = forwardRef(
         estimateSize: (index: number) =>
           fixedRowHeight?.(index) || estimatedRowHeight?.(index) || getRowHeight(dimension),
         count: table.getRowModel().rows.length,
-        overscan: overscan,
+        overscan,
       });
     }
 
@@ -102,14 +95,14 @@ export const TanstackTable = forwardRef(
       <S.Table
         ref={refSetter(ref, tableRef)}
         data-borders={showBorders}
-        {...props}
         style={
           {
             '--columns-template': gridTemplateColumns,
-            ...props.style,
+            ...style,
           } as React.CSSProperties
         }
-        className={`table ${props.className || ''}`}
+        className={`table ${className || ''}`}
+        {...props}
       >
         <Header
           table={table}
@@ -119,7 +112,6 @@ export const TanstackTable = forwardRef(
           headerExtraLineClamp={headerExtraLineClamp}
           greyHeader={greyHeader}
           showRowsActions={showRowsActions}
-          virtualScroll={virtualScroll}
           showDividerForLastColumn={showDividerForLastColumn}
           tableRef={tableRef}
           showBorders={showBorders}
