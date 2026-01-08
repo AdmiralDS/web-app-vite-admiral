@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { headerStyle } from '../../Header/HeaderCell/styled';
+import { headerStyle } from '../../Header/HeaderCell/style';
 import { cellStyle } from '../../style';
 import type { Dimension } from '../../types';
 

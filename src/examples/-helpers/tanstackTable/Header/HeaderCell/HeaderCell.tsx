@@ -8,7 +8,7 @@ import {
   TitleContent,
   SortIconWrapper,
   SortOrder,
-} from './styled';
+} from './style';
 import { TitleText } from './TitleText';
 import { Filter } from './Filter';
 import { RowWidthResizer } from './RowWidthResizer';
