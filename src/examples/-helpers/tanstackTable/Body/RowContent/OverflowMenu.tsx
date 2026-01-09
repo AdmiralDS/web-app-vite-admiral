@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styled, { css } from 'styled-components';
 import type { Row, RowData } from '@tanstack/react-table';
+
 import type { Dimension, MetaRowProps } from '../../types';
 import { getRowHeight } from '../../utils';
 
@@ -31,8 +32,6 @@ const OverflowMenuContent = styled.div<{
   box-sizing: border-box;
   height: 100%;
   min-width: ${({ $dimension }) => getRowHeight($dimension)}px;
-  //todo нужен ли тут width?
-  width: ${({ $dimension }) => getRowHeight($dimension)}px;
   padding: ${({ $dimension }) => {
     switch ($dimension) {
       case 's':

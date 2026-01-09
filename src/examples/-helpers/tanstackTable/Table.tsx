@@ -1,14 +1,13 @@
 import { type RowData } from '@tanstack/react-table';
-import { forwardRef, useRef, useState } from 'react';
+import { forwardRef, useRef, useState, useMemo } from 'react';
 import { refSetter } from '@admiral-ds/react-ui';
-import { useVirtualizer } from '@tanstack/react-virtual';
 
 import * as S from './style';
 import { Body } from './Body';
 import { VirtualBody } from './Body/VirtualBody';
 import { Header } from './Header';
 import type { MetaRowProps, TanstackTableProps } from './types';
-import { getColumnWidth, getRowHeight } from './utils';
+import { getColumnWidth } from './utils';
 
 export const defaultOptions = {
   enableSorting: false,
@@ -45,6 +44,7 @@ export const TanstackTable = forwardRef(
   ) => {
     const [headerHeight, setHeaderHeight] = useState(0);
     const tableRef = useRef(null);
+    const mergedRefs = useMemo(() => refSetter(ref, tableRef), [ref]);
 
     const isRowsActions = table.getRowModel().rows.some((row) => {
       const original = row.original as RowData & MetaRowProps<T>;
@@ -77,23 +77,9 @@ export const TanstackTable = forwardRef(
       gridTemplate +
       (table.getIsSomeColumnsPinned('right') || showRowsActions ? ` ${showRowsActions ? 'min-content ' : ''}0px` : '');
 
-    let rowVirtualizer = null;
-
-    if (virtualScroll && virtualScroll.vertical) {
-      const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
-
-      rowVirtualizer = useVirtualizer({
-        getScrollElement: () => tableRef.current,
-        estimateSize: (index: number) =>
-          fixedRowHeight?.(index) || estimatedRowHeight?.(index) || getRowHeight(dimension),
-        count: table.getRowModel().rows.length,
-        overscan,
-      });
-    }
-
     return (
       <S.Table
-        ref={refSetter(ref, tableRef)}
+        ref={mergedRefs}
         data-borders={showBorders}
         style={
           {
@@ -122,7 +108,7 @@ export const TanstackTable = forwardRef(
           }
         />
 
-        {virtualScroll && rowVirtualizer ? (
+        {virtualScroll && virtualScroll.vertical ? (
           <VirtualBody
             dimension={dimension}
             table={table}
@@ -137,7 +123,7 @@ export const TanstackTable = forwardRef(
             showDividerForLastColumn={showDividerForLastColumn}
             emptyMessage={emptyMessage}
             renderRowWrapper={renderRowWrapper}
-            rowVirtualizer={rowVirtualizer}
+            virtualScroll={virtualScroll}
           />
         ) : (
           <Body

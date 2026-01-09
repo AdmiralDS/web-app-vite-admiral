@@ -1,16 +1,17 @@
 import { type RowData } from '@tanstack/react-table';
-import { type VirtualItem, type Virtualizer } from '@tanstack/react-virtual';
+import { useVirtualizer, type VirtualItem } from '@tanstack/react-virtual';
 import { Fragment } from 'react';
 
 import * as S from './style';
-import type { MetaRowProps } from '../types';
+import type { MetaRowProps, VirtualScroll } from '../types';
+import { getRowHeight } from '../utils';
 import { ExpandedRow } from './ExpandedRow';
 import { RowContent } from './RowContent';
 import type { BodyProps } from './Body';
 
 interface VirtualBodyProps<T> extends BodyProps<T> {
   isDynamicRowHeight: boolean;
-  rowVirtualizer: Virtualizer<Element, Element>;
+  virtualScroll: VirtualScroll;
 }
 
 export const VirtualBody = <T,>({
@@ -27,8 +28,17 @@ export const VirtualBody = <T,>({
   showDividerForLastColumn,
   emptyMessage,
   renderRowWrapper,
-  rowVirtualizer,
+  virtualScroll,
 }: VirtualBodyProps<T>) => {
+  const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
+
+  const rowVirtualizer = useVirtualizer({
+    getScrollElement: () => tableRef.current,
+    estimateSize: (index: number) => fixedRowHeight?.(index) || estimatedRowHeight?.(index) || getRowHeight(dimension),
+    count: table.getRowModel().rows.length,
+    overscan,
+  });
+
   const isEmptyArrayRows = table.getRowModel().rows.length === 0;
 
   const renderRow = (virtualRow: VirtualItem) => {

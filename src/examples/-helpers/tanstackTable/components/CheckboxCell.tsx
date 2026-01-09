@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import type { Dimension } from '../types';
 import { CheckboxField, type CheckboxFieldProps } from '@admiral-ds/react-ui';
+
+import type { Dimension } from '../types';
 
 export const CheckboxCellWrapper = styled.div<{ $dimension: Dimension }>`
   width: ${({ $dimension }) => ($dimension === 's' || $dimension === 'm' ? 44 : 56)}px;
