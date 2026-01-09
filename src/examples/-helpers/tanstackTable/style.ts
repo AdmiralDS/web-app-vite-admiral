@@ -27,6 +27,27 @@ export const borderStyle = css<{ $resizer?: boolean }>`
   }
 `;
 
+export const stickyStyle = css<{ $position: 'left' | 'right' }>`
+  position: sticky;
+  z-index: 2;
+  ${(p) =>
+    p.$position == 'left' &&
+    css`
+      left: 0;
+      .table[data-shadow-left='true'] & {
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
+      }
+    `}
+  ${(p) =>
+    p.$position == 'right' &&
+    css`
+      right: 0;
+      .table[data-shadow-right='true'] & {
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
+      }
+    `}
+`;
+
 export const Table = styled.div`
   display: grid;
   grid-template-rows: repeat(2, min-content);

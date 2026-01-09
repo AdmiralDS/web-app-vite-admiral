@@ -1,12 +1,33 @@
 import { flexRender, type Row, type RowData, type Cell } from '@tanstack/react-table';
+import styled from 'styled-components';
 
 import type { Dimension, MetaRowProps } from '../../types';
-import { WrapperExpandContent } from '../../style';
+import { WrapperExpandContent, cellStyle, stickyStyle } from '../../style';
+import { headerStyle } from '../../Header/HeaderCell/style';
 import { CellTd } from '../style';
 
-import * as S from './style';
 import { OverflowMenu } from './OverflowMenu';
 import { CheckboxCell, ExpandCell } from '../../components';
+
+const GroupTitleCell = styled.div<{ $dimension: Dimension }>`
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  cursor: default;
+  ${headerStyle}
+  ${cellStyle}
+`;
+
+export const StickyWrapper = styled.div<{ $gridColumn: string; $position: 'left' | 'right' }>`
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: ${(p) => p.$gridColumn};
+  ${stickyStyle}
+`;
+
+const Spacer = styled.div`
+  padding: 0;
+`;
 
 interface RowContentProps<T> {
   original: RowData & MetaRowProps<T>;
@@ -73,7 +94,7 @@ export const RowContent = <T,>({
             />
           )}
 
-          <S.GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</S.GroupTitleCell>
+          <GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</GroupTitleCell>
         </WrapperExpandContent>
       </div>
     );
@@ -103,14 +124,14 @@ export const RowContent = <T,>({
       ) : (
         <>
           {!!row.getLeftVisibleCells().length && (
-            <S.StickyWrapper $position="left" $gridColumn={`1 / span ${row.getLeftVisibleCells().length}`}>
+            <StickyWrapper $position="left" $gridColumn={`1 / span ${row.getLeftVisibleCells().length}`}>
               {row.getLeftVisibleCells().map((cell) => renderCellTd(cell))}
-            </S.StickyWrapper>
+            </StickyWrapper>
           )}
           {row.getCenterVisibleCells().map((cell) => renderCellTd(cell))}
-          <S.Spacer />
+          <Spacer />
           {(!!row.getRightVisibleCells().length || renderOverflowMenu) && (
-            <S.StickyWrapper
+            <StickyWrapper
               $position="right"
               $gridColumn={`-1 / -${1 + row.getRightVisibleCells().length + (renderOverflowMenu ? 1 : 0)}`}
             >
@@ -125,7 +146,7 @@ export const RowContent = <T,>({
                   headerHeight={headerHeight}
                 />
               )}
-            </S.StickyWrapper>
+            </StickyWrapper>
           )}
         </>
       )}

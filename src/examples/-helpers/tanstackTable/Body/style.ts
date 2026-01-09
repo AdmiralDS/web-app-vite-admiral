@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { borderStyle, cellStyle } from '../style';
 import { typography, type Color } from '@admiral-ds/react-ui';
 import type { Dimension, Status } from '../types';
-import { StickyWrapper } from './RowContent/style';
+import { StickyWrapper } from './RowContent';
 
 export const rowStyle = css<{ $dimension: Dimension }>`
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});

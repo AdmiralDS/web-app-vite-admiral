@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Table } from '../style';
+import styled from 'styled-components';
+import { stickyStyle } from '../style';
 import type { Dimension } from '../types';
 import { getRowHeight } from '../utils';
 
@@ -57,25 +57,7 @@ export const NormalWrapper = styled.div<{ $gridColumn: string; $gridTemplateRows
 `;
 
 export const StickyWrapper = styled(NormalWrapper)<{ $position: 'left' | 'right' }>`
-  position: sticky;
-  z-index: 2;
-
-  ${(p) =>
-    p.$position == 'left' &&
-    css`
-      left: 0;
-      ${Table}[data-shadow-left='true'] & {
-        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.12);
-      }
-    `}
-  ${(p) =>
-    p.$position == 'right' &&
-    css`
-      right: 0;
-      ${Table}[data-shadow-right='true'] & {
-        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.12);
-      }
-    `}
+  ${stickyStyle}
 `;
 
 export const Header = styled.div`
