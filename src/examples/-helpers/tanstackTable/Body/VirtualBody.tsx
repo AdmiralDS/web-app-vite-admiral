@@ -1,13 +1,31 @@
 import { type RowData } from '@tanstack/react-table';
 import { useVirtualizer, type VirtualItem } from '@tanstack/react-virtual';
 import { Fragment } from 'react';
+import styled from 'styled-components';
 
-import * as S from './style';
 import type { MetaRowProps, VirtualScroll } from '../types';
 import { getRowHeight } from '../utils';
+
+import { BodyTr } from './style';
 import { ExpandedRow } from './ExpandedRow';
 import { RowContent } from './RowContent';
+import { EmptyRow } from './EmptyRow';
 import type { BodyProps } from './Body';
+
+// use style attribute for frequently changed styles
+const VirtualBodyTr = styled(BodyTr).attrs<{ $moveY?: number }>((p) => ({
+  style: { transform: `translateY(${p.$moveY + 'px'})` },
+}))`
+  position: absolute;
+  left: 0;
+  right: 0;
+`;
+
+const VirtualBodyEl = styled.div<{ $heightBody: string }>`
+  display: grid;
+  position: relative;
+  height: ${({ $heightBody }) => $heightBody};
+`;
 
 interface VirtualBodyProps<T> extends BodyProps<T> {
   isDynamicRowHeight: boolean;
@@ -55,7 +73,7 @@ export const VirtualBody = <T,>({
 
     const node = (
       <Fragment key={index}>
-        <S.VirtualBodyTr
+        <VirtualBodyTr
           className="tr"
           data-index={index} //needed for dynamic row height measurement
           data-row={index}
@@ -80,7 +98,7 @@ export const VirtualBody = <T,>({
             tableRef={tableRef}
             headerHeight={headerHeight}
           />
-        </S.VirtualBodyTr>
+        </VirtualBodyTr>
         {row.getCanExpand() && original.meta?.expandedRowRender && (
           <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
         )}
@@ -91,16 +109,14 @@ export const VirtualBody = <T,>({
   };
 
   return (
-    <S.VirtualBody className="tbody" $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
+    <VirtualBodyEl className="tbody" $heightBody={`${rowVirtualizer?.getTotalSize()}px`}>
       {isEmptyArrayRows ? (
-        <S.BodyTr className="tr" $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell className="td" $dimension={dimension} $resizer={false}>
-            {emptyMessage}
-          </S.EmptyCell>
-        </S.BodyTr>
+        <EmptyRow dimension={dimension} underline={showLastRowUnderline && !showBorders}>
+          {emptyMessage}
+        </EmptyRow>
       ) : (
         rowVirtualizer?.getVirtualItems().map((virtualRow) => renderRow(virtualRow))
       )}
-    </S.VirtualBody>
+    </VirtualBodyEl>
   );
 };

@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
-import { borderStyle, cellStyle } from '../style';
 import { typography, type Color } from '@admiral-ds/react-ui';
+
 import type { Dimension, Status } from '../types';
+import { borderStyle } from '../style';
 import { StickyWrapper } from './RowContent';
 
 export const rowStyle = css<{ $dimension: Dimension }>`
@@ -59,17 +60,6 @@ export const rowHoverMixin = css`
   }
 `;
 
-export const Body = styled.div`
-  display: grid;
-`;
-
-export const VirtualBody = styled.div<{ $heightBody: string }>`
-  display: grid;
-  position: relative;
-  height: ${({ $heightBody }) => $heightBody};
-`;
-
-/** aka Row + SimpleRow from react-ui */
 export const BodyTr = styled.div<{
   selected?: boolean;
   disabled?: boolean;
@@ -130,14 +120,6 @@ export const BodyTr = styled.div<{
   }};
 `;
 
-export const VirtualBodyTr = styled(BodyTr)<{ $moveY: number }>`
-  position: absolute;
-  left: 0;
-  right: 0;
-  transform: translateY(${({ $moveY }) => $moveY}px);
-`;
-
-/** Подумать про text-align */
 export const CellTd = styled.div<{
   $dimension: Dimension;
   $resizer?: boolean;
@@ -153,15 +135,4 @@ export const CellTd = styled.div<{
   overflow: hidden;
   text-align: ${({ $cellAlign }) => ($cellAlign === 'right' ? 'right' : 'left')};
   ${({ $disableBorderStyle }) => !$disableBorderStyle && borderStyle}
-`;
-
-export const EmptyCell = styled(CellTd)`
-  grid-column: 1 / -1;
-  margin: 2px 0;
-  color: var(--admiral-color-Neutral_Neutral50, ${(p) => p.theme.color['Neutral/Neutral 50']});
-  ${cellStyle}
-`;
-
-export const ExpandCellTd = styled(CellTd)`
-  height: fit-content;
 `;

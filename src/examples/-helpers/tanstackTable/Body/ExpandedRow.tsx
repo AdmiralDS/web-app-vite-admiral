@@ -2,10 +2,9 @@ import { useLayoutEffect, useRef } from 'react';
 import type { Row, RowData } from '@tanstack/react-table';
 import styled from 'styled-components';
 
-import { BodyTr, ExpandCellTd } from './style';
-
 import { Transition } from '../../../../layout/SideMenu/Transition';
 import type { Dimension, MetaRowProps } from '../types';
+import { BodyTr, CellTd } from './style';
 
 const ExpandTr = styled(BodyTr)`
   grid-template-columns: unset;
@@ -13,6 +12,11 @@ const ExpandTr = styled(BodyTr)`
   min-height: unset;
   overflow: hidden;
   transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+const ExpandCellTd = styled(CellTd)`
+  height: fit-content;
+  grid-column: span 1/-1;
 `;
 
 export const ExpandedRow = <T,>({
@@ -71,7 +75,7 @@ export const ExpandedRow = <T,>({
       onExiting={handleTransitionExiting}
     >
       <ExpandTr className="tr" ref={wrapperRef} $dimension={dimension} $showUnderline={showUnderline}>
-        <ExpandCellTd className="td" $dimension={dimension} style={{ gridColumn: 'span 1/-1' }} ref={contentRef}>
+        <ExpandCellTd className="td" ref={contentRef} $dimension={dimension}>
           {original.meta?.expandedRowRender && original.meta.expandedRowRender({ row })}
         </ExpandCellTd>
       </ExpandTr>

@@ -46,12 +46,12 @@ export const TanstackTable = forwardRef(
     const tableRef = useRef(null);
     const mergedRefs = useMemo(() => refSetter(ref, tableRef), [ref]);
 
-    const isRowsActions = table.getRowModel().rows.some((row) => {
+    const hasRowsActions = table.getRowModel().rows.some((row) => {
       const original = row.original as RowData & MetaRowProps<T>;
 
       return original.meta?.actionRender || original.meta?.overflowMenuRender;
     });
-    const showRowsActions = isRowsActions && userShowRowsActions;
+    const showRowsActions = hasRowsActions && userShowRowsActions;
 
     let leftTemplate = table.getLeftLeafColumns().reduce((result, column) => {
       if (column.id == 'checkbox-column' || column.id == 'expand-column') {
@@ -70,7 +70,7 @@ export const TanstackTable = forwardRef(
       .reduce((result, column) => `${result} ${getColumnWidth(column)}`, '');
 
     const gridTemplate = leftTemplate + centerTemplate + rightTemplate;
-    const gridTemplateColumns = gridTemplate + (isRowsActions ? ' min-content' : '');
+    const gridTemplateColumns = gridTemplate + (hasRowsActions ? ' min-content' : '');
 
     const gridTemplateHeaders =
       (table.getIsSomeColumnsPinned('left') ? '0px ' : '') +
@@ -113,7 +113,6 @@ export const TanstackTable = forwardRef(
             dimension={dimension}
             table={table}
             tableRef={tableRef}
-            isDynamicRowHeight={!!virtualScroll.estimatedRowHeight}
             greyZebraRows={greyZebraRows}
             showRowsActions={showRowsActions}
             headerHeight={headerHeight}
@@ -123,6 +122,7 @@ export const TanstackTable = forwardRef(
             showDividerForLastColumn={showDividerForLastColumn}
             emptyMessage={emptyMessage}
             renderRowWrapper={renderRowWrapper}
+            isDynamicRowHeight={!!virtualScroll.estimatedRowHeight}
             virtualScroll={virtualScroll}
           />
         ) : (

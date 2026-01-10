@@ -1,13 +1,13 @@
 import { flexRender, type Row, type RowData, type Cell } from '@tanstack/react-table';
 import styled from 'styled-components';
 
-import type { Dimension, MetaRowProps } from '../../types';
-import { WrapperExpandContent, cellStyle, stickyStyle } from '../../style';
-import { headerStyle } from '../../Header/HeaderCell/style';
-import { CellTd } from '../style';
+import type { Dimension, MetaRowProps } from '../types';
+import { WrapperExpandContent, cellStyle, stickyStyle } from '../style';
+import { headerStyle } from '../Header/HeaderCell/style';
+import { CellTd } from './style';
 
 import { OverflowMenu } from './OverflowMenu';
-import { CheckboxCell, ExpandCell } from '../../components';
+import { CheckboxCell, ExpandCell } from '../components';
 
 const GroupTitleCell = styled.div<{ $dimension: Dimension }>`
   display: flex;

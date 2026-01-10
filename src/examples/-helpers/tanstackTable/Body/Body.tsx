@@ -1,16 +1,21 @@
 import { Fragment } from 'react';
 import { type Row, type RowData, type Table } from '@tanstack/react-table';
+import styled from 'styled-components';
 
-import * as S from './style';
-import { ExpandedRow } from './ExpandedRow';
 import type { Dimension, MetaRowProps } from '../types';
+
+import { BodyTr } from './style';
+import { ExpandedRow } from './ExpandedRow';
 import { RowContent } from './RowContent';
+import { EmptyRow } from './EmptyRow';
+
+const BodyEl = styled.div`
+  display: grid;
+`;
 
 export interface BodyProps<T> {
   table: Table<T>;
   greyZebraRows?: boolean;
-  /** Включение постоянной видимости иконок действий над строками (OverflowMenu и иконки одиночных действий).
-   * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions: boolean;
   dimension: Dimension;
   tableRef: React.MutableRefObject<null>;
@@ -50,7 +55,7 @@ export const Body = <T,>({
 
     const node = (
       <Fragment key={row.id}>
-        <S.BodyTr
+        <BodyTr
           className="tr"
           data-row={index}
           $dimension={dimension}
@@ -72,7 +77,7 @@ export const Body = <T,>({
             tableRef={tableRef}
             headerHeight={headerHeight}
           />
-        </S.BodyTr>
+        </BodyTr>
         {row.getCanExpand() && original.meta?.expandedRowRender && (
           <ExpandedRow dimension={dimension} row={row} showUnderline={showUnderline} />
         )}
@@ -83,13 +88,11 @@ export const Body = <T,>({
   };
 
   return (
-    <S.Body className="tbody">
+    <BodyEl className="tbody">
       {isEmptyArrayRows ? (
-        <S.BodyTr className="tr" $dimension={dimension} $showUnderline={showLastRowUnderline && !showBorders}>
-          <S.EmptyCell className="td" $dimension={dimension} $resizer={false}>
-            {emptyMessage}
-          </S.EmptyCell>
-        </S.BodyTr>
+        <EmptyRow dimension={dimension} underline={showLastRowUnderline && !showBorders}>
+          {emptyMessage}
+        </EmptyRow>
       ) : (
         table.getRowModel().rows.map((row, index, rows) => {
           const isLastRow = index === rows.length - 1;
@@ -97,6 +100,6 @@ export const Body = <T,>({
           return renderRow(row, index, isLastRow);
         })
       )}
-    </S.Body>
+    </BodyEl>
   );
 };
