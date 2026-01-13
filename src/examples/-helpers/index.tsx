@@ -31,10 +31,6 @@ export const SubHeader = styled.div`
 export const Text = styled.div`
   ${typography['Body/Body 2 Long']}
   max-width: 720px;
-
-  & > p:last-of-type {
-    margin: 0;
-  }
 `;
 
 export const Section = styled.div`

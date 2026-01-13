@@ -397,10 +397,10 @@
       ]
     },
     {
-      "name": "Tanstack examples",
+      "name": "Tanstack Table",
       "path": "/components/tanstackTable",
       "routes": [
-        { "name": "Базовый пример", "path": "/components/tanstackTable/baseExample" },
+        { "name": "Базовый пример", "path": "/components/tanstackTable" },
         { "name": "Контент ячеек", "path": "/components/tanstackTable/cellText" },
         { "name": "C переполнением заголовков", "path": "/components/tanstackTable/withOverflowHeaders" },
         { "name": "C дополнительным текстом в заголовках", "path": "/components/tanstackTable/withExtraTextInHeader" },

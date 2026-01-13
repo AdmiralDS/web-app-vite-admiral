@@ -27,6 +27,8 @@
     "@maskito/kit": "^3.2.1",
     "@maskito/react": "^3.2.1",
     "@tanstack/react-query": "^5.59.14",
+    "@tanstack/react-table": "^8.21.3",
+    "@tanstack/react-virtual": "^3.13.18",
     "@tanstack/router-plugin": "^1.76.4",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^14.3.1",
