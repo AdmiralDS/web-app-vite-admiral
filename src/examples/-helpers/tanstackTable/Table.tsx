@@ -1,13 +1,26 @@
 import { type RowData } from '@tanstack/react-table';
 import { forwardRef, useRef, useState, useMemo } from 'react';
 import { refSetter } from '@admiral-ds/react-ui';
+import styled from 'styled-components';
 
-import * as S from './style';
-import { Body } from './Body';
-import { VirtualBody } from './Body/VirtualBody';
+import { Body, VirtualBody } from './Body';
 import { Header } from './Header';
 import type { MetaRowProps, TanstackTableProps } from './types';
-import { getColumnWidth } from './utils';
+import { getColumnWidth } from './mixins';
+
+const Table = styled.div`
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  background: var(--admiral-color-Neutral_Neutral00, ${(p) => p.theme.color['Neutral/Neutral 00']});
+  overflow: auto;
+
+  &[data-borders='true'] {
+    border: 1px solid var(--admiral-color-Neutral_Neutral20, ${(p) => p.theme.color['Neutral/Neutral 20']});
+  }
+`;
 
 export const defaultOptions = {
   enableSorting: false,
@@ -78,7 +91,7 @@ export const TanstackTable = forwardRef(
       (table.getIsSomeColumnsPinned('right') || showRowsActions ? ` ${showRowsActions ? 'min-content ' : ''}0px` : '');
 
     return (
-      <S.Table
+      <Table
         ref={mergedRefs}
         data-borders={showBorders}
         style={
@@ -141,7 +154,7 @@ export const TanstackTable = forwardRef(
             renderRowWrapper={renderRowWrapper}
           />
         )}
-      </S.Table>
+      </Table>
     );
   },
 ) as <T>(props: TanstackTableProps<T> & { ref?: React.ForwardedRef<HTMLDivElement> }) => JSX.Element;

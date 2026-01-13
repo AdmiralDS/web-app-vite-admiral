@@ -15,9 +15,8 @@ import { ExampleSection, PStyled } from '#examples/-helpers';
 import {
   CellText,
   ExpandCell,
-  ExpandedRowContent,
   TanstackTable,
-  WrapperTitleCell,
+  HeaderCellWrapper,
   defaultOptions,
   type MetaRowProps,
   ExpandCellWrapper,
@@ -31,6 +30,28 @@ interface Person extends MetaRowProps<Person> {
   status: string;
   progress: number;
 }
+
+const ExpandedRowContent = styled.div`
+  display: flex;
+  flex: 1 0 auto;
+  box-sizing: border-box;
+  padding: 0 12px 11px 12px;
+`;
+const WrapperExpand = styled.div`
+  width: 100%;
+  background: var(--admiral-color-Cyan_Cyan10, ${(p) => p.theme.color['Cyan/Cyan 10']});
+  padding: 16px;
+`;
+const Content = styled.div`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding-left: 16px;
+  background: var(--admiral-color-Special_ElevatedBG, ${(p) => p.theme.color['Special/Elevated BG']});
+  & > div {
+    margin-bottom: 8px;
+  }
+`;
 
 const expandedRowRender = ({ row }: { row: Row<Person> }) => {
   return (
@@ -78,30 +99,14 @@ const defaultData: Person[] = [
   },
 ];
 
-const WrapperExpand = styled.div`
-  width: 100%;
-  background: var(--admiral-color-Cyan_Cyan10, ${(p) => p.theme.color['Cyan/Cyan 10']});
-  padding: 16px;
-`;
-const Content = styled.div`
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  padding-left: 16px;
-  background: var(--admiral-color-Special_ElevatedBG, ${(p) => p.theme.color['Special/Elevated BG']});
-  & > div {
-    margin-bottom: 8px;
-  }
-`;
-
 const dimension = 'm';
 const columns: ColumnDef<Person>[] = [
   {
     id: 'expand-column', // required id
     header: () => (
-      <WrapperTitleCell className="th">
+      <HeaderCellWrapper>
         <ExpandCellWrapper $dimension={dimension} />
-      </WrapperTitleCell>
+      </HeaderCellWrapper>
     ),
     cell: ({ row }) => {
       const original = row.original as RowData & MetaRowProps<Person>;

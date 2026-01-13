@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import type { Row, RowData } from '@tanstack/react-table';
 
 import type { Dimension, MetaRowProps } from '../types';
-import { getRowHeight } from '../utils';
+import { getRowHeight } from '../mixins';
 
 const OverflowMenuWrapper = styled.div<{ $showRowsActions?: boolean }>`
   display: flex;

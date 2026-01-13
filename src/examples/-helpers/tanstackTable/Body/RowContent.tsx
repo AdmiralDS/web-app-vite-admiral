@@ -2,12 +2,12 @@ import { flexRender, type Row, type RowData, type Cell } from '@tanstack/react-t
 import styled from 'styled-components';
 
 import type { Dimension, MetaRowProps } from '../types';
-import { WrapperExpandContent, cellStyle, stickyStyle } from '../style';
+import { cellStyle, stickyStyle } from '../mixins';
 import { headerStyle } from '../Header/HeaderCell/style';
 import { CellTd } from './style';
 
 import { OverflowMenu } from './OverflowMenu';
-import { CheckboxCell, ExpandCell } from '../components';
+import { CheckboxCell, ExpandCell, ExpandContentWrapper } from '../components';
 
 const GroupTitleCell = styled.div<{ $dimension: Dimension }>`
   display: flex;
@@ -69,7 +69,7 @@ export const RowContent = <T,>({
 
     return (
       <div className="td" data-column="group" data-row={row.id} style={{ gridColumn: `1/-1` }}>
-        <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+        <ExpandContentWrapper $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
           {row.getCanExpand() && (
             <ExpandCell
               data-row={row.id}
@@ -95,7 +95,7 @@ export const RowContent = <T,>({
           )}
 
           <GroupTitleCell $dimension={dimension}>{original.meta?.groupTitle}</GroupTitleCell>
-        </WrapperExpandContent>
+        </ExpandContentWrapper>
       </div>
     );
   };

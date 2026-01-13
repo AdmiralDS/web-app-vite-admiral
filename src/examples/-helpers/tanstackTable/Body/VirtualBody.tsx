@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 import styled from 'styled-components';
 
 import type { MetaRowProps, VirtualScroll } from '../types';
-import { getRowHeight } from '../utils';
+import { getRowHeight } from '../mixins';
 
 import { BodyTr } from './style';
 import { ExpandedRow } from './ExpandedRow';

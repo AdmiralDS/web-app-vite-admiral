@@ -13,9 +13,9 @@ import {
   TanstackTable,
   CheckboxCell,
   ExpandCell,
-  WrapperTitleCell,
-  WrapperExpandContent,
-  CellTh,
+  HeaderCellWrapper,
+  HeaderCell,
+  ExpandContentWrapper,
   type MetaRowProps,
   type TanstackTableProps,
 } from '#examples/-helpers/tanstackTable';
@@ -163,7 +163,7 @@ export const GroupRowExample = () => {
         header: 'Тип сделки',
         cell: ({ row, getValue }) => {
           return (
-            <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+            <ExpandContentWrapper $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
               {row.getCanExpand() && (
                 <ExpandCell
                   dimension={dimension}
@@ -172,7 +172,7 @@ export const GroupRowExample = () => {
                 />
               )}
               <CellText>{getValue<boolean>()}</CellText>
-            </WrapperExpandContent>
+            </ExpandContentWrapper>
           );
         },
         size: 141,
@@ -225,7 +225,7 @@ export const GroupRowExample = () => {
       columnHelper.accessor('type', {
         header: ({ table, header }) => {
           return (
-            <WrapperTitleCell className="th">
+            <HeaderCellWrapper>
               <CheckboxCell
                 dimension={dimension}
                 {...{
@@ -236,8 +236,7 @@ export const GroupRowExample = () => {
                     : table.getToggleAllRowsSelectedHandler(),
                 }}
               />
-              <CellTh
-                as="div"
+              <HeaderCell
                 style={{
                   display: 'flex',
                   flex: 'unset',
@@ -251,7 +250,7 @@ export const GroupRowExample = () => {
                 headerExtraLineClamp={1}
                 title="Тип сделки"
               />
-            </WrapperTitleCell>
+            </HeaderCellWrapper>
           );
         },
         cell: ({ row, getValue }) => {
@@ -266,7 +265,7 @@ export const GroupRowExample = () => {
           };
 
           return (
-            <WrapperExpandContent $depth={isRowHaveSubRows ? row.depth : row.depth + 1} $dimension={dimension}>
+            <ExpandContentWrapper $depth={isRowHaveSubRows ? row.depth : row.depth + 1} $dimension={dimension}>
               {isRowHaveSubRows && (
                 <ExpandCell
                   dimension={dimension}
@@ -284,7 +283,7 @@ export const GroupRowExample = () => {
                 }}
               />
               <CellText>{getValue<boolean>()}</CellText>
-            </WrapperExpandContent>
+            </ExpandContentWrapper>
           );
         },
         size: 141,

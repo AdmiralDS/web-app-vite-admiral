@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
 import { typography } from '@admiral-ds/react-ui';
-
 import ArrowUpOutline from '@admiral-ds/icons/build/system/ArrowUpOutline.svg?react';
-
 import type { SortDirection } from '@tanstack/react-table';
-import { cellStyle, borderStyle } from '../../style';
+
+import { cellStyle, borderStyle } from '../../mixins';
 import type { Dimension } from '../../types';
 
 export const headerStyle = css<{ $dimension: Dimension }>`

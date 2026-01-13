@@ -7,7 +7,7 @@ import {
   defaultOptions,
   TanstackTable,
   CheckboxCell,
-  WrapperTitleCell,
+  HeaderCellWrapper,
 } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 
@@ -57,7 +57,7 @@ export const RowSelection = () => {
       {
         id: 'checkbox-column', // required id
         header: ({ table }) => (
-          <WrapperTitleCell className="th">
+          <HeaderCellWrapper>
             <CheckboxCell
               dimension={dimension}
               {...{
@@ -68,7 +68,7 @@ export const RowSelection = () => {
                   : table.getToggleAllRowsSelectedHandler(),
               }}
             />
-          </WrapperTitleCell>
+          </HeaderCellWrapper>
         ),
         cell: ({ row }) => (
           <CheckboxCell

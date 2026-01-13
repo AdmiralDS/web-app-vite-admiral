@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { stickyStyle } from '../style';
+import { stickyStyle, getRowHeight } from '../mixins';
 import type { Dimension } from '../types';
-import { getRowHeight } from '../utils';
 
 export const ActionMock = styled.div<{ $dimension: Dimension }>`
   display: flex;
@@ -11,8 +10,6 @@ export const ActionMock = styled.div<{ $dimension: Dimension }>`
   width: ${({ $dimension }) => getRowHeight($dimension)}px;
 `;
 
-/** нужны ли?
- * box-sizing: border-box; min-width: fit-content; */
 export const HeaderTr = styled.div<{
   $dimension: Dimension;
   $isSomeRowsGrouped?: boolean;

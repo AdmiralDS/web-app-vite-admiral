@@ -11,11 +11,11 @@ import {
   TanstackTable,
   CheckboxCell,
   ExpandCell,
-  WrapperTitleCell,
-  WrapperExpandContent,
+  HeaderCellWrapper,
+  HeaderCell,
+  ExpandContentWrapper,
   type MetaRowProps,
   type TanstackTableProps,
-  CellTh,
 } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { useState, useMemo } from 'react';
@@ -160,7 +160,7 @@ export const GroupRowExperimentalExample = () => {
       columnHelper.accessor('type', {
         header: ({ table, header }) => {
           return (
-            <WrapperTitleCell className="th">
+            <HeaderCellWrapper>
               <CheckboxCell
                 dimension={dimension}
                 {...{
@@ -171,8 +171,7 @@ export const GroupRowExperimentalExample = () => {
                     : table.getToggleAllRowsSelectedHandler(),
                 }}
               />
-              <CellTh
-                as="div"
+              <HeaderCell
                 style={{
                   display: 'flex',
                   flex: 'unset',
@@ -186,12 +185,12 @@ export const GroupRowExperimentalExample = () => {
                 headerExtraLineClamp={1}
                 title="Тип сделки"
               />
-            </WrapperTitleCell>
+            </HeaderCellWrapper>
           );
         },
         cell: ({ row, getValue }) => {
           return (
-            <WrapperExpandContent $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
+            <ExpandContentWrapper $depth={row.getCanExpand() ? row.depth : row.depth + 1} $dimension={dimension}>
               {row.getCanExpand() && (
                 <ExpandCell
                   dimension={dimension}
@@ -209,7 +208,7 @@ export const GroupRowExperimentalExample = () => {
                 }}
               />
               <CellText>{getValue<boolean>()}</CellText>
-            </WrapperExpandContent>
+            </ExpandContentWrapper>
           );
         },
         size: 141,

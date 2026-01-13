@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Dimension } from '../types';
-import { cellStyle } from '../style';
+import { cellStyle } from '../mixins';
 import { CellTd, BodyTr } from './style';
 
 const EmptyCell = styled(CellTd)`

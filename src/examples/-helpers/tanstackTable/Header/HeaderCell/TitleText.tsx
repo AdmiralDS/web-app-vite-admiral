@@ -1,8 +1,8 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-
 import { checkOverflow, Tooltip } from '@admiral-ds/react-ui';
-import { ExtraText, Title } from './style';
+
 import type { Dimension } from '../../types';
+import { ExtraText, Title } from './style';
 
 type TitleTextProps = {
   lineClamp: number;

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { typography, type Color } from '@admiral-ds/react-ui';
 
 import type { Dimension, Status } from '../types';
-import { borderStyle } from '../style';
+import { borderStyle } from '../mixins';
 import { StickyWrapper } from './RowContent';
 
 export const rowStyle = css<{ $dimension: Dimension }>`

@@ -76,13 +76,15 @@ const columns = [
             header: 'Status',
             cell: (info) => <CellText>{info.getValue()}</CellText>,
           }),
-          columnHelper.accessor('progress', {
-            header: 'Profile Progress',
-            cell: (info) => <CellText>{info.getValue()}</CellText>,
-          }),
         ],
       }),
     ],
+  }),
+  columnHelper.accessor('progress', {
+    header: 'Progress',
+    cell: (info) => <CellText>{info.getValue()}</CellText>,
+    enableResizing: false,
+    meta: { gridColumnTemplate: '1fr' },
   }),
 ];
 

@@ -4,7 +4,7 @@ import { flexRender, type Table, type HeaderGroup, type RowData } from '@tanstac
 
 import type { Dimension, MetaRowProps } from '../types';
 import * as S from './style';
-import { CellTh } from './HeaderCell';
+import { HeaderCell } from './HeaderCell';
 import { tableHeaderRowSpan } from './utils';
 
 interface Props<T> {
@@ -59,7 +59,7 @@ export const Header = <T,>({
         resizeObserver.disconnect();
       };
     }
-  }, [setHeaderHeight]);
+  }, []);
 
   // check spacer size updates
   useLayoutEffect(() => {
@@ -149,7 +149,7 @@ export const Header = <T,>({
           return (
             <Fragment key={header.id}>
               {headerString ? (
-                <CellTh
+                <HeaderCell
                   key={header.id}
                   data-th-column={header.id}
                   header={header}

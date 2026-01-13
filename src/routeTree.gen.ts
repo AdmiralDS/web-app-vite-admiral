@@ -16,16 +16,6 @@ import { Route as GeneralUsageRouteImport } from './routes/general/usage'
 import { Route as GeneralResourcesRouteImport } from './routes/general/resources'
 import { Route as GeneralInstallationRouteImport } from './routes/general/installation'
 import { Route as GeneralFaqsRouteImport } from './routes/general/faqs'
-import { Route as ComponentsTableIndexRouteImport } from './routes/components/table/index'
-import { Route as ComponentsUserTableWithNoLastColumnNameTableRouteImport } from './routes/components/userTable/withNoLastColumnNameTable'
-import { Route as ComponentsUserTableWithLongTextTableRouteImport } from './routes/components/userTable/withLongTextTable'
-import { Route as ComponentsUserTableWithHorizontalScrollTableRouteImport } from './routes/components/userTable/withHorizontalScrollTable'
-import { Route as ComponentsUserTableWithHiddenColumnsTableRouteImport } from './routes/components/userTable/withHiddenColumnsTable'
-import { Route as ComponentsUserTableRenderValueTableRouteImport } from './routes/components/userTable/renderValueTable'
-import { Route as ComponentsUserTableLoremItemTableRouteImport } from './routes/components/userTable/loremItemTable'
-import { Route as ComponentsUserTableColumnGroupTableRouteImport } from './routes/components/userTable/columnGroupTable'
-import { Route as ComponentsUserTableBenchmarkTableRouteImport } from './routes/components/userTable/benchmarkTable'
-import { Route as ComponentsUserTableBaseTableRouteImport } from './routes/components/userTable/baseTable'
 import { Route as ComponentsTanstackTableZebraExampleRouteImport } from './routes/components/tanstackTable/zebraExample'
 import { Route as ComponentsTanstackTableWithSortRouteImport } from './routes/components/tanstackTable/withSort'
 import { Route as ComponentsTanstackTableWithOverflowHeadersRouteImport } from './routes/components/tanstackTable/withOverflowHeaders'
@@ -50,32 +40,6 @@ import { Route as ComponentsTanstackTableDynamicVirtualScrollRouteImport } from 
 import { Route as ComponentsTanstackTableDataAtrClassNameRouteImport } from './routes/components/tanstackTable/dataAtrClassName'
 import { Route as ComponentsTanstackTableCellTextRouteImport } from './routes/components/tanstackTable/cellText'
 import { Route as ComponentsTanstackTableBaseExampleRouteImport } from './routes/components/tanstackTable/baseExample'
-import { Route as ComponentsTableZebraRouteImport } from './routes/components/table/zebra'
-import { Route as ComponentsTableWidthRouteImport } from './routes/components/table/width'
-import { Route as ComponentsTableStyleRouteImport } from './routes/components/table/style'
-import { Route as ComponentsTableStickyRouteImport } from './routes/components/table/sticky'
-import { Route as ComponentsTableSortRouteImport } from './routes/components/table/sort'
-import { Route as ComponentsTableScrollPositionByRefRouteImport } from './routes/components/table/scrollPositionByRef'
-import { Route as ComponentsTableRowStateRouteImport } from './routes/components/table/rowState'
-import { Route as ComponentsTableRowDragDropRouteImport } from './routes/components/table/rowDragDrop'
-import { Route as ComponentsTableRenderCallbackRouteImport } from './routes/components/table/renderCallback'
-import { Route as ComponentsTableOverflowMenuRouteImport } from './routes/components/table/overflowMenu'
-import { Route as ComponentsTableMultilineRouteImport } from './routes/components/table/multiline'
-import { Route as ComponentsTableMultiLevelHeaderRouteImport } from './routes/components/table/multiLevelHeader'
-import { Route as ComponentsTableLoadOnScrollSpinnerRouteImport } from './routes/components/table/loadOnScrollSpinner'
-import { Route as ComponentsTableLoadOnScrollSkeletonRouteImport } from './routes/components/table/loadOnScrollSkeleton'
-import { Route as ComponentsTableLoadOnScrollRouteImport } from './routes/components/table/loadOnScroll'
-import { Route as ComponentsTableGroupRouteImport } from './routes/components/table/group'
-import { Route as ComponentsTableFixedVirtualScrollRouteImport } from './routes/components/table/fixedVirtualScroll'
-import { Route as ComponentsTableFilterRouteImport } from './routes/components/table/filter'
-import { Route as ComponentsTableExtraTextRouteImport } from './routes/components/table/extraText'
-import { Route as ComponentsTableExpandRouteImport } from './routes/components/table/expand'
-import { Route as ComponentsTableDynamicVirtualScrollRouteImport } from './routes/components/table/dynamicVirtualScroll'
-import { Route as ComponentsTableColumnDragDropRouteImport } from './routes/components/table/columnDragDrop'
-import { Route as ComponentsTableCheckboxRouteImport } from './routes/components/table/checkbox'
-import { Route as ComponentsTableBaseHTMLStickyShadowRouteImport } from './routes/components/table/baseHTMLStickyShadow'
-import { Route as ComponentsTableBaseHTMLOverflowMenuRouteImport } from './routes/components/table/baseHTMLOverflowMenu'
-import { Route as ComponentsTableBaseHTMLRouteImport } from './routes/components/table/baseHTML'
 
 const GeneralRoute = GeneralRouteImport.update({
   id: '/general',
@@ -112,65 +76,6 @@ const GeneralFaqsRoute = GeneralFaqsRouteImport.update({
   path: '/faqs',
   getParentRoute: () => GeneralRoute,
 } as any)
-const ComponentsTableIndexRoute = ComponentsTableIndexRouteImport.update({
-  id: '/table/',
-  path: '/table/',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsUserTableWithNoLastColumnNameTableRoute =
-  ComponentsUserTableWithNoLastColumnNameTableRouteImport.update({
-    id: '/userTable/withNoLastColumnNameTable',
-    path: '/userTable/withNoLastColumnNameTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableWithLongTextTableRoute =
-  ComponentsUserTableWithLongTextTableRouteImport.update({
-    id: '/userTable/withLongTextTable',
-    path: '/userTable/withLongTextTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableWithHorizontalScrollTableRoute =
-  ComponentsUserTableWithHorizontalScrollTableRouteImport.update({
-    id: '/userTable/withHorizontalScrollTable',
-    path: '/userTable/withHorizontalScrollTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableWithHiddenColumnsTableRoute =
-  ComponentsUserTableWithHiddenColumnsTableRouteImport.update({
-    id: '/userTable/withHiddenColumnsTable',
-    path: '/userTable/withHiddenColumnsTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableRenderValueTableRoute =
-  ComponentsUserTableRenderValueTableRouteImport.update({
-    id: '/userTable/renderValueTable',
-    path: '/userTable/renderValueTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableLoremItemTableRoute =
-  ComponentsUserTableLoremItemTableRouteImport.update({
-    id: '/userTable/loremItemTable',
-    path: '/userTable/loremItemTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableColumnGroupTableRoute =
-  ComponentsUserTableColumnGroupTableRouteImport.update({
-    id: '/userTable/columnGroupTable',
-    path: '/userTable/columnGroupTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableBenchmarkTableRoute =
-  ComponentsUserTableBenchmarkTableRouteImport.update({
-    id: '/userTable/benchmarkTable',
-    path: '/userTable/benchmarkTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsUserTableBaseTableRoute =
-  ComponentsUserTableBaseTableRouteImport.update({
-    id: '/userTable/baseTable',
-    path: '/userTable/baseTable',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
 const ComponentsTanstackTableZebraExampleRoute =
   ComponentsTanstackTableZebraExampleRouteImport.update({
     id: '/tanstackTable/zebraExample',
@@ -315,151 +220,6 @@ const ComponentsTanstackTableBaseExampleRoute =
     path: '/tanstackTable/baseExample',
     getParentRoute: () => ComponentsRoute,
   } as any)
-const ComponentsTableZebraRoute = ComponentsTableZebraRouteImport.update({
-  id: '/table/zebra',
-  path: '/table/zebra',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableWidthRoute = ComponentsTableWidthRouteImport.update({
-  id: '/table/width',
-  path: '/table/width',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableStyleRoute = ComponentsTableStyleRouteImport.update({
-  id: '/table/style',
-  path: '/table/style',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableStickyRoute = ComponentsTableStickyRouteImport.update({
-  id: '/table/sticky',
-  path: '/table/sticky',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableSortRoute = ComponentsTableSortRouteImport.update({
-  id: '/table/sort',
-  path: '/table/sort',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableScrollPositionByRefRoute =
-  ComponentsTableScrollPositionByRefRouteImport.update({
-    id: '/table/scrollPositionByRef',
-    path: '/table/scrollPositionByRef',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableRowStateRoute = ComponentsTableRowStateRouteImport.update({
-  id: '/table/rowState',
-  path: '/table/rowState',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableRowDragDropRoute =
-  ComponentsTableRowDragDropRouteImport.update({
-    id: '/table/rowDragDrop',
-    path: '/table/rowDragDrop',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableRenderCallbackRoute =
-  ComponentsTableRenderCallbackRouteImport.update({
-    id: '/table/renderCallback',
-    path: '/table/renderCallback',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableOverflowMenuRoute =
-  ComponentsTableOverflowMenuRouteImport.update({
-    id: '/table/overflowMenu',
-    path: '/table/overflowMenu',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableMultilineRoute =
-  ComponentsTableMultilineRouteImport.update({
-    id: '/table/multiline',
-    path: '/table/multiline',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableMultiLevelHeaderRoute =
-  ComponentsTableMultiLevelHeaderRouteImport.update({
-    id: '/table/multiLevelHeader',
-    path: '/table/multiLevelHeader',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableLoadOnScrollSpinnerRoute =
-  ComponentsTableLoadOnScrollSpinnerRouteImport.update({
-    id: '/table/loadOnScrollSpinner',
-    path: '/table/loadOnScrollSpinner',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableLoadOnScrollSkeletonRoute =
-  ComponentsTableLoadOnScrollSkeletonRouteImport.update({
-    id: '/table/loadOnScrollSkeleton',
-    path: '/table/loadOnScrollSkeleton',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableLoadOnScrollRoute =
-  ComponentsTableLoadOnScrollRouteImport.update({
-    id: '/table/loadOnScroll',
-    path: '/table/loadOnScroll',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableGroupRoute = ComponentsTableGroupRouteImport.update({
-  id: '/table/group',
-  path: '/table/group',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableFixedVirtualScrollRoute =
-  ComponentsTableFixedVirtualScrollRouteImport.update({
-    id: '/table/fixedVirtualScroll',
-    path: '/table/fixedVirtualScroll',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableFilterRoute = ComponentsTableFilterRouteImport.update({
-  id: '/table/filter',
-  path: '/table/filter',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableExtraTextRoute =
-  ComponentsTableExtraTextRouteImport.update({
-    id: '/table/extraText',
-    path: '/table/extraText',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableExpandRoute = ComponentsTableExpandRouteImport.update({
-  id: '/table/expand',
-  path: '/table/expand',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableDynamicVirtualScrollRoute =
-  ComponentsTableDynamicVirtualScrollRouteImport.update({
-    id: '/table/dynamicVirtualScroll',
-    path: '/table/dynamicVirtualScroll',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableColumnDragDropRoute =
-  ComponentsTableColumnDragDropRouteImport.update({
-    id: '/table/columnDragDrop',
-    path: '/table/columnDragDrop',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableCheckboxRoute = ComponentsTableCheckboxRouteImport.update({
-  id: '/table/checkbox',
-  path: '/table/checkbox',
-  getParentRoute: () => ComponentsRoute,
-} as any)
-const ComponentsTableBaseHTMLStickyShadowRoute =
-  ComponentsTableBaseHTMLStickyShadowRouteImport.update({
-    id: '/table/baseHTMLStickyShadow',
-    path: '/table/baseHTMLStickyShadow',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableBaseHTMLOverflowMenuRoute =
-  ComponentsTableBaseHTMLOverflowMenuRouteImport.update({
-    id: '/table/baseHTMLOverflowMenu',
-    path: '/table/baseHTMLOverflowMenu',
-    getParentRoute: () => ComponentsRoute,
-  } as any)
-const ComponentsTableBaseHTMLRoute = ComponentsTableBaseHTMLRouteImport.update({
-  id: '/table/baseHTML',
-  path: '/table/baseHTML',
-  getParentRoute: () => ComponentsRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -469,32 +229,6 @@ export interface FileRoutesByFullPath {
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/general/usage': typeof GeneralUsageRoute
-  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
-  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
-  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
-  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
-  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
-  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
-  '/components/table/expand': typeof ComponentsTableExpandRoute
-  '/components/table/extraText': typeof ComponentsTableExtraTextRoute
-  '/components/table/filter': typeof ComponentsTableFilterRoute
-  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
-  '/components/table/group': typeof ComponentsTableGroupRoute
-  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
-  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
-  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
-  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
-  '/components/table/multiline': typeof ComponentsTableMultilineRoute
-  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
-  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute
-  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
-  '/components/table/rowState': typeof ComponentsTableRowStateRoute
-  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
-  '/components/table/sort': typeof ComponentsTableSortRoute
-  '/components/table/sticky': typeof ComponentsTableStickyRoute
-  '/components/table/style': typeof ComponentsTableStyleRoute
-  '/components/table/width': typeof ComponentsTableWidthRoute
-  '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/cellText': typeof ComponentsTanstackTableCellTextRoute
   '/components/tanstackTable/dataAtrClassName': typeof ComponentsTanstackTableDataAtrClassNameRoute
@@ -519,16 +253,6 @@ export interface FileRoutesByFullPath {
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
   '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
-  '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
-  '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
-  '/components/userTable/columnGroupTable': typeof ComponentsUserTableColumnGroupTableRoute
-  '/components/userTable/loremItemTable': typeof ComponentsUserTableLoremItemTableRoute
-  '/components/userTable/renderValueTable': typeof ComponentsUserTableRenderValueTableRoute
-  '/components/userTable/withHiddenColumnsTable': typeof ComponentsUserTableWithHiddenColumnsTableRoute
-  '/components/userTable/withHorizontalScrollTable': typeof ComponentsUserTableWithHorizontalScrollTableRoute
-  '/components/userTable/withLongTextTable': typeof ComponentsUserTableWithLongTextTableRoute
-  '/components/userTable/withNoLastColumnNameTable': typeof ComponentsUserTableWithNoLastColumnNameTableRoute
-  '/components/table': typeof ComponentsTableIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -538,32 +262,6 @@ export interface FileRoutesByTo {
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/general/usage': typeof GeneralUsageRoute
-  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
-  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
-  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
-  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
-  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
-  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
-  '/components/table/expand': typeof ComponentsTableExpandRoute
-  '/components/table/extraText': typeof ComponentsTableExtraTextRoute
-  '/components/table/filter': typeof ComponentsTableFilterRoute
-  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
-  '/components/table/group': typeof ComponentsTableGroupRoute
-  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
-  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
-  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
-  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
-  '/components/table/multiline': typeof ComponentsTableMultilineRoute
-  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
-  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute
-  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
-  '/components/table/rowState': typeof ComponentsTableRowStateRoute
-  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
-  '/components/table/sort': typeof ComponentsTableSortRoute
-  '/components/table/sticky': typeof ComponentsTableStickyRoute
-  '/components/table/style': typeof ComponentsTableStyleRoute
-  '/components/table/width': typeof ComponentsTableWidthRoute
-  '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/cellText': typeof ComponentsTanstackTableCellTextRoute
   '/components/tanstackTable/dataAtrClassName': typeof ComponentsTanstackTableDataAtrClassNameRoute
@@ -588,16 +286,6 @@ export interface FileRoutesByTo {
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
   '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
-  '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
-  '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
-  '/components/userTable/columnGroupTable': typeof ComponentsUserTableColumnGroupTableRoute
-  '/components/userTable/loremItemTable': typeof ComponentsUserTableLoremItemTableRoute
-  '/components/userTable/renderValueTable': typeof ComponentsUserTableRenderValueTableRoute
-  '/components/userTable/withHiddenColumnsTable': typeof ComponentsUserTableWithHiddenColumnsTableRoute
-  '/components/userTable/withHorizontalScrollTable': typeof ComponentsUserTableWithHorizontalScrollTableRoute
-  '/components/userTable/withLongTextTable': typeof ComponentsUserTableWithLongTextTableRoute
-  '/components/userTable/withNoLastColumnNameTable': typeof ComponentsUserTableWithNoLastColumnNameTableRoute
-  '/components/table': typeof ComponentsTableIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -608,32 +296,6 @@ export interface FileRoutesById {
   '/general/installation': typeof GeneralInstallationRoute
   '/general/resources': typeof GeneralResourcesRoute
   '/general/usage': typeof GeneralUsageRoute
-  '/components/table/baseHTML': typeof ComponentsTableBaseHTMLRoute
-  '/components/table/baseHTMLOverflowMenu': typeof ComponentsTableBaseHTMLOverflowMenuRoute
-  '/components/table/baseHTMLStickyShadow': typeof ComponentsTableBaseHTMLStickyShadowRoute
-  '/components/table/checkbox': typeof ComponentsTableCheckboxRoute
-  '/components/table/columnDragDrop': typeof ComponentsTableColumnDragDropRoute
-  '/components/table/dynamicVirtualScroll': typeof ComponentsTableDynamicVirtualScrollRoute
-  '/components/table/expand': typeof ComponentsTableExpandRoute
-  '/components/table/extraText': typeof ComponentsTableExtraTextRoute
-  '/components/table/filter': typeof ComponentsTableFilterRoute
-  '/components/table/fixedVirtualScroll': typeof ComponentsTableFixedVirtualScrollRoute
-  '/components/table/group': typeof ComponentsTableGroupRoute
-  '/components/table/loadOnScroll': typeof ComponentsTableLoadOnScrollRoute
-  '/components/table/loadOnScrollSkeleton': typeof ComponentsTableLoadOnScrollSkeletonRoute
-  '/components/table/loadOnScrollSpinner': typeof ComponentsTableLoadOnScrollSpinnerRoute
-  '/components/table/multiLevelHeader': typeof ComponentsTableMultiLevelHeaderRoute
-  '/components/table/multiline': typeof ComponentsTableMultilineRoute
-  '/components/table/overflowMenu': typeof ComponentsTableOverflowMenuRoute
-  '/components/table/renderCallback': typeof ComponentsTableRenderCallbackRoute
-  '/components/table/rowDragDrop': typeof ComponentsTableRowDragDropRoute
-  '/components/table/rowState': typeof ComponentsTableRowStateRoute
-  '/components/table/scrollPositionByRef': typeof ComponentsTableScrollPositionByRefRoute
-  '/components/table/sort': typeof ComponentsTableSortRoute
-  '/components/table/sticky': typeof ComponentsTableStickyRoute
-  '/components/table/style': typeof ComponentsTableStyleRoute
-  '/components/table/width': typeof ComponentsTableWidthRoute
-  '/components/table/zebra': typeof ComponentsTableZebraRoute
   '/components/tanstackTable/baseExample': typeof ComponentsTanstackTableBaseExampleRoute
   '/components/tanstackTable/cellText': typeof ComponentsTanstackTableCellTextRoute
   '/components/tanstackTable/dataAtrClassName': typeof ComponentsTanstackTableDataAtrClassNameRoute
@@ -658,16 +320,6 @@ export interface FileRoutesById {
   '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
   '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
   '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
-  '/components/userTable/baseTable': typeof ComponentsUserTableBaseTableRoute
-  '/components/userTable/benchmarkTable': typeof ComponentsUserTableBenchmarkTableRoute
-  '/components/userTable/columnGroupTable': typeof ComponentsUserTableColumnGroupTableRoute
-  '/components/userTable/loremItemTable': typeof ComponentsUserTableLoremItemTableRoute
-  '/components/userTable/renderValueTable': typeof ComponentsUserTableRenderValueTableRoute
-  '/components/userTable/withHiddenColumnsTable': typeof ComponentsUserTableWithHiddenColumnsTableRoute
-  '/components/userTable/withHorizontalScrollTable': typeof ComponentsUserTableWithHorizontalScrollTableRoute
-  '/components/userTable/withLongTextTable': typeof ComponentsUserTableWithLongTextTableRoute
-  '/components/userTable/withNoLastColumnNameTable': typeof ComponentsUserTableWithNoLastColumnNameTableRoute
-  '/components/table/': typeof ComponentsTableIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -679,32 +331,6 @@ export interface FileRouteTypes {
     | '/general/installation'
     | '/general/resources'
     | '/general/usage'
-    | '/components/table/baseHTML'
-    | '/components/table/baseHTMLOverflowMenu'
-    | '/components/table/baseHTMLStickyShadow'
-    | '/components/table/checkbox'
-    | '/components/table/columnDragDrop'
-    | '/components/table/dynamicVirtualScroll'
-    | '/components/table/expand'
-    | '/components/table/extraText'
-    | '/components/table/filter'
-    | '/components/table/fixedVirtualScroll'
-    | '/components/table/group'
-    | '/components/table/loadOnScroll'
-    | '/components/table/loadOnScrollSkeleton'
-    | '/components/table/loadOnScrollSpinner'
-    | '/components/table/multiLevelHeader'
-    | '/components/table/multiline'
-    | '/components/table/overflowMenu'
-    | '/components/table/renderCallback'
-    | '/components/table/rowDragDrop'
-    | '/components/table/rowState'
-    | '/components/table/scrollPositionByRef'
-    | '/components/table/sort'
-    | '/components/table/sticky'
-    | '/components/table/style'
-    | '/components/table/width'
-    | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/cellText'
     | '/components/tanstackTable/dataAtrClassName'
@@ -729,16 +355,6 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/tanstackTable/withSort'
     | '/components/tanstackTable/zebraExample'
-    | '/components/userTable/baseTable'
-    | '/components/userTable/benchmarkTable'
-    | '/components/userTable/columnGroupTable'
-    | '/components/userTable/loremItemTable'
-    | '/components/userTable/renderValueTable'
-    | '/components/userTable/withHiddenColumnsTable'
-    | '/components/userTable/withHorizontalScrollTable'
-    | '/components/userTable/withLongTextTable'
-    | '/components/userTable/withNoLastColumnNameTable'
-    | '/components/table'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -748,32 +364,6 @@ export interface FileRouteTypes {
     | '/general/installation'
     | '/general/resources'
     | '/general/usage'
-    | '/components/table/baseHTML'
-    | '/components/table/baseHTMLOverflowMenu'
-    | '/components/table/baseHTMLStickyShadow'
-    | '/components/table/checkbox'
-    | '/components/table/columnDragDrop'
-    | '/components/table/dynamicVirtualScroll'
-    | '/components/table/expand'
-    | '/components/table/extraText'
-    | '/components/table/filter'
-    | '/components/table/fixedVirtualScroll'
-    | '/components/table/group'
-    | '/components/table/loadOnScroll'
-    | '/components/table/loadOnScrollSkeleton'
-    | '/components/table/loadOnScrollSpinner'
-    | '/components/table/multiLevelHeader'
-    | '/components/table/multiline'
-    | '/components/table/overflowMenu'
-    | '/components/table/renderCallback'
-    | '/components/table/rowDragDrop'
-    | '/components/table/rowState'
-    | '/components/table/scrollPositionByRef'
-    | '/components/table/sort'
-    | '/components/table/sticky'
-    | '/components/table/style'
-    | '/components/table/width'
-    | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/cellText'
     | '/components/tanstackTable/dataAtrClassName'
@@ -798,16 +388,6 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/tanstackTable/withSort'
     | '/components/tanstackTable/zebraExample'
-    | '/components/userTable/baseTable'
-    | '/components/userTable/benchmarkTable'
-    | '/components/userTable/columnGroupTable'
-    | '/components/userTable/loremItemTable'
-    | '/components/userTable/renderValueTable'
-    | '/components/userTable/withHiddenColumnsTable'
-    | '/components/userTable/withHorizontalScrollTable'
-    | '/components/userTable/withLongTextTable'
-    | '/components/userTable/withNoLastColumnNameTable'
-    | '/components/table'
   id:
     | '__root__'
     | '/'
@@ -817,32 +397,6 @@ export interface FileRouteTypes {
     | '/general/installation'
     | '/general/resources'
     | '/general/usage'
-    | '/components/table/baseHTML'
-    | '/components/table/baseHTMLOverflowMenu'
-    | '/components/table/baseHTMLStickyShadow'
-    | '/components/table/checkbox'
-    | '/components/table/columnDragDrop'
-    | '/components/table/dynamicVirtualScroll'
-    | '/components/table/expand'
-    | '/components/table/extraText'
-    | '/components/table/filter'
-    | '/components/table/fixedVirtualScroll'
-    | '/components/table/group'
-    | '/components/table/loadOnScroll'
-    | '/components/table/loadOnScrollSkeleton'
-    | '/components/table/loadOnScrollSpinner'
-    | '/components/table/multiLevelHeader'
-    | '/components/table/multiline'
-    | '/components/table/overflowMenu'
-    | '/components/table/renderCallback'
-    | '/components/table/rowDragDrop'
-    | '/components/table/rowState'
-    | '/components/table/scrollPositionByRef'
-    | '/components/table/sort'
-    | '/components/table/sticky'
-    | '/components/table/style'
-    | '/components/table/width'
-    | '/components/table/zebra'
     | '/components/tanstackTable/baseExample'
     | '/components/tanstackTable/cellText'
     | '/components/tanstackTable/dataAtrClassName'
@@ -867,16 +421,6 @@ export interface FileRouteTypes {
     | '/components/tanstackTable/withOverflowHeaders'
     | '/components/tanstackTable/withSort'
     | '/components/tanstackTable/zebraExample'
-    | '/components/userTable/baseTable'
-    | '/components/userTable/benchmarkTable'
-    | '/components/userTable/columnGroupTable'
-    | '/components/userTable/loremItemTable'
-    | '/components/userTable/renderValueTable'
-    | '/components/userTable/withHiddenColumnsTable'
-    | '/components/userTable/withHorizontalScrollTable'
-    | '/components/userTable/withLongTextTable'
-    | '/components/userTable/withNoLastColumnNameTable'
-    | '/components/table/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -935,76 +479,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/general/faqs'
       preLoaderRoute: typeof GeneralFaqsRouteImport
       parentRoute: typeof GeneralRoute
-    }
-    '/components/table/': {
-      id: '/components/table/'
-      path: '/table'
-      fullPath: '/components/table'
-      preLoaderRoute: typeof ComponentsTableIndexRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/withNoLastColumnNameTable': {
-      id: '/components/userTable/withNoLastColumnNameTable'
-      path: '/userTable/withNoLastColumnNameTable'
-      fullPath: '/components/userTable/withNoLastColumnNameTable'
-      preLoaderRoute: typeof ComponentsUserTableWithNoLastColumnNameTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/withLongTextTable': {
-      id: '/components/userTable/withLongTextTable'
-      path: '/userTable/withLongTextTable'
-      fullPath: '/components/userTable/withLongTextTable'
-      preLoaderRoute: typeof ComponentsUserTableWithLongTextTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/withHorizontalScrollTable': {
-      id: '/components/userTable/withHorizontalScrollTable'
-      path: '/userTable/withHorizontalScrollTable'
-      fullPath: '/components/userTable/withHorizontalScrollTable'
-      preLoaderRoute: typeof ComponentsUserTableWithHorizontalScrollTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/withHiddenColumnsTable': {
-      id: '/components/userTable/withHiddenColumnsTable'
-      path: '/userTable/withHiddenColumnsTable'
-      fullPath: '/components/userTable/withHiddenColumnsTable'
-      preLoaderRoute: typeof ComponentsUserTableWithHiddenColumnsTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/renderValueTable': {
-      id: '/components/userTable/renderValueTable'
-      path: '/userTable/renderValueTable'
-      fullPath: '/components/userTable/renderValueTable'
-      preLoaderRoute: typeof ComponentsUserTableRenderValueTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/loremItemTable': {
-      id: '/components/userTable/loremItemTable'
-      path: '/userTable/loremItemTable'
-      fullPath: '/components/userTable/loremItemTable'
-      preLoaderRoute: typeof ComponentsUserTableLoremItemTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/columnGroupTable': {
-      id: '/components/userTable/columnGroupTable'
-      path: '/userTable/columnGroupTable'
-      fullPath: '/components/userTable/columnGroupTable'
-      preLoaderRoute: typeof ComponentsUserTableColumnGroupTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/benchmarkTable': {
-      id: '/components/userTable/benchmarkTable'
-      path: '/userTable/benchmarkTable'
-      fullPath: '/components/userTable/benchmarkTable'
-      preLoaderRoute: typeof ComponentsUserTableBenchmarkTableRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/userTable/baseTable': {
-      id: '/components/userTable/baseTable'
-      path: '/userTable/baseTable'
-      fullPath: '/components/userTable/baseTable'
-      preLoaderRoute: typeof ComponentsUserTableBaseTableRouteImport
-      parentRoute: typeof ComponentsRoute
     }
     '/components/tanstackTable/zebraExample': {
       id: '/components/tanstackTable/zebraExample'
@@ -1174,218 +648,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComponentsTanstackTableBaseExampleRouteImport
       parentRoute: typeof ComponentsRoute
     }
-    '/components/table/zebra': {
-      id: '/components/table/zebra'
-      path: '/table/zebra'
-      fullPath: '/components/table/zebra'
-      preLoaderRoute: typeof ComponentsTableZebraRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/width': {
-      id: '/components/table/width'
-      path: '/table/width'
-      fullPath: '/components/table/width'
-      preLoaderRoute: typeof ComponentsTableWidthRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/style': {
-      id: '/components/table/style'
-      path: '/table/style'
-      fullPath: '/components/table/style'
-      preLoaderRoute: typeof ComponentsTableStyleRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/sticky': {
-      id: '/components/table/sticky'
-      path: '/table/sticky'
-      fullPath: '/components/table/sticky'
-      preLoaderRoute: typeof ComponentsTableStickyRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/sort': {
-      id: '/components/table/sort'
-      path: '/table/sort'
-      fullPath: '/components/table/sort'
-      preLoaderRoute: typeof ComponentsTableSortRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/scrollPositionByRef': {
-      id: '/components/table/scrollPositionByRef'
-      path: '/table/scrollPositionByRef'
-      fullPath: '/components/table/scrollPositionByRef'
-      preLoaderRoute: typeof ComponentsTableScrollPositionByRefRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/rowState': {
-      id: '/components/table/rowState'
-      path: '/table/rowState'
-      fullPath: '/components/table/rowState'
-      preLoaderRoute: typeof ComponentsTableRowStateRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/rowDragDrop': {
-      id: '/components/table/rowDragDrop'
-      path: '/table/rowDragDrop'
-      fullPath: '/components/table/rowDragDrop'
-      preLoaderRoute: typeof ComponentsTableRowDragDropRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/renderCallback': {
-      id: '/components/table/renderCallback'
-      path: '/table/renderCallback'
-      fullPath: '/components/table/renderCallback'
-      preLoaderRoute: typeof ComponentsTableRenderCallbackRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/overflowMenu': {
-      id: '/components/table/overflowMenu'
-      path: '/table/overflowMenu'
-      fullPath: '/components/table/overflowMenu'
-      preLoaderRoute: typeof ComponentsTableOverflowMenuRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/multiline': {
-      id: '/components/table/multiline'
-      path: '/table/multiline'
-      fullPath: '/components/table/multiline'
-      preLoaderRoute: typeof ComponentsTableMultilineRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/multiLevelHeader': {
-      id: '/components/table/multiLevelHeader'
-      path: '/table/multiLevelHeader'
-      fullPath: '/components/table/multiLevelHeader'
-      preLoaderRoute: typeof ComponentsTableMultiLevelHeaderRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/loadOnScrollSpinner': {
-      id: '/components/table/loadOnScrollSpinner'
-      path: '/table/loadOnScrollSpinner'
-      fullPath: '/components/table/loadOnScrollSpinner'
-      preLoaderRoute: typeof ComponentsTableLoadOnScrollSpinnerRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/loadOnScrollSkeleton': {
-      id: '/components/table/loadOnScrollSkeleton'
-      path: '/table/loadOnScrollSkeleton'
-      fullPath: '/components/table/loadOnScrollSkeleton'
-      preLoaderRoute: typeof ComponentsTableLoadOnScrollSkeletonRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/loadOnScroll': {
-      id: '/components/table/loadOnScroll'
-      path: '/table/loadOnScroll'
-      fullPath: '/components/table/loadOnScroll'
-      preLoaderRoute: typeof ComponentsTableLoadOnScrollRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/group': {
-      id: '/components/table/group'
-      path: '/table/group'
-      fullPath: '/components/table/group'
-      preLoaderRoute: typeof ComponentsTableGroupRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/fixedVirtualScroll': {
-      id: '/components/table/fixedVirtualScroll'
-      path: '/table/fixedVirtualScroll'
-      fullPath: '/components/table/fixedVirtualScroll'
-      preLoaderRoute: typeof ComponentsTableFixedVirtualScrollRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/filter': {
-      id: '/components/table/filter'
-      path: '/table/filter'
-      fullPath: '/components/table/filter'
-      preLoaderRoute: typeof ComponentsTableFilterRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/extraText': {
-      id: '/components/table/extraText'
-      path: '/table/extraText'
-      fullPath: '/components/table/extraText'
-      preLoaderRoute: typeof ComponentsTableExtraTextRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/expand': {
-      id: '/components/table/expand'
-      path: '/table/expand'
-      fullPath: '/components/table/expand'
-      preLoaderRoute: typeof ComponentsTableExpandRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/dynamicVirtualScroll': {
-      id: '/components/table/dynamicVirtualScroll'
-      path: '/table/dynamicVirtualScroll'
-      fullPath: '/components/table/dynamicVirtualScroll'
-      preLoaderRoute: typeof ComponentsTableDynamicVirtualScrollRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/columnDragDrop': {
-      id: '/components/table/columnDragDrop'
-      path: '/table/columnDragDrop'
-      fullPath: '/components/table/columnDragDrop'
-      preLoaderRoute: typeof ComponentsTableColumnDragDropRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/checkbox': {
-      id: '/components/table/checkbox'
-      path: '/table/checkbox'
-      fullPath: '/components/table/checkbox'
-      preLoaderRoute: typeof ComponentsTableCheckboxRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/baseHTMLStickyShadow': {
-      id: '/components/table/baseHTMLStickyShadow'
-      path: '/table/baseHTMLStickyShadow'
-      fullPath: '/components/table/baseHTMLStickyShadow'
-      preLoaderRoute: typeof ComponentsTableBaseHTMLStickyShadowRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/baseHTMLOverflowMenu': {
-      id: '/components/table/baseHTMLOverflowMenu'
-      path: '/table/baseHTMLOverflowMenu'
-      fullPath: '/components/table/baseHTMLOverflowMenu'
-      preLoaderRoute: typeof ComponentsTableBaseHTMLOverflowMenuRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
-    '/components/table/baseHTML': {
-      id: '/components/table/baseHTML'
-      path: '/table/baseHTML'
-      fullPath: '/components/table/baseHTML'
-      preLoaderRoute: typeof ComponentsTableBaseHTMLRouteImport
-      parentRoute: typeof ComponentsRoute
-    }
   }
 }
 
 interface ComponentsRouteChildren {
-  ComponentsTableBaseHTMLRoute: typeof ComponentsTableBaseHTMLRoute
-  ComponentsTableBaseHTMLOverflowMenuRoute: typeof ComponentsTableBaseHTMLOverflowMenuRoute
-  ComponentsTableBaseHTMLStickyShadowRoute: typeof ComponentsTableBaseHTMLStickyShadowRoute
-  ComponentsTableCheckboxRoute: typeof ComponentsTableCheckboxRoute
-  ComponentsTableColumnDragDropRoute: typeof ComponentsTableColumnDragDropRoute
-  ComponentsTableDynamicVirtualScrollRoute: typeof ComponentsTableDynamicVirtualScrollRoute
-  ComponentsTableExpandRoute: typeof ComponentsTableExpandRoute
-  ComponentsTableExtraTextRoute: typeof ComponentsTableExtraTextRoute
-  ComponentsTableFilterRoute: typeof ComponentsTableFilterRoute
-  ComponentsTableFixedVirtualScrollRoute: typeof ComponentsTableFixedVirtualScrollRoute
-  ComponentsTableGroupRoute: typeof ComponentsTableGroupRoute
-  ComponentsTableLoadOnScrollRoute: typeof ComponentsTableLoadOnScrollRoute
-  ComponentsTableLoadOnScrollSkeletonRoute: typeof ComponentsTableLoadOnScrollSkeletonRoute
-  ComponentsTableLoadOnScrollSpinnerRoute: typeof ComponentsTableLoadOnScrollSpinnerRoute
-  ComponentsTableMultiLevelHeaderRoute: typeof ComponentsTableMultiLevelHeaderRoute
-  ComponentsTableMultilineRoute: typeof ComponentsTableMultilineRoute
-  ComponentsTableOverflowMenuRoute: typeof ComponentsTableOverflowMenuRoute
-  ComponentsTableRenderCallbackRoute: typeof ComponentsTableRenderCallbackRoute
-  ComponentsTableRowDragDropRoute: typeof ComponentsTableRowDragDropRoute
-  ComponentsTableRowStateRoute: typeof ComponentsTableRowStateRoute
-  ComponentsTableScrollPositionByRefRoute: typeof ComponentsTableScrollPositionByRefRoute
-  ComponentsTableSortRoute: typeof ComponentsTableSortRoute
-  ComponentsTableStickyRoute: typeof ComponentsTableStickyRoute
-  ComponentsTableStyleRoute: typeof ComponentsTableStyleRoute
-  ComponentsTableWidthRoute: typeof ComponentsTableWidthRoute
-  ComponentsTableZebraRoute: typeof ComponentsTableZebraRoute
   ComponentsTanstackTableBaseExampleRoute: typeof ComponentsTanstackTableBaseExampleRoute
   ComponentsTanstackTableCellTextRoute: typeof ComponentsTanstackTableCellTextRoute
   ComponentsTanstackTableDataAtrClassNameRoute: typeof ComponentsTanstackTableDataAtrClassNameRoute
@@ -1410,52 +676,9 @@ interface ComponentsRouteChildren {
   ComponentsTanstackTableWithOverflowHeadersRoute: typeof ComponentsTanstackTableWithOverflowHeadersRoute
   ComponentsTanstackTableWithSortRoute: typeof ComponentsTanstackTableWithSortRoute
   ComponentsTanstackTableZebraExampleRoute: typeof ComponentsTanstackTableZebraExampleRoute
-  ComponentsUserTableBaseTableRoute: typeof ComponentsUserTableBaseTableRoute
-  ComponentsUserTableBenchmarkTableRoute: typeof ComponentsUserTableBenchmarkTableRoute
-  ComponentsUserTableColumnGroupTableRoute: typeof ComponentsUserTableColumnGroupTableRoute
-  ComponentsUserTableLoremItemTableRoute: typeof ComponentsUserTableLoremItemTableRoute
-  ComponentsUserTableRenderValueTableRoute: typeof ComponentsUserTableRenderValueTableRoute
-  ComponentsUserTableWithHiddenColumnsTableRoute: typeof ComponentsUserTableWithHiddenColumnsTableRoute
-  ComponentsUserTableWithHorizontalScrollTableRoute: typeof ComponentsUserTableWithHorizontalScrollTableRoute
-  ComponentsUserTableWithLongTextTableRoute: typeof ComponentsUserTableWithLongTextTableRoute
-  ComponentsUserTableWithNoLastColumnNameTableRoute: typeof ComponentsUserTableWithNoLastColumnNameTableRoute
-  ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
 }
 
 const ComponentsRouteChildren: ComponentsRouteChildren = {
-  ComponentsTableBaseHTMLRoute: ComponentsTableBaseHTMLRoute,
-  ComponentsTableBaseHTMLOverflowMenuRoute:
-    ComponentsTableBaseHTMLOverflowMenuRoute,
-  ComponentsTableBaseHTMLStickyShadowRoute:
-    ComponentsTableBaseHTMLStickyShadowRoute,
-  ComponentsTableCheckboxRoute: ComponentsTableCheckboxRoute,
-  ComponentsTableColumnDragDropRoute: ComponentsTableColumnDragDropRoute,
-  ComponentsTableDynamicVirtualScrollRoute:
-    ComponentsTableDynamicVirtualScrollRoute,
-  ComponentsTableExpandRoute: ComponentsTableExpandRoute,
-  ComponentsTableExtraTextRoute: ComponentsTableExtraTextRoute,
-  ComponentsTableFilterRoute: ComponentsTableFilterRoute,
-  ComponentsTableFixedVirtualScrollRoute:
-    ComponentsTableFixedVirtualScrollRoute,
-  ComponentsTableGroupRoute: ComponentsTableGroupRoute,
-  ComponentsTableLoadOnScrollRoute: ComponentsTableLoadOnScrollRoute,
-  ComponentsTableLoadOnScrollSkeletonRoute:
-    ComponentsTableLoadOnScrollSkeletonRoute,
-  ComponentsTableLoadOnScrollSpinnerRoute:
-    ComponentsTableLoadOnScrollSpinnerRoute,
-  ComponentsTableMultiLevelHeaderRoute: ComponentsTableMultiLevelHeaderRoute,
-  ComponentsTableMultilineRoute: ComponentsTableMultilineRoute,
-  ComponentsTableOverflowMenuRoute: ComponentsTableOverflowMenuRoute,
-  ComponentsTableRenderCallbackRoute: ComponentsTableRenderCallbackRoute,
-  ComponentsTableRowDragDropRoute: ComponentsTableRowDragDropRoute,
-  ComponentsTableRowStateRoute: ComponentsTableRowStateRoute,
-  ComponentsTableScrollPositionByRefRoute:
-    ComponentsTableScrollPositionByRefRoute,
-  ComponentsTableSortRoute: ComponentsTableSortRoute,
-  ComponentsTableStickyRoute: ComponentsTableStickyRoute,
-  ComponentsTableStyleRoute: ComponentsTableStyleRoute,
-  ComponentsTableWidthRoute: ComponentsTableWidthRoute,
-  ComponentsTableZebraRoute: ComponentsTableZebraRoute,
   ComponentsTanstackTableBaseExampleRoute:
     ComponentsTanstackTableBaseExampleRoute,
   ComponentsTanstackTableCellTextRoute: ComponentsTanstackTableCellTextRoute,
@@ -1500,24 +723,6 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTanstackTableWithSortRoute: ComponentsTanstackTableWithSortRoute,
   ComponentsTanstackTableZebraExampleRoute:
     ComponentsTanstackTableZebraExampleRoute,
-  ComponentsUserTableBaseTableRoute: ComponentsUserTableBaseTableRoute,
-  ComponentsUserTableBenchmarkTableRoute:
-    ComponentsUserTableBenchmarkTableRoute,
-  ComponentsUserTableColumnGroupTableRoute:
-    ComponentsUserTableColumnGroupTableRoute,
-  ComponentsUserTableLoremItemTableRoute:
-    ComponentsUserTableLoremItemTableRoute,
-  ComponentsUserTableRenderValueTableRoute:
-    ComponentsUserTableRenderValueTableRoute,
-  ComponentsUserTableWithHiddenColumnsTableRoute:
-    ComponentsUserTableWithHiddenColumnsTableRoute,
-  ComponentsUserTableWithHorizontalScrollTableRoute:
-    ComponentsUserTableWithHorizontalScrollTableRoute,
-  ComponentsUserTableWithLongTextTableRoute:
-    ComponentsUserTableWithLongTextTableRoute,
-  ComponentsUserTableWithNoLastColumnNameTableRoute:
-    ComponentsUserTableWithNoLastColumnNameTableRoute,
-  ComponentsTableIndexRoute: ComponentsTableIndexRoute,
 }
 
 const ComponentsRouteWithChildren = ComponentsRoute._addFileChildren(

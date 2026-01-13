@@ -1,6 +1,9 @@
 import { type Header } from '@tanstack/react-table';
+import { useState } from 'react';
+
+import type { Dimension } from '../../types';
 import {
-  HeaderCell,
+  HeaderCell as HeaderCellWrapper,
   HeaderCellContent,
   HeaderCellTitle,
   HeaderCellSpacer,
@@ -12,28 +15,20 @@ import {
 import { TitleText } from './TitleText';
 import { Filter } from './Filter';
 import { RowWidthResizer } from './RowWidthResizer';
-import { useState } from 'react';
-import type { CSSProperties } from 'styled-components';
 
-import type { Dimension } from '../../types';
-
-//todo пересмотреть тип
-interface Props<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+export interface HeaderCellProps<T> extends Omit<React.HTMLAttributes<HTMLElement>, 'title'> {
+  header: Header<T, unknown>;
   headerLineClamp?: number;
   headerExtraLineClamp?: number;
   dimension: Dimension;
   multiSortable?: boolean;
-  header: Header<T, unknown>;
   title: React.ReactNode;
   extraText?: React.ReactNode;
-  //todo пересмотреть тип
-  as?: React.ReactNode;
-  style?: CSSProperties;
   showResizer?: boolean;
   rowSpan?: number;
 }
 
-export const CellTh = <T,>({
+export const HeaderCell = <T,>({
   headerLineClamp = 1,
   headerExtraLineClamp = 1,
   dimension,
@@ -44,7 +39,7 @@ export const CellTh = <T,>({
   showResizer,
   rowSpan = 1,
   ...props
-}: Props<T>) => {
+}: HeaderCellProps<T>) => {
   const [headerEl, setHeaderEl] = useState<HTMLDivElement | null>(null);
 
   const column = header.column;
@@ -61,9 +56,8 @@ export const CellTh = <T,>({
   const sort = column.getIsSorted();
 
   return (
-    <HeaderCell
+    <HeaderCellWrapper
       {...props}
-      className="th"
       key={header.id}
       $dimension={dimension}
       $resizer={visibleResizer}
@@ -109,6 +103,6 @@ export const CellTh = <T,>({
           }}
         />
       )}
-    </HeaderCell>
+    </HeaderCellWrapper>
   );
 };

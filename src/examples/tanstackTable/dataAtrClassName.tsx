@@ -3,7 +3,7 @@ import { createColumnHelper, getCoreRowModel, useReactTable } from '@tanstack/re
 import { ListItem, UnorderedList } from '@admiral-ds/react-ui';
 
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import { CellText, CellTh, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
+import { CellText, HeaderCell, defaultOptions, TanstackTable } from '#examples/-helpers/tanstackTable';
 import styled from 'styled-components';
 
 const StyledCellText = styled(CellText)`
@@ -49,7 +49,7 @@ const columnHelperDocs = createColumnHelper<Docs>();
 const columns = [
   columnHelperDocs.accessor('element', {
     header: ({ header }) => (
-      <CellTh header={header} dimension="m" showResizer data-testid="test" title="Элемент таблицы" />
+      <HeaderCell header={header} dimension="m" showResizer data-testid="test" title="Элемент таблицы" />
     ),
     cell: (info) => <StyledCellText>{info.getValue<string>()}</StyledCellText>,
     size: 250,

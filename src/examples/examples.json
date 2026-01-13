@@ -1,69 +1,6 @@
 {
   "components": [
     {
-      "name": "Table",
-      "path": "/components/table",
-      "routes": [
-        { "name": "Базовый пример", "path": "/components/table" },
-        { "name": "Изменение ширины столбцов", "path": "/components/table/width" },
-        { "name": "Пример с чекбоксами", "path": "/components/table/checkbox" },
-        { "name": "Сортировка", "path": "/components/table/sort" },
-        { "name": "Фильтрация", "path": "/components/table/filter" },
-        { "name": "Фиксирванные столбцы", "path": "/components/table/sticky" },
-        {
-          "name": "Пример строк с OverflowMenu и иконками одиночных действий",
-          "path": "/components/table/overflowMenu"
-        },
-        { "name": "Детализация строк", "path": "/components/table/expand" },
-        { "name": "Группировка строк", "path": "/components/table/group" },
-        {
-          "name": "Виртуальный скролл для строк с фиксированной высотой",
-          "path": "/components/table/fixedVirtualScroll"
-        },
-        {
-          "name": "Виртуальный скролл для строк с динамической высотой",
-          "path": "/components/table/dynamicVirtualScroll"
-        },
-        {
-          "name": "Drag&Drop столбцов",
-          "path": "/components/table/columnDragDrop"
-        },
-        {
-          "name": "Drag&Drop строк",
-          "path": "/components/table/rowDragDrop"
-        },
-        { "name": "Стилизация компонента", "path": "/components/table/style" },
-        { "name": "Состояния и статусы строк", "path": "/components/table/rowState" },
-        { "name": "Зебра (окрашивание строк через одну)", "path": "/components/table/zebra" },
-        { "name": "Многострочность", "path": "/components/table/multiline" },
-        { "name": "Дополнительный текст в заголовке", "path": "/components/table/extraText" },
-        { "name": "Использование render-колбеков", "path": "/components/table/renderCallback" },
-        { "name": "Управление позицией скролла через ref-атрибут", "path": "/components/table/scrollPositionByRef" },
-        { "name": "Подгрузка данных при скролле", "path": "/components/table/loadOnScroll" },
-        { "name": "Подгрузка данных при скролле со спиннером", "path": "/components/table/loadOnScrollSpinner" },
-        { "name": "Подгрузка данных при скролле со скелетоном", "path": "/components/table/loadOnScrollSkeleton" },
-        { "name": "Базовый HTML table", "path": "/components/table/baseHTML" },
-        { "name": "Базовый HTML table с фиксированными столбцами", "path": "/components/table/baseHTMLStickyShadow" },
-        { "name": "Базовый HTML table с OverflowMenu", "path": "/components/table/baseHTMLOverflowMenu" },
-        { "name": "Базовый HTML table с multi-level header", "path": "/components/table/multiLevelHeader" }
-      ]
-    },
-    {
-      "name": "User Table (by A. Popovsky)",
-      "path": "/components/userTable",
-      "routes": [
-        { "name": "Базовый пример", "path": "/components/userTable/baseTable" },
-        { "name": "Пример с длинным текстом", "path": "/components/userTable/withLongTextTable" },
-        { "name": "Пример с использованием renderValue", "path": "/components/userTable/renderValueTable" },
-        { "name": "Пример с LorenItem", "path": "/components/userTable/loremItemTable" },
-        { "name": "Пример с горизонтальным скроллом", "path": "/components/userTable/withHorizontalScrollTable" },
-        { "name": "Пример с большим объёмом данных", "path": "/components/userTable/benchmarkTable" },
-        { "name": "Пример с hidden columns", "path": "/components/userTable/withHiddenColumnsTable" },
-        { "name": "Пример с with no last column name", "path": "/components/userTable/withNoLastColumnNameTable" },
-        { "name": "Пример с column group", "path": "/components/userTable/columnGroupTable" }
-      ]
-    },
-    {
       "name": "Tanstack examples",
       "path": "/components/tanstackTable",
       "routes": [
