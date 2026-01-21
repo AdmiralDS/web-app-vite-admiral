@@ -25,6 +25,7 @@ import { Route as ComponentsTextInputIndexRouteImport } from './routes/component
 import { Route as ComponentsTextButtonMenuIndexRouteImport } from './routes/components/textButtonMenu/index'
 import { Route as ComponentsTextButtonIndexRouteImport } from './routes/components/textButton/index'
 import { Route as ComponentsTextAreaIndexRouteImport } from './routes/components/textArea/index'
+import { Route as ComponentsTanstackTableIndexRouteImport } from './routes/components/tanstackTable/index'
 import { Route as ComponentsTagIndexRouteImport } from './routes/components/tag/index'
 import { Route as ComponentsTableIndexRouteImport } from './routes/components/table/index'
 import { Route as ComponentsTabMenuIndexRouteImport } from './routes/components/tabMenu/index'
@@ -135,6 +136,29 @@ import { Route as ComponentsTextAreaVariantsRouteImport } from './routes/compone
 import { Route as ComponentsTextAreaStatusesRouteImport } from './routes/components/textArea/statuses'
 import { Route as ComponentsTextAreaStatesRouteImport } from './routes/components/textArea/states'
 import { Route as ComponentsTextAreaSizesRouteImport } from './routes/components/textArea/sizes'
+import { Route as ComponentsTanstackTableZebraExampleRouteImport } from './routes/components/tanstackTable/zebraExample'
+import { Route as ComponentsTanstackTableWithSortRouteImport } from './routes/components/tanstackTable/withSort'
+import { Route as ComponentsTanstackTableWithOverflowHeadersRouteImport } from './routes/components/tanstackTable/withOverflowHeaders'
+import { Route as ComponentsTanstackTableWithLineClampInHeaderRouteImport } from './routes/components/tanstackTable/withLineClampInHeader'
+import { Route as ComponentsTanstackTableWithExtraTextInHeaderRouteImport } from './routes/components/tanstackTable/withExtraTextInHeader'
+import { Route as ComponentsTanstackTableStyleExampleRouteImport } from './routes/components/tanstackTable/styleExample'
+import { Route as ComponentsTanstackTableStickyColumnsExampleRouteImport } from './routes/components/tanstackTable/stickyColumnsExample'
+import { Route as ComponentsTanstackTableRowStateRouteImport } from './routes/components/tanstackTable/rowState'
+import { Route as ComponentsTanstackTableRowSelectionRouteImport } from './routes/components/tanstackTable/rowSelection'
+import { Route as ComponentsTanstackTableResizeExampleRouteImport } from './routes/components/tanstackTable/resizeExample'
+import { Route as ComponentsTanstackTableOverflowMenuRouteImport } from './routes/components/tanstackTable/overflowMenu'
+import { Route as ComponentsTanstackTableLoadScrollSpinnerRouteImport } from './routes/components/tanstackTable/loadScrollSpinner'
+import { Route as ComponentsTanstackTableLoadScrollSkeletonRouteImport } from './routes/components/tanstackTable/loadScrollSkeleton'
+import { Route as ComponentsTanstackTableLoadScrollRouteImport } from './routes/components/tanstackTable/loadScroll'
+import { Route as ComponentsTanstackTableGroupRowExperimentalRouteImport } from './routes/components/tanstackTable/groupRowExperimental'
+import { Route as ComponentsTanstackTableGroupRowRouteImport } from './routes/components/tanstackTable/groupRow'
+import { Route as ComponentsTanstackTableGroupHeadersRouteImport } from './routes/components/tanstackTable/groupHeaders'
+import { Route as ComponentsTanstackTableFixedVirtualScrollRouteImport } from './routes/components/tanstackTable/fixedVirtualScroll'
+import { Route as ComponentsTanstackTableFilterExampleRouteImport } from './routes/components/tanstackTable/filterExample'
+import { Route as ComponentsTanstackTableExpandedRowRouteImport } from './routes/components/tanstackTable/expandedRow'
+import { Route as ComponentsTanstackTableDynamicVirtualScrollRouteImport } from './routes/components/tanstackTable/dynamicVirtualScroll'
+import { Route as ComponentsTanstackTableDataAtrClassNameRouteImport } from './routes/components/tanstackTable/dataAtrClassName'
+import { Route as ComponentsTanstackTableCellTextRouteImport } from './routes/components/tanstackTable/cellText'
 import { Route as ComponentsTagWithIconRouteImport } from './routes/components/tag/withIcon'
 import { Route as ComponentsTagTooltipRouteImport } from './routes/components/tag/tooltip'
 import { Route as ComponentsTagTagsRouteImport } from './routes/components/tag/tags'
@@ -566,6 +590,12 @@ const ComponentsTextAreaIndexRoute = ComponentsTextAreaIndexRouteImport.update({
   path: '/textArea/',
   getParentRoute: () => ComponentsRoute,
 } as any)
+const ComponentsTanstackTableIndexRoute =
+  ComponentsTanstackTableIndexRouteImport.update({
+    id: '/tanstackTable/',
+    path: '/tanstackTable/',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 const ComponentsTagIndexRoute = ComponentsTagIndexRouteImport.update({
   id: '/tag/',
   path: '/tag/',
@@ -1184,6 +1214,144 @@ const ComponentsTextAreaSizesRoute = ComponentsTextAreaSizesRouteImport.update({
   path: '/textArea/sizes',
   getParentRoute: () => ComponentsRoute,
 } as any)
+const ComponentsTanstackTableZebraExampleRoute =
+  ComponentsTanstackTableZebraExampleRouteImport.update({
+    id: '/tanstackTable/zebraExample',
+    path: '/tanstackTable/zebraExample',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableWithSortRoute =
+  ComponentsTanstackTableWithSortRouteImport.update({
+    id: '/tanstackTable/withSort',
+    path: '/tanstackTable/withSort',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableWithOverflowHeadersRoute =
+  ComponentsTanstackTableWithOverflowHeadersRouteImport.update({
+    id: '/tanstackTable/withOverflowHeaders',
+    path: '/tanstackTable/withOverflowHeaders',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableWithLineClampInHeaderRoute =
+  ComponentsTanstackTableWithLineClampInHeaderRouteImport.update({
+    id: '/tanstackTable/withLineClampInHeader',
+    path: '/tanstackTable/withLineClampInHeader',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableWithExtraTextInHeaderRoute =
+  ComponentsTanstackTableWithExtraTextInHeaderRouteImport.update({
+    id: '/tanstackTable/withExtraTextInHeader',
+    path: '/tanstackTable/withExtraTextInHeader',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableStyleExampleRoute =
+  ComponentsTanstackTableStyleExampleRouteImport.update({
+    id: '/tanstackTable/styleExample',
+    path: '/tanstackTable/styleExample',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableStickyColumnsExampleRoute =
+  ComponentsTanstackTableStickyColumnsExampleRouteImport.update({
+    id: '/tanstackTable/stickyColumnsExample',
+    path: '/tanstackTable/stickyColumnsExample',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableRowStateRoute =
+  ComponentsTanstackTableRowStateRouteImport.update({
+    id: '/tanstackTable/rowState',
+    path: '/tanstackTable/rowState',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableRowSelectionRoute =
+  ComponentsTanstackTableRowSelectionRouteImport.update({
+    id: '/tanstackTable/rowSelection',
+    path: '/tanstackTable/rowSelection',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableResizeExampleRoute =
+  ComponentsTanstackTableResizeExampleRouteImport.update({
+    id: '/tanstackTable/resizeExample',
+    path: '/tanstackTable/resizeExample',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableOverflowMenuRoute =
+  ComponentsTanstackTableOverflowMenuRouteImport.update({
+    id: '/tanstackTable/overflowMenu',
+    path: '/tanstackTable/overflowMenu',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableLoadScrollSpinnerRoute =
+  ComponentsTanstackTableLoadScrollSpinnerRouteImport.update({
+    id: '/tanstackTable/loadScrollSpinner',
+    path: '/tanstackTable/loadScrollSpinner',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableLoadScrollSkeletonRoute =
+  ComponentsTanstackTableLoadScrollSkeletonRouteImport.update({
+    id: '/tanstackTable/loadScrollSkeleton',
+    path: '/tanstackTable/loadScrollSkeleton',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableLoadScrollRoute =
+  ComponentsTanstackTableLoadScrollRouteImport.update({
+    id: '/tanstackTable/loadScroll',
+    path: '/tanstackTable/loadScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableGroupRowExperimentalRoute =
+  ComponentsTanstackTableGroupRowExperimentalRouteImport.update({
+    id: '/tanstackTable/groupRowExperimental',
+    path: '/tanstackTable/groupRowExperimental',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableGroupRowRoute =
+  ComponentsTanstackTableGroupRowRouteImport.update({
+    id: '/tanstackTable/groupRow',
+    path: '/tanstackTable/groupRow',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableGroupHeadersRoute =
+  ComponentsTanstackTableGroupHeadersRouteImport.update({
+    id: '/tanstackTable/groupHeaders',
+    path: '/tanstackTable/groupHeaders',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableFixedVirtualScrollRoute =
+  ComponentsTanstackTableFixedVirtualScrollRouteImport.update({
+    id: '/tanstackTable/fixedVirtualScroll',
+    path: '/tanstackTable/fixedVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableFilterExampleRoute =
+  ComponentsTanstackTableFilterExampleRouteImport.update({
+    id: '/tanstackTable/filterExample',
+    path: '/tanstackTable/filterExample',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableExpandedRowRoute =
+  ComponentsTanstackTableExpandedRowRouteImport.update({
+    id: '/tanstackTable/expandedRow',
+    path: '/tanstackTable/expandedRow',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableDynamicVirtualScrollRoute =
+  ComponentsTanstackTableDynamicVirtualScrollRouteImport.update({
+    id: '/tanstackTable/dynamicVirtualScroll',
+    path: '/tanstackTable/dynamicVirtualScroll',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableDataAtrClassNameRoute =
+  ComponentsTanstackTableDataAtrClassNameRouteImport.update({
+    id: '/tanstackTable/dataAtrClassName',
+    path: '/tanstackTable/dataAtrClassName',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
+const ComponentsTanstackTableCellTextRoute =
+  ComponentsTanstackTableCellTextRouteImport.update({
+    id: '/tanstackTable/cellText',
+    path: '/tanstackTable/cellText',
+    getParentRoute: () => ComponentsRoute,
+  } as any)
 const ComponentsTagWithIconRoute = ComponentsTagWithIconRouteImport.update({
   id: '/tag/withIcon',
   path: '/tag/withIcon',
@@ -3545,6 +3713,29 @@ export interface FileRoutesByFullPath {
   '/components/tag/tags': typeof ComponentsTagTagsRoute
   '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/tanstackTable/cellText': typeof ComponentsTanstackTableCellTextRoute
+  '/components/tanstackTable/dataAtrClassName': typeof ComponentsTanstackTableDataAtrClassNameRoute
+  '/components/tanstackTable/dynamicVirtualScroll': typeof ComponentsTanstackTableDynamicVirtualScrollRoute
+  '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
+  '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
+  '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
+  '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
+  '/components/tanstackTable/groupRow': typeof ComponentsTanstackTableGroupRowRoute
+  '/components/tanstackTable/groupRowExperimental': typeof ComponentsTanstackTableGroupRowExperimentalRoute
+  '/components/tanstackTable/loadScroll': typeof ComponentsTanstackTableLoadScrollRoute
+  '/components/tanstackTable/loadScrollSkeleton': typeof ComponentsTanstackTableLoadScrollSkeletonRoute
+  '/components/tanstackTable/loadScrollSpinner': typeof ComponentsTanstackTableLoadScrollSpinnerRoute
+  '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
+  '/components/tanstackTable/resizeExample': typeof ComponentsTanstackTableResizeExampleRoute
+  '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
+  '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
+  '/components/tanstackTable/stickyColumnsExample': typeof ComponentsTanstackTableStickyColumnsExampleRoute
+  '/components/tanstackTable/styleExample': typeof ComponentsTanstackTableStyleExampleRoute
+  '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
+  '/components/tanstackTable/withLineClampInHeader': typeof ComponentsTanstackTableWithLineClampInHeaderRoute
+  '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
+  '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
+  '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
   '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
   '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
   '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
@@ -3655,6 +3846,7 @@ export interface FileRoutesByFullPath {
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
+  '/components/tanstackTable': typeof ComponentsTanstackTableIndexRoute
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
@@ -4019,6 +4211,29 @@ export interface FileRoutesByTo {
   '/components/tag/tags': typeof ComponentsTagTagsRoute
   '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/tanstackTable/cellText': typeof ComponentsTanstackTableCellTextRoute
+  '/components/tanstackTable/dataAtrClassName': typeof ComponentsTanstackTableDataAtrClassNameRoute
+  '/components/tanstackTable/dynamicVirtualScroll': typeof ComponentsTanstackTableDynamicVirtualScrollRoute
+  '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
+  '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
+  '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
+  '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
+  '/components/tanstackTable/groupRow': typeof ComponentsTanstackTableGroupRowRoute
+  '/components/tanstackTable/groupRowExperimental': typeof ComponentsTanstackTableGroupRowExperimentalRoute
+  '/components/tanstackTable/loadScroll': typeof ComponentsTanstackTableLoadScrollRoute
+  '/components/tanstackTable/loadScrollSkeleton': typeof ComponentsTanstackTableLoadScrollSkeletonRoute
+  '/components/tanstackTable/loadScrollSpinner': typeof ComponentsTanstackTableLoadScrollSpinnerRoute
+  '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
+  '/components/tanstackTable/resizeExample': typeof ComponentsTanstackTableResizeExampleRoute
+  '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
+  '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
+  '/components/tanstackTable/stickyColumnsExample': typeof ComponentsTanstackTableStickyColumnsExampleRoute
+  '/components/tanstackTable/styleExample': typeof ComponentsTanstackTableStyleExampleRoute
+  '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
+  '/components/tanstackTable/withLineClampInHeader': typeof ComponentsTanstackTableWithLineClampInHeaderRoute
+  '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
+  '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
+  '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
   '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
   '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
   '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
@@ -4129,6 +4344,7 @@ export interface FileRoutesByTo {
   '/components/tabMenu': typeof ComponentsTabMenuIndexRoute
   '/components/table': typeof ComponentsTableIndexRoute
   '/components/tag': typeof ComponentsTagIndexRoute
+  '/components/tanstackTable': typeof ComponentsTanstackTableIndexRoute
   '/components/textArea': typeof ComponentsTextAreaIndexRoute
   '/components/textButton': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu': typeof ComponentsTextButtonMenuIndexRoute
@@ -4494,6 +4710,29 @@ export interface FileRoutesById {
   '/components/tag/tags': typeof ComponentsTagTagsRoute
   '/components/tag/tooltip': typeof ComponentsTagTooltipRoute
   '/components/tag/withIcon': typeof ComponentsTagWithIconRoute
+  '/components/tanstackTable/cellText': typeof ComponentsTanstackTableCellTextRoute
+  '/components/tanstackTable/dataAtrClassName': typeof ComponentsTanstackTableDataAtrClassNameRoute
+  '/components/tanstackTable/dynamicVirtualScroll': typeof ComponentsTanstackTableDynamicVirtualScrollRoute
+  '/components/tanstackTable/expandedRow': typeof ComponentsTanstackTableExpandedRowRoute
+  '/components/tanstackTable/filterExample': typeof ComponentsTanstackTableFilterExampleRoute
+  '/components/tanstackTable/fixedVirtualScroll': typeof ComponentsTanstackTableFixedVirtualScrollRoute
+  '/components/tanstackTable/groupHeaders': typeof ComponentsTanstackTableGroupHeadersRoute
+  '/components/tanstackTable/groupRow': typeof ComponentsTanstackTableGroupRowRoute
+  '/components/tanstackTable/groupRowExperimental': typeof ComponentsTanstackTableGroupRowExperimentalRoute
+  '/components/tanstackTable/loadScroll': typeof ComponentsTanstackTableLoadScrollRoute
+  '/components/tanstackTable/loadScrollSkeleton': typeof ComponentsTanstackTableLoadScrollSkeletonRoute
+  '/components/tanstackTable/loadScrollSpinner': typeof ComponentsTanstackTableLoadScrollSpinnerRoute
+  '/components/tanstackTable/overflowMenu': typeof ComponentsTanstackTableOverflowMenuRoute
+  '/components/tanstackTable/resizeExample': typeof ComponentsTanstackTableResizeExampleRoute
+  '/components/tanstackTable/rowSelection': typeof ComponentsTanstackTableRowSelectionRoute
+  '/components/tanstackTable/rowState': typeof ComponentsTanstackTableRowStateRoute
+  '/components/tanstackTable/stickyColumnsExample': typeof ComponentsTanstackTableStickyColumnsExampleRoute
+  '/components/tanstackTable/styleExample': typeof ComponentsTanstackTableStyleExampleRoute
+  '/components/tanstackTable/withExtraTextInHeader': typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
+  '/components/tanstackTable/withLineClampInHeader': typeof ComponentsTanstackTableWithLineClampInHeaderRoute
+  '/components/tanstackTable/withOverflowHeaders': typeof ComponentsTanstackTableWithOverflowHeadersRoute
+  '/components/tanstackTable/withSort': typeof ComponentsTanstackTableWithSortRoute
+  '/components/tanstackTable/zebraExample': typeof ComponentsTanstackTableZebraExampleRoute
   '/components/textArea/sizes': typeof ComponentsTextAreaSizesRoute
   '/components/textArea/states': typeof ComponentsTextAreaStatesRoute
   '/components/textArea/statuses': typeof ComponentsTextAreaStatusesRoute
@@ -4604,6 +4843,7 @@ export interface FileRoutesById {
   '/components/tabMenu/': typeof ComponentsTabMenuIndexRoute
   '/components/table/': typeof ComponentsTableIndexRoute
   '/components/tag/': typeof ComponentsTagIndexRoute
+  '/components/tanstackTable/': typeof ComponentsTanstackTableIndexRoute
   '/components/textArea/': typeof ComponentsTextAreaIndexRoute
   '/components/textButton/': typeof ComponentsTextButtonIndexRoute
   '/components/textButtonMenu/': typeof ComponentsTextButtonMenuIndexRoute
@@ -4970,6 +5210,29 @@ export interface FileRouteTypes {
     | '/components/tag/tags'
     | '/components/tag/tooltip'
     | '/components/tag/withIcon'
+    | '/components/tanstackTable/cellText'
+    | '/components/tanstackTable/dataAtrClassName'
+    | '/components/tanstackTable/dynamicVirtualScroll'
+    | '/components/tanstackTable/expandedRow'
+    | '/components/tanstackTable/filterExample'
+    | '/components/tanstackTable/fixedVirtualScroll'
+    | '/components/tanstackTable/groupHeaders'
+    | '/components/tanstackTable/groupRow'
+    | '/components/tanstackTable/groupRowExperimental'
+    | '/components/tanstackTable/loadScroll'
+    | '/components/tanstackTable/loadScrollSkeleton'
+    | '/components/tanstackTable/loadScrollSpinner'
+    | '/components/tanstackTable/overflowMenu'
+    | '/components/tanstackTable/resizeExample'
+    | '/components/tanstackTable/rowSelection'
+    | '/components/tanstackTable/rowState'
+    | '/components/tanstackTable/stickyColumnsExample'
+    | '/components/tanstackTable/styleExample'
+    | '/components/tanstackTable/withExtraTextInHeader'
+    | '/components/tanstackTable/withLineClampInHeader'
+    | '/components/tanstackTable/withOverflowHeaders'
+    | '/components/tanstackTable/withSort'
+    | '/components/tanstackTable/zebraExample'
     | '/components/textArea/sizes'
     | '/components/textArea/states'
     | '/components/textArea/statuses'
@@ -5080,6 +5343,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
+    | '/components/tanstackTable'
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
@@ -5444,6 +5708,29 @@ export interface FileRouteTypes {
     | '/components/tag/tags'
     | '/components/tag/tooltip'
     | '/components/tag/withIcon'
+    | '/components/tanstackTable/cellText'
+    | '/components/tanstackTable/dataAtrClassName'
+    | '/components/tanstackTable/dynamicVirtualScroll'
+    | '/components/tanstackTable/expandedRow'
+    | '/components/tanstackTable/filterExample'
+    | '/components/tanstackTable/fixedVirtualScroll'
+    | '/components/tanstackTable/groupHeaders'
+    | '/components/tanstackTable/groupRow'
+    | '/components/tanstackTable/groupRowExperimental'
+    | '/components/tanstackTable/loadScroll'
+    | '/components/tanstackTable/loadScrollSkeleton'
+    | '/components/tanstackTable/loadScrollSpinner'
+    | '/components/tanstackTable/overflowMenu'
+    | '/components/tanstackTable/resizeExample'
+    | '/components/tanstackTable/rowSelection'
+    | '/components/tanstackTable/rowState'
+    | '/components/tanstackTable/stickyColumnsExample'
+    | '/components/tanstackTable/styleExample'
+    | '/components/tanstackTable/withExtraTextInHeader'
+    | '/components/tanstackTable/withLineClampInHeader'
+    | '/components/tanstackTable/withOverflowHeaders'
+    | '/components/tanstackTable/withSort'
+    | '/components/tanstackTable/zebraExample'
     | '/components/textArea/sizes'
     | '/components/textArea/states'
     | '/components/textArea/statuses'
@@ -5554,6 +5841,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu'
     | '/components/table'
     | '/components/tag'
+    | '/components/tanstackTable'
     | '/components/textArea'
     | '/components/textButton'
     | '/components/textButtonMenu'
@@ -5918,6 +6206,29 @@ export interface FileRouteTypes {
     | '/components/tag/tags'
     | '/components/tag/tooltip'
     | '/components/tag/withIcon'
+    | '/components/tanstackTable/cellText'
+    | '/components/tanstackTable/dataAtrClassName'
+    | '/components/tanstackTable/dynamicVirtualScroll'
+    | '/components/tanstackTable/expandedRow'
+    | '/components/tanstackTable/filterExample'
+    | '/components/tanstackTable/fixedVirtualScroll'
+    | '/components/tanstackTable/groupHeaders'
+    | '/components/tanstackTable/groupRow'
+    | '/components/tanstackTable/groupRowExperimental'
+    | '/components/tanstackTable/loadScroll'
+    | '/components/tanstackTable/loadScrollSkeleton'
+    | '/components/tanstackTable/loadScrollSpinner'
+    | '/components/tanstackTable/overflowMenu'
+    | '/components/tanstackTable/resizeExample'
+    | '/components/tanstackTable/rowSelection'
+    | '/components/tanstackTable/rowState'
+    | '/components/tanstackTable/stickyColumnsExample'
+    | '/components/tanstackTable/styleExample'
+    | '/components/tanstackTable/withExtraTextInHeader'
+    | '/components/tanstackTable/withLineClampInHeader'
+    | '/components/tanstackTable/withOverflowHeaders'
+    | '/components/tanstackTable/withSort'
+    | '/components/tanstackTable/zebraExample'
     | '/components/textArea/sizes'
     | '/components/textArea/states'
     | '/components/textArea/statuses'
@@ -6028,6 +6339,7 @@ export interface FileRouteTypes {
     | '/components/tabMenu/'
     | '/components/table/'
     | '/components/tag/'
+    | '/components/tanstackTable/'
     | '/components/textArea/'
     | '/components/textButton/'
     | '/components/textButtonMenu/'
@@ -6157,6 +6469,13 @@ declare module '@tanstack/react-router' {
       path: '/textArea'
       fullPath: '/components/textArea'
       preLoaderRoute: typeof ComponentsTextAreaIndexRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/': {
+      id: '/components/tanstackTable/'
+      path: '/tanstackTable'
+      fullPath: '/components/tanstackTable'
+      preLoaderRoute: typeof ComponentsTanstackTableIndexRouteImport
       parentRoute: typeof ComponentsRoute
     }
     '/components/tag/': {
@@ -6927,6 +7246,167 @@ declare module '@tanstack/react-router' {
       path: '/textArea/sizes'
       fullPath: '/components/textArea/sizes'
       preLoaderRoute: typeof ComponentsTextAreaSizesRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/zebraExample': {
+      id: '/components/tanstackTable/zebraExample'
+      path: '/tanstackTable/zebraExample'
+      fullPath: '/components/tanstackTable/zebraExample'
+      preLoaderRoute: typeof ComponentsTanstackTableZebraExampleRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/withSort': {
+      id: '/components/tanstackTable/withSort'
+      path: '/tanstackTable/withSort'
+      fullPath: '/components/tanstackTable/withSort'
+      preLoaderRoute: typeof ComponentsTanstackTableWithSortRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/withOverflowHeaders': {
+      id: '/components/tanstackTable/withOverflowHeaders'
+      path: '/tanstackTable/withOverflowHeaders'
+      fullPath: '/components/tanstackTable/withOverflowHeaders'
+      preLoaderRoute: typeof ComponentsTanstackTableWithOverflowHeadersRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/withLineClampInHeader': {
+      id: '/components/tanstackTable/withLineClampInHeader'
+      path: '/tanstackTable/withLineClampInHeader'
+      fullPath: '/components/tanstackTable/withLineClampInHeader'
+      preLoaderRoute: typeof ComponentsTanstackTableWithLineClampInHeaderRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/withExtraTextInHeader': {
+      id: '/components/tanstackTable/withExtraTextInHeader'
+      path: '/tanstackTable/withExtraTextInHeader'
+      fullPath: '/components/tanstackTable/withExtraTextInHeader'
+      preLoaderRoute: typeof ComponentsTanstackTableWithExtraTextInHeaderRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/styleExample': {
+      id: '/components/tanstackTable/styleExample'
+      path: '/tanstackTable/styleExample'
+      fullPath: '/components/tanstackTable/styleExample'
+      preLoaderRoute: typeof ComponentsTanstackTableStyleExampleRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/stickyColumnsExample': {
+      id: '/components/tanstackTable/stickyColumnsExample'
+      path: '/tanstackTable/stickyColumnsExample'
+      fullPath: '/components/tanstackTable/stickyColumnsExample'
+      preLoaderRoute: typeof ComponentsTanstackTableStickyColumnsExampleRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/rowState': {
+      id: '/components/tanstackTable/rowState'
+      path: '/tanstackTable/rowState'
+      fullPath: '/components/tanstackTable/rowState'
+      preLoaderRoute: typeof ComponentsTanstackTableRowStateRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/rowSelection': {
+      id: '/components/tanstackTable/rowSelection'
+      path: '/tanstackTable/rowSelection'
+      fullPath: '/components/tanstackTable/rowSelection'
+      preLoaderRoute: typeof ComponentsTanstackTableRowSelectionRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/resizeExample': {
+      id: '/components/tanstackTable/resizeExample'
+      path: '/tanstackTable/resizeExample'
+      fullPath: '/components/tanstackTable/resizeExample'
+      preLoaderRoute: typeof ComponentsTanstackTableResizeExampleRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/overflowMenu': {
+      id: '/components/tanstackTable/overflowMenu'
+      path: '/tanstackTable/overflowMenu'
+      fullPath: '/components/tanstackTable/overflowMenu'
+      preLoaderRoute: typeof ComponentsTanstackTableOverflowMenuRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/loadScrollSpinner': {
+      id: '/components/tanstackTable/loadScrollSpinner'
+      path: '/tanstackTable/loadScrollSpinner'
+      fullPath: '/components/tanstackTable/loadScrollSpinner'
+      preLoaderRoute: typeof ComponentsTanstackTableLoadScrollSpinnerRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/loadScrollSkeleton': {
+      id: '/components/tanstackTable/loadScrollSkeleton'
+      path: '/tanstackTable/loadScrollSkeleton'
+      fullPath: '/components/tanstackTable/loadScrollSkeleton'
+      preLoaderRoute: typeof ComponentsTanstackTableLoadScrollSkeletonRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/loadScroll': {
+      id: '/components/tanstackTable/loadScroll'
+      path: '/tanstackTable/loadScroll'
+      fullPath: '/components/tanstackTable/loadScroll'
+      preLoaderRoute: typeof ComponentsTanstackTableLoadScrollRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/groupRowExperimental': {
+      id: '/components/tanstackTable/groupRowExperimental'
+      path: '/tanstackTable/groupRowExperimental'
+      fullPath: '/components/tanstackTable/groupRowExperimental'
+      preLoaderRoute: typeof ComponentsTanstackTableGroupRowExperimentalRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/groupRow': {
+      id: '/components/tanstackTable/groupRow'
+      path: '/tanstackTable/groupRow'
+      fullPath: '/components/tanstackTable/groupRow'
+      preLoaderRoute: typeof ComponentsTanstackTableGroupRowRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/groupHeaders': {
+      id: '/components/tanstackTable/groupHeaders'
+      path: '/tanstackTable/groupHeaders'
+      fullPath: '/components/tanstackTable/groupHeaders'
+      preLoaderRoute: typeof ComponentsTanstackTableGroupHeadersRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/fixedVirtualScroll': {
+      id: '/components/tanstackTable/fixedVirtualScroll'
+      path: '/tanstackTable/fixedVirtualScroll'
+      fullPath: '/components/tanstackTable/fixedVirtualScroll'
+      preLoaderRoute: typeof ComponentsTanstackTableFixedVirtualScrollRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/filterExample': {
+      id: '/components/tanstackTable/filterExample'
+      path: '/tanstackTable/filterExample'
+      fullPath: '/components/tanstackTable/filterExample'
+      preLoaderRoute: typeof ComponentsTanstackTableFilterExampleRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/expandedRow': {
+      id: '/components/tanstackTable/expandedRow'
+      path: '/tanstackTable/expandedRow'
+      fullPath: '/components/tanstackTable/expandedRow'
+      preLoaderRoute: typeof ComponentsTanstackTableExpandedRowRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/dynamicVirtualScroll': {
+      id: '/components/tanstackTable/dynamicVirtualScroll'
+      path: '/tanstackTable/dynamicVirtualScroll'
+      fullPath: '/components/tanstackTable/dynamicVirtualScroll'
+      preLoaderRoute: typeof ComponentsTanstackTableDynamicVirtualScrollRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/dataAtrClassName': {
+      id: '/components/tanstackTable/dataAtrClassName'
+      path: '/tanstackTable/dataAtrClassName'
+      fullPath: '/components/tanstackTable/dataAtrClassName'
+      preLoaderRoute: typeof ComponentsTanstackTableDataAtrClassNameRouteImport
+      parentRoute: typeof ComponentsRoute
+    }
+    '/components/tanstackTable/cellText': {
+      id: '/components/tanstackTable/cellText'
+      path: '/tanstackTable/cellText'
+      fullPath: '/components/tanstackTable/cellText'
+      preLoaderRoute: typeof ComponentsTanstackTableCellTextRouteImport
       parentRoute: typeof ComponentsRoute
     }
     '/components/tag/withIcon': {
@@ -9701,6 +10181,29 @@ interface ComponentsRouteChildren {
   ComponentsTagTagsRoute: typeof ComponentsTagTagsRoute
   ComponentsTagTooltipRoute: typeof ComponentsTagTooltipRoute
   ComponentsTagWithIconRoute: typeof ComponentsTagWithIconRoute
+  ComponentsTanstackTableCellTextRoute: typeof ComponentsTanstackTableCellTextRoute
+  ComponentsTanstackTableDataAtrClassNameRoute: typeof ComponentsTanstackTableDataAtrClassNameRoute
+  ComponentsTanstackTableDynamicVirtualScrollRoute: typeof ComponentsTanstackTableDynamicVirtualScrollRoute
+  ComponentsTanstackTableExpandedRowRoute: typeof ComponentsTanstackTableExpandedRowRoute
+  ComponentsTanstackTableFilterExampleRoute: typeof ComponentsTanstackTableFilterExampleRoute
+  ComponentsTanstackTableFixedVirtualScrollRoute: typeof ComponentsTanstackTableFixedVirtualScrollRoute
+  ComponentsTanstackTableGroupHeadersRoute: typeof ComponentsTanstackTableGroupHeadersRoute
+  ComponentsTanstackTableGroupRowRoute: typeof ComponentsTanstackTableGroupRowRoute
+  ComponentsTanstackTableGroupRowExperimentalRoute: typeof ComponentsTanstackTableGroupRowExperimentalRoute
+  ComponentsTanstackTableLoadScrollRoute: typeof ComponentsTanstackTableLoadScrollRoute
+  ComponentsTanstackTableLoadScrollSkeletonRoute: typeof ComponentsTanstackTableLoadScrollSkeletonRoute
+  ComponentsTanstackTableLoadScrollSpinnerRoute: typeof ComponentsTanstackTableLoadScrollSpinnerRoute
+  ComponentsTanstackTableOverflowMenuRoute: typeof ComponentsTanstackTableOverflowMenuRoute
+  ComponentsTanstackTableResizeExampleRoute: typeof ComponentsTanstackTableResizeExampleRoute
+  ComponentsTanstackTableRowSelectionRoute: typeof ComponentsTanstackTableRowSelectionRoute
+  ComponentsTanstackTableRowStateRoute: typeof ComponentsTanstackTableRowStateRoute
+  ComponentsTanstackTableStickyColumnsExampleRoute: typeof ComponentsTanstackTableStickyColumnsExampleRoute
+  ComponentsTanstackTableStyleExampleRoute: typeof ComponentsTanstackTableStyleExampleRoute
+  ComponentsTanstackTableWithExtraTextInHeaderRoute: typeof ComponentsTanstackTableWithExtraTextInHeaderRoute
+  ComponentsTanstackTableWithLineClampInHeaderRoute: typeof ComponentsTanstackTableWithLineClampInHeaderRoute
+  ComponentsTanstackTableWithOverflowHeadersRoute: typeof ComponentsTanstackTableWithOverflowHeadersRoute
+  ComponentsTanstackTableWithSortRoute: typeof ComponentsTanstackTableWithSortRoute
+  ComponentsTanstackTableZebraExampleRoute: typeof ComponentsTanstackTableZebraExampleRoute
   ComponentsTextAreaSizesRoute: typeof ComponentsTextAreaSizesRoute
   ComponentsTextAreaStatesRoute: typeof ComponentsTextAreaStatesRoute
   ComponentsTextAreaStatusesRoute: typeof ComponentsTextAreaStatusesRoute
@@ -9811,6 +10314,7 @@ interface ComponentsRouteChildren {
   ComponentsTabMenuIndexRoute: typeof ComponentsTabMenuIndexRoute
   ComponentsTableIndexRoute: typeof ComponentsTableIndexRoute
   ComponentsTagIndexRoute: typeof ComponentsTagIndexRoute
+  ComponentsTanstackTableIndexRoute: typeof ComponentsTanstackTableIndexRoute
   ComponentsTextAreaIndexRoute: typeof ComponentsTextAreaIndexRoute
   ComponentsTextButtonIndexRoute: typeof ComponentsTextButtonIndexRoute
   ComponentsTextButtonMenuIndexRoute: typeof ComponentsTextButtonMenuIndexRoute
@@ -10253,6 +10757,48 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTagTagsRoute: ComponentsTagTagsRoute,
   ComponentsTagTooltipRoute: ComponentsTagTooltipRoute,
   ComponentsTagWithIconRoute: ComponentsTagWithIconRoute,
+  ComponentsTanstackTableCellTextRoute: ComponentsTanstackTableCellTextRoute,
+  ComponentsTanstackTableDataAtrClassNameRoute:
+    ComponentsTanstackTableDataAtrClassNameRoute,
+  ComponentsTanstackTableDynamicVirtualScrollRoute:
+    ComponentsTanstackTableDynamicVirtualScrollRoute,
+  ComponentsTanstackTableExpandedRowRoute:
+    ComponentsTanstackTableExpandedRowRoute,
+  ComponentsTanstackTableFilterExampleRoute:
+    ComponentsTanstackTableFilterExampleRoute,
+  ComponentsTanstackTableFixedVirtualScrollRoute:
+    ComponentsTanstackTableFixedVirtualScrollRoute,
+  ComponentsTanstackTableGroupHeadersRoute:
+    ComponentsTanstackTableGroupHeadersRoute,
+  ComponentsTanstackTableGroupRowRoute: ComponentsTanstackTableGroupRowRoute,
+  ComponentsTanstackTableGroupRowExperimentalRoute:
+    ComponentsTanstackTableGroupRowExperimentalRoute,
+  ComponentsTanstackTableLoadScrollRoute:
+    ComponentsTanstackTableLoadScrollRoute,
+  ComponentsTanstackTableLoadScrollSkeletonRoute:
+    ComponentsTanstackTableLoadScrollSkeletonRoute,
+  ComponentsTanstackTableLoadScrollSpinnerRoute:
+    ComponentsTanstackTableLoadScrollSpinnerRoute,
+  ComponentsTanstackTableOverflowMenuRoute:
+    ComponentsTanstackTableOverflowMenuRoute,
+  ComponentsTanstackTableResizeExampleRoute:
+    ComponentsTanstackTableResizeExampleRoute,
+  ComponentsTanstackTableRowSelectionRoute:
+    ComponentsTanstackTableRowSelectionRoute,
+  ComponentsTanstackTableRowStateRoute: ComponentsTanstackTableRowStateRoute,
+  ComponentsTanstackTableStickyColumnsExampleRoute:
+    ComponentsTanstackTableStickyColumnsExampleRoute,
+  ComponentsTanstackTableStyleExampleRoute:
+    ComponentsTanstackTableStyleExampleRoute,
+  ComponentsTanstackTableWithExtraTextInHeaderRoute:
+    ComponentsTanstackTableWithExtraTextInHeaderRoute,
+  ComponentsTanstackTableWithLineClampInHeaderRoute:
+    ComponentsTanstackTableWithLineClampInHeaderRoute,
+  ComponentsTanstackTableWithOverflowHeadersRoute:
+    ComponentsTanstackTableWithOverflowHeadersRoute,
+  ComponentsTanstackTableWithSortRoute: ComponentsTanstackTableWithSortRoute,
+  ComponentsTanstackTableZebraExampleRoute:
+    ComponentsTanstackTableZebraExampleRoute,
   ComponentsTextAreaSizesRoute: ComponentsTextAreaSizesRoute,
   ComponentsTextAreaStatesRoute: ComponentsTextAreaStatesRoute,
   ComponentsTextAreaStatusesRoute: ComponentsTextAreaStatusesRoute,
@@ -10366,6 +10912,7 @@ const ComponentsRouteChildren: ComponentsRouteChildren = {
   ComponentsTabMenuIndexRoute: ComponentsTabMenuIndexRoute,
   ComponentsTableIndexRoute: ComponentsTableIndexRoute,
   ComponentsTagIndexRoute: ComponentsTagIndexRoute,
+  ComponentsTanstackTableIndexRoute: ComponentsTanstackTableIndexRoute,
   ComponentsTextAreaIndexRoute: ComponentsTextAreaIndexRoute,
   ComponentsTextButtonIndexRoute: ComponentsTextButtonIndexRoute,
   ComponentsTextButtonMenuIndexRoute: ComponentsTextButtonMenuIndexRoute,
