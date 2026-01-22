@@ -16,7 +16,7 @@ import PhoneOutline from '@admiral-ds/icons/build/communication/PhoneOutline.svg
 import SIMCardOutline from '@admiral-ds/icons/build/communication/SIMCardOutline.svg?react';
 import HeadsetOutline from '@admiral-ds/icons/build/communication/HeadsetOutline.svg?react';
 import SignalOutline from '@admiral-ds/icons/build/communication/SignalOutline.svg?react';
-import TelegrammOutline from '@admiral-ds/icons/build/communication/TelegrammOutline.svg?react';
+import TelegramSolid from '@admiral-ds/icons/build/communication/TelegramSolid.svg?react';
 
 import { forwardRef, useState } from 'react';
 import styled from 'styled-components';
@@ -28,7 +28,7 @@ const tabs = [
   { text: 'Viber', tabId: '9', badge: 7 },
   { text: 'Headset', tabId: '4', icon: <HeadsetOutline /> },
   { text: 'Network signal', tabId: '5', icon: <SignalOutline /> },
-  { text: 'TelegrammOutline', tabId: '6', icon: <TelegrammOutline /> },
+  { text: 'TelegramSolid', tabId: '6', icon: <TelegramSolid /> },
   { text: 'WhatsApp is very very very very long', tabId: '7' },
   { text: 'ICQ', tabId: '8', icon: <MinusCircleOutline />, disabled: true },
 ];
