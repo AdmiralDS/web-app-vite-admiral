@@ -5,6 +5,6 @@ export const Route = createFileRoute('/components/tanstackTable/withLineClampInH
   component: () => <WithLineClampInHeader />,
   staticData: {
     title: 'TanstackTable.',
-    description: `Пример с headerLineClamp и headerExtraLineClamp.`,
+    description: `Пример с многострочным текстом в заголовках.`,
   },
 });

@@ -155,6 +155,7 @@ export const WithSort = () => {
               >
                 ссылке
               </Link>
+              .
             </PStyled>
             <PStyled>В примерах используется сортировка предоставляемая Tanstack table.</PStyled>
           </>

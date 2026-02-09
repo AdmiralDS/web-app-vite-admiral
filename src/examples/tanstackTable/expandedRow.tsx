@@ -114,7 +114,6 @@ const columns: ColumnDef<Person>[] = [
       return row.getCanExpand() && original.meta?.expandedRowRender ? (
         <ExpandCell
           dimension={dimension}
-          style={{ margin: 0, flexShrink: 0 }}
           isOpened={row.getIsExpanded()}
           disabled={original.meta?.disabled}
           onClick={row.getToggleExpandedHandler()}

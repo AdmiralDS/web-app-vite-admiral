@@ -1,5 +1,6 @@
 import { createColumnHelper, getCoreRowModel, getSortedRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
+import { Link } from '@admiral-ds/react-ui';
 
 import { TanstackTable, CellText, defaultOptions } from '#examples/-helpers/tanstackTable';
 import { ExampleSection, PStyled } from '#examples/-helpers';
@@ -102,14 +103,29 @@ export const GroupHeaders = () => {
   return (
     <ExampleSection
       text={
-        <PStyled>
-          Таблица предоставляет функционал многоуровневых заголовков. При этом способе компоновки заголовков, шапка
-          таблицы окрашивается в серый цвет, для этого используйте параметр greyHeader. Также можно отрисовывать шапку
-          таблицы на белом фоне при условии, что в таблице будет включено отображение границ через параметр showBorders.
-        </PStyled>
+        <>
+          <PStyled>
+            Таблица предоставляет функционал многоуровневых заголовков. При этом способе компоновки заголовков, шапка
+            таблицы окрашивается в серый цвет, для этого используйте параметр greyHeader. Также можно отрисовывать шапку
+            таблицы на белом фоне при условии, что в таблице будет включено отображение границ через параметр
+            showBorders.
+          </PStyled>
+          <PStyled>
+            Дополнительная документация по созданию многоуровневых заголовков по
+            <Link
+              style={{ display: 'inline', marginLeft: '4px' }}
+              href="https://tanstack.com/table/latest/docs/guide/column-defs#column-def-types"
+              target="_blank"
+              dimension="s"
+            >
+              ссылке
+            </Link>
+            .
+          </PStyled>
+        </>
       }
     >
-      <TanstackTable table={table} greyHeader showDividerForLastColumn />
+      <TanstackTable table={table} greyHeader />
     </ExampleSection>
   );
 };

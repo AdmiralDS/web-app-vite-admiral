@@ -29,11 +29,18 @@ export const CheckboxCellWrapper = styled.div<{ $dimension: Dimension }>`
 
 interface CheckboxCellProps extends Omit<CheckboxFieldProps, 'dimension'> {
   dimension: Dimension;
+  'data-row'?: string;
 }
 
-export const CheckboxCell = ({ dimension, ...props }: CheckboxCellProps) => {
+export const CheckboxCell = ({ dimension, style, className, 'data-row': dataRow, ...props }: CheckboxCellProps) => {
   return (
-    <CheckboxCellWrapper $dimension={dimension}>
+    <CheckboxCellWrapper
+      className={`item_checkbox ${className || ''}`}
+      data-item="checkbox"
+      data-row={dataRow}
+      $dimension={dimension}
+      style={style}
+    >
       <CheckboxField dimension={dimension === 'm' || dimension === 's' ? 's' : 'm'} {...props} />
     </CheckboxCellWrapper>
   );

@@ -31,56 +31,6 @@ interface Transaction extends MetaRowProps<Transaction> {
 
 const defaultData: Transaction[] = [
   {
-    meta: {
-      groupTitle: 'Title first groupRow',
-      subRows: [
-        {
-          meta: {
-            groupTitle: 'Title second groupRow',
-            subRows: [
-              {
-                type: 'МНО',
-                date: new Date('2021-03-23').toLocaleDateString(),
-                amount: new Intl.NumberFormat().format(32_500_000_000),
-                currency: 'RUB',
-                rate: '10 %',
-                status: 'Выполнено',
-              },
-            ],
-          },
-        },
-        {
-          type: 'МНО',
-          date: new Date('2021-03-23').toLocaleDateString(),
-          amount: new Intl.NumberFormat().format(32_500_000_000),
-          currency: 'RUB',
-          rate: '10 %',
-          status: 'Выполнено',
-        },
-        {
-          type: 'МНО',
-          date: new Date('2021-03-23').toLocaleDateString(),
-          amount: new Intl.NumberFormat().format(32_500_000_000),
-          currency: 'RUB',
-          rate: '10 %',
-          status: 'Выполнено',
-          meta: {
-            subRows: [
-              {
-                type: 'МНО',
-                date: new Date('2021-03-23').toLocaleDateString(),
-                amount: new Intl.NumberFormat().format(32_500_000_000),
-                currency: 'RUB',
-                rate: '10 %',
-                status: 'Выполнено',
-              },
-            ],
-          },
-        },
-      ],
-    },
-  },
-  {
     type: 'МНО',
     date: new Date('2021-03-23').toLocaleDateString(),
     amount: new Intl.NumberFormat().format(32_500_000_000),
@@ -263,16 +213,10 @@ export const GroupRowExperimentalExample = () => {
     <>
       <ExampleSection
         text={
-          <>
-            <PStyled>
-              Группировку можно использовать вместе с чекбоксами. Если вы используете заголовки групп, то для
-              корректного отображения чекбоксов необходимо в таблицу передавать параметр showCheckboxTitleGroup.
-            </PStyled>
-            <PStyled>
-              Пример подходит для сценария, когда нужно чтобы строка с данными в которой есть подстроки можно было
-              выбрать отдельно от подстрок.
-            </PStyled>
-          </>
+          <PStyled>
+            В данном примере показано, как можно реализовать сценарий, при котором строку, являющуюся заголовком группы,
+            можно было бы выбрать через чекбокс отдельно от её подстрок.
+          </PStyled>
         }
       >
         <TanstackTable table={table2} showCheckboxTitleGroup />

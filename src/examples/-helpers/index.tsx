@@ -23,24 +23,35 @@ export const rowFlexMixin = css`
   flex-wrap: wrap;
 `;
 
-export const SubHeader = styled.div`
-  ${typography['Subtitle/Subtitle 3']}
-  margin-bottom: 8px;
+export const PStyled = styled.p`
+  margin: 0 0 20px;
 `;
 
 export const Text = styled.div`
   ${typography['Body/Body 2 Long']}
   max-width: 720px;
+  ${PStyled}:last-child {
+    margin: 0;
+  }
+`;
+
+export const SubHeader = styled.div`
+  ${typography['Subtitle/Subtitle 3']}
+  &:has(+ ${Text}) {
+    margin-bottom: 8px;
+  }
+  ${PStyled}:last-child {
+    margin: 0;
+  }
 `;
 
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
   color: var(--admiral-color-Neutral_Neutral90, ${(p) => p.theme.color['Neutral/Neutral 90']});
-`;
-
-export const PStyled = styled.p`
-  margin: 0 0 20px;
+  &:has(+ ${ContentArea}) {
+    margin-bottom: 16px;
+  }
 `;
 
 export interface SectionDescriptionProps {

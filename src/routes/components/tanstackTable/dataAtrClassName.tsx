@@ -5,6 +5,6 @@ export const Route = createFileRoute('/components/tanstackTable/dataAtrClassName
   component: () => <DataAtrClassNameExample />,
   staticData: {
     title: 'TanstackTable.',
-    description: `Пример с описанием classNames и data - атрибутов.`,
+    description: `Описание поддерживаемых classNames и data-атрибутов.`,
   },
 });

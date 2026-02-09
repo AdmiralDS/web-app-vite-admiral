@@ -402,38 +402,38 @@
       "routes": [
         { "name": "Базовый пример", "path": "/components/tanstackTable" },
         { "name": "Контент ячеек", "path": "/components/tanstackTable/cellText" },
-        { "name": "C переполнением заголовков", "path": "/components/tanstackTable/withOverflowHeaders" },
-        { "name": "C дополнительным текстом в заголовках", "path": "/components/tanstackTable/withExtraTextInHeader" },
+        { "name": "Переполнение заголовков", "path": "/components/tanstackTable/withOverflowHeaders" },
+        { "name": "Дополнительный текст в заголовках", "path": "/components/tanstackTable/withExtraTextInHeader" },
         {
-          "name": "С headerLineClamp и headerExtraLineClamp",
+          "name": "Многострочность заголовков",
           "path": "/components/tanstackTable/withLineClampInHeader"
         },
-        { "name": "Пример c ресайзом колонок", "path": "/components/tanstackTable/resizeExample" },
-        { "name": "Пример стилизации таблицы через props", "path": "/components/tanstackTable/styleExample" },
+        { "name": "Ресайз колонок", "path": "/components/tanstackTable/resizeExample" },
+        { "name": "Cтилизация таблицы через props", "path": "/components/tanstackTable/styleExample" },
         {
-          "name": "Пример с описанием classNames и data - атрибутов",
+          "name": "Поддержка classNames и data-атрибутов",
           "path": "/components/tanstackTable/dataAtrClassName"
         },
-        { "name": "C сортировкой", "path": "/components/tanstackTable/withSort" },
-        { "name": "C многоуровневыми заголовками", "path": "/components/tanstackTable/groupHeaders" },
-        { "name": "Пример с фиксированными колонками", "path": "/components/tanstackTable/stickyColumnsExample" },
-        { "name": "С выбором строк", "path": "/components/tanstackTable/rowSelection" },
+        { "name": "Cортировка", "path": "/components/tanstackTable/withSort" },
+        { "name": "Многоуровневые заголовки", "path": "/components/tanstackTable/groupHeaders" },
+        { "name": "Фиксированные колонки", "path": "/components/tanstackTable/stickyColumnsExample" },
+        { "name": "Выбором строк и чекбоксы", "path": "/components/tanstackTable/rowSelection" },
         { "name": "Состояния строк", "path": "/components/tanstackTable/rowState" },
         { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" },
-        { "name": "Пример c детализацией строки", "path": "/components/tanstackTable/expandedRow" },
-        { "name": "Пример c фильтрацией", "path": "/components/tanstackTable/filterExample" },
-        { "name": "Пример с OverflowMenu", "path": "/components/tanstackTable/overflowMenu" },
-        { "name": "Пример с группировкой строк", "path": "/components/tanstackTable/groupRow" },
+        { "name": "Детализация строки", "path": "/components/tanstackTable/expandedRow" },
+        { "name": "Фильтрация", "path": "/components/tanstackTable/filterExample" },
+        { "name": "Строки с OverflowMenu", "path": "/components/tanstackTable/overflowMenu" },
+        { "name": "Группировка строк", "path": "/components/tanstackTable/groupRow" },
         {
-          "name": "Пример с группировкой строк (Experimental)",
+          "name": "Группировка строк (Experimental)",
           "path": "/components/tanstackTable/groupRowExperimental"
         },
         {
-          "name": "Пример виртуального скролла с фиксированной высотой строки",
+          "name": "Виртуальный скролл с фиксированной высотой строки",
           "path": "/components/tanstackTable/fixedVirtualScroll"
         },
         {
-          "name": "Пример виртуального скролла с динамической высотой строки",
+          "name": "Виртуальный скролл с динамической высотой строки",
           "path": "/components/tanstackTable/dynamicVirtualScroll"
         },
         {

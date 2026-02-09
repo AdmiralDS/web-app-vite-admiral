@@ -73,8 +73,6 @@ export const RowContent = <T,>({
           {row.getCanExpand() && (
             <ExpandCell
               data-row={row.id}
-              data-item="expand"
-              className="item_expand"
               dimension={dimension}
               onClick={row.getToggleExpandedHandler()}
               isOpened={row.getIsExpanded()}
@@ -83,8 +81,6 @@ export const RowContent = <T,>({
           {showCheckboxTitleGroup && (
             <CheckboxCell
               data-row={row.id}
-              data-item="checkbox"
-              className="item_checkbox"
               dimension={dimension}
               {...{
                 checked: rowSelected,

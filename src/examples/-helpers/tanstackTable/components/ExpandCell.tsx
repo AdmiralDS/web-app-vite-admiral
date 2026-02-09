@@ -39,11 +39,25 @@ export const ExpandIcon = styled(ChevronDownOutline)<{ $isOpened?: boolean }>`
 interface ExpandCellProps extends Omit<IconPlacementProps, 'dimension'> {
   dimension: Dimension;
   isOpened: boolean;
+  'data-row'?: string;
 }
 
-export const ExpandCell = ({ dimension, isOpened, ...props }: ExpandCellProps) => {
+export const ExpandCell = ({
+  dimension,
+  isOpened,
+  style,
+  className,
+  'data-row': dataRow,
+  ...props
+}: ExpandCellProps) => {
   return (
-    <ExpandCellWrapper $dimension={dimension}>
+    <ExpandCellWrapper
+      className={`item_expand ${className || ''}`}
+      data-item="expand"
+      data-row={dataRow}
+      style={style}
+      $dimension={dimension}
+    >
       <ExpandIconPlacement
         dimension={dimension === 'm' || dimension === 's' ? 'mBig' : 'lBig'}
         highlightFocus={false}
