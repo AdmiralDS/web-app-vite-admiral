@@ -11,7 +11,7 @@ import {
   typography,
 } from '@admiral-ds/react-ui';
 import GovernmentOutline from '@admiral-ds/icons/build/category/GovernmentOutline.svg?react';
-import TelegramOutline from '@admiral-ds/icons/build/communication/TelegrammOutline.svg?react';
+import TelegramSolid from '@admiral-ds/icons/build/communication/TelegramSolid.svg?react';
 import AlertOutline from '@admiral-ds/icons/build/category/AlertOutline.svg?react';
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
 
@@ -93,7 +93,7 @@ export const GroupActionsPaneBasic = () => {
         renderSettingsMenu={renderSettingsMenu}
       >
         <TextButton text={'Action 1'} dimension={dimension} iconStart={<GovernmentOutline />} />
-        <TextButton text={'Action 2'} dimension={dimension} iconStart={<TelegramOutline />} />
+        <TextButton text={'Action 2'} dimension={dimension} iconStart={<TelegramSolid />} />
         <TextButton text={'Action 3'} dimension={dimension} iconStart={<AlertOutline />} disabled />
         <PaneSeparator dimension={dimension} />
         <TextButton text={'Action 4'} dimension={dimension} iconStart={<CardSolid />} />

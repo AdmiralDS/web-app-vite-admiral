@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MoreHorizontalOutline from '@admiral-ds/icons/build/system/MoreHorizontalOutline.svg?react';
 import ArrowDownOutline from '@admiral-ds/icons/build/system/ArrowDownOutline.svg?react';
 import GovernmentOutline from '@admiral-ds/icons/build/category/GovernmentOutline.svg?react';
-import TelegrammOutline from '@admiral-ds/icons/build/communication/TelegrammOutline.svg?react';
+import TelegramSolid from '@admiral-ds/icons/build/communication/TelegramSolid.svg?react';
 import AlertOutline from '@admiral-ds/icons/build/category/AlertOutline.svg?react';
 import CardSolid from '@admiral-ds/icons/build/finance/CardSolid.svg?react';
 
@@ -144,7 +144,7 @@ const TableBaseHTML = (props: React.ComponentProps<typeof TableWrapper>) => {
     <TableWrapper {...props}>
       <GroupActionsPane renderSettingsMenu={renderSettingsMenu}>
         <TextButton text={'Action 1'} iconStart={<GovernmentOutline />} />
-        <TextButton text={'Action 2'} iconStart={<TelegrammOutline />} />
+        <TextButton text={'Action 2'} iconStart={<TelegramSolid />} />
         <TextButton text={'Action 3'} iconStart={<AlertOutline />} />
         <PaneSeparator />
         <TextButton text={'Action 4'} iconStart={<CardSolid />} />

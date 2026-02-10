@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { LIGHT_THEME, DARK_THEME, LightThemeCssVars, DarkThemeCssVars } from '@admiral-ds/react-ui';
 import type { BorderRadiusType } from '@admiral-ds/react-ui';
-import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { RouterProvider, createHashHistory, createRouter } from '@tanstack/react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import './App.css';
@@ -14,7 +14,11 @@ import { createBorderRadiusSwapper } from './createBorderRadiusSwapper';
 import { routeTree } from './routeTree.gen';
 
 // Create a new router instance
-const router = createRouter({ routeTree, basepath: import.meta.env.BASE_PATH });
+const router = createRouter({
+  routeTree,
+  basepath: import.meta.env.BASE_PATH,
+  history: createHashHistory(), // Hash history лучше для GitHub Pages
+});
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {
