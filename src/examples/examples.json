@@ -397,6 +397,60 @@
       ]
     },
     {
+      "name": "Tanstack Table",
+      "path": "/components/tanstackTable",
+      "routes": [
+        { "name": "Базовый пример", "path": "/components/tanstackTable" },
+        { "name": "Контент ячеек", "path": "/components/tanstackTable/cellText" },
+        { "name": "Переполнение заголовков", "path": "/components/tanstackTable/withOverflowHeaders" },
+        { "name": "Дополнительный текст в заголовках", "path": "/components/tanstackTable/withExtraTextInHeader" },
+        {
+          "name": "Многострочность заголовков",
+          "path": "/components/tanstackTable/withLineClampInHeader"
+        },
+        { "name": "Ресайз колонок", "path": "/components/tanstackTable/resizeExample" },
+        { "name": "Cтилизация таблицы через props", "path": "/components/tanstackTable/styleExample" },
+        {
+          "name": "Поддержка classNames и data-атрибутов",
+          "path": "/components/tanstackTable/dataAtrClassName"
+        },
+        { "name": "Cортировка", "path": "/components/tanstackTable/withSort" },
+        { "name": "Многоуровневые заголовки", "path": "/components/tanstackTable/groupHeaders" },
+        { "name": "Фиксированные колонки", "path": "/components/tanstackTable/stickyColumnsExample" },
+        { "name": "Выбором строк и чекбоксы", "path": "/components/tanstackTable/rowSelection" },
+        { "name": "Состояния строк", "path": "/components/tanstackTable/rowState" },
+        { "name": "Зебра (окрашивание строк через одну)", "path": "/components/tanstackTable/zebraExample" },
+        { "name": "Детализация строки", "path": "/components/tanstackTable/expandedRow" },
+        { "name": "Фильтрация", "path": "/components/tanstackTable/filterExample" },
+        { "name": "Строки с OverflowMenu", "path": "/components/tanstackTable/overflowMenu" },
+        { "name": "Группировка строк", "path": "/components/tanstackTable/groupRow" },
+        {
+          "name": "Группировка строк (Experimental)",
+          "path": "/components/tanstackTable/groupRowExperimental"
+        },
+        {
+          "name": "Виртуальный скролл с фиксированной высотой строки",
+          "path": "/components/tanstackTable/fixedVirtualScroll"
+        },
+        {
+          "name": "Виртуальный скролл с динамической высотой строки",
+          "path": "/components/tanstackTable/dynamicVirtualScroll"
+        },
+        {
+          "name": "Подзагрузка данных при скролле",
+          "path": "/components/tanstackTable/loadScroll"
+        },
+        {
+          "name": "Подзагрузка данных при скролле со спиннером",
+          "path": "/components/tanstackTable/loadScrollSpinner"
+        },
+        {
+          "name": "Подзагрузка данных при скролле со скелетоном",
+          "path": "/components/tanstackTable/loadScrollSkeleton"
+        }
+      ]
+    },
+    {
       "name": "List",
       "path": "/components/list",
       "routes": [
