@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Table, T } from '@admiral-ds/react-ui';
+import { Table, T, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 import type { Column, TableRow } from '@admiral-ds/react-ui';
 import styled from 'styled-components';
 import { ExampleSection, PStyled } from '#examples/-helpers';
@@ -218,27 +218,28 @@ export const TableBasic = () => {
           <>
             <PStyled>
               <code>API</code> таблицы предполагает 2 обязательных параметра: <code>columnList</code> и
-              <code>rowList</code>
-              , где
-              <Separator />
-              <li>
-                <code>columnList</code> - массив данных с описанием столбцов, у каждого столбца должен быть задан
-                уникальный идентификатор <code>name</code>;
-              </li>
-              <Separator />
-              <li>
-                <code>rowList</code> - массив данных с описанием строк, у каждой строки должен быть задан уникальный
-                идентификатор <code>id</code>.
-              </li>
+              <code>rowList</code>, где
+              <UnorderedList dimension="s" style={{ marginTop: '8px' }}>
+                <ListItem>
+                  <code>columnList</code> - массив данных с описанием столбцов, у каждого столбца должен быть задан
+                  уникальный идентификатор <code>name</code>;
+                </ListItem>
+                <ListItem>
+                  <code>rowList</code> - массив данных с описанием строк, у каждой строки должен быть задан уникальный
+                  идентификатор <code>id</code>.
+                </ListItem>
+              </UnorderedList>
             </PStyled>
             <PStyled>
               Между столбцами и строками таблицы существует четкий МАППИНГ для задания контента ячеек:
-              <Separator />
-              <li>
-                название свойства строки ⇔ <code>name</code> столбца
-              </li>
-              <li>значение свойства строки ⇔ контент ячейки строки в данном столбце</li>
-              <Separator />
+              <UnorderedList dimension="s" style={{ marginTop: '8px' }}>
+                <ListItem>
+                  название свойства строки ⇔ <code>name</code> столбца
+                </ListItem>
+                <ListItem>значение свойства строки ⇔ контент ячейки строки в данном столбце</ListItem>
+              </UnorderedList>
+            </PStyled>
+            <PStyled>
               ВАЖНО: таблица не поддерживает сложные составные имена столбцов с использованием точки (н-р,
               <code>'test.name'</code>), имя столбца не должно быть составной структурой.
             </PStyled>

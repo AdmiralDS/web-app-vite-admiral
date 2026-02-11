@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
-import { Button, DropMenu, MenuItem, TooltipHoc } from '@admiral-ds/react-ui';
+import { Button, DropMenu, MenuItem, TooltipHoc, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
 
 const STORY_ITEMS = [
@@ -107,12 +107,16 @@ export const DropMenuControlled = () => {
       text={
         <>
           Состояние видимости меню полностью контроллируется вне DropMenu:
-          <li>
-            используется кастомный обработчик клика по кнопке (handleButtonClick) для открытия/закрытия выпадающего
-            списка;
-          </li>
-          <li>после выбора опции из выпадающего списка (handleSelectItem) происходит закрытие меню;</li>
-          <li>используется кастомный обработчик при клике вне области выпадающего списка (handleClickOutside).</li>
+          <UnorderedList dimension="s" style={{ margin: '8px 0 0' }}>
+            <ListItem>
+              используется кастомный обработчик клика по кнопке (handleButtonClick) для открытия/закрытия выпадающего
+              списка;
+            </ListItem>
+            <ListItem>после выбора опции из выпадающего списка (handleSelectItem) происходит закрытие меню;</ListItem>
+            <ListItem>
+              используется кастомный обработчик при клике вне области выпадающего списка (handleClickOutside).
+            </ListItem>
+          </UnorderedList>
         </>
       }
     >

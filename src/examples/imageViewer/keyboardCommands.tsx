@@ -1,4 +1,4 @@
-import { ImageViewer } from '@admiral-ds/react-ui';
+import { ImageViewer, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
 
@@ -39,15 +39,17 @@ export const ImageViewerKeyboardCommands = () => {
     <ExampleSection
       text={
         <>
-          <li>Esc — закрывает показ</li>
-          <li>Стрелки влево/вправо — листают изображения</li>
-          <li>Стрелки вверх/вниз — изменяют масштаб</li>
-          <li>
-            F — изображение заполняет весь экран по вертикали или горизонтали в зависимости от того, какое событие
-            наступит первым. Повторное нажатие — дефолтный масштаб.
-          </li>
-          <li>Enter — устанавливает масштаб 1:1, повторное нажатие — дефолтный масштаб</li>
-          <li>Space — листает изображения вправо</li>
+          <UnorderedList dimension="s">
+            <ListItem>Esc — закрывает показ</ListItem>
+            <ListItem>Стрелки влево/вправо — листают изображения</ListItem>
+            <ListItem>Стрелки вверх/вниз — изменяют масштаб</ListItem>
+            <ListItem>
+              F — изображение заполняет весь экран по вертикали или горизонтали в зависимости от того, какое событие
+              наступит первым. Повторное нажатие — дефолтный масштаб.
+            </ListItem>
+            <ListItem>Enter — устанавливает масштаб 1:1, повторное нажатие — дефолтный масштаб</ListItem>
+            <ListItem>Space — листает изображения вправо</ListItem>
+          </UnorderedList>
         </>
       }
     >

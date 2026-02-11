@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { Button, DropMenu, MenuItem, RadioButton } from '@admiral-ds/react-ui';
+import { Button, DropMenu, MenuItem, RadioButton, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 import type { RenderOptionProps } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
 
@@ -83,9 +83,13 @@ export const DropMenuUncontrolled = () => {
       text={
         <>
           Неконтроллируемое состояние видимости меню:
-          <li>isVisible не передается в DropMenu;</li>
-          <li>обработчик onVisibilityChange выполняется из DropMenu;</li>
-          <li>для открытия/закрытия меню при клике на кнопке используется обработчик handleClick из DropMenu.</li>
+          <UnorderedList dimension="s" style={{ margin: '8px 0' }}>
+            <ListItem>isVisible не передается в DropMenu;</ListItem>
+            <ListItem>обработчик onVisibilityChange выполняется из DropMenu;</ListItem>
+            <ListItem>
+              для открытия/закрытия меню при клике на кнопке используется обработчик handleClick из DropMenu.
+            </ListItem>
+          </UnorderedList>
           По умолчанию DropMenu открывает/закрывает выпадающий список при нажатии на переданный компонент, а также
           закрывает выпадающий список при выборе опции.
         </>

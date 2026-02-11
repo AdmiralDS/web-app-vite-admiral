@@ -9,6 +9,8 @@ import {
   TabIcon,
   TabText,
   HorizontalTab,
+  UnorderedList,
+  ListItem,
 } from '@admiral-ds/react-ui';
 
 import MinusCircleOutline from '@admiral-ds/icons/build/service/MinusCircleOutline.svg?react';
@@ -158,10 +160,14 @@ export const AddTabExample = () => {
           <>
             <PStyled>
               Рекомендации
-              <li>При нажатии на иконку закрытия — владка и контент под ней удаляются.</li>
-              <li>Если удалить текущую вкладку, то автоматически включится первая из оставшихся вкладок.</li>
-              <li>При удалении не активной вкладки, вы остаетесь там же, где и были.</li>
-              <li>Удалить все вкладки нельзя, должна остаться хотя бы одна вкладка.</li>
+              <UnorderedList dimension="s" style={{ marginTop: '8px' }}>
+                <ListItem>При нажатии на иконку закрытия — владка и контент под ней удаляются.</ListItem>
+                <ListItem>
+                  Если удалить текущую вкладку, то автоматически включится первая из оставшихся вкладок
+                </ListItem>
+                <ListItem>При удалении не активной вкладки, вы остаетесь там же, где и были.</ListItem>
+                <ListItem>Удалить все вкладки нельзя, должна остаться хотя бы одна вкладка.</ListItem>
+              </UnorderedList>
             </PStyled>
             <PStyled>
               Можно включать опцию добавления вкладок. Механика добавления вкладки настраивается пользователем. При

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { ImageViewer } from '@admiral-ds/react-ui';
+import { ImageViewer, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 import type { ImageProps, TransformAction, TransformType } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
 
@@ -50,12 +50,14 @@ export const ImageViewerBasic = () => {
       text={
         <>
           Основные функции:
-          <li>Просмотр одного или нескольких изображений</li>
-          <li>Увеличение-уменьшение</li>
-          <li>Поворот влево-вправо на 90'</li>
-          <li>Отображение по вертикали-горизонтали</li>
-          <li>Увеличение по двойному клику на изображении</li>
-          <li>Перемещение изображения при зажатой ЛКМ</li>
+          <UnorderedList dimension="s" style={{ marginTop: '8px' }}>
+            <ListItem>Просмотр одного или нескольких изображений</ListItem>
+            <ListItem>Увеличение-уменьшение</ListItem>
+            <ListItem>Поворот влево-вправо на 90'</ListItem>
+            <ListItem>Отображение по вертикали-горизонтали</ListItem>
+            <ListItem>Увеличение по двойному клику на изображении</ListItem>
+            <ListItem>Перемещение изображения при зажатой ЛКМ</ListItem>
+          </UnorderedList>
         </>
       }
     >

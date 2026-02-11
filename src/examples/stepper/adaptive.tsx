@@ -1,5 +1,5 @@
 import { ExampleSection, PStyled } from '#examples/-helpers';
-import { Step, StepContent, Stepper } from '@admiral-ds/react-ui';
+import { Step, StepContent, Stepper, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 
 const steps = [
   {
@@ -25,10 +25,13 @@ export const StepperAdaptive = () => {
               будет рассчитываться следующим образом:
             </PStyled>
             <PStyled>
-              <li>
-                при горизонтальной ориентации все шаги будут в равной степени делить между собой свободное пространство;
-              </li>
-              <li>при вертикальной ориентации каждый шаг займет 100% ширины степпера.</li>
+              <UnorderedList dimension="s">
+                <ListItem>
+                  при горизонтальной ориентации все шаги будут в равной степени делить между собой свободное
+                  пространство;
+                </ListItem>
+                <ListItem>при вертикальной ориентации каждый шаг займет 100% ширины степпера.</ListItem>
+              </UnorderedList>
             </PStyled>
             <PStyled>
               Таким образом шаги будут пропорционально увеличиваться/уменьшаться при изменении ширины степпера.
