@@ -7,6 +7,8 @@ import {
   Menu,
   MenuItemWithCheckbox,
   MenuModelItemProps,
+  UnorderedList,
+  ListItem,
   type RenderOptionProps,
 } from '@admiral-ds/react-ui';
 import { MenuWrapper } from '#examples/-helpers/menu';
@@ -153,8 +155,10 @@ export const MenuWithCheckboxGroup = () => {
       text={
         <>
           Можно выводить дерево чекбоксов в меню. Каждый следующий уровень добавляет к дефолтному отступу:
-          <li>+32px для размеров L,M</li>
-          <li>+28px для размера S</li>
+          <UnorderedList dimension="s" style={{ margin: '8px 0' }}>
+            <ListItem>+32px для размеров L, M</ListItem>
+            <ListItem>+28px для размера S</ListItem>
+          </UnorderedList>
           Поведение соответствует тому же, что описано в документации на составную группу чекбоксов в разделе Checkbox.
           Не рекомендуется делать больше двух уровней вложенности.
         </>

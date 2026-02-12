@@ -1,4 +1,5 @@
 import { createFileRoute, Outlet, useChildMatches } from '@tanstack/react-router';
+import { Link } from '@admiral-ds/react-ui';
 
 import { Title, Description, Wrapper, Preview } from './-helpers/main';
 
@@ -18,7 +19,19 @@ function RouteComponent() {
           <Wrapper key={id}>
             {staticData.title && <Title>{staticData.title}</Title>}
             {staticData.description && <Description $grey>{staticData.description}</Description>}
-            <Description $grey>Расположение исходного кода: {convertPathToSourceFile(pathname)}</Description>
+            <Description $grey>
+              Расположение исходного кода:
+              <Link
+                style={{ display: 'inline', marginLeft: '4px' }}
+                href={
+                  'https://github.com/AdmiralDS/web-app-vite-admiral/blob/main/' + convertPathToSourceFile(pathname)
+                }
+                target="_blank"
+                dimension="s"
+              >
+                {convertPathToSourceFile(pathname)}
+              </Link>
+            </Description>
             <Preview>
               <Outlet />
             </Preview>

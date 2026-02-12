@@ -1,5 +1,5 @@
 import { ExampleSection, PStyled, rowFlexMixin } from '#examples/-helpers';
-import { TextArea, TextField } from '@admiral-ds/react-ui';
+import { TextArea, TextField, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 
 export const TextAreaBasic = () => {
   return (
@@ -19,11 +19,15 @@ export const TextAreaBasic = () => {
             </PStyled>
             <PStyled>
               Компонент может иметь два состояния :
-              <li>
-                С фиксированнной высотой, когда при заполнении формы появляется скролл. Высота поля задается
-                пользователем.
-              </li>
-              <li>С адаптивной высотой, когда форма изменяет высоту в зависимости от количества текста.</li>
+              <UnorderedList dimension="s" style={{ marginTop: '8px' }}>
+                <ListItem>
+                  С фиксированнной высотой, когда при заполнении формы появляется скролл. Высота поля задается
+                  пользователем.
+                </ListItem>
+                <ListItem>
+                  С адаптивной высотой, когда форма изменяет высоту в зависимости от количества текста.
+                </ListItem>
+              </UnorderedList>
             </PStyled>
           </>
         }

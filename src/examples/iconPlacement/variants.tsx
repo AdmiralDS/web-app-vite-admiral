@@ -1,5 +1,5 @@
 import { ExampleSection } from '#examples/-helpers';
-import { CloseIconPlacementButton } from '@admiral-ds/react-ui';
+import { CloseIconPlacementButton, UnorderedList, ListItem } from '@admiral-ds/react-ui';
 
 export const IconPlacementVariants = () => {
   return (
@@ -7,9 +7,11 @@ export const IconPlacementVariants = () => {
       text={
         <>
           Примеры использования:
-          <li>иконка Close в компонентах Modal, Toast, Hint</li>
-          <li>иконка Chevrone в компоненте Select Tree, Calendar</li>
-          <li>компонент Overflow Menu построен по такой же схеме</li>
+          <UnorderedList dimension="s" style={{ marginTop: '8px' }}>
+            <ListItem>иконка Close в компонентах Modal, Toast, Hint</ListItem>
+            <ListItem>иконка Chevrone в компоненте Select Tree, Calendar</ListItem>
+            <ListItem>компонент Overflow Menu построен по такой же схеме</ListItem>
+          </UnorderedList>
         </>
       }
     >

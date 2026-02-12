@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Avatar, AvatarActivity } from '@admiral-ds/react-ui';
+import { Avatar, AvatarActivity, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 import { ExampleSection } from '#examples/-helpers';
 
 const HorizontalContainer = styled.div`
@@ -28,10 +28,13 @@ const Description = () => {
       Аватары можно группировать – компонент Avatar Group, в таком случае статусы показывать нельзя.
       <Separator height={8} />
       Рекомендуемый алгоритм использования типов аватаров:
-      <li>Если пользователь предоставил фотографию, то используется аватар с фото</li>
-      <li>Если нет фото, то пишутся инициалы пользователя – первые буквы имени и фамилии</li>
-      <li>Если известно только имя, то пишутся первые две буквы имени</li>
-      <li>Если нет никаких данных, то используется аватар с иконкой.</li>
+      <Separator height={8} />
+      <UnorderedList dimension="s">
+        <ListItem>Если пользователь предоставил фотографию, то используется аватар с фото</ListItem>
+        <ListItem>Если нет фото, то пишутся инициалы пользователя – первые буквы имени и фамилии</ListItem>
+        <ListItem>Если известно только имя, то пишутся первые две буквы имени</ListItem>
+        <ListItem>Если нет никаких данных, то используется аватар с иконкой.</ListItem>
+      </UnorderedList>
     </>
   );
 };

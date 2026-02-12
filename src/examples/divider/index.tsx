@@ -1,56 +1,48 @@
-import styled from 'styled-components';
+import { Divider, ListItem, UnorderedList } from '@admiral-ds/react-ui';
+import { ExampleSection, PStyled } from '#examples/-helpers';
 
-import { Divider } from '@admiral-ds/react-ui';
-import { ExampleSection, SectionDescription } from '#examples/-helpers';
+const Settings = () => {
+  return (
+    <UnorderedList dimension="s">
+      <ListItem>Тип — горизонтальный или вертикальный</ListItem>
+      <ListItem>Стиль — default, subtle, strong, primary, static white</ListItem>
+      <ListItem>Толщина линии — 1 px, 2 px</ListItem>
+      <ListItem>Тема — светлая или темная</ListItem>
+      <ListItem>Вы можете назначать произвольные цвета компоненту, помимо заданных</ListItem>
+      <ListItem>Размер компонента регулируется «вручную» пользователем</ListItem>
+    </UnorderedList>
+  );
+};
 
-const Separator = styled.div<{ height: number }>`
-  height: ${(p) => p.height}px;
-`;
-
-const Description = () => {
+const Recommendations = () => {
   return (
     <>
-      <SectionDescription
-        header={'Настройки компонента'}
-        text={
-          <>
-            <li>Тип — горизонтальный или вертикальный</li>
-            <li>Стиль — default, subtle, strong, primary, static white</li>
-            <li>Толщина линии — 1 px, 2 px</li>
-            <li>Тема — светлая или темная</li>
-            <li>Вы можете назначать произвольные цвета компоненту, помимо заданных</li>
-            <li>Размер компонента регулируется «вручную» пользователем</li>
-          </>
-        }
-      ></SectionDescription>
-      <SectionDescription
-        header={'Рекомендации'}
-        text={
-          <>
-            <li>
-              Используйте Divider, только когда это необходимо. В большинстве ситуаций можно обойтись пустым
-              пространством (отступами) и цветами.
-            </li>
-            <li>Не используйте компонент для создания обводок и других аналогичных элементов.</li>
-            <li>
-              При использовании между несколькими одинаковыми элементами интерфейса, разделители ставятся только между
-              ними. Не ставьте разделители перед первым элементом и после последнего.
-            </li>
-          </>
-        }
-      ></SectionDescription>
-      <Separator height={32} />
-      Ширина компонента задается пользователем. Высота формируется контентом.
-      <Separator height={16} />
-      Компонент не используется на мобильных устройствах
+      <PStyled>
+        <UnorderedList dimension="s">
+          <ListItem>
+            Используйте Divider, только когда это необходимо. В большинстве ситуаций можно обойтись пустым пространством
+            (отступами) и цветами.
+          </ListItem>
+          <ListItem>Не используйте компонент для создания обводок и других аналогичных элементов.</ListItem>
+          <ListItem>
+            При использовании между несколькими одинаковыми элементами интерфейса, разделители ставятся только между
+            ними. Не ставьте разделители перед первым элементом и после последнего.
+          </ListItem>
+        </UnorderedList>
+      </PStyled>
+      <PStyled>Ширина компонента задается пользователем. Высота формируется контентом.</PStyled>
+      <PStyled>Компонент не используется на мобильных устройствах</PStyled>
     </>
   );
 };
 
 export const DividerBasic = () => {
   return (
-    <ExampleSection text={<Description />}>
-      <Divider />
-    </ExampleSection>
+    <>
+      <ExampleSection header="Настройки компонента" text={<Settings />} />
+      <ExampleSection header="Рекомендации" text={<Recommendations />}>
+        <Divider />
+      </ExampleSection>
+    </>
   );
 };

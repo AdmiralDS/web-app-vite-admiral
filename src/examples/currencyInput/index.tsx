@@ -1,6 +1,6 @@
 import { ExampleSection, PStyled } from '#examples/-helpers';
 import { ComponentProps, forwardRef, ReactNode, useState } from 'react';
-import { InputEx, refSetter } from '@admiral-ds/react-ui';
+import { InputEx, refSetter, ListItem, UnorderedList } from '@admiral-ds/react-ui';
 import { useMaskito } from '@maskito/react';
 import { maskitoNumberOptionsGenerator } from '@maskito/kit';
 import { MaskitoOptions } from '@maskito/core';
@@ -35,14 +35,16 @@ export const CurrencyInputBasic = () => {
           <PStyled>
             Компонент для ввода числовых значений валюты с точностью до двух знаков после запятой. Строится на основе
             компонента Input Extended. Особенности:
-            <li>Возможен ввод как целых чисел, так и с двумя знаками после запятой.</li>
-            <li>Если при вводе цифр нажать «,» (запятая), то включается маска ввода сотых значений.</li>
-            <li>Введенная «.» (точка) автоматически конвертируется в «,» (запятая).</li>
-            <li>
-              Валюта ввода может быть как фиксированной (только рубли, например), так и изменяемой через суффикс поля.
-            </li>
-            <li>Автопробел каждые три знака в целой части суммы.</li>
-            <li>Можно указывать минимальные и максимальные значения для вводимой суммы.</li>
+            <UnorderedList dimension="s" style={{ marginTop: '8px' }}>
+              <ListItem>Возможен ввод как целых чисел, так и с двумя знаками после запятой.</ListItem>
+              <ListItem>Если при вводе цифр нажать «,» (запятая), то включается маска ввода сотых значений.</ListItem>
+              <ListItem>Введенная «.» (точка) автоматически конвертируется в «,» (запятая).</ListItem>
+              <ListItem>
+                Валюта ввода может быть как фиксированной (только рубли, например), так и изменяемой через суффикс поля.
+              </ListItem>
+              <ListItem>Автопробел каждые три знака в целой части суммы.</ListItem>
+              <ListItem>Можно указывать минимальные и максимальные значения для вводимой суммы.</ListItem>
+            </UnorderedList>
           </PStyled>
           <PStyled>
             Так как компонент строится на основе InputEx, он имеет такие же размеры, состояния и статусы.
