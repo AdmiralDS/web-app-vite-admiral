@@ -4,6 +4,7 @@ import { useState, useLayoutEffect } from 'react';
 import type { CSSProperties } from 'react';
 
 import { Header, SideMenu, useMediaQuery, getScrollbarSize } from '../layout';
+import { QueryRedirectHandler } from '../RedirectHandler';
 
 const Main = styled.div`
   display: flex;
@@ -38,6 +39,7 @@ function RouteComponent() {
 
   return (
     <>
+      <QueryRedirectHandler />
       {!isMobile && <SideMenu />}
       <Main style={{ '--scrollbar-width': scrollbar } as CSSProperties}>
         <Header />

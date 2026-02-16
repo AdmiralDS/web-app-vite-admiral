@@ -5,24 +5,13 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // Сохраняем текущий путь (включая hash)
-      const currentPath = window.location.pathname + window.location.hash;
-      sessionStorage.redirect = currentPath;
+      // Кодируем путь для передачи через query параметр
+      const redirectPath = encodeURIComponent(window.location.pathname);
+      const basePath = window.location.pathname.split('/').slice(0, 2).join('/');
       
-      // Перенаправляем на корень репозитория
-      // Извлекаем имя репозитория из pathname
-      const pathParts = window.location.pathname.split('/');
-      const repoName = pathParts[1]; // первый элемент после пустого - имя репозитория
-      
-      // Формируем путь с учетом hash
-      const redirectUrl = repoName ? `/${repoName}/` : '/';
-      window.location.replace(redirectUrl);
+      // Перенаправляем с query параметром
+      window.location.replace(`${basePath}/?redirect=${redirectPath}`);
     </script>
   </head>
-  <body>
-    <noscript>
-      <p>Please enable JavaScript to continue.</p>
-      <a href="/">Go to Homepage</a>
-    </noscript>
-  </body>
+  <body></body>
 </html>
