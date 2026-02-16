@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import { T } from '@admiral-ds/react-ui';
 import type { Color } from '@admiral-ds/react-ui';
 
-import ProductsOutline from '@admiral-ds/icons/build/category/ProductsOutline.svg?react';
-import IconsOutline from '@admiral-ds/icons/build/category/IconsOutline.svg?react';
-import GithubIcon from '../../assets/GithubIcon.svg?react';
-import ReactIcon from '../../assets/ReactIcon.svg?react';
-import PixsoIcon from '../../assets/PixsoIcon.svg?react';
+// import ProductsOutline from '@admiral-ds/icons/build/category/ProductsOutline.svg?react';
+import ProductsOutline from '../../assets/Components.svg?react';
+import IconsOutline from '../../assets/Icons.svg?react';
+import GithubIcon from '../../assets/Github.svg?react';
+import ReactIcon from '../../assets/React.svg?react';
+import PixsoIcon from '../../assets/Pixso.svg?react';
+import ChartsIcon from '../../assets/Charts.svg?react';
 
 const parseShadow = (token: string) => token.replace('box-shadow: ', '').replace(';', '');
 
@@ -71,7 +73,7 @@ const sources = [
   {
     id: '2',
     icon: <IconsOutline />,
-    iconColor: 'Purple/Purple 60 Main',
+    iconColor: 'Primary/Primary 60 Main',
     href: 'https://admiralds.github.io/icons/',
     name: 'Icons',
     description: 'Иконки в Storybook',
@@ -79,7 +81,7 @@ const sources = [
   {
     id: '3',
     icon: <PixsoIcon />,
-    iconColor: 'Magenta/Magenta 50',
+    iconColor: 'Primary/Primary 60 Main',
     href: 'https://pixso.t1-pixso.ru/app/editor/0bmDY0CENBvcPkVPPpt6AA?file_type=10&icon_type=1&page-id=9%3A32 Invite you to join the Pixso Design file "Admiral 2.1 UI Kit"',
     name: 'Pixso',
     description: 'Макеты в Pixso',
@@ -87,7 +89,7 @@ const sources = [
   {
     id: '4',
     icon: <ReactIcon />,
-    iconColor: 'Cyan/Cyan 30',
+    iconColor: 'Primary/Primary 60 Main',
     href: 'https://react.dev/',
     name: 'React',
     description: 'Документация по React',
@@ -95,10 +97,18 @@ const sources = [
   {
     id: '5',
     icon: <GithubIcon />,
-    iconColor: 'Success/Success 50 Main',
+    iconColor: 'Primary/Primary 60 Main',
     href: 'https://github.com/AdmiralDS/react-ui/',
     name: 'Github',
     description: 'Ресурсы на Github',
+  },
+  {
+    id: '6',
+    icon: <ChartsIcon />,
+    iconColor: 'Primary/Primary 60 Main',
+    href: 'https://admiralds.github.io/charts/',
+    name: 'Charts',
+    description: 'Графики и чарты',
   },
 ];
 

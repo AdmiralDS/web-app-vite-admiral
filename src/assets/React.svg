@@ -1,0 +1,16 @@
+<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" width="28.000000" height="28.000000" fill="none"
+>
+	<rect width="28.000000" height="28.000000" x="0.000000" y="0.000000" rx="4.000000"
+		fill="rgb(0,98,255)" />
+	<rect id="React-icon" width="24.000000" height="21.353197" x="2.000000" y="3.323486" />
+	<circle id="circle" cx="13.9999704" cy="13.9999704" r="2.13913035" fill="rgb(255,255,255)" />
+	<ellipse id="ellipse" rx="11.478261" ry="4.382608" cx="13.9999895" cy="14.0000401"
+		stroke="rgb(255,255,255)" stroke-width="1.04347825" />
+	<ellipse id="ellipse" rx="11.478260" ry="4.382609" cx="11.47826" cy="4.38260889"
+		stroke="rgb(255,255,255)" stroke-width="1.04347825"
+		transform="matrix(0.5,0.866025,-0.866025,0.5,12.0564,1.86841)" />
+	<ellipse id="ellipse" rx="11.478261" ry="4.382609" cx="11.478261" cy="4.38260889"
+		stroke="rgb(255,255,255)" stroke-width="1.04347825"
+		transform="matrix(-0.5,0.866025,-0.866025,-0.5,23.5347,6.25098)" />
+</svg>
