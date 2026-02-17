@@ -8,8 +8,8 @@
   <script>
     // Перенаправляем на index.html с сохранением пути
     sessionStorage.setItem('redirect', location.pathname);
-    const [hostName, repoName] = location.pathname.split('/');
-    const redirectUrl = hostName && repoName ? `/${repoName}/` : '/';
+    const [, repoName] = location.pathname.split('/');
+    const redirectUrl = repoName ? `/${repoName}/` : '/';
     location.replace(redirectUrl);
   </script>
 </head>
