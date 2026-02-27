@@ -10,25 +10,13 @@ export const TextInputSizes = () => {
   return (
     <>
       <ExampleSection text="Размер XL">
-        <TextInput
-          defaultValue="Default Value"
-          onChange={handleChange}
-          dimension="xl"
-        />
+        <TextInput defaultValue="Default Value" onChange={handleChange} dimension="xl" />
       </ExampleSection>
       <ExampleSection text="Размер M">
-        <TextInput
-          defaultValue="Default Value"
-          onChange={handleChange}
-          dimension="m"
-        />
+        <TextInput defaultValue="Default Value" onChange={handleChange} dimension="m" />
       </ExampleSection>
       <ExampleSection text="Размер S">
-        <TextInput
-          defaultValue="Default Value"
-          onChange={handleChange}
-          dimension="s"
-        />
+        <TextInput defaultValue="Default Value" onChange={handleChange} dimension="s" />
       </ExampleSection>
     </>
   );

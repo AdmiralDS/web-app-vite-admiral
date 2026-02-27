@@ -12,23 +12,16 @@ export const TextInputBasic = () => {
       <ExampleSection
         text={
           <>
-            <PStyled>
-              TextInput – простой текстовый инпут.
-            </PStyled>
+            <PStyled>TextInput – простой текстовый инпут.</PStyled>
           </>
         }
       >
-        <TextInput
-          defaultValue="Default Value"
-          onChange={handleChange}
-        />
+        <TextInput defaultValue="Default Value" onChange={handleChange} />
       </ExampleSection>
       <ExampleSection
         text={
           <>
-            <PStyled>
-              Для того, чтобы добавть лэйбл или дополнительный текст, используйте компонент InputField.
-            </PStyled>
+            <PStyled>Для того, чтобы добавть лэйбл или дополнительный текст, используйте компонент InputField.</PStyled>
           </>
         }
       >
