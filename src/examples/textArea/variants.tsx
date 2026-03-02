@@ -14,25 +14,38 @@ export const TextAreaVariants = () => {
           <TextField defaultValue="test" label="Лэйбл" extraText="Дополнительный текст" displayCopyIcon />
         </div>
       </ExampleSection>
-      <ExampleSection
-        text="Counter. Можно задавать при каком значении от максимума знаков появляется счетчик, по дефолту стоит 80% (пропсы 'displayCharacterCounter', 'characterCounterVisibilityThreshold' и 'maxLength')."
-      >
+      <ExampleSection text="Counter. Можно задавать при каком значении от максимума знаков появляется счетчик, по дефолту стоит 80% (пропсы 'displayCharacterCounter', 'characterCounterVisibilityThreshold' и 'maxLength').">
         <div style={{ width: '70%' }}>
-          <TextField defaultValue="test" label="Лэйбл" extraText="Дополнительный текст" displayCharacterCounter characterCounterVisibilityThreshold={0} maxLength={500} />
+          <TextField
+            defaultValue="test"
+            label="Лэйбл"
+            extraText="Дополнительный текст"
+            displayCharacterCounter
+            characterCounterVisibilityThreshold={0}
+            maxLength={500}
+          />
         </div>
       </ExampleSection>
-      <ExampleSection
-        text="С фиксированной высотой (проп 'rows')."
-      >
+      <ExampleSection text="С фиксированной высотой (проп 'rows').">
         <div style={{ width: '70%' }}>
-          <TextField defaultValue="Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text." label="Лэйбл" extraText="Дополнительный текст" rows={3} />
+          <TextField
+            defaultValue="Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
+            label="Лэйбл"
+            extraText="Дополнительный текст"
+            rows={3}
+          />
         </div>
       </ExampleSection>
-      <ExampleSection
-        text="Минимальная и максимальная высота (комбинация пропсов 'rows', 'maxRows', 'autoHeight')."
-      >
+      <ExampleSection text="Минимальная и максимальная высота (комбинация пропсов 'rows', 'maxRows', 'autoHeight').">
         <div style={{ width: '70%' }}>
-          <TextField defaultValue="Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text." label="Лэйбл" extraText="Дополнительный текст" rows={3} maxRows={6} autoHeight />
+          <TextField
+            defaultValue="Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
+            label="Лэйбл"
+            extraText="Дополнительный текст"
+            rows={3}
+            maxRows={6}
+            autoHeight
+          />
         </div>
       </ExampleSection>
     </>

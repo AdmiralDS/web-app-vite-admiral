@@ -22,11 +22,7 @@ export const TextInputState = () => {
         <TextInput defaultValue="Default Value" onChange={handleChange} disableCopying />
       </ExampleSection>
       <ExampleSection text="С индикатором загрузки (Spiner).">
-        <TextInput
-          displayClearIcon
-          placeholder="идет поиск ..."
-          isLoading
-        />
+        <TextInput displayClearIcon placeholder="идет поиск ..." isLoading />
       </ExampleSection>
     </>
   );
