@@ -9,6 +9,7 @@ import { tableHeaderRowSpan } from './utils';
 
 interface Props<T> {
   table: Table<T>;
+  tableNode: HTMLElement | null;
   setHeaderHeight: (headerHeight: number) => void;
   dimension: Dimension;
   headerLineClamp: number;
@@ -16,13 +17,13 @@ interface Props<T> {
   greyHeader?: boolean;
   showRowsActions?: boolean;
   showDividerForLastColumn: boolean;
-  tableRef: React.MutableRefObject<null>;
   showBorders?: boolean;
   style?: CSSProperties;
 }
 
 export const Header = <T,>({
   table,
+  tableNode,
   setHeaderHeight,
   dimension,
   headerLineClamp,
@@ -30,7 +31,6 @@ export const Header = <T,>({
   greyHeader,
   showRowsActions,
   showDividerForLastColumn,
-  tableRef,
   showBorders,
   style,
 }: Props<T>) => {
@@ -78,53 +78,51 @@ export const Header = <T,>({
 
   // добавление тени слева
   useLayoutEffect(() => {
-    const table: HTMLElement | null = tableRef.current;
     const leftEdge = leftEdgeRef.current;
 
     function handleIntersection([entry]: IntersectionObserverEntry[]) {
-      if (table) {
+      if (tableNode) {
         if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
-          table.setAttribute('data-shadow-left', 'false');
+          tableNode.setAttribute('data-shadow-left', 'false');
         } else {
-          table.setAttribute('data-shadow-left', 'true');
+          tableNode.setAttribute('data-shadow-left', 'true');
         }
       }
     }
 
-    if (table && leftEdge && enableLeftShadow) {
+    if (tableNode && leftEdge && enableLeftShadow) {
       const observer = new IntersectionObserver(handleIntersection, {
-        root: table,
+        root: tableNode,
         threshold: [0, 1.0],
       });
       observer.observe(leftEdge);
       return () => observer.disconnect();
     }
-  }, [enableLeftShadow]);
+  }, [enableLeftShadow, tableNode]);
 
   //добавление тени справа
   useLayoutEffect(() => {
-    const table: HTMLElement | null = tableRef.current;
     const rightEdge = rightEdgeRef.current;
 
     function handleIntersection([entry]: IntersectionObserverEntry[]) {
-      if (table) {
+      if (tableNode) {
         if (entry.isIntersecting && entry.intersectionRatio > 0.99) {
-          table.setAttribute('data-shadow-right', 'false');
+          tableNode.setAttribute('data-shadow-right', 'false');
         } else {
-          table.setAttribute('data-shadow-right', 'true');
+          tableNode.setAttribute('data-shadow-right', 'true');
         }
       }
     }
 
-    if (table && rightEdge && enableRightShadow) {
+    if (tableNode && rightEdge && enableRightShadow) {
       const observer = new IntersectionObserver(handleIntersection, {
-        root: table,
+        root: tableNode,
         threshold: [0, 1.0],
       });
       observer.observe(rightEdge);
       return () => observer.disconnect();
     }
-  }, [enableRightShadow]);
+  }, [enableRightShadow, tableNode]);
 
   const renderHeaderGroup = (headerGroup: HeaderGroup<T>) => {
     const multiSortable = headerGroup.headers.reduce((acc, h) => (h.column.getSortIndex() >= 0 ? acc + 1 : acc), 0) > 1;

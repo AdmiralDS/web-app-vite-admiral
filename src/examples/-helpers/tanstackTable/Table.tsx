@@ -56,8 +56,8 @@ export const TanstackTable = forwardRef(
     ref: React.ForwardedRef<HTMLDivElement>,
   ) => {
     const [headerHeight, setHeaderHeight] = useState(0);
-    const tableRef = useRef(null);
-    const mergedRefs = useMemo(() => refSetter(ref, tableRef), [ref]);
+    const [tableNode, setTableNode] = useState<HTMLElement | null>(null);
+    const mergedRefs = useMemo(() => refSetter(ref, (node) => setTableNode(node)), [ref]);
 
     const hasRowsActions = table.getRowModel().rows.some((row) => {
       const original = row.original as RowData & MetaRowProps<T>;
@@ -66,7 +66,7 @@ export const TanstackTable = forwardRef(
     });
     const showRowsActions = hasRowsActions && userShowRowsActions;
 
-    let leftTemplate = table.getLeftLeafColumns().reduce((result, column) => {
+    const leftTemplate = table.getLeftLeafColumns().reduce((result, column) => {
       if (column.id == 'checkbox-column' || column.id == 'expand-column') {
         return `${result} min-content`;
       }
@@ -74,11 +74,11 @@ export const TanstackTable = forwardRef(
     }, '');
 
     // minmax(0px, auto) для Spacer
-    let centerTemplate =
+    const centerTemplate =
       table.getCenterLeafColumns().reduce((result, column) => `${result} ${getColumnWidth(column)}`, '') +
       ' minmax(0px, auto)';
 
-    let rightTemplate = table
+    const rightTemplate = table
       .getRightLeafColumns()
       .reduce((result, column) => `${result} ${getColumnWidth(column)}`, '');
 
@@ -112,7 +112,7 @@ export const TanstackTable = forwardRef(
           greyHeader={greyHeader}
           showRowsActions={showRowsActions}
           showDividerForLastColumn={showDividerForLastColumn}
-          tableRef={tableRef}
+          tableNode={tableNode}
           showBorders={showBorders}
           style={
             {
@@ -125,7 +125,7 @@ export const TanstackTable = forwardRef(
           <VirtualBody
             dimension={dimension}
             table={table}
-            tableRef={tableRef}
+            tableNode={tableNode}
             greyZebraRows={greyZebraRows}
             showRowsActions={showRowsActions}
             headerHeight={headerHeight}
@@ -142,7 +142,7 @@ export const TanstackTable = forwardRef(
           <Body
             dimension={dimension}
             table={table}
-            tableRef={tableRef}
+            tableNode={tableNode}
             greyZebraRows={greyZebraRows}
             showRowsActions={showRowsActions}
             headerHeight={headerHeight}

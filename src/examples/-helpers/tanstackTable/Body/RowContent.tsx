@@ -36,7 +36,7 @@ interface RowContentProps<T> {
    * По умолчанию showRowsActions = false, при этом иконки действий видны только при ховере строк. */
   showRowsActions: boolean;
   dimension: Dimension;
-  tableRef: React.MutableRefObject<null>;
+  tableNode: HTMLElement | null;
   headerHeight: number;
   showCheckboxTitleGroup: boolean;
   showDividerForLastColumn: boolean;
@@ -49,7 +49,7 @@ export const RowContent = <T,>({
   showCheckboxTitleGroup,
   showDividerForLastColumn,
   showRowsActions,
-  tableRef,
+  tableNode,
   headerHeight,
 }: RowContentProps<T>) => {
   const handleOverflowMenuClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -138,7 +138,7 @@ export const RowContent = <T,>({
                   row={row}
                   onClick={handleOverflowMenuClick}
                   showRowsActions={showRowsActions}
-                  tableRef={tableRef}
+                  tableNode={tableNode}
                   headerHeight={headerHeight}
                 />
               )}

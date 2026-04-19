@@ -15,10 +15,10 @@ const BodyEl = styled.div`
 
 export interface BodyProps<T> {
   table: Table<T>;
+  tableNode: HTMLElement | null;
   greyZebraRows?: boolean;
   showRowsActions: boolean;
   dimension: Dimension;
-  tableRef: React.MutableRefObject<null>;
   headerHeight: number;
   showLastRowUnderline: boolean;
   showBorders: boolean;
@@ -30,8 +30,8 @@ export interface BodyProps<T> {
 
 export const Body = <T,>({
   table,
+  tableNode,
   dimension,
-  tableRef,
   greyZebraRows,
   showRowsActions,
   headerHeight,
@@ -74,7 +74,7 @@ export const Body = <T,>({
             showCheckboxTitleGroup={showCheckboxTitleGroup}
             showDividerForLastColumn={showDividerForLastColumn}
             showRowsActions={showRowsActions}
-            tableRef={tableRef}
+            tableNode={tableNode}
             headerHeight={headerHeight}
           />
         </BodyTr>
