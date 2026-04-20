@@ -36,7 +36,7 @@ export const VirtualBody = <T,>({
   table,
   isDynamicRowHeight,
   dimension,
-  tableRef,
+  tableNode,
   greyZebraRows,
   showRowsActions,
   headerHeight,
@@ -51,7 +51,7 @@ export const VirtualBody = <T,>({
   const { fixedRowHeight, estimatedRowHeight, overscan = 5 } = virtualScroll;
 
   const rowVirtualizer = useVirtualizer({
-    getScrollElement: () => tableRef.current,
+    getScrollElement: () => tableNode,
     estimateSize: (index: number) => fixedRowHeight?.(index) || estimatedRowHeight?.(index) || getRowHeight(dimension),
     count: table.getRowModel().rows.length,
     overscan,
@@ -95,7 +95,7 @@ export const VirtualBody = <T,>({
             showCheckboxTitleGroup={showCheckboxTitleGroup}
             showDividerForLastColumn={showDividerForLastColumn}
             showRowsActions={showRowsActions}
-            tableRef={tableRef}
+            tableNode={tableNode}
             headerHeight={headerHeight}
           />
         </VirtualBodyTr>

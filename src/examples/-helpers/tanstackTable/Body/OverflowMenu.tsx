@@ -52,7 +52,7 @@ interface OverflowMenuProps<T> extends React.HTMLAttributes<HTMLDivElement> {
   dimension: Dimension;
   row: Row<T>;
   showRowsActions: boolean;
-  tableRef: React.RefObject<HTMLElement>;
+  tableNode: HTMLElement | null;
   headerHeight: number;
 }
 
@@ -60,7 +60,7 @@ export const OverflowMenu = <T,>({
   row,
   dimension,
   showRowsActions,
-  tableRef,
+  tableNode,
   headerHeight,
   ...props
 }: OverflowMenuProps<T>) => {
@@ -90,17 +90,17 @@ export const OverflowMenu = <T,>({
       }
     }
     const observer = new IntersectionObserver(handleIntersection, {
-      root: tableRef.current,
+      root: tableNode,
       rootMargin: `-${headerHeight || 0}px 0px 0px 0px`,
       threshold: [0, 1.0],
     });
 
-    if (tableRef.current && oveflowMenuRef.current) {
+    if (tableNode && oveflowMenuRef.current) {
       observer.observe(oveflowMenuRef.current);
     }
 
     return () => observer.disconnect();
-  }, [headerHeight]);
+  }, [headerHeight, tableNode]);
 
   return (
     <OverflowMenuWrapper
